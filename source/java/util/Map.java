@@ -31,88 +31,39 @@ import java.util.function.Function;
 import java.io.Serializable;
 
 /**
- * An object that maps keys to values.  A map cannot contain duplicate keys;
- * each key can map to at most one value.
  *
- * <p>This interface takes the place of the <tt>Dictionary</tt> class, which
- * was a totally abstract class rather than an interface.
+ * 映射键值的对象，不能包含重复的键
+ * 每一个键最多映射一个值
  *
- * <p>The <tt>Map</tt> interface provides three <i>collection views</i>, which
- * allow a map's contents to be viewed as a set of keys, collection of values,
- * or set of key-value mappings.  The <i>order</i> of a map is defined as
- * the order in which the iterators on the map's collection views return their
- * elements.  Some map implementations, like the <tt>TreeMap</tt> class, make
- * specific guarantees as to their order; others, like the <tt>HashMap</tt>
- * class, do not.
+ * 这个接口替代Dictionary类，Dictionary是一个抽象类，而不是接口
  *
- * <p>Note: great care must be exercised if mutable objects are used as map
- * keys.  The behavior of a map is not specified if the value of an object is
- * changed in a manner that affects <tt>equals</tt> comparisons while the
- * object is a key in the map.  A special case of this prohibition is that it
- * is not permissible for a map to contain itself as a key.  While it is
- * permissible for a map to contain itself as a value, extreme caution is
- * advised: the <tt>equals</tt> and <tt>hashCode</tt> methods are no longer
- * well defined on such a map.
  *
- * <p>All general-purpose map implementation classes should provide two
- * "standard" constructors: a void (no arguments) constructor which creates an
- * empty map, and a constructor with a single argument of type <tt>Map</tt>,
- * which creates a new map with the same key-value mappings as its argument.
- * In effect, the latter constructor allows the user to copy any map,
- * producing an equivalent map of the desired class.  There is no way to
- * enforce this recommendation (as interfaces cannot contain constructors) but
- * all of the general-purpose map implementations in the JDK comply.
+ * 接口提供三种集合视图，可以获取map中键的集合、值的集合以及键值的映射集合
+ * 其中HashMap是无序的，TreeMap是保证有序的
  *
- * <p>The "destructive" methods contained in this interface, that is, the
- * methods that modify the map on which they operate, are specified to throw
- * <tt>UnsupportedOperationException</tt> if this map does not support the
- * operation.  If this is the case, these methods may, but are not required
- * to, throw an <tt>UnsupportedOperationException</tt> if the invocation would
- * have no effect on the map.  For example, invoking the {@link #putAll(Map)}
- * method on an unmodifiable map may, but is not required to, throw the
- * exception if the map whose mappings are to be "superimposed" is empty.
  *
- * <p>Some map implementations have restrictions on the keys and values they
- * may contain.  For example, some implementations prohibit null keys and
- * values, and some have restrictions on the types of their keys.  Attempting
- * to insert an ineligible key or value throws an unchecked exception,
- * typically <tt>NullPointerException</tt> or <tt>ClassCastException</tt>.
- * Attempting to query the presence of an ineligible key or value may throw an
- * exception, or it may simply return false; some implementations will exhibit
- * the former behavior and some will exhibit the latter.  More generally,
- * attempting an operation on an ineligible key or value whose completion
- * would not result in the insertion of an ineligible element into the map may
- * throw an exception or it may succeed, at the option of the implementation.
- * Such exceptions are marked as "optional" in the specification for this
- * interface.
+ * 注意：如果易变的对象作为map的key，要多加小心，value也可能会随着key equals方法的比较而受到影响
+ * 造成map行为的不确定。
+ * 一个map包含自身作为key是不允许的，但自身可以作为value，当map的equals和hashCode没有很好定义的情况下，尤其要小心谨慎
  *
- * <p>Many methods in Collections Framework interfaces are defined
- * in terms of the {@link Object#equals(Object) equals} method.  For
- * example, the specification for the {@link #containsKey(Object)
- * containsKey(Object key)} method says: "returns <tt>true</tt> if and
- * only if this map contains a mapping for a key <tt>k</tt> such that
- * <tt>(key==null ? k==null : key.equals(k))</tt>." This specification should
- * <i>not</i> be construed to imply that invoking <tt>Map.containsKey</tt>
- * with a non-null argument <tt>key</tt> will cause <tt>key.equals(k)</tt> to
- * be invoked for any key <tt>k</tt>.  Implementations are free to
- * implement optimizations whereby the <tt>equals</tt> invocation is avoided,
- * for example, by first comparing the hash codes of the two keys.  (The
- * {@link Object#hashCode()} specification guarantees that two objects with
- * unequal hash codes cannot be equal.)  More generally, implementations of
- * the various Collections Framework interfaces are free to take advantage of
- * the specified behavior of underlying {@link Object} methods wherever the
- * implementor deems it appropriate.
  *
- * <p>Some map operations which perform recursive traversal of the map may fail
- * with an exception for self-referential instances where the map directly or
- * indirectly contains itself. This includes the {@code clone()},
- * {@code equals()}, {@code hashCode()} and {@code toString()} methods.
- * Implementations may optionally handle the self-referential scenario, however
- * most current implementations do not do so.
+ * 所有一般map的实现类应该提供两个标准的构造方法：一个无参构造方法和一个Map类型作为入参的构造方法。后者即允许用户复制任何map
+ * 产生一个相同的类。这种推荐并非强制的，但所有JKD中的实现都遵循了这个规则。
  *
- * <p>This interface is a member of the
- * <a href="{@docRoot}/../technotes/guides/collections/index.html">
- * Java Collections Framework</a>.
+ *
+ * 在这个接口里，有些不能用的方法，即操作这些方法的时候，如果操作不被支持，会抛UnsupportedOperationException异常
+ * 如果调用对map没有影响，就没必要抛出UnsupportedOperationException异常。比如在一个不可变map中调用putAll（map）方法，如果添加的是一个空map，就没有必要抛异常了。
+ *
+ * 有一些实现类对key和value有限制。比如有些实现不允许空key和空value以及一些限制key的类型。
+ * 如果插入一些不合法的key或value，会抛出不合法的异常，比如空指针异常，类型转换异常
+ * 如果试图查询不合法的key或Value，可能也会抛异常或者返回false，一些实现类是禁止前者或后者
+ *
+ *
+ * 在集合框架的很多方法是基于equals方法定义的。比如containsKey(Object)，会调用equals方法，首先也会先调用hashCode方法
+ *
+ *
+ *
+ * 一些操作会产生循环，抛出自引用的异常，map直接或间接地包含了自身。比如clone()、equals()、hashCode、toString等，实现应该选择性地处理自引用的场景，然而很多时候实现没有这样做。
  *
  * @param <K> the type of keys maintained by this map
  * @param <V> the type of mapped values
