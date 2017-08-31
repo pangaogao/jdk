@@ -36,89 +36,36 @@ import java.util.function.Consumer;
 import java.util.function.Function;
 
 /**
- * Hash table based implementation of the <tt>Map</tt> interface.  This
- * implementation provides all of the optional map operations, and permits
- * <tt>null</tt> values and the <tt>null</tt> key.  (The <tt>HashMap</tt>
- * class is roughly equivalent to <tt>Hashtable</tt>, except that it is
- * unsynchronized and permits nulls.)  This class makes no guarantees as to
- * the order of the map; in particular, it does not guarantee that the order
- * will remain constant over time.
+ * 基于哈希表的map实现，提供了所有可用的map操作，允许空key和空value
+ * HashMap基本等同于HashTable，但它非同步的且允许空值，这个类不保证map的顺序，更不会保证时间顺序
  *
- * <p>This implementation provides constant-time performance for the basic
- * operations (<tt>get</tt> and <tt>put</tt>), assuming the hash function
- * disperses the elements properly among the buckets.  Iteration over
- * collection views requires time proportional to the "capacity" of the
- * <tt>HashMap</tt> instance (the number of buckets) plus its size (the number
- * of key-value mappings).  Thus, it's very important not to set the initial
- * capacity too high (or the load factor too low) if iteration performance is
- * important.
  *
- * <p>An instance of <tt>HashMap</tt> has two parameters that affect its
- * performance: <i>initial capacity</i> and <i>load factor</i>.  The
- * <i>capacity</i> is the number of buckets in the hash table, and the initial
- * capacity is simply the capacity at the time the hash table is created.  The
- * <i>load factor</i> is a measure of how full the hash table is allowed to
- * get before its capacity is automatically increased.  When the number of
- * entries in the hash table exceeds the product of the load factor and the
- * current capacity, the hash table is <i>rehashed</i> (that is, internal data
- * structures are rebuilt) so that the hash table has approximately twice the
- * number of buckets.
+ * 基本的put、get操作都是常数时间的复杂度，将元素合理地分布到桶中
+ * 内容集合迭代的时间与map实例的桶数和容量有关
+ * 如果迭代的性能要求比较高，就不要将map的初始容量设置过大（或者不要设置负载因子过小）
  *
- * <p>As a general rule, the default load factor (.75) offers a good
- * tradeoff between time and space costs.  Higher values decrease the
- * space overhead but increase the lookup cost (reflected in most of
- * the operations of the <tt>HashMap</tt> class, including
- * <tt>get</tt> and <tt>put</tt>).  The expected number of entries in
- * the map and its load factor should be taken into account when
- * setting its initial capacity, so as to minimize the number of
- * rehash operations.  If the initial capacity is greater than the
- * maximum number of entries divided by the load factor, no rehash
- * operations will ever occur.
+ * HashMap实例有两个参数会影响其性能：1.初始容量 2.负载因子
+ * 容量就是哈希表桶的数量。初始容量就是哈希表创建时候的容量，负载因子就是在哈希表多满时进行扩容的指标
+ * 当实体数超过负载因子和容量的乘积，哈希表就会重新进行散列，内部数据结构也要重建
  *
- * <p>If many mappings are to be stored in a <tt>HashMap</tt>
- * instance, creating it with a sufficiently large capacity will allow
- * the mappings to be stored more efficiently than letting it perform
- * automatic rehashing as needed to grow the table.  Note that using
- * many keys with the same {@code hashCode()} is a sure way to slow
- * down performance of any hash table. To ameliorate impact, when keys
- * are {@link Comparable}, this class may use comparison order among
- * keys to help break ties.
  *
- * <p><strong>Note that this implementation is not synchronized.</strong>
- * If multiple threads access a hash map concurrently, and at least one of
- * the threads modifies the map structurally, it <i>must</i> be
- * synchronized externally.  (A structural modification is any operation
- * that adds or deletes one or more mappings; merely changing the value
- * associated with a key that an instance already contains is not a
- * structural modification.)  This is typically accomplished by
- * synchronizing on some object that naturally encapsulates the map.
+ * 整体上，默认的负载因子是0.75，提供了一个在时间和空间之间很好的折中，增加负载因子会减少空间，增加查询消耗(put、get方法最为明显)
+ * 设置初始容量的时候，依据实体的预期数量和负载因子而定，以便减少rehash的次数，如果初始容量比最大的实体数量除以负载因子还要大，就不可能有rehash了
  *
- * If no such object exists, the map should be "wrapped" using the
- * {@link Collections#synchronizedMap Collections.synchronizedMap}
- * method.  This is best done at creation time, to prevent accidental
- * unsynchronized access to the map:<pre>
- *   Map m = Collections.synchronizedMap(new HashMap(...));</pre>
  *
- * <p>The iterators returned by all of this class's "collection view methods"
- * are <i>fail-fast</i>: if the map is structurally modified at any time after
- * the iterator is created, in any way except through the iterator's own
- * <tt>remove</tt> method, the iterator will throw a
- * {@link ConcurrentModificationException}.  Thus, in the face of concurrent
- * modification, the iterator fails quickly and cleanly, rather than risking
- * arbitrary, non-deterministic behavior at an undetermined time in the
- * future.
+ * 如果有很多的映射存储在HashMap中，创建一个足够大的容量来存储这些实体会比自动rehash更高效
  *
- * <p>Note that the fail-fast behavior of an iterator cannot be guaranteed
- * as it is, generally speaking, impossible to make any hard guarantees in the
- * presence of unsynchronized concurrent modification.  Fail-fast iterators
- * throw <tt>ConcurrentModificationException</tt> on a best-effort basis.
- * Therefore, it would be wrong to write a program that depended on this
- * exception for its correctness: <i>the fail-fast behavior of iterators
- * should be used only to detect bugs.</i>
+ * 许多key实用同样的hashCode方法会降低哈希表的性能，为了降低这种影响，当key是可比较的时候，这个类可以实用比较方法来帮助提高性能
  *
- * <p>This class is a member of the
- * <a href="{@docRoot}/../technotes/guides/collections/index.html">
- * Java Collections Framework</a>.
+ *
+ * 这个实现不是同步的，如果多线程同时操作同一个map，至少有一个线程修改map的结构，那就要求它必须是同步的。（结构变化表示增加或删除一个或多个映射，改变已有key对应的value值并不算结构变化）
+ *
+ * 可通过对某些对象同步来实现，如果没有这样的对象，就需要使用Collections.synchronizedMap方法来包装，这个最好在创建时期，可以避免意外的非同步操作
+ * 例如：Map m = Collections.synchronizedMap(new HashMap(...))
+ *
+ * 这个类返回的所有集合迭代器在任何时间结构发生改变时，会快速失败，抛出ConcurrentModificationException异常
+ * 迭代器的快速失败机制不可能被保证，总体来讲，不可能在非同步修改的情况下做进一步保证。当迭代器抛出ConcurrentModificationException异常时，只是作为检测问题，不能依赖异常来修复
+ *
  *
  * @param <K> the type of keys maintained by this map
  * @param <V> the type of mapped values
