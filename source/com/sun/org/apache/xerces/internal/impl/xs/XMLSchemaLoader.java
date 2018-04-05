@@ -72,14 +72,14 @@ import java.util.Map;
 import java.util.StringTokenizer;
 import java.util.Vector;
 import javax.xml.XMLConstants;
-import org.w3c.dom.DOMConfiguration;
-import org.w3c.dom.DOMError;
-import org.w3c.dom.DOMErrorHandler;
-import org.w3c.dom.DOMException;
-import org.w3c.dom.DOMStringList;
-import org.w3c.dom.ls.LSInput;
-import org.w3c.dom.ls.LSResourceResolver;
-import org.xml.sax.InputSource;
+import test.org.w3c.dom.DOMConfiguration;
+import test.org.w3c.dom.DOMError;
+import test.org.w3c.dom.DOMErrorHandler;
+import test.org.w3c.dom.DOMException;
+import test.org.w3c.dom.DOMStringList;
+import test.org.w3c.dom.ls.LSInput;
+import test.org.w3c.dom.ls.LSResourceResolver;
+import test.org.xml.sax.InputSource;
 
 /**
  * This class implements xni.grammars.XMLGrammarLoader.
@@ -736,7 +736,7 @@ XSLoader, DOMConfiguration {
 
     /**
      * Translate the various JAXP SchemaSource property types to XNI
-     * XMLInputSource.  Valid types are: String, org.xml.sax.InputSource,
+     * XMLInputSource.  Valid types are: String, test.org.xml.sax.InputSource,
      * InputStream, File, or Object[] of any of previous types.
      * REVISIT:  the JAXP 1.2 spec is less than clear as to whether this property
      * should be available to imported schemas.  I have assumed
@@ -961,7 +961,7 @@ XSLoader, DOMConfiguration {
     } //locationArray
 
     /* (non-Javadoc)
-     * @see com.sun.org.apache.xerces.internal.xni.parser.XMLComponent#getFeatureDefault(java.lang.String)
+     * @see com.sun.test.org.apache.xerces.internal.xni.parser.XMLComponent#getFeatureDefault(java.lang.String)
      */
     public Boolean getFeatureDefault(String featureId) {
         if (featureId.equals(AUGMENT_PSVI)){
@@ -971,7 +971,7 @@ XSLoader, DOMConfiguration {
     }
 
     /* (non-Javadoc)
-     * @see com.sun.org.apache.xerces.internal.xni.parser.XMLComponent#getPropertyDefault(java.lang.String)
+     * @see com.sun.test.org.apache.xerces.internal.xni.parser.XMLComponent#getPropertyDefault(java.lang.String)
      */
     public Object getPropertyDefault(String propertyId) {
         // TODO Auto-generated method stub
@@ -979,7 +979,7 @@ XSLoader, DOMConfiguration {
     }
 
     /* (non-Javadoc)
-     * @see com.sun.org.apache.xerces.internal.xni.parser.XMLComponent#reset(com.sun.org.apache.xerces.internal.xni.parser.XMLComponentManager)
+     * @see com.sun.test.org.apache.xerces.internal.xni.parser.XMLComponent#reset(com.sun.test.org.apache.xerces.internal.xni.parser.XMLComponentManager)
      */
     public void reset(XMLComponentManager componentManager) throws XMLConfigurationException {
 
@@ -1099,14 +1099,14 @@ XSLoader, DOMConfiguration {
 
 
     /* (non-Javadoc)
-     * @see com.sun.org.apache.xerces.internal.xs.XSLoader#getConfig()
+     * @see com.sun.test.org.apache.xerces.internal.xs.XSLoader#getConfig()
      */
     public DOMConfiguration getConfig() {
         return this;
     }
 
     /* (non-Javadoc)
-     * @see com.sun.org.apache.xerces.internal.xs.XSLoader#load(org.w3c.dom.ls.LSInput)
+     * @see com.sun.test.org.apache.xerces.internal.xs.XSLoader#load(test.org.w3c.dom.ls.LSInput)
      */
     public XSModel load(LSInput is) {
         try {
@@ -1119,7 +1119,7 @@ XSLoader, DOMConfiguration {
     }
 
     /* (non-Javadoc)
-     * @see com.sun.org.apache.xerces.internal.xs.XSLoader#loadInputList(com.sun.org.apache.xerces.internal.xs.DOMInputList)
+     * @see com.sun.test.org.apache.xerces.internal.xs.XSLoader#loadInputList(com.sun.test.org.apache.xerces.internal.xs.DOMInputList)
      */
     public XSModel loadInputList(LSInputList is) {
         int length = is.getLength();
@@ -1136,7 +1136,7 @@ XSLoader, DOMConfiguration {
     }
 
     /* (non-Javadoc)
-     * @see com.sun.org.apache.xerces.internal.xs.XSLoader#loadURI(java.lang.String)
+     * @see com.sun.test.org.apache.xerces.internal.xs.XSLoader#loadURI(java.lang.String)
      */
     public XSModel loadURI(String uri) {
         try {
@@ -1150,7 +1150,7 @@ XSLoader, DOMConfiguration {
     }
 
     /* (non-Javadoc)
-     * @see com.sun.org.apache.xerces.internal.xs.XSLoader#loadURIList(com.sun.org.apache.xerces.internal.xs.StringList)
+     * @see com.sun.test.org.apache.xerces.internal.xs.XSLoader#loadURIList(com.sun.test.org.apache.xerces.internal.xs.StringList)
      */
     public XSModel loadURIList(StringList uriList) {
         int length = uriList.getLength();

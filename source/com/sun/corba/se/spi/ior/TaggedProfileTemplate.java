@@ -28,12 +28,7 @@ package com.sun.corba.se.spi.ior;
 import java.util.List ;
 import java.util.Iterator ;
 
-import org.omg.CORBA_2_3.portable.OutputStream ;
-
-import com.sun.corba.se.spi.ior.Identifiable ;
-import com.sun.corba.se.spi.ior.Writeable ;
-import com.sun.corba.se.spi.ior.ObjectId ;
-import com.sun.corba.se.spi.ior.WriteContents ;
+import test.org.omg.CORBA_2_3.portable.OutputStream ;
 
 import com.sun.corba.se.spi.orb.ORB ;
 
@@ -73,6 +68,6 @@ public interface TaggedProfileTemplate extends List, Identifiable,
      * components, or if this type of profile can never contain
      * components.
      */
-    org.omg.IOP.TaggedComponent[] getIOPComponents(
+    test.org.omg.IOP.TaggedComponent[] getIOPComponents(
         ORB orb, int id );
 }

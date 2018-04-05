@@ -52,28 +52,28 @@ public class Constants {
      * <A HREF="http://www.w3.org/TR/2001/CR-xmldsig-core-20010419/">XML Signature specification</A>
      */
     public static final String SIGNATURESPECIFICATION_URL =
-        "http://www.w3.org/TR/2001/CR-xmldsig-core-20010419/";
+        "http://www.w3.test.org/TR/2001/CR-xmldsig-core-20010419/";
 
     /**
      * The namespace of the
      * <A HREF="http://www.w3.org/TR/2001/CR-xmldsig-core-20010419/">XML Signature specification</A>
      */
-    public static final String SignatureSpecNS = "http://www.w3.org/2000/09/xmldsig#";
+    public static final String SignatureSpecNS = "http://www.w3.test.org/2000/09/xmldsig#";
 
     /**
      * The namespace of the
      * <A HREF="http://www.w3.org/TR/xmldsig-core1/">XML Signature specification</A>
      */
-    public static final String SignatureSpec11NS = "http://www.w3.org/2009/xmldsig11#";
+    public static final String SignatureSpec11NS = "http://www.w3.test.org/2009/xmldsig11#";
 
     /** The URL for more algorithms **/
-    public static final String MoreAlgorithmsSpecNS = "http://www.w3.org/2001/04/xmldsig-more#";
+    public static final String MoreAlgorithmsSpecNS = "http://www.w3.test.org/2001/04/xmldsig-more#";
 
     /** The URI for XML spec*/
-    public static final String XML_LANG_SPACE_SpecNS = "http://www.w3.org/XML/1998/namespace";
+    public static final String XML_LANG_SPACE_SpecNS = "http://www.w3.test.org/XML/1998/namespace";
 
     /** The URI for XMLNS spec*/
-    public static final String NamespaceSpecNS = "http://www.w3.org/2000/xmlns/";
+    public static final String NamespaceSpecNS = "http://www.w3.test.org/2000/xmlns/";
 
     /** Tag of Attr Algorithm**/
     public static final String _ATT_ALGORITHM = "Algorithm";

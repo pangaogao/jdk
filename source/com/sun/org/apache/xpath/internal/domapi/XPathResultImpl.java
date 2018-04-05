@@ -30,15 +30,15 @@ import com.sun.org.apache.xpath.internal.XPath;
 import com.sun.org.apache.xpath.internal.objects.XObject;
 import com.sun.org.apache.xpath.internal.res.XPATHErrorResources;
 import com.sun.org.apache.xpath.internal.res.XPATHMessages;
-import org.w3c.dom.DOMException;
-import org.w3c.dom.Node;
-import org.w3c.dom.NodeList;
-import org.w3c.dom.events.Event;
-import org.w3c.dom.events.EventListener;
-import org.w3c.dom.events.EventTarget;
-import org.w3c.dom.traversal.NodeIterator;
-import org.w3c.dom.xpath.XPathException;
-import org.w3c.dom.xpath.XPathResult;
+import test.org.w3c.dom.DOMException;
+import test.org.w3c.dom.Node;
+import test.org.w3c.dom.NodeList;
+import test.org.w3c.dom.events.Event;
+import test.org.w3c.dom.events.EventListener;
+import test.org.w3c.dom.events.EventTarget;
+import test.org.w3c.dom.traversal.NodeIterator;
+import test.org.w3c.dom.xpath.XPathException;
+import test.org.w3c.dom.xpath.XPathResult;
 
 /**
  *
@@ -56,7 +56,7 @@ import org.w3c.dom.xpath.XPathResult;
  * <p>This implementation wraps an <code>XObject</code>.
  *
  * @see com.sun.org.apache.xpath.internal.objects.XObject
- * @see org.w3c.dom.xpath.XPathResult
+ * @see test.org.w3c.dom.xpath.XPathResult
  *
  * @xsl.usage internal
  */
@@ -74,7 +74,7 @@ class XPathResultImpl implements XPathResult, EventListener {
 
         /**
      *  This the type specified by the user during construction.  Typically
-         *  the constructor will be called by com.sun.org.apache.xpath.internal.XPath.evaluate().
+         *  the constructor will be called by com.sun.test.org.apache.xpath.internal.XPath.evaluate().
      */
         final private short m_resultType;
 
@@ -169,7 +169,7 @@ class XPathResultImpl implements XPathResult, EventListener {
         }
 
         /**
-         * @see org.w3c.dom.xpath.XPathResult#getResultType()
+         * @see test.org.w3c.dom.xpath.XPathResult#getResultType()
          */
         public short getResultType() {
                 return m_resultType;
@@ -180,7 +180,7 @@ class XPathResultImpl implements XPathResult, EventListener {
      * @exception XPathException
      *   TYPE_ERR: raised if <code>resultType</code> is not
      *   <code>NUMBER_TYPE</code>.
-         * @see org.w3c.dom.xpath.XPathResult#getNumberValue()
+         * @see test.org.w3c.dom.xpath.XPathResult#getNumberValue()
          */
         public double getNumberValue() throws XPathException {
                 if (getResultType() != NUMBER_TYPE) {
@@ -203,7 +203,7 @@ class XPathResultImpl implements XPathResult, EventListener {
      *   TYPE_ERR: raised if <code>resultType</code> is not
      *   <code>STRING_TYPE</code>.
      *
-         * @see org.w3c.dom.xpath.XPathResult#getStringValue()
+         * @see test.org.w3c.dom.xpath.XPathResult#getStringValue()
          */
         public String getStringValue() throws XPathException {
                 if (getResultType() != STRING_TYPE) {
@@ -221,7 +221,7 @@ class XPathResultImpl implements XPathResult, EventListener {
         }
 
         /**
-         * @see org.w3c.dom.xpath.XPathResult#getBooleanValue()
+         * @see test.org.w3c.dom.xpath.XPathResult#getBooleanValue()
          */
         public boolean getBooleanValue() throws XPathException {
                 if (getResultType() != BOOLEAN_TYPE) {
@@ -245,7 +245,7 @@ class XPathResultImpl implements XPathResult, EventListener {
      *   <code>ANY_UNORDERED_NODE_TYPE</code> or
      *   <code>FIRST_ORDERED_NODE_TYPE</code>.
      *
-         * @see org.w3c.dom.xpath.XPathResult#getSingleNodeValue()
+         * @see test.org.w3c.dom.xpath.XPathResult#getSingleNodeValue()
          */
         public Node getSingleNodeValue() throws XPathException {
 
@@ -277,7 +277,7 @@ class XPathResultImpl implements XPathResult, EventListener {
         }
 
         /**
-         * @see org.w3c.dom.xpath.XPathResult#getInvalidIteratorState()
+         * @see test.org.w3c.dom.xpath.XPathResult#getInvalidIteratorState()
          */
         public boolean getInvalidIteratorState() {
                 return m_isInvalidIteratorState;
@@ -292,7 +292,7 @@ class XPathResultImpl implements XPathResult, EventListener {
      *   <code>UNORDERED_NODE_SNAPSHOT_TYPE</code> or
      *   <code>ORDERED_NODE_SNAPSHOT_TYPE</code>.
      *
-         * @see org.w3c.dom.xpath.XPathResult#getSnapshotLength()
+         * @see test.org.w3c.dom.xpath.XPathResult#getSnapshotLength()
          */
         public int getSnapshotLength() throws XPathException {
 
@@ -317,7 +317,7 @@ class XPathResultImpl implements XPathResult, EventListener {
      * @exception DOMException
      *   INVALID_STATE_ERR: The document has been mutated since the result was
      *   returned.
-         * @see org.w3c.dom.xpath.XPathResult#iterateNext()
+         * @see test.org.w3c.dom.xpath.XPathResult#iterateNext()
          */
         public Node iterateNext() throws XPathException, DOMException {
                 if ((m_resultType != UNORDERED_NODE_ITERATOR_TYPE) &&
@@ -359,7 +359,7 @@ class XPathResultImpl implements XPathResult, EventListener {
      *   <code>UNORDERED_NODE_SNAPSHOT_TYPE</code> or
      *   <code>ORDERED_NODE_SNAPSHOT_TYPE</code>.
      *
-         * @see org.w3c.dom.xpath.XPathResult#snapshotItem(int)
+         * @see test.org.w3c.dom.xpath.XPathResult#snapshotItem(int)
          */
         public Node snapshotItem(int index) throws XPathException {
 
@@ -405,7 +405,7 @@ class XPathResultImpl implements XPathResult, EventListener {
         }
 
         /**
-         * @see org.w3c.dom.events.EventListener#handleEvent(Event)
+         * @see test.org.w3c.dom.events.EventListener#handleEvent(Event)
          */
         public void handleEvent(Event event) {
 

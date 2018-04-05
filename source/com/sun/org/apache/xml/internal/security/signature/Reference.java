@@ -52,18 +52,18 @@ import com.sun.org.apache.xml.internal.security.utils.UnsyncBufferedOutputStream
 import com.sun.org.apache.xml.internal.security.utils.XMLUtils;
 import com.sun.org.apache.xml.internal.security.utils.resolver.ResourceResolver;
 import com.sun.org.apache.xml.internal.security.utils.resolver.ResourceResolverException;
-import org.w3c.dom.Attr;
-import org.w3c.dom.Document;
-import org.w3c.dom.Element;
-import org.w3c.dom.Node;
-import org.w3c.dom.Text;
+import test.org.w3c.dom.Attr;
+import test.org.w3c.dom.Document;
+import test.org.w3c.dom.Element;
+import test.org.w3c.dom.Node;
+import test.org.w3c.dom.Text;
 
 /**
  * Handles <code>&lt;ds:Reference&gt;</code> elements.
  *
  * This includes:
  *
- * Constructs a <CODE>ds:Reference</CODE> from an {@link org.w3c.dom.Element}.
+ * Constructs a <CODE>ds:Reference</CODE> from an {@link test.org.w3c.dom.Element}.
  *
  * <p>Create a new reference</p>
  * <pre>
@@ -127,11 +127,11 @@ public class Reference extends SignatureElementProxy {
     private static boolean useC14N11 = (
         AccessController.doPrivileged(new PrivilegedAction<Boolean>() {
             public Boolean run() {
-                return Boolean.valueOf(Boolean.getBoolean("com.sun.org.apache.xml.internal.security.useC14N11"));
+                return Boolean.valueOf(Boolean.getBoolean("com.sun.test.org.apache.xml.internal.security.useC14N11"));
             }
         })).booleanValue();
 
-    /** {@link org.apache.commons.logging} logging facility */
+    /** {@link test.org.apache.commons.logging} logging facility */
     private static final java.util.logging.Logger log =
         java.util.logging.Logger.getLogger(Reference.class.getName());
 

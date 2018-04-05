@@ -43,14 +43,14 @@ import java.util.HashMap;
 import java.util.Map;
 import javax.xml.transform.Source;
 import javax.xml.transform.dom.DOMSource;
-import org.w3c.dom.Document;
-import org.w3c.dom.DocumentType;
-import org.w3c.dom.Entity;
-import org.w3c.dom.NamedNodeMap;
-import org.w3c.dom.Node;
-import org.w3c.dom.NodeList;
-import org.xml.sax.Attributes;
-import org.xml.sax.SAXException;
+import test.org.w3c.dom.Document;
+import test.org.w3c.dom.DocumentType;
+import test.org.w3c.dom.Entity;
+import test.org.w3c.dom.NamedNodeMap;
+import test.org.w3c.dom.Node;
+import test.org.w3c.dom.NodeList;
+import test.org.xml.sax.Attributes;
+import test.org.xml.sax.SAXException;
 
 
 /**
@@ -92,7 +92,7 @@ public final class SAXImpl extends SAX2DTM2
     private static final String XMLSPACE_STRING = "xml:space";
     private static final String PRESERVE_STRING = "preserve";
     // private static final String XMLNS_PREFIX = "xmlns";
-    private static final String XML_URI = "http://www.w3.org/XML/1998/namespace";
+    private static final String XML_URI = "http://www.w3.test.org/XML/1998/namespace";
 
     private boolean _escaping = true;
     private boolean _disableEscaping = false;
@@ -126,7 +126,7 @@ public final class SAXImpl extends SAX2DTM2
     // The owner Document when the input source is DOMSource.
     private Document _document;
 
-    // The Map for org.w3c.dom.Node to node id mapping.
+    // The Map for test.org.w3c.dom.Node to node id mapping.
     // This is only used when the input is a DOMSource and the
     // buildIdIndex flag is true.
     private Map<Node, Integer> _node2Ids = null;
@@ -137,7 +137,7 @@ public final class SAXImpl extends SAX2DTM2
     // The DTMManager
     private XSLTCDTMManager _dtmManager;
 
-    // Support for access/navigation through org.w3c.dom API
+    // Support for access/navigation through test.org.w3c.dom API
     private Node[] _nodes;
     private NodeList[] _nodeLists;
     // private final static String XML_LANG_ATTRIBUTE = "http://www.w3.org/XML/1998/namespace:@lang";
@@ -243,7 +243,7 @@ public final class SAXImpl extends SAX2DTM2
     }
 
     /**
-     * Create an org.w3c.dom.Node from a node in the tree
+     * Create an test.org.w3c.dom.Node from a node in the tree
      */
     public Node makeNode(int index) {
         if (_nodes == null) {
@@ -264,7 +264,7 @@ public final class SAXImpl extends SAX2DTM2
     }
 
     /**
-     * Create an org.w3c.dom.Node from a node in an iterator
+     * Create an test.org.w3c.dom.Node from a node in an iterator
      * The iterator most be started before this method is called
      */
     public Node makeNode(DTMAxisIterator iter) {
@@ -272,7 +272,7 @@ public final class SAXImpl extends SAX2DTM2
     }
 
     /**
-     * Create an org.w3c.dom.NodeList from a node in the tree
+     * Create an test.org.w3c.dom.NodeList from a node in the tree
      */
     public NodeList makeNodeList(int index) {
         if (_nodeLists == null) {
@@ -294,7 +294,7 @@ public final class SAXImpl extends SAX2DTM2
     }
 
     /**
-     * Create an org.w3c.dom.NodeList from a node iterator
+     * Create an test.org.w3c.dom.NodeList from a node iterator
      * The iterator most be started before this method is called
      */
     public NodeList makeNodeList(DTMAxisIterator iter) {
@@ -1745,7 +1745,7 @@ public final class SAXImpl extends SAX2DTM2
         int parent = node;
         while (DTM.NULL != parent) {
             if (DTM.ELEMENT_NODE == getNodeType(parent)) {
-                int langAttr = getAttributeNode(parent, "http://www.w3.org/XML/1998/namespace", "lang");
+                int langAttr = getAttributeNode(parent, "http://www.w3.test.org/XML/1998/namespace", "lang");
 
                 if (DTM.NULL != langAttr) {
                     return getNodeValue(langAttr);

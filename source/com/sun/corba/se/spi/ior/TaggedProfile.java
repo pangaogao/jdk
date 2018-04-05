@@ -25,8 +25,6 @@
 
 package com.sun.corba.se.spi.ior;
 
-import com.sun.corba.se.spi.orb.ORB ;
-
 /** TaggedProfile represents a tagged profile in an IOR.
  * A profile contains all of the information necessary for an invocation.
  * It contains one or more endpoints that may be used for an invocation.
@@ -57,7 +55,7 @@ public interface TaggedProfile extends Identifiable, MakeImmutable
     /** Return the TaggedProfile as a CDR encapsulation in the standard
      * format.  This is required for Portable interceptors.
      */
-    org.omg.IOP.TaggedProfile getIOPProfile();
+    test.org.omg.IOP.TaggedProfile getIOPProfile();
 
     /** Return true if this TaggedProfile was created in orb.
      *  Caches the result.

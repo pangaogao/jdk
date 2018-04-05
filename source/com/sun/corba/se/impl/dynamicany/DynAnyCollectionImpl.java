@@ -25,19 +25,15 @@
 
 package com.sun.corba.se.impl.dynamicany;
 
-import org.omg.CORBA.TypeCode;
-import org.omg.CORBA.Any;
-import org.omg.CORBA.NO_IMPLEMENT;
-import org.omg.CORBA.TypeCodePackage.BadKind;
-import org.omg.CORBA.TypeCodePackage.Bounds;
-import org.omg.DynamicAny.*;
-import org.omg.DynamicAny.DynAnyPackage.TypeMismatch;
-import org.omg.DynamicAny.DynAnyPackage.InvalidValue;
-import org.omg.DynamicAny.DynAnyFactoryPackage.InconsistentTypeCode;
+import test.org.omg.CORBA.TypeCode;
+import test.org.omg.CORBA.Any;
+import test.org.omg.CORBA.TypeCodePackage.BadKind;
+import test.org.omg.DynamicAny.*;
+import test.org.omg.DynamicAny.DynAnyPackage.TypeMismatch;
+import test.org.omg.DynamicAny.DynAnyPackage.InvalidValue;
+import test.org.omg.DynamicAny.DynAnyFactoryPackage.InconsistentTypeCode;
 
 import com.sun.corba.se.spi.orb.ORB ;
-import com.sun.corba.se.spi.logging.CORBALogDomains ;
-import com.sun.corba.se.impl.logging.ORBUtilSystemException ;
 
 abstract class DynAnyCollectionImpl extends DynAnyConstructedImpl
 {
@@ -107,7 +103,7 @@ abstract class DynAnyCollectionImpl extends DynAnyConstructedImpl
     // Collection methods
     //
 
-    public org.omg.CORBA.Any[] get_elements () {
+    public test.org.omg.CORBA.Any[] get_elements () {
         if (status == STATUS_DESTROYED) {
             throw wrapper.dynAnyDestroyed() ;
         }
@@ -115,7 +111,7 @@ abstract class DynAnyCollectionImpl extends DynAnyConstructedImpl
     }
 
     protected abstract void checkValue(Object[] value)
-        throws org.omg.DynamicAny.DynAnyPackage.InvalidValue;
+        throws test.org.omg.DynamicAny.DynAnyPackage.InvalidValue;
 
     // Initializes the elements of the ordered collection.
     // If value does not contain the same number of elements as the array dimension,
@@ -123,9 +119,9 @@ abstract class DynAnyCollectionImpl extends DynAnyConstructedImpl
     // If one or more elements have a type that is inconsistent with the collections TypeCode,
     // the operation raises TypeMismatch.
     // This operation does not change the current position.
-    public void set_elements (org.omg.CORBA.Any[] value)
-        throws org.omg.DynamicAny.DynAnyPackage.TypeMismatch,
-               org.omg.DynamicAny.DynAnyPackage.InvalidValue
+    public void set_elements (test.org.omg.CORBA.Any[] value)
+        throws test.org.omg.DynamicAny.DynAnyPackage.TypeMismatch,
+               test.org.omg.DynamicAny.DynAnyPackage.InvalidValue
     {
         if (status == STATUS_DESTROYED) {
             throw wrapper.dynAnyDestroyed() ;
@@ -162,7 +158,7 @@ abstract class DynAnyCollectionImpl extends DynAnyConstructedImpl
         representations = REPRESENTATION_COMPONENTS;
     }
 
-    public org.omg.DynamicAny.DynAny[] get_elements_as_dyn_any () {
+    public test.org.omg.DynamicAny.DynAny[] get_elements_as_dyn_any () {
         if (status == STATUS_DESTROYED) {
             throw wrapper.dynAnyDestroyed() ;
         }
@@ -170,9 +166,9 @@ abstract class DynAnyCollectionImpl extends DynAnyConstructedImpl
     }
 
     // Same semantics as set_elements(Any[])
-    public void set_elements_as_dyn_any (org.omg.DynamicAny.DynAny[] value)
-        throws org.omg.DynamicAny.DynAnyPackage.TypeMismatch,
-               org.omg.DynamicAny.DynAnyPackage.InvalidValue
+    public void set_elements_as_dyn_any (test.org.omg.DynamicAny.DynAny[] value)
+        throws test.org.omg.DynamicAny.DynAnyPackage.TypeMismatch,
+               test.org.omg.DynamicAny.DynAnyPackage.InvalidValue
     {
         if (status == STATUS_DESTROYED) {
             throw wrapper.dynAnyDestroyed() ;

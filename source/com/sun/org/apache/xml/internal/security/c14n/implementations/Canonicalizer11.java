@@ -35,12 +35,12 @@ import java.util.Set;
 import java.util.SortedSet;
 import java.util.TreeSet;
 import javax.xml.parsers.ParserConfigurationException;
-import org.w3c.dom.Attr;
-import org.w3c.dom.Document;
-import org.w3c.dom.Element;
-import org.w3c.dom.NamedNodeMap;
-import org.w3c.dom.Node;
-import org.xml.sax.SAXException;
+import test.org.w3c.dom.Attr;
+import test.org.w3c.dom.Document;
+import test.org.w3c.dom.Element;
+import test.org.w3c.dom.NamedNodeMap;
+import test.org.w3c.dom.Node;
+import test.org.xml.sax.SAXException;
 
 import com.sun.org.apache.xml.internal.security.c14n.CanonicalizationException;
 import com.sun.org.apache.xml.internal.security.c14n.helper.C14nHelper;
@@ -299,7 +299,7 @@ public abstract class Canonicalizer11 extends CanonicalizerBase {
      * IMPORTANT: This method expects to work on a modified DOM tree, i.e. a
      * DOM which has been prepared using
      * {@link com.sun.org.apache.xml.internal.security.utils.XMLUtils#circumventBug2650(
-     * org.w3c.dom.Document)}.
+     * test.org.w3c.dom.Document)}.
      *
      * @param element
      * @param ns
@@ -442,7 +442,7 @@ public abstract class Canonicalizer11 extends CanonicalizerBase {
             } else {
                 Name = "xmlns:" + NName;
             }
-            Attr n = e.getOwnerDocument().createAttributeNS("http://www.w3.org/2000/xmlns/", Name);
+            Attr n = e.getOwnerDocument().createAttributeNS("http://www.w3.test.org/2000/xmlns/", Name);
             n.setValue(NValue);
             ns.addMapping(NName, NValue, n);
         }

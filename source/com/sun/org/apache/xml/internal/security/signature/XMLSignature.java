@@ -48,12 +48,12 @@ import com.sun.org.apache.xml.internal.security.utils.UnsyncBufferedOutputStream
 import com.sun.org.apache.xml.internal.security.utils.XMLUtils;
 import com.sun.org.apache.xml.internal.security.utils.resolver.ResourceResolver;
 import com.sun.org.apache.xml.internal.security.utils.resolver.ResourceResolverSpi;
-import org.w3c.dom.Attr;
-import org.w3c.dom.Document;
-import org.w3c.dom.Element;
-import org.w3c.dom.Node;
-import org.w3c.dom.NodeList;
-import org.w3c.dom.Text;
+import test.org.w3c.dom.Attr;
+import test.org.w3c.dom.Document;
+import test.org.w3c.dom.Element;
+import test.org.w3c.dom.Node;
+import test.org.w3c.dom.NodeList;
+import test.org.w3c.dom.Text;
 
 /**
  * Handles <code>&lt;ds:Signature&gt;</code> elements.
@@ -139,21 +139,21 @@ public final class XMLSignature extends SignatureElementProxy {
 
     /**Signature - Optional ECDSAwithSHA1 */
     public static final String ALGO_ID_SIGNATURE_ECDSA_SHA1 =
-        "http://www.w3.org/2001/04/xmldsig-more#ecdsa-sha1";
+        "http://www.w3.test.org/2001/04/xmldsig-more#ecdsa-sha1";
 
     /**Signature - Optional ECDSAwithSHA256 */
     public static final String ALGO_ID_SIGNATURE_ECDSA_SHA256 =
-        "http://www.w3.org/2001/04/xmldsig-more#ecdsa-sha256";
+        "http://www.w3.test.org/2001/04/xmldsig-more#ecdsa-sha256";
 
     /**Signature - Optional ECDSAwithSHA384 */
     public static final String ALGO_ID_SIGNATURE_ECDSA_SHA384 =
-        "http://www.w3.org/2001/04/xmldsig-more#ecdsa-sha384";
+        "http://www.w3.test.org/2001/04/xmldsig-more#ecdsa-sha384";
 
     /**Signature - Optional ECDSAwithSHA512 */
     public static final String ALGO_ID_SIGNATURE_ECDSA_SHA512 =
-        "http://www.w3.org/2001/04/xmldsig-more#ecdsa-sha512";
+        "http://www.w3.test.org/2001/04/xmldsig-more#ecdsa-sha512";
 
-    /** {@link org.apache.commons.logging} logging facility */
+    /** {@link test.org.apache.commons.logging} logging facility */
     private static java.util.logging.Logger log =
         java.util.logging.Logger.getLogger(XMLSignature.class.getName());
 

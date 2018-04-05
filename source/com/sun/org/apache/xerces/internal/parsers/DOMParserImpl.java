@@ -55,20 +55,19 @@ import com.sun.org.apache.xerces.internal.xni.parser.XMLEntityResolver;
 import com.sun.org.apache.xerces.internal.xni.parser.XMLInputSource;
 import com.sun.org.apache.xerces.internal.xni.parser.XMLParseException;
 import com.sun.org.apache.xerces.internal.xni.parser.XMLParserConfiguration;
-import com.sun.org.apache.xerces.internal.parsers.XIncludeAwareParserConfiguration;
-import org.w3c.dom.DOMConfiguration;
-import org.w3c.dom.DOMError;
-import org.w3c.dom.DOMErrorHandler;
-import org.w3c.dom.DOMException;
-import org.w3c.dom.DOMStringList;
-import org.w3c.dom.Document;
-import org.w3c.dom.Node;
-import org.w3c.dom.ls.LSException;
-import org.w3c.dom.ls.LSInput;
-import org.w3c.dom.ls.LSParser;
-import org.w3c.dom.ls.LSParserFilter;
-import org.w3c.dom.ls.LSResourceResolver;
-import org.xml.sax.SAXException;
+import test.org.w3c.dom.DOMConfiguration;
+import test.org.w3c.dom.DOMError;
+import test.org.w3c.dom.DOMErrorHandler;
+import test.org.w3c.dom.DOMException;
+import test.org.w3c.dom.DOMStringList;
+import test.org.w3c.dom.Document;
+import test.org.w3c.dom.Node;
+import test.org.w3c.dom.ls.LSException;
+import test.org.w3c.dom.ls.LSInput;
+import test.org.w3c.dom.ls.LSParser;
+import test.org.w3c.dom.ls.LSParserFilter;
+import test.org.w3c.dom.ls.LSResourceResolver;
+import test.org.xml.sax.SAXException;
 
 
 /**
@@ -441,7 +440,7 @@ extends AbstractDOMParser implements LSParser, DOMConfiguration {
                     //XSModel - turn on PSVI augmentation
                     fConfiguration.setFeature (PSVI_AUGMENT, true);
                     fConfiguration.setProperty (DOCUMENT_CLASS_NAME,
-                    "com.sun.org.apache.xerces.internal.dom.PSVIDocumentImpl");
+                    "com.sun.test.org.apache.xerces.internal.dom.PSVIDocumentImpl");
                 }
                 else {
                     // Constants.DOM_CHARSET_OVERRIDES_XML_ENCODING feature,
@@ -1103,21 +1102,21 @@ extends AbstractDOMParser implements LSParser, DOMConfiguration {
     }
 
     /**
-     * @see org.w3c.dom.ls.LSParser#getAsync()
+     * @see test.org.w3c.dom.ls.LSParser#getAsync()
      */
     public boolean getAsync () {
         return false;
     }
 
     /**
-     * @see org.w3c.dom.ls.LSParser#getBusy()
+     * @see test.org.w3c.dom.ls.LSParser#getBusy()
      */
     public boolean getBusy () {
         return fBusy;
     }
 
     /**
-     * @see org.w3c.dom.ls.DOMParser#abort()
+     * @see test.org.w3c.dom.ls.DOMParser#abort()
      */
     public void abort () {
         // If parse operation is in progress then reset it

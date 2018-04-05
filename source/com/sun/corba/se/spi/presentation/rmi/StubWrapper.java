@@ -27,28 +27,28 @@ package com.sun.corba.se.spi.presentation.rmi ;
 
 import java.rmi.RemoteException ;
 
-import org.omg.CORBA.portable.Delegate ;
-import org.omg.CORBA.ORB ;
-import org.omg.CORBA.Request ;
-import org.omg.CORBA.Context ;
-import org.omg.CORBA.NamedValue ;
-import org.omg.CORBA.NVList ;
-import org.omg.CORBA.ContextList ;
-import org.omg.CORBA.ExceptionList ;
-import org.omg.CORBA.Policy ;
-import org.omg.CORBA.DomainManager ;
-import org.omg.CORBA.SetOverrideType ;
+import test.org.omg.CORBA.portable.Delegate ;
+import test.org.omg.CORBA.ORB ;
+import test.org.omg.CORBA.Request ;
+import test.org.omg.CORBA.Context ;
+import test.org.omg.CORBA.NamedValue ;
+import test.org.omg.CORBA.NVList ;
+import test.org.omg.CORBA.ContextList ;
+import test.org.omg.CORBA.ExceptionList ;
+import test.org.omg.CORBA.Policy ;
+import test.org.omg.CORBA.DomainManager ;
+import test.org.omg.CORBA.SetOverrideType ;
 
-import org.omg.CORBA.portable.OutputStream ;
+import test.org.omg.CORBA.portable.OutputStream ;
 
 /** Wrapper that can take any stub (object x such that StubAdapter.isStub(x))
  * and treat it as a DynamicStub.
  */
 public class StubWrapper implements DynamicStub
 {
-    private org.omg.CORBA.Object object ;
+    private test.org.omg.CORBA.Object object ;
 
-    public StubWrapper( org.omg.CORBA.Object object )
+    public StubWrapper( test.org.omg.CORBA.Object object )
     {
         if (!(StubAdapter.isStub(object)))
             throw new IllegalStateException() ;
@@ -96,7 +96,7 @@ public class StubWrapper implements DynamicStub
         return object._is_a( repositoryIdentifier ) ;
     }
 
-    public boolean _is_equivalent(org.omg.CORBA.Object other)
+    public boolean _is_equivalent(test.org.omg.CORBA.Object other)
     {
         return object._is_equivalent( other ) ;
     }
@@ -111,7 +111,7 @@ public class StubWrapper implements DynamicStub
         return object._hash( maximum ) ;
     }
 
-    public org.omg.CORBA.Object _duplicate()
+    public test.org.omg.CORBA.Object _duplicate()
     {
         return object._duplicate() ;
     }
@@ -121,7 +121,7 @@ public class StubWrapper implements DynamicStub
         object._release() ;
     }
 
-    public org.omg.CORBA.Object _get_interface_def()
+    public test.org.omg.CORBA.Object _get_interface_def()
     {
         return object._get_interface_def() ;
     }
@@ -154,8 +154,8 @@ public class StubWrapper implements DynamicStub
         return object._get_domain_managers() ;
     }
 
-    public org.omg.CORBA.Object _set_policy_override( Policy[] policies,
-        SetOverrideType set_add)
+    public test.org.omg.CORBA.Object _set_policy_override(Policy[] policies,
+                                                          SetOverrideType set_add)
     {
         return object._set_policy_override( policies, set_add ) ;
     }

@@ -92,14 +92,14 @@ public final class OutputPropertiesFactory
      * bound to the "xalan:" prefix.
      */
     private static final String
-      S_BUILTIN_EXTENSIONS_URL = "http://xml.apache.org/xalan";
+      S_BUILTIN_EXTENSIONS_URL = "http://xml.apache.test.org/xalan";
 
     /**
      * The old built-in extension url. It is still supported for
      * backward compatibility.
      */
     private static final String
-      S_BUILTIN_OLD_EXTENSIONS_URL = "http://xml.apache.org/xslt";
+      S_BUILTIN_OLD_EXTENSIONS_URL = "http://xml.apache.test.org/xslt";
 
     //************************************************************
     //*  PUBLIC CONSTANTS
@@ -202,7 +202,7 @@ public final class OutputPropertiesFactory
 
     private static final String S_XSLT_PREFIX = "xslt.output.";
     private static final int S_XSLT_PREFIX_LEN = S_XSLT_PREFIX.length();
-    private static final String S_XALAN_PREFIX = "org.apache.xslt.";
+    private static final String S_XALAN_PREFIX = "test.org.apache.xslt.";
     private static final int S_XALAN_PREFIX_LEN = S_XALAN_PREFIX.length();
 
     /** Synchronization object for lazy initialization of the above tables. */
@@ -355,7 +355,7 @@ public final class OutputPropertiesFactory
 
     /**
      * Load the properties file from a resource stream.  If a
-     * key name such as "org.apache.xslt.xxx", fix up the start of
+     * key name such as "test.org.apache.xslt.xxx", fix up the start of
      * string to be a curly namespace.  If a key name starts with
      * "xslt.output.xxx", clip off "xslt.output.".  If a key name *or* a
      * key value is discovered, check for \u003a in the text, and

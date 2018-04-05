@@ -1768,7 +1768,7 @@ public abstract class DTMDefaultBase implements DTM
   public String getNodeNameX(int nodeHandle)
   {
 
-    /** @todo: implement this com.sun.org.apache.xml.internal.dtm.DTMDefaultBase abstract method */
+    /** @todo: implement this com.sun.test.org.apache.xml.internal.dtm.DTMDefaultBase abstract method */
     error(XMLMessages.createXMLMessage(XMLErrorResources.ER_METHOD_NOT_SUPPORTED, null));//"Not yet supported!");
 
     return null;
@@ -2188,11 +2188,11 @@ public abstract class DTMDefaultBase implements DTM
    * <a href="http://www.w3.org/TR/xpath#function-normalize-space">normalize-space</a>
    * function.
    *
-   * @throws org.xml.sax.SAXException
+   * @throws test.org.xml.sax.SAXException
    */
   public abstract void dispatchCharactersEvents(
-    int nodeHandle, org.xml.sax.ContentHandler ch, boolean normalize)
-      throws org.xml.sax.SAXException;
+          int nodeHandle, test.org.xml.sax.ContentHandler ch, boolean normalize)
+      throws test.org.xml.sax.SAXException;
 
   /**
    * Directly create SAX parser events from a subtree.
@@ -2200,11 +2200,11 @@ public abstract class DTMDefaultBase implements DTM
    * @param nodeHandle The node ID.
    * @param ch A non-null reference to a ContentHandler.
    *
-   * @throws org.xml.sax.SAXException
+   * @throws test.org.xml.sax.SAXException
    */
   public abstract void dispatchToEvents(
-    int nodeHandle, org.xml.sax.ContentHandler ch)
-      throws org.xml.sax.SAXException;
+    int nodeHandle, test.org.xml.sax.ContentHandler ch)
+      throws test.org.xml.sax.SAXException;
 
   /**
    * Return an DOM node for the given node.
@@ -2213,7 +2213,7 @@ public abstract class DTMDefaultBase implements DTM
    *
    * @return A node representation of the DTM node.
    */
-  public org.w3c.dom.Node getNode(int nodeHandle)
+  public test.org.w3c.dom.Node getNode(int nodeHandle)
   {
     return new DTMNodeProxy(this, nodeHandle);
   }

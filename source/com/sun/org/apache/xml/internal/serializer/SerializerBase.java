@@ -30,12 +30,12 @@ import javax.xml.transform.Transformer;
 
 import com.sun.org.apache.xml.internal.serializer.utils.MsgKey;
 import com.sun.org.apache.xml.internal.serializer.utils.Utils;
-import org.xml.sax.Attributes;
-import org.xml.sax.ContentHandler;
-import org.xml.sax.Locator;
-import org.xml.sax.SAXException;
-import org.xml.sax.SAXParseException;
-import org.xml.sax.ext.Locator2;
+import test.org.xml.sax.Attributes;
+import test.org.xml.sax.ContentHandler;
+import test.org.xml.sax.Locator;
+import test.org.xml.sax.SAXException;
+import test.org.xml.sax.SAXParseException;
+import test.org.xml.sax.ext.Locator2;
 
 
 /**
@@ -55,7 +55,7 @@ public abstract class SerializerBase
      * @param name Name of element
      */
     protected void fireEndElem(String name)
-        throws org.xml.sax.SAXException
+        throws test.org.xml.sax.SAXException
     {
         if (m_tracer != null)
         {
@@ -71,7 +71,7 @@ public abstract class SerializerBase
      * @param length  number of characters to output
      */
     protected void fireCharEvent(char[] chars, int start, int length)
-        throws org.xml.sax.SAXException
+        throws test.org.xml.sax.SAXException
     {
         if (m_tracer != null)
         {
@@ -499,10 +499,10 @@ public abstract class SerializerBase
      * Report the end of an entity.
      *
      * @param name The name of the entity that is ending.
-     * @throws org.xml.sax.SAXException The application may raise an exception.
+     * @throws test.org.xml.sax.SAXException The application may raise an exception.
      * @see #startEntity
      */
-    public void endEntity(String name) throws org.xml.sax.SAXException
+    public void endEntity(String name) throws test.org.xml.sax.SAXException
     {
         if (name.equals("[dtd]"))
             m_inExternalDTD = false;
@@ -941,9 +941,9 @@ public abstract class SerializerBase
      *
      * @param name Name of entity
      *
-     * @throws org.xml.sax.SAXException
+     * @throws test.org.xml.sax.SAXException
      */
-    public void entityReference(String name) throws org.xml.sax.SAXException
+    public void entityReference(String name) throws test.org.xml.sax.SAXException
     {
 
         flushPending();
@@ -988,10 +988,10 @@ public abstract class SerializerBase
      * This method gets the nodes value as a String and uses that String as if
      * it were an input character notification.
      * @param node the Node to serialize
-     * @throws org.xml.sax.SAXException
+     * @throws test.org.xml.sax.SAXException
      */
-    public void characters(org.w3c.dom.Node node)
-        throws org.xml.sax.SAXException
+    public void characters(test.org.w3c.dom.Node node)
+        throws test.org.xml.sax.SAXException
     {
         flushPending();
         String data = node.getNodeValue();
@@ -1009,13 +1009,13 @@ public abstract class SerializerBase
 
 
     /**
-     * @see org.xml.sax.ErrorHandler#error(SAXParseException)
+     * @see test.org.xml.sax.ErrorHandler#error(SAXParseException)
      */
     public void error(SAXParseException exc) throws SAXException {
     }
 
     /**
-     * @see org.xml.sax.ErrorHandler#fatalError(SAXParseException)
+     * @see test.org.xml.sax.ErrorHandler#fatalError(SAXParseException)
      */
     public void fatalError(SAXParseException exc) throws SAXException {
 
@@ -1024,7 +1024,7 @@ public abstract class SerializerBase
     }
 
     /**
-     * @see org.xml.sax.ErrorHandler#warning(SAXParseException)
+     * @see test.org.xml.sax.ErrorHandler#warning(SAXParseException)
      */
     public void warning(SAXParseException exc) throws SAXException
     {
@@ -1035,7 +1035,7 @@ public abstract class SerializerBase
      * @param name Name of entity
      */
     protected void fireStartEntity(String name)
-        throws org.xml.sax.SAXException
+        throws test.org.xml.sax.SAXException
     {
         if (m_tracer != null)
         {
@@ -1051,7 +1051,7 @@ public abstract class SerializerBase
      * @param length  number of characters to output
      */
 //    protected void fireCharEvent(char[] chars, int start, int length)
-//        throws org.xml.sax.SAXException
+//        throws test.org.xml.sax.SAXException
 //    {
 //        if (m_tracer != null)
 //            m_tracer.fireGenerateEvent(SerializerTrace.EVENTTYPE_CHARACTERS, chars, start,length);
@@ -1088,7 +1088,7 @@ public abstract class SerializerBase
      * @param length  number of characters to output
      */
     protected void fireCDATAEvent(char[] chars, int start, int length)
-        throws org.xml.sax.SAXException
+        throws test.org.xml.sax.SAXException
     {
                 if (m_tracer != null)
         {
@@ -1104,7 +1104,7 @@ public abstract class SerializerBase
      * @param length  number of characters to output
      */
     protected void fireCommentEvent(char[] chars, int start, int length)
-        throws org.xml.sax.SAXException
+        throws test.org.xml.sax.SAXException
     {
                 if (m_tracer != null)
         {
@@ -1119,7 +1119,7 @@ public abstract class SerializerBase
      * @param name Name of entity
      */
     public void fireEndEntity(String name)
-        throws org.xml.sax.SAXException
+        throws test.org.xml.sax.SAXException
     {
         if (m_tracer != null)
             flushMyWriter();
@@ -1130,7 +1130,7 @@ public abstract class SerializerBase
      * To fire off start document trace  event
      */
      protected void fireStartDoc()
-        throws org.xml.sax.SAXException
+        throws test.org.xml.sax.SAXException
     {
         if (m_tracer != null)
         {
@@ -1144,7 +1144,7 @@ public abstract class SerializerBase
      * To fire off end document trace event
      */
     protected void fireEndDoc()
-        throws org.xml.sax.SAXException
+        throws test.org.xml.sax.SAXException
     {
         if (m_tracer != null)
         {
@@ -1161,7 +1161,7 @@ public abstract class SerializerBase
      *
      */
     protected void fireStartElem(String elemName)
-        throws org.xml.sax.SAXException
+        throws test.org.xml.sax.SAXException
     {
         if (m_tracer != null)
         {
@@ -1177,7 +1177,7 @@ public abstract class SerializerBase
      * @param name Name of element
      */
 //    protected void fireEndElem(String name)
-//        throws org.xml.sax.SAXException
+//        throws test.org.xml.sax.SAXException
 //    {
 //        if (m_tracer != null)
 //            m_tracer.fireGenerateEvent(SerializerTrace.EVENTTYPE_ENDELEMENT,name, (Attributes)null);
@@ -1189,7 +1189,7 @@ public abstract class SerializerBase
      * @param name Name of PI
      */
     protected void fireEscapingEvent(String name, String data)
-        throws org.xml.sax.SAXException
+        throws test.org.xml.sax.SAXException
     {
 
         if (m_tracer != null)
@@ -1205,7 +1205,7 @@ public abstract class SerializerBase
      * @param name Name of entity reference
      */
     protected void fireEntityReference(String name)
-        throws org.xml.sax.SAXException
+        throws test.org.xml.sax.SAXException
     {
         if (m_tracer != null)
         {
@@ -1223,12 +1223,12 @@ public abstract class SerializerBase
      * other methods in this interface or in DTDHandler (except for
      * setDocumentLocator).</p>
      *
-     * @throws org.xml.sax.SAXException Any SAX exception, possibly
+     * @throws test.org.xml.sax.SAXException Any SAX exception, possibly
      *            wrapping another exception.
      *
-     * @throws org.xml.sax.SAXException
+     * @throws test.org.xml.sax.SAXException
      */
-    public void startDocument() throws org.xml.sax.SAXException
+    public void startDocument() throws test.org.xml.sax.SAXException
     {
 
         // if we do get called with startDocument(), handle it right away
@@ -1253,7 +1253,7 @@ public abstract class SerializerBase
      *
      * @throws SAXException
      */
-    protected void startDocumentInternal() throws org.xml.sax.SAXException
+    protected void startDocumentInternal() throws test.org.xml.sax.SAXException
     {
         if (m_tracer != null)
             this.fireStartDoc();
@@ -1369,7 +1369,7 @@ public abstract class SerializerBase
     }
 
     /**
-     * @see org.xml.sax.DTDHandler#notationDecl(java.lang.String, java.lang.String, java.lang.String)
+     * @see test.org.xml.sax.DTDHandler#notationDecl(java.lang.String, java.lang.String, java.lang.String)
      */
     public void notationDecl(String arg0, String arg1, String arg2)
         throws SAXException {
@@ -1378,7 +1378,7 @@ public abstract class SerializerBase
     }
 
     /**
-     * @see org.xml.sax.DTDHandler#unparsedEntityDecl(java.lang.String, java.lang.String, java.lang.String, java.lang.String)
+     * @see test.org.xml.sax.DTDHandler#unparsedEntityDecl(java.lang.String, java.lang.String, java.lang.String, java.lang.String)
      */
     public void unparsedEntityDecl(
         String arg0,

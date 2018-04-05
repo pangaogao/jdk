@@ -39,12 +39,12 @@ import javax.xml.transform.sax.SAXResult;
 
 import com.sun.org.apache.xml.internal.utils.XMLReaderManager;
 
-import org.xml.sax.ContentHandler;
-import org.xml.sax.InputSource;
-import org.xml.sax.SAXException;
-import org.xml.sax.XMLReader;
-import org.xml.sax.helpers.XMLFilterImpl;
-import org.xml.sax.helpers.XMLReaderFactory;
+import test.org.xml.sax.ContentHandler;
+import test.org.xml.sax.InputSource;
+import test.org.xml.sax.SAXException;
+import test.org.xml.sax.XMLReader;
+import test.org.xml.sax.helpers.XMLFilterImpl;
+import test.org.xml.sax.helpers.XMLReaderFactory;
 
 /**
  * skeleton extension of XMLFilterImpl for now.

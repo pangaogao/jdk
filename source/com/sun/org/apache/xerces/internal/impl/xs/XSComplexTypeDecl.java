@@ -26,7 +26,7 @@ import com.sun.org.apache.xerces.internal.impl.xs.models.XSCMValidator;
 import com.sun.org.apache.xerces.internal.impl.xs.models.CMBuilder;
 import com.sun.org.apache.xerces.internal.impl.xs.util.XSObjectListImpl;
 import com.sun.org.apache.xerces.internal.impl.dv.xs.XSSimpleTypeDecl;
-import org.w3c.dom.TypeInfo;
+import test.org.w3c.dom.TypeInfo;
 
 /**
  * The XML representation for a complexType
@@ -691,7 +691,7 @@ public class XSComplexTypeDecl implements XSComplexTypeDefinition, TypeInfo {
     }
 
     /**
-     * @see org.apache.xerces.xs.XSObject#getNamespaceItem()
+     * @see test.org.apache.xerces.xs.XSObject#getNamespaceItem()
      */
     public XSNamespaceItem getNamespaceItem() {
         return fNamespaceItem;
@@ -702,7 +702,7 @@ public class XSComplexTypeDecl implements XSComplexTypeDefinition, TypeInfo {
     }
 
     /* (non-Javadoc)
-     * @see org.apache.xerces.xs.XSComplexTypeDefinition#getAttributeUse(java.lang.String, java.lang.String)
+     * @see test.org.apache.xerces.xs.XSComplexTypeDefinition#getAttributeUse(java.lang.String, java.lang.String)
      */
     public XSAttributeUse getAttributeUse(String namespace, String name) {
          return fAttrGrp.getAttributeUse(namespace, name);

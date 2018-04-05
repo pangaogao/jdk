@@ -35,9 +35,9 @@ import java.util.List;
 import java.util.ArrayList;
 import java.util.Iterator;
 
-import org.w3c.dom.Node;
-import org.w3c.dom.NodeList;
-import org.w3c.dom.NamedNodeMap;
+import test.org.w3c.dom.Node;
+import test.org.w3c.dom.NodeList;
+import test.org.w3c.dom.NamedNodeMap;
 
 /**
  * A DHT (Define Huffman Table) marker segment.

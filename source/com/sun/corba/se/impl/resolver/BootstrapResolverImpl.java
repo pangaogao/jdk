@@ -25,16 +25,15 @@
 
 package com.sun.corba.se.impl.resolver ;
 
-import org.omg.CORBA.portable.InputStream ;
-import org.omg.CORBA.portable.OutputStream ;
-import org.omg.CORBA.portable.ApplicationException ;
-import org.omg.CORBA.portable.RemarshalException ;
+import test.org.omg.CORBA.portable.InputStream ;
+import test.org.omg.CORBA.portable.OutputStream ;
+import test.org.omg.CORBA.portable.ApplicationException ;
+import test.org.omg.CORBA.portable.RemarshalException ;
 
 import com.sun.corba.se.spi.ior.IOR ;
 import com.sun.corba.se.spi.ior.IORFactories ;
 import com.sun.corba.se.spi.ior.IORTemplate ;
 import com.sun.corba.se.spi.ior.ObjectKey ;
-import com.sun.corba.se.spi.ior.ObjectKeyFactory ;
 import com.sun.corba.se.spi.ior.iiop.IIOPAddress ;
 import com.sun.corba.se.spi.ior.iiop.IIOPProfileTemplate ;
 import com.sun.corba.se.spi.ior.iiop.IIOPFactories ;
@@ -47,7 +46,7 @@ import com.sun.corba.se.impl.logging.ORBUtilSystemException ;
 import com.sun.corba.se.impl.orbutil.ORBUtility ;
 
 public class BootstrapResolverImpl implements Resolver {
-    private org.omg.CORBA.portable.Delegate bootstrapDelegate ;
+    private test.org.omg.CORBA.portable.Delegate bootstrapDelegate ;
     private ORBUtilSystemException wrapper ;
 
     public BootstrapResolverImpl(ORB orb, String host, int port) {
@@ -93,7 +92,7 @@ public class BootstrapResolverImpl implements Resolver {
         // does not take the location forward info into account.
 
         while (remarshal) {
-            org.omg.CORBA.Object objref = null ;
+            test.org.omg.CORBA.Object objref = null ;
             remarshal = false;
 
             OutputStream os = (OutputStream) bootstrapDelegate.request( objref,
@@ -123,10 +122,10 @@ public class BootstrapResolverImpl implements Resolver {
         return inStream;
     }
 
-    public org.omg.CORBA.Object resolve( String identifier )
+    public test.org.omg.CORBA.Object resolve(String identifier )
     {
         InputStream inStream = null ;
-        org.omg.CORBA.Object result = null ;
+        test.org.omg.CORBA.Object result = null ;
 
         try {
             inStream = invoke( "get", identifier ) ;

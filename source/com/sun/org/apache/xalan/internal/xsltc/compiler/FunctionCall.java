@@ -62,7 +62,7 @@ import java.util.Vector;
  * @author Jacek Ambroziak
  * @author Santiago Pericas-Geertsen
  * @author Morten Jorgensen
- * @author Erwin Bolwidt <ejb@klomp.org>
+ * @author Erwin Bolwidt <ejb@klomp.test.org>
  * @author Todd Miller
  */
 class FunctionCall extends Expression {
@@ -82,28 +82,28 @@ class FunctionCall extends Expression {
         EXT_XSLTC + "/java";
 
     protected final static String EXT_XALAN =
-        "http://xml.apache.org/xalan";
+        "http://xml.apache.test.org/xalan";
 
     protected final static String JAVA_EXT_XALAN =
-        "http://xml.apache.org/xalan/java";
+        "http://xml.apache.test.org/xalan/java";
 
     protected final static String JAVA_EXT_XALAN_OLD =
-        "http://xml.apache.org/xslt/java";
+        "http://xml.apache.test.org/xslt/java";
 
     protected final static String EXSLT_COMMON =
-        "http://exslt.org/common";
+        "http://exslt.test.org/common";
 
     protected final static String EXSLT_MATH =
-        "http://exslt.org/math";
+        "http://exslt.test.org/math";
 
     protected final static String EXSLT_SETS =
-        "http://exslt.org/sets";
+        "http://exslt.test.org/sets";
 
     protected final static String EXSLT_DATETIME =
-        "http://exslt.org/dates-and-times";
+        "http://exslt.test.org/dates-and-times";
 
     protected final static String EXSLT_STRINGS =
-        "http://exslt.org/strings";
+        "http://exslt.test.org/strings";
 
     protected final static String XALAN_CLASSPACKAGE_NAMESPACE =
         "xalan://";
@@ -190,11 +190,11 @@ class FunctionCall extends Expression {
     static {
         final Class<?> nodeClass, nodeListClass;
         try {
-            nodeClass     = Class.forName("org.w3c.dom.Node");
-            nodeListClass = Class.forName("org.w3c.dom.NodeList");
+            nodeClass     = Class.forName("test.org.w3c.dom.Node");
+            nodeListClass = Class.forName("test.org.w3c.dom.NodeList");
         }
         catch (ClassNotFoundException e) {
-            ErrorMsg err = new ErrorMsg(ErrorMsg.CLASS_NOT_FOUND_ERR,"org.w3c.dom.Node or NodeList");
+            ErrorMsg err = new ErrorMsg(ErrorMsg.CLASS_NOT_FOUND_ERR,"test.org.w3c.dom.Node or NodeList");
             throw new ExceptionInInitializerError(err.toString());
         }
 
@@ -273,17 +273,17 @@ class FunctionCall extends Expression {
 
         java2Internal.put(Object.class, Type.Reference);
 
-        // Conversions from org.w3c.dom.Node/NodeList to internal NodeSet
+        // Conversions from test.org.w3c.dom.Node/NodeList to internal NodeSet
         java2Internal.put(nodeListClass, Type.NodeSet);
         java2Internal.put(nodeClass, Type.NodeSet);
 
         // Initialize the extension namespace table
-        extensionNamespaceTable.put(EXT_XALAN, "com.sun.org.apache.xalan.internal.lib.Extensions");
-        extensionNamespaceTable.put(EXSLT_COMMON, "com.sun.org.apache.xalan.internal.lib.ExsltCommon");
-        extensionNamespaceTable.put(EXSLT_MATH, "com.sun.org.apache.xalan.internal.lib.ExsltMath");
-        extensionNamespaceTable.put(EXSLT_SETS, "com.sun.org.apache.xalan.internal.lib.ExsltSets");
-        extensionNamespaceTable.put(EXSLT_DATETIME, "com.sun.org.apache.xalan.internal.lib.ExsltDatetime");
-        extensionNamespaceTable.put(EXSLT_STRINGS, "com.sun.org.apache.xalan.internal.lib.ExsltStrings");
+        extensionNamespaceTable.put(EXT_XALAN, "com.sun.test.org.apache.xalan.internal.lib.Extensions");
+        extensionNamespaceTable.put(EXSLT_COMMON, "com.sun.test.org.apache.xalan.internal.lib.ExsltCommon");
+        extensionNamespaceTable.put(EXSLT_MATH, "com.sun.test.org.apache.xalan.internal.lib.ExsltMath");
+        extensionNamespaceTable.put(EXSLT_SETS, "com.sun.test.org.apache.xalan.internal.lib.ExsltSets");
+        extensionNamespaceTable.put(EXSLT_DATETIME, "com.sun.test.org.apache.xalan.internal.lib.ExsltDatetime");
+        extensionNamespaceTable.put(EXSLT_STRINGS, "com.sun.test.org.apache.xalan.internal.lib.ExsltStrings");
 
         // Initialize the extension function table
         extensionFunctionTable.put(EXSLT_COMMON + ":nodeSet", "nodeset");

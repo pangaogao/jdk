@@ -70,7 +70,7 @@ public class FastStringBuffer
          * This should be used when normalize-to-SAX is called for the first chunk of a
          * multi-chunk output, or one following unsuppressed whitespace in a previous
          * chunk.
-         * @see #sendNormalizedSAXcharacters(org.xml.sax.ContentHandler,int,int)
+         * @see #sendNormalizedSAXcharacters(test.org.xml.sax.ContentHandler,int,int)
          */
         public static final int SUPPRESS_LEADING_WS=0x01;
 
@@ -83,7 +83,7 @@ public class FastStringBuffer
         /** Manifest constant: Suppress both leading and trailing whitespace.
          * This should be used when normalize-to-SAX is called for a complete string.
          * (I'm not wild about the name of this one. Ideas welcome.)
-         * @see #sendNormalizedSAXcharacters(org.xml.sax.ContentHandler,int,int)
+         * @see #sendNormalizedSAXcharacters(test.org.xml.sax.ContentHandler,int,int)
          */
         public static final int SUPPRESS_BOTH
                 = SUPPRESS_LEADING_WS | SUPPRESS_TRAILING_WS;
@@ -974,12 +974,12 @@ public class FastStringBuffer
    * @param ch SAX ContentHandler object to receive the event.
    * @param start Offset of first character in the range.
    * @param length Number of characters to send.
-   * @exception org.xml.sax.SAXException may be thrown by handler's
+   * @exception test.org.xml.sax.SAXException may be thrown by handler's
    * characters() method.
    */
   public void sendSAXcharacters(
-          org.xml.sax.ContentHandler ch, int start, int length)
-            throws org.xml.sax.SAXException
+          test.org.xml.sax.ContentHandler ch, int start, int length)
+            throws test.org.xml.sax.SAXException
   {
 
     int startChunk = start >>> m_chunkBits;
@@ -1034,12 +1034,12 @@ public class FastStringBuffer
    * suppressed.</dd>
    * </dd>
    * </dl>
-   * @exception org.xml.sax.SAXException may be thrown by handler's
+   * @exception test.org.xml.sax.SAXException may be thrown by handler's
    * characters() method.
    */
   public int sendNormalizedSAXcharacters(
-          org.xml.sax.ContentHandler ch, int start, int length)
-            throws org.xml.sax.SAXException
+          test.org.xml.sax.ContentHandler ch, int start, int length)
+            throws test.org.xml.sax.SAXException
   {
         // This call always starts at the beginning of the
     // string being written out, either because it was called directly or
@@ -1124,14 +1124,14 @@ public class FastStringBuffer
    * </dl>
    *
    *
-   * @exception org.xml.sax.SAXException Any SAX exception, possibly
+   * @exception test.org.xml.sax.SAXException Any SAX exception, possibly
    *            wrapping another exception.
    */
   static int sendNormalizedSAXcharacters(char ch[],
              int start, int length,
-             org.xml.sax.ContentHandler handler,
+             test.org.xml.sax.ContentHandler handler,
                                                  int edgeTreatmentFlags)
-          throws org.xml.sax.SAXException
+          throws test.org.xml.sax.SAXException
   {
      boolean processingLeadingWhitespace =
                        ((edgeTreatmentFlags & SUPPRESS_LEADING_WS) != 0);
@@ -1197,13 +1197,13 @@ public class FastStringBuffer
    * @param start The start position in the array.
    * @param length The number of characters to read from the array.
    * @param handler SAX ContentHandler object to receive the event.
-   * @exception org.xml.sax.SAXException Any SAX exception, possibly
+   * @exception test.org.xml.sax.SAXException Any SAX exception, possibly
    *            wrapping another exception.
    */
   public static void sendNormalizedSAXcharacters(char ch[],
              int start, int length,
-             org.xml.sax.ContentHandler handler)
-          throws org.xml.sax.SAXException
+             test.org.xml.sax.ContentHandler handler)
+          throws test.org.xml.sax.SAXException
   {
                 sendNormalizedSAXcharacters(ch, start, length,
              handler, SUPPRESS_BOTH);
@@ -1218,12 +1218,12 @@ public class FastStringBuffer
    * @param ch SAX LexicalHandler object to receive the event.
    * @param start Offset of first character in the range.
    * @param length Number of characters to send.
-   * @exception org.xml.sax.SAXException may be thrown by handler's
+   * @exception test.org.xml.sax.SAXException may be thrown by handler's
    * characters() method.
    */
   public void sendSAXComment(
-          org.xml.sax.ext.LexicalHandler ch, int start, int length)
-            throws org.xml.sax.SAXException
+          test.org.xml.sax.ext.LexicalHandler ch, int start, int length)
+            throws test.org.xml.sax.SAXException
   {
 
     // %OPT% Do it this way for now...

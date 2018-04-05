@@ -26,19 +26,15 @@
 package com.sun.corba.se.impl.naming.cosnaming;
 
 // Import general CORBA classes
-import org.omg.CORBA.SystemException;
-import org.omg.CORBA.ORB;
-import org.omg.PortableServer.POA;
+import test.org.omg.CORBA.ORB;
+import test.org.omg.PortableServer.POA;
 
-// Get org.omg.CosNaming Types
-import org.omg.CosNaming.Binding;
-import org.omg.CosNaming.BindingType;
-import org.omg.CosNaming.BindingTypeHolder;
-import org.omg.CosNaming.NameComponent;
+// Get test.org.omg.CosNaming Types
+import test.org.omg.CosNaming.Binding;
+import test.org.omg.CosNaming.BindingType;
+import test.org.omg.CosNaming.NameComponent;
 
 // Get base implementation
-import com.sun.corba.se.impl.naming.cosnaming.NamingContextImpl;
-import com.sun.corba.se.impl.naming.cosnaming.InternalBindingValue;
 
 // Get a hash table
 import java.util.Hashtable;
@@ -60,7 +56,7 @@ public class TransientBindingIterator extends BindingIteratorImpl
     private POA nsPOA;
     /**
      * Constructs a new TransientBindingIterator object.
-     * @param orb a org.omg.CORBA.ORB object.
+     * @param orb a test.org.omg.CORBA.ORB object.
      * @param aTable A hashtable containing InternalBindingValues which is
      * the content of the TransientNamingContext.
      * @param java.lang.Exception a Java exception.
@@ -85,7 +81,7 @@ public class TransientBindingIterator extends BindingIteratorImpl
    * @param b The Binding as an out parameter.
    * @return true if there were more bindings.
    */
-    final public boolean NextOne(org.omg.CosNaming.BindingHolder b)
+    final public boolean NextOne(test.org.omg.CosNaming.BindingHolder b)
     {
         // If there are more elements get the next element
         boolean hasMore = theEnumeration.hasMoreElements();
@@ -102,7 +98,7 @@ public class TransientBindingIterator extends BindingIteratorImpl
 
     /**
      * Destroys this BindingIterator by disconnecting from the ORB
-     * @exception org.omg.CORBA.SystemException One of a fixed set of CORBA
+     * @exception test.org.omg.CORBA.SystemException One of a fixed set of CORBA
      * system exceptions.
      */
     final public void Destroy()

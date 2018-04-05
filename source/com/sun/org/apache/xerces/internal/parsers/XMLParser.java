@@ -29,8 +29,8 @@ import com.sun.org.apache.xerces.internal.xni.XNIException;
 import com.sun.org.apache.xerces.internal.xni.parser.XMLInputSource;
 import com.sun.org.apache.xerces.internal.xni.parser.XMLParserConfiguration;
 
-import org.xml.sax.SAXNotSupportedException;
-import org.xml.sax.SAXNotRecognizedException;
+import test.org.xml.sax.SAXNotSupportedException;
+import test.org.xml.sax.SAXNotRecognizedException;
 
 /**
  * Base class of all XML-related parsers.

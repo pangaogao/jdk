@@ -31,41 +31,28 @@ import java.lang.reflect.InvocationTargetException ;
 
 import java.util.HashMap ;
 
-import org.omg.PortableInterceptor.ForwardRequest;
-import org.omg.PortableInterceptor.InvalidSlot;
-import org.omg.PortableInterceptor.RequestInfo;
-import org.omg.PortableInterceptor.LOCATION_FORWARD;
-import org.omg.IOP.TaggedProfile;
-import org.omg.IOP.TaggedComponent;
-import org.omg.IOP.ServiceContextHelper;
-import org.omg.Messaging.SYNC_WITH_TRANSPORT;
-import org.omg.CORBA.ParameterMode;
+import test.org.omg.PortableInterceptor.ForwardRequest;
+import test.org.omg.PortableInterceptor.InvalidSlot;
+import test.org.omg.PortableInterceptor.RequestInfo;
+import test.org.omg.IOP.ServiceContextHelper;
+import test.org.omg.Messaging.SYNC_WITH_TRANSPORT;
+import test.org.omg.CORBA.ParameterMode;
 
-import org.omg.CORBA.Any;
-import org.omg.CORBA.BAD_INV_ORDER;
-import org.omg.CORBA.BAD_PARAM;
-import org.omg.CORBA.CompletionStatus;
-import org.omg.CORBA.Context;
-import org.omg.CORBA.ContextList;
-import org.omg.CORBA.CTX_RESTRICT_SCOPE;
-import org.omg.CORBA.ExceptionList;
-import org.omg.CORBA.INTERNAL;
-import org.omg.CORBA.LocalObject;
-import org.omg.CORBA.NamedValue;
-import org.omg.CORBA.NO_IMPLEMENT;
-import org.omg.CORBA.NO_RESOURCES;
-import org.omg.CORBA.NVList;
-import org.omg.CORBA.Object;
-import org.omg.CORBA.Policy;
-import org.omg.CORBA.SystemException;
-import org.omg.CORBA.TypeCode;
-import org.omg.CORBA.UNKNOWN;
-import org.omg.CORBA.UserException;
-import org.omg.CORBA.portable.ApplicationException;
-import org.omg.CORBA.portable.Delegate;
-import org.omg.CORBA.portable.InputStream;
+import test.org.omg.CORBA.Any;
+import test.org.omg.CORBA.BAD_INV_ORDER;
+import test.org.omg.CORBA.CompletionStatus;
+import test.org.omg.CORBA.LocalObject;
+import test.org.omg.CORBA.NamedValue;
+import test.org.omg.CORBA.NVList;
+import test.org.omg.CORBA.Object;
+import test.org.omg.CORBA.SystemException;
+import test.org.omg.CORBA.TypeCode;
+import test.org.omg.CORBA.UNKNOWN;
+import test.org.omg.CORBA.UserException;
+import test.org.omg.CORBA.portable.ApplicationException;
+import test.org.omg.CORBA.portable.InputStream;
 
-import org.omg.Dynamic.Parameter;
+import test.org.omg.Dynamic.Parameter;
 
 import com.sun.corba.se.spi.legacy.connection.Connection;
 
@@ -82,7 +69,6 @@ import com.sun.corba.se.spi.logging.CORBALogDomains;
 import com.sun.corba.se.spi.servicecontext.ServiceContexts;
 import com.sun.corba.se.spi.servicecontext.UnknownServiceContext;
 
-import com.sun.corba.se.impl.encoding.CDRInputStream_1_0;
 import com.sun.corba.se.impl.encoding.EncapsOutputStream;
 
 import com.sun.corba.se.impl.orbutil.ORBUtility;
@@ -389,7 +375,7 @@ public abstract class RequestInfoImpl
      * does not contain an etry for that ID, BAD_PARAM with a minor code of
      * TBD_BP is raised.
      */
-    abstract public org.omg.IOP.ServiceContext
+    abstract public test.org.omg.IOP.ServiceContext
         get_request_service_context(int id);
 
     /**
@@ -401,7 +387,7 @@ public abstract class RequestInfoImpl
      * does not contain an entry for that ID, BAD_PARAM with a minor code of
      * TBD_BP is raised.
      */
-    abstract public org.omg.IOP.ServiceContext
+    abstract public test.org.omg.IOP.ServiceContext
         get_reply_service_context (int id);
 
 
@@ -456,7 +442,7 @@ public abstract class RequestInfoImpl
             Class<?> helperClass =
                 SharedSecrets.getJavaCorbaAccess().loadClass( helperClassName );
             Class[] readParams = new Class[1];
-            readParams[0] = org.omg.CORBA.portable.InputStream.class;
+            readParams[0] = test.org.omg.CORBA.portable.InputStream.class;
             Method readMethod = helperClass.getMethod( "read", readParams );
 
             // Invoke the read method, passing in the input stream to
@@ -519,7 +505,7 @@ public abstract class RequestInfoImpl
 
                 // Find insert( Any, class ) method
                 Class[] insertMethodParams = new Class[2];
-                insertMethodParams[0] = org.omg.CORBA.Any.class;
+                insertMethodParams[0] = test.org.omg.CORBA.Any.class;
                 insertMethodParams[1] = exceptionClass;
                 Method insertMethod = helperClass.getMethod(
                     "insert", insertMethodParams );
@@ -634,15 +620,15 @@ public abstract class RequestInfoImpl
      * convert it to an IOP.ServiceContext.  Uses the given HashMap as
      * a cache.  If not found in cache, the result is inserted in the cache.
      */
-    protected org.omg.IOP.ServiceContext
+    protected test.org.omg.IOP.ServiceContext
         getServiceContext ( HashMap cachedServiceContexts,
                             ServiceContexts serviceContexts, int id )
     {
-        org.omg.IOP.ServiceContext result = null;
+        test.org.omg.IOP.ServiceContext result = null;
         Integer integerId = new Integer( id );
 
         // Search cache first:
-        result = (org.omg.IOP.ServiceContext)
+        result = (test.org.omg.IOP.ServiceContext)
             cachedServiceContexts.get( integerId );
 
         // null could normally mean that either we cached the value null
@@ -691,7 +677,7 @@ public abstract class RequestInfoImpl
     protected void addServiceContext(
         HashMap cachedServiceContexts,
         ServiceContexts serviceContexts,
-        org.omg.IOP.ServiceContext service_context,
+        test.org.omg.IOP.ServiceContext service_context,
         boolean replace )
     {
         int id = 0 ;
@@ -706,7 +692,7 @@ public abstract class RequestInfoImpl
         // Constructor expects id to already have been read from stream.
         coreServiceContext = new UnknownServiceContext(
             inputStream.read_long(),
-            (org.omg.CORBA_2_3.portable.InputStream)inputStream );
+            (test.org.omg.CORBA_2_3.portable.InputStream)inputStream );
 
         id = coreServiceContext.getId();
 
@@ -850,7 +836,7 @@ public abstract class RequestInfoImpl
             if( this.forwardRequestIOR != null ) {
                 // Convert the internal IOR to a forward request exception
                 // by creating an object reference.
-                org.omg.CORBA.Object obj = iorToObject(this.forwardRequestIOR);
+                test.org.omg.CORBA.Object obj = iorToObject(this.forwardRequestIOR);
                 this.forwardRequest = new ForwardRequest( obj );
             }
         }
@@ -922,7 +908,7 @@ public abstract class RequestInfoImpl
         this.slotTable = slotTable;
     }
 
-    protected org.omg.CORBA.Object iorToObject( IOR ior )
+    protected test.org.omg.CORBA.Object iorToObject(IOR ior )
     {
         return ORBUtility.makeObjectReference( ior ) ;
     }

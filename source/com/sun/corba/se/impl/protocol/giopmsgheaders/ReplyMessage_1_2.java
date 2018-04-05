@@ -25,9 +25,8 @@
 
 package com.sun.corba.se.impl.protocol.giopmsgheaders;
 
-import org.omg.CORBA.INTERNAL;
-import org.omg.CORBA.SystemException;
-import org.omg.CORBA.CompletionStatus;
+import test.org.omg.CORBA.SystemException;
+import test.org.omg.CORBA.CompletionStatus;
 
 import com.sun.corba.se.spi.ior.IOR;
 import com.sun.corba.se.spi.ior.IORFactories ;
@@ -39,11 +38,8 @@ import com.sun.corba.se.spi.ior.iiop.GIOPVersion;
 
 import com.sun.corba.se.impl.encoding.CDRInputStream;
 import com.sun.corba.se.impl.encoding.CDROutputStream;
-import com.sun.corba.se.impl.encoding.CDRInputStream_1_2;
-import com.sun.corba.se.impl.encoding.CDROutputStream_1_2;
 
 import com.sun.corba.se.impl.orbutil.ORBUtility;
-import com.sun.corba.se.impl.orbutil.ORBConstants;
 
 import com.sun.corba.se.spi.logging.CORBALogDomains ;
 import com.sun.corba.se.impl.logging.ORBUtilSystemException ;
@@ -127,13 +123,13 @@ public final class ReplyMessage_1_2 extends Message_1_2
 
     // IO methods
 
-    public void read(org.omg.CORBA.portable.InputStream istream) {
+    public void read(test.org.omg.CORBA.portable.InputStream istream) {
         super.read(istream);
         this.request_id = istream.read_ulong();
         this.reply_status = istream.read_long();
         isValidReplyStatus(this.reply_status); // raises exception on error
         this.service_contexts
-            = new ServiceContexts((org.omg.CORBA_2_3.portable.InputStream) istream);
+            = new ServiceContexts((test.org.omg.CORBA_2_3.portable.InputStream) istream);
 
         // CORBA formal 00-11-0 15.4.2.2 GIOP 1.2 body must be
         // aligned on an 8 octet boundary.
@@ -184,17 +180,17 @@ public final class ReplyMessage_1_2 extends Message_1_2
     // Note, this writes only the header information. SystemException or
     // IOR or GIOP::AddressingDisposition may be written afterwards into the
     // reply mesg body.
-    public void write(org.omg.CORBA.portable.OutputStream ostream) {
+    public void write(test.org.omg.CORBA.portable.OutputStream ostream) {
         super.write(ostream);
         ostream.write_ulong(this.request_id);
         ostream.write_long(this.reply_status);
         if (this.service_contexts != null) {
                 service_contexts.write(
-                (org.omg.CORBA_2_3.portable.OutputStream) ostream,
+                (test.org.omg.CORBA_2_3.portable.OutputStream) ostream,
                 GIOPVersion.V1_2);
             } else {
                 ServiceContexts.writeNullServiceContext(
-                (org.omg.CORBA_2_3.portable.OutputStream) ostream);
+                (test.org.omg.CORBA_2_3.portable.OutputStream) ostream);
         }
 
         // CORBA formal 00-11-0 15.4.2.2 GIOP 1.2 body must be

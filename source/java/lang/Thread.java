@@ -1706,38 +1706,14 @@ class Thread implements Runnable {
     }
 
     /**
-     * A thread state.  A thread can be in one of the following states:
-     * <ul>
-     * <li>{@link #NEW}<br>
-     *     A thread that has not yet started is in this state.
-     *     </li>
-     * <li>{@link #RUNNABLE}<br>
-     *     A thread executing in the Java virtual machine is in this state.
-     *     </li>
-     * <li>{@link #BLOCKED}<br>
-     *     A thread that is blocked waiting for a monitor lock
-     *     is in this state.
-     *     </li>
-     * <li>{@link #WAITING}<br>
-     *     A thread that is waiting indefinitely for another thread to
-     *     perform a particular action is in this state.
-     *     </li>
-     * <li>{@link #TIMED_WAITING}<br>
-     *     A thread that is waiting for another thread to perform an action
-     *     for up to a specified waiting time is in this state.
-     *     </li>
-     * <li>{@link #TERMINATED}<br>
-     *     A thread that has exited is in this state.
-     *     </li>
-     * </ul>
+     * 一个线程的状态：
+     * NEW 线程刚被创建，还未启动
+     * RUNNING 已在JAVA虚拟机中执行
+     * BLOCKED 被阻塞，在等待锁
+     * WAITING 等待另一个线程来唤醒
+     * TERMINATED 线程执行完毕或退出
      *
-     * <p>
-     * A thread can be in only one state at a given point in time.
-     * These states are virtual machine states which do not reflect
-     * any operating system thread states.
-     *
-     * @since   1.5
-     * @see #getState
+     * 一个线程在指定时间只有一个状态，这些状态是虚拟机中的状态，并不反映操作系统中的线程状态
      */
     public enum State {
         /**

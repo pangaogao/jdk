@@ -26,8 +26,8 @@
 package com.sun.corba.se.impl.protocol.giopmsgheaders;
 
 import java.nio.ByteBuffer;
-import org.omg.CORBA.INTERNAL;
-import org.omg.CORBA.CompletionStatus;
+
+import test.org.omg.CORBA.CompletionStatus;
 import com.sun.corba.se.spi.ior.iiop.GIOPVersion;
 
 import com.sun.corba.se.spi.logging.CORBALogDomains ;
@@ -121,7 +121,7 @@ public class Message_1_0
     // is read off java.io.InputStream (not a CDRInputStream) by IIOPConnection
     // in order to choose the correct CDR Version, msg_type, and msg_size.
     // So, we would never need to read the Message Header off a CDRInputStream.
-    public void read(org.omg.CORBA.portable.InputStream istream) {
+    public void read(test.org.omg.CORBA.portable.InputStream istream) {
         /*
         this.magic = istream.read_long();
         this.GIOP_version = (new GIOPVersion()).read(istream);
@@ -131,7 +131,7 @@ public class Message_1_0
         */
     }
 
-    public void write(org.omg.CORBA.portable.OutputStream ostream) {
+    public void write(test.org.omg.CORBA.portable.OutputStream ostream) {
         ostream.write_long(this.magic);
         nullCheck(this.GIOP_version);
         this.GIOP_version.write(ostream);

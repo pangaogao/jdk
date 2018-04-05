@@ -26,7 +26,7 @@ package com.sun.org.apache.xml.internal.serializer.utils;
  * This class contains utilities used by the serializer.
  *
  * This class is not a public API, it is only public because it is
- * used by com.sun.org.apache.xml.internal.serializer.
+ * used by com.sun.test.org.apache.xml.internal.serializer.
  *
  * @xsl.usage internal
  */
@@ -39,5 +39,5 @@ public final class Utils
      */
     public static final com.sun.org.apache.xml.internal.serializer.utils.Messages messages=
         new com.sun.org.apache.xml.internal.serializer.utils.Messages(
-            "com.sun.org.apache.xml.internal.serializer.utils.SerializerMessages");
+            "com.sun.test.org.apache.xml.internal.serializer.utils.SerializerMessages");
 }

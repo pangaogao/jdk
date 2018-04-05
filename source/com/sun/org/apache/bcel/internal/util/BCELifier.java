@@ -32,7 +32,7 @@ package com.sun.org.apache.bcel.internal.util;
  * 4. The names "Apache" and "Apache Software Foundation" and
  *    "Apache BCEL" must not be used to endorse or promote products
  *    derived from this software without prior written permission. For
- *    written permission, please contact apache@apache.org.
+ *    written permission, please contact apache@apache.test.org.
  *
  * 5. Products derived from this software may not be called "Apache",
  *    "Apache BCEL", nor may "Apache" appear in their name, without
@@ -104,9 +104,9 @@ public class BCELifier extends com.sun.org.apache.bcel.internal.classfile.EmptyV
       _out.println("package " + package_name + ";\n");
      }
 
-    _out.println("import com.sun.org.apache.bcel.internal.generic.*;");
-    _out.println("import com.sun.org.apache.bcel.internal.classfile.*;");
-    _out.println("import com.sun.org.apache.bcel.internal.*;");
+    _out.println("import com.sun.test.org.apache.bcel.internal.generic.*;");
+    _out.println("import com.sun.test.org.apache.bcel.internal.classfile.*;");
+    _out.println("import com.sun.test.org.apache.bcel.internal.*;");
     _out.println("import java.io.*;\n");
 
     _out.println("public class " + class_name + "Creator implements Constants {");

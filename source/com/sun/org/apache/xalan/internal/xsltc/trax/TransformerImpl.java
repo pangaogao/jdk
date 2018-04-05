@@ -80,11 +80,11 @@ import javax.xml.transform.stax.StAXResult;
 import javax.xml.transform.stax.StAXSource;
 import javax.xml.transform.stream.StreamResult;
 import javax.xml.transform.stream.StreamSource;
-import org.xml.sax.ContentHandler;
-import org.xml.sax.InputSource;
-import org.xml.sax.SAXException;
-import org.xml.sax.XMLReader;
-import org.xml.sax.ext.LexicalHandler;
+import test.org.xml.sax.ContentHandler;
+import test.org.xml.sax.InputSource;
+import test.org.xml.sax.SAXException;
+import test.org.xml.sax.XMLReader;
+import test.org.xml.sax.ext.LexicalHandler;
 
 /**
  * @author Morten Jorgensen
@@ -96,15 +96,15 @@ public final class TransformerImpl extends Transformer
 {
 
     private final static String LEXICAL_HANDLER_PROPERTY =
-        "http://xml.org/sax/properties/lexical-handler";
+        "http://xml.test.org/sax/properties/lexical-handler";
     private static final String NAMESPACE_FEATURE =
-        "http://xml.org/sax/features/namespaces";
+        "http://xml.test.org/sax/features/namespaces";
 
     /**
      * Namespace prefixes feature for {@link XMLReader}.
      */
     private static final String NAMESPACE_PREFIXES_FEATURE =
-        "http://xml.org/sax/features/namespace-prefixes";
+        "http://xml.test.org/sax/features/namespace-prefixes";
 
     /**
      * A reference to the translet or null if the identity transform.
@@ -1284,7 +1284,7 @@ public final class TransformerImpl extends Transformer
              *  Incase the _uriResolver.resolve(href,base) is null
              *  try to still  retrieve the document before returning null
              *  and throwing the FileNotFoundException in
-             *  com.sun.org.apache.xalan.internal.xsltc.dom.LoadDocument
+             *  com.sun.test.org.apache.xalan.internal.xsltc.dom.LoadDocument
              *
              */
             Source resolvedSource = _uriResolver.resolve(href, baseURI);

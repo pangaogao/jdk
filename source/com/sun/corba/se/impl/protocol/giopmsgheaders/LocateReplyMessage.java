@@ -25,9 +25,6 @@
 
 package com.sun.corba.se.impl.protocol.giopmsgheaders;
 
-import org.omg.CORBA.SystemException;
-import com.sun.corba.se.spi.ior.IOR;
-
 /**
  * This interface captures the LocateReplyMessage contract.
  *

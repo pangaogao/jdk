@@ -23,7 +23,7 @@
 
 package com.sun.org.apache.xalan.internal.xsltc.runtime;
 
-import org.xml.sax.SAXException;
+import test.org.xml.sax.SAXException;
 
 import com.sun.org.apache.xml.internal.serializer.EmptySerializer;
 

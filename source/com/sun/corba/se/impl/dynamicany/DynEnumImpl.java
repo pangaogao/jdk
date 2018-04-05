@@ -25,18 +25,15 @@
 
 package com.sun.corba.se.impl.dynamicany;
 
-import org.omg.CORBA.TypeCode;
-import org.omg.CORBA.Any;
-import org.omg.CORBA.BAD_OPERATION;
-import org.omg.CORBA.INTERNAL;
-import org.omg.CORBA.TypeCodePackage.BadKind;
-import org.omg.CORBA.TypeCodePackage.Bounds;
-import org.omg.DynamicAny.*;
-import org.omg.DynamicAny.DynAnyPackage.*;
+import test.org.omg.CORBA.TypeCode;
+import test.org.omg.CORBA.Any;
+import test.org.omg.CORBA.BAD_OPERATION;
+import test.org.omg.CORBA.TypeCodePackage.BadKind;
+import test.org.omg.CORBA.TypeCodePackage.Bounds;
+import test.org.omg.DynamicAny.*;
+import test.org.omg.DynamicAny.DynAnyPackage.*;
 
 import com.sun.corba.se.spi.orb.ORB ;
-import com.sun.corba.se.spi.logging.CORBALogDomains ;
-import com.sun.corba.se.impl.logging.ORBUtilSystemException ;
 
 public class DynEnumImpl extends DynAnyBasicImpl implements DynEnum
 {
@@ -123,8 +120,8 @@ public class DynEnumImpl extends DynAnyBasicImpl implements DynEnum
 
     // Calling current_component on a DynAny that cannot have components,
     // such as a DynEnum or an empty exception, raises TypeMismatch.
-    public org.omg.DynamicAny.DynAny current_component()
-        throws org.omg.DynamicAny.DynAnyPackage.TypeMismatch
+    public test.org.omg.DynamicAny.DynAny current_component()
+        throws test.org.omg.DynamicAny.DynAnyPackage.TypeMismatch
     {
         if (status == STATUS_DESTROYED) {
             throw wrapper.dynAnyDestroyed() ;
@@ -149,7 +146,7 @@ public class DynEnumImpl extends DynAnyBasicImpl implements DynEnum
     // If value contains a string that is not a valid IDL identifier
     // for the corresponding enumerated type, the operation raises InvalidValue.
     public void set_as_string (String value)
-        throws org.omg.DynamicAny.DynAnyPackage.InvalidValue
+        throws test.org.omg.DynamicAny.DynAnyPackage.InvalidValue
     {
         if (status == STATUS_DESTROYED) {
             throw wrapper.dynAnyDestroyed() ;
@@ -176,7 +173,7 @@ public class DynEnumImpl extends DynAnyBasicImpl implements DynEnum
     // If value contains a value that is outside the range of ordinal values
     // for the corresponding enumerated type, the operation raises InvalidValue.
     public void set_as_ulong (int value)
-        throws org.omg.DynamicAny.DynAnyPackage.InvalidValue
+        throws test.org.omg.DynamicAny.DynAnyPackage.InvalidValue
     {
         if (status == STATUS_DESTROYED) {
             throw wrapper.dynAnyDestroyed() ;

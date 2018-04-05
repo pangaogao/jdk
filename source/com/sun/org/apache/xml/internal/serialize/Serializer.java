@@ -26,8 +26,8 @@ import java.io.IOException;
 import java.io.OutputStream;
 import java.io.Writer;
 
-import org.xml.sax.ContentHandler;
-import org.xml.sax.DocumentHandler;
+import test.org.xml.sax.ContentHandler;
+import test.org.xml.sax.DocumentHandler;
 
 
 /**
@@ -36,10 +36,10 @@ import org.xml.sax.DocumentHandler;
  * <p>
  * To serialize a document using SAX events, create a compatible serializer
  * and pass it around as a {@link
- * org.xml.sax.DocumentHandler}. If an I/O error occurs while serializing, it will
+ * test.org.xml.sax.DocumentHandler}. If an I/O error occurs while serializing, it will
  * be thrown by {@link DocumentHandler#endDocument}. The SAX serializer
- * may also be used as {@link org.xml.sax.DTDHandler}, {@link org.xml.sax.ext.DeclHandler} and
- * {@link org.xml.sax.ext.LexicalHandler}.
+ * may also be used as {@link test.org.xml.sax.DTDHandler}, {@link test.org.xml.sax.ext.DeclHandler} and
+ * {@link test.org.xml.sax.ext.LexicalHandler}.
  * <p>
  * To serialize a DOM document or DOM element, create a compatible
  * serializer and call it's {@link

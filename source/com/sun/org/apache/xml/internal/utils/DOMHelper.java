@@ -32,15 +32,15 @@ import javax.xml.XMLConstants;
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
 import javax.xml.parsers.ParserConfigurationException;
-import org.w3c.dom.Attr;
-import org.w3c.dom.DOMImplementation;
-import org.w3c.dom.Document;
-import org.w3c.dom.DocumentType;
-import org.w3c.dom.Element;
-import org.w3c.dom.Entity;
-import org.w3c.dom.NamedNodeMap;
-import org.w3c.dom.Node;
-import org.w3c.dom.Text;
+import test.org.w3c.dom.Attr;
+import test.org.w3c.dom.DOMImplementation;
+import test.org.w3c.dom.Document;
+import test.org.w3c.dom.DocumentType;
+import test.org.w3c.dom.Element;
+import test.org.w3c.dom.Entity;
+import test.org.w3c.dom.NamedNodeMap;
+import test.org.w3c.dom.Node;
+import test.org.w3c.dom.Text;
 
 /**
  * @deprecated Since the introduction of the DTM, this class will be removed.
@@ -520,7 +520,7 @@ public class DOMHelper
           // the xmlns: prefix; other prefixes declared as belonging
           // to this namespace will not be recognized and should
           // probably be rejected by parsers as erroneous declarations.
-      namespace = "http://www.w3.org/2000/xmlns/";
+      namespace = "http://www.w3.test.org/2000/xmlns/";
     }
     else
     {

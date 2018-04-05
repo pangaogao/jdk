@@ -410,7 +410,7 @@ class PrecisionDecimalDV extends TypeValidator {
     }
 
     /* (non-Javadoc)
-     * @see com.sun.org.apache.xerces.internal.impl.dv.xs.TypeValidator#getActualValue(java.lang.String, com.sun.org.apache.xerces.internal.impl.dv.ValidationContext)
+     * @see com.sun.test.org.apache.xerces.internal.impl.dv.xs.TypeValidator#getActualValue(java.lang.String, com.sun.test.org.apache.xerces.internal.impl.dv.ValidationContext)
      */
     @Override
     public Object getActualValue(String content, ValidationContext context)

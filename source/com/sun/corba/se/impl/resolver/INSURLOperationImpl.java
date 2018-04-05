@@ -33,8 +33,8 @@ import java.util.HashMap ;
 import java.util.ArrayList ;
 import java.util.Collections ;
 
-import org.omg.CosNaming.NamingContextExt ;
-import org.omg.CosNaming.NamingContextExtHelper ;
+import test.org.omg.CosNaming.NamingContextExt ;
+import test.org.omg.CosNaming.NamingContextExtHelper ;
 
 import sun.corba.EncapsInputStreamFactory;
 
@@ -42,9 +42,7 @@ import com.sun.corba.se.spi.ior.IOR;
 import com.sun.corba.se.spi.ior.IORTemplate;
 import com.sun.corba.se.spi.ior.ObjectKey;
 import com.sun.corba.se.spi.ior.IORFactories;
-import com.sun.corba.se.spi.ior.ObjectKeyFactory ;
 import com.sun.corba.se.spi.ior.iiop.IIOPAddress;
-import com.sun.corba.se.spi.ior.iiop.IIOPProfile ;
 import com.sun.corba.se.spi.ior.iiop.IIOPProfileTemplate ;
 import com.sun.corba.se.spi.ior.iiop.IIOPFactories ;
 import com.sun.corba.se.spi.ior.iiop.GIOPVersion;
@@ -105,7 +103,7 @@ public class INSURLOperationImpl implements Operation
     /** This static method takes a Stringified IOR and converts it into IOR object.
       * It is the caller's responsibility to only pass strings that start with "IOR:".
       */
-    private org.omg.CORBA.Object getIORFromString( String str )
+    private test.org.omg.CORBA.Object getIORFromString(String str )
     {
         // Length must be even for str to be valid
         if ( (str.length() & 1) == 1 )
@@ -141,7 +139,7 @@ public class INSURLOperationImpl implements Operation
         throw wrapper.stringExpected() ;
     }
 
-    private org.omg.CORBA.Object resolveINSURL( INSURL theURLObject ) {
+    private test.org.omg.CORBA.Object resolveINSURL(INSURL theURLObject ) {
         // XXX resolve should be a method on INSURL
         if( theURLObject.isCorbanameURL() ) {
             return resolveCorbaname( (CorbanameURL)theURLObject );
@@ -155,10 +153,10 @@ public class INSURLOperationImpl implements Operation
      *
      *  @return the CORBA.Object if resolution is successful
      */
-    private org.omg.CORBA.Object resolveCorbaloc(
+    private test.org.omg.CORBA.Object resolveCorbaloc(
         CorbalocURL theCorbaLocObject )
     {
-        org.omg.CORBA.Object result = null;
+        test.org.omg.CORBA.Object result = null;
         // If RIR flag is true use the Bootstrap protocol
         if( theCorbaLocObject.getRIRFlag( ) )  {
             result = bootstrapResolver.resolve(theCorbaLocObject.getKeyString());
@@ -174,8 +172,8 @@ public class INSURLOperationImpl implements Operation
      *
      *  @return the CORBA.Object if resolution is successful
      */
-    private org.omg.CORBA.Object resolveCorbaname( CorbanameURL theCorbaName ) {
-        org.omg.CORBA.Object result = null;
+    private test.org.omg.CORBA.Object resolveCorbaname(CorbanameURL theCorbaName ) {
+        test.org.omg.CORBA.Object result = null;
 
         try {
             NamingContextExt theNamingContext = null;
@@ -185,7 +183,7 @@ public class INSURLOperationImpl implements Operation
                 theNamingContext = getDefaultRootNamingContext( );
             } else {
                 // Case 2 of corbaname: ::hostname#
-                org.omg.CORBA.Object corbalocResult =
+                test.org.omg.CORBA.Object corbalocResult =
                     getIORUsingCorbaloc( theCorbaName );
                 if( corbalocResult == null ) {
                     return null;
@@ -214,7 +212,7 @@ public class INSURLOperationImpl implements Operation
      *
      *  @return the CORBA.Object if resolution is successful
      */
-     private org.omg.CORBA.Object getIORUsingCorbaloc( INSURL corbalocObject )
+     private test.org.omg.CORBA.Object getIORUsingCorbaloc(INSURL corbalocObject )
      {
         Map     profileMap = new HashMap();
         List    profileList1_0 = new ArrayList();
@@ -298,7 +296,7 @@ public class INSURLOperationImpl implements Operation
      *  may not be Persistent in all the implementations.
      *  _REVISIT_ to clear the rootNamingContext in case of COMM_FAILURE.
      *
-     *  @return the org.omg.COSNaming.NamingContextExt if resolution is
+     *  @return the test.org.omg.COSNaming.NamingContextExt if resolution is
      *   successful
      *
      */

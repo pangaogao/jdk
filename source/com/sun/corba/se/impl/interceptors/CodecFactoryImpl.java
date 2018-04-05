@@ -25,25 +25,24 @@
 
 package com.sun.corba.se.impl.interceptors;
 
-import org.omg.IOP.Codec;
-import org.omg.IOP.CodecFactory;
-import org.omg.IOP.CodecFactoryPackage.UnknownEncoding;
-import org.omg.IOP.Encoding;
-import org.omg.IOP.ENCODING_CDR_ENCAPS;
+import test.org.omg.IOP.Codec;
+import test.org.omg.IOP.CodecFactory;
+import test.org.omg.IOP.CodecFactoryPackage.UnknownEncoding;
+import test.org.omg.IOP.Encoding;
+import test.org.omg.IOP.ENCODING_CDR_ENCAPS;
 
 import com.sun.corba.se.spi.logging.CORBALogDomains;
 
 import com.sun.corba.se.impl.logging.ORBUtilSystemException;
 
-import org.omg.CORBA.ORB;
-import org.omg.CORBA.LocalObject;
+import test.org.omg.CORBA.ORB;
 
 /**
  * CodecFactoryImpl is the implementation of the Codec Factory, as described
  * in orbos/99-12-02.
  */
 public final class CodecFactoryImpl
-    extends org.omg.CORBA.LocalObject
+    extends test.org.omg.CORBA.LocalObject
     implements CodecFactory
 {
     // The ORB that created this Codec Factory

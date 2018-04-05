@@ -34,13 +34,13 @@ import javax.xml.parsers.ParserConfigurationException;
 import com.sun.org.apache.xml.internal.security.c14n.CanonicalizationException;
 import com.sun.org.apache.xml.internal.security.c14n.Canonicalizer;
 import com.sun.org.apache.xml.internal.security.signature.XMLSignatureInput;
-import org.w3c.dom.Attr;
-import org.w3c.dom.Comment;
-import org.w3c.dom.Element;
-import org.w3c.dom.NamedNodeMap;
-import org.w3c.dom.Node;
-import org.w3c.dom.ProcessingInstruction;
-import org.xml.sax.SAXException;
+import test.org.w3c.dom.Attr;
+import test.org.w3c.dom.Comment;
+import test.org.w3c.dom.Element;
+import test.org.w3c.dom.NamedNodeMap;
+import test.org.w3c.dom.Node;
+import test.org.w3c.dom.ProcessingInstruction;
+import test.org.xml.sax.SAXException;
 
 /**
  * Serializes the physical representation of the subtree. All the attributes

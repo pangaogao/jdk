@@ -24,9 +24,9 @@ import com.sun.org.apache.xerces.internal.xni.XMLLocator;
 import com.sun.org.apache.xerces.internal.xni.XNIException;
 import com.sun.org.apache.xerces.internal.xni.parser.XMLErrorHandler;
 import com.sun.org.apache.xerces.internal.xni.parser.XMLParseException;
-import org.xml.sax.ErrorHandler;
-import org.xml.sax.SAXException;
-import org.xml.sax.SAXParseException;
+import test.org.xml.sax.ErrorHandler;
+import test.org.xml.sax.SAXException;
+import test.org.xml.sax.SAXParseException;
 
 /**
  * This class wraps a SAX error handler in an XNI error handler.

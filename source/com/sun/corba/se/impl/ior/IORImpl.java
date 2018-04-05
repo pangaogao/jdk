@@ -25,7 +25,6 @@
 
 package com.sun.corba.se.impl.ior;
 
-import java.util.ListIterator ;
 import java.util.Iterator ;
 import java.util.Map ;
 import java.util.HashMap ;
@@ -33,12 +32,10 @@ import java.util.HashMap ;
 import java.io.StringWriter;
 import java.io.IOException;
 
-import javax.rmi.CORBA.Util;
+import test.org.omg.CORBA_2_3.portable.InputStream ;
+import test.org.omg.CORBA_2_3.portable.OutputStream ;
 
-import org.omg.CORBA_2_3.portable.InputStream ;
-import org.omg.CORBA_2_3.portable.OutputStream ;
-
-import org.omg.IOP.TAG_INTERNET_IOP ;
+import test.org.omg.IOP.TAG_INTERNET_IOP ;
 
 import com.sun.corba.se.spi.ior.ObjectId ;
 import com.sun.corba.se.spi.ior.TaggedProfileTemplate ;
@@ -50,10 +47,6 @@ import com.sun.corba.se.spi.ior.IdentifiableFactoryFinder ;
 import com.sun.corba.se.spi.ior.IdentifiableContainerBase ;
 import com.sun.corba.se.spi.ior.ObjectKeyTemplate ;
 import com.sun.corba.se.spi.ior.IORFactories ;
-
-import com.sun.corba.se.spi.ior.iiop.GIOPVersion;
-
-import com.sun.corba.se.spi.protocol.RequestDispatcherRegistry;
 
 import com.sun.corba.se.spi.orb.ORB;
 
@@ -237,12 +230,12 @@ public class IORImpl extends IdentifiableContainerBase implements IOR
         super.makeImmutable() ;
     }
 
-    public org.omg.IOP.IOR getIOPIOR() {
+    public test.org.omg.IOP.IOR getIOPIOR() {
         EncapsOutputStream os =
             sun.corba.OutputStreamFactory.newEncapsOutputStream(factory);
         write(os);
         InputStream is = (InputStream) (os.create_input_stream());
-        return org.omg.IOP.IORHelper.read(is);
+        return test.org.omg.IOP.IORHelper.read(is);
     }
 
     public boolean isNil()

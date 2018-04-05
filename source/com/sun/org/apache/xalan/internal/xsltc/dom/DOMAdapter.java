@@ -28,8 +28,8 @@ import com.sun.org.apache.xml.internal.dtm.DTM;
 import com.sun.org.apache.xml.internal.dtm.DTMAxisIterator;
 import com.sun.org.apache.xml.internal.serializer.SerializationHandler;
 import java.util.Map;
-import org.w3c.dom.Node;
-import org.w3c.dom.NodeList;
+import test.org.w3c.dom.Node;
+import test.org.w3c.dom.NodeList;
 
 /**
  * @author Jacek Ambroziak

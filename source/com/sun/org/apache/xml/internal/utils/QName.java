@@ -28,7 +28,7 @@ import java.util.StringTokenizer;
 import com.sun.org.apache.xml.internal.res.XMLErrorResources;
 import com.sun.org.apache.xml.internal.res.XMLMessages;
 
-import org.w3c.dom.Element;
+import test.org.w3c.dom.Element;
 
 /**
  * Class to represent a qualified name: "The name of an internal XSLT object,
@@ -69,7 +69,7 @@ public class QName implements java.io.Serializable
    * The XML namespace.
    */
   public static final String S_XMLNAMESPACEURI =
-    "http://www.w3.org/XML/1998/namespace";
+    "http://www.w3.test.org/XML/1998/namespace";
 
   /**
    * The cached hashcode, which is calculated at construction time.

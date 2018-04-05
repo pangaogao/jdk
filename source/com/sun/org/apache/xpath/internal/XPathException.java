@@ -24,7 +24,7 @@ package com.sun.org.apache.xpath.internal;
 
 import javax.xml.transform.TransformerException;
 
-import org.w3c.dom.Node;
+import test.org.w3c.dom.Node;
 
 /**
  * This class implements an exception object that all
@@ -94,14 +94,14 @@ public class XPathException extends TransformerException
    * this to work, the SourceLocator must be the owning ElemTemplateElement.
    * @return The dereference to the ElemVariable, or null if not found.
    */
-  public org.w3c.dom.Node getStylesheetNode(ExpressionNode ex)
+  public test.org.w3c.dom.Node getStylesheetNode(ExpressionNode ex)
   {
 
     ExpressionNode owner = getExpressionOwner(ex);
 
-    if (null != owner && owner instanceof org.w3c.dom.Node)
+    if (null != owner && owner instanceof test.org.w3c.dom.Node)
     {
-                return ((org.w3c.dom.Node)owner);
+                return ((test.org.w3c.dom.Node)owner);
     }
     return null;
 

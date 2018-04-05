@@ -44,10 +44,10 @@ import com.sun.corba.se.impl.corba.TypeCodeImpl;
 import com.sun.corba.se.impl.logging.ORBUtilSystemException;
 import com.sun.corba.se.impl.protocol.giopmsgheaders.Message;
 
-import org.omg.CORBA.Any;
-import org.omg.CORBA.TypeCode;
-import org.omg.CORBA.Principal;
-import org.omg.CORBA.CompletionStatus;
+import test.org.omg.CORBA.Any;
+import test.org.omg.CORBA.TypeCode;
+import test.org.omg.CORBA.Principal;
+import test.org.omg.CORBA.CompletionStatus;
 
 /**
  * Implementation class that uses Java serialization for output streams.
@@ -134,7 +134,7 @@ final class IDLJavaSerializationOutputStream extends CDROutputStreamBase {
         this.encodingVersion = encodingVersion;
     }
 
-    public void init(org.omg.CORBA.ORB orb, boolean littleEndian,
+    public void init(test.org.omg.CORBA.ORB orb, boolean littleEndian,
                      BufferManagerWrite bufferManager,
                      byte streamFormatVersion,
                      boolean usePooledByteBuffers) {
@@ -159,7 +159,7 @@ final class IDLJavaSerializationOutputStream extends CDROutputStreamBase {
         }
     }
 
-    // org.omg.CORBA.portable.OutputStream
+    // test.org.omg.CORBA.portable.OutputStream
 
     // Primitive types.
 
@@ -369,14 +369,14 @@ final class IDLJavaSerializationOutputStream extends CDROutputStreamBase {
 
     // Complex types (objects and graphs).
 
-    public final void write_Object(org.omg.CORBA.Object value) {
+    public final void write_Object(test.org.omg.CORBA.Object value) {
         if (value == null) {
             IOR nullIOR = IORFactories.makeIOR(orb);
             nullIOR.write(parent);
             return;
         }
         // IDL to Java formal 01-06-06 1.21.4.2
-        if (value instanceof org.omg.CORBA.LocalObject) {
+        if (value instanceof test.org.omg.CORBA.LocalObject) {
             throw wrapper.writeLocalObject(CompletionStatus.COMPLETED_MAYBE);
         }
         IOR ior = ORBUtility.connectAndGetIOR(orb, value);
@@ -394,7 +394,7 @@ final class IDLJavaSerializationOutputStream extends CDROutputStreamBase {
         } else {
             tci = new TypeCodeImpl(orb, tc);
         }
-        tci.write_value((org.omg.CORBA_2_3.portable.OutputStream) parent);
+        tci.write_value((test.org.omg.CORBA_2_3.portable.OutputStream) parent);
     }
 
     public final void write_any(Any any) {
@@ -469,11 +469,11 @@ final class IDLJavaSerializationOutputStream extends CDROutputStreamBase {
         this.write_octet(doubleDigit);
     }
 
-    public final org.omg.CORBA.ORB orb() {
+    public final test.org.omg.CORBA.ORB orb() {
         return this.orb;
     }
 
-    // org.omg.CORBA_2_3.portable.OutputStream
+    // test.org.omg.CORBA_2_3.portable.OutputStream
 
     public final void write_value(java.io.Serializable value) {
         write_value(value, (String) null);
@@ -494,18 +494,18 @@ final class IDLJavaSerializationOutputStream extends CDROutputStreamBase {
     }
 
     public final void write_value(java.io.Serializable value,
-                             org.omg.CORBA.portable.BoxedValueHelper factory) {
+                             test.org.omg.CORBA.portable.BoxedValueHelper factory) {
         this.write_value(value, (String) null);
     }
 
     public final void write_abstract_interface(java.lang.Object obj) {
 
         boolean isCorbaObject = false; // Assume value type.
-        org.omg.CORBA.Object theCorbaObject = null;
+        test.org.omg.CORBA.Object theCorbaObject = null;
 
         // Is it a CORBA.Object?
-        if (obj != null && obj instanceof org.omg.CORBA.Object) {
-            theCorbaObject = (org.omg.CORBA.Object)obj;
+        if (obj != null && obj instanceof test.org.omg.CORBA.Object) {
+            theCorbaObject = (test.org.omg.CORBA.Object)obj;
             isCorbaObject = true;
         }
 
@@ -561,7 +561,7 @@ final class IDLJavaSerializationOutputStream extends CDROutputStreamBase {
         }
     }
 
-    // org.omg.CORBA.DataOutputStream
+    // test.org.omg.CORBA.DataOutputStream
 
     public final void write_Abstract (java.lang.Object value) {
         write_abstract_interface(value);
@@ -571,14 +571,14 @@ final class IDLJavaSerializationOutputStream extends CDROutputStreamBase {
         write_value(value);
     }
 
-    public final void write_any_array(org.omg.CORBA.Any[] value,
+    public final void write_any_array(test.org.omg.CORBA.Any[] value,
                                       int offset, int length) {
         for(int i = 0; i < length; i++) {
             write_any(value[offset + i]);
         }
     }
 
-    // org.omg.CORBA.portable.ValueBase
+    // test.org.omg.CORBA.portable.ValueBase
 
     public final String[] _truncatable_ids() {
         throw wrapper.giopVersionError();
@@ -641,7 +641,7 @@ final class IDLJavaSerializationOutputStream extends CDROutputStreamBase {
     }
 
     // This will stay a custom add-on until the java-rtf issue is resolved.
-    // Then it should be declared in org.omg.CORBA.portable.OutputStream.
+    // Then it should be declared in test.org.omg.CORBA.portable.OutputStream.
     //
     // Pads the string representation of bigDecimal with zeros to fit the given
     // digits and scale before it gets written to the stream.
@@ -690,7 +690,7 @@ final class IDLJavaSerializationOutputStream extends CDROutputStreamBase {
     }
 
     public final void writeOctetSequenceTo(
-            org.omg.CORBA.portable.OutputStream s) {
+            test.org.omg.CORBA.portable.OutputStream s) {
         byte[] buf = this.toByteArray(); // new copy.
         s.write_long(buf.length);
         s.write_octet_array(buf, 0, buf.length);

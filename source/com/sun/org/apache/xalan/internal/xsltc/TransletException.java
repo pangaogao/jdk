@@ -23,7 +23,7 @@
 
 package com.sun.org.apache.xalan.internal.xsltc;
 
-import org.xml.sax.SAXException;
+import test.org.xml.sax.SAXException;
 
 /**
  * @author Jacek Ambroziak

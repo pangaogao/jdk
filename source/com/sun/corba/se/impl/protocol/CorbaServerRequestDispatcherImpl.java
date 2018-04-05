@@ -32,19 +32,14 @@
 
 package com.sun.corba.se.impl.protocol;
 
-import org.omg.PortableServer.Servant ;
+import test.org.omg.CORBA.SystemException;
+import test.org.omg.CORBA.CompletionStatus;
+import test.org.omg.CORBA.Any;
 
-import org.omg.CORBA.SystemException;
-import org.omg.CORBA.INTERNAL;
-import org.omg.CORBA.UNKNOWN;
-import org.omg.CORBA.CompletionStatus;
-import org.omg.CORBA.Any;
-
-import org.omg.CORBA.portable.InvokeHandler;
-import org.omg.CORBA.portable.InputStream;
-import org.omg.CORBA.portable.OutputStream;
-import org.omg.CORBA.portable.UnknownException;
-import org.omg.CORBA.portable.ResponseHandler;
+import test.org.omg.CORBA.portable.InvokeHandler;
+import test.org.omg.CORBA.portable.InputStream;
+import test.org.omg.CORBA.portable.OutputStream;
+import test.org.omg.CORBA.portable.UnknownException;
 
 import com.sun.org.omg.SendingContext.CodeBase;
 
@@ -71,7 +66,6 @@ import com.sun.corba.se.spi.transport.CorbaConnection;
 import com.sun.corba.se.spi.logging.CORBALogDomains;
 import com.sun.corba.se.spi.ior.iiop.GIOPVersion;
 
-import com.sun.corba.se.impl.protocol.SpecialMethod ;
 import com.sun.corba.se.spi.servicecontext.ServiceContext;
 import com.sun.corba.se.spi.servicecontext.ServiceContexts;
 import com.sun.corba.se.spi.servicecontext.UEInfoServiceContext;
@@ -81,12 +75,9 @@ import com.sun.corba.se.spi.servicecontext.ORBVersionServiceContext;
 
 import com.sun.corba.se.impl.corba.ServerRequestImpl ;
 import com.sun.corba.se.impl.encoding.MarshalInputStream;
-import com.sun.corba.se.impl.encoding.MarshalOutputStream;
 import com.sun.corba.se.impl.encoding.CodeSetComponentInfo;
 import com.sun.corba.se.impl.encoding.OSFCodeSetRegistry;
-import com.sun.corba.se.impl.orbutil.ORBConstants;
 import com.sun.corba.se.impl.orbutil.ORBUtility;
-import com.sun.corba.se.impl.protocol.RequestCanceledException;
 import com.sun.corba.se.impl.logging.ORBUtilSystemException;
 import com.sun.corba.se.impl.logging.POASystemException;
 
@@ -374,8 +365,8 @@ public class CorbaServerRequestDispatcherImpl
             orb.getPIHandler().setServerPIInfo(servant, mdi);
 
             if (((servant != null) &&
-                !(servant instanceof org.omg.CORBA.DynamicImplementation) &&
-                !(servant instanceof org.omg.PortableServer.DynamicImplementation)) ||
+                !(servant instanceof test.org.omg.CORBA.DynamicImplementation) &&
+                !(servant instanceof test.org.omg.PortableServer.DynamicImplementation)) ||
                 (SpecialMethod.getSpecialMethod(operation) != null)) {
                 orb.getPIHandler().invokeServerPIIntermediatePoint();
             }
@@ -612,14 +603,14 @@ public class CorbaServerRequestDispatcherImpl
             }
 
             // Invoke on the servant using the portable DSI skeleton
-            if (servant instanceof org.omg.CORBA.DynamicImplementation) {
+            if (servant instanceof test.org.omg.CORBA.DynamicImplementation) {
                 if (orb.subcontractDebugFlag) {
                     dprint(".dispatchToServant: " + opAndId(req)
                            + ": Handling old style DSI type servant");
                 }
 
-                org.omg.CORBA.DynamicImplementation dynimpl =
-                    (org.omg.CORBA.DynamicImplementation)servant;
+                test.org.omg.CORBA.DynamicImplementation dynimpl =
+                    (test.org.omg.CORBA.DynamicImplementation)servant;
                 ServerRequestImpl sreq = new ServerRequestImpl(req, orb);
 
                 // Note: When/if dynimpl.invoke calls arguments() or
@@ -627,14 +618,14 @@ public class CorbaServerRequestDispatcherImpl
                 dynimpl.invoke(sreq);
 
                 response = handleDynamicResult(sreq, req);
-            } else if (servant instanceof org.omg.PortableServer.DynamicImplementation) {
+            } else if (servant instanceof test.org.omg.PortableServer.DynamicImplementation) {
                 if (orb.subcontractDebugFlag) {
                     dprint(".dispatchToServant: " + opAndId(req)
                            + ": Handling POA DSI type servant");
                 }
 
-                org.omg.PortableServer.DynamicImplementation dynimpl =
-                    (org.omg.PortableServer.DynamicImplementation)servant;
+                test.org.omg.PortableServer.DynamicImplementation dynimpl =
+                    (test.org.omg.PortableServer.DynamicImplementation)servant;
                 ServerRequestImpl sreq = new ServerRequestImpl(req, orb);
 
                 // Note: When/if dynimpl.invoke calls arguments() or
@@ -653,7 +644,7 @@ public class CorbaServerRequestDispatcherImpl
                 OutputStream stream =
                     (OutputStream)invhandle._invoke(
                       operation,
-                      (org.omg.CORBA.portable.InputStream)req.getInputObject(),
+                      (test.org.omg.CORBA.portable.InputStream)req.getInputObject(),
                       req);
                 response = (CorbaMessageMediator)
                     ((OutputObject)stream).getMessageMediator();
@@ -743,7 +734,7 @@ public class CorbaServerRequestDispatcherImpl
             String repId=null;
             try {
                 repId = excany.type().id();
-            } catch (org.omg.CORBA.TypeCodePackage.BadKind e) {
+            } catch (test.org.omg.CORBA.TypeCodePackage.BadKind e) {
                 throw wrapper.problemWithExceptionTypecode( e ) ;
             }
 

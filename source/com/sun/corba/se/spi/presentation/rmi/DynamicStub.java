@@ -27,17 +27,17 @@ package com.sun.corba.se.spi.presentation.rmi ;
 
 import java.rmi.RemoteException ;
 
-import org.omg.CORBA.portable.Delegate ;
-import org.omg.CORBA.portable.OutputStream ;
+import test.org.omg.CORBA.portable.Delegate ;
+import test.org.omg.CORBA.portable.OutputStream ;
 
-import org.omg.CORBA.ORB ;
+import test.org.omg.CORBA.ORB ;
 
 /** Interface used to support dynamically generated stubs.
  * This supplies some methods that are found in
- * org.omg.CORBA.portable.ObjectImpl that are not available
- * in org.omg.CORBA.Object.
+ * test.org.omg.CORBA.portable.ObjectImpl that are not available
+ * in test.org.omg.CORBA.Object.
  */
-public interface DynamicStub extends org.omg.CORBA.Object
+public interface DynamicStub extends test.org.omg.CORBA.Object
 {
     /** Similar to ObjectImpl._set_delegate
      */
@@ -59,7 +59,7 @@ public interface DynamicStub extends org.omg.CORBA.Object
      * Just as in standard RMI-IIOP, this is required after
      * a dynamic stub is deserialized from an ObjectInputStream.
      * It is not needed when unmarshalling from a
-     * org.omg.CORBA.portable.InputStream.
+     * test.org.omg.CORBA.portable.InputStream.
      */
     void connect( ORB orb ) throws RemoteException ;
 

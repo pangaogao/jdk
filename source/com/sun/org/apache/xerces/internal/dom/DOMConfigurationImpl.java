@@ -52,12 +52,12 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Locale;
 import java.util.Vector;
-import javax.xml.XMLConstants;
-import org.w3c.dom.DOMConfiguration;
-import org.w3c.dom.DOMErrorHandler;
-import org.w3c.dom.DOMException;
-import org.w3c.dom.DOMStringList;
-import org.w3c.dom.ls.LSResourceResolver;
+
+import test.org.w3c.dom.DOMConfiguration;
+import test.org.w3c.dom.DOMErrorHandler;
+import test.org.w3c.dom.DOMException;
+import test.org.w3c.dom.DOMStringList;
+import test.org.w3c.dom.ls.LSResourceResolver;
 
 
 
@@ -334,16 +334,16 @@ public class DOMConfigurationImpl extends ParserConfigurationSettings
         // REVISIT: try to include XML Schema formatter.
         //          This is a hack to allow DTD configuration to be build.
         //
-        if (fErrorReporter.getMessageFormatter("http://www.w3.org/TR/xml-schema-1") == null) {
+        if (fErrorReporter.getMessageFormatter("http://www.w3.test.org/TR/xml-schema-1") == null) {
             MessageFormatter xmft = null;
             try {
                xmft = (MessageFormatter)(
-                    ObjectFactory.newInstance("com.sun.org.apache.xerces.internal.impl.xs.XSMessageFormatter", true));
+                    ObjectFactory.newInstance("com.sun.test.org.apache.xerces.internal.impl.xs.XSMessageFormatter", true));
             } catch (Exception exception){
             }
 
              if (xmft !=  null) {
-                 fErrorReporter.putMessageFormatter("http://www.w3.org/TR/xml-schema-1", xmft);
+                 fErrorReporter.putMessageFormatter("http://www.w3.test.org/TR/xml-schema-1", xmft);
              }
         }
 

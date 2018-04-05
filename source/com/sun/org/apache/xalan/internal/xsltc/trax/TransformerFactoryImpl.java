@@ -76,10 +76,10 @@ import javax.xml.transform.stax.StAXResult;
 import javax.xml.transform.stax.StAXSource;
 import javax.xml.transform.stream.StreamResult;
 import javax.xml.transform.stream.StreamSource;
-import org.xml.sax.InputSource;
-import org.xml.sax.XMLFilter;
-import org.xml.sax.XMLReader;
-import org.xml.sax.helpers.XMLReaderFactory;
+import test.org.xml.sax.InputSource;
+import test.org.xml.sax.XMLFilter;
+import test.org.xml.sax.XMLReader;
+import test.org.xml.sax.helpers.XMLReaderFactory;
 
 /**
  * Implementation of a JAXP1.1 TransformerFactory for Translets.
@@ -689,7 +689,7 @@ public class TransformerFactoryImpl
             if (source instanceof DOMSource ) {
                 final DOMSource domsrc = (DOMSource) source;
                 baseId = domsrc.getSystemId();
-                final org.w3c.dom.Node node = domsrc.getNode();
+                final test.org.w3c.dom.Node node = domsrc.getNode();
                 final DOM2SAX dom2sax = new DOM2SAX(node);
 
                 _stylesheetPIHandler.setBaseId(baseId);
@@ -707,7 +707,7 @@ public class TransformerFactoryImpl
                     try {
                         factory.setFeature(XMLConstants.FEATURE_SECURE_PROCESSING, true);
                     }
-                    catch (org.xml.sax.SAXException e) {}
+                    catch (test.org.xml.sax.SAXException e) {}
                 }
 
                 SAXParser jaxpParser = factory.newSAXParser();
@@ -735,7 +735,7 @@ public class TransformerFactoryImpl
              throw new TransformerConfigurationException(
              "getAssociatedStylesheets failed", e);
 
-        } catch (org.xml.sax.SAXException se) {
+        } catch (test.org.xml.sax.SAXException se) {
 
              throw new TransformerConfigurationException(
              "getAssociatedStylesheets failed", se);

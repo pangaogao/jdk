@@ -25,8 +25,8 @@
 
 package com.sun.corba.se.spi.extension ;
 
-import org.omg.CORBA.Policy ;
-import org.omg.CORBA.LocalObject ;
+import test.org.omg.CORBA.Policy ;
+import test.org.omg.CORBA.LocalObject ;
 import com.sun.corba.se.impl.orbutil.ORBConstants ;
 
 /** Policy used to specify the copyObject implementation to use.
@@ -50,7 +50,7 @@ public class CopyObjectPolicy extends LocalObject implements Policy
         return ORBConstants.COPY_OBJECT_POLICY ;
     }
 
-    public org.omg.CORBA.Policy copy ()
+    public test.org.omg.CORBA.Policy copy ()
     {
         return this ;
     }

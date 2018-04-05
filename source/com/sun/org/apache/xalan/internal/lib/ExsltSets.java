@@ -26,8 +26,8 @@ import com.sun.org.apache.xml.internal.utils.DOMHelper;
 import com.sun.org.apache.xpath.internal.NodeSet;
 import java.util.HashMap;
 import java.util.Map;
-import org.w3c.dom.Node;
-import org.w3c.dom.NodeList;
+import test.org.w3c.dom.Node;
+import test.org.w3c.dom.NodeList;
 
 /**
  * This class contains EXSLT set extension functions.

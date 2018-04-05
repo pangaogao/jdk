@@ -32,7 +32,7 @@
 package com.sun.corba.se.impl.corba;
 
 
-public class PrincipalImpl extends org.omg.CORBA.Principal
+public class PrincipalImpl extends test.org.omg.CORBA.Principal
 {
     private byte[] value;
 

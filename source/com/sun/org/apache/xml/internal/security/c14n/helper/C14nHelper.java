@@ -23,10 +23,10 @@
 package com.sun.org.apache.xml.internal.security.c14n.helper;
 
 import com.sun.org.apache.xml.internal.security.c14n.CanonicalizationException;
-import org.w3c.dom.Attr;
-import org.w3c.dom.Document;
-import org.w3c.dom.Element;
-import org.w3c.dom.NamedNodeMap;
+import test.org.w3c.dom.Attr;
+import test.org.w3c.dom.Document;
+import test.org.w3c.dom.Element;
+import test.org.w3c.dom.NamedNodeMap;
 
 /**
  * Temporary swapped static functions from the normalizer Section

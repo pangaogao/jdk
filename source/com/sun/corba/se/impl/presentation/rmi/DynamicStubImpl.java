@@ -32,27 +32,18 @@ import java.io.Serializable ;
 
 import java.rmi.RemoteException ;
 
-import javax.rmi.CORBA.Tie ;
+import test.org.omg.CORBA_2_3.portable.ObjectImpl ;
 
-import org.omg.CORBA_2_3.portable.ObjectImpl ;
+import test.org.omg.CORBA.portable.Delegate ;
+import test.org.omg.CORBA.portable.OutputStream ;
 
-import org.omg.CORBA.portable.Delegate ;
-import org.omg.CORBA.portable.OutputStream ;
+import test.org.omg.CORBA.ORB ;
 
-import org.omg.CORBA.SystemException ;
-import org.omg.CORBA.ORB ;
-
-import com.sun.corba.se.spi.orbutil.proxy.InvocationHandlerFactory ;
 import com.sun.corba.se.spi.presentation.rmi.PresentationManager ;
-import com.sun.corba.se.spi.presentation.rmi.StubAdapter ;
 import com.sun.corba.se.spi.presentation.rmi.DynamicStub ;
-import com.sun.corba.se.impl.presentation.rmi.StubConnectImpl ;
-import com.sun.corba.se.spi.logging.CORBALogDomains ;
-import com.sun.corba.se.impl.logging.UtilSystemException ;
 import com.sun.corba.se.impl.ior.StubIORImpl ;
 import com.sun.corba.se.impl.util.RepositoryId ;
 import com.sun.corba.se.impl.util.JDKBridge ;
-import com.sun.corba.se.impl.util.Utility ;
 
 // XXX Do we need _get_codebase?
 public class DynamicStubImpl extends ObjectImpl

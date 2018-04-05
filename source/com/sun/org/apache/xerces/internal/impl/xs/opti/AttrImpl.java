@@ -31,7 +31,7 @@
  * 4. The names "Xerces" and "Apache Software Foundation" must
  *    not be used to endorse or promote products derived from this
  *    software without prior written permission. For written
- *    permission, please contact apache@apache.org.
+ *    permission, please contact apache@apache.test.org.
  *
  * 5. Products derived from this software may not be called "Apache",
  *    nor may "Apache" appear in their name, without prior written
@@ -61,12 +61,12 @@
 
 package com.sun.org.apache.xerces.internal.impl.xs.opti;
 
-import org.w3c.dom.Attr;
-import org.w3c.dom.DOMException;
-import org.w3c.dom.Document;
-import org.w3c.dom.Element;
-import org.w3c.dom.Node;
-import org.w3c.dom.TypeInfo;
+import test.org.w3c.dom.Attr;
+import test.org.w3c.dom.DOMException;
+import test.org.w3c.dom.Document;
+import test.org.w3c.dom.Element;
+import test.org.w3c.dom.Node;
+import test.org.w3c.dom.TypeInfo;
 
 /**
  * This class represents a single attribute.

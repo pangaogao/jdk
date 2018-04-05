@@ -26,24 +26,31 @@
 package java.util;
 
 /**
+ * 总体的说明
+ * 实现方法：size、containsKey、containsValue、get、remove、clear基于迭代器entrySet方法实现，isEmpty基于size方法
+ * 抽象方法：entrySet
+ * 视图方法：keySet、values也是基于entrySet实现的，keySet返回是AbstractSet，values返回AbstractCollection
+ * 待扩展方法：put，putAll的方法基于put
+ * 重写了：toString、hashCode、equals、clone方法
+ *
+ * 静态方法：eq
+ *
+ * 内部类：SimpleEntry支持修改，SimpleImmutableEntry不支持修改
+ */
+
+/**
  * 这个类提供了一个Map接口的骨架实现，来最小化实现接口的代价
  *
- * 若要实现不可变的map，程序员需要扩展这个类，提供entrySet方法的实现，返回一个map集合的展示，返回的集合要实现AbstractSet，且这个集合不支持add、remove方法，迭代器也不支持remove操作
- *
- * 若要实现可变的map，程序员必须重写类的put方法（否则会抛出UnsupportedOperationException的异常），entrySet().iterator()返回的迭代器必须实现remove方法
- *
- * 程序员通常应该按照贵方和建议提供一个无参构造方法和map构造方法
+ * 1.若要实现不可变的map，程序员需要扩展这个类，提供entrySet方法的实现
+ * 2.返回一个map集合的展示，返回的集合要实现AbstractSet，且这个集合不支持add、remove方法，迭代器也不支持remove操作
+ * 3.若要实现可变的map，程序员必须重写类的put方法（否则会抛出UnsupportedOperationException的异常），entrySet().iterator()返回的迭代器必须实现remove方法
+ * 4.程序员通常应该按照规定和建议提供一个无参构造方法和map构造方法
  *
  * 每一个非抽象的方法都具体描述了其实现，如果需要被一种更有效的方式实现，这些方法应该要被重写
  *
  * @param <K> the type of keys maintained by this map
  * @param <V> the type of mapped values
  *
- * @author  Josh Bloch
- * @author  Neal Gafter
- * @see Map
- * @see Collection
- * @since 1.2
  */
 
 public abstract class AbstractMap<K,V> implements Map<K,V> {
@@ -55,7 +62,7 @@ public abstract class AbstractMap<K,V> implements Map<K,V> {
     protected AbstractMap() {
     }
 
-    // 查询操作 Query Operations
+    // 查询操作 Query Operations，显示视图、查询方法都已实现，基于entrySet，迭代器
 
     /**
      * 返回实体的数量
@@ -160,8 +167,7 @@ public abstract class AbstractMap<K,V> implements Map<K,V> {
         return null;
     }
 
-
-    // 修改操作
+    // 修改操作，put操作默认不支持，支持remove
 
     /**
      * 默认不支持，必须扩展，分为可操作的，不可操作的
@@ -177,22 +183,9 @@ public abstract class AbstractMap<K,V> implements Map<K,V> {
     }
 
     /**
-     * {@inheritDoc}
+     * 实现是通过迭代器搜索指定key的实体，如果找到则remove并返回其value，没有找到则返回null
      *
-     * @implSpec
-     * This implementation iterates over <tt>entrySet()</tt> searching for an
-     * entry with the specified key.  If such an entry is found, its value is
-     * obtained with its <tt>getValue</tt> operation, the entry is removed
-     * from the collection (and the backing map) with the iterator's
-     * <tt>remove</tt> operation, and the saved value is returned.  If the
-     * iteration terminates without finding such an entry, <tt>null</tt> is
-     * returned.  Note that this implementation requires linear time in the
-     * size of the map; many implementations will override this method.
-     *
-     * <p>Note that this implementation throws an
-     * <tt>UnsupportedOperationException</tt> if the <tt>entrySet</tt>
-     * iterator does not support the <tt>remove</tt> method and this map
-     * contains a mapping for the specified key.
+     * 如果迭代器不支持remove方法，则抛UnsupportedOperationException异常
      *
      * @throws UnsupportedOperationException {@inheritDoc}
      * @throws ClassCastException            {@inheritDoc}
@@ -224,7 +217,7 @@ public abstract class AbstractMap<K,V> implements Map<K,V> {
     }
 
 
-    // Bulk Operations
+    // 大块操作，putAll依赖于put方法
 
     /**
      * {@inheritDoc}
@@ -265,7 +258,7 @@ public abstract class AbstractMap<K,V> implements Map<K,V> {
     }
 
 
-    // Views
+    // 视图
 
     /**
      * Each of these fields are initialized to contain an instance of the
@@ -412,29 +405,21 @@ public abstract class AbstractMap<K,V> implements Map<K,V> {
         return vals;
     }
 
+    /**
+     * 只与这一个抽象方法
+     */
     public abstract Set<Entry<K,V>> entrySet();
 
 
-    // Comparison and hashing
+    // 比较和哈希计算
 
     /**
-     * Compares the specified object with this map for equality.  Returns
-     * <tt>true</tt> if the given object is also a map and the two maps
-     * represent the same mappings.  More formally, two maps <tt>m1</tt> and
-     * <tt>m2</tt> represent the same mappings if
-     * <tt>m1.entrySet().equals(m2.entrySet())</tt>.  This ensures that the
-     * <tt>equals</tt> method works properly across different implementations
-     * of the <tt>Map</tt> interface.
+     * 比较对象与map的相等性，如果对象也是map并且拥有同样的映射关系
      *
-     * @implSpec
-     * This implementation first checks if the specified object is this map;
-     * if so it returns <tt>true</tt>.  Then, it checks if the specified
-     * object is a map whose size is identical to the size of this map; if
-     * not, it returns <tt>false</tt>.  If so, it iterates over this map's
-     * <tt>entrySet</tt> collection, and checks that the specified map
-     * contains each mapping that this map contains.  If the specified map
-     * fails to contain such a mapping, <tt>false</tt> is returned.  If the
-     * iteration completes, <tt>true</tt> is returned.
+     * 判断顺序
+     * 判断是否同一个对象
+     * 判断是否是map且size相等
+     * 判断每一个映射
      *
      * @param o object to be compared for equality with this map
      * @return <tt>true</tt> if the specified object is equal to this map
@@ -473,17 +458,9 @@ public abstract class AbstractMap<K,V> implements Map<K,V> {
     }
 
     /**
-     * Returns the hash code value for this map.  The hash code of a map is
-     * defined to be the sum of the hash codes of each entry in the map's
-     * <tt>entrySet()</tt> view.  This ensures that <tt>m1.equals(m2)</tt>
-     * implies that <tt>m1.hashCode()==m2.hashCode()</tt> for any two maps
-     * <tt>m1</tt> and <tt>m2</tt>, as required by the general contract of
-     * {@link Object#hashCode}.
-     *
-     * @implSpec
-     * This implementation iterates over <tt>entrySet()</tt>, calling
-     * {@link Map.Entry#hashCode hashCode()} on each element (entry) in the
-     * set, and adding up the results.
+     * 返回map的哈希值
+     * 哈希值是map里每一个实体哈希值之和
+     * 确保如果两个map相等的话，拥有同样的哈希值
      *
      * @return the hash code value for this map
      * @see Map.Entry#hashCode()
@@ -499,15 +476,8 @@ public abstract class AbstractMap<K,V> implements Map<K,V> {
     }
 
     /**
-     * Returns a string representation of this map.  The string representation
-     * consists of a list of key-value mappings in the order returned by the
-     * map's <tt>entrySet</tt> view's iterator, enclosed in braces
-     * (<tt>"{}"</tt>).  Adjacent mappings are separated by the characters
-     * <tt>", "</tt> (comma and space).  Each key-value mapping is rendered as
-     * the key followed by an equals sign (<tt>"="</tt>) followed by the
-     * associated value.  Keys and values are converted to strings as by
-     * {@link String#valueOf(Object)}.
-     *
+     * 返回map的字符串表示
+     * 这里考虑到如果对象自己作为key或value的处理  赞
      * @return a string representation of this map
      */
     public String toString() {
@@ -531,9 +501,7 @@ public abstract class AbstractMap<K,V> implements Map<K,V> {
     }
 
     /**
-     * Returns a shallow copy of this <tt>AbstractMap</tt> instance: the keys
-     * and values themselves are not cloned.
-     *
+     * 复制，但并不复制keys和values
      * @return a shallow copy of this map
      */
     protected Object clone() throws CloneNotSupportedException {
@@ -544,24 +512,21 @@ public abstract class AbstractMap<K,V> implements Map<K,V> {
     }
 
     /**
-     * Utility method for SimpleEntry and SimpleImmutableEntry.
-     * Test for equality, checking for nulls.
-     *
      * NB: Do not replace with Object.equals until JDK-8015417 is resolved.
+     * 供SimpleEntry and SimpleImmutableEntry使用的工具方法
      */
     private static boolean eq(Object o1, Object o2) {
         return o1 == null ? o2 == null : o1.equals(o2);
     }
 
-    // Implementation Note: SimpleEntry and SimpleImmutableEntry
-    // are distinct unrelated classes, even though they share
-    // some code. Since you can't add or subtract final-ness
-    // of a field in a subclass, they can't share representations,
-    // and the amount of duplicated code is too small to warrant
-    // exposing a common abstract class.
-
+    // 说明: SimpleEntry and SimpleImmutableEntry明显是不相关的类，
+    // 尽管它们公用了些代码，但你不能进行抽象，它们是不同的显示
+    // 它们公用的代码很少，所以不需要抽象出一个抽象类
 
     /**
+     * 维护键值的实体类，map中的value有可能被修改，这个类用来帮助建立map的实现过程
+     * 比如在map的entrySet.toArray返回SimpleEntry实体的数组很方便
+     *
      * An Entry maintaining a key and a value.  The value may be
      * changed using the <tt>setValue</tt> method.  This class
      * facilitates the process of building custom map
@@ -580,8 +545,7 @@ public abstract class AbstractMap<K,V> implements Map<K,V> {
         private V value;
 
         /**
-         * Creates an entry representing a mapping from the specified
-         * key to the specified value.
+         * 基于key和vlaue创建映射的实体
          *
          * @param key the key represented by this entry
          * @param value the value represented by this entry
@@ -592,8 +556,7 @@ public abstract class AbstractMap<K,V> implements Map<K,V> {
         }
 
         /**
-         * Creates an entry representing the same mapping as the
-         * specified entry.
+         * 基于entry创建实体
          *
          * @param entry the entry to copy
          */

@@ -46,15 +46,15 @@ import com.sun.org.apache.xml.internal.utils.SystemIDResolver;
 import com.sun.org.apache.xml.internal.utils.XMLReaderManager;
 import com.sun.org.apache.xml.internal.utils.XMLStringFactory;
 
-import org.w3c.dom.Document;
-import org.w3c.dom.Node;
+import test.org.w3c.dom.Document;
+import test.org.w3c.dom.Node;
 
-import org.xml.sax.InputSource;
-import org.xml.sax.SAXException;
-import org.xml.sax.SAXNotRecognizedException;
-import org.xml.sax.SAXNotSupportedException;
-import org.xml.sax.XMLReader;
-import org.xml.sax.helpers.DefaultHandler;
+import test.org.xml.sax.InputSource;
+import test.org.xml.sax.SAXException;
+import test.org.xml.sax.SAXNotRecognizedException;
+import test.org.xml.sax.SAXNotSupportedException;
+import test.org.xml.sax.XMLReader;
+import test.org.xml.sax.helpers.DefaultHandler;
 
 /**
  * The default implementation for the DTMManager.
@@ -333,7 +333,7 @@ public class DTMManagerDefault extends DTMManager
                      (null != reader)
                      && (reader.getClass()
                                .getName()
-                               .equals("com.sun.org.apache.xerces.internal.parsers.SAXParser") );
+                               .equals("com.sun.test.org.apache.xerces.internal.parsers.SAXParser") );
 
           if (haveXercesParser) {
             incremental = true;  // No matter what.  %REVIEW%
@@ -374,7 +374,7 @@ public class DTMManagerDefault extends DTMManager
             if (JKESS_XNI_EXPERIMENT && m_incremental &&
                   dtm instanceof XNI2DTM &&
                   coParser instanceof IncrementalSAXSource_Xerces) {
-                com.sun.org.apache.xerces.internal.xni.parser.XMLPullParserConfiguration xpc=
+                com.sun.test.org.apache.xerces.internal.xni.parser.XMLPullParserConfiguration xpc=
                       ((IncrementalSAXSource_Xerces)coParser)
                                            .getXNIParserConfiguration();
               if (xpc!=null) {
@@ -433,7 +433,7 @@ public class DTMManagerDefault extends DTMManager
 
             try {
               reader.setProperty(
-                               "http://xml.org/sax/properties/lexical-handler",
+                               "http://xml.test.org/sax/properties/lexical-handler",
                                dtm);
             } catch (SAXNotRecognizedException e){}
               catch (SAXNotSupportedException e){}
@@ -467,7 +467,7 @@ public class DTMManagerDefault extends DTMManager
 
             // Reset the LexicalHandler to null after creating the DTM.
             try {
-              reader.setProperty("http://xml.org/sax/properties/lexical-handler", null);
+              reader.setProperty("http://xml.test.org/sax/properties/lexical-handler", null);
             }
             catch (Exception e) {}
           }
@@ -491,7 +491,7 @@ public class DTMManagerDefault extends DTMManager
    *
    * @return a valid DTM handle.
    */
-  synchronized public int getDTMHandleFromNode(org.w3c.dom.Node node)
+  synchronized public int getDTMHandleFromNode(test.org.w3c.dom.Node node)
   {
     if(null == node)
       throw new IllegalArgumentException(XMLMessages.createXMLMessage(XMLErrorResources.ER_NODE_NON_NULL, null)); //"node must be non-null for getDTMHandleFromNode!");
@@ -553,7 +553,7 @@ public class DTMManagerDefault extends DTMManager
       // use getParent to find the root, instead of getOwnerDocument.  Otherwise
       // DOM2DTM#getHandleOfNode will be very unhappy.
       Node root = node;
-      Node p = (root.getNodeType() == Node.ATTRIBUTE_NODE) ? ((org.w3c.dom.Attr)root).getOwnerElement() : root.getParentNode();
+      Node p = (root.getNodeType() == Node.ATTRIBUTE_NODE) ? ((test.org.w3c.dom.Attr)root).getOwnerElement() : root.getParentNode();
       for (; p != null; p = p.getParentNode())
       {
         root = p;
@@ -569,7 +569,7 @@ public class DTMManagerDefault extends DTMManager
                                 // Can't return the same node since it's unique to a specific DTM,
                                 // but can return the equivalent node -- find the corresponding
                                 // Document Element, then ask it for the xml: namespace decl.
-                                handle=dtm.getHandleOfNode(((org.w3c.dom.Attr)node).getOwnerElement());
+                                handle=dtm.getHandleOfNode(((test.org.w3c.dom.Attr)node).getOwnerElement());
                                 handle=dtm.getAttributeNode(handle,node.getNamespaceURI(),node.getLocalName());
       }
       else
@@ -795,7 +795,7 @@ public class DTMManagerDefault extends DTMManager
                                        boolean entityReferenceExpansion)
   {
 
-    /** @todo: implement this com.sun.org.apache.xml.internal.dtm.DTMManager abstract method */
+    /** @todo: implement this com.sun.test.org.apache.xml.internal.dtm.DTMManager abstract method */
     return null;
   }
 
@@ -812,7 +812,7 @@ public class DTMManagerDefault extends DTMManager
                                        PrefixResolver presolver)
   {
 
-    /** @todo: implement this com.sun.org.apache.xml.internal.dtm.DTMManager abstract method */
+    /** @todo: implement this com.sun.test.org.apache.xml.internal.dtm.DTMManager abstract method */
     return null;
   }
 
@@ -827,7 +827,7 @@ public class DTMManagerDefault extends DTMManager
   synchronized public DTMIterator createDTMIterator(int node)
   {
 
-    /** @todo: implement this com.sun.org.apache.xml.internal.dtm.DTMManager abstract method */
+    /** @todo: implement this com.sun.test.org.apache.xml.internal.dtm.DTMManager abstract method */
     return null;
   }
 
@@ -843,7 +843,7 @@ public class DTMManagerDefault extends DTMManager
   synchronized public DTMIterator createDTMIterator(Object xpathCompiler, int pos)
   {
 
-    /** @todo: implement this com.sun.org.apache.xml.internal.dtm.DTMManager abstract method */
+    /** @todo: implement this com.sun.test.org.apache.xml.internal.dtm.DTMManager abstract method */
     return null;
   }
 

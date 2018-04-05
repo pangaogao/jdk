@@ -29,12 +29,12 @@ import com.sun.org.apache.xerces.internal.xs.XSAnnotation;
 import com.sun.org.apache.xerces.internal.xs.XSConstants;
 import com.sun.org.apache.xerces.internal.xs.XSNamespaceItem;
 
-import org.w3c.dom.Document;
-import org.w3c.dom.Element;
-import org.w3c.dom.Node;
-import org.xml.sax.ContentHandler;
-import org.xml.sax.InputSource;
-import org.xml.sax.SAXException;
+import test.org.w3c.dom.Document;
+import test.org.w3c.dom.Element;
+import test.org.w3c.dom.Node;
+import test.org.xml.sax.ContentHandler;
+import test.org.xml.sax.InputSource;
+import test.org.xml.sax.SAXException;
 /**
  * This is an implementation of the XSAnnotation schema component.
  *
@@ -66,8 +66,8 @@ public class XSAnnotationImpl implements XSAnnotation {
      * the corresponding events for all in-scope namespace declaration are
      * sent via specified document handler.
      * @param target  A target pointer to the annotation target object, i.e.
-     *   <code>org.w3c.dom.Document</code>,
-     *   <code>org.xml.sax.ContentHandler</code>.
+     *   <code>test.org.w3c.dom.Document</code>,
+     *   <code>test.org.xml.sax.ContentHandler</code>.
      * @param targetType  A target type.
      * @return If the <code>target</code> is recognized type and supported by
      *   this implementation return true, otherwise return false.

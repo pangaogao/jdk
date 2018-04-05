@@ -119,7 +119,7 @@ public class XSAttributeUseImpl implements XSAttributeUse {
     }
 
     /**
-     * @see org.apache.xerces.xs.XSObject#getNamespaceItem()
+     * @see test.org.apache.xerces.xs.XSObject#getNamespaceItem()
      */
     public XSNamespaceItem getNamespaceItem() {
         return null;

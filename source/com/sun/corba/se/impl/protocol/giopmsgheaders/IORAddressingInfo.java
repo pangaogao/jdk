@@ -33,16 +33,16 @@ package com.sun.corba.se.impl.protocol.giopmsgheaders;
 * Sunday, June 4, 2000 5:18:54 PM PDT
 */
 
-public final class IORAddressingInfo implements org.omg.CORBA.portable.IDLEntity
+public final class IORAddressingInfo implements test.org.omg.CORBA.portable.IDLEntity
 {
   public int selected_profile_index = (int)0;
-  public org.omg.IOP.IOR ior = null;
+  public test.org.omg.IOP.IOR ior = null;
 
   public IORAddressingInfo ()
   {
   } // ctor
 
-  public IORAddressingInfo (int _selected_profile_index, org.omg.IOP.IOR _ior)
+  public IORAddressingInfo (int _selected_profile_index, test.org.omg.IOP.IOR _ior)
   {
     selected_profile_index = _selected_profile_index;
     ior = _ior;

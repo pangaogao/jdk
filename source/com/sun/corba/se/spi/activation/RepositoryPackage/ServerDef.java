@@ -8,7 +8,7 @@ package com.sun.corba.se.spi.activation.RepositoryPackage;
 * Wednesday, March 15, 2017 1:33:57 AM PDT
 */
 
-public final class ServerDef implements org.omg.CORBA.portable.IDLEntity
+public final class ServerDef implements test.org.omg.CORBA.portable.IDLEntity
 {
   public String applicationName = null;
 

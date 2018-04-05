@@ -33,27 +33,27 @@ package com.sun.corba.se.impl.corba;
 
 abstract public class TypeCodeImplHelper
 {
-    private static String  _id = "IDL:omg.org/CORBA/TypeCode:1.0";
+    private static String  _id = "IDL:omg.test.org/CORBA/TypeCode:1.0";
 
-    public static void insert (org.omg.CORBA.Any a, org.omg.CORBA.TypeCode that)
+    public static void insert (test.org.omg.CORBA.Any a, test.org.omg.CORBA.TypeCode that)
     {
-        org.omg.CORBA.portable.OutputStream out = a.create_output_stream ();
+        test.org.omg.CORBA.portable.OutputStream out = a.create_output_stream ();
         a.type (type ());
         write (out, that);
         a.read_value (out.create_input_stream (), type ());
     }
 
-    public static org.omg.CORBA.TypeCode extract (org.omg.CORBA.Any a)
+    public static test.org.omg.CORBA.TypeCode extract (test.org.omg.CORBA.Any a)
     {
         return read (a.create_input_stream ());
     }
 
-    private static org.omg.CORBA.TypeCode __typeCode = null;
-    synchronized public static org.omg.CORBA.TypeCode type ()
+    private static test.org.omg.CORBA.TypeCode __typeCode = null;
+    synchronized public static test.org.omg.CORBA.TypeCode type ()
     {
         if (__typeCode == null)
             {
-                __typeCode = org.omg.CORBA.ORB.init ().get_primitive_tc (org.omg.CORBA.TCKind.tk_TypeCode);
+                __typeCode = test.org.omg.CORBA.ORB.init ().get_primitive_tc (test.org.omg.CORBA.TCKind.tk_TypeCode);
             }
         return __typeCode;
     }
@@ -63,17 +63,17 @@ abstract public class TypeCodeImplHelper
         return _id;
     }
 
-    public static org.omg.CORBA.TypeCode read (org.omg.CORBA.portable.InputStream istream)
+    public static test.org.omg.CORBA.TypeCode read (test.org.omg.CORBA.portable.InputStream istream)
     {
         return istream.read_TypeCode ();
     }
 
-    public static void write (org.omg.CORBA.portable.OutputStream ostream, org.omg.CORBA.TypeCode value)
+    public static void write (test.org.omg.CORBA.portable.OutputStream ostream, test.org.omg.CORBA.TypeCode value)
     {
         ostream.write_TypeCode (value);
     }
 
-    public static void write (org.omg.CORBA.portable.OutputStream ostream, TypeCodeImpl value)
+    public static void write (test.org.omg.CORBA.portable.OutputStream ostream, TypeCodeImpl value)
     {
         ostream.write_TypeCode (value);
     }

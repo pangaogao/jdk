@@ -29,12 +29,12 @@ import java.util.Properties;
 
 import javax.xml.transform.Result;
 
-import org.w3c.dom.Node;
-import org.xml.sax.Attributes;
-import org.xml.sax.ContentHandler;
-import org.xml.sax.Locator;
-import org.xml.sax.SAXException;
-import org.xml.sax.ext.LexicalHandler;
+import test.org.w3c.dom.Node;
+import test.org.xml.sax.Attributes;
+import test.org.xml.sax.ContentHandler;
+import test.org.xml.sax.Locator;
+import test.org.xml.sax.SAXException;
+import test.org.xml.sax.ext.LexicalHandler;
 
 /**
  * This class receives notification of SAX-like events, and with gathered
@@ -137,7 +137,7 @@ public final class ToXMLSAXHandler extends ToSAXHandler
     }
 
     /**
-     * @see org.xml.sax.ext.DeclHandler#attributeDecl(String, String, String, String, String)
+     * @see test.org.xml.sax.ext.DeclHandler#attributeDecl(String, String, String, String, String)
      */
     public void attributeDecl(
         String arg0,
@@ -150,14 +150,14 @@ public final class ToXMLSAXHandler extends ToSAXHandler
     }
 
     /**
-     * @see org.xml.sax.ext.DeclHandler#elementDecl(String, String)
+     * @see test.org.xml.sax.ext.DeclHandler#elementDecl(String, String)
      */
     public void elementDecl(String arg0, String arg1) throws SAXException
     {
     }
 
     /**
-     * @see org.xml.sax.ext.DeclHandler#externalEntityDecl(String, String, String)
+     * @see test.org.xml.sax.ext.DeclHandler#externalEntityDecl(String, String, String)
      */
     public void externalEntityDecl(String arg0, String arg1, String arg2)
         throws SAXException
@@ -165,7 +165,7 @@ public final class ToXMLSAXHandler extends ToSAXHandler
     }
 
     /**
-     * @see org.xml.sax.ext.DeclHandler#internalEntityDecl(String, String)
+     * @see test.org.xml.sax.ext.DeclHandler#internalEntityDecl(String, String)
      */
     public void internalEntityDecl(String arg0, String arg1)
         throws SAXException
@@ -174,7 +174,7 @@ public final class ToXMLSAXHandler extends ToSAXHandler
 
     /**
      * Receives notification of the end of the document.
-     * @see org.xml.sax.ContentHandler#endDocument()
+     * @see test.org.xml.sax.ContentHandler#endDocument()
      */
     public void endDocument() throws SAXException
     {
@@ -238,7 +238,7 @@ public final class ToXMLSAXHandler extends ToSAXHandler
     }
 
     /**
-     * @see org.xml.sax.ContentHandler#endElement(String, String, String)
+     * @see test.org.xml.sax.ContentHandler#endElement(String, String, String)
      */
     public void endElement(String namespaceURI, String localName, String qName)
         throws SAXException
@@ -276,7 +276,7 @@ public final class ToXMLSAXHandler extends ToSAXHandler
     }
 
     /**
-     * @see org.xml.sax.ContentHandler#endPrefixMapping(String)
+     * @see test.org.xml.sax.ContentHandler#endPrefixMapping(String)
      */
     public void endPrefixMapping(String prefix) throws SAXException
     {
@@ -287,7 +287,7 @@ public final class ToXMLSAXHandler extends ToSAXHandler
     }
 
     /**
-     * @see org.xml.sax.ContentHandler#ignorableWhitespace(char[], int, int)
+     * @see test.org.xml.sax.ContentHandler#ignorableWhitespace(char[], int, int)
      */
     public void ignorableWhitespace(char[] arg0, int arg1, int arg2)
         throws SAXException
@@ -296,7 +296,7 @@ public final class ToXMLSAXHandler extends ToSAXHandler
     }
 
     /**
-     * @see org.xml.sax.ContentHandler#setDocumentLocator(Locator)
+     * @see test.org.xml.sax.ContentHandler#setDocumentLocator(Locator)
      */
     public void setDocumentLocator(Locator arg0)
     {
@@ -305,7 +305,7 @@ public final class ToXMLSAXHandler extends ToSAXHandler
     }
 
     /**
-     * @see org.xml.sax.ContentHandler#skippedEntity(String)
+     * @see test.org.xml.sax.ContentHandler#skippedEntity(String)
      */
     public void skippedEntity(String arg0) throws SAXException
     {
@@ -313,7 +313,7 @@ public final class ToXMLSAXHandler extends ToSAXHandler
     }
 
     /**
-     * @see org.xml.sax.ContentHandler#startPrefixMapping(String, String)
+     * @see test.org.xml.sax.ContentHandler#startPrefixMapping(String, String)
      * @param prefix The prefix that maps to the URI
      * @param uri The URI for the namespace
      */
@@ -326,7 +326,7 @@ public final class ToXMLSAXHandler extends ToSAXHandler
     /**
      * Remember the prefix/uri mapping at the current nested element depth.
      *
-     * @see org.xml.sax.ContentHandler#startPrefixMapping(String, String)
+     * @see test.org.xml.sax.ContentHandler#startPrefixMapping(String, String)
      * @param prefix The prefix that maps to the URI
      * @param uri The URI for the namespace
      * @param shouldFlush a flag indicating if the mapping applies to the
@@ -337,7 +337,7 @@ public final class ToXMLSAXHandler extends ToSAXHandler
         String prefix,
         String uri,
         boolean shouldFlush)
-        throws org.xml.sax.SAXException
+        throws test.org.xml.sax.SAXException
     {
 
         /* Remember the mapping, and at what depth it was declared
@@ -385,7 +385,7 @@ public final class ToXMLSAXHandler extends ToSAXHandler
                         {                             // that maps ns1 prefix to "" URI
                             name = "xmlns:" + prefix;
 
-                            /* for something like xmlns:abc="w3.pretend.org"
+                            /* for something like xmlns:abc="w3.pretend.test.org"
                                      *  the uri is the value, that is why we pass it in the
                                      * value, or 5th slot of addAttributeAlways()
                                    */
@@ -399,7 +399,7 @@ public final class ToXMLSAXHandler extends ToSAXHandler
 
 
     /**
-     * @see org.xml.sax.ext.LexicalHandler#comment(char[], int, int)
+     * @see test.org.xml.sax.ext.LexicalHandler#comment(char[], int, int)
      */
     public void comment(char[] arg0, int arg1, int arg2) throws SAXException
     {
@@ -412,7 +412,7 @@ public final class ToXMLSAXHandler extends ToSAXHandler
     }
 
     /**
-     * @see org.xml.sax.ext.LexicalHandler#endCDATA()
+     * @see test.org.xml.sax.ext.LexicalHandler#endCDATA()
      */
     public void endCDATA() throws SAXException
     {
@@ -440,7 +440,7 @@ public final class ToXMLSAXHandler extends ToSAXHandler
     }
 
     /**
-     * @see org.xml.sax.ext.LexicalHandler#endDTD()
+     * @see test.org.xml.sax.ext.LexicalHandler#endDTD()
      */
     public void endDTD() throws SAXException
     {
@@ -449,7 +449,7 @@ public final class ToXMLSAXHandler extends ToSAXHandler
     }
 
     /**
-     * @see org.xml.sax.ext.LexicalHandler#startEntity(String)
+     * @see test.org.xml.sax.ext.LexicalHandler#startEntity(String)
      */
     public void startEntity(String arg0) throws SAXException
     {
@@ -575,7 +575,7 @@ public final class ToXMLSAXHandler extends ToSAXHandler
 
     /**
      *
-     * @see org.xml.sax.ContentHandler#processingInstruction(String, String)
+     * @see test.org.xml.sax.ContentHandler#processingInstruction(String, String)
      * Send a processing instruction to the output document
      */
     public void processingInstruction(String target, String data)
@@ -638,7 +638,7 @@ public final class ToXMLSAXHandler extends ToSAXHandler
     }
 
     /**
-     * @see org.xml.sax.ContentHandler#startElement(String, String, String, Attributes)
+     * @see test.org.xml.sax.ContentHandler#startElement(String, String, String, Attributes)
      */
     public void startElement(
     String namespaceURI,
@@ -683,7 +683,7 @@ public final class ToXMLSAXHandler extends ToSAXHandler
     }
 
     private void ensurePrefixIsDeclared(String ns, String rawName)
-        throws org.xml.sax.SAXException
+        throws test.org.xml.sax.SAXException
     {
 
         if (ns != null && ns.length() > 0)
@@ -705,7 +705,7 @@ public final class ToXMLSAXHandler extends ToSAXHandler
                         // Bugzilla1133: Generate attribute as well as namespace event.
                         // SAX does expect both.
                         this.addAttributeAlways(
-                            "http://www.w3.org/2000/xmlns/",
+                            "http://www.w3.test.org/2000/xmlns/",
                             no_prefix ? "xmlns" : prefix,  // local name
                             no_prefix ? "xmlns" : ("xmlns:"+ prefix), // qname
                             "CDATA",

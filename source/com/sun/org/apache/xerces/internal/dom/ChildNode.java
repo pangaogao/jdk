@@ -20,7 +20,7 @@
 
 package com.sun.org.apache.xerces.internal.dom;
 
-import org.w3c.dom.Node;
+import test.org.w3c.dom.Node;
 
 /**
  * ChildNode inherits from NodeImpl and adds the capability of being a child by

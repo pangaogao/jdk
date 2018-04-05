@@ -8,7 +8,7 @@ package com.sun.corba.se.PortableActivationIDL;
 * Wednesday, March 15, 2017 1:33:56 AM PDT
 */
 
-public final class ServerAlreadyRegistered extends org.omg.CORBA.UserException
+public final class ServerAlreadyRegistered extends test.org.omg.CORBA.UserException
 {
   public String serverId = null;
 

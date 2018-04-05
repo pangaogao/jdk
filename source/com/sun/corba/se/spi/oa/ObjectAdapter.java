@@ -25,14 +25,12 @@
 
 package com.sun.corba.se.spi.oa ;
 
-import org.omg.CORBA.Policy ;
+import test.org.omg.CORBA.Policy ;
 
-import org.omg.PortableInterceptor.ObjectReferenceTemplate ;
-import org.omg.PortableInterceptor.ObjectReferenceFactory ;
+import test.org.omg.PortableInterceptor.ObjectReferenceTemplate ;
+import test.org.omg.PortableInterceptor.ObjectReferenceFactory ;
 
 import com.sun.corba.se.spi.orb.ORB ;
-
-import com.sun.corba.se.spi.oa.OADestroyed ;
 
 import com.sun.corba.se.spi.ior.IORTemplate ;
 
@@ -187,7 +185,7 @@ public interface ObjectAdapter
     int getManagerId() ;
 
     /** Return the current state of this object adapter (see
-    * org.omg.PortableInterceptors for states.
+    * test.org.omg.PortableInterceptors for states.
     */
     short getState() ;
 
@@ -210,7 +208,7 @@ public interface ObjectAdapter
      * reference to be replaced by its servant when it is unmarshalled locally.
      * Such objects are not ORB mediated.
      */
-    org.omg.CORBA.Object getLocalServant( byte[] objectId ) ;
+    test.org.omg.CORBA.Object getLocalServant(byte[] objectId ) ;
 
     /** Get the servant for the request given by the parameters.
     * info must contain a valid objectId in this call.

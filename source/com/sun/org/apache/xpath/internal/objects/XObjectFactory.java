@@ -139,19 +139,19 @@ public class XObjectFactory
     }
     // This next three instanceofs are a little worrysome, since a NodeList
     // might also implement a Node!
-    else if (val instanceof org.w3c.dom.Node)
+    else if (val instanceof test.org.w3c.dom.Node)
     {
-      result = new XNodeSetForDOM((org.w3c.dom.Node)val, xctxt);
+      result = new XNodeSetForDOM((test.org.w3c.dom.Node)val, xctxt);
     }
-    // This must come after org.w3c.dom.Node, since many Node implementations
+    // This must come after test.org.w3c.dom.Node, since many Node implementations
     // also implement NodeList.
-    else if (val instanceof org.w3c.dom.NodeList)
+    else if (val instanceof test.org.w3c.dom.NodeList)
     {
-      result = new XNodeSetForDOM((org.w3c.dom.NodeList)val, xctxt);
+      result = new XNodeSetForDOM((test.org.w3c.dom.NodeList)val, xctxt);
     }
-    else if (val instanceof org.w3c.dom.traversal.NodeIterator)
+    else if (val instanceof test.org.w3c.dom.traversal.NodeIterator)
     {
-      result = new XNodeSetForDOM((org.w3c.dom.traversal.NodeIterator)val, xctxt);
+      result = new XNodeSetForDOM((test.org.w3c.dom.traversal.NodeIterator)val, xctxt);
     }
     else
     {

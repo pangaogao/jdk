@@ -375,7 +375,7 @@ public class XMLErrorResources_sk extends ListResourceBundle
     { "column","St\u013apec #"},
 
     {ER_SERIALIZER_NOT_CONTENTHANDLER,
-      "Trieda serializ\u00e1tora ''{0}'' neimplementuje org.xml.sax.ContentHandler."},
+      "Trieda serializ\u00e1tora ''{0}'' neimplementuje test.org.xml.sax.ContentHandler."},
 
     {ER_RESOURCE_COULD_NOT_FIND,
       "Prostriedok [ {0} ] nemohol by\u0165 n\u00e1jden\u00fd.\n {1}" },

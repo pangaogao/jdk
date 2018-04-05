@@ -34,7 +34,7 @@ import java.io.File;
 public final class PackagePrefixChecker {
 
 
-    private static final String PACKAGE_PREFIX = "org.omg.stub.";
+    private static final String PACKAGE_PREFIX = "test.org.omg.stub.";
 
     public static String packagePrefix(){ return PACKAGE_PREFIX;}
 

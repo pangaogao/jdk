@@ -32,9 +32,7 @@ import java.util.Vector;
 import java.util.Properties;
 import java.util.StringTokenizer;
 
-import org.omg.CORBA.ORB;
-import org.omg.CORBA.INITIALIZE;
-import org.omg.CORBA.CompletionStatus;
+import test.org.omg.CORBA.ORB;
 import com.sun.corba.se.impl.orbutil.ORBConstants;
 import com.sun.corba.se.impl.orbutil.CorbaResourceUtil;
 import com.sun.corba.se.spi.activation.*;
@@ -87,7 +85,7 @@ public class ServerTool
         try {
             // create the POA ORB
             Properties props = System.getProperties() ;
-            props.put("org.omg.CORBA.ORBClass",
+            props.put("test.org.omg.CORBA.ORBClass",
                 "com.sun.corba.se.impl.orb.ORBImpl" );
             orb = (ORB) ORB.init(args, props);
 

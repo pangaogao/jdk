@@ -30,10 +30,10 @@ import java.util.HashMap;
 import java.util.Map;
 
 import com.sun.org.apache.xml.internal.security.c14n.Canonicalizer;
-import org.w3c.dom.Element;
-import org.w3c.dom.NamedNodeMap;
-import org.w3c.dom.Node;
-import org.w3c.dom.NodeList;
+import test.org.w3c.dom.Element;
+import test.org.w3c.dom.NamedNodeMap;
+import test.org.w3c.dom.Node;
+import test.org.w3c.dom.NodeList;
 
 /**
  * Converts <code>String</code>s into <code>Node</code>s and visa versa.

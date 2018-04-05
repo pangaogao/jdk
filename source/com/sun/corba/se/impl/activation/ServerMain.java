@@ -31,7 +31,7 @@ import java.io.*;
 import java.util.Date;
 import java.util.Properties ;
 
-import org.omg.CORBA.ORB ;
+import test.org.omg.CORBA.ORB ;
 import com.sun.corba.se.spi.activation.Activator ;
 import com.sun.corba.se.spi.activation.ActivatorHelper ;
 import com.sun.corba.se.impl.orbutil.ORBConstants ;
@@ -188,7 +188,7 @@ public class ServerMain
 
     private Method getNamedMethod( Class serverClass, String methodName )
     {
-        Class argTypes[] = new Class[] { org.omg.CORBA.ORB.class } ;
+        Class argTypes[] = new Class[] { test.org.omg.CORBA.ORB.class } ;
         Method method = null ;
 
         try {
@@ -294,7 +294,7 @@ public class ServerMain
         Method shutdownMethod = getNamedMethod( serverClass, "shutdown" ) ;
 
         Properties props = new Properties() ;
-        props.put( "org.omg.CORBA.ORBClass",
+        props.put( "test.org.omg.CORBA.ORBClass",
             "com.sun.corba.se.impl.orb.ORBImpl" ) ;
         // NOTE: Very important to pass this property, otherwise the
         // Persistent Server registration will be unsucessfull.

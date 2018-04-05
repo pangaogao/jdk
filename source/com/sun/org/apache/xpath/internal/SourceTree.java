@@ -36,7 +36,7 @@ public class SourceTree
    *
    *
    * @param root The root of the source tree, which may or may not be a
-   * {@link org.w3c.dom.Document} node.
+   * {@link test.org.w3c.dom.Document} node.
    * @param url The URI of the source tree.
    */
   public SourceTree(int root, String url)
@@ -49,6 +49,6 @@ public class SourceTree
   public String m_url;
 
   /** The root of the source tree, which may or may not be a
-   * {@link org.w3c.dom.Document} node.  */
+   * {@link test.org.w3c.dom.Document} node.  */
   public int m_root;
 }

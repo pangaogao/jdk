@@ -10,7 +10,7 @@ package com.sun.corba.se.PortableActivationIDL;
 
 /** Server callback interface, passed to Activator in registerServer method.
     */
-public final class ServerProxyHolder implements org.omg.CORBA.portable.Streamable
+public final class ServerProxyHolder implements test.org.omg.CORBA.portable.Streamable
 {
   public com.sun.corba.se.PortableActivationIDL.ServerProxy value = null;
 
@@ -23,17 +23,17 @@ public final class ServerProxyHolder implements org.omg.CORBA.portable.Streamabl
     value = initialValue;
   }
 
-  public void _read (org.omg.CORBA.portable.InputStream i)
+  public void _read (test.org.omg.CORBA.portable.InputStream i)
   {
     value = com.sun.corba.se.PortableActivationIDL.ServerProxyHelper.read (i);
   }
 
-  public void _write (org.omg.CORBA.portable.OutputStream o)
+  public void _write (test.org.omg.CORBA.portable.OutputStream o)
   {
     com.sun.corba.se.PortableActivationIDL.ServerProxyHelper.write (o, value);
   }
 
-  public org.omg.CORBA.TypeCode _type ()
+  public test.org.omg.CORBA.TypeCode _type ()
   {
     return com.sun.corba.se.PortableActivationIDL.ServerProxyHelper.type ();
   }

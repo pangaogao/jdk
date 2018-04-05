@@ -33,18 +33,11 @@ import java.io.ObjectOutputStream;
 import java.io.Serializable;
 import java.util.Hashtable;
 
-import org.omg.CORBA.Policy;
-import org.omg.CORBA.LocalObject;
-
-import org.omg.PortableServer.POA;
-import org.omg.PortableServer.Servant;
-import org.omg.PortableServer.ForwardRequest;
-import org.omg.PortableServer.ServantLocator;
-import org.omg.PortableServer.LifespanPolicyValue;
-import org.omg.PortableServer.RequestProcessingPolicyValue;
-import org.omg.PortableServer.IdAssignmentPolicyValue;
-import org.omg.PortableServer.ServantRetentionPolicyValue;
-import org.omg.PortableServer.ServantLocatorPackage.CookieHolder;
+import test.org.omg.PortableServer.POA;
+import test.org.omg.PortableServer.Servant;
+import test.org.omg.PortableServer.ForwardRequest;
+import test.org.omg.PortableServer.ServantLocator;
+import test.org.omg.PortableServer.ServantLocatorPackage.CookieHolder;
 
 import com.sun.corba.se.spi.orb.ORB;
 
@@ -53,7 +46,7 @@ import com.sun.corba.se.spi.orb.ORB;
  * @since       JDK1.2
  */
 
-public class ServantManagerImpl extends org.omg.CORBA.LocalObject implements ServantLocator
+public class ServantManagerImpl extends test.org.omg.CORBA.LocalObject implements ServantLocator
 {
 
     // computed using serialver tool

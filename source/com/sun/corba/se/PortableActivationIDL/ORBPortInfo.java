@@ -8,7 +8,7 @@ package com.sun.corba.se.PortableActivationIDL;
 * Wednesday, March 15, 2017 1:33:56 AM PDT
 */
 
-public final class ORBPortInfo implements org.omg.CORBA.portable.IDLEntity
+public final class ORBPortInfo implements test.org.omg.CORBA.portable.IDLEntity
 {
   public String orbId = null;
   public int port = (int)0;

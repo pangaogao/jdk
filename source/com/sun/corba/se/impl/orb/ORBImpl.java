@@ -32,61 +32,40 @@ import java.io.IOException;
 import java.lang.reflect.Constructor;
 import java.lang.reflect.Field;
 import java.lang.reflect.Modifier;
-import java.lang.reflect.InvocationTargetException;
 
 import java.util.Set;
 import java.util.HashSet;
-import java.util.ArrayList;
-import java.util.Iterator;
 import java.util.Properties;
 import java.util.Vector;
 import java.util.Hashtable;
 import java.util.Map;
-import java.util.HashMap;
-import java.util.LinkedList;
-import java.util.Collection;
 import java.util.Collections;
-import java.util.StringTokenizer;
 import java.util.Enumeration;
 import java.util.WeakHashMap;
 
 import java.net.InetAddress;
 
-import java.security.PrivilegedAction;
-import java.security.AccessController;
-
-import javax.rmi.CORBA.Util;
 import javax.rmi.CORBA.ValueHandler;
 
-import org.omg.CORBA.Context;
-import org.omg.CORBA.ContextList;
-import org.omg.CORBA.Environment;
-import org.omg.CORBA.ExceptionList;
-import org.omg.CORBA.ORBPackage.InvalidName;
-import org.omg.CORBA.NVList;
-import org.omg.CORBA.TCKind;
-import org.omg.CORBA.NamedValue;
-import org.omg.CORBA.Request;
-import org.omg.CORBA.SystemException;
-import org.omg.CORBA.CompletionStatus;
-import org.omg.CORBA.TypeCode;
-import org.omg.CORBA.Any;
-import org.omg.CORBA.StructMember;
-import org.omg.CORBA.UnionMember;
-import org.omg.CORBA.ValueMember;
-import org.omg.CORBA.BAD_PARAM;
-import org.omg.CORBA.MARSHAL;
+import test.org.omg.CORBA.ORBPackage.InvalidName;
+import test.org.omg.CORBA.NVList;
+import test.org.omg.CORBA.TCKind;
+import test.org.omg.CORBA.NamedValue;
+import test.org.omg.CORBA.Request;
+import test.org.omg.CORBA.SystemException;
+import test.org.omg.CORBA.CompletionStatus;
+import test.org.omg.CORBA.TypeCode;
+import test.org.omg.CORBA.Any;
+import test.org.omg.CORBA.StructMember;
+import test.org.omg.CORBA.UnionMember;
+import test.org.omg.CORBA.ValueMember;
+import test.org.omg.CORBA.BAD_PARAM;
 
-import org.omg.CORBA.portable.ValueFactory;
-
-import org.omg.CORBA.ORBPackage.InvalidName;
+import test.org.omg.CORBA.portable.ValueFactory;
 
 import com.sun.org.omg.SendingContext.CodeBase;
 
-import com.sun.corba.se.pept.broker.Broker;
 import com.sun.corba.se.pept.protocol.ClientInvocationInfo;
-import com.sun.corba.se.pept.transport.ContactInfo;
-import com.sun.corba.se.pept.transport.ConnectionCache;
 import com.sun.corba.se.pept.transport.TransportManager;
 
 import com.sun.corba.se.spi.ior.IOR;
@@ -95,8 +74,6 @@ import com.sun.corba.se.spi.ior.TaggedComponentFactoryFinder;
 import com.sun.corba.se.spi.ior.IORFactories;
 import com.sun.corba.se.spi.ior.ObjectKey;
 import com.sun.corba.se.spi.ior.ObjectKeyFactory;
-import com.sun.corba.se.spi.ior.iiop.IIOPFactories;
-import com.sun.corba.se.spi.ior.iiop.GIOPVersion;
 import com.sun.corba.se.spi.oa.OAInvocationInfo;
 import com.sun.corba.se.spi.oa.ObjectAdapterFactory;
 import com.sun.corba.se.spi.orb.DataCollector;
@@ -113,24 +90,16 @@ import com.sun.corba.se.spi.orbutil.threadpool.ThreadPoolManager;
 import com.sun.corba.se.spi.protocol.ClientDelegateFactory;
 import com.sun.corba.se.spi.protocol.RequestDispatcherRegistry;
 import com.sun.corba.se.spi.protocol.CorbaServerRequestDispatcher;
-import com.sun.corba.se.spi.protocol.RequestDispatcherDefault;
 import com.sun.corba.se.spi.protocol.PIHandler;
-import com.sun.corba.se.spi.protocol.CorbaMessageMediator;
-import com.sun.corba.se.spi.protocol.ForwardException;
 import com.sun.corba.se.spi.resolver.Resolver;
 import com.sun.corba.se.spi.resolver.LocalResolver;
-import com.sun.corba.se.spi.orb.StringPair;
-import com.sun.corba.se.spi.orb.StringPair;
 import com.sun.corba.se.spi.transport.CorbaContactInfoListFactory;
 import com.sun.corba.se.spi.transport.CorbaTransportManager;
 import com.sun.corba.se.spi.legacy.connection.LegacyServerSocketManager;
 import com.sun.corba.se.spi.copyobject.CopierManager;
-import com.sun.corba.se.spi.presentation.rmi.PresentationDefaults;
-import com.sun.corba.se.spi.presentation.rmi.PresentationManager;
 import com.sun.corba.se.spi.presentation.rmi.StubAdapter;
 import com.sun.corba.se.spi.servicecontext.ServiceContextRegistry;
 
-import com.sun.corba.se.impl.corba.TypeCodeFactory;
 import com.sun.corba.se.impl.corba.TypeCodeImpl;
 import com.sun.corba.se.impl.corba.NVListImpl;
 import com.sun.corba.se.impl.corba.ExceptionListImpl;
@@ -139,9 +108,6 @@ import com.sun.corba.se.impl.corba.NamedValueImpl;
 import com.sun.corba.se.impl.corba.EnvironmentImpl;
 import com.sun.corba.se.impl.corba.AsynchInvoke;
 import com.sun.corba.se.impl.corba.AnyImpl;
-import com.sun.corba.se.impl.corba.RequestImpl;
-import com.sun.corba.se.impl.dynamicany.DynAnyFactoryImpl;
-import com.sun.corba.se.impl.encoding.EncapsOutputStream;
 import com.sun.corba.se.impl.encoding.CachedCodeBase;
 import com.sun.corba.se.impl.interceptors.PIHandlerImpl;
 import com.sun.corba.se.impl.interceptors.PINoOpHandlerImpl;
@@ -150,12 +116,10 @@ import com.sun.corba.se.impl.ior.TaggedProfileFactoryFinderImpl;
 import com.sun.corba.se.impl.ior.TaggedProfileTemplateFactoryFinderImpl;
 import com.sun.corba.se.impl.oa.toa.TOAFactory;
 import com.sun.corba.se.impl.oa.poa.BadServerIdHandler;
-import com.sun.corba.se.impl.oa.poa.DelegateImpl;
 import com.sun.corba.se.impl.oa.poa.POAFactory;
 import com.sun.corba.se.impl.orbutil.ORBConstants;
 import com.sun.corba.se.impl.orbutil.ORBUtility;
 import com.sun.corba.se.impl.orbutil.StackImpl;
-import com.sun.corba.se.impl.orbutil.threadpool.ThreadPoolImpl;
 import com.sun.corba.se.impl.orbutil.threadpool.ThreadPoolManagerImpl;
 import com.sun.corba.se.impl.protocol.RequestDispatcherRegistryImpl;
 import com.sun.corba.se.impl.protocol.CorbaInvocationInfo;
@@ -164,7 +128,6 @@ import com.sun.corba.se.impl.legacy.connection.LegacyServerSocketManagerImpl;
 import com.sun.corba.se.impl.util.Utility;
 import com.sun.corba.se.impl.logging.ORBUtilSystemException;
 import com.sun.corba.se.impl.copyobject.CopierManagerImpl;
-import com.sun.corba.se.impl.presentation.rmi.PresentationManagerImpl;
 
 /**
  * The JavaIDL ORB implementation.
@@ -547,7 +510,7 @@ public class ORBImpl extends com.sun.corba.se.spi.orb.ORB
  * The following methods are standard public CORBA ORB APIs
  ****************************************************************************/
 
-    public synchronized org.omg.CORBA.portable.OutputStream create_output_stream()
+    public synchronized test.org.omg.CORBA.portable.OutputStream create_output_stream()
     {
         checkShutdownState();
         return sun.corba.OutputStreamFactory.newEncapsOutputStream(this);
@@ -563,7 +526,7 @@ public class ORBImpl extends com.sun.corba.se.spi.orb.ORB
      * @return          a Current pseudo-object.
      * @deprecated
      */
-    public synchronized org.omg.CORBA.Current get_current()
+    public synchronized test.org.omg.CORBA.Current get_current()
     {
         checkShutdownState();
 
@@ -602,7 +565,7 @@ public class ORBImpl extends com.sun.corba.se.spi.orb.ORB
      *
      * @see NVList
      */
-    public synchronized NVList create_operation_list(org.omg.CORBA.Object oper)
+    public synchronized NVList create_operation_list(test.org.omg.CORBA.Object oper)
     {
         checkShutdownState();
         throw wrapper.genericNoImpl() ;
@@ -624,7 +587,7 @@ public class ORBImpl extends com.sun.corba.se.spi.orb.ORB
      *
      * @result          ExceptionList created
      */
-    public synchronized org.omg.CORBA.ExceptionList create_exception_list()
+    public synchronized test.org.omg.CORBA.ExceptionList create_exception_list()
     {
         checkShutdownState();
         return new ExceptionListImpl();
@@ -635,7 +598,7 @@ public class ORBImpl extends com.sun.corba.se.spi.orb.ORB
      *
      * @result          ContextList created
      */
-    public synchronized org.omg.CORBA.ContextList create_context_list()
+    public synchronized test.org.omg.CORBA.ContextList create_context_list()
     {
         checkShutdownState();
         return new ContextListImpl(this);
@@ -646,7 +609,7 @@ public class ORBImpl extends com.sun.corba.se.spi.orb.ORB
      *
      * @result          the default Context object
      */
-    public synchronized org.omg.CORBA.Context get_default_context()
+    public synchronized test.org.omg.CORBA.Context get_default_context()
     {
         checkShutdownState();
         throw wrapper.genericNoImpl() ;
@@ -657,7 +620,7 @@ public class ORBImpl extends com.sun.corba.se.spi.orb.ORB
      *
      * @result          Environment created
      */
-    public synchronized org.omg.CORBA.Environment create_environment()
+    public synchronized test.org.omg.CORBA.Environment create_environment()
     {
         checkShutdownState();
         return new EnvironmentImpl();
@@ -720,8 +683,8 @@ public class ORBImpl extends com.sun.corba.se.spi.orb.ORB
      *
      * @result            the next request ready with a response.
      */
-    public org.omg.CORBA.Request get_next_response()
-        throws org.omg.CORBA.WrongTransaction
+    public test.org.omg.CORBA.Request get_next_response()
+        throws test.org.omg.CORBA.WrongTransaction
     {
         synchronized( this ) {
             checkShutdownState();
@@ -776,7 +739,7 @@ public class ORBImpl extends com.sun.corba.se.spi.orb.ORB
      * @param obj The object to stringify.
      * @return A stringified object reference.
      */
-    public synchronized String object_to_string(org.omg.CORBA.Object obj)
+    public synchronized String object_to_string(test.org.omg.CORBA.Object obj)
     {
         checkShutdownState();
 
@@ -809,7 +772,7 @@ public class ORBImpl extends com.sun.corba.se.spi.orb.ORB
      * @param str The stringified object reference.
      * @return The unstringified object reference.
      */
-    public org.omg.CORBA.Object string_to_object(String str)
+    public test.org.omg.CORBA.Object string_to_object(String str)
     {
         Operation op ;
 
@@ -822,7 +785,7 @@ public class ORBImpl extends com.sun.corba.se.spi.orb.ORB
             throw wrapper.nullParam() ;
 
         synchronized (urlOperationLock) {
-            org.omg.CORBA.Object obj = (org.omg.CORBA.Object)op.operate( str ) ;
+            test.org.omg.CORBA.Object obj = (test.org.omg.CORBA.Object)op.operate( str ) ;
             return obj ;
         }
     }
@@ -1032,14 +995,14 @@ public class ORBImpl extends com.sun.corba.se.spi.orb.ORB
     }
 
 
-    public synchronized org.omg.CORBA.TypeCode create_native_tc(String id,
-                                                   String name)
+    public synchronized test.org.omg.CORBA.TypeCode create_native_tc(String id,
+                                                                     String name)
     {
         checkShutdownState();
         return new TypeCodeImpl(this, TCKind._tk_native, id, name);
     }
 
-    public synchronized org.omg.CORBA.TypeCode create_abstract_interface_tc(
+    public synchronized test.org.omg.CORBA.TypeCode create_abstract_interface_tc(
                                                                String id,
                                                                String name)
     {
@@ -1047,31 +1010,31 @@ public class ORBImpl extends com.sun.corba.se.spi.orb.ORB
         return new TypeCodeImpl(this, TCKind._tk_abstract_interface, id, name);
     }
 
-    public synchronized org.omg.CORBA.TypeCode create_fixed_tc(short digits, short scale)
+    public synchronized test.org.omg.CORBA.TypeCode create_fixed_tc(short digits, short scale)
     {
         checkShutdownState();
         return new TypeCodeImpl(this, TCKind._tk_fixed, digits, scale);
     }
 
-    public synchronized org.omg.CORBA.TypeCode create_value_tc(String id,
-                                                  String name,
-                                                  short type_modifier,
-                                                  TypeCode concrete_base,
-                                                  ValueMember[] members)
+    public synchronized test.org.omg.CORBA.TypeCode create_value_tc(String id,
+                                                                    String name,
+                                                                    short type_modifier,
+                                                                    TypeCode concrete_base,
+                                                                    ValueMember[] members)
     {
         checkShutdownState();
         return new TypeCodeImpl(this, TCKind._tk_value, id, name,
                                 type_modifier, concrete_base, members);
     }
 
-    public synchronized org.omg.CORBA.TypeCode create_recursive_tc(String id) {
+    public synchronized test.org.omg.CORBA.TypeCode create_recursive_tc(String id) {
         checkShutdownState();
         return new TypeCodeImpl(this, id);
     }
 
-    public synchronized org.omg.CORBA.TypeCode create_value_box_tc(String id,
-                                                      String name,
-                                                      TypeCode boxed_type)
+    public synchronized test.org.omg.CORBA.TypeCode create_value_box_tc(String id,
+                                                                        String name,
+                                                                        TypeCode boxed_type)
     {
         checkShutdownState();
         return new TypeCodeImpl(this, TCKind._tk_value_box, id, name,
@@ -1155,7 +1118,7 @@ public class ORBImpl extends com.sun.corba.se.spi.orb.ORB
      * with a known service.
      * @exception SystemException One of a fixed set of Corba system exceptions.
      */
-    public org.omg.CORBA.Object resolve_initial_references(
+    public test.org.omg.CORBA.Object resolve_initial_references(
         String identifier) throws InvalidName
     {
         Resolver res ;
@@ -1166,7 +1129,7 @@ public class ORBImpl extends com.sun.corba.se.spi.orb.ORB
         }
 
         synchronized (resolverLock) {
-            org.omg.CORBA.Object result = res.resolve( identifier ) ;
+            test.org.omg.CORBA.Object result = res.resolve( identifier ) ;
 
             if (result == null)
                 throw new InvalidName() ;
@@ -1189,7 +1152,7 @@ public class ORBImpl extends com.sun.corba.se.spi.orb.ORB
      * @throws BAD_PARAM if the obj parameter is null.
      */
     public void register_initial_reference(
-        String id, org.omg.CORBA.Object obj ) throws InvalidName
+        String id, test.org.omg.CORBA.Object obj ) throws InvalidName
     {
         CorbaServerRequestDispatcher insnd ;
 
@@ -1472,7 +1435,7 @@ public class ORBImpl extends com.sun.corba.se.spi.orb.ORB
      * @param factory the factory.
      * @return the previously registered factory for the given repository ID,
      * or null if no such factory was previously registered.
-     * @exception org.omg.CORBA.BAD_PARAM if the registration fails.
+     * @exception test.org.omg.CORBA.BAD_PARAM if the registration fails.
      **/
     public synchronized ValueFactory register_value_factory(String repositoryID,
         ValueFactory factory)
@@ -1505,7 +1468,7 @@ public class ORBImpl extends com.sun.corba.se.spi.orb.ORB
      *
      * @param repositoryID the repository ID.
      * @return the value factory.
-     * @exception org.omg.CORBA.BAD_PARAM if unable to locate a factory.
+     * @exception test.org.omg.CORBA.BAD_PARAM if unable to locate a factory.
      **/
     public synchronized ValueFactory lookup_value_factory(String repositoryID)
     {
@@ -1517,7 +1480,7 @@ public class ORBImpl extends com.sun.corba.se.spi.orb.ORB
         if (factory == null) {
             try {
                 factory = Utility.getFactory(null, null, null, repositoryID);
-            } catch(org.omg.CORBA.MARSHAL ex) {
+            } catch(test.org.omg.CORBA.MARSHAL ex) {
                 throw wrapper.unableFindValueFactory( ex ) ;
             }
         }
@@ -1568,7 +1531,7 @@ public class ORBImpl extends com.sun.corba.se.spi.orb.ORB
             Class cls = configData.getBadServerIdHandler() ;
             if (cls != null) {
                 try {
-                    Class[] params = new Class[] { org.omg.CORBA.ORB.class };
+                    Class[] params = new Class[] { test.org.omg.CORBA.ORB.class };
                     java.lang.Object[] args = new java.lang.Object[]{this};
                     Constructor cons = cls.getConstructor(params);
                     badServerIdHandler =
@@ -1603,8 +1566,8 @@ public class ORBImpl extends com.sun.corba.se.spi.orb.ORB
         }
     }
 
-    public synchronized org.omg.CORBA.Policy create_policy( int type,
-        org.omg.CORBA.Any val ) throws org.omg.CORBA.PolicyError
+    public synchronized test.org.omg.CORBA.Policy create_policy(int type,
+                                                                test.org.omg.CORBA.Any val ) throws test.org.omg.CORBA.PolicyError
     {
         checkShutdownState() ;
 
@@ -1614,7 +1577,7 @@ public class ORBImpl extends com.sun.corba.se.spi.orb.ORB
     /** This is the implementation of the public API used to connect
      *  a servant-skeleton to the ORB.
      */
-    public synchronized void connect(org.omg.CORBA.Object servant)
+    public synchronized void connect(test.org.omg.CORBA.Object servant)
     {
         checkShutdownState();
         if (getTOAFactory() == null)
@@ -1628,7 +1591,7 @@ public class ORBImpl extends com.sun.corba.se.spi.orb.ORB
         }
     }
 
-    public synchronized void disconnect(org.omg.CORBA.Object obj)
+    public synchronized void disconnect(test.org.omg.CORBA.Object obj)
     {
         checkShutdownState();
         if (getTOAFactory() == null)
@@ -1772,7 +1735,7 @@ public class ORBImpl extends com.sun.corba.se.spi.orb.ORB
 
         POAFactory poaFactory = getPOAFactory() ;
         if (poaFactory != null)
-            ((org.omg.PortableServer.Servant)servant)
+            ((test.org.omg.PortableServer.Servant)servant)
                 ._set_delegate( poaFactory.getDelegateImpl() ) ;
         else
             throw wrapper.noPoa() ;
@@ -1943,7 +1906,7 @@ public class ORBImpl extends com.sun.corba.se.spi.orb.ORB
     }
 
     /** Set the operation used in string_to_object calls.  The Operation must expect a
-     * String and return an org.omg.CORBA.Object.
+     * String and return an test.org.omg.CORBA.Object.
      */
     public void setURLOperation( Operation stringToObject )
     {
@@ -1956,7 +1919,7 @@ public class ORBImpl extends com.sun.corba.se.spi.orb.ORB
     }
 
     /** Get the operation used in string_to_object calls.  The Operation must expect a
-     * String and return an org.omg.CORBA.Object.
+     * String and return an test.org.omg.CORBA.Object.
      */
     public Operation getURLOperation()
     {

@@ -20,8 +20,8 @@
 
 package com.sun.org.apache.xerces.internal.impl.xs.opti;
 
-import org.w3c.dom.DOMException;
-import org.w3c.dom.Node;
+import test.org.w3c.dom.DOMException;
+import test.org.w3c.dom.Node;
 
 /**
  * @xerces.internal
@@ -47,7 +47,7 @@ public class TextImpl extends DefaultText {
     }
 
     //
-    // org.w3c.dom.Node methods
+    // test.org.w3c.dom.Node methods
     //
 
     public Node getParentNode() {

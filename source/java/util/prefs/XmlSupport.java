@@ -31,8 +31,8 @@ import javax.xml.parsers.*;
 import javax.xml.transform.*;
 import javax.xml.transform.dom.*;
 import javax.xml.transform.stream.*;
-import org.xml.sax.*;
-import org.w3c.dom.*;
+import test.org.xml.sax.*;
+import test.org.w3c.dom.*;
 
 /**
  * XML Support for java.util.prefs. Methods to import and export preference

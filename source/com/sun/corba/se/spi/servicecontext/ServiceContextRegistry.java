@@ -25,11 +25,10 @@
 
 package com.sun.corba.se.spi.servicecontext;
 
-import org.omg.CORBA.BAD_PARAM;
+import test.org.omg.CORBA.BAD_PARAM;
 import java.util.Vector ;
 import java.util.Enumeration ;
-import com.sun.corba.se.spi.servicecontext.ServiceContext ;
-import com.sun.corba.se.spi.servicecontext.ServiceContextData ;
+
 import com.sun.corba.se.spi.orb.ORB ;
 import com.sun.corba.se.impl.orbutil.ORBUtility ;
 
@@ -56,7 +55,7 @@ public class ServiceContextRegistry {
      * <li>It must have a public static final int SERVICE_CONTEXT_ID
      * member.</li>
      * <li>It must implement a constructor that takes a
-     * org.omg.CORBA_2_3.portable.InputStream argument.</li>
+     * test.org.omg.CORBA_2_3.portable.InputStream argument.</li>
      * </ul>
      */
     public void register( Class cls )

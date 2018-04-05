@@ -35,14 +35,14 @@ import java.util.Set;
 import com.sun.org.apache.xml.internal.security.c14n.CanonicalizationException;
 import com.sun.org.apache.xml.internal.security.c14n.Canonicalizer;
 import com.sun.org.apache.xml.internal.security.c14n.InvalidCanonicalizerException;
-import org.w3c.dom.Attr;
-import org.w3c.dom.Document;
-import org.w3c.dom.Element;
-import org.w3c.dom.NamedNodeMap;
-import org.w3c.dom.Node;
-import org.w3c.dom.NodeList;
-import org.w3c.dom.ProcessingInstruction;
-import org.w3c.dom.Text;
+import test.org.w3c.dom.Attr;
+import test.org.w3c.dom.Document;
+import test.org.w3c.dom.Element;
+import test.org.w3c.dom.NamedNodeMap;
+import test.org.w3c.dom.Node;
+import test.org.w3c.dom.NodeList;
+import test.org.w3c.dom.ProcessingInstruction;
+import test.org.w3c.dom.Text;
 
 /**
  * DOM and XML accessibility and comfort functions.
@@ -55,7 +55,7 @@ public class XMLUtils {
         AccessController.doPrivileged(new PrivilegedAction<Boolean>() {
             public Boolean run() {
                 return Boolean.valueOf(Boolean.getBoolean
-                    ("com.sun.org.apache.xml.internal.security.ignoreLineBreaks"));
+                    ("com.sun.test.org.apache.xml.internal.security.ignoreLineBreaks"));
             }
         }).booleanValue();
 
@@ -64,7 +64,7 @@ public class XMLUtils {
     private static volatile String xencPrefix = "xenc";
     private static volatile String xenc11Prefix = "xenc11";
 
-    /** {@link org.apache.commons.logging} logging facility */
+    /** {@link test.org.apache.commons.logging} logging facility */
     private static final java.util.logging.Logger log =
         java.util.logging.Logger.getLogger(XMLUtils.class.getName());
 

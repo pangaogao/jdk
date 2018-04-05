@@ -27,7 +27,7 @@ import com.sun.org.apache.xml.internal.serializer.utils.MsgKey;
 import com.sun.org.apache.xml.internal.serializer.utils.Utils;
 import java.util.Properties;
 import javax.xml.transform.OutputKeys;
-import org.xml.sax.ContentHandler;
+import test.org.xml.sax.ContentHandler;
 
 /**
  * This class is a public API, it is a factory for creating serializers.

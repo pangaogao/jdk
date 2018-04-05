@@ -30,28 +30,19 @@ package com.sun.corba.se.impl.activation;
 import java.io.File;
 import java.util.Properties;
 
-import org.omg.CORBA.INITIALIZE;
-import org.omg.CORBA.INTERNAL;
-import org.omg.CORBA.CompletionStatus;
-import org.omg.CosNaming.NamingContext;
-import org.omg.PortableServer.POA;
-
 import com.sun.corba.se.pept.transport.Acceptor;
 
-import com.sun.corba.se.spi.activation.Repository;
 import com.sun.corba.se.spi.activation.RepositoryPackage.ServerDef;
 import com.sun.corba.se.spi.activation.Locator;
 import com.sun.corba.se.spi.activation.LocatorHelper;
 import com.sun.corba.se.spi.activation.Activator;
 import com.sun.corba.se.spi.activation.ActivatorHelper;
-import com.sun.corba.se.spi.activation.ServerAlreadyRegistered;
 import com.sun.corba.se.spi.legacy.connection.LegacyServerSocketEndPointInfo;
 import com.sun.corba.se.spi.transport.SocketInfo;
 import com.sun.corba.se.spi.orb.ORB;
 
 import com.sun.corba.se.impl.legacy.connection.SocketFactoryAcceptorImpl;
 import com.sun.corba.se.impl.naming.cosnaming.TransientNameService;
-import com.sun.corba.se.impl.naming.pcosnaming.NameService;
 import com.sun.corba.se.impl.orbutil.ORBConstants;
 import com.sun.corba.se.impl.orbutil.CorbaResourceUtil;
 import com.sun.corba.se.impl.transport.SocketOrChannelAcceptorImpl;
@@ -106,7 +97,7 @@ public class ORBD
 
         // See Bug 4396928 for more information about why we are initializing
         // the ORBClass to PIORB (now ORBImpl, but should check the bugid).
-        props.put("org.omg.CORBA.ORBClass",
+        props.put("test.org.omg.CORBA.ORBClass",
             "com.sun.corba.se.impl.orb.ORBImpl");
 
         return (ORB) ORB.init(args, props);
@@ -165,11 +156,11 @@ public class ORBD
             theThread.start( );
 
             orb.run();
-        } catch( org.omg.CORBA.COMM_FAILURE cex ) {
+        } catch( test.org.omg.CORBA.COMM_FAILURE cex ) {
             System.out.println( CorbaResourceUtil.getText("orbd.commfailure"));
             System.out.println( cex );
             cex.printStackTrace();
-        } catch( org.omg.CORBA.INTERNAL iex ) {
+        } catch( test.org.omg.CORBA.INTERNAL iex ) {
             System.out.println( CorbaResourceUtil.getText(
                 "orbd.internalexception"));
             System.out.println( iex );

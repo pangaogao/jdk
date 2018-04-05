@@ -363,7 +363,7 @@ public static final String ER_IGNORABLE_WHITESPACE_NOT_HANDLED =
   { ER_CURRENT_TAKES_NO_ARGS, "current()\u95A2\u6570\u306F\u5F15\u6570\u3092\u53D7\u3051\u5165\u308C\u307E\u305B\u3093\u3002" },
 
   { ER_DOCUMENT_REPLACED,
-      "document()\u95A2\u6570\u306E\u5B9F\u88C5\u306Fcom.sun.org.apache.xalan.internal.xslt.FuncDocument\u306B\u3088\u3063\u3066\u7F6E\u63DB\u3055\u308C\u307E\u3057\u305F\u3002"},
+      "document()\u95A2\u6570\u306E\u5B9F\u88C5\u306Fcom.sun.test.org.apache.xalan.internal.xslt.FuncDocument\u306B\u3088\u3063\u3066\u7F6E\u63DB\u3055\u308C\u307E\u3057\u305F\u3002"},
 
   { ER_CONTEXT_HAS_NO_OWNERDOC,
       "\u30B3\u30F3\u30C6\u30AD\u30B9\u30C8\u306B\u6240\u6709\u8005\u30C9\u30AD\u30E5\u30E1\u30F3\u30C8\u304C\u3042\u308A\u307E\u305B\u3093\u3002"},
@@ -913,7 +913,7 @@ public static final String ER_IGNORABLE_WHITESPACE_NOT_HANDLED =
 
   /** Field ERROR_RESOURCES          */
   public static final String ERROR_RESOURCES =
-    "com.sun.org.apache.xpath.internal.res.XPATHErrorResources";
+    "com.sun.test.org.apache.xpath.internal.res.XPATHErrorResources";
 
   /** Field ERROR_STRING          */
   public static final String ERROR_STRING = "#error";

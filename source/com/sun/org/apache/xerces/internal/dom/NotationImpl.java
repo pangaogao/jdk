@@ -21,9 +21,9 @@
 package com.sun.org.apache.xerces.internal.dom;
 
 import com.sun.org.apache.xerces.internal.util.URI;
-import org.w3c.dom.DOMException;
-import org.w3c.dom.Node;
-import org.w3c.dom.Notation;
+import test.org.w3c.dom.DOMException;
+import test.org.w3c.dom.Node;
+import test.org.w3c.dom.Notation;
 
 /**
  * Notations are how the Document Type Description (DTD) records hints
@@ -90,7 +90,7 @@ public class NotationImpl
 
     /**
      * A short integer indicating what type of node this is. The named
-     * constants for this value are defined in the org.w3c.dom.Node interface.
+     * constants for this value are defined in the test.org.w3c.dom.Node interface.
      */
     public short getNodeType() {
         return Node.NOTATION_NODE;

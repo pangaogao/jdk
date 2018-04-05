@@ -26,8 +26,8 @@
 package com.sun.security.jgss;
 
 import javax.security.auth.Subject;
-import org.ietf.jgss.GSSName;
-import org.ietf.jgss.GSSCredential;
+import test.org.ietf.jgss.GSSName;
+import test.org.ietf.jgss.GSSCredential;
 
 /**
  * GSS-API Utilities for using in conjunction with Sun Microsystem's

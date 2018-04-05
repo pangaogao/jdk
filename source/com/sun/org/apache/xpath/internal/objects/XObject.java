@@ -36,9 +36,9 @@ import com.sun.org.apache.xpath.internal.XPathException;
 import com.sun.org.apache.xpath.internal.XPathVisitor;
 import com.sun.org.apache.xpath.internal.res.XPATHErrorResources;
 
-import org.w3c.dom.DocumentFragment;
-import org.w3c.dom.NodeList;
-import org.w3c.dom.traversal.NodeIterator;
+import test.org.w3c.dom.DocumentFragment;
+import test.org.w3c.dom.NodeList;
+import test.org.w3c.dom.traversal.NodeIterator;
 
 /**
  * This class represents an XPath object, and is capable of
@@ -145,10 +145,10 @@ public class XObject extends Expression implements Serializable, Cloneable
    *
    * @param ch A non-null reference to a ContentHandler.
    *
-   * @throws org.xml.sax.SAXException
+   * @throws test.org.xml.sax.SAXException
    */
-  public void dispatchCharactersEvents(org.xml.sax.ContentHandler ch)
-          throws org.xml.sax.SAXException
+  public void dispatchCharactersEvents(test.org.xml.sax.ContentHandler ch)
+          throws test.org.xml.sax.SAXException
   {
     xstr().dispatchCharactersEvents(ch);
   }

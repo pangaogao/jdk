@@ -25,20 +25,15 @@
 
 package com.sun.corba.se.impl.dynamicany;
 
-import org.omg.CORBA.TypeCode;
-import org.omg.CORBA.Any;
-import org.omg.CORBA.BAD_OPERATION;
-import org.omg.CORBA.TypeCodePackage.BadKind;
-import org.omg.CORBA.TypeCodePackage.Bounds;
-import org.omg.CORBA.portable.InputStream;
-import org.omg.DynamicAny.*;
-import org.omg.DynamicAny.DynAnyPackage.TypeMismatch;
-import org.omg.DynamicAny.DynAnyPackage.InvalidValue;
-import org.omg.DynamicAny.DynAnyFactoryPackage.InconsistentTypeCode;
+import test.org.omg.CORBA.TypeCode;
+import test.org.omg.CORBA.Any;
+import test.org.omg.CORBA.BAD_OPERATION;
+import test.org.omg.CORBA.portable.InputStream;
+import test.org.omg.DynamicAny.*;
+import test.org.omg.DynamicAny.DynAnyPackage.InvalidValue;
+import test.org.omg.DynamicAny.DynAnyFactoryPackage.InconsistentTypeCode;
 
 import com.sun.corba.se.spi.orb.ORB ;
-import com.sun.corba.se.spi.logging.CORBALogDomains ;
-import com.sun.corba.se.impl.logging.ORBUtilSystemException ;
 
 public class DynArrayImpl extends DynAnyCollectionImpl implements DynArray
 {
@@ -119,9 +114,9 @@ public class DynArrayImpl extends DynAnyCollectionImpl implements DynArray
     // the operation raises TypeMismatch.
     // This operation does not change the current position.
 /*
-    public void set_elements (org.omg.CORBA.Any[] value)
-        throws org.omg.DynamicAny.DynAnyPackage.TypeMismatch,
-               org.omg.DynamicAny.DynAnyPackage.InvalidValue;
+    public void set_elements (test.org.omg.CORBA.Any[] value)
+        throws test.org.omg.DynamicAny.DynAnyPackage.TypeMismatch,
+               test.org.omg.DynamicAny.DynAnyPackage.InvalidValue;
 */
 
     //
@@ -129,7 +124,7 @@ public class DynArrayImpl extends DynAnyCollectionImpl implements DynArray
     //
 
     protected void checkValue(Object[] value)
-        throws org.omg.DynamicAny.DynAnyPackage.InvalidValue
+        throws test.org.omg.DynamicAny.DynAnyPackage.InvalidValue
     {
         if (value == null || value.length != getBound()) {
             throw new InvalidValue();

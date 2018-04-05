@@ -25,11 +25,11 @@
 
 package com.sun.security.jgss;
 
-import org.ietf.jgss.*;
+import test.org.ietf.jgss.*;
 
 /**
  * The extended GSSCredential interface for supporting additional
- * functionalities not defined by {@code org.ietf.jgss.GSSCredential}.
+ * functionalities not defined by {@code test.org.ietf.jgss.GSSCredential}.
  * @since 1.8
  */
 @jdk.Exported

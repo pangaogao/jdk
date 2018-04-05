@@ -20,10 +20,10 @@
  */
 
 package com.sun.org.apache.xerces.internal.impl.xs.opti;
-import org.w3c.dom.DOMException;
-import org.w3c.dom.DOMImplementation;
-import org.w3c.dom.Document;
-import org.w3c.dom.DocumentType;
+import test.org.w3c.dom.DOMException;
+import test.org.w3c.dom.DOMImplementation;
+import test.org.w3c.dom.Document;
+import test.org.w3c.dom.DocumentType;
 
 /**
  * @xerces.internal

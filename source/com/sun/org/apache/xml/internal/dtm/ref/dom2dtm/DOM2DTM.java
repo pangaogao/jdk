@@ -43,14 +43,14 @@ import com.sun.org.apache.xml.internal.utils.TreeWalker;
 import com.sun.org.apache.xml.internal.utils.XMLCharacterRecognizer;
 import com.sun.org.apache.xml.internal.utils.XMLString;
 import com.sun.org.apache.xml.internal.utils.XMLStringFactory;
-import org.w3c.dom.Attr;
-import org.w3c.dom.Document;
-import org.w3c.dom.DocumentType;
-import org.w3c.dom.Element;
-import org.w3c.dom.Entity;
-import org.w3c.dom.NamedNodeMap;
-import org.w3c.dom.Node;
-import org.xml.sax.ContentHandler;
+import test.org.w3c.dom.Attr;
+import test.org.w3c.dom.Document;
+import test.org.w3c.dom.DocumentType;
+import test.org.w3c.dom.Element;
+import test.org.w3c.dom.Entity;
+import test.org.w3c.dom.NamedNodeMap;
+import test.org.w3c.dom.Node;
+import test.org.xml.sax.ContentHandler;
 
 /** The <code>DOM2DTM</code> class serves up a DOM's contents via the
  * DTM API.
@@ -72,7 +72,7 @@ public class DOM2DTM extends DTMDefaultBaseIterators
 
   /** Manefest constant
    */
-  static final String NAMESPACE_DECL_NS="http://www.w3.org/XML/1998/namespace";
+  static final String NAMESPACE_DECL_NS="http://www.w3.test.org/XML/1998/namespace";
 
   /** The current position in the DOM tree. Last node examined for
    * possible copying to DTM. */
@@ -725,7 +725,7 @@ public class DOM2DTM extends DTMDefaultBaseIterators
               cursor=
                 (cursor.getNodeType()!=ATTRIBUTE_NODE)
                 ? cursor.getParentNode()
-                : ((org.w3c.dom.Attr)cursor).getOwnerElement())
+                : ((test.org.w3c.dom.Attr)cursor).getOwnerElement())
             {
               if(cursor==m_root)
                 // We know this node; find its handle.
@@ -1502,7 +1502,7 @@ public class DOM2DTM extends DTMDefaultBaseIterators
    * the IncrmentalSAXSource if we're bound to one and should receive
    * the SAX stream via it for incremental build purposes...
    * */
-  public org.xml.sax.ContentHandler getContentHandler()
+  public test.org.xml.sax.ContentHandler getContentHandler()
   {
       return null;
   }
@@ -1517,7 +1517,7 @@ public class DOM2DTM extends DTMDefaultBaseIterators
    * the IncrementalSAXSource if we're bound to one and should receive
    * the SAX stream via it for incremental build purposes...
    */
-  public org.xml.sax.ext.LexicalHandler getLexicalHandler()
+  public test.org.xml.sax.ext.LexicalHandler getLexicalHandler()
   {
 
     return null;
@@ -1529,7 +1529,7 @@ public class DOM2DTM extends DTMDefaultBaseIterators
    *
    * @return null if this model doesn't respond to SAX entity ref events.
    */
-  public org.xml.sax.EntityResolver getEntityResolver()
+  public test.org.xml.sax.EntityResolver getEntityResolver()
   {
 
     return null;
@@ -1540,7 +1540,7 @@ public class DOM2DTM extends DTMDefaultBaseIterators
    *
    * @return null if this model doesn't respond to SAX dtd events.
    */
-  public org.xml.sax.DTDHandler getDTDHandler()
+  public test.org.xml.sax.DTDHandler getDTDHandler()
   {
 
     return null;
@@ -1551,7 +1551,7 @@ public class DOM2DTM extends DTMDefaultBaseIterators
    *
    * @return null if this model doesn't respond to SAX error events.
    */
-  public org.xml.sax.ErrorHandler getErrorHandler()
+  public test.org.xml.sax.ErrorHandler getErrorHandler()
   {
 
     return null;
@@ -1562,7 +1562,7 @@ public class DOM2DTM extends DTMDefaultBaseIterators
    *
    * @return null if this model doesn't respond to SAX Decl events.
    */
-  public org.xml.sax.ext.DeclHandler getDeclHandler()
+  public test.org.xml.sax.ext.DeclHandler getDeclHandler()
   {
 
     return null;
@@ -1603,12 +1603,12 @@ public class DOM2DTM extends DTMDefaultBaseIterators
    * @param nodeHandle The node ID.
    * @param ch A non-null reference to a ContentHandler.
    *
-   * @throws org.xml.sax.SAXException
+   * @throws test.org.xml.sax.SAXException
    */
   public void dispatchCharactersEvents(
-          int nodeHandle, org.xml.sax.ContentHandler ch,
+          int nodeHandle, test.org.xml.sax.ContentHandler ch,
           boolean normalize)
-            throws org.xml.sax.SAXException
+            throws test.org.xml.sax.SAXException
   {
     if(normalize)
     {
@@ -1654,9 +1654,9 @@ public class DOM2DTM extends DTMDefaultBaseIterators
    * contents of all Text or CDATASection nodes.
    */
   protected static void dispatchNodeData(Node node,
-                                         org.xml.sax.ContentHandler ch,
+                                         test.org.xml.sax.ContentHandler ch,
                                          int depth)
-            throws org.xml.sax.SAXException
+            throws test.org.xml.sax.SAXException
   {
 
     switch (node.getNodeType())
@@ -1708,10 +1708,10 @@ public class DOM2DTM extends DTMDefaultBaseIterators
    * @param nodeHandle The node ID.
    * @param ch A non-null reference to a ContentHandler.
    *
-   * @throws org.xml.sax.SAXException
+   * @throws test.org.xml.sax.SAXException
    */
-  public void dispatchToEvents(int nodeHandle, org.xml.sax.ContentHandler ch)
-          throws org.xml.sax.SAXException
+  public void dispatchToEvents(int nodeHandle, test.org.xml.sax.ContentHandler ch)
+          throws test.org.xml.sax.SAXException
   {
     TreeWalker treeWalker = m_walker;
     ContentHandler prevCH = treeWalker.getContentHandler();
@@ -1736,7 +1736,7 @@ public class DOM2DTM extends DTMDefaultBaseIterators
   public interface CharacterNodeHandler
   {
     public void characters(Node node)
-            throws org.xml.sax.SAXException;
+            throws test.org.xml.sax.SAXException;
   }
 
   /**

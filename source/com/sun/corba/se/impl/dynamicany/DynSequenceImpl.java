@@ -25,21 +25,16 @@
 
 package com.sun.corba.se.impl.dynamicany;
 
-import org.omg.CORBA.TypeCode;
-import org.omg.CORBA.Any;
-import org.omg.CORBA.BAD_OPERATION;
-import org.omg.CORBA.TypeCodePackage.BadKind;
-import org.omg.CORBA.TypeCodePackage.Bounds;
-import org.omg.CORBA.portable.InputStream;
-import org.omg.CORBA.portable.OutputStream;
-import org.omg.DynamicAny.*;
-import org.omg.DynamicAny.DynAnyPackage.TypeMismatch;
-import org.omg.DynamicAny.DynAnyPackage.InvalidValue;
-import org.omg.DynamicAny.DynAnyFactoryPackage.InconsistentTypeCode;
+import test.org.omg.CORBA.TypeCode;
+import test.org.omg.CORBA.Any;
+import test.org.omg.CORBA.BAD_OPERATION;
+import test.org.omg.CORBA.portable.InputStream;
+import test.org.omg.CORBA.portable.OutputStream;
+import test.org.omg.DynamicAny.*;
+import test.org.omg.DynamicAny.DynAnyPackage.InvalidValue;
+import test.org.omg.DynamicAny.DynAnyFactoryPackage.InconsistentTypeCode;
 
 import com.sun.corba.se.spi.orb.ORB ;
-import com.sun.corba.se.spi.logging.CORBALogDomains ;
-import com.sun.corba.se.impl.logging.ORBUtilSystemException ;
 
 // _REVIST_ Could make this a subclass of DynArrayImpl
 // But that would mean that an object that implements DynSequence also implements DynArray
@@ -156,7 +151,7 @@ public class DynSequenceImpl extends DynAnyCollectionImpl implements DynSequence
     // ?f the current position indicates a valid element and that element is removed, the
     // current position is set to -1.
     public void set_length(int len)
-        throws org.omg.DynamicAny.DynAnyPackage.InvalidValue
+        throws test.org.omg.DynamicAny.DynAnyPackage.InvalidValue
     {
         if (status == STATUS_DESTROYED) {
             throw wrapper.dynAnyDestroyed() ;
@@ -230,9 +225,9 @@ public class DynSequenceImpl extends DynAnyCollectionImpl implements DynSequence
     // If value contains one or more elements whose TypeCode is not equivalent
     // to the element TypeCode of the DynSequence, the operation raises TypeMismatch.
 /*
-    public void set_elements(org.omg.CORBA.Any[] value)
-        throws org.omg.DynamicAny.DynAnyPackage.TypeMismatch,
-               org.omg.DynamicAny.DynAnyPackage.InvalidValue;
+    public void set_elements(test.org.omg.CORBA.Any[] value)
+        throws test.org.omg.DynamicAny.DynAnyPackage.TypeMismatch,
+               test.org.omg.DynamicAny.DynAnyPackage.InvalidValue;
 */
 
     //
@@ -240,7 +235,7 @@ public class DynSequenceImpl extends DynAnyCollectionImpl implements DynSequence
     //
 
     protected void checkValue(Object[] value)
-        throws org.omg.DynamicAny.DynAnyPackage.InvalidValue
+        throws test.org.omg.DynamicAny.DynAnyPackage.InvalidValue
     {
         if (value == null || value.length == 0) {
             clearData();

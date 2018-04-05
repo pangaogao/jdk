@@ -24,7 +24,7 @@ package com.sun.org.apache.xml.internal.security.encryption;
 
 import java.util.Iterator;
 import com.sun.org.apache.xml.internal.security.keys.KeyInfo;
-import org.w3c.dom.Element;
+import test.org.w3c.dom.Element;
 
 /**
  * A Key Agreement algorithm provides for the derivation of a shared secret key

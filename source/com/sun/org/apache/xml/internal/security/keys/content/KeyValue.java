@@ -30,8 +30,8 @@ import com.sun.org.apache.xml.internal.security.keys.content.keyvalues.RSAKeyVal
 import com.sun.org.apache.xml.internal.security.utils.Constants;
 import com.sun.org.apache.xml.internal.security.utils.SignatureElementProxy;
 import com.sun.org.apache.xml.internal.security.utils.XMLUtils;
-import org.w3c.dom.Document;
-import org.w3c.dom.Element;
+import test.org.w3c.dom.Document;
+import test.org.w3c.dom.Element;
 
 /**
  * The KeyValue element contains a single public key that may be useful in

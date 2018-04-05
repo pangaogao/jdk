@@ -67,7 +67,7 @@ public class Message_1_2 extends Message_1_1
         this.request_id = (b1 | b2 | b3 | b4);
     }
 
-    public void write(org.omg.CORBA.portable.OutputStream ostream) {
+    public void write(test.org.omg.CORBA.portable.OutputStream ostream) {
         if (this.encodingVersion == Message.CDR_ENC_VERSION) {
             super.write(ostream);
             return;

@@ -11,7 +11,7 @@ package com.sun.corba.se.PortableActivationIDL;
 
 /** A list of ORB IDs.
     */
-public final class ORBidListHolder implements org.omg.CORBA.portable.Streamable
+public final class ORBidListHolder implements test.org.omg.CORBA.portable.Streamable
 {
   public String value[] = null;
 
@@ -24,17 +24,17 @@ public final class ORBidListHolder implements org.omg.CORBA.portable.Streamable
     value = initialValue;
   }
 
-  public void _read (org.omg.CORBA.portable.InputStream i)
+  public void _read (test.org.omg.CORBA.portable.InputStream i)
   {
     value = com.sun.corba.se.PortableActivationIDL.ORBidListHelper.read (i);
   }
 
-  public void _write (org.omg.CORBA.portable.OutputStream o)
+  public void _write (test.org.omg.CORBA.portable.OutputStream o)
   {
     com.sun.corba.se.PortableActivationIDL.ORBidListHelper.write (o, value);
   }
 
-  public org.omg.CORBA.TypeCode _type ()
+  public test.org.omg.CORBA.TypeCode _type ()
   {
     return com.sun.corba.se.PortableActivationIDL.ORBidListHelper.type ();
   }

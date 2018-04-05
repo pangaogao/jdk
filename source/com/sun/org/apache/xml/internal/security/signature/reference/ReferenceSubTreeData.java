@@ -33,8 +33,8 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.ListIterator;
 import java.util.NoSuchElementException;
-import org.w3c.dom.NamedNodeMap;
-import org.w3c.dom.Node;
+import test.org.w3c.dom.NamedNodeMap;
+import test.org.w3c.dom.Node;
 
 /**
  * A representation of a <code>ReferenceNodeSetData</code> type containing a node-set.

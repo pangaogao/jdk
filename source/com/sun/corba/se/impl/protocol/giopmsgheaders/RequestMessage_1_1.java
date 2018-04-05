@@ -25,7 +25,7 @@
 
 package com.sun.corba.se.impl.protocol.giopmsgheaders;
 
-import org.omg.CORBA.Principal;
+import test.org.omg.CORBA.Principal;
 import com.sun.corba.se.spi.servicecontext.ServiceContexts;
 import com.sun.corba.se.spi.ior.iiop.GIOPVersion;
 import com.sun.corba.se.spi.orb.ORB;
@@ -119,10 +119,10 @@ public final class RequestMessage_1_1 extends Message_1_1
 
     // IO methods
 
-    public void read(org.omg.CORBA.portable.InputStream istream) {
+    public void read(test.org.omg.CORBA.portable.InputStream istream) {
         super.read(istream);
         this.service_contexts
-            = new ServiceContexts((org.omg.CORBA_2_3.portable.InputStream) istream);
+            = new ServiceContexts((test.org.omg.CORBA_2_3.portable.InputStream) istream);
         this.request_id = istream.read_ulong();
         this.response_expected = istream.read_boolean();
         this.reserved = new byte[3];
@@ -136,22 +136,22 @@ public final class RequestMessage_1_1 extends Message_1_1
         this.requesting_principal = istream.read_Principal();
     }
 
-    public void write(org.omg.CORBA.portable.OutputStream ostream) {
+    public void write(test.org.omg.CORBA.portable.OutputStream ostream) {
         super.write(ostream);
         if (this.service_contexts != null) {
                 service_contexts.write(
-                (org.omg.CORBA_2_3.portable.OutputStream) ostream,
+                (test.org.omg.CORBA_2_3.portable.OutputStream) ostream,
                 GIOPVersion.V1_1);
             } else {
                 ServiceContexts.writeNullServiceContext(
-                (org.omg.CORBA_2_3.portable.OutputStream) ostream);
+                (test.org.omg.CORBA_2_3.portable.OutputStream) ostream);
         }
         ostream.write_ulong(this.request_id);
         ostream.write_boolean(this.response_expected);
         nullCheck(this.reserved);
         if (this.reserved.length != (3)) {
             throw wrapper.badReservedLength(
-                org.omg.CORBA.CompletionStatus.COMPLETED_MAYBE);
+                test.org.omg.CORBA.CompletionStatus.COMPLETED_MAYBE);
         }
         for (int _i0 = 0;_i0 < (3); ++_i0) {
             ostream.write_octet(this.reserved[_i0]);

@@ -39,7 +39,7 @@ import javax.imageio.plugins.jpeg.JPEGImageWriteParam;
 import javax.imageio.plugins.jpeg.JPEGQTable;
 import javax.imageio.plugins.jpeg.JPEGHuffmanTable;
 
-import org.w3c.dom.Node;
+import test.org.w3c.dom.Node;
 
 import java.awt.image.Raster;
 import java.awt.image.WritableRaster;

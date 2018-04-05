@@ -69,7 +69,7 @@ package com.sun.org.apache.xerces.internal.xni;
  * equal strings. Within the parser, these values are considered symbols
  * and should always be retrieved from the <code>SymbolTable</code>.
  *
- * @see <a href="../../../../../xerces2/com/sun/org/apache/xerces/internal/util/SymbolTable.html">com.sun.org.apache.xerces.internal.util.SymbolTable</a>
+ * @see <a href="../../../../../xerces2/com/sun/test.org/apache/xerces/internal/util/SymbolTable.html">com.sun.test.org.apache.xerces.internal.util.SymbolTable</a>
  *
  * @author Andy Clark, IBM
  *

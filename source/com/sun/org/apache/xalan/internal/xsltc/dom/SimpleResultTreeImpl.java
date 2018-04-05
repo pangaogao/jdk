@@ -38,9 +38,9 @@ import com.sun.org.apache.xml.internal.utils.XMLString;
 import com.sun.org.apache.xml.internal.utils.XMLStringDefault;
 import java.util.Map;
 import javax.xml.transform.SourceLocator;
-import org.w3c.dom.Node;
-import org.w3c.dom.NodeList;
-import org.xml.sax.SAXException;
+import test.org.w3c.dom.Node;
+import test.org.w3c.dom.NodeList;
+import test.org.xml.sax.SAXException;
 
 /**
  * This class represents a light-weight DOM model for simple result tree fragment(RTF).
@@ -938,18 +938,18 @@ public class SimpleResultTreeImpl extends EmptySerializer implements DOM, DTM
 
     public void dispatchCharactersEvents(
         int nodeHandle,
-        org.xml.sax.ContentHandler ch,
+        test.org.xml.sax.ContentHandler ch,
         boolean normalize)
-          throws org.xml.sax.SAXException
+          throws test.org.xml.sax.SAXException
     {
     }
 
-    public void dispatchToEvents(int nodeHandle, org.xml.sax.ContentHandler ch)
-      throws org.xml.sax.SAXException
+    public void dispatchToEvents(int nodeHandle, test.org.xml.sax.ContentHandler ch)
+      throws test.org.xml.sax.SAXException
     {
     }
 
-    public org.w3c.dom.Node getNode(int nodeHandle)
+    public test.org.w3c.dom.Node getNode(int nodeHandle)
     {
         return makeNode(nodeHandle);
     }
@@ -959,32 +959,32 @@ public class SimpleResultTreeImpl extends EmptySerializer implements DOM, DTM
         return false;
     }
 
-    public org.xml.sax.ContentHandler getContentHandler()
+    public test.org.xml.sax.ContentHandler getContentHandler()
     {
         return null;
     }
 
-    public org.xml.sax.ext.LexicalHandler getLexicalHandler()
+    public test.org.xml.sax.ext.LexicalHandler getLexicalHandler()
     {
         return null;
     }
 
-    public org.xml.sax.EntityResolver getEntityResolver()
+    public test.org.xml.sax.EntityResolver getEntityResolver()
     {
         return null;
     }
 
-    public org.xml.sax.DTDHandler getDTDHandler()
+    public test.org.xml.sax.DTDHandler getDTDHandler()
     {
         return null;
     }
 
-    public org.xml.sax.ErrorHandler getErrorHandler()
+    public test.org.xml.sax.ErrorHandler getErrorHandler()
     {
         return null;
     }
 
-    public org.xml.sax.ext.DeclHandler getDeclHandler()
+    public test.org.xml.sax.ext.DeclHandler getDeclHandler()
     {
         return null;
     }

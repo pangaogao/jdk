@@ -38,7 +38,7 @@ import com.sun.org.apache.xerces.internal.xni.XNIException;
 import com.sun.org.apache.xerces.internal.xni.parser.XMLEntityResolver;
 import com.sun.org.apache.xerces.internal.xni.parser.XMLInputSource;
 import com.sun.org.apache.xerces.internal.xni.parser.XMLParserConfiguration;
-import org.w3c.dom.Document;
+import test.org.w3c.dom.Document;
 
 /**
  * @xerces.internal

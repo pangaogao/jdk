@@ -30,8 +30,6 @@ import java.net.InetSocketAddress;
 import java.net.Socket ;
 import java.net.ServerSocket ;
 
-import java.io.IOException ;
-
 import java.util.HashMap ;
 import java.util.List;
 import java.util.Map ;
@@ -40,8 +38,8 @@ import java.security.AccessController ;
 import java.security.PrivilegedExceptionAction ;
 import java.security.PrivilegedActionException ;
 
-import org.omg.PortableInterceptor.ORBInitializer ;
-import org.omg.PortableInterceptor.ORBInitInfo ;
+import test.org.omg.PortableInterceptor.ORBInitializer ;
+import test.org.omg.PortableInterceptor.ORBInitInfo ;
 
 import com.sun.corba.se.pept.broker.Broker;
 import com.sun.corba.se.pept.encoding.InputObject;
@@ -50,7 +48,6 @@ import com.sun.corba.se.pept.protocol.MessageMediator;
 import com.sun.corba.se.pept.transport.Acceptor;
 import com.sun.corba.se.pept.transport.Connection;
 import com.sun.corba.se.pept.transport.ContactInfo;
-import com.sun.corba.se.pept.transport.ContactInfoList;
 import com.sun.corba.se.pept.transport.EventHandler;
 import com.sun.corba.se.pept.transport.InboundConnectionCache;
 
@@ -66,7 +63,6 @@ import com.sun.corba.se.spi.orb.ParserDataFactory ;
 import com.sun.corba.se.spi.orb.StringPair ;
 import com.sun.corba.se.spi.transport.CorbaContactInfoList;
 import com.sun.corba.se.spi.transport.CorbaContactInfoListFactory;
-import com.sun.corba.se.spi.transport.CorbaTransportManager;
 import com.sun.corba.se.spi.transport.IORToSocketInfo;
 import com.sun.corba.se.spi.transport.ReadTimeouts;
 import com.sun.corba.se.spi.transport.SocketInfo;
@@ -532,7 +528,7 @@ public class ParserTable {
             return null ;
         }
 
-        public SocketInfo getEndPointInfo( org.omg.CORBA.ORB orb,
+        public SocketInfo getEndPointInfo( test.org.omg.CORBA.ORB orb,
             IOR ior, SocketInfo socketInfo )
         {
             return null ;
@@ -881,7 +877,7 @@ public class ParserTable {
         return result ;
     }
 
-    public static final class TestORBInitializer1 extends org.omg.CORBA.LocalObject
+    public static final class TestORBInitializer1 extends test.org.omg.CORBA.LocalObject
         implements ORBInitializer
     {
         public boolean equals( Object other )
@@ -902,7 +898,7 @@ public class ParserTable {
         }
     }
 
-    public static final class TestORBInitializer2 extends org.omg.CORBA.LocalObject
+    public static final class TestORBInitializer2 extends test.org.omg.CORBA.LocalObject
         implements ORBInitializer
     {
         public boolean equals( Object other )
@@ -939,7 +935,7 @@ public class ParserTable {
                 // For security reasons avoid creating an instance
                 // if this class is one that would fail the class cast
                 // to ORBInitializer anyway.
-                if( org.omg.PortableInterceptor.ORBInitializer.class.isAssignableFrom(
+                if( test.org.omg.PortableInterceptor.ORBInitializer.class.isAssignableFrom(
                     initClass ) ) {
                     // Now that we have a class object, instantiate one and
                     // remember it:

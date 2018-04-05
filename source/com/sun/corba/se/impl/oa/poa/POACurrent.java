@@ -26,11 +26,11 @@
 package com.sun.corba.se.impl.oa.poa;
 
 import java.util.*;
-import org.omg.CORBA.CompletionStatus;
-import org.omg.PortableServer.CurrentPackage.NoContext;
-import org.omg.PortableServer.POA;
-import org.omg.PortableServer.Servant;
-import org.omg.PortableServer.ServantLocatorPackage.CookieHolder;
+import test.org.omg.CORBA.CompletionStatus;
+import test.org.omg.PortableServer.CurrentPackage.NoContext;
+import test.org.omg.PortableServer.POA;
+import test.org.omg.PortableServer.Servant;
+import test.org.omg.PortableServer.ServantLocatorPackage.CookieHolder;
 
 import com.sun.corba.se.spi.oa.OAInvocationInfo ;
 import com.sun.corba.se.spi.oa.ObjectAdapter ;
@@ -43,8 +43,8 @@ import com.sun.corba.se.impl.logging.POASystemException ;
 
 // XXX Needs to be turned into LocalObjectImpl.
 
-public class POACurrent extends org.omg.CORBA.portable.ObjectImpl
-    implements org.omg.PortableServer.Current
+public class POACurrent extends test.org.omg.CORBA.portable.ObjectImpl
+    implements test.org.omg.PortableServer.Current
 {
     private ORB orb;
     private POASystemException wrapper ;
@@ -59,7 +59,7 @@ public class POACurrent extends org.omg.CORBA.portable.ObjectImpl
     public String[] _ids()
     {
         String[] ids = new String[1];
-        ids[0] = "IDL:omg.org/PortableServer/Current:1.0";
+        ids[0] = "IDL:omg.test.org/PortableServer/Current:1.0";
         return ids;
     }
 

@@ -11,7 +11,7 @@ package com.sun.corba.se.PortableActivationIDL;
 
 /** Server callback interface, passed to Activator in registerServer method.
     */
-public class _ServerProxyStub extends org.omg.CORBA.portable.ObjectImpl implements com.sun.corba.se.PortableActivationIDL.ServerProxy
+public class _ServerProxyStub extends test.org.omg.CORBA.portable.ObjectImpl implements com.sun.corba.se.PortableActivationIDL.ServerProxy
 {
 
 
@@ -19,16 +19,16 @@ public class _ServerProxyStub extends org.omg.CORBA.portable.ObjectImpl implemen
   	*/
   public void shutdown ()
   {
-            org.omg.CORBA.portable.InputStream $in = null;
+            test.org.omg.CORBA.portable.InputStream $in = null;
             try {
-                org.omg.CORBA.portable.OutputStream $out = _request ("shutdown", true);
+                test.org.omg.CORBA.portable.OutputStream $out = _request ("shutdown", true);
                 $in = _invoke ($out);
                 return;
-            } catch (org.omg.CORBA.portable.ApplicationException $ex) {
+            } catch (test.org.omg.CORBA.portable.ApplicationException $ex) {
                 $in = $ex.getInputStream ();
                 String _id = $ex.getId ();
-                throw new org.omg.CORBA.MARSHAL (_id);
-            } catch (org.omg.CORBA.portable.RemarshalException $rm) {
+                throw new test.org.omg.CORBA.MARSHAL (_id);
+            } catch (test.org.omg.CORBA.portable.RemarshalException $rm) {
                 shutdown (        );
             } finally {
                 _releaseReply ($in);
@@ -41,16 +41,16 @@ public class _ServerProxyStub extends org.omg.CORBA.portable.ObjectImpl implemen
   	*/
   public void install ()
   {
-            org.omg.CORBA.portable.InputStream $in = null;
+            test.org.omg.CORBA.portable.InputStream $in = null;
             try {
-                org.omg.CORBA.portable.OutputStream $out = _request ("install", true);
+                test.org.omg.CORBA.portable.OutputStream $out = _request ("install", true);
                 $in = _invoke ($out);
                 return;
-            } catch (org.omg.CORBA.portable.ApplicationException $ex) {
+            } catch (test.org.omg.CORBA.portable.ApplicationException $ex) {
                 $in = $ex.getInputStream ();
                 String _id = $ex.getId ();
-                throw new org.omg.CORBA.MARSHAL (_id);
-            } catch (org.omg.CORBA.portable.RemarshalException $rm) {
+                throw new test.org.omg.CORBA.MARSHAL (_id);
+            } catch (test.org.omg.CORBA.portable.RemarshalException $rm) {
                 install (        );
             } finally {
                 _releaseReply ($in);
@@ -63,16 +63,16 @@ public class _ServerProxyStub extends org.omg.CORBA.portable.ObjectImpl implemen
   	*/
   public void uninstall ()
   {
-            org.omg.CORBA.portable.InputStream $in = null;
+            test.org.omg.CORBA.portable.InputStream $in = null;
             try {
-                org.omg.CORBA.portable.OutputStream $out = _request ("uninstall", true);
+                test.org.omg.CORBA.portable.OutputStream $out = _request ("uninstall", true);
                 $in = _invoke ($out);
                 return;
-            } catch (org.omg.CORBA.portable.ApplicationException $ex) {
+            } catch (test.org.omg.CORBA.portable.ApplicationException $ex) {
                 $in = $ex.getInputStream ();
                 String _id = $ex.getId ();
-                throw new org.omg.CORBA.MARSHAL (_id);
-            } catch (org.omg.CORBA.portable.RemarshalException $rm) {
+                throw new test.org.omg.CORBA.MARSHAL (_id);
+            } catch (test.org.omg.CORBA.portable.RemarshalException $rm) {
                 uninstall (        );
             } finally {
                 _releaseReply ($in);
@@ -93,10 +93,10 @@ public class _ServerProxyStub extends org.omg.CORBA.portable.ObjectImpl implemen
      String str = s.readUTF ();
      String[] args = null;
      java.util.Properties props = null;
-     org.omg.CORBA.ORB orb = org.omg.CORBA.ORB.init (args, props);
+     test.org.omg.CORBA.ORB orb = test.org.omg.CORBA.ORB.init (args, props);
    try {
-     org.omg.CORBA.Object obj = orb.string_to_object (str);
-     org.omg.CORBA.portable.Delegate delegate = ((org.omg.CORBA.portable.ObjectImpl) obj)._get_delegate ();
+     test.org.omg.CORBA.Object obj = orb.string_to_object (str);
+     test.org.omg.CORBA.portable.Delegate delegate = ((test.org.omg.CORBA.portable.ObjectImpl) obj)._get_delegate ();
      _set_delegate (delegate);
    } finally {
      orb.destroy() ;
@@ -107,7 +107,7 @@ public class _ServerProxyStub extends org.omg.CORBA.portable.ObjectImpl implemen
   {
      String[] args = null;
      java.util.Properties props = null;
-     org.omg.CORBA.ORB orb = org.omg.CORBA.ORB.init (args, props);
+     test.org.omg.CORBA.ORB orb = test.org.omg.CORBA.ORB.init (args, props);
    try {
      String str = orb.object_to_string (this);
      s.writeUTF (str);

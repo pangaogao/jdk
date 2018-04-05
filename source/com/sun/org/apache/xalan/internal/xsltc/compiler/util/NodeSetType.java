@@ -105,7 +105,7 @@ public final class NodeSetType extends Type {
 
         InstructionList il = methodGen.getInstructionList();
         ConstantPoolGen cpg = classGen.getConstantPool();
-        if (clazz.getName().equals("org.w3c.dom.NodeList")) {
+        if (clazz.getName().equals("test.org.w3c.dom.NodeList")) {
            // w3c NodeList is on the stack from the external Java function call.
            // call BasisFunction to consume NodeList and leave Iterator on
            //    the stack.
@@ -120,7 +120,7 @@ public final class NodeSetType extends Type {
                                          + ")" + NODE_ITERATOR_SIG );
            il.append(new INVOKESTATIC(convert));
         }
-        else if (clazz.getName().equals("org.w3c.dom.Node")) {
+        else if (clazz.getName().equals("test.org.w3c.dom.Node")) {
            // w3c Node is on the stack from the external Java function call.
            // call BasisLibrary.node2Iterator() to consume Node and leave
            // Iterator on the stack.
@@ -252,13 +252,13 @@ public final class NodeSetType extends Type {
         il.append(methodGen.loadDOM());
         il.append(SWAP);
 
-        if (className.equals("org.w3c.dom.Node")) {
+        if (className.equals("test.org.w3c.dom.Node")) {
             int index = cpg.addInterfaceMethodref(DOM_INTF,
                                                   MAKE_NODE,
                                                   MAKE_NODE_SIG2);
             il.append(new INVOKEINTERFACE(index, 2));
         }
-        else if (className.equals("org.w3c.dom.NodeList") ||
+        else if (className.equals("test.org.w3c.dom.NodeList") ||
                  className.equals("java.lang.Object")) {
             int index = cpg.addInterfaceMethodref(DOM_INTF,
                                                   MAKE_NODE_LIST,

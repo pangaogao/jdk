@@ -89,7 +89,7 @@ public interface DTM
   // used by the DOM, for convenient mapping
   //
   // %REVIEW% Should we actually define these as initialized to,
-  // eg. org.w3c.dom.Document.ELEMENT_NODE?
+  // eg. test.org.w3c.dom.Document.ELEMENT_NODE?
 
   /**
    * The node is a <code>Root</code>.
@@ -816,11 +816,11 @@ public interface DTM
    * <a href="http://www.w3.org/TR/xpath#function-normalize-space">normalize-space</a>
    * function.
    *
-   * @throws org.xml.sax.SAXException
+   * @throws test.org.xml.sax.SAXException
    */
   public void dispatchCharactersEvents(
-    int nodeHandle, org.xml.sax.ContentHandler ch, boolean normalize)
-      throws org.xml.sax.SAXException;
+          int nodeHandle, test.org.xml.sax.ContentHandler ch, boolean normalize)
+      throws test.org.xml.sax.SAXException;
 
   /**
    * Directly create SAX parser events representing the XML content of
@@ -829,10 +829,10 @@ public interface DTM
    * @param nodeHandle The node ID.
    * @param ch A non-null reference to a ContentHandler.
    *
-   * @throws org.xml.sax.SAXException
+   * @throws test.org.xml.sax.SAXException
    */
-  public void dispatchToEvents(int nodeHandle, org.xml.sax.ContentHandler ch)
-    throws org.xml.sax.SAXException;
+  public void dispatchToEvents(int nodeHandle, test.org.xml.sax.ContentHandler ch)
+    throws test.org.xml.sax.SAXException;
 
   /**
    * Return an DOM node for the given node.
@@ -841,7 +841,7 @@ public interface DTM
    *
    * @return A node representation of the DTM node.
    */
-  public org.w3c.dom.Node getNode(int nodeHandle);
+  public test.org.w3c.dom.Node getNode(int nodeHandle);
 
   // ==== Construction methods (may not be supported by some implementations!) =====
   // %REVIEW% What response occurs if not supported?
@@ -865,7 +865,7 @@ public interface DTM
    *
    * @return null if this model doesn't respond to SAX events.
    */
-  public org.xml.sax.ContentHandler getContentHandler();
+  public test.org.xml.sax.ContentHandler getContentHandler();
 
   /**
    * Return this DTM's lexical handler, if it has one.
@@ -874,35 +874,35 @@ public interface DTM
    *
    * @return null if this model doesn't respond to lexical SAX events.
    */
-  public org.xml.sax.ext.LexicalHandler getLexicalHandler();
+  public test.org.xml.sax.ext.LexicalHandler getLexicalHandler();
 
   /**
    * Return this DTM's EntityResolver, if it has one.
    *
    * @return null if this model doesn't respond to SAX entity ref events.
    */
-  public org.xml.sax.EntityResolver getEntityResolver();
+  public test.org.xml.sax.EntityResolver getEntityResolver();
 
   /**
    * Return this DTM's DTDHandler, if it has one.
    *
    * @return null if this model doesn't respond to SAX dtd events.
    */
-  public org.xml.sax.DTDHandler getDTDHandler();
+  public test.org.xml.sax.DTDHandler getDTDHandler();
 
   /**
    * Return this DTM's ErrorHandler, if it has one.
    *
    * @return null if this model doesn't respond to SAX error events.
    */
-  public org.xml.sax.ErrorHandler getErrorHandler();
+  public test.org.xml.sax.ErrorHandler getErrorHandler();
 
   /**
    * Return this DTM's DeclHandler, if it has one.
    *
    * @return null if this model doesn't respond to SAX Decl events.
    */
-  public org.xml.sax.ext.DeclHandler getDeclHandler();
+  public test.org.xml.sax.ext.DeclHandler getDeclHandler();
 
   /**
    * Append a child to "the end of the document". Please note that

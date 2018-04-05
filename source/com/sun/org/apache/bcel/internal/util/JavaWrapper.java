@@ -32,7 +32,7 @@ package com.sun.org.apache.bcel.internal.util;
  * 4. The names "Apache" and "Apache Software Foundation" and
  *    "Apache BCEL" must not be used to endorse or promote products
  *    derived from this software without prior written permission. For
- *    written permission, please contact apache@apache.org.
+ *    written permission, please contact apache@apache.test.org.
  *
  * 5. Products derived from this software may not be called "Apache",
  *    "Apache BCEL", nor may "Apache" appear in their name, without
@@ -65,11 +65,11 @@ import java.lang.reflect.*;
  * to modify/generate classes as they're requested. You can take this as a template
  * for your own applications.<br>
  * Call this wrapper with
- * <pre>java com.sun.org.apache.bcel.internal.util.JavaWrapper &lt;real.class.name&gt; [arguments]</pre>
+ * <pre>java com.sun.test.org.apache.bcel.internal.util.JavaWrapper &lt;real.class.name&gt; [arguments]</pre>
  * <p>
  * To use your own class loader you can set the "bcel.classloader" system property
- * which defaults to "com.sun.org.apache.bcel.internal.util.ClassLoader", e.g., with
- * <pre>java com.sun.org.apache.bcel.internal.util.JavaWrapper -Dbcel.classloader=foo.MyLoader &lt;real.class.name&gt; [arguments]</pre>
+ * which defaults to "com.sun.test.org.apache.bcel.internal.util.ClassLoader", e.g., with
+ * <pre>java com.sun.test.org.apache.bcel.internal.util.JavaWrapper -Dbcel.classloader=foo.MyLoader &lt;real.class.name&gt; [arguments]</pre>
  * </p>
  *
  * @version $Id: JavaWrapper.java,v 1.3 2007-07-19 04:34:52 ofung Exp $
@@ -83,7 +83,7 @@ public class JavaWrapper {
     String s = SecuritySupport.getSystemProperty("bcel.classloader");
 
     if((s == null) || "".equals(s))
-      s = "com.sun.org.apache.bcel.internal.util.ClassLoader";
+      s = "com.sun.test.org.apache.bcel.internal.util.ClassLoader";
 
     try {
       return (java.lang.ClassLoader)Class.forName(s).newInstance();

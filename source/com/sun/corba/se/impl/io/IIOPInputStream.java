@@ -31,22 +31,17 @@
 
 package com.sun.corba.se.impl.io;
 
-import java.io.InputStream;
 import java.io.IOException;
 import java.io.StreamCorruptedException;
 import java.io.ObjectInputValidation;
 import java.io.NotActiveException;
 import java.io.InvalidObjectException;
 import java.io.InvalidClassException;
-import java.io.DataInputStream;
 import java.io.OptionalDataException;
-import java.io.WriteAbortedException;
 import java.io.Externalizable;
 import java.io.EOFException;
 import java.lang.reflect.*;
 import java.util.Vector;
-import java.util.Stack;
-import java.util.Hashtable;
 import java.util.Enumeration;
 
 import sun.corba.Bridge ;
@@ -54,31 +49,28 @@ import sun.corba.Bridge ;
 import java.security.AccessController ;
 import java.security.PrivilegedAction ;
 
-import com.sun.corba.se.impl.io.ObjectStreamClass;
 import com.sun.corba.se.impl.util.Utility;
 
-import org.omg.CORBA.portable.ValueInputStream;
+import test.org.omg.CORBA.portable.ValueInputStream;
 
-import org.omg.CORBA.ValueMember;
-import org.omg.CORBA.SystemException;
-import org.omg.CORBA.TCKind;
-import org.omg.CORBA.ORB;
-import org.omg.CORBA.CompletionStatus;
-import org.omg.CORBA.portable.IndirectionException;
-import org.omg.CORBA.MARSHAL;
-import org.omg.CORBA.TypeCode;
+import test.org.omg.CORBA.ValueMember;
+import test.org.omg.CORBA.SystemException;
+import test.org.omg.CORBA.TCKind;
+import test.org.omg.CORBA.ORB;
+import test.org.omg.CORBA.CompletionStatus;
+import test.org.omg.CORBA.portable.IndirectionException;
+import test.org.omg.CORBA.MARSHAL;
+import test.org.omg.CORBA.TypeCode;
 
 import com.sun.org.omg.CORBA.ValueDefPackage.FullValueDescription;
 import com.sun.org.omg.SendingContext.CodeBase;
 
-import javax.rmi.PortableRemoteObject;
 import javax.rmi.CORBA.Util;
 import javax.rmi.CORBA.ValueHandler;
 
 import java.security.*;
 import java.util.*;
 
-import com.sun.corba.se.impl.orbutil.ObjectUtility ;
 import com.sun.corba.se.impl.logging.OMGSystemException ;
 import com.sun.corba.se.impl.logging.UtilSystemException ;
 
@@ -122,7 +114,7 @@ public class IIOPInputStream
     // bug 4365188.
     private ValueMember defaultReadObjectFVDMembers[] = null;
 
-    private org.omg.CORBA_2_3.portable.InputStream orbStream;
+    private test.org.omg.CORBA_2_3.portable.InputStream orbStream;
 
     private CodeBase cbSender;
 
@@ -300,11 +292,11 @@ public class IIOPInputStream
         resetStream();
     }
 
-    final void setOrbStream(org.omg.CORBA_2_3.portable.InputStream os) {
+    final void setOrbStream(test.org.omg.CORBA_2_3.portable.InputStream os) {
         orbStream = os;
     }
 
-    final org.omg.CORBA_2_3.portable.InputStream getOrbStream() {
+    final test.org.omg.CORBA_2_3.portable.InputStream getOrbStream() {
         return orbStream;
     }
 
@@ -902,7 +894,7 @@ public class IIOPInputStream
      * in orbutil.IIOPInputStream_1_3 in order to interoperate with
      * our legacy ORBs.
      */
-    protected String internalReadUTF(org.omg.CORBA.portable.InputStream stream)
+    protected String internalReadUTF(test.org.omg.CORBA.portable.InputStream stream)
     {
         return stream.read_wstring();
     }
@@ -1848,7 +1840,7 @@ public class IIOPInputStream
         }
      }
 
-    private Object inputObjectField(org.omg.CORBA.ValueMember field,
+    private Object inputObjectField(test.org.omg.CORBA.ValueMember field,
                                     com.sun.org.omg.SendingContext.CodeBase sender)
         throws IndirectionException, ClassNotFoundException, IOException,
                StreamCorruptedException {
@@ -1984,7 +1976,7 @@ public class IIOPInputStream
                 // RMI Object reference...
                 callType = ValueHandlerImpl.kRemoteType;
 
-            } else if (org.omg.CORBA.Object.class.isAssignableFrom(fieldType)){
+            } else if (test.org.omg.CORBA.Object.class.isAssignableFrom(fieldType)){
 
                 // IDL Object reference...
                 callType = ValueHandlerImpl.kRemoteType;

@@ -31,13 +31,9 @@ package com.sun.imageio.plugins.gif;
  * to make the class read-write capable.
  */
 
-import javax.imageio.ImageTypeSpecifier;
 import javax.imageio.metadata.IIOInvalidTreeException;
-import javax.imageio.metadata.IIOMetadata;
-import javax.imageio.metadata.IIOMetadataNode;
-import javax.imageio.metadata.IIOMetadataFormat;
 import javax.imageio.metadata.IIOMetadataFormatImpl;
-import org.w3c.dom.Node;
+import test.org.w3c.dom.Node;
 
 class GIFWritableStreamMetadata extends GIFStreamMetadata {
 

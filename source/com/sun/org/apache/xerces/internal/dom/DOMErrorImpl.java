@@ -20,8 +20,8 @@
 
 package com.sun.org.apache.xerces.internal.dom;
 
-import org.w3c.dom.DOMError;
-import org.w3c.dom.DOMLocator;
+import test.org.w3c.dom.DOMError;
+import test.org.w3c.dom.DOMLocator;
 import com.sun.org.apache.xerces.internal.xni.parser.XMLParseException;
 
 

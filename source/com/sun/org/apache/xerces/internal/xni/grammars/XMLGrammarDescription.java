@@ -40,14 +40,14 @@ public interface XMLGrammarDescription extends XMLResourceIdentifier {
      * method returns this constant, the object should be an instance of
      * the XMLSchemaDescription interface.
      */
-    public static final String XML_SCHEMA = "http://www.w3.org/2001/XMLSchema";
+    public static final String XML_SCHEMA = "http://www.w3.test.org/2001/XMLSchema";
 
     /**
      * The grammar type constant for DTD grammars. When getGrammarType()
      * method returns this constant, the object should be an instance of
      * the XMLDTDDescription interface.
      */
-    public static final String XML_DTD = "http://www.w3.org/TR/REC-xml";
+    public static final String XML_DTD = "http://www.w3.test.org/TR/REC-xml";
 
     /**
      * Return the type of this grammar.

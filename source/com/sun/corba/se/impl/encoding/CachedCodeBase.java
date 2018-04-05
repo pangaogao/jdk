@@ -199,7 +199,7 @@ public class CachedCodeBase extends _CodeBaseImplBase
         return true;
     }
 
-    private final org.omg.CORBA.Object getObjectFromIOR() {
+    private final test.org.omg.CORBA.Object getObjectFromIOR() {
         return CDRInputStream_1_0.internalIORToObject(
             conn.getCodeBaseIOR(), null /*stubFactory*/, conn.getBroker());
     }

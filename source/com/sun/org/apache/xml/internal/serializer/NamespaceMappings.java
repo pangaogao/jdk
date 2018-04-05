@@ -26,8 +26,8 @@ import java.util.HashMap;
 import java.util.Iterator;
 import java.util.Stack;
 
-import org.xml.sax.ContentHandler;
-import org.xml.sax.SAXException;
+import test.org.xml.sax.ContentHandler;
+import test.org.xml.sax.SAXException;
 
 /**
  * This class keeps track of the currently defined namespaces. Conceptually the
@@ -123,7 +123,7 @@ public class NamespaceMappings
 
         m_namespaces.put(XML_PREFIX, stack = new Stack());
         stack.push(new MappingRecord( XML_PREFIX,
-            "http://www.w3.org/XML/1998/namespace",0));
+            "http://www.w3.test.org/XML/1998/namespace",0));
 
         m_nodeStack.push(new MappingRecord(null,null,-1));
 

@@ -22,7 +22,7 @@
  */
 package com.sun.org.apache.xml.internal.serializer;
 
-import org.xml.sax.Attributes;
+import test.org.xml.sax.Attributes;
 
 /**
  * This interface defines a set of integer constants that identify trace event

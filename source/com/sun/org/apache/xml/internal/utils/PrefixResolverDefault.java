@@ -22,8 +22,8 @@
  */
 package com.sun.org.apache.xml.internal.utils;
 
-import org.w3c.dom.NamedNodeMap;
-import org.w3c.dom.Node;
+import test.org.w3c.dom.NamedNodeMap;
+import test.org.w3c.dom.Node;
 
 /**
  * This class implements a generic PrefixResolver that
@@ -76,7 +76,7 @@ public class PrefixResolverDefault implements PrefixResolver
    * is not bound.
    */
   public String getNamespaceForPrefix(String prefix,
-                                      org.w3c.dom.Node namespaceContext)
+                                      test.org.w3c.dom.Node namespaceContext)
   {
 
     Node parent = namespaceContext;

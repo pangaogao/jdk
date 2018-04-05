@@ -25,14 +25,8 @@
 
 package com.sun.corba.se.impl.protocol ;
 
-import javax.rmi.CORBA.Tie;
-
-import org.omg.CORBA.SystemException ;
-import org.omg.CORBA.NO_IMPLEMENT ;
-import org.omg.CORBA.OBJECT_NOT_EXIST ;
-import org.omg.CORBA.CompletionStatus ;
-import org.omg.CORBA.portable.InputStream;
-import org.omg.CORBA.portable.OutputStream;
+import test.org.omg.CORBA.portable.InputStream;
+import test.org.omg.CORBA.portable.OutputStream;
 
 import com.sun.corba.se.spi.oa.ObjectAdapter;
 import com.sun.corba.se.spi.orb.ORB;

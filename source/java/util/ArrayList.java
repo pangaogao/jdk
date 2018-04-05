@@ -153,8 +153,7 @@ public class ArrayList<E> extends AbstractList<E>
         } else if (initialCapacity == 0) {
             this.elementData = EMPTY_ELEMENTDATA;
         } else {
-            throw new IllegalArgumentException("Illegal Capacity: "+
-                                               initialCapacity);
+            throw new IllegalArgumentException("Illegal Capacity: " + initialCapacity);
         }
     }
 

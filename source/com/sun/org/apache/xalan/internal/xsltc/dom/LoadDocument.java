@@ -39,12 +39,8 @@ import com.sun.org.apache.xalan.internal.utils.SecuritySupport;
 import com.sun.org.apache.xml.internal.dtm.DTM;
 import com.sun.org.apache.xml.internal.dtm.DTMAxisIterator;
 import com.sun.org.apache.xml.internal.dtm.DTMManager;
-import com.sun.org.apache.xml.internal.dtm.ref.DTMDefaultBase;
 import com.sun.org.apache.xml.internal.dtm.ref.EmptyIterator;
 import com.sun.org.apache.xml.internal.utils.SystemIDResolver;
-
-import org.xml.sax.InputSource;
-import org.xml.sax.XMLReader;
 
 /**
  * @author Morten Jorgensen
@@ -52,11 +48,11 @@ import org.xml.sax.XMLReader;
 public final class LoadDocument {
 
     private static final String NAMESPACE_FEATURE =
-       "http://xml.org/sax/features/namespaces";
+       "http://xml.test.org/sax/features/namespaces";
 
     /**
      * Interprets the arguments passed from the document() function (see
-     * com/sun/org/apache/xalan/internal/xsltc/compiler/DocumentCall.java) and returns an
+     * com/sun/test.org/apache/xalan/internal/xsltc/compiler/DocumentCall.java) and returns an
      * iterator containing the requested nodes. Builds a union-iterator if
      * several documents are requested.
      * 2 arguments arg1 and arg2.  document(Obj, node-set) call
@@ -97,7 +93,7 @@ public final class LoadDocument {
     }
     /**
      * Interprets the arguments passed from the document() function (see
-     * com/sun/org/apache/xalan/internal/xsltc/compiler/DocumentCall.java) and returns an
+     * com/sun/test.org/apache/xalan/internal/xsltc/compiler/DocumentCall.java) and returns an
      * iterator containing the requested nodes. Builds a union-iterator if
      * several documents are requested.
      * 1 arguments arg.  document(Obj) call

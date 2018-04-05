@@ -25,41 +25,22 @@
 
 package com.sun.corba.se.impl.corba;
 
-import java.util.HashMap;
-import java.util.Map;
-import java.util.Iterator;
-import java.util.List;
-import java.util.Collections;
-import java.util.ArrayList;
-import java.io.IOException;
 import java.io.PrintStream;
 import java.io.ByteArrayOutputStream;
-import java.math.BigDecimal;
-import java.math.BigInteger;
 
-import org.omg.CORBA.TypeCode ;
-import org.omg.CORBA.StructMember ;
-import org.omg.CORBA.UnionMember ;
-import org.omg.CORBA.ValueMember ;
-import org.omg.CORBA.TCKind ;
-import org.omg.CORBA.Any ;
-import org.omg.CORBA.Principal ;
-import org.omg.CORBA.BAD_TYPECODE ;
-import org.omg.CORBA.BAD_PARAM ;
-import org.omg.CORBA.BAD_OPERATION ;
-import org.omg.CORBA.INTERNAL ;
-import org.omg.CORBA.MARSHAL ;
-import org.omg.CORBA.TypeCodePackage.BadKind ;
-import org.omg.CORBA_2_3.portable.InputStream;
-import org.omg.CORBA_2_3.portable.OutputStream;
+import test.org.omg.CORBA.TypeCode ;
+import test.org.omg.CORBA.StructMember ;
+import test.org.omg.CORBA.UnionMember ;
+import test.org.omg.CORBA.ValueMember ;
+import test.org.omg.CORBA.TCKind ;
+import test.org.omg.CORBA.Any ;
+import test.org.omg.CORBA.TypeCodePackage.BadKind ;
+import test.org.omg.CORBA_2_3.portable.InputStream;
+import test.org.omg.CORBA_2_3.portable.OutputStream;
 
-import com.sun.corba.se.spi.ior.iiop.GIOPVersion;
 import com.sun.corba.se.spi.orb.ORB;
 import com.sun.corba.se.spi.logging.CORBALogDomains;
 
-import com.sun.corba.se.impl.encoding.OSFCodeSetRegistry;
-import com.sun.corba.se.impl.encoding.MarshalInputStream;
-import com.sun.corba.se.impl.encoding.CodeSetConversion;
 import com.sun.corba.se.impl.encoding.CDRInputStream;
 import com.sun.corba.se.impl.encoding.CDROutputStream;
 import com.sun.corba.se.impl.encoding.TypeCodeInputStream;
@@ -306,7 +287,7 @@ public final class TypeCodeImpl extends TypeCode
             case TCKind._tk_value_box:
                 _contentType = convertToNative(_orb, tc.content_type());
             }
-        } catch (org.omg.CORBA.TypeCodePackage.Bounds e) {} catch (BadKind e) {}
+        } catch (test.org.omg.CORBA.TypeCodePackage.Bounds e) {} catch (BadKind e) {}
         // dont have to worry about these since code ensures we dont step
         // out of bounds.
     }
@@ -326,7 +307,7 @@ public final class TypeCodeImpl extends TypeCode
         case TCKind._tk_objref:
             {
                 // this is being used to create typecode for CORBA::Object
-                setId("IDL:omg.org/CORBA/Object:1.0");
+                setId("IDL:omg.test.org/CORBA/Object:1.0");
                 _name = "Object";
                 break;
             }
@@ -885,7 +866,7 @@ public final class TypeCodeImpl extends TypeCode
                     }
                 }
             }
-        } catch (org.omg.CORBA.TypeCodePackage.Bounds e) {} catch (BadKind e) {}
+        } catch (test.org.omg.CORBA.TypeCodePackage.Bounds e) {} catch (BadKind e) {}
         // dont have to worry about these since the code ensures these dont
         // arise.
         return false;
@@ -996,7 +977,7 @@ public final class TypeCodeImpl extends TypeCode
         } catch (BadKind e) {
             // impossible if we checked correctly above
             throw wrapper.badkindCannotOccur() ;
-        } catch (org.omg.CORBA.TypeCodePackage.Bounds e) {
+        } catch (test.org.omg.CORBA.TypeCodePackage.Bounds e) {
             // impossible if we checked correctly above
             throw wrapper.boundsCannotOccur() ;
         }
@@ -1091,7 +1072,7 @@ public final class TypeCodeImpl extends TypeCode
     }
 
     public String member_name(int index)
-        throws BadKind, org.omg.CORBA.TypeCodePackage.Bounds
+        throws BadKind, test.org.omg.CORBA.TypeCodePackage.Bounds
     {
         switch (_kind) {
         case tk_indirect:
@@ -1104,7 +1085,7 @@ public final class TypeCodeImpl extends TypeCode
             try {
                 return _memberNames[index];
             } catch (ArrayIndexOutOfBoundsException e) {
-                throw new org.omg.CORBA.TypeCodePackage.Bounds();
+                throw new test.org.omg.CORBA.TypeCodePackage.Bounds();
             }
         default:
             throw new BadKind();
@@ -1112,7 +1093,7 @@ public final class TypeCodeImpl extends TypeCode
     }
 
     public TypeCode member_type(int index)
-        throws BadKind, org.omg.CORBA.TypeCodePackage.Bounds
+        throws BadKind, test.org.omg.CORBA.TypeCodePackage.Bounds
     {
         switch (_kind) {
         case tk_indirect:
@@ -1124,7 +1105,7 @@ public final class TypeCodeImpl extends TypeCode
             try {
                 return _memberTypes[index];
             } catch (ArrayIndexOutOfBoundsException e) {
-                throw new org.omg.CORBA.TypeCodePackage.Bounds();
+                throw new test.org.omg.CORBA.TypeCodePackage.Bounds();
             }
         default:
             throw new BadKind();
@@ -1132,7 +1113,7 @@ public final class TypeCodeImpl extends TypeCode
     }
 
     public Any member_label(int index)
-        throws BadKind, org.omg.CORBA.TypeCodePackage.Bounds
+        throws BadKind, test.org.omg.CORBA.TypeCodePackage.Bounds
     {
         switch (_kind) {
         case tk_indirect:
@@ -1142,7 +1123,7 @@ public final class TypeCodeImpl extends TypeCode
                 // _REVISIT_ Why create a new Any for this?
                 return new AnyImpl(_orb, _unionLabels[index]);
             } catch (ArrayIndexOutOfBoundsException e) {
-                throw new org.omg.CORBA.TypeCodePackage.Bounds();
+                throw new test.org.omg.CORBA.TypeCodePackage.Bounds();
             }
         default:
             throw new BadKind();
@@ -1227,7 +1208,7 @@ public final class TypeCodeImpl extends TypeCode
     }
 
     public short member_visibility(int index) throws BadKind,
-        org.omg.CORBA.TypeCodePackage.Bounds {
+        test.org.omg.CORBA.TypeCodePackage.Bounds {
         switch (_kind) {
         case tk_indirect:
             return indirectType().member_visibility(index);
@@ -1235,7 +1216,7 @@ public final class TypeCodeImpl extends TypeCode
             try {
                 return _memberAccess[index];
             } catch (ArrayIndexOutOfBoundsException e) {
-                throw new org.omg.CORBA.TypeCodePackage.Bounds();
+                throw new test.org.omg.CORBA.TypeCodePackage.Bounds();
             }
         default:
             throw new BadKind();
@@ -1926,8 +1907,8 @@ public final class TypeCodeImpl extends TypeCode
      * The state of this TypeCodeImpl instance isn't changed, only used
      * by the Any to do the correct copy.
      */
-    protected void copy(org.omg.CORBA.portable.InputStream src,
-        org.omg.CORBA.portable.OutputStream dst)
+    protected void copy(test.org.omg.CORBA.portable.InputStream src,
+                        test.org.omg.CORBA.portable.OutputStream dst)
     {
         switch (_kind) {
 
@@ -2015,8 +1996,8 @@ public final class TypeCodeImpl extends TypeCode
                 //Any tmp = new AnyImpl(_orb);
                 Any tmp =  ((CDRInputStream)src).orb().create_any();
                 TypeCodeImpl t = new TypeCodeImpl((ORB)dst.orb());
-                t.read_value((org.omg.CORBA_2_3.portable.InputStream)src);
-                t.write_value((org.omg.CORBA_2_3.portable.OutputStream)dst);
+                t.read_value((test.org.omg.CORBA_2_3.portable.InputStream)src);
+                t.write_value((test.org.omg.CORBA_2_3.portable.OutputStream)dst);
                 tmp.read_value(src, t);
                 tmp.write_value(dst);
                 break;
@@ -2279,7 +2260,7 @@ public final class TypeCodeImpl extends TypeCode
                 return _defaultIndex;
             }
         } catch (BadKind bad) {
-        } catch (org.omg.CORBA.TypeCodePackage.Bounds bounds) {
+        } catch (test.org.omg.CORBA.TypeCodePackage.Bounds bounds) {
         }
         return -1;
     }

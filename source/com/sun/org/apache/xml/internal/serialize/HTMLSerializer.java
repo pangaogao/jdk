@@ -42,13 +42,13 @@ import java.io.OutputStream;
 import java.io.Writer;
 import java.util.Locale;
 import java.util.Map;
-import org.w3c.dom.Attr;
-import org.w3c.dom.Element;
-import org.w3c.dom.NamedNodeMap;
-import org.w3c.dom.Node;
-import org.xml.sax.AttributeList;
-import org.xml.sax.Attributes;
-import org.xml.sax.SAXException;
+import test.org.w3c.dom.Attr;
+import test.org.w3c.dom.Element;
+import test.org.w3c.dom.NamedNodeMap;
+import test.org.w3c.dom.Node;
+import test.org.xml.sax.AttributeList;
+import test.org.xml.sax.Attributes;
+import test.org.xml.sax.SAXException;
 
 
 /**
@@ -68,7 +68,7 @@ import org.xml.sax.SAXException;
  * If an I/O exception occurs while serializing, the serializer
  * will not throw an exception directly, but only throw it
  * at the end of serializing (either DOM or SAX's {@link
- * org.xml.sax.DocumentHandler#endDocument}.
+ * test.org.xml.sax.DocumentHandler#endDocument}.
  * <p>
  * For elements that are not specified as whitespace preserving,
  * the serializer will potentially break long text lines at space
@@ -102,7 +102,7 @@ public class HTMLSerializer
     private boolean _xhtml;
 
 
-    public static final String XHTMLNamespace = "http://www.w3.org/1999/xhtml";
+    public static final String XHTMLNamespace = "http://www.w3.test.org/1999/xhtml";
 
     // for users to override XHTMLNamespace if need be.
     private String fUserXHTMLNamespace = null;

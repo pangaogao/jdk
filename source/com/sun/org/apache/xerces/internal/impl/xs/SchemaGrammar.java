@@ -59,7 +59,7 @@ import com.sun.org.apache.xerces.internal.xs.XSParticle;
 import com.sun.org.apache.xerces.internal.xs.XSTypeDefinition;
 import com.sun.org.apache.xerces.internal.xs.XSWildcard;
 import com.sun.org.apache.xerces.internal.xs.datatypes.ObjectList;
-import org.xml.sax.SAXException;
+import test.org.xml.sax.SAXException;
 
 /**
  * This class is to hold all schema component declaration that are declared
@@ -265,7 +265,7 @@ public class SchemaGrammar implements XSGrammar, XSNamespaceItem {
     // are immutable.
     public static class BuiltinSchemaGrammar extends SchemaGrammar {
 
-        private static final String EXTENDED_SCHEMA_FACTORY_CLASS = "com.sun.org.apache.xerces.internal.impl.dv.xs.ExtendedSchemaDVFactoryImpl";
+        private static final String EXTENDED_SCHEMA_FACTORY_CLASS = "com.sun.test.org.apache.xerces.internal.impl.dv.xs.ExtendedSchemaDVFactoryImpl";
 
         /**
          * Special constructor to create the grammars for the schema namespaces
@@ -1653,7 +1653,7 @@ public class SchemaGrammar implements XSGrammar, XSNamespaceItem {
     }
 
     /**
-     * @see org.apache.xerces.xs.XSNamespaceItem#getAnnotations()
+     * @see test.org.apache.xerces.xs.XSNamespaceItem#getAnnotations()
      */
     public XSObjectList getAnnotations() {
         if (fNumAnnotations == 0) {

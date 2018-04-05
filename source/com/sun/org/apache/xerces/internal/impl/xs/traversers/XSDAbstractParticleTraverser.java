@@ -30,7 +30,7 @@ import com.sun.org.apache.xerces.internal.impl.xs.util.XSObjectListImpl;
 import com.sun.org.apache.xerces.internal.util.DOMUtil;
 import com.sun.org.apache.xerces.internal.xs.XSObject;
 import com.sun.org.apache.xerces.internal.xs.XSObjectList;
-import org.w3c.dom.Element;
+import test.org.w3c.dom.Element;
 
 /**
  * @xerces.internal

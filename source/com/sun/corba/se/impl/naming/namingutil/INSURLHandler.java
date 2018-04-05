@@ -24,9 +24,6 @@
  */
 package com.sun.corba.se.impl.naming.namingutil;
 
-import org.omg.CORBA.CompletionStatus;
-import java.util.StringTokenizer;
-
 /**
  *  This class is the entry point to parse different types of INS URL's.
  *

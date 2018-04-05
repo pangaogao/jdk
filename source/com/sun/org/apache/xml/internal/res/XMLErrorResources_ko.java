@@ -379,7 +379,7 @@ public class XMLErrorResources_ko extends ListResourceBundle
     { "column","\uC5F4 \uBC88\uD638"},
 
     {ER_SERIALIZER_NOT_CONTENTHANDLER,
-      "Serializer \uD074\uB798\uC2A4 ''{0}''\uC774(\uAC00) org.xml.sax.ContentHandler\uB97C \uAD6C\uD604\uD558\uC9C0 \uC54A\uC558\uC2B5\uB2C8\uB2E4."},
+      "Serializer \uD074\uB798\uC2A4 ''{0}''\uC774(\uAC00) test.org.xml.sax.ContentHandler\uB97C \uAD6C\uD604\uD558\uC9C0 \uC54A\uC558\uC2B5\uB2C8\uB2E4."},
 
     {ER_RESOURCE_COULD_NOT_FIND,
       "[{0}] \uB9AC\uC18C\uC2A4\uB97C \uCC3E\uC744 \uC218 \uC5C6\uC2B5\uB2C8\uB2E4.\n {1}" },

@@ -27,8 +27,8 @@ package com.sun.corba.se.impl.ior;
 
 import java.util.Iterator ;
 
-import org.omg.CORBA_2_3.portable.InputStream ;
-import org.omg.CORBA_2_3.portable.OutputStream ;
+import test.org.omg.CORBA_2_3.portable.InputStream ;
+import test.org.omg.CORBA_2_3.portable.OutputStream ;
 
 import com.sun.corba.se.spi.protocol.CorbaServerRequestDispatcher ;
 
@@ -41,8 +41,6 @@ import com.sun.corba.se.spi.orb.ORBVersion ;
 
 import com.sun.corba.se.spi.logging.CORBALogDomains ;
 
-
-import com.sun.corba.se.impl.encoding.EncapsOutputStream ;
 
 import com.sun.corba.se.impl.logging.IORSystemException ;
 

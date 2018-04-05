@@ -29,8 +29,8 @@ import java.util.TreeSet;
 import com.sun.org.apache.xml.internal.security.exceptions.XMLSecurityException;
 import com.sun.org.apache.xml.internal.security.transforms.TransformParam;
 import com.sun.org.apache.xml.internal.security.utils.ElementProxy;
-import org.w3c.dom.Document;
-import org.w3c.dom.Element;
+import test.org.w3c.dom.Document;
+import test.org.w3c.dom.Element;
 
 /**
  * This Object serves as Content for the ds:Transforms for exclusive
@@ -52,7 +52,7 @@ public class InclusiveNamespaces extends ElementProxy implements TransformParam 
 
     /** Field ExclusiveCanonicalizationNamespace */
     public static final String ExclusiveCanonicalizationNamespace =
-        "http://www.w3.org/2001/10/xml-exc-c14n#";
+        "http://www.w3.test.org/2001/10/xml-exc-c14n#";
 
     /**
      * Constructor XPathContainer

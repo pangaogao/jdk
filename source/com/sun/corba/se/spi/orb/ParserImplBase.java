@@ -35,13 +35,9 @@ import java.security.AccessController ;
 
 import java.lang.reflect.Field ;
 
-import org.omg.CORBA.INTERNAL ;
-
 import com.sun.corba.se.spi.logging.CORBALogDomains ;
 
 import com.sun.corba.se.impl.logging.ORBUtilSystemException ;
-
-import com.sun.corba.se.impl.orbutil.ObjectUtility ;
 
 // XXX This could probably be further extended by using more reflection and
 // a dynamic proxy that satisfies the interfaces that are inherited by the

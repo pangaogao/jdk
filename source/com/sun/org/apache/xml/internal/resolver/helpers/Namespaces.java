@@ -23,7 +23,7 @@
 
 package com.sun.org.apache.xml.internal.resolver.helpers;
 
-import org.w3c.dom.*;
+import test.org.w3c.dom.*;
 
 /**
  * Static Namespace query methods.

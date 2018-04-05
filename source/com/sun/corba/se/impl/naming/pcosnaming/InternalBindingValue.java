@@ -25,13 +25,12 @@
 
 package com.sun.corba.se.impl.naming.pcosnaming;
 
-import org.omg.CORBA.Object;
-import org.omg.CosNaming.BindingType;
+import test.org.omg.CosNaming.BindingType;
 import java.io.Serializable;
 
 /**
  * Class InternalBindingKey acts as a container for two objects, namely
- * a org.omg.CosNaming::Binding and an CORBA object reference, which are the two
+ * a test.org.omg.CosNaming::Binding and an CORBA object reference, which are the two
  * components associated with the binding.
  */
 public class InternalBindingValue
@@ -43,7 +42,7 @@ public class InternalBindingValue
     // calling orb.string_to_object( ) everytime. Instead it
     // will be set once and then the result will be used everytime.
     public String strObjectRef;
-    transient private org.omg.CORBA.Object theObjectRef;
+    transient private test.org.omg.CORBA.Object theObjectRef;
 
     // Default constructor
     public InternalBindingValue() {
@@ -56,12 +55,12 @@ public class InternalBindingValue
         strObjectRef = o;
     }
 
-    public org.omg.CORBA.Object getObjectRef( )
+    public test.org.omg.CORBA.Object getObjectRef( )
     {
         return theObjectRef;
     }
 
-    public void setObjectRef( org.omg.CORBA.Object ObjectRef )
+    public void setObjectRef( test.org.omg.CORBA.Object ObjectRef )
     {
         theObjectRef = ObjectRef;
     }

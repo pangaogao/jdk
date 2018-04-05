@@ -32,68 +32,58 @@ import java.util.Map ;
 import java.util.HashMap ;
 import java.util.Iterator ;
 
-import org.omg.CORBA.Policy ;
-import org.omg.CORBA.SystemException ;
+import test.org.omg.CORBA.Policy ;
+import test.org.omg.CORBA.SystemException ;
 
-import org.omg.PortableServer.POA ;
-import org.omg.PortableServer.Servant ;
-import org.omg.PortableServer.POAManager ;
-import org.omg.PortableServer.AdapterActivator ;
-import org.omg.PortableServer.ServantManager ;
-import org.omg.PortableServer.ForwardRequest ;
-import org.omg.PortableServer.ThreadPolicy;
-import org.omg.PortableServer.LifespanPolicy;
-import org.omg.PortableServer.IdUniquenessPolicy;
-import org.omg.PortableServer.IdAssignmentPolicy;
-import org.omg.PortableServer.ImplicitActivationPolicy;
-import org.omg.PortableServer.ServantRetentionPolicy;
-import org.omg.PortableServer.RequestProcessingPolicy;
-import org.omg.PortableServer.ThreadPolicyValue ;
-import org.omg.PortableServer.LifespanPolicyValue ;
-import org.omg.PortableServer.IdUniquenessPolicyValue ;
-import org.omg.PortableServer.IdAssignmentPolicyValue ;
-import org.omg.PortableServer.ImplicitActivationPolicyValue ;
-import org.omg.PortableServer.ServantRetentionPolicyValue ;
-import org.omg.PortableServer.RequestProcessingPolicyValue ;
-import org.omg.PortableServer.POAPackage.AdapterAlreadyExists ;
-import org.omg.PortableServer.POAPackage.AdapterNonExistent ;
-import org.omg.PortableServer.POAPackage.InvalidPolicy ;
-import org.omg.PortableServer.POAPackage.WrongPolicy ;
-import org.omg.PortableServer.POAPackage.WrongAdapter ;
-import org.omg.PortableServer.POAPackage.NoServant ;
-import org.omg.PortableServer.POAPackage.ServantAlreadyActive ;
-import org.omg.PortableServer.POAPackage.ObjectAlreadyActive ;
-import org.omg.PortableServer.POAPackage.ServantNotActive ;
-import org.omg.PortableServer.POAPackage.ObjectNotActive ;
+import test.org.omg.PortableServer.POA ;
+import test.org.omg.PortableServer.Servant ;
+import test.org.omg.PortableServer.POAManager ;
+import test.org.omg.PortableServer.AdapterActivator ;
+import test.org.omg.PortableServer.ServantManager ;
+import test.org.omg.PortableServer.ForwardRequest ;
+import test.org.omg.PortableServer.ThreadPolicy;
+import test.org.omg.PortableServer.LifespanPolicy;
+import test.org.omg.PortableServer.IdUniquenessPolicy;
+import test.org.omg.PortableServer.IdAssignmentPolicy;
+import test.org.omg.PortableServer.ImplicitActivationPolicy;
+import test.org.omg.PortableServer.ServantRetentionPolicy;
+import test.org.omg.PortableServer.RequestProcessingPolicy;
+import test.org.omg.PortableServer.ThreadPolicyValue ;
+import test.org.omg.PortableServer.LifespanPolicyValue ;
+import test.org.omg.PortableServer.IdUniquenessPolicyValue ;
+import test.org.omg.PortableServer.IdAssignmentPolicyValue ;
+import test.org.omg.PortableServer.ImplicitActivationPolicyValue ;
+import test.org.omg.PortableServer.ServantRetentionPolicyValue ;
+import test.org.omg.PortableServer.RequestProcessingPolicyValue ;
+import test.org.omg.PortableServer.POAPackage.AdapterAlreadyExists ;
+import test.org.omg.PortableServer.POAPackage.AdapterNonExistent ;
+import test.org.omg.PortableServer.POAPackage.InvalidPolicy ;
+import test.org.omg.PortableServer.POAPackage.WrongPolicy ;
+import test.org.omg.PortableServer.POAPackage.WrongAdapter ;
+import test.org.omg.PortableServer.POAPackage.NoServant ;
+import test.org.omg.PortableServer.POAPackage.ServantAlreadyActive ;
+import test.org.omg.PortableServer.POAPackage.ObjectAlreadyActive ;
+import test.org.omg.PortableServer.POAPackage.ServantNotActive ;
+import test.org.omg.PortableServer.POAPackage.ObjectNotActive ;
 
-import org.omg.PortableInterceptor.ObjectReferenceFactory ;
-import org.omg.PortableInterceptor.ObjectReferenceTemplate ;
-import org.omg.PortableInterceptor.NON_EXISTENT ;
-
-import org.omg.IOP.TAG_INTERNET_IOP ;
+import test.org.omg.PortableInterceptor.ObjectReferenceFactory ;
+import test.org.omg.PortableInterceptor.ObjectReferenceTemplate ;
+import test.org.omg.PortableInterceptor.NON_EXISTENT ;
 
 import com.sun.corba.se.spi.copyobject.CopierManager ;
-import com.sun.corba.se.spi.copyobject.ObjectCopier ;
 import com.sun.corba.se.spi.copyobject.ObjectCopierFactory ;
 import com.sun.corba.se.spi.oa.OADestroyed ;
 import com.sun.corba.se.spi.oa.OAInvocationInfo ;
-import com.sun.corba.se.spi.oa.ObjectAdapter ;
 import com.sun.corba.se.spi.oa.ObjectAdapterBase ;
-import com.sun.corba.se.spi.oa.ObjectAdapterFactory ;
 import com.sun.corba.se.spi.ior.ObjectKeyTemplate ;
 import com.sun.corba.se.spi.ior.ObjectId ;
 import com.sun.corba.se.spi.ior.ObjectAdapterId ;
 import com.sun.corba.se.spi.ior.IOR ;
 import com.sun.corba.se.spi.ior.IORFactories ;
-import com.sun.corba.se.spi.ior.IORTemplate ;
 import com.sun.corba.se.spi.ior.IORTemplateList ;
 import com.sun.corba.se.spi.ior.TaggedProfile ;
-import com.sun.corba.se.spi.ior.iiop.IIOPProfile ;
-import com.sun.corba.se.spi.ior.iiop.IIOPAddress ;
-import com.sun.corba.se.spi.ior.iiop.IIOPFactories ;
 import com.sun.corba.se.spi.orb.ORB ;
 import com.sun.corba.se.spi.protocol.ForwardException ;
-import com.sun.corba.se.spi.transport.SocketOrChannelAcceptor;
 
 import com.sun.corba.se.impl.ior.POAObjectKeyTemplate ;
 import com.sun.corba.se.impl.ior.ObjectAdapterIdArray ;
@@ -489,7 +479,7 @@ public class POAImpl extends ObjectAdapterBase implements POA
     }
 
     private byte[] internalReferenceToId(
-        org.omg.CORBA.Object reference ) throws WrongAdapter
+        test.org.omg.CORBA.Object reference ) throws WrongAdapter
     {
         IOR ior = ORBUtility.getIOR( reference ) ;
         IORTemplateList thisTemplate = ior.getIORTemplates() ;
@@ -1067,7 +1057,7 @@ public class POAImpl extends ObjectAdapterBase implements POA
     /**
      * <code>the_children</code>
      */
-    public org.omg.PortableServer.POA[] the_children()
+    public test.org.omg.PortableServer.POA[] the_children()
     {
         try {
             lock() ;
@@ -1313,7 +1303,7 @@ public class POAImpl extends ObjectAdapterBase implements POA
      * <code>create_reference</code>
      * <b>3.3.8.17</b>
      */
-    public org.omg.CORBA.Object create_reference(String repId)
+    public test.org.omg.CORBA.Object create_reference(String repId)
         throws WrongPolicy
     {
         try {
@@ -1334,7 +1324,7 @@ public class POAImpl extends ObjectAdapterBase implements POA
      * <code>create_reference_with_id</code>
      * <b>3.3.8.18</b>
      */
-    public org.omg.CORBA.Object
+    public test.org.omg.CORBA.Object
         create_reference_with_id(byte[] oid, String repId)
     {
         try {
@@ -1381,7 +1371,7 @@ public class POAImpl extends ObjectAdapterBase implements POA
      * <code>servant_to_reference</code>
      * <b>3.3.8.20</b>
      */
-    public org.omg.CORBA.Object servant_to_reference(Servant servant)
+    public test.org.omg.CORBA.Object servant_to_reference(Servant servant)
         throws ServantNotActive, WrongPolicy
     {
         try {
@@ -1405,7 +1395,7 @@ public class POAImpl extends ObjectAdapterBase implements POA
      * <code>reference_to_servant</code>
      * <b>3.3.8.21</b>
      */
-    public Servant reference_to_servant(org.omg.CORBA.Object reference)
+    public Servant reference_to_servant(test.org.omg.CORBA.Object reference)
         throws ObjectNotActive, WrongPolicy, WrongAdapter
     {
         try {
@@ -1435,7 +1425,7 @@ public class POAImpl extends ObjectAdapterBase implements POA
      * <code>reference_to_id</code>
      * <b>3.3.8.22</b>
      */
-    public byte[] reference_to_id(org.omg.CORBA.Object reference)
+    public byte[] reference_to_id(test.org.omg.CORBA.Object reference)
         throws WrongAdapter, WrongPolicy
     {
         try {
@@ -1484,7 +1474,7 @@ public class POAImpl extends ObjectAdapterBase implements POA
      * <code>id_to_reference</code>
      * <b>3.3.8.24</b>
      */
-    public org.omg.CORBA.Object id_to_reference(byte[] id)
+    public test.org.omg.CORBA.Object id_to_reference(byte[] id)
         throws ObjectNotActive, WrongPolicy
 
     {
@@ -1648,7 +1638,7 @@ public class POAImpl extends ObjectAdapterBase implements POA
         }
     }
 
-    public org.omg.CORBA.Object getLocalServant( byte[] objectId )
+    public test.org.omg.CORBA.Object getLocalServant(byte[] objectId )
     {
         return null ;
     }

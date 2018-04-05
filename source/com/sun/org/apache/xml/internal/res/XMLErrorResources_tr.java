@@ -375,7 +375,7 @@ public class XMLErrorResources_tr extends ListResourceBundle
     { "column","Kolon #"},
 
     {ER_SERIALIZER_NOT_CONTENTHANDLER,
-      "Diziselle\u015ftirici s\u0131n\u0131f\u0131 ''{0}'' org.xml.sax.ContentHandler i\u015flevini uygulam\u0131yor."},
+      "Diziselle\u015ftirici s\u0131n\u0131f\u0131 ''{0}'' test.org.xml.sax.ContentHandler i\u015flevini uygulam\u0131yor."},
 
     {ER_RESOURCE_COULD_NOT_FIND,
       "Kaynak [ {0} ] bulunamad\u0131.\n {1}" },

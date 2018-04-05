@@ -36,7 +36,7 @@ import com.sun.org.apache.xerces.internal.xs.XSConstants;
  */
 public class FullDVFactory extends BaseDVFactory {
 
-    static final String URI_SCHEMAFORSCHEMA = "http://www.w3.org/2001/XMLSchema";
+    static final String URI_SCHEMAFORSCHEMA = "http://www.w3.test.org/2001/XMLSchema";
 
     // there are 45 types. 89 is the closest prime number to 45*2=90.
     static SymbolHash fFullTypes = new SymbolHash(89);

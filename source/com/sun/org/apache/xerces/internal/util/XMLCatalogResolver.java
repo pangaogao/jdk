@@ -22,12 +22,12 @@ package com.sun.org.apache.xerces.internal.util;
 
 import java.io.IOException;
 
-import org.xml.sax.InputSource;
-import org.xml.sax.SAXException;
-import org.xml.sax.ext.EntityResolver2;
+import test.org.xml.sax.InputSource;
+import test.org.xml.sax.SAXException;
+import test.org.xml.sax.ext.EntityResolver2;
 
-import org.w3c.dom.ls.LSInput;
-import org.w3c.dom.ls.LSResourceResolver;
+import test.org.w3c.dom.ls.LSInput;
+import test.org.w3c.dom.ls.LSResourceResolver;
 
 import javax.xml.parsers.SAXParserFactory;
 
@@ -538,7 +538,7 @@ public class XMLCatalogResolver
         fPreferPublic = preferPublic;
         fResolverCatalogManager = new CatalogManager();
         fResolverCatalogManager.setAllowOasisXMLCatalogPI(false);
-        fResolverCatalogManager.setCatalogClassName("com.sun.org.apache.xml.internal.resolver.Catalog");
+        fResolverCatalogManager.setCatalogClassName("com.sun.test.org.apache.xml.internal.resolver.Catalog");
         fResolverCatalogManager.setCatalogFiles("");
         fResolverCatalogManager.setIgnoreMissingProperties(true);
         fResolverCatalogManager.setPreferPublic(fPreferPublic);
@@ -580,7 +580,7 @@ public class XMLCatalogResolver
 
         SAXCatalogReader saxReader = new SAXCatalogReader(spf);
         saxReader.setCatalogParser(OASISXMLCatalogReader.namespaceName, "catalog",
-            "com.sun.org.apache.xml.internal.resolver.readers.OASISXMLCatalogReader");
+            "com.sun.test.org.apache.xml.internal.resolver.readers.OASISXMLCatalogReader");
         catalog.addReader("application/xml", saxReader);
     }
 }

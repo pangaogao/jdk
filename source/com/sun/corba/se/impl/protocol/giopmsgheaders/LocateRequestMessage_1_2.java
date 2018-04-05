@@ -76,14 +76,14 @@ public final class LocateRequestMessage_1_2 extends Message_1_2
 
     // IO methods
 
-    public void read(org.omg.CORBA.portable.InputStream istream) {
+    public void read(test.org.omg.CORBA.portable.InputStream istream) {
         super.read(istream);
         this.request_id = istream.read_ulong();
         this.target = TargetAddressHelper.read(istream);
         getObjectKey(); // this does AddressingDisposition check
     }
 
-    public void write(org.omg.CORBA.portable.OutputStream ostream) {
+    public void write(test.org.omg.CORBA.portable.OutputStream ostream) {
         super.write(ostream);
         ostream.write_ulong (this.request_id);
         nullCheck(this.target);

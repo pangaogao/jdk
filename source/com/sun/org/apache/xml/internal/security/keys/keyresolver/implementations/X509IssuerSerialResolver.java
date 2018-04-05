@@ -35,11 +35,11 @@ import com.sun.org.apache.xml.internal.security.keys.keyresolver.KeyResolverSpi;
 import com.sun.org.apache.xml.internal.security.keys.storage.StorageResolver;
 import com.sun.org.apache.xml.internal.security.signature.XMLSignatureException;
 import com.sun.org.apache.xml.internal.security.utils.Constants;
-import org.w3c.dom.Element;
+import test.org.w3c.dom.Element;
 
 public class X509IssuerSerialResolver extends KeyResolverSpi {
 
-    /** {@link org.apache.commons.logging} logging facility */
+    /** {@link test.org.apache.commons.logging} logging facility */
     private static java.util.logging.Logger log =
         java.util.logging.Logger.getLogger(X509IssuerSerialResolver.class.getName());
 

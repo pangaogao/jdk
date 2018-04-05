@@ -37,7 +37,7 @@ import com.sun.org.apache.xml.internal.security.keys.keyresolver.KeyResolverSpi;
 import com.sun.org.apache.xml.internal.security.keys.storage.StorageResolver;
 import com.sun.org.apache.xml.internal.security.utils.EncryptionConstants;
 import com.sun.org.apache.xml.internal.security.utils.XMLUtils;
-import org.w3c.dom.Element;
+import test.org.w3c.dom.Element;
 
 /**
  * The <code>EncryptedKeyResolver</code> is not a generic resolver.  It can
@@ -53,7 +53,7 @@ import org.w3c.dom.Element;
  */
 public class EncryptedKeyResolver extends KeyResolverSpi {
 
-    /** {@link org.apache.commons.logging} logging facility */
+    /** {@link test.org.apache.commons.logging} logging facility */
     private static java.util.logging.Logger log =
         java.util.logging.Logger.getLogger(EncryptedKeyResolver.class.getName());
 

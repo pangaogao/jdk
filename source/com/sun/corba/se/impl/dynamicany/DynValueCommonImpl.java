@@ -25,19 +25,12 @@
 
 package com.sun.corba.se.impl.dynamicany;
 
-import org.omg.CORBA.TypeCode;
-import org.omg.CORBA.TCKind;
-import org.omg.CORBA.Any;
-import org.omg.CORBA.TypeCodePackage.BadKind;
-import org.omg.CORBA.TypeCodePackage.Bounds;
-import org.omg.DynamicAny.*;
-import org.omg.DynamicAny.DynAnyPackage.TypeMismatch;
-import org.omg.DynamicAny.DynAnyPackage.InvalidValue;
-import org.omg.DynamicAny.DynAnyFactoryPackage.InconsistentTypeCode;
+import test.org.omg.CORBA.TypeCode;
+import test.org.omg.CORBA.Any;
+import test.org.omg.DynamicAny.*;
+import test.org.omg.DynamicAny.DynAnyPackage.InvalidValue;
 
 import com.sun.corba.se.spi.orb.ORB ;
-import com.sun.corba.se.spi.logging.CORBALogDomains ;
-import com.sun.corba.se.impl.logging.ORBUtilSystemException ;
 
 abstract class DynValueCommonImpl extends DynAnyComplexImpl implements DynValueCommon
 {
@@ -94,8 +87,8 @@ abstract class DynValueCommonImpl extends DynAnyComplexImpl implements DynValueC
     //
 
     // Required to raise InvalidValue if this is a null value type.
-    public org.omg.DynamicAny.NameValuePair[] get_members ()
-        throws org.omg.DynamicAny.DynAnyPackage.InvalidValue
+    public test.org.omg.DynamicAny.NameValuePair[] get_members ()
+        throws test.org.omg.DynamicAny.DynAnyPackage.InvalidValue
     {
         if (status == STATUS_DESTROYED) {
             throw wrapper.dynAnyDestroyed() ;
@@ -108,8 +101,8 @@ abstract class DynValueCommonImpl extends DynAnyComplexImpl implements DynValueC
     }
 
     // Required to raise InvalidValue if this is a null value type.
-    public org.omg.DynamicAny.NameDynAnyPair[] get_members_as_dyn_any ()
-        throws org.omg.DynamicAny.DynAnyPackage.InvalidValue
+    public test.org.omg.DynamicAny.NameDynAnyPair[] get_members_as_dyn_any ()
+        throws test.org.omg.DynamicAny.DynAnyPackage.InvalidValue
     {
         if (status == STATUS_DESTROYED) {
             throw wrapper.dynAnyDestroyed() ;
@@ -126,9 +119,9 @@ abstract class DynValueCommonImpl extends DynAnyComplexImpl implements DynValueC
     //
 
     // Overridden to change to non-null status.
-    public void set_members (org.omg.DynamicAny.NameValuePair[] value)
-        throws org.omg.DynamicAny.DynAnyPackage.TypeMismatch,
-               org.omg.DynamicAny.DynAnyPackage.InvalidValue
+    public void set_members (test.org.omg.DynamicAny.NameValuePair[] value)
+        throws test.org.omg.DynamicAny.DynAnyPackage.TypeMismatch,
+               test.org.omg.DynamicAny.DynAnyPackage.InvalidValue
     {
         super.set_members(value);
         // If we didn't get an exception then this must be a valid non-null value
@@ -136,9 +129,9 @@ abstract class DynValueCommonImpl extends DynAnyComplexImpl implements DynValueC
     }
 
     // Overridden to change to non-null status.
-    public void set_members_as_dyn_any (org.omg.DynamicAny.NameDynAnyPair[] value)
-        throws org.omg.DynamicAny.DynAnyPackage.TypeMismatch,
-               org.omg.DynamicAny.DynAnyPackage.InvalidValue
+    public void set_members_as_dyn_any (test.org.omg.DynamicAny.NameDynAnyPair[] value)
+        throws test.org.omg.DynamicAny.DynAnyPackage.TypeMismatch,
+               test.org.omg.DynamicAny.DynAnyPackage.InvalidValue
     {
         super.set_members_as_dyn_any(value);
         // If we didn't get an exception then this must be a valid non-null value

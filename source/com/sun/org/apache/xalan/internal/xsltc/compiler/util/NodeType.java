@@ -231,7 +231,7 @@ public final class NodeType extends Type {
 
     /**
      * Expects a node on the stack and pushes a boxed node. Boxed nodes
-     * are represented by an instance of <code>com.sun.org.apache.xalan.internal.xsltc.dom.Node</code>.
+     * are represented by an instance of <code>com.sun.test.org.apache.xalan.internal.xsltc.dom.Node</code>.
      *
      * @see     com.sun.org.apache.xalan.internal.xsltc.compiler.util.Type#translateTo
      */
@@ -266,14 +266,14 @@ public final class NodeType extends Type {
         il.append(methodGen.loadDOM());
         il.append(SWAP);                // dom ref must be below node index
 
-        if (className.equals("org.w3c.dom.Node") ||
+        if (className.equals("test.org.w3c.dom.Node") ||
             className.equals("java.lang.Object")) {
             int index = cpg.addInterfaceMethodref(DOM_INTF,
                                                   MAKE_NODE,
                                                   MAKE_NODE_SIG);
             il.append(new INVOKEINTERFACE(index, 2));
         }
-        else if (className.equals("org.w3c.dom.NodeList")) {
+        else if (className.equals("test.org.w3c.dom.NodeList")) {
             int index = cpg.addInterfaceMethodref(DOM_INTF,
                                                   MAKE_NODE_LIST,
                                                   MAKE_NODE_LIST_SIG);

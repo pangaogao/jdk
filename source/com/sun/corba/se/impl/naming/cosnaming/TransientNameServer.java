@@ -26,15 +26,10 @@
 package com.sun.corba.se.impl.naming.cosnaming;
 
 import java.util.Properties;
-import java.net.InetAddress;
 
-import org.omg.CORBA.ORB;
-
-import org.omg.CosNaming.NamingContext;
+import test.org.omg.CORBA.ORB;
 
 import com.sun.corba.se.spi.logging.CORBALogDomains;
-
-import com.sun.corba.se.impl.naming.cosnaming.TransientNameService;
 
 import com.sun.corba.se.impl.orbutil.ORBConstants;
 import com.sun.corba.se.impl.orbutil.CorbaResourceUtil;
@@ -82,15 +77,15 @@ public class TransientNameServer
         debug = false ;
     }
 
-    private static org.omg.CORBA.Object initializeRootNamingContext( ORB orb ) {
-        org.omg.CORBA.Object rootContext = null;
+    private static test.org.omg.CORBA.Object initializeRootNamingContext(ORB orb ) {
+        test.org.omg.CORBA.Object rootContext = null;
         try {
             com.sun.corba.se.spi.orb.ORB coreORB =
                 (com.sun.corba.se.spi.orb.ORB)orb ;
 
             TransientNameService tns = new TransientNameService(coreORB );
             return tns.initialNamingContext();
-        } catch (org.omg.CORBA.SystemException e) {
+        } catch (test.org.omg.CORBA.SystemException e) {
             throw wrapper.transNsCannotCreateInitialNcSys( e ) ;
         } catch (Exception e) {
             throw wrapper.transNsCannotCreateInitialNc( e ) ;
@@ -118,7 +113,7 @@ public class TransientNameServer
             Properties props = System.getProperties() ;
 
             props.put( ORBConstants.SERVER_ID_PROPERTY, ORBConstants.NAME_SERVICE_SERVER_ID ) ;
-            props.put( "org.omg.CORBA.ORBClass",
+            props.put( "test.org.omg.CORBA.ORBClass",
                 "com.sun.corba.se.impl.orb.ORBImpl" );
 
             try {
@@ -173,10 +168,10 @@ public class TransientNameServer
             props.put( ORBConstants.PERSISTENT_SERVER_PORT_PROPERTY,
                java.lang.Integer.toString(initialPort) );
 
-            org.omg.CORBA.ORB corb = ORB.init( args, props ) ;
+            test.org.omg.CORBA.ORB corb = ORB.init( args, props ) ;
             trace( "ORB object returned from init: " + corb ) ;
 
-            org.omg.CORBA.Object ns = initializeRootNamingContext( corb ) ;
+            test.org.omg.CORBA.Object ns = initializeRootNamingContext( corb ) ;
             ((com.sun.corba.se.org.omg.CORBA.ORB)corb).register_initial_reference(
                 "NamingService", ns ) ;
 

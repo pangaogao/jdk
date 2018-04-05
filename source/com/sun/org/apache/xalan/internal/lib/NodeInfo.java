@@ -28,8 +28,8 @@ import javax.xml.transform.SourceLocator;
 import com.sun.org.apache.xalan.internal.extensions.ExpressionContext;
 import com.sun.org.apache.xml.internal.dtm.ref.DTMNodeProxy;
 
-import org.w3c.dom.Node;
-import org.w3c.dom.NodeList;
+import test.org.w3c.dom.Node;
+import test.org.w3c.dom.NodeList;
 
 /**
  * <code>NodeInfo</code> defines a set of XSLT extension functions to be

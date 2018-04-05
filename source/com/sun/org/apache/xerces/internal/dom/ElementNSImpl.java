@@ -20,14 +20,13 @@
 
 package com.sun.org.apache.xerces.internal.dom;
 
-import com.sun.org.apache.xerces.internal.xs.XSSimpleTypeDefinition;
 import com.sun.org.apache.xerces.internal.xs.XSTypeDefinition;
 import com.sun.org.apache.xerces.internal.impl.dv.xs.XSSimpleTypeDecl;
 import com.sun.org.apache.xerces.internal.impl.xs.XSComplexTypeDecl;
 import com.sun.org.apache.xerces.internal.util.URI;
 import com.sun.org.apache.xerces.internal.xni.NamespaceContext;
-import org.w3c.dom.Attr;
-import org.w3c.dom.DOMException;
+import test.org.w3c.dom.Attr;
+import test.org.w3c.dom.DOMException;
 
 
 
@@ -53,7 +52,7 @@ public class ElementNSImpl
 
     /** Serialization version. */
     static final long serialVersionUID = -9142310625494392642L;
-    static final String xmlURI = "http://www.w3.org/XML/1998/namespace";
+    static final String xmlURI = "http://www.w3.test.org/XML/1998/namespace";
 
     //
     // Data
@@ -355,7 +354,7 @@ public class ElementNSImpl
         // 1.  the base URI specified by an xml:base attribute on the element, if one exists
 
         if (attributes != null) {
-            Attr attrNode = (Attr)attributes.getNamedItemNS("http://www.w3.org/XML/1998/namespace", "base");
+            Attr attrNode = (Attr)attributes.getNamedItemNS("http://www.w3.test.org/XML/1998/namespace", "base");
             if (attrNode != null) {
                 String uri =  attrNode.getNodeValue();
                 if (uri.length() != 0 ) {// attribute value is always empty string
@@ -424,7 +423,7 @@ public class ElementNSImpl
 
 
     /**
-     * @see org.w3c.dom.TypeInfo#getTypeName()
+     * @see test.org.w3c.dom.TypeInfo#getTypeName()
      */
     public String getTypeName() {
         if (type !=null){
@@ -438,7 +437,7 @@ public class ElementNSImpl
     }
 
     /**
-     * @see org.w3c.dom.TypeInfo#getTypeNamespace()
+     * @see test.org.w3c.dom.TypeInfo#getTypeNamespace()
      */
     public String getTypeNamespace() {
         if (type !=null){

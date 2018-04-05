@@ -24,7 +24,7 @@ package com.sun.org.apache.xml.internal.dtm.ref;
 
 import com.sun.org.apache.xml.internal.dtm.DTM;
 import com.sun.org.apache.xml.internal.dtm.DTMIterator;
-import org.w3c.dom.Node;
+import test.org.w3c.dom.Node;
 
 /**
  * <code>DTMNodeList</code> gives us an implementation of the DOM's
@@ -95,7 +95,7 @@ public class DTMNodeList extends DTMNodeListBase {
     }
 
     //================================================================
-    // org.w3c.dom.NodeList API follows
+    // test.org.w3c.dom.NodeList API follows
 
     /**
      * Returns the <code>index</code>th item in the collection. If

@@ -47,7 +47,7 @@ public class SplitLocalResolverImpl implements LocalResolver
         localResolver.register( name, closure ) ;
     }
 
-    public org.omg.CORBA.Object resolve( String name )
+    public test.org.omg.CORBA.Object resolve(String name )
     {
         return resolver.resolve( name ) ;
     }

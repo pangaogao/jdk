@@ -25,11 +25,11 @@ import javax.xml.transform.dom.DOMResult;
 import com.sun.org.apache.xerces.internal.xni.XMLDocumentHandler;
 import com.sun.org.apache.xerces.internal.xni.XNIException;
 
-import org.w3c.dom.CDATASection;
-import org.w3c.dom.Comment;
-import org.w3c.dom.DocumentType;
-import org.w3c.dom.ProcessingInstruction;
-import org.w3c.dom.Text;
+import test.org.w3c.dom.CDATASection;
+import test.org.w3c.dom.Comment;
+import test.org.w3c.dom.DocumentType;
+import test.org.w3c.dom.ProcessingInstruction;
+import test.org.w3c.dom.Text;
 
 /**
  * <p>An extension to XMLDocumentHandler for building DOM structures.</p>

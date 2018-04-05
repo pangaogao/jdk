@@ -33,7 +33,7 @@ import com.sun.org.apache.xml.internal.security.transforms.TransformSpi;
 import com.sun.org.apache.xml.internal.security.transforms.Transforms;
 import com.sun.org.apache.xml.internal.security.transforms.params.InclusiveNamespaces;
 import com.sun.org.apache.xml.internal.security.utils.XMLUtils;
-import org.w3c.dom.Element;
+import test.org.w3c.dom.Element;
 
 /**
  * Implements the <CODE>http://www.w3.org/TR/2001/REC-xml-c14n-20010315#WithComments</CODE>

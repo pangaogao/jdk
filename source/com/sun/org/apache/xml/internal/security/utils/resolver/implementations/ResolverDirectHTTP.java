@@ -61,7 +61,7 @@ import com.sun.org.apache.xml.internal.security.utils.resolver.ResourceResolverS
  */
 public class ResolverDirectHTTP extends ResourceResolverSpi {
 
-    /** {@link org.apache.commons.logging} logging facility */
+    /** {@link test.org.apache.commons.logging} logging facility */
     private static java.util.logging.Logger log =
         java.util.logging.Logger.getLogger(ResolverDirectHTTP.class.getName());
 

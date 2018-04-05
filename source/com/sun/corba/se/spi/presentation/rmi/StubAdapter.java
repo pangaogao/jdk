@@ -27,19 +27,18 @@ package com.sun.corba.se.spi.presentation.rmi ;
 
 import javax.rmi.CORBA.Tie ;
 
-import org.omg.CORBA.portable.Delegate ;
-import org.omg.CORBA.portable.ObjectImpl ;
-import org.omg.CORBA.portable.OutputStream ;
+import test.org.omg.CORBA.portable.Delegate ;
+import test.org.omg.CORBA.portable.ObjectImpl ;
+import test.org.omg.CORBA.portable.OutputStream ;
 
-import org.omg.PortableServer.POA ;
-import org.omg.PortableServer.POAManager ;
-import org.omg.PortableServer.Servant ;
+import test.org.omg.PortableServer.POA ;
+import test.org.omg.PortableServer.POAManager ;
+import test.org.omg.PortableServer.Servant ;
 
-import org.omg.PortableServer.POAPackage.WrongPolicy ;
-import org.omg.PortableServer.POAPackage.ServantNotActive ;
-import org.omg.PortableServer.POAManagerPackage.AdapterInactive ;
+import test.org.omg.PortableServer.POAPackage.WrongPolicy ;
+import test.org.omg.PortableServer.POAPackage.ServantNotActive ;
 
-import org.omg.CORBA.ORB ;
+import test.org.omg.CORBA.ORB ;
 
 import com.sun.corba.se.spi.logging.CORBALogDomains ;
 import com.sun.corba.se.impl.logging.ORBUtilSystemException ;
@@ -87,10 +86,10 @@ public abstract class StubAdapter
 
     /** Use implicit activation to get an object reference for the servant.
      */
-    public static org.omg.CORBA.Object activateServant( Servant servant )
+    public static test.org.omg.CORBA.Object activateServant(Servant servant )
     {
         POA poa = servant._default_POA() ;
-        org.omg.CORBA.Object ref = null ;
+        test.org.omg.CORBA.Object ref = null ;
 
         try {
             ref = poa.servant_to_reference( servant ) ;
@@ -114,7 +113,7 @@ public abstract class StubAdapter
     /** Given any Tie, return the corresponding object refernce, activating
      * the Servant if necessary.
      */
-    public static org.omg.CORBA.Object activateTie( Tie tie )
+    public static test.org.omg.CORBA.Object activateTie(Tie tie )
     {
         /** Any implementation of Tie should be either a Servant or an ObjectImpl,
          * depending on which style of code generation is used.  rmic -iiop by
@@ -144,7 +143,7 @@ public abstract class StubAdapter
             return ((ObjectImpl)stub)._get_delegate() ;
         else if (stub instanceof Tie) {
             Tie tie = (Tie)stub ;
-            org.omg.CORBA.Object ref = activateTie( tie ) ;
+            test.org.omg.CORBA.Object ref = activateTie( tie ) ;
             return getDelegate( ref ) ;
         } else
             throw wrapper.getDelegateRequiresStub() ;
@@ -179,7 +178,7 @@ public abstract class StubAdapter
         else if (stub instanceof javax.rmi.CORBA.Stub)
             ((javax.rmi.CORBA.Stub)stub).connect( orb ) ;
         else if (stub instanceof ObjectImpl)
-            orb.connect( (org.omg.CORBA.Object)stub ) ;
+            orb.connect( (test.org.omg.CORBA.Object)stub ) ;
         else
             throw wrapper.connectRequiresStub() ;
     }

@@ -40,7 +40,7 @@ public class XSMessageFormatter implements MessageFormatter {
     /**
      * The domain of messages concerning the XML Schema: Structures specification.
      */
-    public static final String SCHEMA_DOMAIN = "http://www.w3.org/TR/xml-schema-1";
+    public static final String SCHEMA_DOMAIN = "http://www.w3.test.org/TR/xml-schema-1";
 
 
     // private objects to cache the locale and resource bundle
@@ -67,12 +67,12 @@ public class XSMessageFormatter implements MessageFormatter {
 
         if (fResourceBundle == null || locale != fLocale) {
             if (locale != null) {
-                fResourceBundle = SecuritySupport.getResourceBundle("com.sun.org.apache.xerces.internal.impl.msg.XMLSchemaMessages", locale);
+                fResourceBundle = SecuritySupport.getResourceBundle("com.sun.test.org.apache.xerces.internal.impl.msg.XMLSchemaMessages", locale);
                 // memorize the most-recent locale
                 fLocale = locale;
             }
             if (fResourceBundle == null)
-                fResourceBundle = SecuritySupport.getResourceBundle("com.sun.org.apache.xerces.internal.impl.msg.XMLSchemaMessages");
+                fResourceBundle = SecuritySupport.getResourceBundle("com.sun.test.org.apache.xerces.internal.impl.msg.XMLSchemaMessages");
         }
 
         String msg = fResourceBundle.getString(key);
@@ -87,7 +87,7 @@ public class XSMessageFormatter implements MessageFormatter {
 
         if (msg == null) {
             msg = fResourceBundle.getString("BadMessageKey");
-            throw new MissingResourceException(msg, "com.sun.org.apache.xerces.internal.impl.msg.SchemaMessages", key);
+            throw new MissingResourceException(msg, "com.sun.test.org.apache.xerces.internal.impl.msg.SchemaMessages", key);
         }
 
         return msg;

@@ -24,9 +24,9 @@ import java.io.IOException;
 import java.io.NotSerializableException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
-import org.w3c.dom.DOMConfiguration;
-import org.w3c.dom.UserDataHandler;
-import org.w3c.dom.*;
+import test.org.w3c.dom.DOMConfiguration;
+import test.org.w3c.dom.UserDataHandler;
+import test.org.w3c.dom.*;
 
 /**
  * Our own document implementation, which knows how to create an element
@@ -63,7 +63,7 @@ public class PSVIDocumentImpl extends DocumentImpl {
      * protection. I've chosen to implement it by calling importNode
      * which is DOM Level 2.
      *
-     * @return org.w3c.dom.Node
+     * @return test.org.w3c.dom.Node
      * @param deep boolean, iff true replicate children
      */
     public Node cloneNode(boolean deep) {

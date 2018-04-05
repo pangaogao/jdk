@@ -25,7 +25,7 @@
 
 package com.sun.corba.se.spi.oa ;
 
-import org.omg.CORBA.SystemException ;
+import test.org.omg.CORBA.SystemException ;
 
 /** NullServant is used to represent a null servant returned
  * OAInvocationInfo after a

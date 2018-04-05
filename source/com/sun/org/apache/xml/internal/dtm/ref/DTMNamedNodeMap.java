@@ -24,9 +24,9 @@ package com.sun.org.apache.xml.internal.dtm.ref;
 
 import com.sun.org.apache.xml.internal.dtm.DTM;
 
-import org.w3c.dom.DOMException;
-import org.w3c.dom.NamedNodeMap;
-import org.w3c.dom.Node;
+import test.org.w3c.dom.DOMException;
+import test.org.w3c.dom.NamedNodeMap;
+import test.org.w3c.dom.Node;
 
 /**
  * DTMNamedNodeMap is a quickie (as opposed to quick) implementation of the DOM's
@@ -274,7 +274,7 @@ public class DTMNamedNodeMap implements NamedNodeMap
    * Simple implementation of DOMException.
    * @xsl.usage internal
    */
-  public class DTMException extends org.w3c.dom.DOMException
+  public class DTMException extends test.org.w3c.dom.DOMException
   {
           static final long serialVersionUID = -8290238117162437678L;
     /**

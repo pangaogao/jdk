@@ -40,11 +40,10 @@ import java.security.*;
 import java.util.*;
 
 import javax.swing.*;
-import javax.swing.border.*;
 
 import javax.xml.parsers.*;
-import org.xml.sax.SAXException;
-import org.w3c.dom.*;
+import test.org.xml.sax.SAXException;
+import test.org.w3c.dom.*;
 
 /**
  */

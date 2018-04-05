@@ -30,7 +30,7 @@ import com.sun.org.apache.xml.internal.security.utils.resolver.ResourceResolverE
 import com.sun.org.apache.xml.internal.security.exceptions.Base64DecodingException;
 import com.sun.org.apache.xml.internal.security.signature.XMLSignatureInput;
 import com.sun.org.apache.xml.internal.security.transforms.TransformationException;
-import org.w3c.dom.Attr;
+import test.org.w3c.dom.Attr;
 import com.sun.org.apache.xml.internal.security.utils.Base64;
 
 /**

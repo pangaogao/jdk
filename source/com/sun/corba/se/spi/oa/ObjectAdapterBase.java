@@ -24,12 +24,10 @@
  */
 package com.sun.corba.se.spi.oa ;
 
-import org.omg.PortableInterceptor.ObjectReferenceTemplate ;
-import org.omg.PortableInterceptor.ObjectReferenceFactory ;
+import test.org.omg.PortableInterceptor.ObjectReferenceTemplate ;
+import test.org.omg.PortableInterceptor.ObjectReferenceFactory ;
 
-import org.omg.CORBA.Policy ;
-
-import org.omg.PortableInterceptor.ACTIVE ;
+import test.org.omg.CORBA.Policy ;
 
 import com.sun.corba.se.spi.copyobject.ObjectCopierFactory ;
 import com.sun.corba.se.spi.ior.IORFactories ;
@@ -37,8 +35,6 @@ import com.sun.corba.se.spi.ior.IORTemplate ;
 import com.sun.corba.se.spi.ior.ObjectAdapterId;
 import com.sun.corba.se.spi.ior.ObjectKeyTemplate ;
 import com.sun.corba.se.spi.logging.CORBALogDomains ;
-import com.sun.corba.se.spi.oa.OADestroyed ;
-import com.sun.corba.se.spi.oa.ObjectAdapter ;
 import com.sun.corba.se.spi.orb.ORB ;
 import com.sun.corba.se.spi.protocol.PIHandler ;
 
@@ -46,7 +42,7 @@ import com.sun.corba.se.impl.logging.POASystemException ;
 import com.sun.corba.se.impl.logging.OMGSystemException ;
 import com.sun.corba.se.impl.oa.poa.Policies;
 
-abstract public class ObjectAdapterBase extends org.omg.CORBA.LocalObject
+abstract public class ObjectAdapterBase extends test.org.omg.CORBA.LocalObject
     implements ObjectAdapter
 {
     private ORB orb;
@@ -137,7 +133,7 @@ abstract public class ObjectAdapterBase extends org.omg.CORBA.LocalObject
         iortemp.makeImmutable() ;
     }
 
-    final public org.omg.CORBA.Object makeObject( String repId, byte[] oid )
+    final public test.org.omg.CORBA.Object makeObject(String repId, byte[] oid )
     {
         return currentFactory.make_object( repId, oid ) ;
     }
@@ -178,7 +174,7 @@ abstract public class ObjectAdapterBase extends org.omg.CORBA.LocalObject
         currentFactory = factory ;
     }
 
-    abstract public org.omg.CORBA.Object getLocalServant( byte[] objectId ) ;
+    abstract public test.org.omg.CORBA.Object getLocalServant(byte[] objectId ) ;
 
     abstract public void getInvocationServant( OAInvocationInfo info ) ;
 

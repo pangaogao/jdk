@@ -90,12 +90,12 @@ public final class FragmentMessage_1_2 extends Message_1_2
      * request_id from an CDRInputStream. Instead we use the
      * readGIOP_1_2_requestId to read the requestId from a byte buffer.
      */
-    public void read(org.omg.CORBA.portable.InputStream istream) {
+    public void read(test.org.omg.CORBA.portable.InputStream istream) {
         super.read(istream);
         this.request_id = istream.read_ulong();
     }
 
-    public void write(org.omg.CORBA.portable.OutputStream ostream) {
+    public void write(test.org.omg.CORBA.portable.OutputStream ostream) {
         super.write(ostream);
         ostream.write_ulong(this.request_id);
     }

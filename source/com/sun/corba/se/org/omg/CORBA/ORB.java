@@ -25,7 +25,7 @@
 
 package com.sun.corba.se.org.omg.CORBA ;
 
-import org.omg.CORBA.ORBPackage.InvalidName ;
+import test.org.omg.CORBA.ORBPackage.InvalidName ;
 
 /** This ORB class is defined to provide a home for the
 * register_initial_reference operation, which is added by
@@ -33,7 +33,7 @@ import org.omg.CORBA.ORBPackage.InvalidName ;
 * until there is an official Java language mapping for the
 * method.
 */
-abstract public class ORB extends org.omg.CORBA_2_3.ORB
+abstract public class ORB extends test.org.omg.CORBA_2_3.ORB
 {
     /**
      * If this operation is called with an id, <code>"Y"</code>, and an
@@ -49,9 +49,9 @@ abstract public class ORB extends org.omg.CORBA_2_3.ORB
      * @throws BAD_PARAM if the obj parameter is null.
      */
     public void register_initial_reference( String id,
-                                            org.omg.CORBA.Object obj )
+                                            test.org.omg.CORBA.Object obj )
         throws InvalidName
     {
-        throw new org.omg.CORBA.NO_IMPLEMENT();
+        throw new test.org.omg.CORBA.NO_IMPLEMENT();
     }
 }

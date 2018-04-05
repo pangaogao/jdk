@@ -39,10 +39,10 @@ import java.util.Map;
 public abstract class DTDDVFactory {
 
     private static final String DEFAULT_FACTORY_CLASS =
-            "com.sun.org.apache.xerces.internal.impl.dv.dtd.DTDDVFactoryImpl";
+            "com.sun.test.org.apache.xerces.internal.impl.dv.dtd.DTDDVFactoryImpl";
 
     private static final String XML11_DATATYPE_VALIDATOR_FACTORY =
-        "com.sun.org.apache.xerces.internal.impl.dv.dtd.XML11DTDDVFactoryImpl";
+        "com.sun.test.org.apache.xerces.internal.impl.dv.dtd.XML11DTDDVFactoryImpl";
 
     /**
      * Get an instance of the default DTDDVFactory implementation.

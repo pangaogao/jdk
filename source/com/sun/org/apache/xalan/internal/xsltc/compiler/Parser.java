@@ -49,22 +49,22 @@ import javax.xml.XMLConstants;
 import javax.xml.parsers.ParserConfigurationException;
 import javax.xml.parsers.SAXParser;
 import javax.xml.parsers.SAXParserFactory;
-import org.xml.sax.Attributes;
-import org.xml.sax.ContentHandler;
-import org.xml.sax.InputSource;
-import org.xml.sax.Locator;
-import org.xml.sax.SAXException;
-import org.xml.sax.SAXNotRecognizedException;
-import org.xml.sax.SAXParseException;
-import org.xml.sax.XMLReader;
-import org.xml.sax.helpers.AttributesImpl;
+import test.org.xml.sax.Attributes;
+import test.org.xml.sax.ContentHandler;
+import test.org.xml.sax.InputSource;
+import test.org.xml.sax.Locator;
+import test.org.xml.sax.SAXException;
+import test.org.xml.sax.SAXNotRecognizedException;
+import test.org.xml.sax.SAXParseException;
+import test.org.xml.sax.XMLReader;
+import test.org.xml.sax.helpers.AttributesImpl;
 
 /**
  * @author Jacek Ambroziak
  * @author Santiago Pericas-Geertsen
  * @author G. Todd Miller
  * @author Morten Jorgensen
- * @author Erwin Bolwidt <ejb@klomp.org>
+ * @author Erwin Bolwidt <ejb@klomp.test.org>
  */
 public class Parser implements Constants, ContentHandler {
 

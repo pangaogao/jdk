@@ -31,39 +31,26 @@
 
 package com.sun.corba.se.impl.orb;
 
-import java.util.Collection;
 import java.util.Properties;
-import java.util.Hashtable;
 
 import java.applet.Applet;
 
 import java.net.URL;
 
-import java.io.IOException ;
+import test.org.omg.CORBA.ORBPackage.InvalidName;
+import test.org.omg.CORBA.NVList;
+import test.org.omg.CORBA.TCKind;
+import test.org.omg.CORBA.NO_IMPLEMENT;
+import test.org.omg.CORBA.Request;
+import test.org.omg.CORBA.TypeCode;
+import test.org.omg.CORBA.Any;
+import test.org.omg.CORBA.StructMember;
+import test.org.omg.CORBA.UnionMember;
+import test.org.omg.CORBA.ValueMember;
+import test.org.omg.CORBA.Policy;
+import test.org.omg.CORBA.PolicyError;
 
-import java.util.logging.Logger ;
-
-import org.omg.CORBA.Context;
-import org.omg.CORBA.ContextList;
-import org.omg.CORBA.Environment;
-import org.omg.CORBA.ExceptionList;
-import org.omg.CORBA.ORBPackage.InvalidName;
-import org.omg.CORBA.NVList;
-import org.omg.CORBA.TCKind;
-import org.omg.CORBA.NamedValue;
-import org.omg.CORBA.NO_IMPLEMENT;
-import org.omg.CORBA.Object;
-import org.omg.CORBA.Request;
-import org.omg.CORBA.TypeCode;
-import org.omg.CORBA.Any;
-import org.omg.CORBA.StructMember;
-import org.omg.CORBA.UnionMember;
-import org.omg.CORBA.ValueMember;
-import org.omg.CORBA.Policy;
-import org.omg.CORBA.PolicyError;
-
-import org.omg.CORBA.portable.OutputStream;
-import org.omg.CORBA.portable.RemarshalException;
+import test.org.omg.CORBA.portable.OutputStream;
 
 import com.sun.corba.se.pept.protocol.ClientInvocationInfo ;
 import com.sun.corba.se.pept.transport.ContactInfo;
@@ -71,15 +58,12 @@ import com.sun.corba.se.pept.transport.ConnectionCache;
 import com.sun.corba.se.pept.transport.Selector ;
 import com.sun.corba.se.pept.transport.TransportManager;
 
-import com.sun.corba.se.spi.legacy.connection.ORBSocketFactory;
 import com.sun.corba.se.spi.orb.ORBData;
 import com.sun.corba.se.spi.orb.Operation;
 import com.sun.corba.se.spi.orb.ORB;
 import com.sun.corba.se.spi.orb.ORBVersion;
 import com.sun.corba.se.spi.orb.ORBVersionFactory;
 import com.sun.corba.se.spi.oa.OAInvocationInfo;
-import com.sun.corba.se.spi.oa.ObjectAdapter;
-import com.sun.corba.se.spi.protocol.CorbaMessageMediator;
 import com.sun.corba.se.spi.protocol.ClientDelegateFactory;
 import com.sun.corba.se.spi.protocol.RequestDispatcherRegistry;
 import com.sun.corba.se.spi.protocol.CorbaServerRequestDispatcher;
@@ -92,22 +76,17 @@ import com.sun.corba.se.spi.ior.TaggedComponentFactoryFinder;
 import com.sun.corba.se.spi.ior.ObjectKey;
 import com.sun.corba.se.spi.ior.ObjectKeyFactory;
 import com.sun.corba.se.spi.ior.iiop.GIOPVersion;
-import com.sun.corba.se.pept.transport.ByteBufferPool ;
 import com.sun.corba.se.spi.transport.CorbaContactInfoListFactory ;
 import com.sun.corba.se.spi.transport.CorbaTransportManager;
 import com.sun.corba.se.spi.legacy.connection.LegacyServerSocketManager;
 import com.sun.corba.se.spi.orbutil.closure.Closure;
 import com.sun.corba.se.spi.orbutil.threadpool.ThreadPoolManager;
-import com.sun.corba.se.spi.logging.LogWrapperFactory;
-import com.sun.corba.se.spi.logging.LogWrapperBase;
 import com.sun.corba.se.spi.copyobject.CopierManager;
 import com.sun.corba.se.spi.presentation.rmi.PresentationManager;
 import com.sun.corba.se.spi.presentation.rmi.PresentationDefaults;
 
 import com.sun.corba.se.spi.servicecontext.ServiceContextRegistry;
-import com.sun.corba.se.spi.servicecontext.ServiceContexts;
 
-import com.sun.corba.se.impl.corba.TypeCodeFactory;
 import com.sun.corba.se.impl.corba.TypeCodeImpl;
 import com.sun.corba.se.impl.corba.NVListImpl;
 import com.sun.corba.se.impl.corba.NamedValueImpl;
@@ -117,9 +96,6 @@ import com.sun.corba.se.impl.corba.EnvironmentImpl;
 import com.sun.corba.se.impl.corba.AnyImpl;
 import com.sun.corba.se.impl.encoding.BufferManagerFactory;
 import com.sun.corba.se.impl.encoding.CodeSetComponentInfo;
-import com.sun.corba.se.impl.encoding.MarshalInputStream;
-import com.sun.corba.se.impl.encoding.EncapsOutputStream;
-import com.sun.corba.se.impl.encoding.MarshalOutputStream;
 import com.sun.corba.se.impl.oa.poa.BadServerIdHandler;
 import com.sun.corba.se.impl.orbutil.ORBConstants;
 import com.sun.corba.se.spi.legacy.connection.LegacyServerSocketEndPointInfo;
@@ -225,43 +201,43 @@ public class ORBSingleton extends ORB
         return new TypeCodeImpl(this, TCKind._tk_array, length, element_type);
     }
 
-    public org.omg.CORBA.TypeCode create_native_tc(String id,
-                                                   String name)
+    public test.org.omg.CORBA.TypeCode create_native_tc(String id,
+                                                        String name)
     {
         return new TypeCodeImpl(this, TCKind._tk_native, id, name);
     }
 
-    public org.omg.CORBA.TypeCode create_abstract_interface_tc(
+    public test.org.omg.CORBA.TypeCode create_abstract_interface_tc(
                                                                String id,
                                                                String name)
     {
         return new TypeCodeImpl(this, TCKind._tk_abstract_interface, id, name);
     }
 
-    public org.omg.CORBA.TypeCode create_fixed_tc(short digits, short scale)
+    public test.org.omg.CORBA.TypeCode create_fixed_tc(short digits, short scale)
     {
         return new TypeCodeImpl(this, TCKind._tk_fixed, digits, scale);
     }
 
     // orbos 98-01-18: Objects By Value -- begin
 
-    public org.omg.CORBA.TypeCode create_value_tc(String id,
-                                                  String name,
-                                                  short type_modifier,
-                                                  TypeCode concrete_base,
-                                                  ValueMember[] members)
+    public test.org.omg.CORBA.TypeCode create_value_tc(String id,
+                                                       String name,
+                                                       short type_modifier,
+                                                       TypeCode concrete_base,
+                                                       ValueMember[] members)
     {
         return new TypeCodeImpl(this, TCKind._tk_value, id, name,
                                 type_modifier, concrete_base, members);
     }
 
-    public org.omg.CORBA.TypeCode create_recursive_tc(String id) {
+    public test.org.omg.CORBA.TypeCode create_recursive_tc(String id) {
         return new TypeCodeImpl(this, id);
     }
 
-    public org.omg.CORBA.TypeCode create_value_box_tc(String id,
-                                                      String name,
-                                                      TypeCode boxed_type)
+    public test.org.omg.CORBA.TypeCode create_value_box_tc(String id,
+                                                           String name,
+                                                           TypeCode boxed_type)
     {
         return new TypeCodeImpl(this, TCKind._tk_value_box, id, name, boxed_type);
     }
@@ -286,35 +262,35 @@ public class ORBSingleton extends ORB
         return new NVListImpl(this, count);
     }
 
-    public org.omg.CORBA.NVList
-        create_operation_list(org.omg.CORBA.Object oper) {
+    public test.org.omg.CORBA.NVList
+        create_operation_list(test.org.omg.CORBA.Object oper) {
         throw wrapper.genericNoImpl() ;
     }
 
-    public org.omg.CORBA.NamedValue
+    public test.org.omg.CORBA.NamedValue
         create_named_value(String s, Any any, int flags) {
         return new NamedValueImpl(this, s, any, flags);
     }
 
-    public org.omg.CORBA.ExceptionList create_exception_list() {
+    public test.org.omg.CORBA.ExceptionList create_exception_list() {
         return new ExceptionListImpl();
     }
 
-    public org.omg.CORBA.ContextList create_context_list() {
+    public test.org.omg.CORBA.ContextList create_context_list() {
         return new ContextListImpl(this);
     }
 
-    public org.omg.CORBA.Context get_default_context()
+    public test.org.omg.CORBA.Context get_default_context()
     {
         throw wrapper.genericNoImpl() ;
     }
 
-    public org.omg.CORBA.Environment create_environment()
+    public test.org.omg.CORBA.Environment create_environment()
     {
         return new EnvironmentImpl();
     }
 
-    public org.omg.CORBA.Current get_current()
+    public test.org.omg.CORBA.Current get_current()
     {
         throw wrapper.genericNoImpl() ;
     }
@@ -328,14 +304,14 @@ public class ORBSingleton extends ORB
         throw wrapper.genericNoImpl() ;
     }
 
-    public org.omg.CORBA.Object resolve_initial_references(String identifier)
+    public test.org.omg.CORBA.Object resolve_initial_references(String identifier)
         throws InvalidName
     {
         throw wrapper.genericNoImpl() ;
     }
 
     public void register_initial_reference(
-        String id, org.omg.CORBA.Object obj ) throws InvalidName
+        String id, test.org.omg.CORBA.Object obj ) throws InvalidName
     {
         throw wrapper.genericNoImpl() ;
     }
@@ -352,15 +328,15 @@ public class ORBSingleton extends ORB
         throw new SecurityException("ORBSingleton: access denied");
     }
 
-    public org.omg.CORBA.Request get_next_response() {
+    public test.org.omg.CORBA.Request get_next_response() {
         throw new SecurityException("ORBSingleton: access denied");
     }
 
-    public String object_to_string(org.omg.CORBA.Object obj) {
+    public String object_to_string(test.org.omg.CORBA.Object obj) {
         throw new SecurityException("ORBSingleton: access denied");
     }
 
-    public org.omg.CORBA.Object string_to_object(String s) {
+    public test.org.omg.CORBA.Object string_to_object(String s) {
         throw new SecurityException("ORBSingleton: access denied");
     }
 
@@ -370,11 +346,11 @@ public class ORBSingleton extends ORB
         throw new SecurityException("ORBSingleton: access denied");
     }
 
-    public void connect(org.omg.CORBA.Object servant) {
+    public void connect(test.org.omg.CORBA.Object servant) {
         throw new SecurityException("ORBSingleton: access denied");
     }
 
-    public void disconnect(org.omg.CORBA.Object obj) {
+    public void disconnect(test.org.omg.CORBA.Object obj) {
         throw new SecurityException("ORBSingleton: access denied");
     }
 
@@ -410,8 +386,8 @@ public class ORBSingleton extends ORB
         throw new SecurityException("ORBSingleton: access denied");
     }
 
-    public org.omg.CORBA.portable.ValueFactory register_value_factory(String repositoryID,
-                                org.omg.CORBA.portable.ValueFactory factory)
+    public test.org.omg.CORBA.portable.ValueFactory register_value_factory(String repositoryID,
+                                                                           test.org.omg.CORBA.portable.ValueFactory factory)
     {
         throw new SecurityException("ORBSingleton: access denied");
     }
@@ -421,7 +397,7 @@ public class ORBSingleton extends ORB
         throw new SecurityException("ORBSingleton: access denied");
     }
 
-    public org.omg.CORBA.portable.ValueFactory lookup_value_factory(String repositoryID)
+    public test.org.omg.CORBA.portable.ValueFactory lookup_value_factory(String repositoryID)
     {
         throw new SecurityException("ORBSingleton: access denied");
     }

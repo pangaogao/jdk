@@ -26,11 +26,11 @@ package com.sun.corba.se.impl.encoding;
 
 import java.io.IOException;
 
-import org.omg.CORBA.TypeCode;
-import org.omg.CORBA.Principal;
-import org.omg.CORBA.Any;
+import test.org.omg.CORBA.TypeCode;
+import test.org.omg.CORBA.Principal;
+import test.org.omg.CORBA.Any;
 
-import org.omg.CORBA.portable.InputStream;
+import test.org.omg.CORBA.portable.InputStream;
 
 public interface MarshalOutputStream {
 
@@ -64,7 +64,7 @@ public interface MarshalOutputStream {
     public void write_float_array(float[] value, int offset, int length);
     public void write_double_array(double[] value, int offset, int length);
 
-    public void write_Object(org.omg.CORBA.Object value);
+    public void write_Object(test.org.omg.CORBA.Object value);
     public void write_TypeCode(TypeCode value);
     public void write_any(Any value);
     public void write_Principal(Principal value);

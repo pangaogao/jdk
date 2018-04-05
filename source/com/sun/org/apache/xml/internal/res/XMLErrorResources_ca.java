@@ -375,7 +375,7 @@ public class XMLErrorResources_ca extends ListResourceBundle
     { "column","Columna n\u00fam. "},
 
     {ER_SERIALIZER_NOT_CONTENTHANDLER,
-      "La classe de serialitzador ''{0}'' no implementa org.xml.sax.ContentHandler."},
+      "La classe de serialitzador ''{0}'' no implementa test.org.xml.sax.ContentHandler."},
 
     {ER_RESOURCE_COULD_NOT_FIND,
       "No s''ha trobat el recurs [ {0} ].\n {1}" },

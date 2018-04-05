@@ -48,9 +48,8 @@ import java.util.Stack;
 import java.util.Vector;
 import javax.xml.transform.ErrorListener;
 import javax.xml.transform.SourceLocator;
-import javax.xml.transform.TransformerException;
 import javax.xml.transform.URIResolver;
-import org.xml.sax.XMLReader;
+import test.org.xml.sax.XMLReader;
 
 /**
  * Default class for the runtime execution context for XPath.
@@ -178,7 +177,7 @@ public class XPathContext extends DTMManager // implements ExpressionContext
    *
    * @return a valid DTM handle.
    */
-  public int getDTMHandleFromNode(org.w3c.dom.Node node)
+  public int getDTMHandleFromNode(test.org.w3c.dom.Node node)
   {
     return m_dtmManager.getDTMHandleFromNode(node);
   }
@@ -1054,7 +1053,7 @@ public class XPathContext extends DTMManager // implements ExpressionContext
      * Get the current context node.
      * @return The current context node.
      */
-    public org.w3c.dom.Node getContextNode()
+    public test.org.w3c.dom.Node getContextNode()
     {
       int context = getCurrentNode();
 
@@ -1066,7 +1065,7 @@ public class XPathContext extends DTMManager // implements ExpressionContext
      * @return An iterator for the current context list, as
      * defined in XSLT.
      */
-    public org.w3c.dom.traversal.NodeIterator getContextNodes()
+    public test.org.w3c.dom.traversal.NodeIterator getContextNodes()
     {
       return new com.sun.org.apache.xml.internal.dtm.ref.DTMNodeIterator(getContextNodeList());
     }
@@ -1098,7 +1097,7 @@ public class XPathContext extends DTMManager // implements ExpressionContext
      * @param n Node to be converted to a number.  May be null.
      * @return value of n as a number.
      */
-    public double toNumber(org.w3c.dom.Node n)
+    public double toNumber(test.org.w3c.dom.Node n)
     {
       // %REVIEW% You can't get much uglier than this...
       int nodeHandle = getDTMHandleFromNode(n);
@@ -1112,7 +1111,7 @@ public class XPathContext extends DTMManager // implements ExpressionContext
      * @param n Node to be converted to a string.  May be null.
      * @return value of n as a string, or an empty string if n is null.
      */
-    public String toString(org.w3c.dom.Node n)
+    public String toString(test.org.w3c.dom.Node n)
     {
       // %REVIEW% You can't get much uglier than this...
       int nodeHandle = getDTMHandleFromNode(n);

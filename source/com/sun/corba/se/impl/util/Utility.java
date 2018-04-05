@@ -32,41 +32,23 @@
 
 package com.sun.corba.se.impl.util;
 
-import org.omg.CORBA.SystemException;
-import org.omg.CORBA.CompletionStatus;
-import org.omg.CORBA.BAD_OPERATION;
-import org.omg.CORBA.BAD_INV_ORDER;
-import org.omg.CORBA.BAD_PARAM;
-import org.omg.CORBA.ORB;
-import org.omg.CORBA.Any;
-import org.omg.CORBA.TypeCode;
-import org.omg.CORBA.Principal;
-import org.omg.CORBA.portable.InputStream;
-import org.omg.CORBA.portable.OutputStream;
-import org.omg.CORBA.portable.BoxedValueHelper;
-import org.omg.CORBA.portable.ValueFactory;
-import org.omg.CORBA.portable.Streamable;
-import org.omg.CORBA.portable.Delegate;
+import test.org.omg.CORBA.SystemException;
+import test.org.omg.CORBA.CompletionStatus;
+import test.org.omg.CORBA.BAD_OPERATION;
+import test.org.omg.CORBA.ORB;
+import test.org.omg.CORBA.portable.InputStream;
+import test.org.omg.CORBA.portable.BoxedValueHelper;
+import test.org.omg.CORBA.portable.ValueFactory;
+import test.org.omg.CORBA.portable.Delegate;
 
-
-import java.util.Hashtable;
-import java.util.NoSuchElementException;
 
 import java.rmi.Remote;
 import java.rmi.NoSuchObjectException;
 import java.rmi.RemoteException;
-import java.rmi.server.RemoteStub;
 
 import javax.rmi.PortableRemoteObject;
-import javax.rmi.CORBA.Stub;
 import javax.rmi.CORBA.Tie;
 import javax.rmi.CORBA.Util;
-
-import java.io.Serializable;
-import java.io.File;
-import java.io.FileInputStream;
-
-import org.omg.PortableServer.POA;
 
 import com.sun.org.omg.SendingContext.CodeBase;
 
@@ -103,7 +85,7 @@ public final class Utility {
      * @param obj the object to connect.
      * @param orb the ORB to connect to if obj is exported to IIOP.
      * @param convertToStub true if implementation types should be
-     * converted to Stubs rather than just org.omg.CORBA.Object.
+     * converted to Stubs rather than just test.org.omg.CORBA.Object.
      * @return the connected object.
      * @exception NoSuchObjectException if obj is an implementation
      * which has not been exported.
@@ -280,7 +262,7 @@ public final class Utility {
                 //If-else is put here for speed up of J2EE.
                 //According to the OMG spec, the if clause is not dead code.
                 //It can occur if some compiler has allowed generation
-                //into org.omg.stub hierarchy for non-offending
+                //into test.org.omg.stub hierarchy for non-offending
                 //classes. This will encourage people to
                 //produce non-offending class stubs in their own hierarchy.
                 if (!PackagePrefixChecker.hasOffendingPrefix(
@@ -435,9 +417,9 @@ public final class Utility {
         ValueFactory factory = null;
         if ((orb != null) && (repId != null)) {
             try {
-                factory = ((org.omg.CORBA_2_3.ORB)orb).lookup_value_factory(
+                factory = ((test.org.omg.CORBA_2_3.ORB)orb).lookup_value_factory(
                     repId);
-            } catch (org.omg.CORBA.BAD_PARAM ex) {
+            } catch (test.org.omg.CORBA.BAD_PARAM ex) {
                 // Try other way
             }
         }
@@ -586,7 +568,7 @@ public final class Utility {
         Tie tie, PresentationManager.StubFactory  stubFactory,
         String remoteCodebase, boolean onlyMostDerived)
     {
-        org.omg.CORBA.Object stub = null;
+        test.org.omg.CORBA.Object stub = null;
         StubEntry entry = null;
         boolean tieIsStub = StubAdapter.isStub( tie ) ;
 
@@ -606,7 +588,7 @@ public final class Utility {
             } else {
                 // This will throw an exception if the tie
                 // is not a Servant.  XXX Handle this better?
-                ids = ((org.omg.PortableServer.Servant)tie).
+                ids = ((test.org.omg.PortableServer.Servant)tie).
                       _all_interfaces( null, null );
             }
 
@@ -615,12 +597,12 @@ public final class Utility {
             }
 
             if (ids.length == 0) {
-                stub = new org.omg.stub.java.rmi._Remote_Stub();
+                stub = new test.org.omg.stub.java.rmi._Remote_Stub();
             } else {
                 // Now walk all the RepIDs till we find a stub or fail...
                 for (int i = 0; i < ids.length; i++) {
                     if (ids[i].length() == 0) {
-                        stub = new org.omg.stub.java.rmi._Remote_Stub();
+                        stub = new test.org.omg.stub.java.rmi._Remote_Stub();
                         break;
                     }
 
@@ -668,7 +650,7 @@ public final class Utility {
                 try {
                     Delegate delegate = StubAdapter.getDelegate( tie ) ;
                     StubAdapter.setDelegate( stub, delegate ) ;
-                } catch( org.omg.CORBA.BAD_INV_ORDER bad) {
+                } catch( test.org.omg.CORBA.BAD_INV_ORDER bad) {
                     synchronized (stubToTieCache) {
                         stubToTieCache.put(stub,tie);
                     }
@@ -694,7 +676,7 @@ public final class Utility {
      * not connected, remove it from the cache and return
      * it.
      */
-    public static Tie getAndForgetTie (org.omg.CORBA.Object stub) {
+    public static Tie getAndForgetTie (test.org.omg.CORBA.Object stub) {
         synchronized (stubToTieCache) {
             return (Tie) stubToTieCache.remove(stub);
         }
@@ -749,7 +731,7 @@ public final class Utility {
     /*
      * Load an RMI-IIOP Stub.  This is used in PortableRemoteObject.narrow.
      */
-    public static Remote loadStub (org.omg.CORBA.Object narrowFrom,
+    public static Remote loadStub (test.org.omg.CORBA.Object narrowFrom,
                                    Class narrowTo)
     {
         Remote result = null;
@@ -763,7 +745,7 @@ public final class Utility {
                 // it may have a 2_3 Delegate that provides a codebase.  Swallow
                 // the ClassCastException otherwise.
                 Delegate delegate = StubAdapter.getDelegate( narrowFrom ) ;
-                codebase = ((org.omg.CORBA_2_3.portable.Delegate)delegate).
+                codebase = ((test.org.omg.CORBA_2_3.portable.Delegate)delegate).
                     get_codebase(narrowFrom);
 
             } catch (ClassCastException e) {
@@ -958,7 +940,7 @@ public final class Utility {
      * @throws ClassCastException if narrowFrom cannot be cast to narrowTo.
      */
     public static Object readAbstractAndNarrow(
-        org.omg.CORBA_2_3.portable.InputStream in, Class narrowTo)
+            test.org.omg.CORBA_2_3.portable.InputStream in, Class narrowTo)
         throws ClassCastException
     {
         Object result = in.read_abstract_interface();
@@ -992,10 +974,10 @@ public final class Utility {
 }
 
 class StubEntry {
-    org.omg.CORBA.Object stub;
+    test.org.omg.CORBA.Object stub;
     boolean mostDerived;
 
-    StubEntry(org.omg.CORBA.Object stub, boolean mostDerived) {
+    StubEntry(test.org.omg.CORBA.Object stub, boolean mostDerived) {
         this.stub = stub;
         this.mostDerived = mostDerived;
     }

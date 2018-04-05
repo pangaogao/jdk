@@ -428,7 +428,7 @@ public class Compiler extends OpMap
    *
    * @param opPos The current position in the m_opMap array.
    *
-   * @return reference to {@link com.sun.org.apache.xpath.internal.operations.Quo} instance.
+   * @return reference to {@link com.sun.test.org.apache.xpath.internal.operations.Quo} instance.
    *
    * @throws TransformerException if a error occurs creating the Expression.
    */
@@ -733,12 +733,12 @@ public class Compiler extends OpMap
   }
 
   /**
-   * Get a {@link org.w3c.dom.traversal.NodeFilter} bit set that tells what
+   * Get a {@link test.org.w3c.dom.traversal.NodeFilter} bit set that tells what
    * to show for a given node test.
    *
    * @param opPos the op map position for the location step.
    *
-   * @return {@link org.w3c.dom.traversal.NodeFilter} bit set that tells what
+   * @return {@link test.org.w3c.dom.traversal.NodeFilter} bit set that tells what
    *         to show for a given node test.
    */
   public int getWhatToShow(int opPos)

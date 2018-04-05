@@ -31,17 +31,17 @@
 
 package com.sun.corba.se.impl.corba;
 
-import org.omg.CORBA.Any;
-import org.omg.CORBA.Context;
-import org.omg.CORBA.NamedValue;
-import org.omg.CORBA.NVList;
-import org.omg.CORBA.TypeCode;
-import org.omg.CORBA.TCKind;
-import org.omg.CORBA.ServerRequest;
-import org.omg.CORBA.Bounds;
-import org.omg.CORBA.portable.InputStream;
-import org.omg.CORBA.portable.OutputStream;
-import org.omg.CORBA.CompletionStatus;
+import test.org.omg.CORBA.Any;
+import test.org.omg.CORBA.Context;
+import test.org.omg.CORBA.NamedValue;
+import test.org.omg.CORBA.NVList;
+import test.org.omg.CORBA.TypeCode;
+import test.org.omg.CORBA.TCKind;
+import test.org.omg.CORBA.ServerRequest;
+import test.org.omg.CORBA.Bounds;
+import test.org.omg.CORBA.portable.InputStream;
+import test.org.omg.CORBA.portable.OutputStream;
+import test.org.omg.CORBA.CompletionStatus;
 
 import com.sun.corba.se.spi.orb.ORB ;
 import com.sun.corba.se.spi.protocol.CorbaMessageMediator;
@@ -106,8 +106,8 @@ public class ServerRequestImpl extends ServerRequest {
             }
 
             try {
-                if ((arg.flags() == org.omg.CORBA.ARG_IN.value) ||
-                    (arg.flags() == org.omg.CORBA.ARG_INOUT.value)) {
+                if ((arg.flags() == test.org.omg.CORBA.ARG_IN.value) ||
+                    (arg.flags() == test.org.omg.CORBA.ARG_INOUT.value)) {
                     // unmarshal the value into the Any
                     arg.value().read_value(_ins, arg.value().type());
                 }
@@ -206,7 +206,7 @@ public class ServerRequestImpl extends ServerRequest {
                 // the client will throw a MARSHAL exception while
                 // unmarshaling the return value.
                 TypeCode result_tc = _orb.get_primitive_tc(
-                    org.omg.CORBA.TCKind.tk_void);
+                    test.org.omg.CORBA.TCKind.tk_void);
                 _resultAny = _orb.create_any();
                 _resultAny.type(result_tc);
                 _resultSet = true;
@@ -240,8 +240,8 @@ public class ServerRequestImpl extends ServerRequest {
                 arg = _arguments.item(i);
             } catch (Bounds e) {}
 
-            if ((arg.flags() == org.omg.CORBA.ARG_OUT.value) ||
-                (arg.flags() == org.omg.CORBA.ARG_INOUT.value)) {
+            if ((arg.flags() == test.org.omg.CORBA.ARG_OUT.value) ||
+                (arg.flags() == test.org.omg.CORBA.ARG_INOUT.value)) {
                 arg.value().write_value(os);
             }
         }

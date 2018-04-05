@@ -43,8 +43,8 @@ import com.sun.org.apache.xml.internal.security.keys.keyresolver.implementations
 import com.sun.org.apache.xml.internal.security.keys.keyresolver.implementations.X509SubjectNameResolver;
 import com.sun.org.apache.xml.internal.security.keys.storage.StorageResolver;
 import com.sun.org.apache.xml.internal.security.utils.JavaUtils;
-import org.w3c.dom.Element;
-import org.w3c.dom.Node;
+import test.org.w3c.dom.Element;
+import test.org.w3c.dom.Node;
 
 /**
  * KeyResolver is factory class for subclass of KeyResolverSpi that
@@ -52,7 +52,7 @@ import org.w3c.dom.Node;
  */
 public class KeyResolver {
 
-    /** {@link org.apache.commons.logging} logging facility */
+    /** {@link test.org.apache.commons.logging} logging facility */
     private static java.util.logging.Logger log =
         java.util.logging.Logger.getLogger(KeyResolver.class.getName());
 

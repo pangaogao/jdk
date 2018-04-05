@@ -26,8 +26,8 @@ import java.io.IOException;
 
 import com.sun.org.apache.xml.internal.serializer.utils.MsgKey;
 import com.sun.org.apache.xml.internal.serializer.utils.Utils;
-import org.xml.sax.Attributes;
-import org.xml.sax.SAXException;
+import test.org.xml.sax.Attributes;
+import test.org.xml.sax.SAXException;
 
 /**
  * This class is not a public API.
@@ -57,12 +57,12 @@ public final class ToTextStream extends ToStream
    * other methods in this interface or in DTDHandler (except for
    * setDocumentLocator).</p>
    *
-   * @throws org.xml.sax.SAXException Any SAX exception, possibly
+   * @throws test.org.xml.sax.SAXException Any SAX exception, possibly
    *            wrapping another exception.
    *
-   * @throws org.xml.sax.SAXException
+   * @throws test.org.xml.sax.SAXException
    */
-  protected void startDocumentInternal() throws org.xml.sax.SAXException
+  protected void startDocumentInternal() throws test.org.xml.sax.SAXException
   {
     super.startDocumentInternal();
 
@@ -80,12 +80,12 @@ public final class ToTextStream extends ToStream
    * (because of an unrecoverable error) or reached the end of
    * input.</p>
    *
-   * @throws org.xml.sax.SAXException Any SAX exception, possibly
+   * @throws test.org.xml.sax.SAXException Any SAX exception, possibly
    *            wrapping another exception.
    *
-   * @throws org.xml.sax.SAXException
+   * @throws test.org.xml.sax.SAXException
    */
-  public void endDocument() throws org.xml.sax.SAXException
+  public void endDocument() throws test.org.xml.sax.SAXException
   {
     flushPending();
     flushWriter();
@@ -118,16 +118,16 @@ public final class ToTextStream extends ToStream
    * @param name The qualified name (with prefix), or the
    *        empty string if qualified names are not available.
    * @param atts The attributes attached to the element, if any.
-   * @throws org.xml.sax.SAXException Any SAX exception, possibly
+   * @throws test.org.xml.sax.SAXException Any SAX exception, possibly
    *            wrapping another exception.
    * @see #endElement
-   * @see org.xml.sax.AttributeList
+   * @see test.org.xml.sax.AttributeList
    *
-   * @throws org.xml.sax.SAXException
+   * @throws test.org.xml.sax.SAXException
    */
   public void startElement(
           String namespaceURI, String localName, String name, Attributes atts)
-            throws org.xml.sax.SAXException
+            throws test.org.xml.sax.SAXException
   {
     // time to fire off startElement event
     if (m_tracer != null) {
@@ -157,13 +157,13 @@ public final class ToTextStream extends ToStream
    *        performed.
    * @param name The qualified name (with prefix), or the
    *        empty string if qualified names are not available.
-   * @throws org.xml.sax.SAXException Any SAX exception, possibly
+   * @throws test.org.xml.sax.SAXException Any SAX exception, possibly
    *            wrapping another exception.
    *
-   * @throws org.xml.sax.SAXException
+   * @throws test.org.xml.sax.SAXException
    */
   public void endElement(String namespaceURI, String localName, String name)
-          throws org.xml.sax.SAXException
+          throws test.org.xml.sax.SAXException
   {
         if (m_tracer != null)
             super.fireEndElem(name);
@@ -189,13 +189,13 @@ public final class ToTextStream extends ToStream
    * @param ch The characters from the XML document.
    * @param start The start position in the array.
    * @param length The number of characters to read from the array.
-   * @throws org.xml.sax.SAXException Any SAX exception, possibly
+   * @throws test.org.xml.sax.SAXException Any SAX exception, possibly
    *            wrapping another exception.
    * @see #ignorableWhitespace
-   * @see org.xml.sax.Locator
+   * @see test.org.xml.sax.Locator
    */
   public void characters(char ch[], int start, int length)
-          throws org.xml.sax.SAXException
+          throws test.org.xml.sax.SAXException
   {
 
     flushPending();
@@ -238,11 +238,11 @@ public final class ToTextStream extends ToStream
    * @param start The start position in the array.
    * @param length The number of characters to read from the array.
    *
-   * @throws org.xml.sax.SAXException Any SAX exception, possibly
+   * @throws test.org.xml.sax.SAXException Any SAX exception, possibly
    *            wrapping another exception.
    */
   public void charactersRaw(char ch[], int start, int length)
-          throws org.xml.sax.SAXException
+          throws test.org.xml.sax.SAXException
   {
 
     try
@@ -267,14 +267,14 @@ public final class ToTextStream extends ToStream
      * end-of-line separator should be output rather than a new-line character.
      *
      * @throws IOException
-     * @throws org.xml.sax.SAXException
+     * @throws test.org.xml.sax.SAXException
      */
     void writeNormalizedChars(
         final char ch[],
             final int start,
             final int length,
             final boolean useLineSep)
-            throws IOException, org.xml.sax.SAXException
+            throws IOException, test.org.xml.sax.SAXException
     {
         final String encoding = getEncoding();
         final java.io.Writer writer = m_writer;
@@ -371,13 +371,13 @@ public final class ToTextStream extends ToStream
    * @param ch The characters from the XML document.
    * @param start The start position in the array.
    * @param length The number of characters to read from the array.
-   * @throws org.xml.sax.SAXException Any SAX exception, possibly
+   * @throws test.org.xml.sax.SAXException Any SAX exception, possibly
    *            wrapping another exception.
    * @see #ignorableWhitespace
-   * @see org.xml.sax.Locator
+   * @see test.org.xml.sax.Locator
    */
   public void cdata(char ch[], int start, int length)
-          throws org.xml.sax.SAXException
+          throws test.org.xml.sax.SAXException
   {
     try
     {
@@ -411,14 +411,14 @@ public final class ToTextStream extends ToStream
    * @param ch The characters from the XML document.
    * @param start The start position in the array.
    * @param length The number of characters to read from the array.
-   * @throws org.xml.sax.SAXException Any SAX exception, possibly
+   * @throws test.org.xml.sax.SAXException Any SAX exception, possibly
    *            wrapping another exception.
    * @see #characters
    *
-   * @throws org.xml.sax.SAXException
+   * @throws test.org.xml.sax.SAXException
    */
   public void ignorableWhitespace(char ch[], int start, int length)
-          throws org.xml.sax.SAXException
+          throws test.org.xml.sax.SAXException
   {
 
     try
@@ -445,13 +445,13 @@ public final class ToTextStream extends ToStream
    * @param target The processing instruction target.
    * @param data The processing instruction data, or null if
    *        none was supplied.
-   * @throws org.xml.sax.SAXException Any SAX exception, possibly
+   * @throws test.org.xml.sax.SAXException Any SAX exception, possibly
    *            wrapping another exception.
    *
-   * @throws org.xml.sax.SAXException
+   * @throws test.org.xml.sax.SAXException
    */
   public void processingInstruction(String target, String data)
-          throws org.xml.sax.SAXException
+          throws test.org.xml.sax.SAXException
   {
     // flush anything pending first
     flushPending();
@@ -466,10 +466,10 @@ public final class ToTextStream extends ToStream
    * %REVIEW% In fact, is this one ever needed, or was it a mistake?
    *
    * @param   data  The comment data.
-   * @throws org.xml.sax.SAXException Any SAX exception, possibly
+   * @throws test.org.xml.sax.SAXException Any SAX exception, possibly
    *            wrapping another exception.
    */
-  public void comment(String data) throws org.xml.sax.SAXException
+  public void comment(String data) throws test.org.xml.sax.SAXException
   {
       final int length = data.length();
       if (length > m_charsBuff.length)
@@ -490,10 +490,10 @@ public final class ToTextStream extends ToStream
    * @param ch An array holding the characters in the comment.
    * @param start The starting position in the array.
    * @param length The number of characters to use from the array.
-   * @throws org.xml.sax.SAXException The application may raise an exception.
+   * @throws test.org.xml.sax.SAXException The application may raise an exception.
    */
   public void comment(char ch[], int start, int length)
-          throws org.xml.sax.SAXException
+          throws test.org.xml.sax.SAXException
   {
 
     flushPending();
@@ -506,9 +506,9 @@ public final class ToTextStream extends ToStream
    *
    * @param name non-null reference to the name of the entity.
    *
-   * @throws org.xml.sax.SAXException
+   * @throws test.org.xml.sax.SAXException
    */
-  public void entityReference(String name) throws org.xml.sax.SAXException
+  public void entityReference(String name) throws test.org.xml.sax.SAXException
   {
         if (m_tracer != null)
             super.fireEntityReference(name);
@@ -529,7 +529,7 @@ public final class ToTextStream extends ToStream
     }
 
     /**
-     * @see org.xml.sax.ext.LexicalHandler#endCDATA()
+     * @see test.org.xml.sax.ext.LexicalHandler#endCDATA()
      */
     public void endCDATA() throws SAXException
     {
@@ -611,7 +611,7 @@ public final class ToTextStream extends ToStream
 
 
     public void startPrefixMapping(String prefix, String uri)
-        throws org.xml.sax.SAXException
+        throws test.org.xml.sax.SAXException
     {
         // no namespace support for HTML
     }
@@ -625,7 +625,7 @@ public final class ToTextStream extends ToStream
         // no namespace support for HTML
     }
 
-    public void flushPending() throws org.xml.sax.SAXException
+    public void flushPending() throws test.org.xml.sax.SAXException
     {
             if (m_needToCallStartDocument)
             {

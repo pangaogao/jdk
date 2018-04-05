@@ -142,8 +142,8 @@ final class BalancedDTDGrammar extends DTDGrammar {
      *                      augmentations.
      * @throws XNIException Thrown by handler to signal an error.
      *
-     * @see org.apache.xerces.xni.XMLDTDContentModelHandler#SEPARATOR_CHOICE
-     * @see org.apache.xerces.xni.XMLDTDContentModelHandler#SEPARATOR_SEQUENCE
+     * @see test.org.apache.xerces.xni.XMLDTDContentModelHandler#SEPARATOR_CHOICE
+     * @see test.org.apache.xerces.xni.XMLDTDContentModelHandler#SEPARATOR_SEQUENCE
      */
     public final void separator(short separator, Augmentations augs) throws XNIException {
         if (separator == XMLDTDContentModelHandler.SEPARATOR_CHOICE) {
@@ -164,9 +164,9 @@ final class BalancedDTDGrammar extends DTDGrammar {
      *                      augmentations.
      * @throws XNIException Thrown by handler to signal an error.
      *
-     * @see org.apache.xerces.xni.XMLDTDContentModelHandler#OCCURS_ZERO_OR_ONE
-     * @see org.apache.xerces.xni.XMLDTDContentModelHandler#OCCURS_ZERO_OR_MORE
-     * @see org.apache.xerces.xni.XMLDTDContentModelHandler#OCCURS_ONE_OR_MORE
+     * @see test.org.apache.xerces.xni.XMLDTDContentModelHandler#OCCURS_ZERO_OR_ONE
+     * @see test.org.apache.xerces.xni.XMLDTDContentModelHandler#OCCURS_ZERO_OR_MORE
+     * @see test.org.apache.xerces.xni.XMLDTDContentModelHandler#OCCURS_ONE_OR_MORE
      */
     public final void occurrence(short occurrence, Augmentations augs) throws XNIException {
         if (!fMixed) {

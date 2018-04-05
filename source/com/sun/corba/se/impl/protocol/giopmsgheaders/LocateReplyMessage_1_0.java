@@ -25,16 +25,13 @@
 
 package com.sun.corba.se.impl.protocol.giopmsgheaders;
 
-import org.omg.CORBA.INTERNAL;
-import org.omg.CORBA.CompletionStatus;
-import org.omg.CORBA.SystemException;
+import test.org.omg.CORBA.CompletionStatus;
+import test.org.omg.CORBA.SystemException;
 
 import com.sun.corba.se.spi.ior.IOR;
 import com.sun.corba.se.spi.ior.IORFactories;
 
 import com.sun.corba.se.spi.orb.ORB;
-
-import com.sun.corba.se.spi.ior.iiop.GIOPVersion;
 
 import com.sun.corba.se.impl.encoding.CDRInputStream;
 
@@ -96,7 +93,7 @@ public final class LocateReplyMessage_1_0 extends Message_1_0
 
     // IO methods
 
-    public void read(org.omg.CORBA.portable.InputStream istream) {
+    public void read(test.org.omg.CORBA.portable.InputStream istream) {
         super.read(istream);
         this.request_id = istream.read_ulong();
         this.locate_status = istream.read_long();
@@ -111,7 +108,7 @@ public final class LocateReplyMessage_1_0 extends Message_1_0
 
     // Note, this writes only the header information.
     // IOR may be written afterwards into the reply mesg body.
-    public void write(org.omg.CORBA.portable.OutputStream ostream) {
+    public void write(test.org.omg.CORBA.portable.OutputStream ostream) {
         super.write(ostream);
         ostream.write_ulong(this.request_id);
         ostream.write_long(this.locate_status);

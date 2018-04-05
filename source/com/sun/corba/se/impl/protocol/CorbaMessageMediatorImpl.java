@@ -29,32 +29,27 @@ import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.nio.ByteBuffer;
-import java.nio.channels.SelectionKey;
 import java.util.EmptyStackException;
 import java.util.Iterator;
 
-import org.omg.CORBA.Any;
-import org.omg.CORBA.CompletionStatus;
-import org.omg.CORBA.ExceptionList;
-import org.omg.CORBA.INTERNAL;
-import org.omg.CORBA.Principal;
-import org.omg.CORBA.SystemException;
-import org.omg.CORBA.TypeCode;
-import org.omg.CORBA.UnknownUserException;
-import org.omg.CORBA.UNKNOWN;
-import org.omg.CORBA.portable.ResponseHandler;
-import org.omg.CORBA.portable.UnknownException;
-import org.omg.CORBA_2_3.portable.InputStream;
-import org.omg.CORBA_2_3.portable.OutputStream;
-import org.omg.IOP.ExceptionDetailMessage;
-import org.omg.IOP.TAG_RMI_CUSTOM_MAX_STREAM_FORMAT;
+import test.org.omg.CORBA.Any;
+import test.org.omg.CORBA.CompletionStatus;
+import test.org.omg.CORBA.ExceptionList;
+import test.org.omg.CORBA.SystemException;
+import test.org.omg.CORBA.TypeCode;
+import test.org.omg.CORBA.UnknownUserException;
+import test.org.omg.CORBA.UNKNOWN;
+import test.org.omg.CORBA.portable.UnknownException;
+import test.org.omg.CORBA_2_3.portable.InputStream;
+import test.org.omg.CORBA_2_3.portable.OutputStream;
+import test.org.omg.IOP.ExceptionDetailMessage;
+import test.org.omg.IOP.TAG_RMI_CUSTOM_MAX_STREAM_FORMAT;
 
 import com.sun.corba.se.pept.broker.Broker;
 import com.sun.corba.se.pept.encoding.InputObject;
 import com.sun.corba.se.pept.encoding.OutputObject;
 import com.sun.corba.se.pept.protocol.MessageMediator;
 import com.sun.corba.se.pept.protocol.ProtocolHandler;
-import com.sun.corba.se.pept.transport.ByteBufferPool;
 import com.sun.corba.se.pept.transport.Connection;
 import com.sun.corba.se.pept.transport.ContactInfo;
 import com.sun.corba.se.pept.transport.EventHandler;
@@ -64,7 +59,6 @@ import com.sun.corba.se.spi.ior.ObjectKey;
 import com.sun.corba.se.spi.ior.ObjectKeyTemplate;
 import com.sun.corba.se.spi.ior.iiop.GIOPVersion;
 import com.sun.corba.se.spi.ior.iiop.IIOPProfileTemplate;
-import com.sun.corba.se.spi.ior.iiop.IIOPProfile;
 import com.sun.corba.se.spi.ior.iiop.MaxStreamFormatVersionComponent;
 import com.sun.corba.se.spi.oa.OAInvocationInfo;
 import com.sun.corba.se.spi.oa.ObjectAdapter;
@@ -76,7 +70,6 @@ import com.sun.corba.se.spi.protocol.CorbaServerRequestDispatcher;
 import com.sun.corba.se.spi.protocol.ForwardException;
 import com.sun.corba.se.spi.transport.CorbaConnection;
 import com.sun.corba.se.spi.transport.CorbaContactInfo;
-import com.sun.corba.se.spi.transport.CorbaResponseWaitingRoom;
 import com.sun.corba.se.spi.logging.CORBALogDomains;
 
 import com.sun.corba.se.spi.servicecontext.ORBVersionServiceContext;
@@ -96,9 +89,6 @@ import com.sun.corba.se.impl.logging.ORBUtilSystemException;
 import com.sun.corba.se.impl.logging.InterceptorsSystemException;
 import com.sun.corba.se.impl.orbutil.ORBConstants;
 import com.sun.corba.se.impl.orbutil.ORBUtility;
-import com.sun.corba.se.impl.ior.iiop.JavaSerializationComponent;
-import com.sun.corba.se.impl.protocol.AddressingDispositionException;
-import com.sun.corba.se.impl.protocol.RequestCanceledException;
 import com.sun.corba.se.impl.protocol.giopmsgheaders.AddressingDispositionHelper;
 import com.sun.corba.se.impl.protocol.giopmsgheaders.CancelRequestMessage;
 import com.sun.corba.se.impl.protocol.giopmsgheaders.FragmentMessage_1_1;
@@ -155,7 +145,7 @@ public class CorbaMessageMediatorImpl
     protected byte streamFormatVersion;
     protected boolean streamFormatVersionSet = false;
 
-    protected org.omg.CORBA.Request diiRequest;
+    protected test.org.omg.CORBA.Request diiRequest;
 
     protected boolean cancelRequestAlreadySent = false;
 
@@ -422,7 +412,7 @@ public class CorbaMessageMediatorImpl
         return outputObject.getBufferManager().sentFragment();
     }
 
-    public void setDIIInfo(org.omg.CORBA.Request diiRequest)
+    public void setDIIInfo(test.org.omg.CORBA.Request diiRequest)
     {
         this.diiRequest = diiRequest;
     }
@@ -616,7 +606,7 @@ public class CorbaMessageMediatorImpl
     // ResponseHandler
     //
 
-    public org.omg.CORBA.portable.OutputStream createReply()
+    public test.org.omg.CORBA.portable.OutputStream createReply()
     {
         // Note: relies on side-effect of setting mediator output field.
         // REVISIT - cast - need interface
@@ -624,7 +614,7 @@ public class CorbaMessageMediatorImpl
         return (OutputStream) getOutputObject();
     }
 
-    public org.omg.CORBA.portable.OutputStream createExceptionReply()
+    public test.org.omg.CORBA.portable.OutputStream createExceptionReply()
     {
         // Note: relies on side-effect of setting mediator output field.
         // REVISIT - cast - need interface

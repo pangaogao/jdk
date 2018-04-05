@@ -25,7 +25,7 @@
 
 package com.sun.corba.se.impl.protocol.giopmsgheaders;
 
-import org.omg.CORBA.SystemException;
+import test.org.omg.CORBA.SystemException;
 import com.sun.corba.se.spi.ior.IOR;
 
 public interface LocateReplyOrReplyMessage extends Message {

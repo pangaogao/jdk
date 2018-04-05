@@ -24,7 +24,7 @@ package com.sun.org.apache.xml.internal.serializer;
 
 import java.io.IOException;
 
-import org.w3c.dom.Node;
+import test.org.w3c.dom.Node;
 
 /**
  * Interface for a DOM serializer implementation.

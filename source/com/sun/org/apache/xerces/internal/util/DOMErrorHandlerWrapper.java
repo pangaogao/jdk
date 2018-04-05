@@ -30,10 +30,10 @@ import java.io.PrintWriter;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
-import org.w3c.dom.DOMError;
-import org.w3c.dom.DOMErrorHandler;
-import org.w3c.dom.DOMLocator;
-import org.w3c.dom.Node;
+import test.org.w3c.dom.DOMError;
+import test.org.w3c.dom.DOMErrorHandler;
+import test.org.w3c.dom.DOMLocator;
+import test.org.w3c.dom.Node;
 
 /**
  * This class handles DOM errors .

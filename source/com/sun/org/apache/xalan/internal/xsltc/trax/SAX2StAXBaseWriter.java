@@ -31,12 +31,12 @@ import javax.xml.stream.Location;
 import javax.xml.stream.XMLReporter;
 import javax.xml.stream.XMLStreamException;
 
-import org.xml.sax.Attributes;
-import org.xml.sax.Locator;
-import org.xml.sax.SAXException;
-import org.xml.sax.SAXParseException;
-import org.xml.sax.ext.LexicalHandler;
-import org.xml.sax.helpers.DefaultHandler;
+import test.org.xml.sax.Attributes;
+import test.org.xml.sax.Locator;
+import test.org.xml.sax.SAXException;
+import test.org.xml.sax.SAXParseException;
+import test.org.xml.sax.ext.LexicalHandler;
+import test.org.xml.sax.helpers.DefaultHandler;
 
 
 public abstract class SAX2StAXBaseWriter extends DefaultHandler

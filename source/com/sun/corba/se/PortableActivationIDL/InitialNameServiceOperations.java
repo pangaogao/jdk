@@ -17,5 +17,5 @@ public interface InitialNameServiceOperations
 
   /** bind initial name
   	*/
-  void bind (String name, org.omg.CORBA.Object obj, boolean isPersistant) throws com.sun.corba.se.PortableActivationIDL.InitialNameServicePackage.NameAlreadyBound;
+  void bind (String name, test.org.omg.CORBA.Object obj, boolean isPersistant) throws com.sun.corba.se.PortableActivationIDL.InitialNameServicePackage.NameAlreadyBound;
 } // interface InitialNameServiceOperations

@@ -31,9 +31,9 @@ import com.sun.org.apache.xerces.internal.xni.XNIException;
 import com.sun.org.apache.xerces.internal.xni.grammars.XMLDTDDescription;
 import com.sun.org.apache.xerces.internal.xni.parser.XMLInputSource;
 
-import org.xml.sax.ext.EntityResolver2;
-import org.xml.sax.InputSource;
-import org.xml.sax.SAXException;
+import test.org.xml.sax.ext.EntityResolver2;
+import test.org.xml.sax.InputSource;
+import test.org.xml.sax.SAXException;
 
 /**
  * <p>This class wraps a SAX entity resolver (EntityResolver2) in an XNI entity resolver.</p>

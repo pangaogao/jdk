@@ -27,7 +27,7 @@ import com.sun.org.apache.xerces.internal.xs.StringList;
 import com.sun.org.apache.xerces.internal.xs.XSException;
 import com.sun.org.apache.xerces.internal.xs.XSImplementation;
 import com.sun.org.apache.xerces.internal.xs.XSLoader;
-import org.w3c.dom.DOMImplementation;
+import test.org.w3c.dom.DOMImplementation;
 
 
 /**
@@ -70,7 +70,7 @@ public class XSImplementationImpl extends CoreDOMImplementationImpl
      *
      * @param feature      The package name of the feature to test.
      * In Level 1, supported values are "HTML" and "XML" (case-insensitive).
-     * At this writing, com.sun.org.apache.xerces.internal.dom supports only XML.
+     * At this writing, com.sun.test.org.apache.xerces.internal.dom supports only XML.
      *
      * @param version      The version number of the feature being tested.
      * This is interpreted as "Version of the DOM API supported for the
@@ -88,7 +88,7 @@ public class XSImplementationImpl extends CoreDOMImplementationImpl
 
 
     /* (non-Javadoc)
-     * @see com.sun.org.apache.xerces.internal.xs.XSImplementation#createXSLoader(com.sun.org.apache.xerces.internal.xs.StringList)
+     * @see com.sun.test.org.apache.xerces.internal.xs.XSImplementation#createXSLoader(com.sun.test.org.apache.xerces.internal.xs.StringList)
      */
     public XSLoader createXSLoader(StringList versions) throws XSException {
         XSLoader loader = new XSLoaderImpl();
@@ -109,7 +109,7 @@ public class XSImplementationImpl extends CoreDOMImplementationImpl
     }
 
     /* (non-Javadoc)
-     * @see com.sun.org.apache.xerces.internal.xs.XSImplementation#getRecognizedVersions()
+     * @see com.sun.test.org.apache.xerces.internal.xs.XSImplementation#getRecognizedVersions()
      */
     public StringList getRecognizedVersions() {
         StringListImpl list = new StringListImpl(new String[]{"1.0"}, 1);

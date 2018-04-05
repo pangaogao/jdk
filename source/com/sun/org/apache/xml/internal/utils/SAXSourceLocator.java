@@ -26,12 +26,12 @@ import java.io.Serializable;
 
 import javax.xml.transform.SourceLocator;
 
-import org.xml.sax.Locator;
-import org.xml.sax.SAXParseException;
-import org.xml.sax.helpers.LocatorImpl;
+import test.org.xml.sax.Locator;
+import test.org.xml.sax.SAXParseException;
+import test.org.xml.sax.helpers.LocatorImpl;
 
 /**
- * Class SAXSourceLocator extends org.xml.sax.helpers.LocatorImpl
+ * Class SAXSourceLocator extends test.org.xml.sax.helpers.LocatorImpl
  * for the purpose of implementing the SourceLocator interface,
  * and thus can be both a SourceLocator and a SAX Locator.
  */

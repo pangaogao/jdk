@@ -24,16 +24,16 @@
 
 package com.sun.org.apache.xpath.internal.domapi;
 
-import org.w3c.dom.Attr;
-import org.w3c.dom.DOMException;
-import org.w3c.dom.Document;
-import org.w3c.dom.Element;
-import org.w3c.dom.NamedNodeMap;
-import org.w3c.dom.Node;
-import org.w3c.dom.NodeList;
-import org.w3c.dom.xpath.XPathNamespace;
+import test.org.w3c.dom.Attr;
+import test.org.w3c.dom.DOMException;
+import test.org.w3c.dom.Document;
+import test.org.w3c.dom.Element;
+import test.org.w3c.dom.NamedNodeMap;
+import test.org.w3c.dom.Node;
+import test.org.w3c.dom.NodeList;
+import test.org.w3c.dom.xpath.XPathNamespace;
 
-import org.w3c.dom.UserDataHandler;
+import test.org.w3c.dom.UserDataHandler;
 
 /**
  *
@@ -93,146 +93,146 @@ class XPathNamespaceImpl implements XPathNamespace {
     }
 
     /**
-     * @see org.w3c.dom.Node#getNodeName()
+     * @see test.org.w3c.dom.Node#getNodeName()
      */
     public String getNodeName() {
         return "#namespace";
     }
 
     /**
-     * @see org.w3c.dom.Node#getNodeValue()
+     * @see test.org.w3c.dom.Node#getNodeValue()
      */
     public String getNodeValue() throws DOMException {
         return m_attributeNode.getNodeValue();
     }
 
     /**
-     * @see org.w3c.dom.Node#setNodeValue(String)
+     * @see test.org.w3c.dom.Node#setNodeValue(String)
      */
     public void setNodeValue(String arg0) throws DOMException {
     }
 
     /**
-     * @see org.w3c.dom.Node#getNodeType()
+     * @see test.org.w3c.dom.Node#getNodeType()
      */
     public short getNodeType() {
         return XPathNamespace.XPATH_NAMESPACE_NODE;
     }
 
     /**
-     * @see org.w3c.dom.Node#getParentNode()
+     * @see test.org.w3c.dom.Node#getParentNode()
      */
     public Node getParentNode() {
         return m_attributeNode.getParentNode();
     }
 
     /**
-     * @see org.w3c.dom.Node#getChildNodes()
+     * @see test.org.w3c.dom.Node#getChildNodes()
      */
     public NodeList getChildNodes() {
         return m_attributeNode.getChildNodes();
     }
 
     /**
-     * @see org.w3c.dom.Node#getFirstChild()
+     * @see test.org.w3c.dom.Node#getFirstChild()
      */
     public Node getFirstChild() {
         return m_attributeNode.getFirstChild();
     }
 
     /**
-     * @see org.w3c.dom.Node#getLastChild()
+     * @see test.org.w3c.dom.Node#getLastChild()
      */
     public Node getLastChild() {
         return m_attributeNode.getLastChild();
     }
 
     /**
-     * @see org.w3c.dom.Node#getPreviousSibling()
+     * @see test.org.w3c.dom.Node#getPreviousSibling()
      */
     public Node getPreviousSibling() {
         return m_attributeNode.getPreviousSibling();
     }
 
     /**
-     * @see org.w3c.dom.Node#getNextSibling()
+     * @see test.org.w3c.dom.Node#getNextSibling()
      */
     public Node getNextSibling() {
         return m_attributeNode.getNextSibling();
     }
 
     /**
-     * @see org.w3c.dom.Node#getAttributes()
+     * @see test.org.w3c.dom.Node#getAttributes()
      */
     public NamedNodeMap getAttributes() {
         return m_attributeNode.getAttributes();
     }
 
     /**
-     * @see org.w3c.dom.Node#getOwnerDocument()
+     * @see test.org.w3c.dom.Node#getOwnerDocument()
      */
     public Document getOwnerDocument() {
         return m_attributeNode.getOwnerDocument();
     }
 
     /**
-     * @see org.w3c.dom.Node#insertBefore(Node, Node)
+     * @see test.org.w3c.dom.Node#insertBefore(Node, Node)
      */
     public Node insertBefore(Node arg0, Node arg1) throws DOMException {
         return null;
     }
 
     /**
-     * @see org.w3c.dom.Node#replaceChild(Node, Node)
+     * @see test.org.w3c.dom.Node#replaceChild(Node, Node)
      */
     public Node replaceChild(Node arg0, Node arg1) throws DOMException {
         return null;
     }
 
     /**
-     * @see org.w3c.dom.Node#removeChild(Node)
+     * @see test.org.w3c.dom.Node#removeChild(Node)
      */
     public Node removeChild(Node arg0) throws DOMException {
         return null;
     }
 
     /**
-     * @see org.w3c.dom.Node#appendChild(Node)
+     * @see test.org.w3c.dom.Node#appendChild(Node)
      */
     public Node appendChild(Node arg0) throws DOMException {
         return null;
     }
 
     /**
-     * @see org.w3c.dom.Node#hasChildNodes()
+     * @see test.org.w3c.dom.Node#hasChildNodes()
      */
     public boolean hasChildNodes() {
         return false;
     }
 
     /**
-     * @see org.w3c.dom.Node#cloneNode(boolean)
+     * @see test.org.w3c.dom.Node#cloneNode(boolean)
      */
     public Node cloneNode(boolean arg0) {
         throw new DOMException(DOMException.NOT_SUPPORTED_ERR,null);
     }
 
     /**
-     * @see org.w3c.dom.Node#normalize()
+     * @see test.org.w3c.dom.Node#normalize()
      */
     public void normalize() {
         m_attributeNode.normalize();
     }
 
     /**
-     * @see org.w3c.dom.Node#isSupported(String, String)
+     * @see test.org.w3c.dom.Node#isSupported(String, String)
      */
     public boolean isSupported(String arg0, String arg1) {
         return m_attributeNode.isSupported(arg0, arg1);
     }
 
     /**
-     * @see org.w3c.dom.Node#getNamespaceURI()
+     * @see test.org.w3c.dom.Node#getNamespaceURI()
      */
     public String getNamespaceURI() {
 
@@ -242,20 +242,20 @@ class XPathNamespaceImpl implements XPathNamespace {
     }
 
     /**
-     * @see org.w3c.dom.Node#getPrefix()
+     * @see test.org.w3c.dom.Node#getPrefix()
      */
     public String getPrefix() {
         return m_attributeNode.getPrefix();
     }
 
     /**
-     * @see org.w3c.dom.Node#setPrefix(String)
+     * @see test.org.w3c.dom.Node#setPrefix(String)
      */
     public void setPrefix(String arg0) throws DOMException {
     }
 
     /**
-     * @see org.w3c.dom.Node#getLocalName()
+     * @see test.org.w3c.dom.Node#getLocalName()
      */
     public String getLocalName() {
 
@@ -264,7 +264,7 @@ class XPathNamespaceImpl implements XPathNamespace {
     }
 
     /**
-     * @see org.w3c.dom.Node#hasAttributes()
+     * @see test.org.w3c.dom.Node#hasAttributes()
      */
     public boolean hasAttributes() {
         return m_attributeNode.hasAttributes();

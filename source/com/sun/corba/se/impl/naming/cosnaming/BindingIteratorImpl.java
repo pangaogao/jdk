@@ -26,20 +26,16 @@
 package com.sun.corba.se.impl.naming.cosnaming;
 
 // Import general CORBA classes
-import org.omg.CORBA.ORB;
-import org.omg.CORBA.Object;
+import test.org.omg.CORBA.ORB;
 
-// Import org.omg.CosNaming classes
-import org.omg.CosNaming.Binding;
-import org.omg.CosNaming.BindingType;
-import org.omg.CosNaming.BindingHolder;
-import org.omg.CosNaming.BindingListHolder;
-import org.omg.CosNaming.BindingIteratorHolder;
-import org.omg.CosNaming.BindingIteratorPOA;
-import org.omg.CORBA.BAD_PARAM;
+// Import test.org.omg.CosNaming classes
+import test.org.omg.CosNaming.Binding;
+import test.org.omg.CosNaming.BindingHolder;
+import test.org.omg.CosNaming.BindingIteratorPOA;
+import test.org.omg.CORBA.BAD_PARAM;
 
 /**
- * Class BindingIteratorImpl implements the org.omg.CosNaming::BindingIterator
+ * Class BindingIteratorImpl implements the test.org.omg.CosNaming::BindingIterator
  * interface, but does not implement the method to retrieve the next
  * binding in the NamingContext for which it was created. This is left
  * to a subclass, which is why this class is abstract; BindingIteratorImpl
@@ -78,11 +74,11 @@ public abstract class BindingIteratorImpl extends BindingIteratorPOA
      * whether there were more bindings.
      * @param b The Binding as an out parameter.
      * @return true if there were more bindings.
-     * @exception org.omg.CORBA.SystemException One of a fixed set of CORBA
+     * @exception test.org.omg.CORBA.SystemException One of a fixed set of CORBA
      * system exceptions.
      * @see NextOne
      */
-    public synchronized boolean next_one(org.omg.CosNaming.BindingHolder b)
+    public synchronized boolean next_one(test.org.omg.CosNaming.BindingHolder b)
     {
         // NextOne actually returns the next one
         return NextOne(b);
@@ -94,12 +90,12 @@ public abstract class BindingIteratorImpl extends BindingIteratorPOA
      * @param how_many The number of requested bindings in the BindingList.
      * @param bl The BindingList as an out parameter.
      * @return true if there were more bindings.
-     * @exception org.omg.CORBA.SystemException One of a fixed set of CORBA
+     * @exception test.org.omg.CORBA.SystemException One of a fixed set of CORBA
      * system exceptions.
      * @see NextOne
      */
     public synchronized boolean next_n(int how_many,
-        org.omg.CosNaming.BindingListHolder blh)
+        test.org.omg.CosNaming.BindingListHolder blh)
     {
         if( how_many == 0 ) {
             throw new BAD_PARAM( " 'how_many' parameter is set to 0 which is" +
@@ -117,7 +113,7 @@ public abstract class BindingIteratorImpl extends BindingIteratorPOA
      * @param bl The BindingList as an out parameter.
      * @return true if there were more bindings.
      */
-    public boolean list( int how_many, org.omg.CosNaming.BindingListHolder blh)
+    public boolean list( int how_many, test.org.omg.CosNaming.BindingListHolder blh)
     {
         // Take the smallest of what's left and what's being asked for
         int numberToGet = Math.min(RemainingElements(),how_many);
@@ -150,7 +146,7 @@ public abstract class BindingIteratorImpl extends BindingIteratorPOA
     /**
      * Destroy this BindingIterator object. The object corresponding to this
      * object reference is destroyed.
-     * @exception org.omg.CORBA.SystemException One of a fixed set of CORBA
+     * @exception test.org.omg.CORBA.SystemException One of a fixed set of CORBA
      * system exceptions.
      * @see Destroy
      */
@@ -165,14 +161,14 @@ public abstract class BindingIteratorImpl extends BindingIteratorPOA
      * for which this BindingIterator was created.
      * @param b The Binding as an out parameter.
      * @return true if there were more bindings.
-     * @exception org.omg.CORBA.SystemException One of a fixed set of CORBA
+     * @exception test.org.omg.CORBA.SystemException One of a fixed set of CORBA
      * system exceptions.
      */
-    protected abstract boolean NextOne(org.omg.CosNaming.BindingHolder b);
+    protected abstract boolean NextOne(test.org.omg.CosNaming.BindingHolder b);
 
     /**
      * Abstract method for destroying this BindingIterator.
-     * @exception org.omg.CORBA.SystemException One of a fixed set of CORBA
+     * @exception test.org.omg.CORBA.SystemException One of a fixed set of CORBA
      * system exceptions.
      */
     protected abstract void Destroy();

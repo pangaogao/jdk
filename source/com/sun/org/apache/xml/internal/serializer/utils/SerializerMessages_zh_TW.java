@@ -36,7 +36,7 @@ import java.util.ResourceBundle;
  * translated.
  *
  * This class is not a public API, it is only public because it is
- * used in com.sun.org.apache.xml.internal.serializer.
+ * used in com.sun.test.org.apache.xml.internal.serializer.
  *
  * @xsl.usage internal
  */
@@ -76,7 +76,7 @@ public class SerializerMessages_zh_TW extends ListResourceBundle {
                 "\u8A0A\u606F\u985E\u5225 ''{1}'' \u4E2D\u7684\u8A0A\u606F ''{0}'' \u683C\u5F0F\u4E0D\u6B63\u78BA\u3002" },
 
             {   MsgKey.ER_SERIALIZER_NOT_CONTENTHANDLER,
-                "serializer \u985E\u5225 ''{0}'' \u4E0D\u5BE6\u884C org.xml.sax.ContentHandler\u3002" },
+                "serializer \u985E\u5225 ''{0}'' \u4E0D\u5BE6\u884C test.org.xml.sax.ContentHandler\u3002" },
 
             {   MsgKey.ER_RESOURCE_COULD_NOT_FIND,
                     "\u627E\u4E0D\u5230\u8CC7\u6E90 [ {0} ]\u3002\n{1}" },

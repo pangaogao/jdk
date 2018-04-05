@@ -31,7 +31,7 @@ public class SerializerMessages_cs extends ListResourceBundle {
         // BAD_MSGKEY needs translation
         // BAD_MSGFORMAT needs translation
       { MsgKey.ER_SERIALIZER_NOT_CONTENTHANDLER,
-        "T\u0159\u00edda serializace ''{0}'' neimplementuje org.xml.sax.ContentHandler."},
+        "T\u0159\u00edda serializace ''{0}'' neimplementuje test.org.xml.sax.ContentHandler."},
 
       { MsgKey.ER_RESOURCE_COULD_NOT_FIND,
         "Nelze naj\u00edt zdroj [ {0} ].\n {1}"},

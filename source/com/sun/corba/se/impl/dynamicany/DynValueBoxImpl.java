@@ -25,19 +25,14 @@
 
 package com.sun.corba.se.impl.dynamicany;
 
-import org.omg.CORBA.TypeCode;
-import org.omg.CORBA.TCKind;
-import org.omg.CORBA.Any;
-import org.omg.CORBA.TypeCodePackage.BadKind;
-import org.omg.CORBA.TypeCodePackage.Bounds;
-import org.omg.DynamicAny.*;
-import org.omg.DynamicAny.DynAnyPackage.TypeMismatch;
-import org.omg.DynamicAny.DynAnyPackage.InvalidValue;
-import org.omg.DynamicAny.DynAnyFactoryPackage.InconsistentTypeCode;
+import test.org.omg.CORBA.TypeCode;
+import test.org.omg.CORBA.Any;
+import test.org.omg.DynamicAny.*;
+import test.org.omg.DynamicAny.DynAnyPackage.TypeMismatch;
+import test.org.omg.DynamicAny.DynAnyPackage.InvalidValue;
+import test.org.omg.DynamicAny.DynAnyFactoryPackage.InconsistentTypeCode;
 
 import com.sun.corba.se.spi.orb.ORB ;
-import com.sun.corba.se.spi.logging.CORBALogDomains ;
-import com.sun.corba.se.impl.logging.ORBUtilSystemException ;
 
 public class DynValueBoxImpl extends DynValueCommonImpl implements DynValueBox
 {
@@ -62,7 +57,7 @@ public class DynValueBoxImpl extends DynValueCommonImpl implements DynValueBox
     //
 
     public Any get_boxed_value()
-        throws org.omg.DynamicAny.DynAnyPackage.InvalidValue
+        throws test.org.omg.DynamicAny.DynAnyPackage.InvalidValue
     {
         if (isNull) {
             throw new InvalidValue();
@@ -71,8 +66,8 @@ public class DynValueBoxImpl extends DynValueCommonImpl implements DynValueBox
         return any;
     }
 
-    public void set_boxed_value(org.omg.CORBA.Any boxed)
-        throws org.omg.DynamicAny.DynAnyPackage.TypeMismatch
+    public void set_boxed_value(test.org.omg.CORBA.Any boxed)
+        throws test.org.omg.DynamicAny.DynAnyPackage.TypeMismatch
     {
         if ( ! isNull && ! boxed.type().equal(this.type())) {
             throw new TypeMismatch();
@@ -85,7 +80,7 @@ public class DynValueBoxImpl extends DynValueCommonImpl implements DynValueBox
     }
 
     public DynAny get_boxed_value_as_dyn_any()
-        throws org.omg.DynamicAny.DynAnyPackage.InvalidValue
+        throws test.org.omg.DynamicAny.DynAnyPackage.InvalidValue
     {
         if (isNull) {
             throw new InvalidValue();
@@ -95,7 +90,7 @@ public class DynValueBoxImpl extends DynValueCommonImpl implements DynValueBox
     }
 
     public void set_boxed_value_as_dyn_any(DynAny boxed)
-        throws org.omg.DynamicAny.DynAnyPackage.TypeMismatch
+        throws test.org.omg.DynamicAny.DynAnyPackage.TypeMismatch
     {
         if ( ! isNull && ! boxed.type().equal(this.type())) {
             throw new TypeMismatch();

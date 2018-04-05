@@ -24,8 +24,8 @@ import java.io.InputStream;
 import java.io.Reader;
 
 import com.sun.org.apache.xerces.internal.xni.parser.XMLInputSource;
-import org.xml.sax.InputSource;
-import org.xml.sax.XMLReader;
+import test.org.xml.sax.InputSource;
+import test.org.xml.sax.XMLReader;
 
 /**
  * <p>An <code>XMLInputSource</code> analogue to <code>javax.xml.transform.sax.SAXSource</code>.</p>

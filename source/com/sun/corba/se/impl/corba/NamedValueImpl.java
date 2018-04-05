@@ -31,8 +31,8 @@
 
 package com.sun.corba.se.impl.corba;
 
-import org.omg.CORBA.NamedValue;
-import org.omg.CORBA.Any;
+import test.org.omg.CORBA.NamedValue;
+import test.org.omg.CORBA.Any;
 
 import com.sun.corba.se.spi.orb.ORB ;
 

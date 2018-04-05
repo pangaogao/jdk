@@ -30,7 +30,7 @@ package com.sun.org.apache.xerces.internal.dom;
 
 import com.sun.org.apache.xerces.internal.xni.NamespaceContext;
 import com.sun.org.apache.xerces.internal.xs.XSTypeDefinition;
-import org.w3c.dom.NamedNodeMap;
+import test.org.w3c.dom.NamedNodeMap;
 
 
 /**

@@ -25,8 +25,8 @@ package com.sun.org.apache.xml.internal.resolver.readers;
 
 import java.io.IOException;
 
-import org.xml.sax.*;
-import org.xml.sax.helpers.*;
+import test.org.xml.sax.*;
+import test.org.xml.sax.helpers.*;
 
 /**
  * An entity-resolving DefaultHandler.

@@ -26,10 +26,7 @@
 
 package com.sun.corba.se.impl.protocol ;
 
-import org.omg.CORBA.portable.ServantObject ;
-
-import com.sun.corba.se.spi.protocol.LocalClientRequestDispatcherFactory ;
-import com.sun.corba.se.spi.protocol.LocalClientRequestDispatcher ;
+import test.org.omg.CORBA.portable.ServantObject ;
 
 import com.sun.corba.se.spi.ior.IOR ;
 
@@ -44,7 +41,7 @@ public class MinimalServantCacheLocalCRDImpl extends ServantCacheLocalCRDBase
         super( (com.sun.corba.se.spi.orb.ORB)orb, scid, ior ) ;
     }
 
-    public ServantObject servant_preinvoke( org.omg.CORBA.Object self,
+    public ServantObject servant_preinvoke( test.org.omg.CORBA.Object self,
         String operation, Class expectedType )
     {
         OAInvocationInfo cachedInfo = getCachedInfo() ;
@@ -54,7 +51,7 @@ public class MinimalServantCacheLocalCRDImpl extends ServantCacheLocalCRDBase
             return null ;
     }
 
-    public void servant_postinvoke(org.omg.CORBA.Object self,
+    public void servant_postinvoke(test.org.omg.CORBA.Object self,
                                    ServantObject servantobj)
     {
     }

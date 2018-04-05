@@ -405,14 +405,14 @@ public final class ResultTreeType extends Type {
         final ConstantPoolGen cpg = classGen.getConstantPool();
         final InstructionList il = methodGen.getInstructionList();
 
-        if (className.equals("org.w3c.dom.Node")) {
+        if (className.equals("test.org.w3c.dom.Node")) {
             translateTo(classGen, methodGen, Type.NodeSet);
             int index = cpg.addInterfaceMethodref(DOM_INTF,
                                                   MAKE_NODE,
                                                   MAKE_NODE_SIG2);
             il.append(new INVOKEINTERFACE(index, 2));
         }
-        else if (className.equals("org.w3c.dom.NodeList")) {
+        else if (className.equals("test.org.w3c.dom.NodeList")) {
             translateTo(classGen, methodGen, Type.NodeSet);
             int index = cpg.addInterfaceMethodref(DOM_INTF,
                                                   MAKE_NODE_LIST,

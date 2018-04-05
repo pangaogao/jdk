@@ -25,14 +25,10 @@
 
 package com.sun.corba.se.impl.interceptors;
 
-import org.omg.PortableInterceptor.Interceptor;
-import org.omg.PortableInterceptor.ORBInitInfo;
-import org.omg.PortableInterceptor.ORBInitInfoPackage.DuplicateName;
-
-import org.omg.CORBA.INTERNAL;
+import test.org.omg.PortableInterceptor.Interceptor;
+import test.org.omg.PortableInterceptor.ORBInitInfoPackage.DuplicateName;
 
 import java.util.ArrayList;
-import java.util.Collection;
 import java.util.Collections;
 import java.util.Iterator;
 import java.util.List;
@@ -64,9 +60,9 @@ public class InterceptorList {
     // appropriate array type for each interceptor type.  These must
     // match the indices of the constants declared above.
     static final Class[] classTypes = {
-        org.omg.PortableInterceptor.ClientRequestInterceptor.class,
-        org.omg.PortableInterceptor.ServerRequestInterceptor.class,
-        org.omg.PortableInterceptor.IORInterceptor.class
+        test.org.omg.PortableInterceptor.ClientRequestInterceptor.class,
+        test.org.omg.PortableInterceptor.ServerRequestInterceptor.class,
+        test.org.omg.PortableInterceptor.IORInterceptor.class
     };
 
     // True if no further interceptors may be registered with this list.

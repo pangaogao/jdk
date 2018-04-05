@@ -24,17 +24,13 @@
  */
 package com.sun.corba.se.impl.encoding;
 
-import java.io.IOException;
-import java.io.Serializable;
-import java.math.BigDecimal;
 import java.nio.ByteBuffer;
 
-import org.omg.CORBA.TypeCode;
-import org.omg.CORBA.Principal;
-import org.omg.CORBA.Any;
+import test.org.omg.CORBA.TypeCode;
+import test.org.omg.CORBA.Principal;
+import test.org.omg.CORBA.Any;
 
 import com.sun.corba.se.spi.ior.iiop.GIOPVersion;
-import com.sun.corba.se.impl.orbutil.ORBConstants;
 import com.sun.org.omg.SendingContext.CodeBase;
 
 /**
@@ -51,13 +47,13 @@ abstract class CDRInputStreamBase extends java.io.InputStream
         this.parent = parent;
     }
 
-    public abstract void init(org.omg.CORBA.ORB orb,
+    public abstract void init(test.org.omg.CORBA.ORB orb,
                               ByteBuffer byteBuffer,
                               int size,
                               boolean littleEndian,
                               BufferManagerRead bufferManager);
 
-    // org.omg.CORBA.portable.InputStream
+    // test.org.omg.CORBA.portable.InputStream
     public abstract boolean read_boolean();
     public abstract char read_char();
     public abstract char read_wchar();
@@ -84,24 +80,24 @@ abstract class CDRInputStreamBase extends java.io.InputStream
     public abstract void read_ulonglong_array(long[] value, int offset, int length);
     public abstract void read_float_array(float[] value, int offset, int length);
     public abstract void read_double_array(double[] value, int offset, int length);
-    public abstract org.omg.CORBA.Object read_Object();
+    public abstract test.org.omg.CORBA.Object read_Object();
     public abstract TypeCode read_TypeCode();
     public abstract Any read_any();
     public abstract Principal read_Principal();
     public int read() throws java.io.IOException {
-        throw new org.omg.CORBA.NO_IMPLEMENT();
+        throw new test.org.omg.CORBA.NO_IMPLEMENT();
     }
     public abstract java.math.BigDecimal read_fixed();
-    public org.omg.CORBA.Context read_Context() {
-        throw new org.omg.CORBA.NO_IMPLEMENT();
+    public test.org.omg.CORBA.Context read_Context() {
+        throw new test.org.omg.CORBA.NO_IMPLEMENT();
     }
-    public abstract org.omg.CORBA.Object read_Object(java.lang.Class clz);
-    public abstract org.omg.CORBA.ORB orb();
+    public abstract test.org.omg.CORBA.Object read_Object(java.lang.Class clz);
+    public abstract test.org.omg.CORBA.ORB orb();
 
-    // org.omg.CORBA_2_3.portable.InputStream
+    // test.org.omg.CORBA_2_3.portable.InputStream
     public abstract java.io.Serializable read_value();
     public abstract java.io.Serializable read_value(java.lang.Class clz);
-    public abstract java.io.Serializable read_value(org.omg.CORBA.portable.BoxedValueHelper factory);
+    public abstract java.io.Serializable read_value(test.org.omg.CORBA.portable.BoxedValueHelper factory);
     public abstract java.io.Serializable read_value(java.lang.String rep_id);
     public abstract java.io.Serializable read_value(java.io.Serializable value);
     public abstract java.lang.Object read_abstract_interface();
@@ -111,24 +107,24 @@ abstract class CDRInputStreamBase extends java.io.InputStream
     public abstract void consumeEndian();
     public abstract int getPosition();
 
-    // org.omg.CORBA.DataInputStream
+    // test.org.omg.CORBA.DataInputStream
     public abstract java.lang.Object read_Abstract ();
     public abstract java.io.Serializable read_Value ();
-    public abstract void read_any_array (org.omg.CORBA.AnySeqHolder seq, int offset, int length);
-    public abstract void read_boolean_array (org.omg.CORBA.BooleanSeqHolder seq, int offset, int length);
-    public abstract void read_char_array (org.omg.CORBA.CharSeqHolder seq, int offset, int length);
-    public abstract void read_wchar_array (org.omg.CORBA.WCharSeqHolder seq, int offset, int length);
-    public abstract void read_octet_array (org.omg.CORBA.OctetSeqHolder seq, int offset, int length);
-    public abstract void read_short_array (org.omg.CORBA.ShortSeqHolder seq, int offset, int length);
-    public abstract void read_ushort_array (org.omg.CORBA.UShortSeqHolder seq, int offset, int length);
-    public abstract void read_long_array (org.omg.CORBA.LongSeqHolder seq, int offset, int length);
-    public abstract void read_ulong_array (org.omg.CORBA.ULongSeqHolder seq, int offset, int length);
-    public abstract void read_ulonglong_array (org.omg.CORBA.ULongLongSeqHolder seq, int offset, int length);
-    public abstract void read_longlong_array (org.omg.CORBA.LongLongSeqHolder seq, int offset, int length);
-    public abstract void read_float_array (org.omg.CORBA.FloatSeqHolder seq, int offset, int length);
-    public abstract void read_double_array (org.omg.CORBA.DoubleSeqHolder seq, int offset, int length);
+    public abstract void read_any_array (test.org.omg.CORBA.AnySeqHolder seq, int offset, int length);
+    public abstract void read_boolean_array (test.org.omg.CORBA.BooleanSeqHolder seq, int offset, int length);
+    public abstract void read_char_array (test.org.omg.CORBA.CharSeqHolder seq, int offset, int length);
+    public abstract void read_wchar_array (test.org.omg.CORBA.WCharSeqHolder seq, int offset, int length);
+    public abstract void read_octet_array (test.org.omg.CORBA.OctetSeqHolder seq, int offset, int length);
+    public abstract void read_short_array (test.org.omg.CORBA.ShortSeqHolder seq, int offset, int length);
+    public abstract void read_ushort_array (test.org.omg.CORBA.UShortSeqHolder seq, int offset, int length);
+    public abstract void read_long_array (test.org.omg.CORBA.LongSeqHolder seq, int offset, int length);
+    public abstract void read_ulong_array (test.org.omg.CORBA.ULongSeqHolder seq, int offset, int length);
+    public abstract void read_ulonglong_array (test.org.omg.CORBA.ULongLongSeqHolder seq, int offset, int length);
+    public abstract void read_longlong_array (test.org.omg.CORBA.LongLongSeqHolder seq, int offset, int length);
+    public abstract void read_float_array (test.org.omg.CORBA.FloatSeqHolder seq, int offset, int length);
+    public abstract void read_double_array (test.org.omg.CORBA.DoubleSeqHolder seq, int offset, int length);
 
-    // org.omg.CORBA.portable.ValueBase
+    // test.org.omg.CORBA.portable.ValueBase
     public abstract String[] _truncatable_ids();
 
     // java.io.InputStream
@@ -180,7 +176,7 @@ abstract class CDRInputStreamBase extends java.io.InputStream
     public abstract int getIndex();
     public abstract void setIndex(int value);
 
-    public abstract void orb(org.omg.CORBA.ORB orb);
+    public abstract void orb(test.org.omg.CORBA.ORB orb);
 
     public abstract BufferManagerRead getBufferManager();
     public abstract GIOPVersion getGIOPVersion();

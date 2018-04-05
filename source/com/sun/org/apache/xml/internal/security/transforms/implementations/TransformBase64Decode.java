@@ -38,11 +38,11 @@ import com.sun.org.apache.xml.internal.security.transforms.TransformSpi;
 import com.sun.org.apache.xml.internal.security.transforms.TransformationException;
 import com.sun.org.apache.xml.internal.security.transforms.Transforms;
 import com.sun.org.apache.xml.internal.security.utils.Base64;
-import org.w3c.dom.Document;
-import org.w3c.dom.Element;
-import org.w3c.dom.Node;
-import org.w3c.dom.Text;
-import org.xml.sax.SAXException;
+import test.org.w3c.dom.Document;
+import test.org.w3c.dom.Element;
+import test.org.w3c.dom.Node;
+import test.org.w3c.dom.Text;
+import test.org.xml.sax.SAXException;
 
 /**
  * Implements the <CODE>http://www.w3.org/2000/09/xmldsig#base64</CODE> decoding
@@ -161,7 +161,7 @@ public class TransformBase64Decode extends TransformSpi {
         }
     }
 
-    void traverseElement(org.w3c.dom.Element node, StringBuilder sb) {
+    void traverseElement(test.org.w3c.dom.Element node, StringBuilder sb) {
         Node sibling = node.getFirstChild();
         while (sibling != null) {
             switch (sibling.getNodeType()) {

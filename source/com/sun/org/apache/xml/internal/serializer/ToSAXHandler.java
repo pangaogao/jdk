@@ -24,12 +24,12 @@ package com.sun.org.apache.xml.internal.serializer;
 
 import java.util.Vector;
 
-import org.xml.sax.Attributes;
-import org.xml.sax.ContentHandler;
-import org.xml.sax.ErrorHandler;
-import org.xml.sax.SAXException;
-import org.xml.sax.SAXParseException;
-import org.xml.sax.ext.LexicalHandler;
+import test.org.xml.sax.Attributes;
+import test.org.xml.sax.ContentHandler;
+import test.org.xml.sax.ErrorHandler;
+import test.org.xml.sax.SAXException;
+import test.org.xml.sax.SAXParseException;
+import test.org.xml.sax.ext.LexicalHandler;
 
 /**
  * This class is used to provide a base behavior to be inherited
@@ -102,7 +102,7 @@ public abstract class ToSAXHandler extends SerializerBase
     }
     /**
      * Do nothing.
-     * @see org.xml.sax.ext.LexicalHandler#startDTD(String, String, String)
+     * @see test.org.xml.sax.ext.LexicalHandler#startDTD(String, String, String)
      */
     public void startDTD(String arg0, String arg1, String arg2)
         throws SAXException
@@ -115,7 +115,7 @@ public abstract class ToSAXHandler extends SerializerBase
      *
      * @param characters The string of characters to process.
      *
-     * @throws org.xml.sax.SAXException
+     * @throws test.org.xml.sax.SAXException
      *
      * @see ExtendedContentHandler#characters(String)
      */
@@ -159,7 +159,7 @@ public abstract class ToSAXHandler extends SerializerBase
     /**
      * Do nothing as this is an abstract class. All subclasses will need to
      * define their behavior if it is different.
-     * @see org.xml.sax.ContentHandler#processingInstruction(String, String)
+     * @see test.org.xml.sax.ContentHandler#processingInstruction(String, String)
      */
     public void processingInstruction(String target, String data)
         throws SAXException
@@ -181,15 +181,15 @@ public abstract class ToSAXHandler extends SerializerBase
      * SAX method additional namespace or attribute information can occur before
      * or after this call, that is associated with this element.
      *
-     * @throws org.xml.sax.SAXException Any SAX exception, possibly
+     * @throws test.org.xml.sax.SAXException Any SAX exception, possibly
      *            wrapping another exception.
-     * @see org.xml.sax.ContentHandler#startElement
-     * @see org.xml.sax.ContentHandler#endElement
-     * @see org.xml.sax.AttributeList
+     * @see test.org.xml.sax.ContentHandler#startElement
+     * @see test.org.xml.sax.ContentHandler#endElement
+     * @see test.org.xml.sax.AttributeList
      *
-     * @throws org.xml.sax.SAXException
+     * @throws test.org.xml.sax.SAXException
      *
-     * @see org.xml.sax.ContentHandler#startElement(String,String,String,Attributes)
+     * @see test.org.xml.sax.ContentHandler#startElement(String,String,String,Attributes)
      */
     public void startElement(
         String arg0,
@@ -344,10 +344,10 @@ public abstract class ToSAXHandler extends SerializerBase
      * This method gets the node's value as a String and uses that String as if
      * it were an input character notification.
      * @param node the Node to serialize
-     * @throws org.xml.sax.SAXException
+     * @throws test.org.xml.sax.SAXException
      */
-    public void characters(org.w3c.dom.Node node)
-        throws org.xml.sax.SAXException
+    public void characters(test.org.w3c.dom.Node node)
+        throws test.org.xml.sax.SAXException
     {
         // remember the current node
         if (m_state != null)
@@ -364,7 +364,7 @@ public abstract class ToSAXHandler extends SerializerBase
     }
 
     /**
-     * @see org.xml.sax.ErrorHandler#fatalError(SAXParseException)
+     * @see test.org.xml.sax.ErrorHandler#fatalError(SAXParseException)
      */
     public void fatalError(SAXParseException exc) throws SAXException {
         super.fatalError(exc);
@@ -377,7 +377,7 @@ public abstract class ToSAXHandler extends SerializerBase
     }
 
     /**
-     * @see org.xml.sax.ErrorHandler#error(SAXParseException)
+     * @see test.org.xml.sax.ErrorHandler#error(SAXParseException)
      */
     public void error(SAXParseException exc) throws SAXException {
         super.error(exc);
@@ -388,7 +388,7 @@ public abstract class ToSAXHandler extends SerializerBase
     }
 
     /**
-     * @see org.xml.sax.ErrorHandler#warning(SAXParseException)
+     * @see test.org.xml.sax.ErrorHandler#warning(SAXParseException)
      */
     public void warning(SAXParseException exc) throws SAXException {
         super.warning(exc);

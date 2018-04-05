@@ -20,9 +20,9 @@
 
 package com.sun.org.apache.xerces.internal.dom;
 
-import org.w3c.dom.CharacterData;
-import org.w3c.dom.Comment;
-import org.w3c.dom.Node;
+import test.org.w3c.dom.CharacterData;
+import test.org.w3c.dom.Comment;
+import test.org.w3c.dom.Node;
 
 /**
  * Represents an XML (or HTML) comment.
@@ -57,7 +57,7 @@ public class CommentImpl
 
     /**
      * A short integer indicating what type of node this is. The named
-     * constants for this value are defined in the org.w3c.dom.Node interface.
+     * constants for this value are defined in the test.org.w3c.dom.Node interface.
      */
     public short getNodeType() {
         return Node.COMMENT_NODE;

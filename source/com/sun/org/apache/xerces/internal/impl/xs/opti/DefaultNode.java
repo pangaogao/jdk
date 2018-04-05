@@ -20,13 +20,13 @@
 
 package com.sun.org.apache.xerces.internal.impl.xs.opti;
 
-import org.w3c.dom.UserDataHandler;
-import org.w3c.dom.Node;
-import org.w3c.dom.Document;
-import org.w3c.dom.NodeList;
-import org.w3c.dom.NamedNodeMap;
+import test.org.w3c.dom.UserDataHandler;
+import test.org.w3c.dom.Node;
+import test.org.w3c.dom.Document;
+import test.org.w3c.dom.NodeList;
+import test.org.w3c.dom.NamedNodeMap;
 
-import org.w3c.dom.DOMException;
+import test.org.w3c.dom.DOMException;
 
 
 /**
@@ -42,7 +42,7 @@ public class DefaultNode implements Node {
     }
 
     //
-    // org.w3c.dom.Node methods
+    // test.org.w3c.dom.Node methods
     //
 
     // getter methods

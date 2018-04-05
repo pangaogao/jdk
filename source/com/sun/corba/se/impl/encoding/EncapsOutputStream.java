@@ -25,17 +25,12 @@
 
 package com.sun.corba.se.impl.encoding;
 
-import org.omg.CORBA.CompletionStatus;
+import test.org.omg.CORBA.CompletionStatus;
 
 import com.sun.corba.se.spi.orb.ORB;
 
 import com.sun.corba.se.spi.ior.iiop.GIOPVersion;
 
-import com.sun.corba.se.impl.encoding.CodeSetConversion;
-import com.sun.corba.se.impl.encoding.OSFCodeSetRegistry;
-import com.sun.corba.se.impl.encoding.CDROutputStream;
-import com.sun.corba.se.impl.encoding.BufferManagerWrite;
-import com.sun.corba.se.impl.encoding.BufferManagerFactory;
 import com.sun.corba.se.impl.protocol.giopmsgheaders.Message;
 import com.sun.corba.se.impl.orbutil.ORBConstants;
 
@@ -106,7 +101,7 @@ public class EncapsOutputStream extends CDROutputStream
               usePooledByteBuffers);
     }
 
-    public org.omg.CORBA.portable.InputStream create_input_stream() {
+    public test.org.omg.CORBA.portable.InputStream create_input_stream() {
         freeInternalCaches();
 
         return  EncapsInputStreamFactory.newEncapsInputStream(orb(),

@@ -25,20 +25,18 @@
 
 package com.sun.corba.se.impl.dynamicany;
 
-import org.omg.CORBA.TypeCode;
-import org.omg.CORBA.TCKind;
-import org.omg.CORBA.Any;
-import org.omg.CORBA.TypeCodePackage.BadKind;
-import org.omg.CORBA.TypeCodePackage.Bounds;
-import org.omg.CORBA.portable.InputStream;
-import org.omg.DynamicAny.*;
-import org.omg.DynamicAny.DynAnyPackage.TypeMismatch;
-import org.omg.DynamicAny.DynAnyPackage.InvalidValue;
-import org.omg.DynamicAny.DynAnyFactoryPackage.InconsistentTypeCode;
+import test.org.omg.CORBA.TypeCode;
+import test.org.omg.CORBA.TCKind;
+import test.org.omg.CORBA.Any;
+import test.org.omg.CORBA.TypeCodePackage.BadKind;
+import test.org.omg.CORBA.TypeCodePackage.Bounds;
+import test.org.omg.CORBA.portable.InputStream;
+import test.org.omg.DynamicAny.*;
+import test.org.omg.DynamicAny.DynAnyPackage.TypeMismatch;
+import test.org.omg.DynamicAny.DynAnyPackage.InvalidValue;
+import test.org.omg.DynamicAny.DynAnyFactoryPackage.InconsistentTypeCode;
 
 import com.sun.corba.se.spi.orb.ORB ;
-import com.sun.corba.se.spi.logging.CORBALogDomains ;
-import com.sun.corba.se.impl.logging.ORBUtilSystemException ;
 
 abstract class DynAnyComplexImpl extends DynAnyConstructedImpl
 {
@@ -83,7 +81,7 @@ abstract class DynAnyComplexImpl extends DynAnyConstructedImpl
     // _REVISIT_ Overridden to provide more efficient copying.
     // Copies all the internal representations which is faster than reconstructing them.
 /*
-    public org.omg.DynamicAny.DynAny copy() {
+    public test.org.omg.DynamicAny.DynAny copy() {
         if (status == STATUS_DESTROYED) {
             throw new OBJECT_NOT_EXIST();
         }
@@ -103,8 +101,8 @@ abstract class DynAnyComplexImpl extends DynAnyConstructedImpl
     //
 
     public String current_member_name ()
-        throws org.omg.DynamicAny.DynAnyPackage.TypeMismatch,
-               org.omg.DynamicAny.DynAnyPackage.InvalidValue
+        throws test.org.omg.DynamicAny.DynAnyPackage.TypeMismatch,
+               test.org.omg.DynamicAny.DynAnyPackage.InvalidValue
     {
         if (status == STATUS_DESTROYED) {
             throw wrapper.dynAnyDestroyed() ;
@@ -116,8 +114,8 @@ abstract class DynAnyComplexImpl extends DynAnyConstructedImpl
     }
 
     public TCKind current_member_kind ()
-        throws org.omg.DynamicAny.DynAnyPackage.TypeMismatch,
-               org.omg.DynamicAny.DynAnyPackage.InvalidValue
+        throws test.org.omg.DynamicAny.DynAnyPackage.TypeMismatch,
+               test.org.omg.DynamicAny.DynAnyPackage.InvalidValue
     {
         if (status == STATUS_DESTROYED) {
             throw wrapper.dynAnyDestroyed() ;
@@ -129,9 +127,9 @@ abstract class DynAnyComplexImpl extends DynAnyConstructedImpl
     }
 
     // Creates references to the parameter instead of copying it.
-    public void set_members (org.omg.DynamicAny.NameValuePair[] value)
-        throws org.omg.DynamicAny.DynAnyPackage.TypeMismatch,
-               org.omg.DynamicAny.DynAnyPackage.InvalidValue
+    public void set_members (test.org.omg.DynamicAny.NameValuePair[] value)
+        throws test.org.omg.DynamicAny.DynAnyPackage.TypeMismatch,
+               test.org.omg.DynamicAny.DynAnyPackage.InvalidValue
     {
         if (status == STATUS_DESTROYED) {
             throw wrapper.dynAnyDestroyed() ;
@@ -203,9 +201,9 @@ abstract class DynAnyComplexImpl extends DynAnyConstructedImpl
     }
 
     // Creates references to the parameter instead of copying it.
-    public void set_members_as_dyn_any (org.omg.DynamicAny.NameDynAnyPair[] value)
-        throws org.omg.DynamicAny.DynAnyPackage.TypeMismatch,
-               org.omg.DynamicAny.DynAnyPackage.InvalidValue
+    public void set_members_as_dyn_any (test.org.omg.DynamicAny.NameDynAnyPair[] value)
+        throws test.org.omg.DynamicAny.DynAnyPackage.TypeMismatch,
+               test.org.omg.DynamicAny.DynAnyPackage.InvalidValue
     {
         if (status == STATUS_DESTROYED) {
             throw wrapper.dynAnyDestroyed() ;
@@ -287,7 +285,7 @@ abstract class DynAnyComplexImpl extends DynAnyConstructedImpl
         }
     }
 
-    private void allocComponents(org.omg.DynamicAny.NameValuePair[] value) {
+    private void allocComponents(test.org.omg.DynamicAny.NameValuePair[] value) {
         components = new DynAny[value.length];
         names = new String[value.length];
         nameValuePairs = value;
@@ -297,7 +295,7 @@ abstract class DynAnyComplexImpl extends DynAnyConstructedImpl
         }
     }
 
-    private void allocComponents(org.omg.DynamicAny.NameDynAnyPair[] value) {
+    private void allocComponents(test.org.omg.DynamicAny.NameDynAnyPair[] value) {
         components = new DynAny[value.length];
         names = new String[value.length];
         nameValuePairs = new NameValuePair[value.length];

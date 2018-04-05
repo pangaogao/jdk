@@ -8,8 +8,8 @@ package com.sun.corba.se.PortableActivationIDL;
 * Wednesday, March 15, 2017 1:33:57 AM PDT
 */
 
-public abstract class _RepositoryImplBase extends org.omg.CORBA.portable.ObjectImpl
-                implements com.sun.corba.se.PortableActivationIDL.Repository, org.omg.CORBA.portable.InvokeHandler
+public abstract class _RepositoryImplBase extends test.org.omg.CORBA.portable.ObjectImpl
+                implements com.sun.corba.se.PortableActivationIDL.Repository, test.org.omg.CORBA.portable.InvokeHandler
 {
 
   // Constructors
@@ -31,14 +31,14 @@ public abstract class _RepositoryImplBase extends org.omg.CORBA.portable.ObjectI
     _methods.put ("getServerID", new java.lang.Integer (8));
   }
 
-  public org.omg.CORBA.portable.OutputStream _invoke (String $method,
-                                org.omg.CORBA.portable.InputStream in,
-                                org.omg.CORBA.portable.ResponseHandler $rh)
+  public test.org.omg.CORBA.portable.OutputStream _invoke (String $method,
+                                                           test.org.omg.CORBA.portable.InputStream in,
+                                                           test.org.omg.CORBA.portable.ResponseHandler $rh)
   {
-    org.omg.CORBA.portable.OutputStream out = null;
+    test.org.omg.CORBA.portable.OutputStream out = null;
     java.lang.Integer __method = (java.lang.Integer)_methods.get ($method);
     if (__method == null)
-      throw new org.omg.CORBA.BAD_OPERATION (0, org.omg.CORBA.CompletionStatus.COMPLETED_MAYBE);
+      throw new test.org.omg.CORBA.BAD_OPERATION (0, test.org.omg.CORBA.CompletionStatus.COMPLETED_MAYBE);
 
     switch (__method.intValue ())
     {
@@ -71,7 +71,7 @@ public abstract class _RepositoryImplBase extends org.omg.CORBA.portable.ObjectI
        case 1:  // PortableActivationIDL/Repository/unregisterServer
        {
          try {
-           String serverId = org.omg.PortableInterceptor.ServerIdHelper.read (in);
+           String serverId = test.org.omg.PortableInterceptor.ServerIdHelper.read (in);
            this.unregisterServer (serverId);
            out = $rh.createReply();
          } catch (com.sun.corba.se.PortableActivationIDL.ServerNotRegistered $ex) {
@@ -87,7 +87,7 @@ public abstract class _RepositoryImplBase extends org.omg.CORBA.portable.ObjectI
        case 2:  // PortableActivationIDL/Repository/getServer
        {
          try {
-           String serverId = org.omg.PortableInterceptor.ServerIdHelper.read (in);
+           String serverId = test.org.omg.PortableInterceptor.ServerIdHelper.read (in);
            com.sun.corba.se.PortableActivationIDL.RepositoryPackage.ServerDef $result = null;
            $result = this.getServer (serverId);
            out = $rh.createReply();
@@ -105,7 +105,7 @@ public abstract class _RepositoryImplBase extends org.omg.CORBA.portable.ObjectI
        case 3:  // PortableActivationIDL/Repository/isInstalled
        {
          try {
-           String serverId = org.omg.PortableInterceptor.ServerIdHelper.read (in);
+           String serverId = test.org.omg.PortableInterceptor.ServerIdHelper.read (in);
            boolean $result = false;
            $result = this.isInstalled (serverId);
            out = $rh.createReply();
@@ -124,7 +124,7 @@ public abstract class _RepositoryImplBase extends org.omg.CORBA.portable.ObjectI
        case 4:  // PortableActivationIDL/Repository/install
        {
          try {
-           String serverId = org.omg.PortableInterceptor.ServerIdHelper.read (in);
+           String serverId = test.org.omg.PortableInterceptor.ServerIdHelper.read (in);
            this.install (serverId);
            out = $rh.createReply();
          } catch (com.sun.corba.se.PortableActivationIDL.ServerNotRegistered $ex) {
@@ -144,7 +144,7 @@ public abstract class _RepositoryImplBase extends org.omg.CORBA.portable.ObjectI
        case 5:  // PortableActivationIDL/Repository/uninstall
        {
          try {
-           String serverId = org.omg.PortableInterceptor.ServerIdHelper.read (in);
+           String serverId = test.org.omg.PortableInterceptor.ServerIdHelper.read (in);
            this.uninstall (serverId);
            out = $rh.createReply();
          } catch (com.sun.corba.se.PortableActivationIDL.ServerNotRegistered $ex) {
@@ -201,7 +201,7 @@ public abstract class _RepositoryImplBase extends org.omg.CORBA.portable.ObjectI
        }
 
        default:
-         throw new org.omg.CORBA.BAD_OPERATION (0, org.omg.CORBA.CompletionStatus.COMPLETED_MAYBE);
+         throw new test.org.omg.CORBA.BAD_OPERATION (0, test.org.omg.CORBA.CompletionStatus.COMPLETED_MAYBE);
     }
 
     return out;

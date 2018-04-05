@@ -33,10 +33,10 @@ package com.sun.corba.se.impl.protocol.giopmsgheaders;
 * Sunday, June 4, 2000 5:18:54 PM PDT
 */
 
-public final class TargetAddress implements org.omg.CORBA.portable.IDLEntity
+public final class TargetAddress implements test.org.omg.CORBA.portable.IDLEntity
 {
   private byte[] ___object_key;
-  private org.omg.IOP.TaggedProfile ___profile;
+  private test.org.omg.IOP.TaggedProfile ___profile;
   private com.sun.corba.se.impl.protocol.giopmsgheaders.IORAddressingInfo ___ior;
   private short __discriminator;
   private boolean __uninitialized = true;
@@ -48,14 +48,14 @@ public final class TargetAddress implements org.omg.CORBA.portable.IDLEntity
   public short discriminator ()
   {
     if (__uninitialized)
-      throw new org.omg.CORBA.BAD_OPERATION ();
+      throw new test.org.omg.CORBA.BAD_OPERATION ();
     return __discriminator;
   }
 
   public byte[] object_key ()
   {
     if (__uninitialized)
-      throw new org.omg.CORBA.BAD_OPERATION ();
+      throw new test.org.omg.CORBA.BAD_OPERATION ();
     verifyobject_key (__discriminator);
     return ___object_key;
   }
@@ -70,18 +70,18 @@ public final class TargetAddress implements org.omg.CORBA.portable.IDLEntity
   private void verifyobject_key (short discriminator)
   {
     if (discriminator != com.sun.corba.se.impl.protocol.giopmsgheaders.KeyAddr.value)
-      throw new org.omg.CORBA.BAD_OPERATION ();
+      throw new test.org.omg.CORBA.BAD_OPERATION ();
   }
 
-  public org.omg.IOP.TaggedProfile profile ()
+  public test.org.omg.IOP.TaggedProfile profile ()
   {
     if (__uninitialized)
-      throw new org.omg.CORBA.BAD_OPERATION ();
+      throw new test.org.omg.CORBA.BAD_OPERATION ();
     verifyprofile (__discriminator);
     return ___profile;
   }
 
-  public void profile (org.omg.IOP.TaggedProfile value)
+  public void profile (test.org.omg.IOP.TaggedProfile value)
   {
     __discriminator = com.sun.corba.se.impl.protocol.giopmsgheaders.ProfileAddr.value;
     ___profile = value;
@@ -91,13 +91,13 @@ public final class TargetAddress implements org.omg.CORBA.portable.IDLEntity
   private void verifyprofile (short discriminator)
   {
     if (discriminator != com.sun.corba.se.impl.protocol.giopmsgheaders.ProfileAddr.value)
-      throw new org.omg.CORBA.BAD_OPERATION ();
+      throw new test.org.omg.CORBA.BAD_OPERATION ();
   }
 
   public com.sun.corba.se.impl.protocol.giopmsgheaders.IORAddressingInfo ior ()
   {
     if (__uninitialized)
-      throw new org.omg.CORBA.BAD_OPERATION ();
+      throw new test.org.omg.CORBA.BAD_OPERATION ();
     verifyior (__discriminator);
     return ___ior;
   }
@@ -112,7 +112,7 @@ public final class TargetAddress implements org.omg.CORBA.portable.IDLEntity
   private void verifyior (short discriminator)
   {
     if (discriminator != com.sun.corba.se.impl.protocol.giopmsgheaders.ReferenceAddr.value)
-      throw new org.omg.CORBA.BAD_OPERATION ();
+      throw new test.org.omg.CORBA.BAD_OPERATION ();
   }
 
   public void _default ()

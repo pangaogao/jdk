@@ -32,39 +32,16 @@ import java.util.List;
 import java.util.Collections;
 import java.util.ArrayList;
 import java.io.IOException;
-import java.io.PrintStream;
-import java.io.ByteArrayOutputStream;
-import java.math.BigDecimal;
-import java.math.BigInteger;
 
-import org.omg.CORBA.TypeCode ;
-import org.omg.CORBA.StructMember ;
-import org.omg.CORBA.UnionMember ;
-import org.omg.CORBA.ValueMember ;
-import org.omg.CORBA.TCKind ;
-import org.omg.CORBA.Any ;
-import org.omg.CORBA.Principal ;
-import org.omg.CORBA.BAD_TYPECODE ;
-import org.omg.CORBA.BAD_PARAM ;
-import org.omg.CORBA.BAD_OPERATION ;
-import org.omg.CORBA.INTERNAL ;
-import org.omg.CORBA.MARSHAL ;
+import test.org.omg.CORBA.TypeCode ;
+import test.org.omg.CORBA.Any ;
+import test.org.omg.CORBA.Principal ;
 
-import org.omg.CORBA.TypeCodePackage.BadKind ;
+import test.org.omg.CORBA_2_3.portable.InputStream;
 
-import org.omg.CORBA_2_3.portable.InputStream;
-import org.omg.CORBA_2_3.portable.OutputStream;
-
-import com.sun.corba.se.spi.ior.iiop.GIOPVersion;
 import com.sun.corba.se.impl.corba.TypeCodeImpl;
-import com.sun.corba.se.spi.orb.ORB;
-import com.sun.corba.se.impl.encoding.OSFCodeSetRegistry;
-import com.sun.corba.se.impl.encoding.MarshalInputStream;
-import com.sun.corba.se.impl.encoding.CodeSetConversion;
-import com.sun.corba.se.impl.encoding.CDRInputStream;
-import com.sun.corba.se.impl.encoding.CDROutputStream;
 
-public class WrapperInputStream extends org.omg.CORBA_2_3.portable.InputStream implements TypeCodeReader
+public class WrapperInputStream extends test.org.omg.CORBA_2_3.portable.InputStream implements TypeCodeReader
 {
     private CDRInputStream stream;
     private Map typeMap = null;
@@ -141,15 +118,15 @@ public class WrapperInputStream extends org.omg.CORBA_2_3.portable.InputStream i
         stream.read_double_array(value, offset, length);
     }
 
-    public org.omg.CORBA.Object read_Object() { return stream.read_Object(); }
+    public test.org.omg.CORBA.Object read_Object() { return stream.read_Object(); }
     public java.io.Serializable read_value() {return stream.read_value();}
     public TypeCode read_TypeCode() { return stream.read_TypeCode(); }
     public Any read_any() { return stream.read_any(); }
     public Principal read_Principal() { return stream.read_Principal(); }
     public java.math.BigDecimal read_fixed() { return stream.read_fixed(); }
-    public org.omg.CORBA.Context read_Context() { return stream.read_Context(); }
+    public test.org.omg.CORBA.Context read_Context() { return stream.read_Context(); }
 
-    public org.omg.CORBA.ORB orb() { return stream.orb(); }
+    public test.org.omg.CORBA.ORB orb() { return stream.orb(); }
 
     public void addTypeCodeAtPosition(TypeCodeImpl tc, int position) {
         if (typeMap == null) {

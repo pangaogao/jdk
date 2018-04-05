@@ -25,20 +25,18 @@
 
 package com.sun.corba.se.impl.naming.cosnaming;
 
-import org.omg.CORBA.Object;
-import org.omg.CosNaming.Binding;
-import org.omg.CosNaming.NameComponent;
+import test.org.omg.CosNaming.Binding;
 
 /**
  * Class InternalBindingKey acts as a container for two objects, namely
- * a org.omg.CosNaming::Binding and an CORBA object reference, which are the two
+ * a test.org.omg.CosNaming::Binding and an CORBA object reference, which are the two
  * components associated with the binding.
  */
 public class InternalBindingValue
 {
     public Binding theBinding;
     public String strObjectRef;
-    public org.omg.CORBA.Object theObjectRef;
+    public test.org.omg.CORBA.Object theObjectRef;
 
     // Default constructor
     public InternalBindingValue() {}

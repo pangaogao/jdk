@@ -25,12 +25,12 @@
 
 package com.sun.corba.se.impl.oa.poa;
 
-import org.omg.CORBA.*;
-import org.omg.PortableServer.*;
+import test.org.omg.CORBA.*;
+import test.org.omg.PortableServer.*;
 
 final class IdAssignmentPolicyImpl
-extends org.omg.CORBA.LocalObject
-implements org.omg.PortableServer.IdAssignmentPolicy {
+extends test.org.omg.CORBA.LocalObject
+implements test.org.omg.PortableServer.IdAssignmentPolicy {
 
     public IdAssignmentPolicyImpl(IdAssignmentPolicyValue value) {
         this.value = value;

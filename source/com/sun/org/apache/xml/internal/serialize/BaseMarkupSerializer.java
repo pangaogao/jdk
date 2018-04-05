@@ -56,27 +56,27 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Vector;
 
-import org.w3c.dom.DOMError;
-import org.w3c.dom.DOMErrorHandler;
-import org.w3c.dom.DOMImplementation;
-import org.w3c.dom.Document;
-import org.w3c.dom.DocumentFragment;
-import org.w3c.dom.DocumentType;
-import org.w3c.dom.Element;
-import org.w3c.dom.Entity;
-import org.w3c.dom.NamedNodeMap;
-import org.w3c.dom.Node;
-import org.w3c.dom.Notation;
-import org.w3c.dom.ls.LSException;
-import org.w3c.dom.ls.LSSerializerFilter;
-import org.w3c.dom.traversal.NodeFilter;
-import org.xml.sax.ContentHandler;
-import org.xml.sax.DTDHandler;
-import org.xml.sax.DocumentHandler;
-import org.xml.sax.Locator;
-import org.xml.sax.SAXException;
-import org.xml.sax.ext.DeclHandler;
-import org.xml.sax.ext.LexicalHandler;
+import test.org.w3c.dom.DOMError;
+import test.org.w3c.dom.DOMErrorHandler;
+import test.org.w3c.dom.DOMImplementation;
+import test.org.w3c.dom.Document;
+import test.org.w3c.dom.DocumentFragment;
+import test.org.w3c.dom.DocumentType;
+import test.org.w3c.dom.Element;
+import test.org.w3c.dom.Entity;
+import test.org.w3c.dom.NamedNodeMap;
+import test.org.w3c.dom.Node;
+import test.org.w3c.dom.Notation;
+import test.org.w3c.dom.ls.LSException;
+import test.org.w3c.dom.ls.LSSerializerFilter;
+import test.org.w3c.dom.traversal.NodeFilter;
+import test.org.xml.sax.ContentHandler;
+import test.org.xml.sax.DTDHandler;
+import test.org.xml.sax.DocumentHandler;
+import test.org.xml.sax.Locator;
+import test.org.xml.sax.SAXException;
+import test.org.xml.sax.ext.DeclHandler;
+import test.org.xml.sax.ext.LexicalHandler;
 
 /**
  * Base class for a serializer supporting both DOM and SAX pretty
@@ -105,7 +105,7 @@ import org.xml.sax.ext.LexicalHandler;
  * If an I/O exception occurs while serializing, the serializer
  * will not throw an exception directly, but only throw it
  * at the end of serializing (either DOM or SAX's {@link
- * org.xml.sax.DocumentHandler#endDocument}.
+ * test.org.xml.sax.DocumentHandler#endDocument}.
  * <p>
  * For elements that are not specified as whitespace preserving,
  * the serializer will potentially break long text lines at space

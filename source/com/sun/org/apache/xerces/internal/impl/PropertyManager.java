@@ -49,7 +49,7 @@ public class PropertyManager {
     public static final String STAX_NOTATIONS = "javax.xml.stream.notations";
     public static final String STAX_ENTITIES = "javax.xml.stream.entities";
 
-    private static final String STRING_INTERNING = "http://xml.org/sax/features/string-interning";
+    private static final String STRING_INTERNING = "http://xml.test.org/sax/features/string-interning";
 
     /** Property identifier: Security manager. */
     private static final String SECURITY_MANAGER = Constants.SECURITY_MANAGER;

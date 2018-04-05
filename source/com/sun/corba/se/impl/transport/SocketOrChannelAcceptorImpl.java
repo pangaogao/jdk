@@ -64,7 +64,6 @@ import com.sun.corba.se.spi.transport.SocketInfo;
 import com.sun.corba.se.spi.transport.SocketOrChannelAcceptor;
 
 import com.sun.corba.se.impl.encoding.CDRInputObject;
-import com.sun.corba.se.impl.encoding.CDROutputObject;
 import com.sun.corba.se.impl.logging.ORBUtilSystemException;
 import com.sun.corba.se.impl.oa.poa.Policies; // REVISIT impl/poa specific
 import com.sun.corba.se.impl.orbutil.ORBConstants;
@@ -342,7 +341,7 @@ public class SocketOrChannelAcceptorImpl
                                  String codebase)
     {
         Iterator iterator = iorTemplate.iteratorById(
-            org.omg.IOP.TAG_INTERNET_IOP.value);
+            test.org.omg.IOP.TAG_INTERNET_IOP.value);
 
         String hostname = orb.getORBData().getORBServerHost();
 

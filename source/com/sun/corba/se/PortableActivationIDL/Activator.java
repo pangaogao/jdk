@@ -8,6 +8,6 @@ package com.sun.corba.se.PortableActivationIDL;
 * Wednesday, March 15, 2017 1:33:57 AM PDT
 */
 
-public interface Activator extends ActivatorOperations, org.omg.CORBA.Object, org.omg.CORBA.portable.IDLEntity 
+public interface Activator extends ActivatorOperations, test.org.omg.CORBA.Object, test.org.omg.CORBA.portable.IDLEntity
 {
 } // interface Activator

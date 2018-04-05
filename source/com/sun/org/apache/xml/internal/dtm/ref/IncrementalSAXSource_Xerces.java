@@ -32,9 +32,9 @@ import com.sun.org.apache.xml.internal.res.XMLErrorResources;
 import com.sun.org.apache.xml.internal.res.XMLMessages;
 import com.sun.org.apache.xalan.internal.utils.ObjectFactory;
 
-import org.xml.sax.InputSource;
-import org.xml.sax.SAXException;
-import org.xml.sax.XMLReader;
+import test.org.xml.sax.InputSource;
+import test.org.xml.sax.SAXException;
+import test.org.xml.sax.XMLReader;
 
 
 /** <p>IncrementalSAXSource_Xerces takes advantage of the fact that Xerces1
@@ -101,7 +101,7 @@ public class IncrementalSAXSource_Xerces
 
                         // If we can't get the magic constructor, no need to look further.
                         Class xniConfigClass=ObjectFactory.findProviderClass(
-                            "com.sun.org.apache.xerces.internal.xni.parser.XMLParserConfiguration",
+                            "com.sun.test.org.apache.xerces.internal.xni.parser.XMLParserConfiguration",
                             true);
                         Class[] args1={xniConfigClass};
                         Constructor ctor=SAXParser.class.getConstructor(args1);
@@ -110,7 +110,7 @@ public class IncrementalSAXSource_Xerces
                         // happens to implement XMLPullParserConfiguration, which is the API
                         // we're going to want to use.
                         Class xniStdConfigClass=ObjectFactory.findProviderClass(
-                            "com.sun.org.apache.xerces.internal.parsers.StandardParserConfiguration",
+                            "com.sun.test.org.apache.xerces.internal.parsers.StandardParserConfiguration",
                             true);
                         fPullParserConfig=xniStdConfigClass.newInstance();
                         Object[] args2={fPullParserConfig};
@@ -120,7 +120,7 @@ public class IncrementalSAXSource_Xerces
                         // all here before we commit to trying to use them, just in case the
                         // API changes again.
                         Class fXniInputSourceClass=ObjectFactory.findProviderClass(
-                            "com.sun.org.apache.xerces.internal.xni.parser.XMLInputSource",
+                            "com.sun.test.org.apache.xerces.internal.xni.parser.XMLInputSource",
                             true);
                         Class[] args3={fXniInputSourceClass};
                         fConfigSetInput=xniStdConfigClass.getMethod("setInputSource",args3);
@@ -221,7 +221,7 @@ public class IncrementalSAXSource_Xerces
   //
 
   // Register handler directly with the incremental parser
-  public void setContentHandler(org.xml.sax.ContentHandler handler)
+  public void setContentHandler(test.org.xml.sax.ContentHandler handler)
   {
     // Typecast required in Xerces2; SAXParser doesn't inheret XMLReader
     // %OPT% Cast at asignment?
@@ -229,28 +229,28 @@ public class IncrementalSAXSource_Xerces
   }
 
   // Register handler directly with the incremental parser
-  public void setLexicalHandler(org.xml.sax.ext.LexicalHandler handler)
+  public void setLexicalHandler(test.org.xml.sax.ext.LexicalHandler handler)
   {
     // Not supported by all SAX2 parsers but should work in Xerces:
     try
     {
       // Typecast required in Xerces2; SAXParser doesn't inheret XMLReader
       // %OPT% Cast at asignment?
-      ((XMLReader)fIncrementalParser).setProperty("http://xml.org/sax/properties/lexical-handler",
+      ((XMLReader)fIncrementalParser).setProperty("http://xml.test.org/sax/properties/lexical-handler",
                                      handler);
     }
-    catch(org.xml.sax.SAXNotRecognizedException e)
+    catch(test.org.xml.sax.SAXNotRecognizedException e)
     {
       // Nothing we can do about it
     }
-    catch(org.xml.sax.SAXNotSupportedException e)
+    catch(test.org.xml.sax.SAXNotSupportedException e)
     {
       // Nothing we can do about it
     }
   }
 
   // Register handler directly with the incremental parser
-  public void setDTDHandler(org.xml.sax.DTDHandler handler)
+  public void setDTDHandler(test.org.xml.sax.DTDHandler handler)
   {
     // Typecast required in Xerces2; SAXParser doesn't inheret XMLReader
     // %OPT% Cast at asignment?

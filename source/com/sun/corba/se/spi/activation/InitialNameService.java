@@ -8,6 +8,6 @@ package com.sun.corba.se.spi.activation;
 * Wednesday, March 15, 2017 1:33:57 AM PDT
 */
 
-public interface InitialNameService extends InitialNameServiceOperations, org.omg.CORBA.Object, org.omg.CORBA.portable.IDLEntity 
+public interface InitialNameService extends InitialNameServiceOperations, test.org.omg.CORBA.Object, test.org.omg.CORBA.portable.IDLEntity
 {
 } // interface InitialNameService

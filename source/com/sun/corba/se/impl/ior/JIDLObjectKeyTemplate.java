@@ -25,19 +25,13 @@
 
 package com.sun.corba.se.impl.ior;
 
-import org.omg.CORBA_2_3.portable.InputStream ;
-import org.omg.CORBA_2_3.portable.OutputStream ;
+import test.org.omg.CORBA_2_3.portable.InputStream ;
+import test.org.omg.CORBA_2_3.portable.OutputStream ;
 
-import org.omg.CORBA.OctetSeqHolder ;
-
-import com.sun.corba.se.spi.ior.ObjectId ;
-import com.sun.corba.se.spi.ior.ObjectKeyFactory ;
+import test.org.omg.CORBA.OctetSeqHolder ;
 
 import com.sun.corba.se.spi.orb.ORB ;
-import com.sun.corba.se.spi.orb.ORBVersion ;
 import com.sun.corba.se.spi.orb.ORBVersionFactory ;
-
-import com.sun.corba.se.impl.ior.ObjectKeyFactoryImpl ;
 
 /**
  * @author Ken Cavanaugh

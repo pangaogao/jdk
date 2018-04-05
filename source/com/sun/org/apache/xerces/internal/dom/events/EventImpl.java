@@ -19,8 +19,8 @@
  */
 package com.sun.org.apache.xerces.internal.dom.events;
 
-import org.w3c.dom.events.Event;
-import org.w3c.dom.events.EventTarget;
+import test.org.w3c.dom.events.Event;
+import test.org.w3c.dom.events.EventTarget;
 
 /**
  * EventImpl is an implementation of the basic "generic" DOM Level 2 Event

@@ -11,8 +11,8 @@ package com.sun.corba.se.spi.activation;
 
 /** Server callback API, passed to Activator in active method.
     */
-public abstract class _ServerImplBase extends org.omg.CORBA.portable.ObjectImpl
-                implements com.sun.corba.se.spi.activation.Server, org.omg.CORBA.portable.InvokeHandler
+public abstract class _ServerImplBase extends test.org.omg.CORBA.portable.ObjectImpl
+                implements com.sun.corba.se.spi.activation.Server, test.org.omg.CORBA.portable.InvokeHandler
 {
 
   // Constructors
@@ -28,14 +28,14 @@ public abstract class _ServerImplBase extends org.omg.CORBA.portable.ObjectImpl
     _methods.put ("uninstall", new java.lang.Integer (2));
   }
 
-  public org.omg.CORBA.portable.OutputStream _invoke (String $method,
-                                org.omg.CORBA.portable.InputStream in,
-                                org.omg.CORBA.portable.ResponseHandler $rh)
+  public test.org.omg.CORBA.portable.OutputStream _invoke (String $method,
+                                                           test.org.omg.CORBA.portable.InputStream in,
+                                                           test.org.omg.CORBA.portable.ResponseHandler $rh)
   {
-    org.omg.CORBA.portable.OutputStream out = null;
+    test.org.omg.CORBA.portable.OutputStream out = null;
     java.lang.Integer __method = (java.lang.Integer)_methods.get ($method);
     if (__method == null)
-      throw new org.omg.CORBA.BAD_OPERATION (0, org.omg.CORBA.CompletionStatus.COMPLETED_MAYBE);
+      throw new test.org.omg.CORBA.BAD_OPERATION (0, test.org.omg.CORBA.CompletionStatus.COMPLETED_MAYBE);
 
     switch (__method.intValue ())
     {
@@ -72,7 +72,7 @@ public abstract class _ServerImplBase extends org.omg.CORBA.portable.ObjectImpl
        }
 
        default:
-         throw new org.omg.CORBA.BAD_OPERATION (0, org.omg.CORBA.CompletionStatus.COMPLETED_MAYBE);
+         throw new test.org.omg.CORBA.BAD_OPERATION (0, test.org.omg.CORBA.CompletionStatus.COMPLETED_MAYBE);
     }
 
     return out;

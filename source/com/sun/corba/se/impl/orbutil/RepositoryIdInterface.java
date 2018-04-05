@@ -25,8 +25,6 @@
 
 package com.sun.corba.se.impl.orbutil;
 
-import org.omg.CORBA.ORB;
-import java.io.Serializable;
 import java.net.MalformedURLException;
 
 /**

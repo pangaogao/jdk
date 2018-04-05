@@ -39,16 +39,16 @@ import com.sun.org.apache.xerces.internal.xni.parser.XMLErrorHandler;
 import com.sun.org.apache.xerces.internal.xni.parser.XMLInputSource;
 import com.sun.org.apache.xerces.internal.xni.parser.XMLParseException;
 import com.sun.org.apache.xerces.internal.xni.parser.XMLParserConfiguration;
-import org.w3c.dom.Node;
-import org.xml.sax.EntityResolver;
-import org.xml.sax.ErrorHandler;
-import org.xml.sax.InputSource;
-import org.xml.sax.SAXException;
-import org.xml.sax.SAXNotRecognizedException;
-import org.xml.sax.SAXNotSupportedException;
-import org.xml.sax.SAXParseException;
-import org.xml.sax.ext.EntityResolver2;
-import org.xml.sax.helpers.LocatorImpl;
+import test.org.w3c.dom.Node;
+import test.org.xml.sax.EntityResolver;
+import test.org.xml.sax.ErrorHandler;
+import test.org.xml.sax.InputSource;
+import test.org.xml.sax.SAXException;
+import test.org.xml.sax.SAXNotRecognizedException;
+import test.org.xml.sax.SAXNotSupportedException;
+import test.org.xml.sax.SAXParseException;
+import test.org.xml.sax.ext.EntityResolver2;
+import test.org.xml.sax.helpers.LocatorImpl;
 
 /**
  * This is the main Xerces DOM parser class. It uses the abstract DOM
@@ -170,7 +170,7 @@ public class DOMParser
      *
      * @param systemId The system identifier (URI).
      *
-     * @exception org.xml.sax.SAXException Throws exception on SAX error.
+     * @exception test.org.xml.sax.SAXException Throws exception on SAX error.
      * @exception java.io.IOException Throws exception on i/o error.
      */
     public void parse(String systemId) throws SAXException, IOException {
@@ -225,7 +225,7 @@ public class DOMParser
      *
      * @param inputSource
      *
-     * @exception org.xml.sax.SAXException
+     * @exception test.org.xml.sax.SAXException
      * @exception java.io.IOException
      */
     public void parse(InputSource inputSource)
@@ -433,7 +433,7 @@ public class DOMParser
 
             // http://xml.org/sax/features/use-entity-resolver2
             //   controls whether the methods of an object implementing
-            //   org.xml.sax.ext.EntityResolver2 will be used by the parser.
+            //   test.org.xml.sax.ext.EntityResolver2 will be used by the parser.
             //
             if (featureId.equals(USE_ENTITY_RESOLVER2)) {
                 if (state != fUseEntityResolver2) {
@@ -475,7 +475,7 @@ public class DOMParser
      * @param featureId The unique identifier (URI) of the feature
      *                  being set.
      * @return The current state of the feature.
-     * @exception org.xml.sax.SAXNotRecognizedException If the
+     * @exception test.org.xml.sax.SAXNotRecognizedException If the
      *            requested feature is not known.
      * @exception SAXNotSupportedException If the
      *            requested feature is known but not supported.
@@ -487,7 +487,7 @@ public class DOMParser
 
             // http://xml.org/sax/features/use-entity-resolver2
             //   controls whether the methods of an object implementing
-            //   org.xml.sax.ext.EntityResolver2 will be used by the parser.
+            //   test.org.xml.sax.ext.EntityResolver2 will be used by the parser.
             //
             if (featureId.equals(USE_ENTITY_RESOLVER2)) {
                 return fUseEntityResolver2;
@@ -608,7 +608,7 @@ public class DOMParser
      * @param propertyId The unique identifier (URI) of the property
      *                   being set.
      * @return The current value of the property.
-     * @exception org.xml.sax.SAXNotRecognizedException If the
+     * @exception test.org.xml.sax.SAXNotRecognizedException If the
      *            requested property is not known.
      * @exception SAXNotSupportedException If the
      *            requested property is known but not supported.

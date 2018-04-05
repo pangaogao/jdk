@@ -22,7 +22,7 @@
  */
 package com.sun.org.apache.xml.internal.security.signature;
 
-import org.w3c.dom.Node;
+import test.org.w3c.dom.Node;
 
 /**
  * An interface to tell to the c14n if a node is included or not in the output

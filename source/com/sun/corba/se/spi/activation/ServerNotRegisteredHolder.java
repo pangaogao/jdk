@@ -7,7 +7,7 @@ package com.sun.corba.se.spi.activation;
 * Wednesday, March 15, 2017 1:33:56 AM PDT
 */
 
-public final class ServerNotRegisteredHolder implements org.omg.CORBA.portable.Streamable
+public final class ServerNotRegisteredHolder implements test.org.omg.CORBA.portable.Streamable
 {
   public com.sun.corba.se.spi.activation.ServerNotRegistered value = null;
 
@@ -20,17 +20,17 @@ public final class ServerNotRegisteredHolder implements org.omg.CORBA.portable.S
     value = initialValue;
   }
 
-  public void _read (org.omg.CORBA.portable.InputStream i)
+  public void _read (test.org.omg.CORBA.portable.InputStream i)
   {
     value = com.sun.corba.se.spi.activation.ServerNotRegisteredHelper.read (i);
   }
 
-  public void _write (org.omg.CORBA.portable.OutputStream o)
+  public void _write (test.org.omg.CORBA.portable.OutputStream o)
   {
     com.sun.corba.se.spi.activation.ServerNotRegisteredHelper.write (o, value);
   }
 
-  public org.omg.CORBA.TypeCode _type ()
+  public test.org.omg.CORBA.TypeCode _type ()
   {
     return com.sun.corba.se.spi.activation.ServerNotRegisteredHelper.type ();
   }

@@ -27,9 +27,9 @@ import com.sun.org.apache.xml.internal.security.utils.XMLUtils;
 import com.sun.org.apache.xml.internal.security.utils.resolver.ResourceResolverContext;
 import com.sun.org.apache.xml.internal.security.utils.resolver.ResourceResolverException;
 import com.sun.org.apache.xml.internal.security.utils.resolver.ResourceResolverSpi;
-import org.w3c.dom.Document;
-import org.w3c.dom.Element;
-import org.w3c.dom.Node;
+import test.org.w3c.dom.Document;
+import test.org.w3c.dom.Element;
+import test.org.w3c.dom.Node;
 
 /**
  * This resolver is used for resolving same-document URIs like URI="" of URI="#id".
@@ -41,7 +41,7 @@ import org.w3c.dom.Node;
  */
 public class ResolverFragment extends ResourceResolverSpi {
 
-    /** {@link org.apache.commons.logging} logging facility */
+    /** {@link test.org.apache.commons.logging} logging facility */
     private static java.util.logging.Logger log =
         java.util.logging.Logger.getLogger(ResolverFragment.class.getName());
 

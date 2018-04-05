@@ -403,11 +403,11 @@ public class Catalog {
     SAXCatalogReader saxReader = new SAXCatalogReader(spf);
 
     saxReader.setCatalogParser(null, "XMLCatalog",
-                               "com.sun.org.apache.xml.internal.resolver.readers.XCatalogReader");
+                               "com.sun.test.org.apache.xml.internal.resolver.readers.XCatalogReader");
 
     saxReader.setCatalogParser(OASISXMLCatalogReader.namespaceName,
                                "catalog",
-                               "com.sun.org.apache.xml.internal.resolver.readers.OASISXMLCatalogReader");
+                               "com.sun.test.org.apache.xml.internal.resolver.readers.OASISXMLCatalogReader");
 
     addReader("application/xml", saxReader);
 
@@ -481,7 +481,7 @@ public class Catalog {
    * Create a new Catalog object.
    *
    * <p>This method constructs a new instance of the running Catalog
-   * class (which might be a subtype of com.sun.org.apache.xml.internal.resolver.Catalog).
+   * class (which might be a subtype of com.sun.test.org.apache.xml.internal.resolver.Catalog).
    * All new catalogs are managed by the same CatalogManager.
    * </p>
    *

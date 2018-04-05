@@ -27,10 +27,10 @@ import com.sun.org.apache.xml.internal.security.transforms.TransformParam;
 import com.sun.org.apache.xml.internal.security.utils.ElementProxy;
 import com.sun.org.apache.xml.internal.security.utils.HelperNodeList;
 import com.sun.org.apache.xml.internal.security.utils.XMLUtils;
-import org.w3c.dom.Document;
-import org.w3c.dom.Element;
-import org.w3c.dom.Node;
-import org.w3c.dom.NodeList;
+import test.org.w3c.dom.Document;
+import test.org.w3c.dom.Element;
+import test.org.w3c.dom.Node;
+import test.org.w3c.dom.NodeList;
 
 /**
  * Implements the parameters for the <A
@@ -70,7 +70,7 @@ public class XPath2FilterContainer extends ElementProxy implements TransformPara
 
     /** Field XPathFiler2NS */
     public static final String XPathFilter2NS =
-        "http://www.w3.org/2002/06/xmldsig-filter2";
+        "http://www.w3.test.org/2002/06/xmldsig-filter2";
 
     /**
      * Constructor XPath2FilterContainer

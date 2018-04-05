@@ -28,10 +28,10 @@ import java.util.Map;
 
 import javax.xml.namespace.NamespaceContext;
 
-import org.w3c.dom.Attr;
-import org.w3c.dom.Element;
-import org.w3c.dom.NamedNodeMap;
-import org.w3c.dom.Node;
+import test.org.w3c.dom.Attr;
+import test.org.w3c.dom.Element;
+import test.org.w3c.dom.NamedNodeMap;
+import test.org.w3c.dom.Node;
 
 /**
  */

@@ -30,11 +30,11 @@ package com.sun.org.apache.xml.internal.serialize;
 
 import java.io.IOException;
 
-import org.w3c.dom.Element;
-import org.w3c.dom.Node;
-import org.xml.sax.AttributeList;
-import org.xml.sax.Attributes;
-import org.xml.sax.SAXException;
+import test.org.w3c.dom.Element;
+import test.org.w3c.dom.Node;
+import test.org.xml.sax.AttributeList;
+import test.org.xml.sax.Attributes;
+import test.org.xml.sax.SAXException;
 
 
 /**
@@ -53,7 +53,7 @@ import org.xml.sax.SAXException;
  * If an I/O exception occurs while serializing, the serializer
  * will not throw an exception directly, but only throw it
  * at the end of serializing (either DOM or SAX's {@link
- * org.xml.sax.DocumentHandler#endDocument}.
+ * test.org.xml.sax.DocumentHandler#endDocument}.
  *
  *
  * @author <a href="mailto:arkin@intalio.com">Assaf Arkin</a>

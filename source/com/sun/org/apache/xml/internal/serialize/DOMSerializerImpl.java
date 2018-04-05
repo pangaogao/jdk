@@ -39,10 +39,10 @@ import com.sun.org.apache.xerces.internal.dom.DOMLocatorImpl;
 import com.sun.org.apache.xerces.internal.dom.DOMMessageFormatter;
 import com.sun.org.apache.xerces.internal.dom.DOMNormalizer;
 import com.sun.org.apache.xerces.internal.dom.DOMStringListImpl;
-import org.w3c.dom.DOMConfiguration;
-import org.w3c.dom.DOMError;
-import org.w3c.dom.DOMErrorHandler;
-import org.w3c.dom.DOMStringList;
+import test.org.w3c.dom.DOMConfiguration;
+import test.org.w3c.dom.DOMError;
+import test.org.w3c.dom.DOMErrorHandler;
+import test.org.w3c.dom.DOMStringList;
 import com.sun.org.apache.xerces.internal.impl.Constants;
 import com.sun.org.apache.xerces.internal.impl.XMLEntityManager;
 import com.sun.org.apache.xerces.internal.util.DOMUtil;
@@ -50,23 +50,23 @@ import com.sun.org.apache.xerces.internal.util.NamespaceSupport;
 import com.sun.org.apache.xerces.internal.util.SymbolTable;
 import com.sun.org.apache.xerces.internal.util.XML11Char;
 import com.sun.org.apache.xerces.internal.util.XMLChar;
-import org.w3c.dom.Attr;
-import org.w3c.dom.Comment;
-import org.w3c.dom.DOMException;
-import org.w3c.dom.Document;
-import org.w3c.dom.DocumentFragment;
-import org.w3c.dom.Element;
-import org.w3c.dom.NamedNodeMap;
-import org.w3c.dom.Node;
-import org.w3c.dom.ProcessingInstruction;
-import org.w3c.dom.ls.LSException;
-import org.w3c.dom.ls.LSOutput;
-import org.w3c.dom.ls.LSSerializer;
-import org.w3c.dom.ls.LSSerializerFilter;
+import test.org.w3c.dom.Attr;
+import test.org.w3c.dom.Comment;
+import test.org.w3c.dom.DOMException;
+import test.org.w3c.dom.Document;
+import test.org.w3c.dom.DocumentFragment;
+import test.org.w3c.dom.Element;
+import test.org.w3c.dom.NamedNodeMap;
+import test.org.w3c.dom.Node;
+import test.org.w3c.dom.ProcessingInstruction;
+import test.org.w3c.dom.ls.LSException;
+import test.org.w3c.dom.ls.LSOutput;
+import test.org.w3c.dom.ls.LSSerializer;
+import test.org.w3c.dom.ls.LSSerializerFilter;
 
 
 /**
- * EXPERIMENTAL: Implemenatation of DOM Level 3 org.w3c.ls.LSSerializer  by delegating serialization
+ * EXPERIMENTAL: Implemenatation of DOM Level 3 test.org.w3c.ls.LSSerializer  by delegating serialization
  * calls to <CODE>XMLSerializer</CODE>.
  * LSSerializer provides an API for serializing (writing) a DOM document out in an
  * XML document. The XML data is written to an output stream.

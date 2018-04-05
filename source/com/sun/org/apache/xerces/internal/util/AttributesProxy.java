@@ -22,8 +22,8 @@ package com.sun.org.apache.xerces.internal.util;
 
 import com.sun.org.apache.xerces.internal.impl.Constants;
 import com.sun.org.apache.xerces.internal.xni.XMLAttributes;
-import org.xml.sax.AttributeList;
-import org.xml.sax.ext.Attributes2;
+import test.org.xml.sax.AttributeList;
+import test.org.xml.sax.ext.Attributes2;
 
 /**
  * Wraps {@link XMLAttributes} and makes it look like

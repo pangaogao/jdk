@@ -29,7 +29,7 @@ package com.sun.org.apache.xml.internal.utils;
  * @see StylesheetPIHandler
  * @xsl.usage internal
  */
-public class StopParseException extends org.xml.sax.SAXException
+public class StopParseException extends test.org.xml.sax.SAXException
 {
         static final long serialVersionUID = 210102479218258961L;
   /**

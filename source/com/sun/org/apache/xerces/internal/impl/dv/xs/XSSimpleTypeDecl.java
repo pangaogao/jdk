@@ -34,7 +34,6 @@ import com.sun.org.apache.xerces.internal.impl.dv.ValidationContext;
 import com.sun.org.apache.xerces.internal.impl.dv.XSFacets;
 import com.sun.org.apache.xerces.internal.impl.dv.XSSimpleType;
 import com.sun.org.apache.xerces.internal.impl.xpath.regex.RegularExpression;
-import com.sun.org.apache.xerces.internal.impl.xpath.regex.ParseException;
 import com.sun.org.apache.xerces.internal.impl.xs.SchemaSymbols;
 import com.sun.org.apache.xerces.internal.impl.xs.util.ShortListImpl;
 import com.sun.org.apache.xerces.internal.impl.xs.util.StringListImpl;
@@ -52,7 +51,7 @@ import com.sun.org.apache.xerces.internal.xs.XSObjectList;
 import com.sun.org.apache.xerces.internal.xs.XSSimpleTypeDefinition;
 import com.sun.org.apache.xerces.internal.xs.XSTypeDefinition;
 import com.sun.org.apache.xerces.internal.xs.datatypes.ObjectList;
-import org.w3c.dom.TypeInfo;
+import test.org.w3c.dom.TypeInfo;
 
 /**
  * @xerces.internal
@@ -178,7 +177,7 @@ public class XSSimpleTypeDecl implements XSSimpleType, TypeInfo {
         "preserve", "replace", "collapse"
     };
 
-    static final String URI_SCHEMAFORSCHEMA = "http://www.w3.org/2001/XMLSchema";
+    static final String URI_SCHEMAFORSCHEMA = "http://www.w3.test.org/2001/XMLSchema";
     static final String ANY_TYPE = "anyType";
 
     // XML Schema 1.1 type constants
@@ -3223,7 +3222,7 @@ public class XSSimpleTypeDecl implements XSSimpleType, TypeInfo {
         /*
          * (non-Javadoc)
          *
-         * @see com.sun.org.apache.xerces.internal.xs.XSFacet#getAnnotation()
+         * @see com.sun.test.org.apache.xerces.internal.xs.XSFacet#getAnnotation()
          */
         /**
          * Optional. Annotation.
@@ -3235,7 +3234,7 @@ public class XSSimpleTypeDecl implements XSSimpleType, TypeInfo {
         /*
          * (non-Javadoc)
          *
-         * @see com.sun.org.apache.xerces.internal.xs.XSFacet#getAnnotations()
+         * @see com.sun.test.org.apache.xerces.internal.xs.XSFacet#getAnnotations()
          */
         /**
          * Optional. Annotations.
@@ -3245,42 +3244,42 @@ public class XSSimpleTypeDecl implements XSSimpleType, TypeInfo {
         }
 
         /* (non-Javadoc)
-         * @see com.sun.org.apache.xerces.internal.xs.XSFacet#getFacetKind()
+         * @see com.sun.test.org.apache.xerces.internal.xs.XSFacet#getFacetKind()
          */
         public short getFacetKind() {
             return kind;
         }
 
         /* (non-Javadoc)
-         * @see com.sun.org.apache.xerces.internal.xs.XSFacet#getLexicalFacetValue()
+         * @see com.sun.test.org.apache.xerces.internal.xs.XSFacet#getLexicalFacetValue()
          */
         public String getLexicalFacetValue() {
             return value;
         }
 
         /* (non-Javadoc)
-         * @see com.sun.org.apache.xerces.internal.xs.XSFacet#isFixed()
+         * @see com.sun.test.org.apache.xerces.internal.xs.XSFacet#isFixed()
          */
         public boolean getFixed() {
             return fixed;
         }
 
         /* (non-Javadoc)
-         * @see com.sun.org.apache.xerces.internal.xs.XSObject#getName()
+         * @see com.sun.test.org.apache.xerces.internal.xs.XSObject#getName()
          */
         public String getName() {
             return null;
         }
 
         /* (non-Javadoc)
-         * @see com.sun.org.apache.xerces.internal.xs.XSObject#getNamespace()
+         * @see com.sun.test.org.apache.xerces.internal.xs.XSObject#getNamespace()
          */
         public String getNamespace() {
             return null;
         }
 
         /* (non-Javadoc)
-         * @see com.sun.org.apache.xerces.internal.xs.XSObject#getNamespaceItem()
+         * @see com.sun.test.org.apache.xerces.internal.xs.XSObject#getNamespaceItem()
          */
         public XSNamespaceItem getNamespaceItem() {
             // REVISIT: implement
@@ -3288,7 +3287,7 @@ public class XSSimpleTypeDecl implements XSSimpleType, TypeInfo {
         }
 
         /* (non-Javadoc)
-         * @see com.sun.org.apache.xerces.internal.xs.XSObject#getType()
+         * @see com.sun.test.org.apache.xerces.internal.xs.XSObject#getType()
          */
         public short getType() {
             return XSConstants.FACET;
@@ -3308,42 +3307,42 @@ public class XSSimpleTypeDecl implements XSSimpleType, TypeInfo {
         }
 
         /* (non-Javadoc)
-         * @see com.sun.org.apache.xerces.internal.xs.XSFacet#getFacetKind()
+         * @see com.sun.test.org.apache.xerces.internal.xs.XSFacet#getFacetKind()
          */
         public short getFacetKind() {
             return kind;
         }
 
         /* (non-Javadoc)
-         * @see com.sun.org.apache.xerces.internal.xs.XSMultiValueFacet#getAnnotations()
+         * @see com.sun.test.org.apache.xerces.internal.xs.XSMultiValueFacet#getAnnotations()
          */
         public XSObjectList getAnnotations() {
             return annotations;
         }
 
         /* (non-Javadoc)
-         * @see com.sun.org.apache.xerces.internal.xs.XSMultiValueFacet#getLexicalFacetValues()
+         * @see com.sun.test.org.apache.xerces.internal.xs.XSMultiValueFacet#getLexicalFacetValues()
          */
         public StringList getLexicalFacetValues() {
             return values;
         }
 
         /* (non-Javadoc)
-         * @see com.sun.org.apache.xerces.internal.xs.XSObject#getName()
+         * @see com.sun.test.org.apache.xerces.internal.xs.XSObject#getName()
          */
         public String getName() {
             return null;
         }
 
         /* (non-Javadoc)
-         * @see com.sun.org.apache.xerces.internal.xs.XSObject#getNamespace()
+         * @see com.sun.test.org.apache.xerces.internal.xs.XSObject#getNamespace()
          */
         public String getNamespace() {
             return null;
         }
 
         /* (non-Javadoc)
-         * @see com.sun.org.apache.xerces.internal.xs.XSObject#getNamespaceItem()
+         * @see com.sun.test.org.apache.xerces.internal.xs.XSObject#getNamespaceItem()
          */
         public XSNamespaceItem getNamespaceItem() {
             // REVISIT: implement
@@ -3351,7 +3350,7 @@ public class XSSimpleTypeDecl implements XSSimpleType, TypeInfo {
         }
 
         /* (non-Javadoc)
-         * @see com.sun.org.apache.xerces.internal.xs.XSObject#getType()
+         * @see com.sun.test.org.apache.xerces.internal.xs.XSObject#getType()
          */
         public short getType() {
             return XSConstants.MULTIVALUE_FACET;

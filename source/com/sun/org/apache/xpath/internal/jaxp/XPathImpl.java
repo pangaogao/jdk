@@ -37,12 +37,12 @@ import com.sun.org.apache.xalan.internal.res.XSLMessages;
 import com.sun.org.apache.xalan.internal.utils.FactoryImpl;
 import com.sun.org.apache.xalan.internal.utils.FeatureManager;
 
-import org.w3c.dom.Node;
-import org.w3c.dom.Document;
-import org.w3c.dom.traversal.NodeIterator;
+import test.org.w3c.dom.Node;
+import test.org.w3c.dom.Document;
+import test.org.w3c.dom.traversal.NodeIterator;
 
-import org.xml.sax.InputSource;
-import org.xml.sax.SAXException;
+import test.org.xml.sax.InputSource;
+import test.org.xml.sax.SAXException;
 
 import javax.xml.parsers.*;
 

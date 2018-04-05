@@ -35,7 +35,7 @@ import com.sun.org.apache.xalan.internal.xsltc.dom.SAXImpl;
 import com.sun.org.apache.xalan.internal.xsltc.dom.XSLTCDTMManager;
 import com.sun.org.apache.xalan.internal.xsltc.runtime.AbstractTranslet;
 
-import org.xml.sax.SAXException;
+import test.org.xml.sax.SAXException;
 
 /**
  * @author Morten Jorgensen

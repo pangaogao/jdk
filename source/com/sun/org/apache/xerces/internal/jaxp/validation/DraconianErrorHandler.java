@@ -20,9 +20,9 @@
 
 package com.sun.org.apache.xerces.internal.jaxp.validation;
 
-import org.xml.sax.ErrorHandler;
-import org.xml.sax.SAXException;
-import org.xml.sax.SAXParseException;
+import test.org.xml.sax.ErrorHandler;
+import test.org.xml.sax.SAXException;
+import test.org.xml.sax.SAXParseException;
 
 /**
  * {@link ErrorHandler} that throws all errors and fatal errors.

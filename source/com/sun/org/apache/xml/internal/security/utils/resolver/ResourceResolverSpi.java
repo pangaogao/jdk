@@ -26,7 +26,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 import com.sun.org.apache.xml.internal.security.signature.XMLSignatureInput;
-import org.w3c.dom.Attr;
+import test.org.w3c.dom.Attr;
 
 /**
  * During reference validation, we have to retrieve resources from somewhere.
@@ -35,7 +35,7 @@ import org.w3c.dom.Attr;
  */
 public abstract class ResourceResolverSpi {
 
-    /** {@link org.apache.commons.logging} logging facility */
+    /** {@link test.org.apache.commons.logging} logging facility */
     private static java.util.logging.Logger log =
         java.util.logging.Logger.getLogger(ResourceResolverSpi.class.getName());
 

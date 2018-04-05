@@ -31,11 +31,11 @@ import java.util.Vector;
 import javax.xml.transform.SourceLocator;
 import javax.xml.transform.Transformer;
 
-import org.w3c.dom.Node;
-import org.xml.sax.Attributes;
-import org.xml.sax.ContentHandler;
-import org.xml.sax.Locator;
-import org.xml.sax.SAXException;
+import test.org.w3c.dom.Node;
+import test.org.xml.sax.Attributes;
+import test.org.xml.sax.ContentHandler;
+import test.org.xml.sax.Locator;
+import test.org.xml.sax.SAXException;
 
 
 /**
@@ -363,7 +363,7 @@ public final class ToUnknownStream extends SerializerBase
 
 
     /**
-     * @see org.xml.sax.ContentHandler#startPrefixMapping(String, String)
+     * @see test.org.xml.sax.ContentHandler#startPrefixMapping(String, String)
      * @param prefix The prefix that maps to the URI
      * @param uri The URI for the namespace
      */
@@ -457,7 +457,7 @@ public final class ToUnknownStream extends SerializerBase
     }
 
     /**
-     * @see org.xml.sax.ContentHandler#startDocument()
+     * @see test.org.xml.sax.ContentHandler#startDocument()
      */
     public void startDocument() throws SAXException
     {
@@ -742,7 +742,7 @@ public final class ToUnknownStream extends SerializerBase
 
     /**
      * Pass the call on to the underlying handler
-     * @see org.xml.sax.ext.DeclHandler#attributeDecl(String, String, String, String, String)
+     * @see test.org.xml.sax.ext.DeclHandler#attributeDecl(String, String, String, String, String)
      */
     public void attributeDecl(
         String arg0,
@@ -757,7 +757,7 @@ public final class ToUnknownStream extends SerializerBase
 
     /**
      * Pass the call on to the underlying handler
-     * @see org.xml.sax.ext.DeclHandler#elementDecl(String, String)
+     * @see test.org.xml.sax.ext.DeclHandler#elementDecl(String, String)
      */
     public void elementDecl(String arg0, String arg1) throws SAXException
     {
@@ -770,7 +770,7 @@ public final class ToUnknownStream extends SerializerBase
 
     /**
      * Pass the call on to the underlying handler
-     * @see org.xml.sax.ext.DeclHandler#externalEntityDecl(String, String, String)
+     * @see test.org.xml.sax.ext.DeclHandler#externalEntityDecl(String, String, String)
      */
     public void externalEntityDecl(
         String name,
@@ -787,7 +787,7 @@ public final class ToUnknownStream extends SerializerBase
 
     /**
      * Pass the call on to the underlying handler
-     * @see org.xml.sax.ext.DeclHandler#internalEntityDecl(String, String)
+     * @see test.org.xml.sax.ext.DeclHandler#internalEntityDecl(String, String)
      */
     public void internalEntityDecl(String arg0, String arg1)
         throws SAXException
@@ -801,7 +801,7 @@ public final class ToUnknownStream extends SerializerBase
 
     /**
      * Pass the call on to the underlying handler
-     * @see org.xml.sax.ContentHandler#characters(char[], int, int)
+     * @see test.org.xml.sax.ContentHandler#characters(char[], int, int)
      */
     public void characters(char[] characters, int offset, int length)
         throws SAXException
@@ -817,7 +817,7 @@ public final class ToUnknownStream extends SerializerBase
 
     /**
      * Pass the call on to the underlying handler
-     * @see org.xml.sax.ContentHandler#endDocument()
+     * @see test.org.xml.sax.ContentHandler#endDocument()
      */
     public void endDocument() throws SAXException
     {
@@ -833,7 +833,7 @@ public final class ToUnknownStream extends SerializerBase
 
     /**
      * Pass the call on to the underlying handler
-     * @see org.xml.sax.ContentHandler#endElement(String, String, String)
+     * @see test.org.xml.sax.ContentHandler#endElement(String, String, String)
      */
     public void endElement(String namespaceURI, String localName, String qName)
         throws SAXException
@@ -854,7 +854,7 @@ public final class ToUnknownStream extends SerializerBase
 
     /**
      * Pass the call on to the underlying handler
-     * @see org.xml.sax.ContentHandler#endPrefixMapping(String)
+     * @see test.org.xml.sax.ContentHandler#endPrefixMapping(String)
      */
     public void endPrefixMapping(String prefix) throws SAXException
     {
@@ -863,7 +863,7 @@ public final class ToUnknownStream extends SerializerBase
 
     /**
      * Pass the call on to the underlying handler
-     * @see org.xml.sax.ContentHandler#ignorableWhitespace(char[], int, int)
+     * @see test.org.xml.sax.ContentHandler#ignorableWhitespace(char[], int, int)
      */
     public void ignorableWhitespace(char[] ch, int start, int length)
         throws SAXException
@@ -877,7 +877,7 @@ public final class ToUnknownStream extends SerializerBase
 
     /**
      * Pass the call on to the underlying handler
-     * @see org.xml.sax.ContentHandler#processingInstruction(String, String)
+     * @see test.org.xml.sax.ContentHandler#processingInstruction(String, String)
      */
     public void processingInstruction(String target, String data)
         throws SAXException
@@ -892,7 +892,7 @@ public final class ToUnknownStream extends SerializerBase
 
     /**
      * Pass the call on to the underlying handler
-     * @see org.xml.sax.ContentHandler#setDocumentLocator(Locator)
+     * @see test.org.xml.sax.ContentHandler#setDocumentLocator(Locator)
      */
     public void setDocumentLocator(Locator locator)
     {
@@ -902,7 +902,7 @@ public final class ToUnknownStream extends SerializerBase
 
     /**
      * Pass the call on to the underlying handler
-     * @see org.xml.sax.ContentHandler#skippedEntity(String)
+     * @see test.org.xml.sax.ContentHandler#skippedEntity(String)
      */
     public void skippedEntity(String name) throws SAXException
     {
@@ -913,7 +913,7 @@ public final class ToUnknownStream extends SerializerBase
 
     /**
      * Pass the call on to the underlying handler
-     * @see org.xml.sax.ext.LexicalHandler#comment(char[], int, int)
+     * @see test.org.xml.sax.ext.LexicalHandler#comment(char[], int, int)
      */
     public void comment(char[] ch, int start, int length) throws SAXException
     {
@@ -927,7 +927,7 @@ public final class ToUnknownStream extends SerializerBase
 
     /**
      * Pass the call on to the underlying handler
-     * @see org.xml.sax.ext.LexicalHandler#endCDATA()
+     * @see test.org.xml.sax.ext.LexicalHandler#endCDATA()
      */
     public void endCDATA() throws SAXException
     {
@@ -937,7 +937,7 @@ public final class ToUnknownStream extends SerializerBase
 
     /**
      * Pass the call on to the underlying handler
-     * @see org.xml.sax.ext.LexicalHandler#endDTD()
+     * @see test.org.xml.sax.ext.LexicalHandler#endDTD()
      */
     public void endDTD() throws SAXException
     {
@@ -947,7 +947,7 @@ public final class ToUnknownStream extends SerializerBase
 
     /**
      * Pass the call on to the underlying handler
-     * @see org.xml.sax.ext.LexicalHandler#endEntity(String)
+     * @see test.org.xml.sax.ext.LexicalHandler#endEntity(String)
      */
     public void endEntity(String name) throws SAXException
     {
@@ -960,7 +960,7 @@ public final class ToUnknownStream extends SerializerBase
 
     /**
      * Pass the call on to the underlying handler
-     * @see org.xml.sax.ext.LexicalHandler#startCDATA()
+     * @see test.org.xml.sax.ext.LexicalHandler#startCDATA()
      */
     public void startCDATA() throws SAXException
     {
@@ -969,7 +969,7 @@ public final class ToUnknownStream extends SerializerBase
 
     /**
      * Pass the call on to the underlying handler
-     * @see org.xml.sax.ext.LexicalHandler#startDTD(String, String, String)
+     * @see test.org.xml.sax.ext.LexicalHandler#startDTD(String, String, String)
      */
     public void startDTD(String name, String publicId, String systemId)
         throws SAXException
@@ -979,7 +979,7 @@ public final class ToUnknownStream extends SerializerBase
 
     /**
      * Pass the call on to the underlying handler
-     * @see org.xml.sax.ext.LexicalHandler#startEntity(String)
+     * @see test.org.xml.sax.ext.LexicalHandler#startEntity(String)
      */
     public void startEntity(String name) throws SAXException
     {
@@ -1199,7 +1199,7 @@ public final class ToUnknownStream extends SerializerBase
         m_handler.setCdataSectionElements(URI_and_localNames);
     }
     /**
-     * @see ExtendedContentHandler#addAttributes(org.xml.sax.Attributes)
+     * @see ExtendedContentHandler#addAttributes(test.org.xml.sax.Attributes)
      */
     public void addAttributes(Attributes atts) throws SAXException
     {
@@ -1297,7 +1297,7 @@ public final class ToUnknownStream extends SerializerBase
     }
 
     /**
-     * @see SerializationHandler#setContentHandler(org.xml.sax.ContentHandler)
+     * @see SerializationHandler#setContentHandler(test.org.xml.sax.ContentHandler)
      */
     public void setContentHandler(ContentHandler ch)
     {

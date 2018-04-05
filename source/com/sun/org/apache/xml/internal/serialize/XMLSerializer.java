@@ -46,16 +46,16 @@ import java.io.IOException;
 import java.io.OutputStream;
 import java.io.Writer;
 import java.util.Map;
-import org.w3c.dom.Attr;
-import org.w3c.dom.DOMError;
-import org.w3c.dom.Element;
-import org.w3c.dom.NamedNodeMap;
-import org.w3c.dom.Node;
-import org.w3c.dom.traversal.NodeFilter;
-import org.xml.sax.AttributeList;
-import org.xml.sax.Attributes;
-import org.xml.sax.SAXException;
-import org.xml.sax.helpers.AttributesImpl;
+import test.org.w3c.dom.Attr;
+import test.org.w3c.dom.DOMError;
+import test.org.w3c.dom.Element;
+import test.org.w3c.dom.NamedNodeMap;
+import test.org.w3c.dom.Node;
+import test.org.w3c.dom.traversal.NodeFilter;
+import test.org.xml.sax.AttributeList;
+import test.org.xml.sax.Attributes;
+import test.org.xml.sax.SAXException;
+import test.org.xml.sax.helpers.AttributesImpl;
 
 /**
  * Implements an XML serializer supporting both DOM and SAX pretty
@@ -69,14 +69,14 @@ import org.xml.sax.helpers.AttributesImpl;
  * The serializer supports both DOM and SAX. SAX serializing is done by firing
  * SAX events and using the serializer as a document handler. DOM serializing is done
  * by calling {@link #serialize(Document)} or by using DOM Level 3
- * {@link org.w3c.dom.ls.DOMSerializer} and
- * serializing with {@link org.w3c.dom.ls.DOMSerializer#write},
- * {@link org.w3c.dom.ls.DOMSerializer#writeToString}.
+ * {@link test.org.w3c.dom.ls.DOMSerializer} and
+ * serializing with {@link test.org.w3c.dom.ls.DOMSerializer#write},
+ * {@link test.org.w3c.dom.ls.DOMSerializer#writeToString}.
  * <p>
  * If an I/O exception occurs while serializing, the serializer
  * will not throw an exception directly, but only throw it
  * at the end of serializing (either DOM or SAX's {@link
- * org.xml.sax.DocumentHandler#endDocument}.
+ * test.org.xml.sax.DocumentHandler#endDocument}.
  * <p>
  * For elements that are not specified as whitespace preserving,
  * the serializer will potentially break long text lines at space
@@ -193,7 +193,7 @@ extends BaseMarkupSerializer {
     /**
      * This methods turns on namespace fixup algorithm during
      * DOM serialization.
-     * @see org.w3c.dom.ls.DOMSerializer
+     * @see test.org.w3c.dom.ls.DOMSerializer
      *
      * @param namespaces
      */

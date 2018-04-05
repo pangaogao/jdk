@@ -19,7 +19,7 @@
  */
 package com.sun.org.apache.xerces.internal.impl.xs.traversers;
 
-import org.w3c.dom.Element;
+import test.org.w3c.dom.Element;
 import com.sun.org.apache.xerces.internal.impl.xs.opti.ElementImpl;
 
 /**

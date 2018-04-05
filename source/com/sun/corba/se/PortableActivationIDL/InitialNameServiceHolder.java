@@ -11,7 +11,7 @@ package com.sun.corba.se.PortableActivationIDL;
 /** Interface used to support binding references in the bootstrap name
     * service.
     */
-public final class InitialNameServiceHolder implements org.omg.CORBA.portable.Streamable
+public final class InitialNameServiceHolder implements test.org.omg.CORBA.portable.Streamable
 {
   public com.sun.corba.se.PortableActivationIDL.InitialNameService value = null;
 
@@ -24,17 +24,17 @@ public final class InitialNameServiceHolder implements org.omg.CORBA.portable.St
     value = initialValue;
   }
 
-  public void _read (org.omg.CORBA.portable.InputStream i)
+  public void _read (test.org.omg.CORBA.portable.InputStream i)
   {
     value = com.sun.corba.se.PortableActivationIDL.InitialNameServiceHelper.read (i);
   }
 
-  public void _write (org.omg.CORBA.portable.OutputStream o)
+  public void _write (test.org.omg.CORBA.portable.OutputStream o)
   {
     com.sun.corba.se.PortableActivationIDL.InitialNameServiceHelper.write (o, value);
   }
 
-  public org.omg.CORBA.TypeCode _type ()
+  public test.org.omg.CORBA.TypeCode _type ()
   {
     return com.sun.corba.se.PortableActivationIDL.InitialNameServiceHelper.type ();
   }

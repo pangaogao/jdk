@@ -42,7 +42,7 @@ public abstract class SerializerFactory
 {
 
 
-    public static final String FactoriesProperty = "com.sun.org.apache.xml.internal.serialize.factories";
+    public static final String FactoriesProperty = "com.sun.test.org.apache.xml.internal.serialize.factories";
 
 
     private static final Map<String, SerializerFactory>  _factories = Collections.synchronizedMap(new HashMap());

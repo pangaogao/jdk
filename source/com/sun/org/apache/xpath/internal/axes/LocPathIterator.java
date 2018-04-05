@@ -228,12 +228,12 @@ public abstract class LocPathIterator extends PredicatedNodeTest
    *
    * @throws javax.xml.transform.TransformerException if a runtime exception
    *         occurs.
-   * @throws org.xml.sax.SAXException
+   * @throws test.org.xml.sax.SAXException
    */
   public void executeCharsToContentHandler(
-          XPathContext xctxt, org.xml.sax.ContentHandler handler)
+          XPathContext xctxt, test.org.xml.sax.ContentHandler handler)
             throws javax.xml.transform.TransformerException,
-                   org.xml.sax.SAXException
+                   test.org.xml.sax.SAXException
   {
     LocPathIterator clone = (LocPathIterator)m_clones.getInstance();
 
@@ -601,7 +601,7 @@ public abstract class LocPathIterator extends PredicatedNodeTest
    * interface.</p>
    *
    * @return For now, always NodeFilter.SHOW_ALL & ~NodeFilter.SHOW_ENTITY_REFERENCE.
-   * @see org.w3c.dom.traversal.NodeIterator
+   * @see test.org.w3c.dom.traversal.NodeIterator
    */
   public int getWhatToShow()
   {
@@ -616,7 +616,7 @@ public abstract class LocPathIterator extends PredicatedNodeTest
    * interface.
    *
    * @return Always null.
-   * @see org.w3c.dom.traversal.NodeIterator
+   * @see test.org.w3c.dom.traversal.NodeIterator
    */
   public DTMFilter getFilter()
   {
@@ -1020,7 +1020,7 @@ public abstract class LocPathIterator extends PredicatedNodeTest
 //  /**
 //   * The analysis pattern built by the WalkerFactory.
 //   * TODO: Move to LocPathIterator.
-//   * @see com.sun.org.apache.xpath.internal.axes.WalkerFactory
+//   * @see com.sun.test.org.apache.xpath.internal.axes.WalkerFactory
 //   * @serial
 //   */
 //  protected int m_analysis = 0x00000000;

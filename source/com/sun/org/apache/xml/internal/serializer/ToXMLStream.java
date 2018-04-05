@@ -31,7 +31,7 @@ import javax.xml.transform.TransformerException;
 
 import com.sun.org.apache.xml.internal.serializer.utils.MsgKey;
 import com.sun.org.apache.xml.internal.serializer.utils.Utils;
-import org.xml.sax.SAXException;
+import test.org.xml.sax.SAXException;
 
 /**
  * This class converts SAX or SAX-like calls to a
@@ -111,12 +111,12 @@ public final class ToXMLStream extends ToStream
     /**
      * Receive notification of the beginning of a document.
      *
-     * @throws org.xml.sax.SAXException Any SAX exception, possibly
+     * @throws test.org.xml.sax.SAXException Any SAX exception, possibly
      *            wrapping another exception.
      *
-     * @throws org.xml.sax.SAXException
+     * @throws test.org.xml.sax.SAXException
      */
-    public void startDocumentInternal() throws org.xml.sax.SAXException
+    public void startDocumentInternal() throws test.org.xml.sax.SAXException
     {
 
         if (m_needToCallStartDocument)
@@ -190,12 +190,12 @@ public final class ToXMLStream extends ToStream
     /**
      * Receive notification of the end of a document.
      *
-     * @throws org.xml.sax.SAXException Any SAX exception, possibly
+     * @throws test.org.xml.sax.SAXException Any SAX exception, possibly
      *            wrapping another exception.
      *
-     * @throws org.xml.sax.SAXException
+     * @throws test.org.xml.sax.SAXException
      */
-    public void endDocument() throws org.xml.sax.SAXException
+    public void endDocument() throws test.org.xml.sax.SAXException
     {
         flushPending();
         if (m_doIndent && !m_isprevtext)
@@ -226,9 +226,9 @@ public final class ToXMLStream extends ToStream
      * The contents of the whitespace preserving section will be delivered
      * through the regular <tt>characters</tt> event.
      *
-     * @throws org.xml.sax.SAXException
+     * @throws test.org.xml.sax.SAXException
      */
-    public void startPreserving() throws org.xml.sax.SAXException
+    public void startPreserving() throws test.org.xml.sax.SAXException
     {
 
         // Not sure this is really what we want.  -sb
@@ -242,9 +242,9 @@ public final class ToXMLStream extends ToStream
      *
      * @see #startPreserving
      *
-     * @throws org.xml.sax.SAXException
+     * @throws test.org.xml.sax.SAXException
      */
-    public void endPreserving() throws org.xml.sax.SAXException
+    public void endPreserving() throws test.org.xml.sax.SAXException
     {
 
         // Not sure this is really what we want.  -sb
@@ -257,13 +257,13 @@ public final class ToXMLStream extends ToStream
      * @param target The processing instruction target.
      * @param data The processing instruction data, or null if
      *        none was supplied.
-     * @throws org.xml.sax.SAXException Any SAX exception, possibly
+     * @throws test.org.xml.sax.SAXException Any SAX exception, possibly
      *            wrapping another exception.
      *
-     * @throws org.xml.sax.SAXException
+     * @throws test.org.xml.sax.SAXException
      */
     public void processingInstruction(String target, String data)
-        throws org.xml.sax.SAXException
+        throws test.org.xml.sax.SAXException
     {
         if (m_inEntityRef)
             return;
@@ -361,9 +361,9 @@ public final class ToXMLStream extends ToStream
      *
      * @param name The name of the entity.
      *
-     * @throws org.xml.sax.SAXException
+     * @throws test.org.xml.sax.SAXException
      */
-    public void entityReference(String name) throws org.xml.sax.SAXException
+    public void entityReference(String name) throws test.org.xml.sax.SAXException
     {
         if (m_elemContext.m_startTagOpen)
         {

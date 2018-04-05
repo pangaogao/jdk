@@ -39,7 +39,7 @@ public class ObjectFactory {
     //
     // Constants
     //
-     private static final String JAXP_INTERNAL = "com.sun.org.apache";
+     private static final String JAXP_INTERNAL = "com.sun.test.org.apache";
      private static final String STAX_INTERNAL = "com.sun.xml.internal";
 
     /** Set to true for debugging */

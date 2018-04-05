@@ -26,34 +26,28 @@
 package com.sun.corba.se.impl.protocol;
 
 import java.util.Iterator;
-import java.util.HashMap;
 
-import javax.rmi.CORBA.Tie;
+import test.org.omg.CORBA.CompletionStatus;
+import test.org.omg.CORBA.Context;
+import test.org.omg.CORBA.ContextList;
+import test.org.omg.CORBA.ExceptionList;
+import test.org.omg.CORBA.NamedValue;
+import test.org.omg.CORBA.NVList;
+import test.org.omg.CORBA.Request;
 
-import org.omg.CORBA.CompletionStatus;
-import org.omg.CORBA.Context;
-import org.omg.CORBA.ContextList;
-import org.omg.CORBA.ExceptionList;
-import org.omg.CORBA.NamedValue;
-import org.omg.CORBA.NVList;
-import org.omg.CORBA.Request;
-import org.omg.CORBA.TypeCode;
-
-import org.omg.CORBA.portable.ApplicationException;
-import org.omg.CORBA.portable.Delegate;
-import org.omg.CORBA.portable.InputStream;
-import org.omg.CORBA.portable.OutputStream;
-import org.omg.CORBA.portable.RemarshalException;
-import org.omg.CORBA.portable.ServantObject;
+import test.org.omg.CORBA.portable.ApplicationException;
+import test.org.omg.CORBA.portable.Delegate;
+import test.org.omg.CORBA.portable.InputStream;
+import test.org.omg.CORBA.portable.OutputStream;
+import test.org.omg.CORBA.portable.RemarshalException;
+import test.org.omg.CORBA.portable.ServantObject;
 
 import com.sun.corba.se.pept.broker.Broker;
 import com.sun.corba.se.pept.encoding.InputObject;
 import com.sun.corba.se.pept.encoding.OutputObject;
 import com.sun.corba.se.pept.protocol.ClientInvocationInfo;
 import com.sun.corba.se.pept.protocol.ClientRequestDispatcher;
-import com.sun.corba.se.pept.transport.ContactInfo;
 import com.sun.corba.se.pept.transport.ContactInfoList;
-import com.sun.corba.se.pept.transport.ContactInfoListIterator;
 
 import com.sun.corba.se.spi.presentation.rmi.StubAdapter;
 import com.sun.corba.se.spi.ior.IOR;
@@ -65,8 +59,6 @@ import com.sun.corba.se.spi.transport.CorbaContactInfoList;
 import com.sun.corba.se.spi.transport.CorbaContactInfoListIterator;
 
 import com.sun.corba.se.impl.corba.RequestImpl;
-import com.sun.corba.se.impl.protocol.CorbaInvocationInfo;
-import com.sun.corba.se.impl.transport.CorbaContactInfoListImpl;
 import com.sun.corba.se.impl.util.JDKBridge;
 import com.sun.corba.se.impl.logging.ORBUtilSystemException;
 
@@ -110,7 +102,7 @@ public class CorbaClientDelegateImpl extends CorbaClientDelegate
     // CORBA_2_3.portable.Delegate
     //
 
-    public OutputStream request(org.omg.CORBA.Object self,
+    public OutputStream request(test.org.omg.CORBA.Object self,
                                 String operation,
                                 boolean responseExpected)
     {
@@ -138,7 +130,7 @@ public class CorbaClientDelegateImpl extends CorbaClientDelegate
                                      !responseExpected, contactInfo);
     }
 
-    public InputStream invoke(org.omg.CORBA.Object self, OutputStream output)
+    public InputStream invoke(test.org.omg.CORBA.Object self, OutputStream output)
         throws
             ApplicationException,
             RemarshalException
@@ -148,7 +140,7 @@ public class CorbaClientDelegateImpl extends CorbaClientDelegate
             subcontract.marshalingComplete((Object)self, (OutputObject)output);
     }
 
-    public void releaseReply(org.omg.CORBA.Object self, InputStream input)
+    public void releaseReply(test.org.omg.CORBA.Object self, InputStream input)
     {
         // NOTE: InputStream may be null (e.g., exception request from PI).
         ClientRequestDispatcher subcontract = getClientRequestDispatcher();
@@ -163,32 +155,32 @@ public class CorbaClientDelegateImpl extends CorbaClientDelegate
             .getClientRequestDispatcher();
     }
 
-    public org.omg.CORBA.Object get_interface_def(org.omg.CORBA.Object obj)
+    public test.org.omg.CORBA.Object get_interface_def(test.org.omg.CORBA.Object obj)
     {
         InputStream is = null;
         // instantiate the stub
-        org.omg.CORBA.Object stub = null ;
+        test.org.omg.CORBA.Object stub = null ;
 
         try {
             OutputStream os = request(null, "_interface", true);
-            is = (InputStream) invoke((org.omg.CORBA.Object)null, os);
+            is = (InputStream) invoke((test.org.omg.CORBA.Object)null, os);
 
-            org.omg.CORBA.Object objimpl =
-                (org.omg.CORBA.Object) is.read_Object();
+            test.org.omg.CORBA.Object objimpl =
+                (test.org.omg.CORBA.Object) is.read_Object();
 
             // check if returned object is of correct type
-            if ( !objimpl._is_a("IDL:omg.org/CORBA/InterfaceDef:1.0") )
+            if ( !objimpl._is_a("IDL:omg.test.org/CORBA/InterfaceDef:1.0") )
                 throw wrapper.wrongInterfaceDef(CompletionStatus.COMPLETED_MAYBE);
 
             try {
-                stub = (org.omg.CORBA.Object)
-                    JDKBridge.loadClass("org.omg.CORBA._InterfaceDefStub").
+                stub = (test.org.omg.CORBA.Object)
+                    JDKBridge.loadClass("test.org.omg.CORBA._InterfaceDefStub").
                         newInstance();
             } catch (Exception ex) {
                 throw wrapper.noInterfaceDefStub( ex ) ;
             }
 
-            org.omg.CORBA.portable.Delegate del =
+            test.org.omg.CORBA.portable.Delegate del =
                 StubAdapter.getDelegate( objimpl ) ;
             StubAdapter.setDelegate( stub, del ) ;
         } catch (ApplicationException e) {
@@ -197,13 +189,13 @@ public class CorbaClientDelegateImpl extends CorbaClientDelegate
         } catch (RemarshalException e) {
             return get_interface_def(obj);
         } finally {
-            releaseReply((org.omg.CORBA.Object)null, (InputStream)is);
+            releaseReply((test.org.omg.CORBA.Object)null, (InputStream)is);
         }
 
         return stub;
     }
 
-    public boolean is_a(org.omg.CORBA.Object obj, String dest)
+    public boolean is_a(test.org.omg.CORBA.Object obj, String dest)
     {
         // dest is the typeId of the interface to compare against.
         // repositoryIds is the list of typeIds that the stub knows about.
@@ -228,7 +220,7 @@ public class CorbaClientDelegateImpl extends CorbaClientDelegate
         try {
             OutputStream os = request(null, "_is_a", true);
             os.write_string(dest);
-            is = (InputStream) invoke((org.omg.CORBA.Object) null, os);
+            is = (InputStream) invoke((test.org.omg.CORBA.Object) null, os);
 
             return is.read_boolean();
 
@@ -238,16 +230,16 @@ public class CorbaClientDelegateImpl extends CorbaClientDelegate
         } catch (RemarshalException e) {
             return is_a(obj, dest);
         } finally {
-            releaseReply((org.omg.CORBA.Object)null, (InputStream)is);
+            releaseReply((test.org.omg.CORBA.Object)null, (InputStream)is);
         }
     }
 
-    public boolean non_existent(org.omg.CORBA.Object obj)
+    public boolean non_existent(test.org.omg.CORBA.Object obj)
     {
         InputStream is = null;
         try {
             OutputStream os = request(null, "_non_existent", true);
-            is = (InputStream) invoke((org.omg.CORBA.Object)null, os);
+            is = (InputStream) invoke((test.org.omg.CORBA.Object)null, os);
 
             return is.read_boolean();
 
@@ -257,16 +249,16 @@ public class CorbaClientDelegateImpl extends CorbaClientDelegate
         } catch (RemarshalException e) {
             return non_existent(obj);
         } finally {
-            releaseReply((org.omg.CORBA.Object)null, (InputStream)is);
+            releaseReply((test.org.omg.CORBA.Object)null, (InputStream)is);
         }
     }
 
-    public org.omg.CORBA.Object duplicate(org.omg.CORBA.Object obj)
+    public test.org.omg.CORBA.Object duplicate(test.org.omg.CORBA.Object obj)
     {
         return obj;
     }
 
-    public void release(org.omg.CORBA.Object obj)
+    public void release(test.org.omg.CORBA.Object obj)
     {
         // DO NOT clear out internal variables to release memory
         // This delegate may be pointed-to by other objrefs.
@@ -274,8 +266,8 @@ public class CorbaClientDelegateImpl extends CorbaClientDelegate
 
     // obj._get_delegate() == this due to the argument passing conventions in
     // portable.ObjectImpl, so we just ignore obj here.
-    public boolean is_equivalent(org.omg.CORBA.Object obj,
-                                 org.omg.CORBA.Object ref)
+    public boolean is_equivalent(test.org.omg.CORBA.Object obj,
+                                 test.org.omg.CORBA.Object ref)
     {
         if ( ref == null )
             return false;
@@ -304,10 +296,10 @@ public class CorbaClientDelegateImpl extends CorbaClientDelegate
     }
 
     /**
-     * This method overrides the org.omg.CORBA.portable.Delegate.equals method,
+     * This method overrides the test.org.omg.CORBA.portable.Delegate.equals method,
      * and does the equality check based on IOR equality.
      */
-    public boolean equals(org.omg.CORBA.Object self, java.lang.Object other)
+    public boolean equals(test.org.omg.CORBA.Object self, java.lang.Object other)
     {
         if (other == null)
             return false ;
@@ -331,12 +323,12 @@ public class CorbaClientDelegateImpl extends CorbaClientDelegate
         return false;
     }
 
-    public int hashCode(org.omg.CORBA.Object obj)
+    public int hashCode(test.org.omg.CORBA.Object obj)
     {
         return this.hashCode() ;
     }
 
-    public int hash(org.omg.CORBA.Object obj, int maximum)
+    public int hash(test.org.omg.CORBA.Object obj, int maximum)
     {
         int h = this.hashCode();
         if ( h > maximum )
@@ -344,13 +336,13 @@ public class CorbaClientDelegateImpl extends CorbaClientDelegate
         return h;
     }
 
-    public Request request(org.omg.CORBA.Object obj, String operation)
+    public Request request(test.org.omg.CORBA.Object obj, String operation)
     {
         return new RequestImpl(orb, obj, null, operation, null, null, null,
                                null);
     }
 
-    public Request create_request(org.omg.CORBA.Object obj,
+    public Request create_request(test.org.omg.CORBA.Object obj,
                                   Context ctx,
                                   String operation,
                                   NVList arg_list,
@@ -360,7 +352,7 @@ public class CorbaClientDelegateImpl extends CorbaClientDelegate
                                result, null, null);
     }
 
-    public Request create_request(org.omg.CORBA.Object obj,
+    public Request create_request(test.org.omg.CORBA.Object obj,
                                   Context ctx,
                                   String operation,
                                   NVList arg_list,
@@ -372,7 +364,7 @@ public class CorbaClientDelegateImpl extends CorbaClientDelegate
                                exclist, ctxlist);
     }
 
-    public org.omg.CORBA.ORB orb(org.omg.CORBA.Object obj)
+    public test.org.omg.CORBA.ORB orb(test.org.omg.CORBA.Object obj)
     {
         return this.orb;
     }
@@ -387,14 +379,14 @@ public class CorbaClientDelegateImpl extends CorbaClientDelegate
      * @return true only if the servant incarnating this object is located in
      * this ORB.
      */
-    public boolean is_local(org.omg.CORBA.Object self)
+    public boolean is_local(test.org.omg.CORBA.Object self)
     {
         // XXX this need to check isNextCallValid
         return contactInfoList.getEffectiveTargetIOR().getProfile().
             isLocal();
     }
 
-    public ServantObject servant_preinvoke(org.omg.CORBA.Object self,
+    public ServantObject servant_preinvoke(test.org.omg.CORBA.Object self,
                                            String operation,
                                            Class expectedType)
     {
@@ -403,7 +395,7 @@ public class CorbaClientDelegateImpl extends CorbaClientDelegate
             .servant_preinvoke(self, operation, expectedType);
     }
 
-    public void servant_postinvoke(org.omg.CORBA.Object self,
+    public void servant_postinvoke(test.org.omg.CORBA.Object self,
                                    ServantObject servant)
     {
         contactInfoList.getLocalClientRequestDispatcher()
@@ -416,7 +408,7 @@ public class CorbaClientDelegateImpl extends CorbaClientDelegate
      * @return the codebase as a space delimited list of url strings or
      * null if none.
      */
-    public String get_codebase(org.omg.CORBA.Object self)
+    public String get_codebase(test.org.omg.CORBA.Object self)
     {
         if (contactInfoList.getTargetIOR() != null) {
             return contactInfoList.getTargetIOR().getProfile().getCodebase();
@@ -424,7 +416,7 @@ public class CorbaClientDelegateImpl extends CorbaClientDelegate
         return null;
     }
 
-    public String toString(org.omg.CORBA.Object self)
+    public String toString(test.org.omg.CORBA.Object self)
     {
         return contactInfoList.getTargetIOR().stringify();
     }

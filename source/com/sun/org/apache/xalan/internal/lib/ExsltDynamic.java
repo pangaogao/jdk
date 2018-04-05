@@ -38,13 +38,13 @@ import com.sun.org.apache.xpath.internal.objects.XNodeSet;
 import com.sun.org.apache.xpath.internal.objects.XNumber;
 import com.sun.org.apache.xpath.internal.objects.XObject;
 
-import org.w3c.dom.Document;
-import org.w3c.dom.Element;
-import org.w3c.dom.Node;
-import org.w3c.dom.NodeList;
-import org.w3c.dom.Text;
+import test.org.w3c.dom.Document;
+import test.org.w3c.dom.Element;
+import test.org.w3c.dom.Node;
+import test.org.w3c.dom.NodeList;
+import test.org.w3c.dom.Text;
 
-import org.xml.sax.SAXNotSupportedException;
+import test.org.xml.sax.SAXNotSupportedException;
 
 /**
  * This class contains EXSLT dynamic extension functions.
@@ -63,7 +63,7 @@ import org.xml.sax.SAXNotSupportedException;
 public class ExsltDynamic extends ExsltBase
 {
 
-   public static final String EXSL_URI = "http://exslt.org/common";
+   public static final String EXSL_URI = "http://exslt.test.org/common";
 
   /**
    * The dyn:max function calculates the maximum value for the nodes passed as

@@ -31,12 +31,12 @@ import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
 import javax.xml.parsers.ParserConfigurationException;
 
-import org.w3c.dom.Document;
-import org.w3c.dom.DocumentFragment;
-import org.w3c.dom.Element;
-import org.w3c.dom.Node;
-import org.xml.sax.InputSource;
-import org.xml.sax.SAXException;
+import test.org.w3c.dom.Document;
+import test.org.w3c.dom.DocumentFragment;
+import test.org.w3c.dom.Element;
+import test.org.w3c.dom.Node;
+import test.org.xml.sax.InputSource;
+import test.org.xml.sax.SAXException;
 
 /**
  * Converts <code>String</code>s into <code>Node</code>s and visa versa.
@@ -79,7 +79,7 @@ public class DocumentSerializer extends AbstractSerializer {
                 dbf = DocumentBuilderFactory.newInstance();
                 dbf.setNamespaceAware(true);
                 dbf.setFeature(XMLConstants.FEATURE_SECURE_PROCESSING, Boolean.TRUE);
-                dbf.setAttribute("http://xml.org/sax/features/namespaces", Boolean.TRUE);
+                dbf.setAttribute("http://xml.test.org/sax/features/namespaces", Boolean.TRUE);
                 dbf.setValidating(false);
             }
             DocumentBuilder db = dbf.newDocumentBuilder();

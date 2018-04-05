@@ -31,33 +31,23 @@
 
 package com.sun.corba.se.impl.io;
 
-import org.omg.CORBA.INTERNAL;
-import org.omg.CORBA.portable.OutputStream;
+import test.org.omg.CORBA.portable.OutputStream;
 
 import java.security.AccessController ;
 import java.security.PrivilegedAction ;
 
 import java.io.IOException;
-import java.io.DataOutputStream;
-import java.io.Serializable;
 import java.io.InvalidClassException;
-import java.io.StreamCorruptedException;
 import java.io.Externalizable;
-import java.io.ObjectStreamException;
 import java.io.NotSerializableException;
 import java.io.NotActiveException;
 
 import java.lang.reflect.InvocationTargetException;
-import java.lang.reflect.Field;
-
-import java.util.Stack;
 
 import javax.rmi.CORBA.Util;
-import javax.rmi.CORBA.ValueHandlerMultiFormat;
 
 import sun.corba.Bridge ;
 
-import com.sun.corba.se.impl.io.ObjectStreamClass;
 import com.sun.corba.se.impl.util.Utility;
 import com.sun.corba.se.impl.util.RepositoryId;
 
@@ -86,7 +76,7 @@ public class IIOPOutputStream
             }
         ) ;
 
-    private org.omg.CORBA_2_3.portable.OutputStream orbStream;
+    private test.org.omg.CORBA_2_3.portable.OutputStream orbStream;
 
     private Object currentObject = null;
 
@@ -117,18 +107,18 @@ public class IIOPOutputStream
 
         if (streamFormatVersion == 2) {
 
-            org.omg.CORBA.portable.ValueOutputStream vout
-                = (org.omg.CORBA.portable.ValueOutputStream)orbStream;
+            test.org.omg.CORBA.portable.ValueOutputStream vout
+                = (test.org.omg.CORBA.portable.ValueOutputStream)orbStream;
 
             vout.start_value(currentClassDesc.getRMIIIOPOptionalDataRepId());
         }
     }
 
-    final void setOrbStream(org.omg.CORBA_2_3.portable.OutputStream os) {
+    final void setOrbStream(test.org.omg.CORBA_2_3.portable.OutputStream os) {
         orbStream = os;
     }
 
-    final org.omg.CORBA_2_3.portable.OutputStream getOrbStream() {
+    final test.org.omg.CORBA_2_3.portable.OutputStream getOrbStream() {
         return orbStream;
     }
 
@@ -465,7 +455,7 @@ public class IIOPOutputStream
      * in orbutil.IIOPInputStream_1_3 in order to interoperate with
      * our legacy ORBs.
      */
-    protected void internalWriteUTF(org.omg.CORBA.portable.OutputStream stream,
+    protected void internalWriteUTF(test.org.omg.CORBA.portable.OutputStream stream,
                                     String data)
     {
         stream.write_wstring(data);
@@ -722,7 +712,7 @@ public class IIOPOutputStream
                     callType = ValueHandlerImpl.kRemoteType;
 
 
-                } else if (org.omg.CORBA.Object.class.isAssignableFrom(type)){
+                } else if (test.org.omg.CORBA.Object.class.isAssignableFrom(type)){
 
                     // IDL Object reference...
                     callType = ValueHandlerImpl.kRemoteType;

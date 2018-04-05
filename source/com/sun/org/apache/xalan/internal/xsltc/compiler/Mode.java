@@ -60,7 +60,7 @@ import java.util.Vector;
  * @author Jacek Ambroziak
  * @author Santiago Pericas-Geertsen
  * @author Morten Jorgensen
- * @author Erwin Bolwidt <ejb@klomp.org>
+ * @author Erwin Bolwidt <ejb@klomp.test.org>
  * @author G. Todd Miller
  */
 final class Mode implements Constants {
@@ -758,7 +758,7 @@ for (int i = 0; i < _templates.size(); i++) {
                                 argTypes, argNames, functionName(),
                                 getClassName(), mainIL,
                                 classGen.getConstantPool());
-        methodGen.addException("com.sun.org.apache.xalan.internal.xsltc.TransletException");
+        methodGen.addException("com.sun.test.org.apache.xalan.internal.xsltc.TransletException");
         // Insert an extra NOP just to keep "current" from appearing as if it
         // has a value before the start of the loop.
         mainIL.append(NOP);
@@ -1117,7 +1117,7 @@ for (int i = 0; i < _templates.size(); i++) {
                                 argTypes, argNames, functionName()+'_'+max,
                                 getClassName(), mainIL,
                                 classGen.getConstantPool());
-        methodGen.addException("com.sun.org.apache.xalan.internal.xsltc.TransletException");
+        methodGen.addException("com.sun.test.org.apache.xalan.internal.xsltc.TransletException");
 
         // Create the local variable to hold the current node
         final LocalVariableGen current;

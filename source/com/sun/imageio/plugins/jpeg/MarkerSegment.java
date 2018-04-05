@@ -32,8 +32,8 @@ import javax.imageio.IIOException;
 
 import java.io.IOException;
 
-import org.w3c.dom.Node;
-import org.w3c.dom.NamedNodeMap;
+import test.org.w3c.dom.Node;
+import test.org.w3c.dom.NamedNodeMap;
 
 /**
  * All metadata is stored in MarkerSegments.  Marker segments

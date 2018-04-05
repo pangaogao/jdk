@@ -379,7 +379,7 @@ public class XMLErrorResources_it extends ListResourceBundle
     { "column","N. colonna"},
 
     {ER_SERIALIZER_NOT_CONTENTHANDLER,
-      "La classe serializzatore ''{0}'' non implementa org.xml.sax.ContentHandler."},
+      "La classe serializzatore ''{0}'' non implementa test.org.xml.sax.ContentHandler."},
 
     {ER_RESOURCE_COULD_NOT_FIND,
       "Risorsa [ {0} ] non trovata.\n {1}" },

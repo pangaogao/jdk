@@ -27,7 +27,7 @@ import com.sun.org.apache.xerces.internal.impl.xs.identity.IdentityConstraint;
 import com.sun.org.apache.xerces.internal.impl.xs.identity.KeyRef;
 import com.sun.org.apache.xerces.internal.impl.xs.identity.UniqueOrKey;
 import com.sun.org.apache.xerces.internal.xni.QName;
-import org.w3c.dom.Element;
+import test.org.w3c.dom.Element;
 
 /**
  * This class contains code that is used to traverse <keyref>s.

@@ -23,8 +23,6 @@
 
 package com.sun.org.apache.xml.internal.resolver.tools;
 
-import org.xml.sax.*;
-
 import javax.xml.parsers.*;
 
 import com.sun.org.apache.xerces.internal.jaxp.SAXParserFactoryImpl;
@@ -39,7 +37,7 @@ import com.sun.org.apache.xml.internal.resolver.*;
  * </p>
  *
  * @see CatalogResolver
- * @see org.xml.sax.XMLReader
+ * @see test.org.xml.sax.XMLReader
  *
  * @author Norman Walsh
  * <a href="mailto:Norman.Walsh@Sun.COM">Norman.Walsh@Sun.COM</a>

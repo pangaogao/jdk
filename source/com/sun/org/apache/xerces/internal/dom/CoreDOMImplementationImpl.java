@@ -27,16 +27,16 @@ import com.sun.org.apache.xerces.internal.util.XMLChar;
 import com.sun.org.apache.xerces.internal.utils.ObjectFactory;
 import com.sun.org.apache.xerces.internal.xni.grammars.XMLGrammarDescription;
 import com.sun.org.apache.xml.internal.serialize.DOMSerializerImpl;
-import org.w3c.dom.DOMException;
-import org.w3c.dom.DOMImplementation;
-import org.w3c.dom.Document;
-import org.w3c.dom.DocumentType;
-import org.w3c.dom.Element;
-import org.w3c.dom.ls.LSParser;
-import org.w3c.dom.ls.DOMImplementationLS;
-import org.w3c.dom.ls.LSInput;
-import org.w3c.dom.ls.LSOutput;
-import org.w3c.dom.ls.LSSerializer;
+import test.org.w3c.dom.DOMException;
+import test.org.w3c.dom.DOMImplementation;
+import test.org.w3c.dom.Document;
+import test.org.w3c.dom.DocumentType;
+import test.org.w3c.dom.Element;
+import test.org.w3c.dom.ls.LSParser;
+import test.org.w3c.dom.ls.DOMImplementationLS;
+import test.org.w3c.dom.ls.LSInput;
+import test.org.w3c.dom.ls.LSOutput;
+import test.org.w3c.dom.ls.LSSerializer;
 /**
  * The DOMImplementation class is description of a particular
  * implementation of the Document Object Model. As such its data is
@@ -95,7 +95,7 @@ public class CoreDOMImplementationImpl
          *
          * @param feature The package name of the feature to test.
          * In Level 1, supported values are "HTML" and "XML" (case-insensitive).
-         * At this writing, com.sun.org.apache.xerces.internal.dom supports only XML.
+         * At this writing, com.sun.test.org.apache.xerces.internal.dom supports only XML.
          *
          * @param version The version number of the feature being tested.
          * This is interpreted as "Version of the DOM API supported for the
@@ -118,14 +118,14 @@ public class CoreDOMImplementationImpl
                 && (anyVersion || version.equals("3.0"))) {
                 try {
                     Class xpathClass = ObjectFactory.findProviderClass(
-                        "com.sun.org.apache.xpath.internal.domapi.XPathEvaluatorImpl", true);
+                        "com.sun.test.org.apache.xpath.internal.domapi.XPathEvaluatorImpl", true);
 
                 // Check if the DOM XPath implementation implements
-                // the interface org.w3c.dom.XPathEvaluator
+                // the interface test.org.w3c.dom.XPathEvaluator
                 Class interfaces[] = xpathClass.getInterfaces();
                 for (int i = 0; i < interfaces.length; i++) {
                     if (interfaces[i].getName().equals(
-                        "org.w3c.dom.xpath.XPathEvaluator")) {
+                        "test.org.w3c.dom.xpath.XPathEvaluator")) {
                         return true;
                     }
                 }
@@ -284,13 +284,13 @@ public class CoreDOMImplementationImpl
                 if ((feature.equalsIgnoreCase("+XPath"))) {
                     try {
                         Class xpathClass = ObjectFactory.findProviderClass(
-                            "com.sun.org.apache.xpath.internal.domapi.XPathEvaluatorImpl", true);
+                            "com.sun.test.org.apache.xpath.internal.domapi.XPathEvaluatorImpl", true);
                         // Check if the DOM XPath implementation implements
-                        // the interface org.w3c.dom.XPathEvaluator
+                        // the interface test.org.w3c.dom.XPathEvaluator
                         Class interfaces[] = xpathClass.getInterfaces();
                         for (int i = 0; i < interfaces.length; i++) {
                             if (interfaces[i].getName().equals(
-                                "org.w3c.dom.xpath.XPathEvaluator")) {
+                                "test.org.w3c.dom.xpath.XPathEvaluator")) {
                                 return xpathClass.newInstance();
                             }
                         }
@@ -351,8 +351,8 @@ public class CoreDOMImplementationImpl
         public LSParser createLSParser(short mode, String schemaType)
                 throws DOMException {
                 if (mode != DOMImplementationLS.MODE_SYNCHRONOUS || (schemaType !=null &&
-                   !"http://www.w3.org/2001/XMLSchema".equals(schemaType) &&
-                        !"http://www.w3.org/TR/REC-xml".equals(schemaType))) {
+                   !"http://www.w3.test.org/2001/XMLSchema".equals(schemaType) &&
+                        !"http://www.w3.test.org/TR/REC-xml".equals(schemaType))) {
                         String msg =
                                 DOMMessageFormatter.formatMessage(
                                         DOMMessageFormatter.DOM_DOMAIN,
@@ -361,7 +361,7 @@ public class CoreDOMImplementationImpl
                         throw new DOMException(DOMException.NOT_SUPPORTED_ERR, msg);
                 }
                 if (schemaType != null
-                        && schemaType.equals("http://www.w3.org/TR/REC-xml")) {
+                        && schemaType.equals("http://www.w3.test.org/TR/REC-xml")) {
                         return new DOMParserImpl(new DTDConfiguration(),
                                 schemaType);
                 }
@@ -410,7 +410,7 @@ public class CoreDOMImplementationImpl
             if(freeValidatorIndex < 0) {
                 return (RevalidationHandler) (ObjectFactory
                             .newInstance(
-                                "com.sun.org.apache.xerces.internal.impl.xs.XMLSchemaValidator",
+                                "com.sun.test.org.apache.xerces.internal.impl.xs.XMLSchemaValidator",
                                 ObjectFactory.findClassLoader(),
                                 true));
             }
@@ -423,7 +423,7 @@ public class CoreDOMImplementationImpl
             if(freeDTDValidatorIndex < 0) {
                 return (RevalidationHandler) (ObjectFactory
                             .newInstance(
-                                "com.sun.org.apache.xerces.internal.impl.dtd.XMLDTDValidator",
+                                "com.sun.test.org.apache.xerces.internal.impl.dtd.XMLDTDValidator",
                                 ObjectFactory.findClassLoader(),
                                 true));
             }

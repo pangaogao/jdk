@@ -21,10 +21,10 @@
 package com.sun.org.apache.xerces.internal.dom;
 
 import com.sun.org.apache.xerces.internal.util.URI;
-import org.w3c.dom.DocumentType;
-import org.w3c.dom.EntityReference;
-import org.w3c.dom.NamedNodeMap;
-import org.w3c.dom.Node;
+import test.org.w3c.dom.DocumentType;
+import test.org.w3c.dom.EntityReference;
+import test.org.w3c.dom.NamedNodeMap;
+import test.org.w3c.dom.Node;
 
 /**
  * EntityReference models the XML &entityname; syntax, when used for
@@ -127,7 +127,7 @@ implements EntityReference {
 
     /**
      * A short integer indicating what type of node this is. The named
-     * constants for this value are defined in the org.w3c.dom.Node interface.
+     * constants for this value are defined in the test.org.w3c.dom.Node interface.
      */
     public short getNodeType() {
         return Node.ENTITY_REFERENCE_NODE;

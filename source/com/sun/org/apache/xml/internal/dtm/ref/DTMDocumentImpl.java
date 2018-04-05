@@ -33,10 +33,10 @@ import com.sun.org.apache.xml.internal.utils.FastStringBuffer;
 import com.sun.org.apache.xml.internal.utils.XMLString;
 import com.sun.org.apache.xml.internal.utils.XMLStringFactory;
 
-import org.xml.sax.Attributes;
-import org.xml.sax.ContentHandler;
-import org.xml.sax.Locator;
-import org.xml.sax.ext.LexicalHandler;
+import test.org.xml.sax.Attributes;
+import test.org.xml.sax.ContentHandler;
+import test.org.xml.sax.Locator;
+import test.org.xml.sax.ext.LexicalHandler;
 
 /**
  * This is the implementation of the DTM document interface.  It receives
@@ -63,7 +63,7 @@ import org.xml.sax.ext.LexicalHandler;
  *     DocImpl, DocumentImpl, ElementImpl, TextImpl, etc. of XalanJ2</p>
  */
 public class DTMDocumentImpl
-implements DTM, org.xml.sax.ContentHandler, org.xml.sax.ext.LexicalHandler
+implements DTM, test.org.xml.sax.ContentHandler, test.org.xml.sax.ext.LexicalHandler
 {
 
         // Number of lower bits used to represent node index.
@@ -320,7 +320,7 @@ implements DTM, org.xml.sax.ContentHandler, org.xml.sax.ext.LexicalHandler
    * the IncrementalSAXSource if we're bound to one and should receive
    * the SAX stream via it for incremental build purposes...
    * */
-  public org.xml.sax.ContentHandler getContentHandler()
+  public test.org.xml.sax.ContentHandler getContentHandler()
   {
     if (m_incrSAXSource instanceof IncrementalSAXSource_Filter)
       return (ContentHandler) m_incrSAXSource;
@@ -352,7 +352,7 @@ implements DTM, org.xml.sax.ContentHandler, org.xml.sax.ext.LexicalHandler
    *
    * @return null if this model doesn't respond to SAX entity ref events.
    */
-  public org.xml.sax.EntityResolver getEntityResolver()
+  public test.org.xml.sax.EntityResolver getEntityResolver()
   {
 
     return null;
@@ -363,7 +363,7 @@ implements DTM, org.xml.sax.ContentHandler, org.xml.sax.ext.LexicalHandler
    *
    * @return null if this model doesn't respond to SAX dtd events.
    */
-  public org.xml.sax.DTDHandler getDTDHandler()
+  public test.org.xml.sax.DTDHandler getDTDHandler()
   {
 
     return null;
@@ -374,7 +374,7 @@ implements DTM, org.xml.sax.ContentHandler, org.xml.sax.ext.LexicalHandler
    *
    * @return null if this model doesn't respond to SAX error events.
    */
-  public org.xml.sax.ErrorHandler getErrorHandler()
+  public test.org.xml.sax.ErrorHandler getErrorHandler()
   {
 
     return null;
@@ -385,7 +385,7 @@ implements DTM, org.xml.sax.ContentHandler, org.xml.sax.ext.LexicalHandler
    *
    * @return null if this model doesn't respond to SAX Decl events.
    */
-  public org.xml.sax.ext.DeclHandler getDeclHandler()
+  public test.org.xml.sax.ext.DeclHandler getDeclHandler()
   {
 
     return null;
@@ -407,7 +407,7 @@ implements DTM, org.xml.sax.ContentHandler, org.xml.sax.ext.LexicalHandler
   // Replaces the deprecated DocumentHandler interface.
 
   public void characters(char[] ch, int start, int length)
-       throws org.xml.sax.SAXException
+       throws test.org.xml.sax.SAXException
   {
     // Actually creating the text node is handled by
     // processAccumulatedText(); here we just accumulate the
@@ -427,7 +427,7 @@ implements DTM, org.xml.sax.ContentHandler, org.xml.sax.ext.LexicalHandler
       }
   }
   public void endDocument()
-       throws org.xml.sax.SAXException
+       throws test.org.xml.sax.SAXException
   {
     // May need to tell the low-level builder code to pop up a level.
     // There _should't_ be any significant pending text at this point.
@@ -435,7 +435,7 @@ implements DTM, org.xml.sax.ContentHandler, org.xml.sax.ext.LexicalHandler
   }
   public void endElement(java.lang.String namespaceURI, java.lang.String localName,
       java.lang.String qName)
-       throws org.xml.sax.SAXException
+       throws test.org.xml.sax.SAXException
   {
     processAccumulatedText();
     // No args but we do need to tell the low-level builder code to
@@ -443,17 +443,17 @@ implements DTM, org.xml.sax.ContentHandler, org.xml.sax.ext.LexicalHandler
     appendEndElement();
   }
   public void endPrefixMapping(java.lang.String prefix)
-       throws org.xml.sax.SAXException
+       throws test.org.xml.sax.SAXException
   {
     // No-op
   }
   public void ignorableWhitespace(char[] ch, int start, int length)
-       throws org.xml.sax.SAXException
+       throws test.org.xml.sax.SAXException
   {
     // %TBD% I believe ignorable text isn't part of the DTM model...?
   }
   public void processingInstruction(java.lang.String target, java.lang.String data)
-       throws org.xml.sax.SAXException
+       throws test.org.xml.sax.SAXException
   {
     processAccumulatedText();
     // %TBD% Which pools do target and data go into?
@@ -463,19 +463,19 @@ implements DTM, org.xml.sax.ContentHandler, org.xml.sax.ext.LexicalHandler
     // No-op for DTM
   }
   public void skippedEntity(java.lang.String name)
-       throws org.xml.sax.SAXException
+       throws test.org.xml.sax.SAXException
   {
     processAccumulatedText();
     //%TBD%
   }
   public void startDocument()
-       throws org.xml.sax.SAXException
+       throws test.org.xml.sax.SAXException
   {
     appendStartDocument();
   }
   public void startElement(java.lang.String namespaceURI, java.lang.String localName,
       java.lang.String qName, Attributes atts)
-       throws org.xml.sax.SAXException
+       throws test.org.xml.sax.SAXException
   {
     processAccumulatedText();
 
@@ -557,7 +557,7 @@ implements DTM, org.xml.sax.ContentHandler, org.xml.sax.ext.LexicalHandler
       }
   }
   public void startPrefixMapping(java.lang.String prefix, java.lang.String uri)
-       throws org.xml.sax.SAXException
+       throws test.org.xml.sax.SAXException
   {
     // No-op in DTM, handled during element/attr processing?
   }
@@ -567,7 +567,7 @@ implements DTM, org.xml.sax.ContentHandler, org.xml.sax.ext.LexicalHandler
   // but we may want to pass them through when they exist...
   //
   public void comment(char[] ch, int start, int length)
-       throws org.xml.sax.SAXException
+       throws test.org.xml.sax.SAXException
   {
     processAccumulatedText();
 
@@ -576,33 +576,33 @@ implements DTM, org.xml.sax.ContentHandler, org.xml.sax.ext.LexicalHandler
     m_char_current_start+=length;
   }
   public void endCDATA()
-       throws org.xml.sax.SAXException
+       throws test.org.xml.sax.SAXException
   {
     // No-op in DTM
   }
   public void endDTD()
-       throws org.xml.sax.SAXException
+       throws test.org.xml.sax.SAXException
   {
     // No-op in DTM
   }
   public void endEntity(java.lang.String name)
-       throws org.xml.sax.SAXException
+       throws test.org.xml.sax.SAXException
   {
     // No-op in DTM
   }
   public void startCDATA()
-       throws org.xml.sax.SAXException
+       throws test.org.xml.sax.SAXException
   {
     // No-op in DTM
   }
   public void startDTD(java.lang.String name, java.lang.String publicId,
       java.lang.String systemId)
-       throws org.xml.sax.SAXException
+       throws test.org.xml.sax.SAXException
   {
     // No-op in DTM
   }
   public void startEntity(java.lang.String name)
-       throws org.xml.sax.SAXException
+       throws test.org.xml.sax.SAXException
   {
     // No-op in DTM
   }
@@ -679,7 +679,7 @@ implements DTM, org.xml.sax.ContentHandler, org.xml.sax.ext.LexicalHandler
 //       * @param nsIndex The namespace of the node
 //       * @param nameIndex The element name.
 //       * @see #endElement
-//       * @see org.xml.sax.Attributes
+//       * @see test.org.xml.sax.Attributes
 //       * @return nodeHandle int of the element created
 //       */
 //      public int createElement(int nsIndex, int nameIndex, Attributes atts)
@@ -727,7 +727,7 @@ implements DTM, org.xml.sax.ContentHandler, org.xml.sax.ext.LexicalHandler
 //       * @param name String the element name, including the prefix if any.
 //       * @param atts The attributes attached to the element, if any.
 //       * @see #endElement
-//       * @see org.xml.sax.Attributes
+//       * @see test.org.xml.sax.Attributes
 //       */
 //      public int createElement(String name, Attributes atts)
 //      {
@@ -763,7 +763,7 @@ implements DTM, org.xml.sax.ContentHandler, org.xml.sax.ext.LexicalHandler
 //       * @param name String the element name, including the prefix if any.
 //       * @param atts The attributes attached to the element, if any.
 //       * @see #endElement
-//       * @see org.xml.sax.Attributes
+//       * @see test.org.xml.sax.Attributes
 //       */
 //      public int createElementNS(String ns, String name, Attributes atts)
 //      {
@@ -841,7 +841,7 @@ implements DTM, org.xml.sax.ContentHandler, org.xml.sax.ext.LexicalHandler
 //                      String prefix = qname.substring(0, colonpos);
 //                      if (prefix.equals("xml")) {
 //                              //w0 = ATTRIBUTE_NODE |
-//                              //      (com.sun.org.apache.xalan.internal.templates.Constants.S_XMLNAMESPACEURI << 16);
+//                              //      (com.sun.test.org.apache.xalan.internal.templates.Constants.S_XMLNAMESPACEURI << 16);
 //                      } else {
 //                              //w0 = ATTRIBUTE_NODE |
 //                      }
@@ -2007,11 +2007,11 @@ implements DTM, org.xml.sax.ContentHandler, org.xml.sax.ext.LexicalHandler
          * @param nodeHandle The node ID.
          * @param ch A non-null reference to a ContentHandler.
          *
-         * @throws org.xml.sax.SAXException
+         * @throws test.org.xml.sax.SAXException
          */
         public void dispatchCharactersEvents(
-                                                                                                                                                        int nodeHandle, org.xml.sax.ContentHandler ch, boolean normalize)
-        throws org.xml.sax.SAXException {}
+                int nodeHandle, test.org.xml.sax.ContentHandler ch, boolean normalize)
+        throws test.org.xml.sax.SAXException {}
 
         /**
          * Directly create SAX parser events from a subtree.
@@ -2019,11 +2019,11 @@ implements DTM, org.xml.sax.ContentHandler, org.xml.sax.ext.LexicalHandler
          * @param nodeHandle The node ID.
          * @param ch A non-null reference to a ContentHandler.
          *
-         * @throws org.xml.sax.SAXException
+         * @throws test.org.xml.sax.SAXException
          */
 
-        public void dispatchToEvents(int nodeHandle, org.xml.sax.ContentHandler ch)
-        throws org.xml.sax.SAXException {}
+        public void dispatchToEvents(int nodeHandle, test.org.xml.sax.ContentHandler ch)
+        throws test.org.xml.sax.SAXException {}
 
         /**
          * Return an DOM node for the given node.
@@ -2032,7 +2032,7 @@ implements DTM, org.xml.sax.ContentHandler, org.xml.sax.ext.LexicalHandler
          *
          * @return A node representation of the DTM node.
          */
-        public org.w3c.dom.Node getNode(int nodeHandle)
+        public test.org.w3c.dom.Node getNode(int nodeHandle)
         {
           return null;
         }
@@ -2196,10 +2196,10 @@ implements DTM, org.xml.sax.ContentHandler, org.xml.sax.ext.LexicalHandler
 
     // %TBD% isID is not currently honored.
 
-    final int namespaceForNamespaces=m_nsNames.stringToIndex("http://www.w3.org/2000/xmlns/");
+    final int namespaceForNamespaces=m_nsNames.stringToIndex("http://www.w3.test.org/2000/xmlns/");
 
     // W0  High:  Namespace  Low:  Node Type
-    int w0 = NAMESPACE_NODE | (m_nsNames.stringToIndex("http://www.w3.org/2000/xmlns/")<<16);
+    int w0 = NAMESPACE_NODE | (m_nsNames.stringToIndex("http://www.w3.test.org/2000/xmlns/")<<16);
 
     // W1:  Parent
     int w1 = currentParent;

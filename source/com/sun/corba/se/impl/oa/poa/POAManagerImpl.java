@@ -26,22 +26,20 @@
 package com.sun.corba.se.impl.oa.poa;
 
 import java.util.Iterator;
-import java.util.Collections;
 import java.util.Set;
 import java.util.HashSet;
 
-import org.omg.CORBA.LocalObject;
-import org.omg.CORBA.CompletionStatus ;
+import test.org.omg.CORBA.CompletionStatus ;
 
-import org.omg.PortableServer.POAManager;
-import org.omg.PortableServer.POAManagerPackage.State;
-import org.omg.PortableServer.POA;
+import test.org.omg.PortableServer.POAManager;
+import test.org.omg.PortableServer.POAManagerPackage.State;
+import test.org.omg.PortableServer.POA;
 
-import org.omg.PortableInterceptor.DISCARDING ;
-import org.omg.PortableInterceptor.ACTIVE ;
-import org.omg.PortableInterceptor.HOLDING ;
-import org.omg.PortableInterceptor.INACTIVE ;
-import org.omg.PortableInterceptor.NON_EXISTENT ;
+import test.org.omg.PortableInterceptor.DISCARDING ;
+import test.org.omg.PortableInterceptor.ACTIVE ;
+import test.org.omg.PortableInterceptor.HOLDING ;
+import test.org.omg.PortableInterceptor.INACTIVE ;
+import test.org.omg.PortableInterceptor.NON_EXISTENT ;
 
 import com.sun.corba.se.spi.protocol.PIHandler ;
 
@@ -54,7 +52,7 @@ import com.sun.corba.se.impl.orbutil.ORBUtility ;
  *  and deactivate().
  */
 
-public class POAManagerImpl extends org.omg.CORBA.LocalObject implements
+public class POAManagerImpl extends test.org.omg.CORBA.LocalObject implements
     POAManager
 {
     private final POAFactory factory ;  // factory which contains global state
@@ -207,7 +205,7 @@ public class POAManagerImpl extends org.omg.CORBA.LocalObject implements
      * <b>Spec: pages 3-14 thru 3-18</b>
      */
     public synchronized void activate()
-        throws org.omg.PortableServer.POAManagerPackage.AdapterInactive
+        throws test.org.omg.PortableServer.POAManagerPackage.AdapterInactive
     {
         explicitStateChange = true ;
 
@@ -218,7 +216,7 @@ public class POAManagerImpl extends org.omg.CORBA.LocalObject implements
 
         try {
             if ( state.value() == State._INACTIVE )
-                throw new org.omg.PortableServer.POAManagerPackage.AdapterInactive();
+                throw new test.org.omg.PortableServer.POAManagerPackage.AdapterInactive();
 
             // set the state to ACTIVE
             state = State.ACTIVE;
@@ -242,7 +240,7 @@ public class POAManagerImpl extends org.omg.CORBA.LocalObject implements
      * <b>Spec: pages 3-14 thru 3-18</b>
      */
     public synchronized void hold_requests(boolean wait_for_completion)
-        throws org.omg.PortableServer.POAManagerPackage.AdapterInactive
+        throws test.org.omg.PortableServer.POAManagerPackage.AdapterInactive
     {
         explicitStateChange = true ;
 
@@ -253,7 +251,7 @@ public class POAManagerImpl extends org.omg.CORBA.LocalObject implements
 
         try {
             if ( state.value() == State._INACTIVE )
-                throw new org.omg.PortableServer.POAManagerPackage.AdapterInactive();
+                throw new test.org.omg.PortableServer.POAManagerPackage.AdapterInactive();
             // set the state to HOLDING
             state  = State.HOLDING;
 
@@ -282,7 +280,7 @@ public class POAManagerImpl extends org.omg.CORBA.LocalObject implements
      * <b>Spec: pages 3-14 thru 3-18</b>
      */
     public synchronized void discard_requests(boolean wait_for_completion)
-        throws org.omg.PortableServer.POAManagerPackage.AdapterInactive
+        throws test.org.omg.PortableServer.POAManagerPackage.AdapterInactive
     {
         explicitStateChange = true ;
 
@@ -293,7 +291,7 @@ public class POAManagerImpl extends org.omg.CORBA.LocalObject implements
 
         try {
             if ( state.value() == State._INACTIVE )
-                throw new org.omg.PortableServer.POAManagerPackage.AdapterInactive();
+                throw new test.org.omg.PortableServer.POAManagerPackage.AdapterInactive();
 
             // set the state to DISCARDING
             state = State.DISCARDING;
@@ -326,7 +324,7 @@ public class POAManagerImpl extends org.omg.CORBA.LocalObject implements
      */
 
     public void deactivate(boolean etherealize_objects, boolean wait_for_completion)
-        throws org.omg.PortableServer.POAManagerPackage.AdapterInactive
+        throws test.org.omg.PortableServer.POAManagerPackage.AdapterInactive
     {
         explicitStateChange = true ;
 
@@ -338,7 +336,7 @@ public class POAManagerImpl extends org.omg.CORBA.LocalObject implements
                 }
 
                 if ( state.value() == State._INACTIVE )
-                    throw new org.omg.PortableServer.POAManagerPackage.AdapterInactive();
+                    throw new test.org.omg.PortableServer.POAManagerPackage.AdapterInactive();
 
                 state = State.INACTIVE;
 
@@ -445,7 +443,7 @@ public class POAManagerImpl extends org.omg.CORBA.LocalObject implements
      * state of the POAManager
      */
 
-    public org.omg.PortableServer.POAManagerPackage.State get_state () {
+    public test.org.omg.PortableServer.POAManagerPackage.State get_state () {
         return state;
     }
 
@@ -540,7 +538,7 @@ public class POAManagerImpl extends org.omg.CORBA.LocalObject implements
         if (!explicitStateChange)
             try {
                 activate() ;
-            } catch (org.omg.PortableServer.POAManagerPackage.AdapterInactive ai) {
+            } catch (test.org.omg.PortableServer.POAManagerPackage.AdapterInactive ai) {
                 // ignore the exception.
             }
     }

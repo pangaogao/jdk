@@ -35,12 +35,12 @@ import com.sun.org.apache.xml.internal.security.signature.XMLSignatureInput;
 import com.sun.org.apache.xml.internal.security.transforms.params.InclusiveNamespaces;
 import com.sun.org.apache.xml.internal.security.utils.Constants;
 import com.sun.org.apache.xml.internal.security.utils.XMLUtils;
-import org.w3c.dom.Attr;
-import org.w3c.dom.Document;
-import org.w3c.dom.Element;
-import org.w3c.dom.NamedNodeMap;
-import org.w3c.dom.Node;
-import org.xml.sax.SAXException;
+import test.org.w3c.dom.Attr;
+import test.org.w3c.dom.Document;
+import test.org.w3c.dom.Element;
+import test.org.w3c.dom.NamedNodeMap;
+import test.org.w3c.dom.Node;
+import test.org.xml.sax.SAXException;
 
 /**
  * Implements &quot; <A
@@ -53,7 +53,7 @@ import org.xml.sax.SAXException;
  * <BR />
  * <i>THIS </i> implementation is a complete rewrite of the algorithm.
  *
- * @author Christian Geuer-Pollmann <geuerp@apache.org>
+ * @author Christian Geuer-Pollmann <geuerp@apache.test.org>
  * @version $Revision: 1147448 $
  * @see <a href="http://www.w3.org/TR/2002/REC-xml-exc-c14n-20020718/ Exclusive#">
  *          XML Canonicalization, Version 1.0</a>

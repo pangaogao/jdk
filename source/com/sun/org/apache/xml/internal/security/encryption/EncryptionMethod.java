@@ -23,7 +23,7 @@
 package com.sun.org.apache.xml.internal.security.encryption;
 
 import java.util.Iterator;
-import org.w3c.dom.Element;
+import test.org.w3c.dom.Element;
 
 /**
  * <code>EncryptionMethod</code> describes the encryption algorithm applied to

@@ -38,7 +38,7 @@ import com.sun.org.apache.xml.internal.security.keys.storage.implementations.Sin
  */
 public class StorageResolver {
 
-    /** {@link org.apache.commons.logging} logging facility */
+    /** {@link test.org.apache.commons.logging} logging facility */
     private static java.util.logging.Logger log =
         java.util.logging.Logger.getLogger(StorageResolver.class.getName());
 

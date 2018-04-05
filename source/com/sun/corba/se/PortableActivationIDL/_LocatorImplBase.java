@@ -8,8 +8,8 @@ package com.sun.corba.se.PortableActivationIDL;
 * Wednesday, March 15, 2017 1:33:57 AM PDT
 */
 
-public abstract class _LocatorImplBase extends org.omg.CORBA.portable.ObjectImpl
-                implements com.sun.corba.se.PortableActivationIDL.Locator, org.omg.CORBA.portable.InvokeHandler
+public abstract class _LocatorImplBase extends test.org.omg.CORBA.portable.ObjectImpl
+                implements com.sun.corba.se.PortableActivationIDL.Locator, test.org.omg.CORBA.portable.InvokeHandler
 {
 
   // Constructors
@@ -26,14 +26,14 @@ public abstract class _LocatorImplBase extends org.omg.CORBA.portable.ObjectImpl
     _methods.put ("getServerPortForType", new java.lang.Integer (3));
   }
 
-  public org.omg.CORBA.portable.OutputStream _invoke (String $method,
-                                org.omg.CORBA.portable.InputStream in,
-                                org.omg.CORBA.portable.ResponseHandler $rh)
+  public test.org.omg.CORBA.portable.OutputStream _invoke (String $method,
+                                                           test.org.omg.CORBA.portable.InputStream in,
+                                                           test.org.omg.CORBA.portable.ResponseHandler $rh)
   {
-    org.omg.CORBA.portable.OutputStream out = null;
+    test.org.omg.CORBA.portable.OutputStream out = null;
     java.lang.Integer __method = (java.lang.Integer)_methods.get ($method);
     if (__method == null)
-      throw new org.omg.CORBA.BAD_OPERATION (0, org.omg.CORBA.CompletionStatus.COMPLETED_MAYBE);
+      throw new test.org.omg.CORBA.BAD_OPERATION (0, test.org.omg.CORBA.CompletionStatus.COMPLETED_MAYBE);
 
     switch (__method.intValue ())
     {
@@ -45,7 +45,7 @@ public abstract class _LocatorImplBase extends org.omg.CORBA.portable.ObjectImpl
        case 0:  // PortableActivationIDL/Locator/locateServer
        {
          try {
-           String serverId = org.omg.PortableInterceptor.ServerIdHelper.read (in);
+           String serverId = test.org.omg.PortableInterceptor.ServerIdHelper.read (in);
            String endPoint = in.read_string ();
            com.sun.corba.se.PortableActivationIDL.LocatorPackage.ServerLocationPerType $result = null;
            $result = this.locateServer (serverId, endPoint);
@@ -72,8 +72,8 @@ public abstract class _LocatorImplBase extends org.omg.CORBA.portable.ObjectImpl
        case 1:  // PortableActivationIDL/Locator/locateServerForORB
        {
          try {
-           String serverId = org.omg.PortableInterceptor.ServerIdHelper.read (in);
-           String orbId = org.omg.PortableInterceptor.ORBIdHelper.read (in);
+           String serverId = test.org.omg.PortableInterceptor.ServerIdHelper.read (in);
+           String orbId = test.org.omg.PortableInterceptor.ORBIdHelper.read (in);
            com.sun.corba.se.PortableActivationIDL.LocatorPackage.ServerLocationPerORB $result = null;
            $result = this.locateServerForORB (serverId, orbId);
            out = $rh.createReply();
@@ -130,7 +130,7 @@ public abstract class _LocatorImplBase extends org.omg.CORBA.portable.ObjectImpl
        }
 
        default:
-         throw new org.omg.CORBA.BAD_OPERATION (0, org.omg.CORBA.CompletionStatus.COMPLETED_MAYBE);
+         throw new test.org.omg.CORBA.BAD_OPERATION (0, test.org.omg.CORBA.CompletionStatus.COMPLETED_MAYBE);
     }
 
     return out;

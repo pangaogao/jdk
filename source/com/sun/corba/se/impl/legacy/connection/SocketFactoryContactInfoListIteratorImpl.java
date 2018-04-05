@@ -25,8 +25,8 @@
 
 package com.sun.corba.se.impl.legacy.connection;
 
-import org.omg.CORBA.CompletionStatus;
-import org.omg.CORBA.SystemException;
+import test.org.omg.CORBA.CompletionStatus;
+import test.org.omg.CORBA.SystemException;
 
 import com.sun.corba.se.pept.transport.ContactInfo;
 
@@ -89,7 +89,7 @@ public class SocketFactoryContactInfoListIteratorImpl
     {
         this.failureContactInfo = (CorbaContactInfo)contactInfo;
         this.failureException = ex;
-        if (ex instanceof org.omg.CORBA.COMM_FAILURE) {
+        if (ex instanceof test.org.omg.CORBA.COMM_FAILURE) {
 
             if (ex.getCause() instanceof GetEndPointInfoAgainException) {
                 socketInfoCookie =

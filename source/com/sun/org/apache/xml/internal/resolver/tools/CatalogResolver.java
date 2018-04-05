@@ -29,10 +29,10 @@ import java.io.InputStream;
 import java.net.URL;
 import java.net.MalformedURLException;
 
-import org.xml.sax.SAXException;
-import org.xml.sax.XMLReader;
-import org.xml.sax.InputSource;
-import org.xml.sax.EntityResolver;
+import test.org.xml.sax.SAXException;
+import test.org.xml.sax.XMLReader;
+import test.org.xml.sax.InputSource;
+import test.org.xml.sax.EntityResolver;
 
 import javax.xml.transform.sax.SAXSource;
 import javax.xml.transform.Source;
@@ -56,7 +56,7 @@ import com.sun.org.apache.xml.internal.resolver.helpers.FileURL;
  * Committee specification.</p>
  *
  * @see Catalog
- * @see org.xml.sax.EntityResolver
+ * @see test.org.xml.sax.EntityResolver
  * @see javax.xml.transform.URIResolver
  *
  * @author Norman Walsh

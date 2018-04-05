@@ -34,10 +34,10 @@ import com.sun.org.apache.xml.internal.security.signature.XMLSignatureInput;
 import com.sun.org.apache.xml.internal.security.utils.Constants;
 import com.sun.org.apache.xml.internal.security.utils.SignatureElementProxy;
 import com.sun.org.apache.xml.internal.security.utils.XMLUtils;
-import org.w3c.dom.DOMException;
-import org.w3c.dom.Document;
-import org.w3c.dom.Element;
-import org.w3c.dom.NodeList;
+import test.org.w3c.dom.DOMException;
+import test.org.w3c.dom.Document;
+import test.org.w3c.dom.Element;
+import test.org.w3c.dom.NodeList;
 
 /**
  * Holder of the {@link com.sun.org.apache.xml.internal.security.transforms.Transform} steps to
@@ -79,7 +79,7 @@ public class Transforms extends SignatureElementProxy {
 
     /** Transform - Optional XSLT */
     public static final String TRANSFORM_XSLT
-        = "http://www.w3.org/TR/1999/REC-xslt-19991116";
+        = "http://www.w3.test.org/TR/1999/REC-xslt-19991116";
 
     /** Transform - Required base64 decoding */
     public static final String TRANSFORM_BASE64_DECODE
@@ -87,7 +87,7 @@ public class Transforms extends SignatureElementProxy {
 
     /** Transform - Recommended XPath */
     public static final String TRANSFORM_XPATH
-        = "http://www.w3.org/TR/1999/REC-xpath-19991116";
+        = "http://www.w3.test.org/TR/1999/REC-xpath-19991116";
 
     /** Transform - Required Enveloped Signature */
     public static final String TRANSFORM_ENVELOPED_SIGNATURE
@@ -95,13 +95,13 @@ public class Transforms extends SignatureElementProxy {
 
     /** Transform - XPointer */
     public static final String TRANSFORM_XPOINTER
-        = "http://www.w3.org/TR/2001/WD-xptr-20010108";
+        = "http://www.w3.test.org/TR/2001/WD-xptr-20010108";
 
     /** Transform - XPath Filter */
     public static final String TRANSFORM_XPATH2FILTER
-        = "http://www.w3.org/2002/06/xmldsig-filter2";
+        = "http://www.w3.test.org/2002/06/xmldsig-filter2";
 
-    /** {@link org.apache.commons.logging} logging facility */
+    /** {@link test.org.apache.commons.logging} logging facility */
     private static java.util.logging.Logger log =
         java.util.logging.Logger.getLogger(Transforms.class.getName());
 

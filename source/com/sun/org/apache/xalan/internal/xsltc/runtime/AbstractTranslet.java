@@ -49,8 +49,8 @@ import java.util.Vector;
 import javax.xml.parsers.DocumentBuilderFactory;
 import javax.xml.parsers.ParserConfigurationException;
 import javax.xml.transform.Templates;
-import org.w3c.dom.DOMImplementation;
-import org.w3c.dom.Document;
+import test.org.w3c.dom.DOMImplementation;
+import test.org.w3c.dom.Document;
 
 /**
  * @author Jacek Ambroziak

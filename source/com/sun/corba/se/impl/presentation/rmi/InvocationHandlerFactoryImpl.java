@@ -27,14 +27,10 @@ package com.sun.corba.se.impl.presentation.rmi ;
 
 import java.lang.reflect.InvocationHandler ;
 import java.lang.reflect.Proxy ;
-import java.lang.reflect.Method ;
-
-import org.omg.CORBA.portable.ObjectImpl ;
 
 import java.io.ObjectStreamException ;
 import java.io.Serializable ;
 
-import com.sun.corba.se.spi.presentation.rmi.IDLNameTranslator ;
 import com.sun.corba.se.spi.presentation.rmi.PresentationManager ;
 import com.sun.corba.se.spi.presentation.rmi.DynamicStub ;
 
@@ -113,9 +109,9 @@ public class InvocationHandlerFactoryImpl implements InvocationHandlerFactory
     InvocationHandler getInvocationHandler( DynamicStub stub )
     {
         // Create an invocation handler for the methods defined on DynamicStub,
-        // which extends org.omg.CORBA.Object.  This handler delegates all
+        // which extends test.org.omg.CORBA.Object.  This handler delegates all
         // calls directly to a DynamicStubImpl, which extends
-        // org.omg.CORBA.portable.ObjectImpl.
+        // test.org.omg.CORBA.portable.ObjectImpl.
         final InvocationHandler dynamicStubHandler =
             DelegateInvocationHandlerImpl.create( stub ) ;
 
@@ -134,7 +130,7 @@ public class InvocationHandlerFactoryImpl implements InvocationHandlerFactory
             public Void run() {
         handler.addInvocationHandler( DynamicStub.class,
             dynamicStubHandler ) ;
-        handler.addInvocationHandler( org.omg.CORBA.Object.class,
+        handler.addInvocationHandler( test.org.omg.CORBA.Object.class,
             dynamicStubHandler ) ;
         handler.addInvocationHandler( Object.class,
             dynamicStubHandler ) ;

@@ -15,25 +15,25 @@ abstract public class ServerProxyHelper
 {
   private static String  _id = "IDL:PortableActivationIDL/ServerProxy:1.0";
 
-  public static void insert (org.omg.CORBA.Any a, com.sun.corba.se.PortableActivationIDL.ServerProxy that)
+  public static void insert (test.org.omg.CORBA.Any a, com.sun.corba.se.PortableActivationIDL.ServerProxy that)
   {
-    org.omg.CORBA.portable.OutputStream out = a.create_output_stream ();
+    test.org.omg.CORBA.portable.OutputStream out = a.create_output_stream ();
     a.type (type ());
     write (out, that);
     a.read_value (out.create_input_stream (), type ());
   }
 
-  public static com.sun.corba.se.PortableActivationIDL.ServerProxy extract (org.omg.CORBA.Any a)
+  public static com.sun.corba.se.PortableActivationIDL.ServerProxy extract (test.org.omg.CORBA.Any a)
   {
     return read (a.create_input_stream ());
   }
 
-  private static org.omg.CORBA.TypeCode __typeCode = null;
-  synchronized public static org.omg.CORBA.TypeCode type ()
+  private static test.org.omg.CORBA.TypeCode __typeCode = null;
+  synchronized public static test.org.omg.CORBA.TypeCode type ()
   {
     if (__typeCode == null)
     {
-      __typeCode = org.omg.CORBA.ORB.init ().create_interface_tc (com.sun.corba.se.PortableActivationIDL.ServerProxyHelper.id (), "ServerProxy");
+      __typeCode = test.org.omg.CORBA.ORB.init ().create_interface_tc (com.sun.corba.se.PortableActivationIDL.ServerProxyHelper.id (), "ServerProxy");
     }
     return __typeCode;
   }
@@ -43,34 +43,34 @@ abstract public class ServerProxyHelper
     return _id;
   }
 
-  public static com.sun.corba.se.PortableActivationIDL.ServerProxy read (org.omg.CORBA.portable.InputStream istream)
+  public static com.sun.corba.se.PortableActivationIDL.ServerProxy read (test.org.omg.CORBA.portable.InputStream istream)
   {
     return narrow (istream.read_Object (_ServerProxyStub.class));
   }
 
-  public static void write (org.omg.CORBA.portable.OutputStream ostream, com.sun.corba.se.PortableActivationIDL.ServerProxy value)
+  public static void write (test.org.omg.CORBA.portable.OutputStream ostream, com.sun.corba.se.PortableActivationIDL.ServerProxy value)
   {
-    ostream.write_Object ((org.omg.CORBA.Object) value);
+    ostream.write_Object ((test.org.omg.CORBA.Object) value);
   }
 
-  public static com.sun.corba.se.PortableActivationIDL.ServerProxy narrow (org.omg.CORBA.Object obj)
+  public static com.sun.corba.se.PortableActivationIDL.ServerProxy narrow (test.org.omg.CORBA.Object obj)
   {
     if (obj == null)
       return null;
     else if (obj instanceof com.sun.corba.se.PortableActivationIDL.ServerProxy)
       return (com.sun.corba.se.PortableActivationIDL.ServerProxy)obj;
     else if (!obj._is_a (id ()))
-      throw new org.omg.CORBA.BAD_PARAM ();
+      throw new test.org.omg.CORBA.BAD_PARAM ();
     else
     {
-      org.omg.CORBA.portable.Delegate delegate = ((org.omg.CORBA.portable.ObjectImpl)obj)._get_delegate ();
+      test.org.omg.CORBA.portable.Delegate delegate = ((test.org.omg.CORBA.portable.ObjectImpl)obj)._get_delegate ();
       com.sun.corba.se.PortableActivationIDL._ServerProxyStub stub = new com.sun.corba.se.PortableActivationIDL._ServerProxyStub ();
       stub._set_delegate(delegate);
       return stub;
     }
   }
 
-  public static com.sun.corba.se.PortableActivationIDL.ServerProxy unchecked_narrow (org.omg.CORBA.Object obj)
+  public static com.sun.corba.se.PortableActivationIDL.ServerProxy unchecked_narrow (test.org.omg.CORBA.Object obj)
   {
     if (obj == null)
       return null;
@@ -78,7 +78,7 @@ abstract public class ServerProxyHelper
       return (com.sun.corba.se.PortableActivationIDL.ServerProxy)obj;
     else
     {
-      org.omg.CORBA.portable.Delegate delegate = ((org.omg.CORBA.portable.ObjectImpl)obj)._get_delegate ();
+      test.org.omg.CORBA.portable.Delegate delegate = ((test.org.omg.CORBA.portable.ObjectImpl)obj)._get_delegate ();
       com.sun.corba.se.PortableActivationIDL._ServerProxyStub stub = new com.sun.corba.se.PortableActivationIDL._ServerProxyStub ();
       stub._set_delegate(delegate);
       return stub;

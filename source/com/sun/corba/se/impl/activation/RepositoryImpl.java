@@ -36,11 +36,6 @@ import java.util.Hashtable;
 import java.util.Enumeration;
 import java.util.Vector;
 
-import org.omg.CORBA.CompletionStatus;
-import org.omg.CORBA.INITIALIZE;
-import org.omg.CORBA.INTERNAL;
-import org.omg.CORBA.SystemException;
-
 import com.sun.corba.se.spi.activation.BadServerDefinition;
 import com.sun.corba.se.spi.activation.RepositoryPackage.ServerDef;
 import com.sun.corba.se.spi.activation._RepositoryImplBase;
@@ -375,7 +370,7 @@ public class RepositoryImpl extends _RepositoryImplBase
             // See Bug 4396928 for more information about why we are
             // initializing the ORBClass to PIORB (now ORBImpl, but see the bug).
             Properties props = new Properties();
-            props.put("org.omg.CORBA.ORBClass",
+            props.put("test.org.omg.CORBA.ORBClass",
                 "com.sun.corba.se.impl.orb.ORBImpl");
             ORB orb = (ORB) ORB.init(args, props);
 

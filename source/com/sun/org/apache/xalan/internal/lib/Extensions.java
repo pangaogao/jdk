@@ -34,13 +34,13 @@ import java.util.Map;
 import java.util.StringTokenizer;
 import javax.xml.parsers.DocumentBuilderFactory;
 import javax.xml.parsers.ParserConfigurationException;
-import org.w3c.dom.Document;
-import org.w3c.dom.DocumentFragment;
-import org.w3c.dom.Node;
-import org.w3c.dom.NodeList;
-import org.w3c.dom.Text;
-import org.w3c.dom.traversal.NodeIterator;
-import org.xml.sax.SAXNotSupportedException;
+import test.org.w3c.dom.Document;
+import test.org.w3c.dom.DocumentFragment;
+import test.org.w3c.dom.Node;
+import test.org.w3c.dom.NodeList;
+import test.org.w3c.dom.Text;
+import test.org.w3c.dom.traversal.NodeIterator;
+import test.org.xml.sax.SAXNotSupportedException;
 
 /**
  * This class contains many of the Xalan-supplied extensions.
@@ -52,7 +52,7 @@ import org.xml.sax.SAXNotSupportedException;
  */
 public class Extensions
 {
-    static final String JDK_DEFAULT_DOM = "com.sun.org.apache.xerces.internal.jaxp.DocumentBuilderFactoryImpl";
+    static final String JDK_DEFAULT_DOM = "com.sun.test.org.apache.xerces.internal.jaxp.DocumentBuilderFactoryImpl";
   /**
    * Constructor Extensions
    *
@@ -280,7 +280,7 @@ public class Extensions
    * etc., and then returns the resulting Node.  Stylesheets can
    * then maniuplate this data or simply xsl:copy-of the Node.  Note
    * that we first attempt to load the more advanced
-   * org.apache.env.Which utility by reflection; only if that fails
+   * test.org.apache.env.Which utility by reflection; only if that fails
    * to we still use the internal version.  Which is available from
    * <a href="http://xml.apache.org/commons/">http://xml.apache.org/commons/</a>.</p>
    *
@@ -323,7 +323,7 @@ public class Extensions
   }
 
   /**
-   * Private worker method to attempt to use org.apache.env.Which.
+   * Private worker method to attempt to use test.org.apache.env.Which.
    *
    * @param myContext an <code>ExpressionContext</code> passed in by the
    *                  extension mechanism.  This must be an XPathContext.
@@ -333,7 +333,7 @@ public class Extensions
   private static Node checkEnvironmentUsingWhich(ExpressionContext myContext,
         Document factoryDocument)
   {
-    final String WHICH_CLASSNAME = "org.apache.env.Which";
+    final String WHICH_CLASSNAME = "test.org.apache.env.Which";
     final String WHICH_METHODNAME = "which";
     final Class WHICH_METHOD_ARGS[] = { java.util.Hashtable.class,
                                         java.lang.String.class,

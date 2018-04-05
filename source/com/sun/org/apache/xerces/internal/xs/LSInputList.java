@@ -22,7 +22,7 @@ package com.sun.org.apache.xerces.internal.xs;
 
 import java.util.List;
 
-import org.w3c.dom.ls.LSInput;
+import test.org.w3c.dom.ls.LSInput;
 
 /**
  *  The <code>LSInputList</code> interface provides the abstraction of an

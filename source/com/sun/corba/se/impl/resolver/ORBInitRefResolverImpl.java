@@ -27,8 +27,6 @@ package com.sun.corba.se.impl.resolver ;
 
 import com.sun.corba.se.spi.resolver.Resolver ;
 
-import com.sun.corba.se.spi.orb.ORB ;
-
 import com.sun.corba.se.spi.orb.Operation ;
 import com.sun.corba.se.spi.orb.StringPair ;
 
@@ -47,14 +45,14 @@ public class ORBInitRefResolverImpl implements Resolver {
         }
     }
 
-    public org.omg.CORBA.Object resolve( String ident )
+    public test.org.omg.CORBA.Object resolve(String ident )
     {
         String url = (String)orbInitRefTable.get( ident ) ;
         if (url == null)
             return null ;
 
-        org.omg.CORBA.Object result =
-            (org.omg.CORBA.Object)urlHandler.operate( url ) ;
+        test.org.omg.CORBA.Object result =
+            (test.org.omg.CORBA.Object)urlHandler.operate( url ) ;
         return result ;
     }
 

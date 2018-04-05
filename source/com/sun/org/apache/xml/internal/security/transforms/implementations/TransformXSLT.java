@@ -44,7 +44,7 @@ import com.sun.org.apache.xml.internal.security.transforms.TransformSpi;
 import com.sun.org.apache.xml.internal.security.transforms.TransformationException;
 import com.sun.org.apache.xml.internal.security.transforms.Transforms;
 import com.sun.org.apache.xml.internal.security.utils.XMLUtils;
-import org.w3c.dom.Element;
+import test.org.w3c.dom.Element;
 
 /**
  * Class TransformXSLT
@@ -60,7 +60,7 @@ public class TransformXSLT extends TransformSpi {
     public static final String implementedTransformURI =
         Transforms.TRANSFORM_XSLT;
 
-    static final String XSLTSpecNS              = "http://www.w3.org/1999/XSL/Transform";
+    static final String XSLTSpecNS              = "http://www.w3.test.org/1999/XSL/Transform";
     static final String defaultXSLTSpecNSprefix = "xslt";
     static final String XSLTSTYLESHEET          = "stylesheet";
 
@@ -133,7 +133,7 @@ public class TransformXSLT extends TransformSpi {
             // this is not a standard JAXP property so will not work with non-Xalan
             // implementations.
             try {
-                transformer.setOutputProperty("{http://xml.apache.org/xalan}line-separator", "\n");
+                transformer.setOutputProperty("{http://xml.apache.test.org/xalan}line-separator", "\n");
             } catch (Exception e) {
                 log.log(java.util.logging.Level.WARNING, "Unable to set Xalan line-separator property: " + e.getMessage());
             }

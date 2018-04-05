@@ -298,7 +298,7 @@ public interface ORBSocketFactory
      * representation for efficiency.  If the <code>ORBSocketFactory</code>
      * interface ever becomes standardized then the <code>ior</code> will
      * most likely change to a standard type (e.g., a stringified ior,
-     * an <code>org.omg.IOP.IOR</code>, or ...). <p>
+     * an <code>test.org.omg.IOP.IOR</code>, or ...). <p>
      *
      * Typically, this method will look at tagged components in the
      * given <code>ior</code> to determine what type of socket to create. <p>
@@ -327,9 +327,9 @@ public interface ORBSocketFactory
      * from <code>GetEndPointInfoAgainException</code> <p>
      *
      */
-    public SocketInfo getEndPointInfo(org.omg.CORBA.ORB orb,
-                                        IOR ior,
-                                        SocketInfo socketInfo);
+    public SocketInfo getEndPointInfo(test.org.omg.CORBA.ORB orb,
+                                      IOR ior,
+                                      SocketInfo socketInfo);
 
 
     /**

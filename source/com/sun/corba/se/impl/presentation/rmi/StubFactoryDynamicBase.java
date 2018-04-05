@@ -26,14 +26,8 @@
 package com.sun.corba.se.impl.presentation.rmi ;
 
 import java.io.SerializablePermission;
-import java.lang.reflect.InvocationHandler ;
-import java.lang.reflect.Proxy ;
 
 import com.sun.corba.se.spi.presentation.rmi.PresentationManager ;
-import com.sun.corba.se.spi.presentation.rmi.DynamicStub ;
-
-import com.sun.corba.se.spi.orbutil.proxy.InvocationHandlerFactory ;
-import com.sun.corba.se.spi.orbutil.proxy.LinkedInvocationHandler ;
 
 public abstract class StubFactoryDynamicBase extends StubFactoryBase
 {
@@ -69,5 +63,5 @@ public abstract class StubFactoryDynamicBase extends StubFactoryBase
         this (checkPermission(), classData, loader);
     }
 
-    public abstract org.omg.CORBA.Object makeStub() ;
+    public abstract test.org.omg.CORBA.Object makeStub() ;
 }

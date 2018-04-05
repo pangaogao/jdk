@@ -26,7 +26,6 @@
 package java.util;
 
 import java.io.*;
-import java.util.concurrent.ThreadLocalRandom;
 import java.util.function.BiConsumer;
 import java.util.function.Function;
 import java.util.function.BiFunction;
@@ -157,11 +156,7 @@ public class Hashtable<K,V>
     private float loadFactor;
 
     /**
-     * The number of times this Hashtable has been structurally modified
-     * Structural modifications are those that change the number of entries in
-     * the Hashtable or otherwise modify its internal structure (e.g.,
-     * rehash).  This field is used to make iterators on Collection-views of
-     * the Hashtable fail-fast.  (See ConcurrentModificationException).
+     * 哈希表结构变化的次数，这个值用于结构改变，迭代器能快速失败
      */
     private transient int modCount = 0;
 
@@ -169,8 +164,7 @@ public class Hashtable<K,V>
     private static final long serialVersionUID = 1421746759512286392L;
 
     /**
-     * Constructs a new, empty hashtable with the specified initial
-     * capacity and the specified load factor.
+     * 构造器，创建一个空的，初始大小和负载因子的table
      *
      * @param      initialCapacity   the initial capacity of the hashtable.
      * @param      loadFactor        the load factor of the hashtable.
@@ -696,11 +690,11 @@ public class Hashtable<K,V>
                 return false;
             Map.Entry<?,?> entry = (Map.Entry<?,?>)o;
             Object key = entry.getKey();
-            Entry<?,?>[] tab = table;
+            Hashtable.Entry<?,?>[] tab = table;
             int hash = key.hashCode();
             int index = (hash & 0x7FFFFFFF) % tab.length;
 
-            for (Entry<?,?> e = tab[index]; e != null; e = e.next)
+            for (Hashtable.Entry<?,?> e = tab[index]; e != null; e = e.next)
                 if (e.hash==hash && e.equals(entry))
                     return true;
             return false;
@@ -711,13 +705,13 @@ public class Hashtable<K,V>
                 return false;
             Map.Entry<?,?> entry = (Map.Entry<?,?>) o;
             Object key = entry.getKey();
-            Entry<?,?>[] tab = table;
+            Hashtable.Entry<?,?>[] tab = table;
             int hash = key.hashCode();
             int index = (hash & 0x7FFFFFFF) % tab.length;
 
             @SuppressWarnings("unchecked")
-            Entry<K,V> e = (Entry<K,V>)tab[index];
-            for(Entry<K,V> prev = null; e != null; prev = e, e = e.next) {
+            Hashtable.Entry<K,V> e = (Hashtable.Entry<K,V>)tab[index];
+            for(Hashtable.Entry<K,V> prev = null; e != null; prev = e, e = e.next) {
                 if (e.hash==hash && e.equals(entry)) {
                     modCount++;
                     if (prev != null)

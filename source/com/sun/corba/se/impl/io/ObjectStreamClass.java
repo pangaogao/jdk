@@ -35,12 +35,9 @@ import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 import java.security.DigestOutputStream;
 import java.security.AccessController;
-import java.security.PrivilegedExceptionAction;
-import java.security.PrivilegedActionException;
 import java.security.PrivilegedAction;
 
 import java.lang.reflect.Modifier;
-import java.lang.reflect.Array;
 import java.lang.reflect.Field;
 import java.lang.reflect.Member;
 import java.lang.reflect.Method;
@@ -60,7 +57,7 @@ import java.util.Comparator;
 
 import com.sun.corba.se.impl.util.RepositoryId;
 
-import org.omg.CORBA.ValueMember;
+import test.org.omg.CORBA.ValueMember;
 
 import sun.corba.Bridge;
 
@@ -611,14 +608,14 @@ public class ObjectStreamClass implements java.io.Serializable {
      * Java to IDL ptc-02-01-12 1.5.1
      *
      * "The rep_id string passed to the start_value method must be
-     * 'RMI:org.omg.custom.class:hashcode:suid' where class is the
+     * 'RMI:test.org.omg.custom.class:hashcode:suid' where class is the
      * fully-qualified name of the class whose writeObject method
      * is being invoked and hashcode and suid are the class's hashcode
      * and SUID."
      */
     private String computeRMIIIOPOptionalDataRepId() {
 
-        StringBuffer sbuf = new StringBuffer("RMI:org.omg.custom.");
+        StringBuffer sbuf = new StringBuffer("RMI:test.org.omg.custom.");
         sbuf.append(RepositoryId.convertToISOLatin1(this.getName()));
         sbuf.append(':');
         sbuf.append(this.getActualSerialVersionUIDStr());

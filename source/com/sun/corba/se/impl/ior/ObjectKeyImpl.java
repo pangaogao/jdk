@@ -25,7 +25,7 @@
 
 package com.sun.corba.se.impl.ior;
 
-import org.omg.CORBA_2_3.portable.OutputStream ;
+import test.org.omg.CORBA_2_3.portable.OutputStream ;
 
 import com.sun.corba.se.spi.protocol.CorbaServerRequestDispatcher ;
 
@@ -85,7 +85,7 @@ public class ObjectKeyImpl implements ObjectKey
         oktemp.write( id, os ) ;
     }
 
-    public byte[] getBytes( org.omg.CORBA.ORB orb )
+    public byte[] getBytes( test.org.omg.CORBA.ORB orb )
     {
         EncapsOutputStream os =
             sun.corba.OutputStreamFactory.newEncapsOutputStream((ORB)orb);

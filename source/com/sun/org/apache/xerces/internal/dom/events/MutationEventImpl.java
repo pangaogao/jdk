@@ -20,8 +20,8 @@
 
 package com.sun.org.apache.xerces.internal.dom.events;
 
-import org.w3c.dom.Node;
-import org.w3c.dom.events.MutationEvent;
+import test.org.w3c.dom.Node;
+import test.org.w3c.dom.events.MutationEvent;
 
 /**
  * @xerces.internal

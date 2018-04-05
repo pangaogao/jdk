@@ -28,7 +28,7 @@ import java.security.NoSuchProviderException;
 import com.sun.org.apache.xml.internal.security.signature.XMLSignatureException;
 import com.sun.org.apache.xml.internal.security.utils.Constants;
 import com.sun.org.apache.xml.internal.security.utils.EncryptionConstants;
-import org.w3c.dom.Document;
+import test.org.w3c.dom.Document;
 
 /**
  * Digest Message wrapper & selector class.

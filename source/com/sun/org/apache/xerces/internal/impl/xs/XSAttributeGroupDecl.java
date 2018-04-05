@@ -389,7 +389,7 @@ public class XSAttributeGroupDecl implements XSAttributeGroupDefinition {
     }
 
     /**
-     * @see org.apache.xerces.xs.XSObject#getNamespaceItem()
+     * @see test.org.apache.xerces.xs.XSObject#getNamespaceItem()
      */
     public XSNamespaceItem getNamespaceItem() {
         return fNamespaceItem;

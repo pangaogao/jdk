@@ -35,7 +35,6 @@ import com.sun.org.apache.xml.internal.utils.SAXSourceLocator;
 import com.sun.org.apache.xpath.internal.compiler.Compiler;
 import com.sun.org.apache.xpath.internal.compiler.FunctionTable;
 import com.sun.org.apache.xpath.internal.compiler.XPathParser;
-import com.sun.org.apache.xpath.internal.functions.Function;
 import com.sun.org.apache.xpath.internal.objects.XObject;
 import com.sun.org.apache.xpath.internal.res.XPATHErrorResources;
 
@@ -298,7 +297,7 @@ public class XPath implements Serializable, ExpressionOwner
    * @xsl.usage experimental
    */
   public XObject execute(
-          XPathContext xctxt, org.w3c.dom.Node contextNode,
+          XPathContext xctxt, test.org.w3c.dom.Node contextNode,
           PrefixResolver namespaceContext)
             throws javax.xml.transform.TransformerException
   {

@@ -27,12 +27,8 @@ package com.sun.corba.se.impl.ior;
 
 import java.util.Iterator ;
 
-import org.omg.CORBA.INTERNAL ;
-
-import org.omg.CORBA_2_3.portable.OutputStream ;
-import org.omg.CORBA_2_3.portable.InputStream ;
-
-import org.omg.IOP.TAG_INTERNET_IOP ;
+import test.org.omg.CORBA_2_3.portable.OutputStream ;
+import test.org.omg.CORBA_2_3.portable.InputStream ;
 
 import com.sun.corba.se.spi.ior.IdentifiableContainerBase ;
 import com.sun.corba.se.spi.ior.IdentifiableFactoryFinder ;

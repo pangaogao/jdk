@@ -25,10 +25,10 @@
 
 package com.sun.corba.se.impl.ior;
 
-import org.omg.CORBA.OctetSeqHolder ;
+import test.org.omg.CORBA.OctetSeqHolder ;
 
-import org.omg.CORBA_2_3.portable.OutputStream ;
-import org.omg.CORBA_2_3.portable.InputStream ;
+import test.org.omg.CORBA_2_3.portable.OutputStream ;
+import test.org.omg.CORBA_2_3.portable.InputStream ;
 
 import com.sun.corba.se.spi.protocol.CorbaServerRequestDispatcher ;
 

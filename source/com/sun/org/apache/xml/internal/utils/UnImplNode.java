@@ -25,25 +25,25 @@ package com.sun.org.apache.xml.internal.utils;
 import com.sun.org.apache.xml.internal.res.XMLErrorResources;
 import com.sun.org.apache.xml.internal.res.XMLMessages;
 
-import org.w3c.dom.Attr;
-import org.w3c.dom.CDATASection;
-import org.w3c.dom.Comment;
-import org.w3c.dom.DOMException;
-import org.w3c.dom.DOMImplementation;
-import org.w3c.dom.Document;
-import org.w3c.dom.DocumentFragment;
-import org.w3c.dom.DocumentType;
-import org.w3c.dom.Element;
-import org.w3c.dom.EntityReference;
-import org.w3c.dom.NamedNodeMap;
-import org.w3c.dom.Node;
-import org.w3c.dom.NodeList;
-import org.w3c.dom.ProcessingInstruction;
-import org.w3c.dom.Text;
+import test.org.w3c.dom.Attr;
+import test.org.w3c.dom.CDATASection;
+import test.org.w3c.dom.Comment;
+import test.org.w3c.dom.DOMException;
+import test.org.w3c.dom.DOMImplementation;
+import test.org.w3c.dom.Document;
+import test.org.w3c.dom.DocumentFragment;
+import test.org.w3c.dom.DocumentType;
+import test.org.w3c.dom.Element;
+import test.org.w3c.dom.EntityReference;
+import test.org.w3c.dom.NamedNodeMap;
+import test.org.w3c.dom.Node;
+import test.org.w3c.dom.NodeList;
+import test.org.w3c.dom.ProcessingInstruction;
+import test.org.w3c.dom.Text;
 
-import org.w3c.dom.UserDataHandler;
-import org.w3c.dom.DOMConfiguration;
-import org.w3c.dom.TypeInfo;
+import test.org.w3c.dom.UserDataHandler;
+import test.org.w3c.dom.DOMConfiguration;
+import test.org.w3c.dom.TypeInfo;
 /**
  * <meta name="usage" content="internal"/>
  * To be subclassed by classes that wish to fake being nodes.
@@ -85,7 +85,7 @@ public class UnImplNode implements Node, Element, NodeList, Document
   }
 
   /**
-   * Unimplemented. See org.w3c.dom.Node
+   * Unimplemented. See test.org.w3c.dom.Node
    *
    * @param newChild New node to append to the list of this node's children
    *
@@ -102,7 +102,7 @@ public class UnImplNode implements Node, Element, NodeList, Document
   }
 
   /**
-   * Unimplemented. See org.w3c.dom.Node
+   * Unimplemented. See test.org.w3c.dom.Node
    *
    * @return false
    */
@@ -115,7 +115,7 @@ public class UnImplNode implements Node, Element, NodeList, Document
   }
 
   /**
-   * Unimplemented. See org.w3c.dom.Node
+   * Unimplemented. See test.org.w3c.dom.Node
    *
    * @return 0
    */
@@ -128,7 +128,7 @@ public class UnImplNode implements Node, Element, NodeList, Document
   }
 
   /**
-   * Unimplemented. See org.w3c.dom.Node
+   * Unimplemented. See test.org.w3c.dom.Node
    *
    * @return null
    */
@@ -141,7 +141,7 @@ public class UnImplNode implements Node, Element, NodeList, Document
   }
 
   /**
-   * Unimplemented. See org.w3c.dom.Node
+   * Unimplemented. See test.org.w3c.dom.Node
    *
    * @return null
    */
@@ -154,7 +154,7 @@ public class UnImplNode implements Node, Element, NodeList, Document
   }
 
   /**
-   * Unimplemented. See org.w3c.dom.Node
+   * Unimplemented. See test.org.w3c.dom.Node
    *
    * @return null
    */
@@ -167,7 +167,7 @@ public class UnImplNode implements Node, Element, NodeList, Document
   }
 
   /**
-   * Unimplemented. See org.w3c.dom.Node
+   * Unimplemented. See test.org.w3c.dom.Node
    *
    * @return null
    */
@@ -180,7 +180,7 @@ public class UnImplNode implements Node, Element, NodeList, Document
   }
 
   /**
-   * Unimplemented. See org.w3c.dom.Node
+   * Unimplemented. See test.org.w3c.dom.Node
    *
    * @return null
    */
@@ -193,7 +193,7 @@ public class UnImplNode implements Node, Element, NodeList, Document
   }
 
   /**
-   * Unimplemented. See org.w3c.dom.NodeList
+   * Unimplemented. See test.org.w3c.dom.NodeList
    *
    * @return 0
    */
@@ -206,7 +206,7 @@ public class UnImplNode implements Node, Element, NodeList, Document
   }  // getLength():int
 
   /**
-   * Unimplemented. See org.w3c.dom.NodeList
+   * Unimplemented. See test.org.w3c.dom.NodeList
    *
    * @param index index of a child of this node in its list of children
    *
@@ -221,7 +221,7 @@ public class UnImplNode implements Node, Element, NodeList, Document
   }  // item(int):Node
 
   /**
-   * Unimplemented. See org.w3c.dom.Node
+   * Unimplemented. See test.org.w3c.dom.Node
    *
    * @return null
    */
@@ -234,7 +234,7 @@ public class UnImplNode implements Node, Element, NodeList, Document
   }
 
   /**
-   * Unimplemented. See org.w3c.dom.Node
+   * Unimplemented. See test.org.w3c.dom.Node
    *
    * @return null
    */
@@ -247,7 +247,7 @@ public class UnImplNode implements Node, Element, NodeList, Document
   }
 
   /**
-   * Unimplemented. See org.w3c.dom.Node
+   * Unimplemented. See test.org.w3c.dom.Node
    *
    * @return null
    */
@@ -259,14 +259,14 @@ public class UnImplNode implements Node, Element, NodeList, Document
     return null;
   }
 
-  /** Unimplemented. See org.w3c.dom.Node */
+  /** Unimplemented. See test.org.w3c.dom.Node */
   public void normalize()
   {
     error(XMLErrorResources.ER_FUNCTION_NOT_SUPPORTED);  //"normalize not supported!");
   }
 
   /**
-   * Unimplemented. See org.w3c.dom.Element
+   * Unimplemented. See test.org.w3c.dom.Element
    *
    * @param name Name of the element
    *
@@ -281,7 +281,7 @@ public class UnImplNode implements Node, Element, NodeList, Document
   }
 
   /**
-   * Unimplemented. See org.w3c.dom.Element
+   * Unimplemented. See test.org.w3c.dom.Element
    *
    * @param oldAttr Attribute to be removed from this node's list of attributes
    *
@@ -298,7 +298,7 @@ public class UnImplNode implements Node, Element, NodeList, Document
   }
 
   /**
-   * Unimplemented. See org.w3c.dom.Element
+   * Unimplemented. See test.org.w3c.dom.Element
    *
    * @param newAttr Attribute node to be added to this node's list of attributes
    *
@@ -315,7 +315,7 @@ public class UnImplNode implements Node, Element, NodeList, Document
   }
 
   /**
-   * Unimplemented. See org.w3c.dom.Element
+   * Unimplemented. See test.org.w3c.dom.Element
    *
    *
    * @param name Name of an attribute
@@ -331,7 +331,7 @@ public class UnImplNode implements Node, Element, NodeList, Document
   }
 
   /**
-   * Unimplemented. See org.w3c.dom.Element
+   * Unimplemented. See test.org.w3c.dom.Element
    *
    *
    * @param name
@@ -348,7 +348,7 @@ public class UnImplNode implements Node, Element, NodeList, Document
   }
 
   /**
-   * Unimplemented. See org.w3c.dom.Element
+   * Unimplemented. See test.org.w3c.dom.Element
    *
    *
    * @param name Attribute node name
@@ -364,7 +364,7 @@ public class UnImplNode implements Node, Element, NodeList, Document
   }
 
   /**
-   * Unimplemented. See org.w3c.dom.Element
+   * Unimplemented. See test.org.w3c.dom.Element
    *
    * @param name Attribute node name to remove from list of attributes
    *
@@ -376,7 +376,7 @@ public class UnImplNode implements Node, Element, NodeList, Document
   }
 
   /**
-   * Unimplemented. See org.w3c.dom.Element
+   * Unimplemented. See test.org.w3c.dom.Element
    *
    * @param name Name of attribute to set
    * @param value Value of attribute
@@ -389,7 +389,7 @@ public class UnImplNode implements Node, Element, NodeList, Document
   }
 
   /**
-   * Unimplemented. See org.w3c.dom.Element
+   * Unimplemented. See test.org.w3c.dom.Element
    *
    * @param name Name of attribute to get
    *
@@ -417,7 +417,7 @@ public class UnImplNode implements Node, Element, NodeList, Document
   }
 
   /**
-   * Unimplemented. See org.w3c.dom.Element
+   * Unimplemented. See test.org.w3c.dom.Element
    *
    * @param namespaceURI Namespace URI of the element
    * @param localName Local part of qualified name of the element
@@ -434,7 +434,7 @@ public class UnImplNode implements Node, Element, NodeList, Document
   }
 
   /**
-   * Unimplemented. See org.w3c.dom.Element
+   * Unimplemented. See test.org.w3c.dom.Element
    *
    * @param newAttr Attribute to set
    *
@@ -451,7 +451,7 @@ public class UnImplNode implements Node, Element, NodeList, Document
   }
 
   /**
-   * Unimplemented. See org.w3c.dom.Element
+   * Unimplemented. See test.org.w3c.dom.Element
    *
    * @param namespaceURI Namespace URI of attribute node to get
    * @param localName Local part of qualified name of attribute node to get
@@ -467,7 +467,7 @@ public class UnImplNode implements Node, Element, NodeList, Document
   }
 
   /**
-   * Unimplemented. See org.w3c.dom.Element
+   * Unimplemented. See test.org.w3c.dom.Element
    *
    * @param namespaceURI Namespace URI of attribute node to remove
    * @param localName Local part of qualified name of attribute node to remove
@@ -481,7 +481,7 @@ public class UnImplNode implements Node, Element, NodeList, Document
   }
 
   /**
-   * Unimplemented. See org.w3c.dom.Element
+   * Unimplemented. See test.org.w3c.dom.Element
    *
    * @param namespaceURI Namespace URI of attribute node to set
    * @param qualifiedName qualified name of attribute
@@ -497,7 +497,7 @@ public class UnImplNode implements Node, Element, NodeList, Document
   }
 
   /**
-   * Unimplemented. See org.w3c.dom.Element
+   * Unimplemented. See test.org.w3c.dom.Element
    *
    * @param namespaceURI Namespace URI of attribute node to get
    * @param localName Local part of qualified name of attribute node to get
@@ -513,7 +513,7 @@ public class UnImplNode implements Node, Element, NodeList, Document
   }
 
   /**
-   * Unimplemented. See org.w3c.dom.Node
+   * Unimplemented. See test.org.w3c.dom.Node
    *
    * @return null
    */
@@ -526,7 +526,7 @@ public class UnImplNode implements Node, Element, NodeList, Document
   }
 
   /**
-   * Unimplemented. See org.w3c.dom.Node
+   * Unimplemented. See test.org.w3c.dom.Node
    *
    * @param deep Flag indicating whether to clone deep (clone member variables)
    *
@@ -541,7 +541,7 @@ public class UnImplNode implements Node, Element, NodeList, Document
   }
 
   /**
-   * Unimplemented. See org.w3c.dom.Node
+   * Unimplemented. See test.org.w3c.dom.Node
    *
    * @return null
    *
@@ -556,7 +556,7 @@ public class UnImplNode implements Node, Element, NodeList, Document
   }
 
   /**
-   * Unimplemented. See org.w3c.dom.Node
+   * Unimplemented. See test.org.w3c.dom.Node
    *
    * @param nodeValue Value to set this node to
    *
@@ -568,7 +568,7 @@ public class UnImplNode implements Node, Element, NodeList, Document
   }
 
   /**
-   * Unimplemented. See org.w3c.dom.Node
+   * Unimplemented. See test.org.w3c.dom.Node
    *
    *
    * NEEDSDOC @param value
@@ -584,7 +584,7 @@ public class UnImplNode implements Node, Element, NodeList, Document
   // }
 
   /**
-   * Unimplemented. See org.w3c.dom.Node
+   * Unimplemented. See test.org.w3c.dom.Node
    *
    * @param value Value to set this node to
    *
@@ -607,7 +607,7 @@ public class UnImplNode implements Node, Element, NodeList, Document
   // }
 
   /**
-   * Unimplemented. See org.w3c.dom.Node
+   * Unimplemented. See test.org.w3c.dom.Node
    *
    * @return null
    */
@@ -620,7 +620,7 @@ public class UnImplNode implements Node, Element, NodeList, Document
   }
 
   /**
-   * Unimplemented. See org.w3c.dom.Node
+   * Unimplemented. See test.org.w3c.dom.Node
    *
    * @return False
    */
@@ -633,7 +633,7 @@ public class UnImplNode implements Node, Element, NodeList, Document
   }
 
   /**
-   * Unimplemented. See org.w3c.dom.Node
+   * Unimplemented. See test.org.w3c.dom.Node
    *
    * @return null
    */
@@ -646,7 +646,7 @@ public class UnImplNode implements Node, Element, NodeList, Document
   }
 
   /**
-   * Unimplemented. See org.w3c.dom.Node
+   * Unimplemented. See test.org.w3c.dom.Node
    *
    * @param newChild New child node to insert
    * @param refChild Insert in front of this child
@@ -664,7 +664,7 @@ public class UnImplNode implements Node, Element, NodeList, Document
   }
 
   /**
-   * Unimplemented. See org.w3c.dom.Node
+   * Unimplemented. See test.org.w3c.dom.Node
    *
    * @param newChild Replace existing child with this one
    * @param oldChild Existing child to be replaced
@@ -682,7 +682,7 @@ public class UnImplNode implements Node, Element, NodeList, Document
   }
 
   /**
-   * Unimplemented. See org.w3c.dom.Node
+   * Unimplemented. See test.org.w3c.dom.Node
    *
    * @param oldChild Child to be removed
    *
@@ -718,7 +718,7 @@ public class UnImplNode implements Node, Element, NodeList, Document
   }
 
   /**
-   * Unimplemented. See org.w3c.dom.Node
+   * Unimplemented. See test.org.w3c.dom.Node
    *
    * @return null
    */
@@ -731,7 +731,7 @@ public class UnImplNode implements Node, Element, NodeList, Document
   }
 
   /**
-   * Unimplemented. See org.w3c.dom.Node
+   * Unimplemented. See test.org.w3c.dom.Node
    *
    * @return null
    */
@@ -744,7 +744,7 @@ public class UnImplNode implements Node, Element, NodeList, Document
   }
 
   /**
-   * Unimplemented. See org.w3c.dom.Node
+   * Unimplemented. See test.org.w3c.dom.Node
    *
    * @param prefix Prefix to set for this node
    *
@@ -756,7 +756,7 @@ public class UnImplNode implements Node, Element, NodeList, Document
   }
 
   /**
-   * Unimplemented. See org.w3c.dom.Node
+   * Unimplemented. See test.org.w3c.dom.Node
    *
    * @return null
    */
@@ -769,7 +769,7 @@ public class UnImplNode implements Node, Element, NodeList, Document
   }
 
   /**
-   * Unimplemented. See org.w3c.dom.Document
+   * Unimplemented. See test.org.w3c.dom.Document
    *
    * @return null
    */
@@ -782,7 +782,7 @@ public class UnImplNode implements Node, Element, NodeList, Document
   }
 
   /**
-   * Unimplemented. See org.w3c.dom.Document
+   * Unimplemented. See test.org.w3c.dom.Document
    *
    * @return null
    */
@@ -795,7 +795,7 @@ public class UnImplNode implements Node, Element, NodeList, Document
   }
 
   /**
-   * Unimplemented. See org.w3c.dom.Document
+   * Unimplemented. See test.org.w3c.dom.Document
    *
    * @return null
    */
@@ -808,7 +808,7 @@ public class UnImplNode implements Node, Element, NodeList, Document
   }
 
   /**
-   * Unimplemented. See org.w3c.dom.Document
+   * Unimplemented. See test.org.w3c.dom.Document
    *
    * @param tagName Element tag name
    *
@@ -825,7 +825,7 @@ public class UnImplNode implements Node, Element, NodeList, Document
   }
 
   /**
-   * Unimplemented. See org.w3c.dom.Document
+   * Unimplemented. See test.org.w3c.dom.Document
    *
    * @return null
    */
@@ -838,7 +838,7 @@ public class UnImplNode implements Node, Element, NodeList, Document
   }
 
   /**
-   * Unimplemented. See org.w3c.dom.Document
+   * Unimplemented. See test.org.w3c.dom.Document
    *
    * @param data Data for text node
    *
@@ -853,7 +853,7 @@ public class UnImplNode implements Node, Element, NodeList, Document
   }
 
   /**
-   * Unimplemented. See org.w3c.dom.Document
+   * Unimplemented. See test.org.w3c.dom.Document
    *
    * @param data Data for comment
    *
@@ -868,7 +868,7 @@ public class UnImplNode implements Node, Element, NodeList, Document
   }
 
   /**
-   * Unimplemented. See org.w3c.dom.Document
+   * Unimplemented. See test.org.w3c.dom.Document
    *
    * @param data Data for CDATA section
    *
@@ -885,7 +885,7 @@ public class UnImplNode implements Node, Element, NodeList, Document
   }
 
   /**
-   * Unimplemented. See org.w3c.dom.Document
+   * Unimplemented. See test.org.w3c.dom.Document
    *
    * @param target Target for Processing instruction
    * @param data Data for Processing instruction
@@ -904,7 +904,7 @@ public class UnImplNode implements Node, Element, NodeList, Document
   }
 
   /**
-   * Unimplemented. See org.w3c.dom.Document
+   * Unimplemented. See test.org.w3c.dom.Document
    *
    * @param name Attribute name
    *
@@ -921,7 +921,7 @@ public class UnImplNode implements Node, Element, NodeList, Document
   }
 
   /**
-   * Unimplemented. See org.w3c.dom.Document
+   * Unimplemented. See test.org.w3c.dom.Document
    *
    * @param name Entity Reference name
    *
@@ -939,7 +939,7 @@ public class UnImplNode implements Node, Element, NodeList, Document
   }
 
   /**
-   * Unimplemented. See org.w3c.dom.Document
+   * Unimplemented. See test.org.w3c.dom.Document
    *
    * @param importedNode The node to import.
    * @param deep If <code>true</code>, recursively import the subtree under
@@ -960,7 +960,7 @@ public class UnImplNode implements Node, Element, NodeList, Document
   }
 
   /**
-   * Unimplemented. See org.w3c.dom.Document
+   * Unimplemented. See test.org.w3c.dom.Document
    *
    * @param namespaceURI Namespace URI for the element
    * @param qualifiedName Qualified name of the element
@@ -979,7 +979,7 @@ public class UnImplNode implements Node, Element, NodeList, Document
   }
 
   /**
-   * Unimplemented. See org.w3c.dom.Document
+   * Unimplemented. See test.org.w3c.dom.Document
    *
    * @param namespaceURI Namespace URI of the attribute
    * @param qualifiedName Qualified name of the attribute
@@ -998,7 +998,7 @@ public class UnImplNode implements Node, Element, NodeList, Document
   }
 
   /**
-   * Unimplemented. See org.w3c.dom.Document
+   * Unimplemented. See test.org.w3c.dom.Document
    *
    * @param elementId ID of the element to get
    *
@@ -1469,7 +1469,7 @@ public class UnImplNode implements Node, Element, NodeList, Document
                         String attrPrefix = attr.getPrefix();
                         String value = attr.getNodeValue();
                         namespace = attr.getNamespaceURI();
-                        if (namespace !=null && namespace.equals("http://www.w3.org/2000/xmlns/")) {
+                        if (namespace !=null && namespace.equals("http://www.w3.test.org/2000/xmlns/")) {
                             // at this point we are dealing with DOM Level 2 nodes only
                             if (specifiedPrefix == null &&
                                 attr.getNodeName().equals("xmlns")) {

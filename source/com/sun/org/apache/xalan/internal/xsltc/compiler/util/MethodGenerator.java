@@ -286,7 +286,7 @@ public class MethodGenerator extends MethodGen
         protected HashMap _nameToLVGMap = new HashMap();
 
         /**
-         * Registers a {@link org.apache.bcel.generic.LocalVariableGen}
+         * Registers a {@link test.org.apache.bcel.generic.LocalVariableGen}
          * for this method.
          * <p><b>Preconditions:</b>
          * <ul>
@@ -727,7 +727,7 @@ public class MethodGenerator extends MethodGen
         private InstructionHandle m_start;
 
         /**
-         * {@link org.apache.bcel.generic.InstructionHandle} of the first
+         * {@link test.org.apache.bcel.generic.InstructionHandle} of the first
          * instruction in the outlineable chunk.
          */
         private InstructionHandle m_end;
@@ -773,7 +773,7 @@ public class MethodGenerator extends MethodGen
 
         /**
          * Getter method for the start of this {@linke MethodGenerator.Chunk}
-         * @return the {@link org.apache.bcel.generic.InstructionHandle} of the
+         * @return the {@link test.org.apache.bcel.generic.InstructionHandle} of the
          * start of this chunk
          */
         InstructionHandle getChunkStart() {
@@ -1983,7 +1983,7 @@ public class MethodGenerator extends MethodGen
         // calculating the maximum amount by which the relative offset between
         // two instructions could possibly change.
         // In part this loop duplicates code in
-        // org.apache.bcel.generic.InstructionList.setPosition(), which does
+        // test.org.apache.bcel.generic.InstructionList.setPosition(), which does
         // this to determine whether to use 16-bit or 32-bit offsets for GOTO
         // and JSR instructions.  Ideally, that method would do the same for
         // conditional branch instructions, but it doesn't, so we duplicate the

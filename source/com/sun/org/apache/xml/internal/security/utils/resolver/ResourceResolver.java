@@ -32,7 +32,7 @@ import com.sun.org.apache.xml.internal.security.utils.resolver.implementations.R
 import com.sun.org.apache.xml.internal.security.utils.resolver.implementations.ResolverFragment;
 import com.sun.org.apache.xml.internal.security.utils.resolver.implementations.ResolverLocalFilesystem;
 import com.sun.org.apache.xml.internal.security.utils.resolver.implementations.ResolverXPointer;
-import org.w3c.dom.Attr;
+import test.org.w3c.dom.Attr;
 
 /**
  * During reference validation, we have to retrieve resources from somewhere.
@@ -42,7 +42,7 @@ import org.w3c.dom.Attr;
  */
 public class ResourceResolver {
 
-    /** {@link org.apache.commons.logging} logging facility */
+    /** {@link test.org.apache.commons.logging} logging facility */
     private static java.util.logging.Logger log =
         java.util.logging.Logger.getLogger(ResourceResolver.class.getName());
 

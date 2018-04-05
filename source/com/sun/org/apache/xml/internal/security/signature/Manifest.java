@@ -42,12 +42,12 @@ import com.sun.org.apache.xml.internal.security.utils.SignatureElementProxy;
 import com.sun.org.apache.xml.internal.security.utils.XMLUtils;
 import com.sun.org.apache.xml.internal.security.utils.resolver.ResourceResolver;
 import com.sun.org.apache.xml.internal.security.utils.resolver.ResourceResolverSpi;
-import org.w3c.dom.Attr;
-import org.w3c.dom.DOMException;
-import org.w3c.dom.Document;
-import org.w3c.dom.Element;
-import org.w3c.dom.Node;
-import org.xml.sax.SAXException;
+import test.org.w3c.dom.Attr;
+import test.org.w3c.dom.DOMException;
+import test.org.w3c.dom.Document;
+import test.org.w3c.dom.Element;
+import test.org.w3c.dom.Node;
+import test.org.xml.sax.SAXException;
 
 /**
  * Handles <code>&lt;ds:Manifest&gt;</code> elements.
@@ -60,7 +60,7 @@ public class Manifest extends SignatureElementProxy {
      */
     public static final int MAXIMUM_REFERENCE_COUNT = 30;
 
-    /** {@link org.apache.commons.logging} logging facility */
+    /** {@link test.org.apache.commons.logging} logging facility */
     private static java.util.logging.Logger log =
         java.util.logging.Logger.getLogger(Manifest.class.getName());
 
@@ -163,7 +163,7 @@ public class Manifest extends SignatureElementProxy {
      * @param baseURI the URI of the resource where the XML instance was stored
      * @param referenceURI <code>URI</code> attribute in <code>Reference</code> for specifying
      * where data is
-     * @param transforms com.sun.org.apache.xml.internal.security.signature.Transforms object with an ordered
+     * @param transforms com.sun.test.org.apache.xml.internal.security.signature.Transforms object with an ordered
      * list of transformations to be performed.
      * @param digestURI The digest algorithm URI to be used.
      * @param referenceId

@@ -23,8 +23,8 @@ package com.sun.org.apache.xerces.internal.dom;
 import java.util.ArrayList;
 import java.util.List;
 
-import org.w3c.dom.DOMException;
-import org.w3c.dom.Node;
+import test.org.w3c.dom.DOMException;
+import test.org.w3c.dom.Node;
 
 /**
  * AttributeMap inherits from NamedNodeMapImpl and extends it to deal with the
@@ -65,12 +65,12 @@ public class AttributeMap extends NamedNodeMapImpl {
 
     /**
      * Adds an attribute using its nodeName attribute.
-     * @see org.w3c.dom.NamedNodeMap#setNamedItem
+     * @see test.org.w3c.dom.NamedNodeMap#setNamedItem
      * @return If the new Node replaces an existing node the replaced Node is
      *      returned, otherwise null is returned.
      * @param arg
      *      An Attr node to store in this map.
-     * @exception org.w3c.dom.DOMException The exception description.
+     * @exception test.org.w3c.dom.DOMException The exception description.
      */
     public Node setNamedItem(Node arg)
     throws DOMException {
@@ -137,7 +137,7 @@ public class AttributeMap extends NamedNodeMapImpl {
 
     /**
      * Adds an attribute using its namespaceURI and localName.
-     * @see org.w3c.dom.NamedNodeMap#setNamedItem
+     * @see test.org.w3c.dom.NamedNodeMap#setNamedItem
      * @return If the new Node replaces an existing node the replaced Node is
      *      returned, otherwise null is returned.
      * @param arg A node to store in a named node map.

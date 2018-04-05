@@ -37,7 +37,7 @@ import com.sun.org.apache.xerces.internal.xni.QName;
 import com.sun.org.apache.xerces.internal.xs.XSConstants;
 import com.sun.org.apache.xerces.internal.xs.XSObjectList;
 import com.sun.org.apache.xerces.internal.xs.XSTypeDefinition;
-import org.w3c.dom.Element;
+import test.org.w3c.dom.Element;
 
 /**
  * The attribute declaration schema component traverser.

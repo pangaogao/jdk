@@ -25,11 +25,11 @@ import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.io.Serializable;
 
-import org.w3c.dom.DOMException;
-import org.w3c.dom.Document;
-import org.w3c.dom.Node;
-import org.w3c.dom.NodeList;
-import org.w3c.dom.UserDataHandler;
+import test.org.w3c.dom.DOMException;
+import test.org.w3c.dom.Document;
+import test.org.w3c.dom.Node;
+import test.org.w3c.dom.NodeList;
+import test.org.w3c.dom.UserDataHandler;
 
 /**
  * ParentNode inherits from ChildNode and adds the capability of having child
@@ -793,7 +793,7 @@ public abstract class ParentNode
     /**
      * NodeList method: Return the Nth immediate child of this node, or
      * null if the index is out of bounds.
-     * @return org.w3c.dom.Node
+     * @return test.org.w3c.dom.Node
      * @param index int
      */
     public Node item(int index) {

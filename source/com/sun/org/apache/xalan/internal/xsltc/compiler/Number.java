@@ -63,9 +63,9 @@ final class Number extends Instruction implements Closure {
     private static final int LEVEL_ANY      = 2;
 
     static final private String[] ClassNames = {
-        "com.sun.org.apache.xalan.internal.xsltc.dom.SingleNodeCounter",          // LEVEL_SINGLE
-        "com.sun.org.apache.xalan.internal.xsltc.dom.MultipleNodeCounter", // LEVEL_MULTIPLE
-        "com.sun.org.apache.xalan.internal.xsltc.dom.AnyNodeCounter"      // LEVEL_ANY
+        "com.sun.test.org.apache.xalan.internal.xsltc.dom.SingleNodeCounter",          // LEVEL_SINGLE
+        "com.sun.test.org.apache.xalan.internal.xsltc.dom.MultipleNodeCounter", // LEVEL_MULTIPLE
+        "com.sun.test.org.apache.xalan.internal.xsltc.dom.AnyNodeCounter"      // LEVEL_ANY
     };
 
     static final private String[] FieldNames = {
@@ -354,7 +354,7 @@ final class Number extends Instruction implements Closure {
                                   Util.getJCRefType(TRANSLET_SIG),
                                   null, null);
         field = cpg.addFieldref(NODE_COUNTER, "_translet",
-                                "Lcom/sun/org/apache/xalan/internal/xsltc/Translet;");
+                                "Lcom/sun/test.org/apache/xalan/internal/xsltc/Translet;");
         il.append(ALOAD_0); // 'this' pointer on stack
         il.append(new GETFIELD(field));
         il.append(new CHECKCAST(cpg.addClass(TRANSLET_CLASS)));

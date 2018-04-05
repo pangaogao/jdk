@@ -52,11 +52,11 @@ import com.sun.org.apache.xml.internal.security.transforms.Transforms;
 import com.sun.org.apache.xml.internal.security.utils.Constants;
 import com.sun.org.apache.xml.internal.security.utils.XMLUtils;
 import com.sun.org.apache.xml.internal.security.utils.resolver.ResourceResolver;
-import org.w3c.dom.Attr;
-import org.w3c.dom.Document;
-import org.w3c.dom.Element;
-import org.w3c.dom.Node;
-import org.xml.sax.SAXException;
+import test.org.w3c.dom.Attr;
+import test.org.w3c.dom.Document;
+import test.org.w3c.dom.Element;
+import test.org.w3c.dom.Node;
+import test.org.xml.sax.SAXException;
 
 /**
  * The RetrievalMethodResolver can retrieve public keys and certificates from
@@ -71,7 +71,7 @@ import org.xml.sax.SAXException;
  */
 public class RetrievalMethodResolver extends KeyResolverSpi {
 
-    /** {@link org.apache.commons.logging} logging facility */
+    /** {@link test.org.apache.commons.logging} logging facility */
     private static java.util.logging.Logger log =
         java.util.logging.Logger.getLogger(RetrievalMethodResolver.class.getName());
 

@@ -31,7 +31,7 @@ import javax.imageio.stream.ImageOutputStream;
 
 import java.io.IOException;
 
-import org.w3c.dom.Node;
+import test.org.w3c.dom.Node;
 
 /**
      * A DRI (Define Restart Interval) marker segment.

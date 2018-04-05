@@ -26,17 +26,15 @@
 package com.sun.corba.se.impl.naming.pcosnaming;
 
 import java.io.File;
-import java.util.Properties;
 
-import org.omg.CORBA.Policy;
-import org.omg.PortableServer.POA;
-import org.omg.PortableServer.LifespanPolicyValue;
-import org.omg.PortableServer.RequestProcessingPolicyValue;
-import org.omg.PortableServer.IdAssignmentPolicyValue;
-import org.omg.PortableServer.ServantRetentionPolicyValue;
-import org.omg.CosNaming.NamingContext;
-import org.omg.CosNaming.NamingContextHelper;
-import org.omg.PortableServer.*;
+import test.org.omg.CORBA.Policy;
+import test.org.omg.PortableServer.POA;
+import test.org.omg.PortableServer.LifespanPolicyValue;
+import test.org.omg.PortableServer.RequestProcessingPolicyValue;
+import test.org.omg.PortableServer.IdAssignmentPolicyValue;
+import test.org.omg.PortableServer.ServantRetentionPolicyValue;
+import test.org.omg.CosNaming.NamingContext;
+import test.org.omg.CosNaming.NamingContextHelper;
 
 import com.sun.corba.se.spi.orb.ORB ;
 
@@ -142,7 +140,7 @@ public class NameService
      * because a Persiten reference has to be created with Persistent NameService
      * POA.
      */
-    public NamingContext NewContext( ) throws org.omg.CORBA.SystemException
+    public NamingContext NewContext( ) throws test.org.omg.CORBA.SystemException
     {
         try
         {
@@ -172,7 +170,7 @@ public class NameService
                 NamingContextHelper.id( )) );
                 return theNewContext;
         }
-        catch( org.omg.CORBA.SystemException e )
+        catch( test.org.omg.CORBA.SystemException e )
         {
                 throw e;
         }
@@ -188,9 +186,9 @@ public class NameService
      * @param Object Key as String
      * @returns reference an CORBA.Object.
      */
-    org.omg.CORBA.Object getObjectReferenceFromKey( String key )
+    test.org.omg.CORBA.Object getObjectReferenceFromKey(String key )
     {
-        org.omg.CORBA.Object theObject = null;
+        test.org.omg.CORBA.Object theObject = null;
         try
         {
                 theObject = nsPOA.create_reference_with_id( key.getBytes( ), NamingContextHelper.id( ) );
@@ -207,18 +205,18 @@ public class NameService
      * @param reference an CORBA.Object.
      * @returns Object Key as String
      */
-    String getObjectKey( org.omg.CORBA.Object reference )
+    String getObjectKey( test.org.omg.CORBA.Object reference )
     {
         byte theId[];
         try
         {
                 theId = nsPOA.reference_to_id( reference );
         }
-        catch( org.omg.PortableServer.POAPackage.WrongAdapter e )
+        catch( test.org.omg.PortableServer.POAPackage.WrongAdapter e )
         {
                 return null;
         }
-        catch( org.omg.PortableServer.POAPackage.WrongPolicy e )
+        catch( test.org.omg.PortableServer.POAPackage.WrongPolicy e )
         {
                 return null;
         }

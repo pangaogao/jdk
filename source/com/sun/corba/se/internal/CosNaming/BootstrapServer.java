@@ -25,11 +25,9 @@
 
 package com.sun.corba.se.internal.CosNaming;
 
-import java.util.Enumeration;
 import java.util.Properties;
 
 import java.io.File;
-import java.io.FileInputStream;
 
 import com.sun.corba.se.spi.orb.ORB ;
 
@@ -110,7 +108,7 @@ public class BootstrapServer
         props.put( ORBConstants.SERVER_PORT_PROPERTY,
             Integer.toString( initialPort ) ) ;
 
-        ORB orb = (ORB) org.omg.CORBA.ORB.init(args,props);
+        ORB orb = (ORB) test.org.omg.CORBA.ORB.init(args,props);
 
         LocalResolver lres = orb.getLocalResolver() ;
         Resolver fres = ResolverDefault.makeFileResolver( orb, file ) ;
@@ -122,7 +120,7 @@ public class BootstrapServer
         try {
             // This causes the acceptors to start listening.
             orb.resolve_initial_references(ORBConstants.ROOT_POA_NAME);
-        } catch (org.omg.CORBA.ORBPackage.InvalidName e) {
+        } catch (test.org.omg.CORBA.ORBPackage.InvalidName e) {
             RuntimeException rte = new RuntimeException("This should not happen");
             rte.initCause(e);
             throw rte;

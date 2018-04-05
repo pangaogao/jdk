@@ -36,13 +36,13 @@ import java.security.SecurityPermission;
  */
 public class JavaUtils {
 
-    /** {@link org.apache.commons.logging} logging facility */
+    /** {@link test.org.apache.commons.logging} logging facility */
     private static java.util.logging.Logger log =
         java.util.logging.Logger.getLogger(JavaUtils.class.getName());
 
     private static final SecurityPermission REGISTER_PERMISSION =
         new SecurityPermission(
-            "com.sun.org.apache.xml.internal.security.register");
+            "com.sun.test.org.apache.xml.internal.security.register");
 
     private JavaUtils() {
         // we don't allow instantiation
@@ -252,7 +252,7 @@ public class JavaUtils {
      *
      * @throws SecurityException if a security manager is installed and the
      *    caller has not been granted the
-     *    {@literal "com.sun.org.apache.xml.internal.security.register"}
+     *    {@literal "com.sun.test.org.apache.xml.internal.security.register"}
      *    {@code SecurityPermission}
      */
     public static void checkRegisterPermission() {

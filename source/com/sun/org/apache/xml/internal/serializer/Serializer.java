@@ -26,14 +26,14 @@ import java.io.OutputStream;
 import java.io.Writer;
 import java.util.Properties;
 
-import org.xml.sax.ContentHandler;
+import test.org.xml.sax.ContentHandler;
 
 /**
  * The Serializer interface is implemented by a serializer to enable users to:
  * <ul>
  * <li>get and set streams or writers
  * <li>configure the serializer with key/value properties
- * <li>get an org.xml.sax.ContentHandler or a DOMSerializer to provide input to
+ * <li>get an test.org.xml.sax.ContentHandler or a DOMSerializer to provide input to
  * </ul>
  *
  * <p>
@@ -62,8 +62,8 @@ import org.xml.sax.ContentHandler;
  * <p>
  * For example:
  * <pre>
- * org.w3c.dom.Document     inputDoc;
- * com.sun.org.apache.xml.internal.serializer.Serializer   ser;
+ * test.org.w3c.dom.Document     inputDoc;
+ * com.sun.test.org.apache.xml.internal.serializer.Serializer   ser;
  * java.io.Writer owriter;
  *
  * java.util.Properties props =

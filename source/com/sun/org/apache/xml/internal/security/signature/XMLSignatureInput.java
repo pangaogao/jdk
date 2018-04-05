@@ -44,9 +44,9 @@ import com.sun.org.apache.xml.internal.security.c14n.implementations.Canonicaliz
 import com.sun.org.apache.xml.internal.security.exceptions.XMLSecurityRuntimeException;
 import com.sun.org.apache.xml.internal.security.utils.JavaUtils;
 import com.sun.org.apache.xml.internal.security.utils.XMLUtils;
-import org.w3c.dom.Document;
-import org.w3c.dom.Node;
-import org.xml.sax.SAXException;
+import test.org.w3c.dom.Document;
+import test.org.w3c.dom.Node;
+import test.org.xml.sax.SAXException;
 
 /**
  * Class XMLSignatureInput

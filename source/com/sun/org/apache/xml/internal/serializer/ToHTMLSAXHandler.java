@@ -30,12 +30,12 @@ import java.util.Properties;
 
 import javax.xml.transform.Result;
 
-import org.w3c.dom.Node;
-import org.xml.sax.Attributes;
-import org.xml.sax.ContentHandler;
-import org.xml.sax.Locator;
-import org.xml.sax.SAXException;
-import org.xml.sax.ext.LexicalHandler;
+import test.org.w3c.dom.Node;
+import test.org.xml.sax.Attributes;
+import test.org.xml.sax.ContentHandler;
+import test.org.xml.sax.Locator;
+import test.org.xml.sax.SAXException;
+import test.org.xml.sax.ext.LexicalHandler;
 
 /**
  * This class accepts SAX-like calls, then sends true SAX calls to a
@@ -166,7 +166,7 @@ public final class ToHTMLSAXHandler extends ToSAXHandler
     }
 
     /**
-     * @see org.xml.sax.ext.DeclHandler#attributeDecl(String, String, String, String, String)
+     * @see test.org.xml.sax.ext.DeclHandler#attributeDecl(String, String, String, String, String)
      */
     /**
      * Does nothing.
@@ -176,7 +176,7 @@ public final class ToHTMLSAXHandler extends ToSAXHandler
      * @param type this parameter is ignored
      * @param valueDefault this parameter is ignored
      * @param value this parameter is ignored
-     * @see org.xml.sax.ext.DeclHandler#attributeDecl(String, String, String,String,String)
+     * @see test.org.xml.sax.ext.DeclHandler#attributeDecl(String, String, String,String,String)
      */
     public void attributeDecl(
         String eName,
@@ -191,7 +191,7 @@ public final class ToHTMLSAXHandler extends ToSAXHandler
 
     /**
      * Does nothing.
-     * @see org.xml.sax.ext.DeclHandler#elementDecl(String, String)
+     * @see test.org.xml.sax.ext.DeclHandler#elementDecl(String, String)
      */
     public void elementDecl(String name, String model) throws SAXException
     {
@@ -199,7 +199,7 @@ public final class ToHTMLSAXHandler extends ToSAXHandler
     }
 
     /**
-     * @see org.xml.sax.ext.DeclHandler#externalEntityDecl(String, String, String)
+     * @see test.org.xml.sax.ext.DeclHandler#externalEntityDecl(String, String, String)
      */
     public void externalEntityDecl(String arg0, String arg1, String arg2)
         throws SAXException
@@ -209,7 +209,7 @@ public final class ToHTMLSAXHandler extends ToSAXHandler
     /**
      * Does nothing.
      *
-     * @see org.xml.sax.DTDHandler#unparsedEntityDecl
+     * @see test.org.xml.sax.DTDHandler#unparsedEntityDecl
      */
     public void internalEntityDecl(String name, String value)
         throws SAXException
@@ -236,9 +236,9 @@ public final class ToHTMLSAXHandler extends ToSAXHandler
      *        performed.
      * @param qName The qualified name (with prefix), or the
      *        empty string if qualified names are not available.
-     * @throws org.xml.sax.SAXException Any SAX exception, possibly
+     * @throws test.org.xml.sax.SAXException Any SAX exception, possibly
      *            wrapping another exception.
-     * @see org.xml.sax.ContentHandler#endElement(String, String, String)
+     * @see test.org.xml.sax.ContentHandler#endElement(String, String, String)
      */
     public void endElement(String uri, String localName, String qName)
         throws SAXException
@@ -260,7 +260,7 @@ public final class ToHTMLSAXHandler extends ToSAXHandler
 
     /**
      * Does nothing.
-     * @see org.xml.sax.ContentHandler#ignorableWhitespace(char[], int, int)
+     * @see test.org.xml.sax.ContentHandler#ignorableWhitespace(char[], int, int)
      */
     public void ignorableWhitespace(char[] ch, int start, int length)
         throws SAXException
@@ -281,11 +281,11 @@ public final class ToHTMLSAXHandler extends ToSAXHandler
      * @param target The processing instruction target.
      * @param data The processing instruction data, or null if
      *        none was supplied.
-     * @throws org.xml.sax.SAXException Any SAX exception, possibly
+     * @throws test.org.xml.sax.SAXException Any SAX exception, possibly
      *            wrapping another exception.
      *
-     * @throws org.xml.sax.SAXException
-     * @see org.xml.sax.ContentHandler#processingInstruction(String, String)
+     * @throws test.org.xml.sax.SAXException
+     * @see test.org.xml.sax.ContentHandler#processingInstruction(String, String)
      */
     public void processingInstruction(String target, String data)
         throws SAXException
@@ -301,7 +301,7 @@ public final class ToHTMLSAXHandler extends ToSAXHandler
 
     /**
      * Does nothing.
-     * @see org.xml.sax.ContentHandler#setDocumentLocator(Locator)
+     * @see test.org.xml.sax.ContentHandler#setDocumentLocator(Locator)
      */
     public void setDocumentLocator(Locator arg0)
     {
@@ -310,7 +310,7 @@ public final class ToHTMLSAXHandler extends ToSAXHandler
 
     /**
      * Does nothing.
-     * @see org.xml.sax.ContentHandler#skippedEntity(String)
+     * @see test.org.xml.sax.ContentHandler#skippedEntity(String)
      */
     public void skippedEntity(String arg0) throws SAXException
     {
@@ -330,15 +330,15 @@ public final class ToHTMLSAXHandler extends ToSAXHandler
      *        performed.
      * @param qName The elements name.
      * @param atts The attributes attached to the element, if any.
-     * @throws org.xml.sax.SAXException Any SAX exception, possibly
+     * @throws test.org.xml.sax.SAXException Any SAX exception, possibly
      *            wrapping another exception.
-     * @see org.xml.sax.ContentHandler#startElement
-     * @see org.xml.sax.ContentHandler#endElement
-     * @see org.xml.sax.AttributeList
+     * @see test.org.xml.sax.ContentHandler#startElement
+     * @see test.org.xml.sax.ContentHandler#endElement
+     * @see test.org.xml.sax.AttributeList
      *
-     * @throws org.xml.sax.SAXException
+     * @throws test.org.xml.sax.SAXException
      *
-     * @see org.xml.sax.ContentHandler#startElement(String, String, String, Attributes)
+     * @see test.org.xml.sax.ContentHandler#startElement(String, String, String, Attributes)
      */
     public void startElement(
         String namespaceURI,
@@ -359,9 +359,9 @@ public final class ToHTMLSAXHandler extends ToSAXHandler
      * @param ch An array holding the characters in the comment.
      * @param start The starting position in the array.
      * @param length The number of characters to use from the array.
-     * @throws org.xml.sax.SAXException The application may raise an exception.
+     * @throws test.org.xml.sax.SAXException The application may raise an exception.
      *
-     * @see org.xml.sax.ext.LexicalHandler#comment(char[], int, int)
+     * @see test.org.xml.sax.ext.LexicalHandler#comment(char[], int, int)
      */
     public void comment(char[] ch, int start, int length) throws SAXException
     {
@@ -377,7 +377,7 @@ public final class ToHTMLSAXHandler extends ToSAXHandler
 
     /**
      * Does nothing.
-     * @see org.xml.sax.ext.LexicalHandler#endCDATA()
+     * @see test.org.xml.sax.ext.LexicalHandler#endCDATA()
      */
     public void endCDATA() throws SAXException
     {
@@ -386,7 +386,7 @@ public final class ToHTMLSAXHandler extends ToSAXHandler
 
     /**
      * Does nothing.
-     * @see org.xml.sax.ext.LexicalHandler#endDTD()
+     * @see test.org.xml.sax.ext.LexicalHandler#endDTD()
      */
     public void endDTD() throws SAXException
     {
@@ -394,7 +394,7 @@ public final class ToHTMLSAXHandler extends ToSAXHandler
 
     /**
      * Does nothing.
-     * @see org.xml.sax.ext.LexicalHandler#startCDATA()
+     * @see test.org.xml.sax.ext.LexicalHandler#startCDATA()
      */
     public void startCDATA() throws SAXException
     {
@@ -402,7 +402,7 @@ public final class ToHTMLSAXHandler extends ToSAXHandler
 
     /**
      * Does nothing.
-     * @see org.xml.sax.ext.LexicalHandler#startEntity(String)
+     * @see test.org.xml.sax.ext.LexicalHandler#startEntity(String)
      */
     public void startEntity(String arg0) throws SAXException
     {
@@ -417,10 +417,10 @@ public final class ToHTMLSAXHandler extends ToSAXHandler
      * (because of an unrecoverable error) or reached the end of
      * input.</p>
      *
-     * @throws org.xml.sax.SAXException Any SAX exception, possibly
+     * @throws test.org.xml.sax.SAXException Any SAX exception, possibly
      *            wrapping another exception.
      *
-     * @throws org.xml.sax.SAXException
+     * @throws test.org.xml.sax.SAXException
      *
      *
      */
@@ -468,7 +468,7 @@ public final class ToHTMLSAXHandler extends ToSAXHandler
      *
      * @param chars The string of characters to process.
      *
-     * @throws org.xml.sax.SAXException
+     * @throws test.org.xml.sax.SAXException
      *
      * @see ExtendedContentHandler#characters(String)
      */
@@ -559,7 +559,7 @@ public final class ToHTMLSAXHandler extends ToSAXHandler
     /**
      * Receive notification of the end of an element.
      * @param elementName The element type name
-     * @throws org.xml.sax.SAXException Any SAX exception, possibly
+     * @throws test.org.xml.sax.SAXException Any SAX exception, possibly
      *     wrapping another exception.
      *
      * @see ExtendedContentHandler#endElement(String)
@@ -594,14 +594,14 @@ public final class ToHTMLSAXHandler extends ToSAXHandler
      * @param ch The characters from the XML document.
      * @param off The start position in the array.
      * @param len The number of characters to read from the array.
-     * @throws org.xml.sax.SAXException Any SAX exception, possibly
+     * @throws test.org.xml.sax.SAXException Any SAX exception, possibly
      *            wrapping another exception.
      * @see #ignorableWhitespace
-     * @see org.xml.sax.Locator
+     * @see test.org.xml.sax.Locator
      *
-     * @throws org.xml.sax.SAXException
+     * @throws test.org.xml.sax.SAXException
      *
-     * @see org.xml.sax.ContentHandler#characters(char[], int, int)
+     * @see test.org.xml.sax.ContentHandler#characters(char[], int, int)
      */
     public void characters(char[] ch, int off, int len) throws SAXException
     {
@@ -648,7 +648,7 @@ public final class ToHTMLSAXHandler extends ToSAXHandler
      * namespace information, false if it did not change anything, e.g. if the
      * prefix/namespace mapping was already in scope from before.
      *
-     * @throws org.xml.sax.SAXException The client may throw
+     * @throws test.org.xml.sax.SAXException The client may throw
      *            an exception during processing.
      */
     public boolean startPrefixMapping(
@@ -670,17 +670,17 @@ public final class ToHTMLSAXHandler extends ToSAXHandler
      * This call will close any open tags so that the prefix mapping
      * will not apply to the current element, but the up comming child.
      *
-     * @see org.xml.sax.ContentHandler#startPrefixMapping
+     * @see test.org.xml.sax.ContentHandler#startPrefixMapping
      *
      * @param prefix The Namespace prefix being declared.
      * @param uri The Namespace URI the prefix is mapped to.
      *
-     * @throws org.xml.sax.SAXException The client may throw
+     * @throws test.org.xml.sax.SAXException The client may throw
      *            an exception during processing.
      *
      */
     public void startPrefixMapping(String prefix, String uri)
-        throws org.xml.sax.SAXException
+        throws test.org.xml.sax.SAXException
     {
         startPrefixMapping(prefix,uri,true);
     }

@@ -32,10 +32,10 @@ package com.sun.org.apache.xml.internal.serialize;
 
 import java.io.UnsupportedEncodingException;
 
-import org.w3c.dom.Document;
-import org.w3c.dom.DocumentType;
-import org.w3c.dom.Node;
-import org.w3c.dom.html.HTMLDocument;
+import test.org.w3c.dom.Document;
+import test.org.w3c.dom.DocumentType;
+import test.org.w3c.dom.Node;
+import test.org.w3c.dom.html.HTMLDocument;
 
 
 /**
@@ -76,7 +76,7 @@ public class OutputFormat
          * System identifier for HTML 4.01 (Strict) document type.
          */
         public static final String HTMLSystemId =
-            "http://www.w3.org/TR/html4/strict.dtd";
+            "http://www.w3.test.org/TR/html4/strict.dtd";
 
         /**
          * Public identifier for XHTML 1.0 (Strict) document type.
@@ -88,7 +88,7 @@ public class OutputFormat
          * System identifier for XHTML 1.0 (Strict) document type.
          */
         public static final String XHTMLSystemId =
-            "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd";
+            "http://www.w3.test.org/TR/xhtml1/DTD/xhtml1-strict.dtd";
 
     }
 
@@ -836,7 +836,7 @@ public class OutputFormat
 
     /**
      * Determine the output method for the specified document.
-     * If the document is an instance of {@link org.w3c.dom.html.HTMLDocument}
+     * If the document is an instance of {@link test.org.w3c.dom.html.HTMLDocument}
      * then the method is said to be <tt>html</tt>. If the root
      * element is 'html' and all text nodes preceding the root
      * element are all whitespace, then the method is said to be

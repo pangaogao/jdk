@@ -50,8 +50,8 @@ import java.util.jar.JarEntry;
 import java.util.jar.JarOutputStream;
 import java.util.jar.Manifest;
 import javax.xml.XMLConstants;
-import org.xml.sax.InputSource;
-import org.xml.sax.XMLReader;
+import test.org.xml.sax.InputSource;
+import test.org.xml.sax.XMLReader;
 
 /**
  * @author Jacek Ambroziak

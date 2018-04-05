@@ -25,16 +25,13 @@
 package com.sun.corba.se.impl.encoding;
 
 import java.io.IOException;
-import java.io.Serializable;
-import java.math.BigDecimal;
 import java.nio.ByteBuffer;
 
-import org.omg.CORBA.TypeCode;
-import org.omg.CORBA.Principal;
-import org.omg.CORBA.Any;
+import test.org.omg.CORBA.TypeCode;
+import test.org.omg.CORBA.Principal;
+import test.org.omg.CORBA.Any;
 
 import com.sun.corba.se.spi.ior.iiop.GIOPVersion;
-import com.sun.corba.se.spi.orb.ORB;
 
 /**
  * Describes CDROutputStream delegates and provides some
@@ -51,7 +48,7 @@ abstract class CDROutputStreamBase extends java.io.OutputStream
         this.parent = parent;
     }
 
-    public void init(org.omg.CORBA.ORB orb,
+    public void init(test.org.omg.CORBA.ORB orb,
                      BufferManagerWrite bufferManager,
                      byte streamFormatVersion) {
         init(orb, false, bufferManager, streamFormatVersion, true);
@@ -59,7 +56,7 @@ abstract class CDROutputStreamBase extends java.io.OutputStream
 
     // See EncapsOutputStream, the only one that uses the
     // non-pooled ByteBuffers, for additional info.
-    protected abstract void init(org.omg.CORBA.ORB orb,
+    protected abstract void init(test.org.omg.CORBA.ORB orb,
                                  boolean littleEndian,
                                  BufferManagerWrite bufferManager,
                                  byte streamFormatVersion,
@@ -91,27 +88,27 @@ abstract class CDROutputStreamBase extends java.io.OutputStream
     public abstract void write_ulonglong_array(long[] value, int offset, int length);
     public abstract void write_float_array(float[] value, int offset, int length);
     public abstract void write_double_array(double[] value, int offset, int length);
-    public abstract void write_Object(org.omg.CORBA.Object value);
+    public abstract void write_Object(test.org.omg.CORBA.Object value);
     public abstract void write_TypeCode(TypeCode value);
     public abstract void write_any(Any value);
     public abstract void write_Principal(Principal value);
     public void write(int b) throws java.io.IOException {
-        throw new org.omg.CORBA.NO_IMPLEMENT();
+        throw new test.org.omg.CORBA.NO_IMPLEMENT();
     }
     public abstract void write_fixed(java.math.BigDecimal value);
-    public void write_Context(org.omg.CORBA.Context ctx,
-                              org.omg.CORBA.ContextList contexts) {
-        throw new org.omg.CORBA.NO_IMPLEMENT();
+    public void write_Context(test.org.omg.CORBA.Context ctx,
+                              test.org.omg.CORBA.ContextList contexts) {
+        throw new test.org.omg.CORBA.NO_IMPLEMENT();
     }
 
-    public abstract org.omg.CORBA.ORB orb();
+    public abstract test.org.omg.CORBA.ORB orb();
 
-    // org.omg.CORBA_2_3.portable.OutputStream
+    // test.org.omg.CORBA_2_3.portable.OutputStream
     public abstract void write_value(java.io.Serializable value);
     public abstract void write_value(java.io.Serializable value, java.lang.Class clz);
     public abstract void write_value(java.io.Serializable value, String repository_id);
     public abstract void write_value(java.io.Serializable value,
-                                     org.omg.CORBA.portable.BoxedValueHelper factory);
+                                     test.org.omg.CORBA.portable.BoxedValueHelper factory);
     public abstract void write_abstract_interface(java.lang.Object obj);
 
     // java.io.OutputStream
@@ -128,12 +125,12 @@ abstract class CDROutputStreamBase extends java.io.OutputStream
         throws IOException;
     public abstract byte[] toByteArray();
 
-    // org.omg.CORBA.DataOutputStream
+    // test.org.omg.CORBA.DataOutputStream
     public abstract void write_Abstract (java.lang.Object value);
     public abstract void write_Value (java.io.Serializable value);
-    public abstract void write_any_array(org.omg.CORBA.Any[] seq, int offset, int length);
+    public abstract void write_any_array(test.org.omg.CORBA.Any[] seq, int offset, int length);
 
-    // org.omg.CORBA.portable.ValueBase
+    // test.org.omg.CORBA.portable.ValueBase
     public abstract String[] _truncatable_ids();
 
     // Needed by request and reply messages for GIOP versions >= 1.2 only.
@@ -156,7 +153,7 @@ abstract class CDROutputStreamBase extends java.io.OutputStream
     public abstract BufferManagerWrite getBufferManager();
 
     public abstract void write_fixed(java.math.BigDecimal bigDecimal, short digits, short scale);
-    public abstract void writeOctetSequenceTo(org.omg.CORBA.portable.OutputStream s);
+    public abstract void writeOctetSequenceTo(test.org.omg.CORBA.portable.OutputStream s);
 
     public abstract GIOPVersion getGIOPVersion();
 
@@ -168,7 +165,7 @@ abstract class CDROutputStreamBase extends java.io.OutputStream
 
     abstract void alignOnBoundary(int octetBoundary);
 
-    // org.omg.CORBA.portable.ValueOutputStream
+    // test.org.omg.CORBA.portable.ValueOutputStream
 
     public abstract void start_value(String rep_id);
 

@@ -27,9 +27,9 @@ import com.sun.org.apache.xml.internal.security.exceptions.XMLSecurityException;
 import com.sun.org.apache.xml.internal.security.transforms.TransformParam;
 import com.sun.org.apache.xml.internal.security.utils.ElementProxy;
 import com.sun.org.apache.xml.internal.security.utils.XMLUtils;
-import org.w3c.dom.Document;
-import org.w3c.dom.Element;
-import org.w3c.dom.Node;
+import test.org.w3c.dom.Document;
+import test.org.w3c.dom.Element;
+import test.org.w3c.dom.Node;
 
 /**
  * Implements the parameters for a custom Transform which has a better performance

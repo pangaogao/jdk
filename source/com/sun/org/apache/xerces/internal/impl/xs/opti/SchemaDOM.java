@@ -28,11 +28,11 @@ import com.sun.org.apache.xerces.internal.xni.NamespaceContext;
 import com.sun.org.apache.xerces.internal.xni.QName;
 import com.sun.org.apache.xerces.internal.xni.XMLAttributes;
 import com.sun.org.apache.xerces.internal.xni.XMLString;
-import org.w3c.dom.Attr;
-import org.w3c.dom.DOMImplementation;
-import org.w3c.dom.Element;
-import org.w3c.dom.NamedNodeMap;
-import org.w3c.dom.Node;
+import test.org.w3c.dom.Attr;
+import test.org.w3c.dom.DOMImplementation;
+import test.org.w3c.dom.Element;
+import test.org.w3c.dom.NamedNodeMap;
+import test.org.w3c.dom.Node;
 
 /**
  * @xerces.internal
@@ -341,7 +341,7 @@ public class SchemaDOM extends DefaultDocument {
         }
     }
 
-    // org.w3c.dom methods
+    // test.org.w3c.dom methods
     public Element getDocumentElement() {
         // this returns a parent node, known to be an ElementImpl
         return (ElementImpl)relations[0][1];

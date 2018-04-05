@@ -70,7 +70,7 @@ public final class Encodings extends Object
     /**
      * Standard filename for properties file with encodings data.
      */
-    private static final String ENCODINGS_PROP = "com.sun.org.apache.xalan.internal.serialize.encodings";
+    private static final String ENCODINGS_PROP = "com.sun.test.org.apache.xalan.internal.serialize.encodings";
 
 
     /**

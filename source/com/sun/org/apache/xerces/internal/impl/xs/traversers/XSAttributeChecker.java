@@ -42,8 +42,8 @@ import java.util.Iterator;
 import java.util.Map;
 import java.util.StringTokenizer;
 import java.util.Vector;
-import org.w3c.dom.Attr;
-import org.w3c.dom.Element;
+import test.org.w3c.dom.Attr;
+import test.org.w3c.dom.Element;
 
 /**
  * Class <code>XSAttributeCheck</code> is used to check the validity of attributes

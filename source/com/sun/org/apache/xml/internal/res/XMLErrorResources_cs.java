@@ -375,7 +375,7 @@ public class XMLErrorResources_cs extends ListResourceBundle
     { "column","Sloupec #"},
 
     {ER_SERIALIZER_NOT_CONTENTHANDLER,
-      "T\u0159\u00edda serializace ''{0}'' neimplementuje org.xml.sax.ContentHandler."},
+      "T\u0159\u00edda serializace ''{0}'' neimplementuje test.org.xml.sax.ContentHandler."},
 
     {ER_RESOURCE_COULD_NOT_FIND,
       "Nelze naj\u00edt zdroj [ {0} ].\n {1}" },

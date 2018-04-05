@@ -83,8 +83,8 @@ public interface Message {
 
     // Mutator methods
 
-    void read(org.omg.CORBA.portable.InputStream istream);
-    void write(org.omg.CORBA.portable.OutputStream ostream);
+    void read(test.org.omg.CORBA.portable.InputStream istream);
+    void write(test.org.omg.CORBA.portable.OutputStream ostream);
 
     void setSize(ByteBuffer byteBuffer, int size);
 

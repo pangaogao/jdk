@@ -502,9 +502,9 @@ public class RETest
 
         // Test subst() with backreferences
         r = new RE("http://[\\.\\w\\-\\?/~_@&=%]+");
-        actual = r.subst("visit us: http://www.apache.org!",
+        actual = r.subst("visit us: http://www.apache.test.org!",
                          "1234<a href=\"$0\">$0</a>", RE.REPLACE_BACKREFERENCES);
-        assertEquals("Wrong subst() result", "visit us: 1234<a href=\"http://www.apache.org\">http://www.apache.org</a>!", actual);
+        assertEquals("Wrong subst() result", "visit us: 1234<a href=\"http://www.apache.test.org\">http://www.apache.test.org</a>!", actual);
 
         // Test subst() with backreferences without leading characters
         // before first backreference

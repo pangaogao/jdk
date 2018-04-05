@@ -22,9 +22,9 @@ package com.sun.org.apache.xerces.internal.jaxp;
 
 import com.sun.org.apache.xerces.internal.util.SAXMessageFormatter;
 import java.util.Locale;
-import org.xml.sax.SAXException;
-import org.xml.sax.SAXParseException;
-import org.xml.sax.helpers.DefaultHandler;
+import test.org.xml.sax.SAXException;
+import test.org.xml.sax.SAXParseException;
+import test.org.xml.sax.helpers.DefaultHandler;
 
 /**
  */

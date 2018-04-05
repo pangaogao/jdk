@@ -28,7 +28,7 @@ package com.sun.corba.se.impl.presentation.rmi;
 import javax.rmi.CORBA.Util;
 import javax.rmi.CORBA.Tie ;
 
-import org.omg.CORBA.CompletionStatus;
+import test.org.omg.CORBA.CompletionStatus;
 
 import com.sun.corba.se.spi.presentation.rmi.PresentationManager;
 
@@ -62,7 +62,7 @@ public class StubFactoryFactoryStaticImpl extends
 
         // The old code was optimized to try to guess which way to load classes
         // first.  The real stub class name could either be className or
-        // "org.omg.stub." + className.  We will compute this as follows:
+        // "test.org.omg.stub." + className.  We will compute this as follows:
         // If stubName starts with a "forbidden" package, try the prefixed
         // version first, otherwise try the non-prefixed version first.
         // In any case, try both forms if necessary.

@@ -25,22 +25,17 @@
 
 package com.sun.corba.se.impl.oa.poa ;
 
-import org.omg.PortableServer.Servant ;
+import test.org.omg.PortableServer.Servant ;
 
-import org.omg.PortableServer.POAPackage.WrongPolicy ;
-import org.omg.PortableServer.POAPackage.ServantNotActive ;
-import org.omg.PortableServer.POAPackage.ServantAlreadyActive ;
-import org.omg.PortableServer.POAPackage.ObjectNotActive ;
-import org.omg.PortableServer.POAPackage.ObjectAlreadyActive ;
-
-import com.sun.corba.se.impl.orbutil.concurrent.SyncUtil ;
+import test.org.omg.PortableServer.POAPackage.WrongPolicy ;
+import test.org.omg.PortableServer.POAPackage.ServantNotActive ;
+import test.org.omg.PortableServer.POAPackage.ServantAlreadyActive ;
+import test.org.omg.PortableServer.POAPackage.ObjectNotActive ;
+import test.org.omg.PortableServer.POAPackage.ObjectAlreadyActive ;
 
 import com.sun.corba.se.impl.orbutil.ORBUtility ;
-import com.sun.corba.se.impl.orbutil.ORBConstants ;
 
 import com.sun.corba.se.impl.javax.rmi.CORBA.Util ;
-
-import com.sun.corba.se.impl.oa.NullServantImpl ;
 
 public abstract class POAPolicyMediatorBase_R extends POAPolicyMediatorBase {
     protected ActiveObjectMap activeObjectMap ;

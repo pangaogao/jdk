@@ -31,8 +31,7 @@ import com.sun.org.apache.xml.internal.resolver.CatalogEntry;
 import com.sun.org.apache.xml.internal.resolver.CatalogException;
 import com.sun.org.apache.xml.internal.resolver.helpers.PublicId;
 
-import org.xml.sax.*;
-import org.w3c.dom.*;
+import test.org.xml.sax.*;
 
 /**
  * Parse OASIS Entity Resolution Technical Committee

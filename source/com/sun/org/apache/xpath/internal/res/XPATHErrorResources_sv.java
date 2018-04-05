@@ -363,7 +363,7 @@ public static final String ER_IGNORABLE_WHITESPACE_NOT_HANDLED =
   { ER_CURRENT_TAKES_NO_ARGS, "Funktionen current() tar inte emot argument!" },
 
   { ER_DOCUMENT_REPLACED,
-      "Implementeringen av funktionen document() har inte ersatts av com.sun.org.apache.xalan.internal.xslt.FuncDocument!"},
+      "Implementeringen av funktionen document() har inte ersatts av com.sun.test.org.apache.xalan.internal.xslt.FuncDocument!"},
 
   { ER_CONTEXT_HAS_NO_OWNERDOC,
       "context har inget \u00E4gardokument!"},
@@ -913,7 +913,7 @@ public static final String ER_IGNORABLE_WHITESPACE_NOT_HANDLED =
 
   /** Field ERROR_RESOURCES          */
   public static final String ERROR_RESOURCES =
-    "com.sun.org.apache.xpath.internal.res.XPATHErrorResources";
+    "com.sun.test.org.apache.xpath.internal.res.XPATHErrorResources";
 
   /** Field ERROR_STRING          */
   public static final String ERROR_STRING = "#error";

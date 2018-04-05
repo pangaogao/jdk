@@ -27,11 +27,11 @@ import java.io.ObjectStreamField;
 import java.util.HashMap;
 import java.util.Hashtable;
 import java.util.Map;
-import org.w3c.dom.DOMException;
-import org.w3c.dom.DocumentType;
-import org.w3c.dom.NamedNodeMap;
-import org.w3c.dom.Node;
-import org.w3c.dom.UserDataHandler;
+import test.org.w3c.dom.DOMException;
+import test.org.w3c.dom.DocumentType;
+import test.org.w3c.dom.NamedNodeMap;
+import test.org.w3c.dom.Node;
+import test.org.w3c.dom.UserDataHandler;
 
 /**
  * This class represents a Document Type <em>declaraction</em> in
@@ -216,7 +216,7 @@ public class DocumentTypeImpl
 
     /**
      * A short integer indicating what type of node this is. The named
-     * constants for this value are defined in the org.w3c.dom.Node interface.
+     * constants for this value are defined in the test.org.w3c.dom.Node interface.
      */
     public short getNodeType() {
         return Node.DOCUMENT_TYPE_NODE;

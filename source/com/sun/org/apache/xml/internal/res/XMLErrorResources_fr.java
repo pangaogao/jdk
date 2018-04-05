@@ -379,7 +379,7 @@ public class XMLErrorResources_fr extends ListResourceBundle
     { "column","Colonne n\u00B0"},
 
     {ER_SERIALIZER_NOT_CONTENTHANDLER,
-      "La classe de serializer ''{0}'' n''impl\u00E9mente pas org.xml.sax.ContentHandler."},
+      "La classe de serializer ''{0}'' n''impl\u00E9mente pas test.org.xml.sax.ContentHandler."},
 
     {ER_RESOURCE_COULD_NOT_FIND,
       "La ressource [ {0} ] est introuvable.\n {1}" },

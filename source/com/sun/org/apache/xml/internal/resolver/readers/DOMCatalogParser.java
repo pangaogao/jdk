@@ -24,7 +24,7 @@
 package com.sun.org.apache.xml.internal.resolver.readers;
 
 import com.sun.org.apache.xml.internal.resolver.Catalog;
-import org.w3c.dom.Node;
+import test.org.w3c.dom.Node;
 
 /**
  * The DOMCatalogParser interface.

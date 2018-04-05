@@ -37,9 +37,9 @@ public interface TOA extends ObjectAdapter {
     /** Connect the given servant to the ORB by allocating a transient object key
      *  and creating an IOR and object reference using the current factory.
      */
-    void connect( org.omg.CORBA.Object servant ) ;
+    void connect( test.org.omg.CORBA.Object servant ) ;
 
     /** Disconnect the object from this ORB.
     */
-    void disconnect( org.omg.CORBA.Object obj ) ;
+    void disconnect( test.org.omg.CORBA.Object obj ) ;
 }

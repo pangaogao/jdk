@@ -31,10 +31,10 @@ import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
 
 import com.sun.org.apache.xml.internal.security.utils.XMLUtils;
-import org.w3c.dom.Document;
-import org.w3c.dom.Node;
-import org.w3c.dom.NodeList;
-import org.xml.sax.InputSource;
+import test.org.w3c.dom.Document;
+import test.org.w3c.dom.Node;
+import test.org.w3c.dom.NodeList;
+import test.org.xml.sax.InputSource;
 
 /**
  * Base class which all Canonicalization algorithms extend.
@@ -55,11 +55,11 @@ public abstract class CanonicalizerSpi {
      * @throws CanonicalizationException
      * @throws java.io.IOException
      * @throws javax.xml.parsers.ParserConfigurationException
-     * @throws org.xml.sax.SAXException
+     * @throws test.org.xml.sax.SAXException
      */
     public byte[] engineCanonicalize(byte[] inputBytes)
         throws javax.xml.parsers.ParserConfigurationException, java.io.IOException,
-        org.xml.sax.SAXException, CanonicalizationException {
+        test.org.xml.sax.SAXException, CanonicalizationException {
 
         java.io.InputStream bais = new ByteArrayInputStream(inputBytes);
         InputSource in = new InputSource(bais);

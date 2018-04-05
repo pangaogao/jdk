@@ -20,7 +20,7 @@
 
 package com.sun.org.apache.xerces.internal.dom;
 
-import org.w3c.dom.Node;
+import test.org.w3c.dom.Node;
 
 /**
  * NON-DOM CLASS: Describe one of the Elements (and its associated

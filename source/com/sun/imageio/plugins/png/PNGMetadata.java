@@ -35,7 +35,7 @@ import javax.imageio.metadata.IIOInvalidTreeException;
 import javax.imageio.metadata.IIOMetadata;
 import javax.imageio.metadata.IIOMetadataFormatImpl;
 import javax.imageio.metadata.IIOMetadataNode;
-import org.w3c.dom.Node;
+import test.org.w3c.dom.Node;
 
 public class PNGMetadata extends IIOMetadata implements Cloneable {
 

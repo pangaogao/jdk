@@ -38,9 +38,9 @@ import javax.xml.stream.XMLStreamException;
 import javax.xml.stream.events.*;
 import javax.xml.stream.XMLEventWriter;
 
-import org.xml.sax.Attributes;
-import org.xml.sax.SAXException;
-import org.xml.sax.ext.Locator2;
+import test.org.xml.sax.Attributes;
+import test.org.xml.sax.SAXException;
+import test.org.xml.sax.ext.Locator2;
 
 /**
  * @author Sunitha Reddy

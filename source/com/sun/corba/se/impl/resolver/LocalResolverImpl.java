@@ -31,13 +31,13 @@ import com.sun.corba.se.spi.orbutil.closure.Closure ;
 public class LocalResolverImpl implements LocalResolver {
     java.util.Map nameToClosure = new java.util.HashMap() ;
 
-    public synchronized org.omg.CORBA.Object resolve( String name )
+    public synchronized test.org.omg.CORBA.Object resolve(String name )
     {
         Closure cl = (Closure)nameToClosure.get( name ) ;
         if (cl == null)
             return null ;
 
-        return (org.omg.CORBA.Object)(cl.evaluate()) ;
+        return (test.org.omg.CORBA.Object)(cl.evaluate()) ;
     }
 
     public synchronized java.util.Set list()

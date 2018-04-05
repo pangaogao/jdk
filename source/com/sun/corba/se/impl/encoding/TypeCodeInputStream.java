@@ -28,41 +28,13 @@ package com.sun.corba.se.impl.encoding;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Iterator;
-import java.util.List;
-import java.util.Collections;
-import java.util.ArrayList;
-import java.io.IOException;
-import java.io.PrintStream;
-import java.io.ByteArrayOutputStream;
-import java.math.BigDecimal;
-import java.math.BigInteger;
 import java.nio.ByteBuffer;
 
-import org.omg.CORBA.TypeCode ;
-import org.omg.CORBA.StructMember ;
-import org.omg.CORBA.UnionMember ;
-import org.omg.CORBA.ValueMember ;
-import org.omg.CORBA.TCKind ;
-import org.omg.CORBA.Any ;
-import org.omg.CORBA.Principal ;
-import org.omg.CORBA.BAD_TYPECODE ;
-import org.omg.CORBA.BAD_PARAM ;
-import org.omg.CORBA.BAD_OPERATION ;
-import org.omg.CORBA.INTERNAL ;
-import org.omg.CORBA.MARSHAL ;
-
-import org.omg.CORBA.TypeCodePackage.BadKind ;
-
-import org.omg.CORBA_2_3.portable.InputStream;
-import org.omg.CORBA_2_3.portable.OutputStream;
+import test.org.omg.CORBA_2_3.portable.InputStream;
 
 import com.sun.corba.se.spi.ior.iiop.GIOPVersion;
 import com.sun.corba.se.impl.corba.TypeCodeImpl;
 import com.sun.corba.se.spi.orb.ORB;
-import com.sun.corba.se.impl.encoding.CodeSetConversion;
-import com.sun.corba.se.impl.encoding.CDRInputStream;
-import com.sun.corba.se.impl.encoding.CDROutputStream;
-import com.sun.corba.se.impl.encoding.MarshalInputStream;
 
 import sun.corba.EncapsInputStreamFactory;
 
@@ -72,11 +44,11 @@ public class TypeCodeInputStream extends EncapsInputStream implements TypeCodeRe
     private InputStream enclosure = null;
     private boolean isEncapsulation = false;
 
-    public TypeCodeInputStream(org.omg.CORBA.ORB orb, byte[] data, int size) {
+    public TypeCodeInputStream(test.org.omg.CORBA.ORB orb, byte[] data, int size) {
         super(orb, data, size);
     }
 
-    public TypeCodeInputStream(org.omg.CORBA.ORB orb,
+    public TypeCodeInputStream(test.org.omg.CORBA.ORB orb,
                                byte[] data,
                                int size,
                                boolean littleEndian,
@@ -84,7 +56,7 @@ public class TypeCodeInputStream extends EncapsInputStream implements TypeCodeRe
         super(orb, data, size, littleEndian, version);
     }
 
-    public TypeCodeInputStream(org.omg.CORBA.ORB orb,
+    public TypeCodeInputStream(test.org.omg.CORBA.ORB orb,
                                ByteBuffer byteBuffer,
                                int size,
                                boolean littleEndian,
@@ -147,7 +119,7 @@ public class TypeCodeInputStream extends EncapsInputStream implements TypeCodeRe
         return getPosition();
     }
 
-    public static TypeCodeInputStream readEncapsulation(InputStream is, org.omg.CORBA.ORB _orb) {
+    public static TypeCodeInputStream readEncapsulation(InputStream is, test.org.omg.CORBA.ORB _orb) {
         // _REVISIT_ Would be nice if we didn't have to copy the buffer!
         TypeCodeInputStream encap;
 

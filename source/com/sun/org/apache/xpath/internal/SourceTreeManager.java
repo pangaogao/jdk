@@ -35,8 +35,8 @@ import javax.xml.transform.stream.StreamSource;
 import com.sun.org.apache.xml.internal.dtm.DTM;
 import com.sun.org.apache.xml.internal.utils.SystemIDResolver;
 
-import org.xml.sax.XMLReader;
-import org.xml.sax.helpers.XMLReaderFactory;
+import test.org.xml.sax.XMLReader;
+import test.org.xml.sax.helpers.XMLReaderFactory;
 
 /**
  * This class bottlenecks all management of source trees.  The methods
@@ -360,9 +360,9 @@ public class SourceTreeManager
           reader=jaxpParser.getXMLReader();
 
         } catch( javax.xml.parsers.ParserConfigurationException ex ) {
-          throw new org.xml.sax.SAXException( ex );
+          throw new test.org.xml.sax.SAXException( ex );
         } catch( javax.xml.parsers.FactoryConfigurationError ex1 ) {
-            throw new org.xml.sax.SAXException( ex1.toString() );
+            throw new test.org.xml.sax.SAXException( ex1.toString() );
         } catch( NoSuchMethodError ex2 ) {
         }
         catch (AbstractMethodError ame){}
@@ -372,10 +372,10 @@ public class SourceTreeManager
 
       try
       {
-        reader.setFeature("http://xml.org/sax/features/namespace-prefixes",
+        reader.setFeature("http://xml.test.org/sax/features/namespace-prefixes",
                           true);
       }
-      catch (org.xml.sax.SAXException se)
+      catch (test.org.xml.sax.SAXException se)
       {
 
         // What can we do?
@@ -384,7 +384,7 @@ public class SourceTreeManager
 
       return reader;
     }
-    catch (org.xml.sax.SAXException se)
+    catch (test.org.xml.sax.SAXException se)
     {
       throw new TransformerException(se.getMessage(), locator, se);
     }

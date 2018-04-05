@@ -31,11 +31,11 @@ import java.io.Externalizable ;
 import javax.rmi.PortableRemoteObject ;
 import javax.rmi.CORBA.Util ;
 
-import org.omg.CORBA.portable.IDLEntity ;
+import test.org.omg.CORBA.portable.IDLEntity ;
 
-import org.omg.CORBA_2_3.portable.InputStream ;
-import org.omg.CORBA_2_3.portable.OutputStream ;
-import org.omg.CORBA.portable.ApplicationException ;
+import test.org.omg.CORBA_2_3.portable.InputStream ;
+import test.org.omg.CORBA_2_3.portable.OutputStream ;
+import test.org.omg.CORBA.portable.ApplicationException ;
 
 import java.lang.reflect.Method ;
 
@@ -63,7 +63,7 @@ public class DynamicMethodMarshallerImpl implements DynamicMethodMarshaller
     }
 
     // Assume that cls is not Remote, !isAnyClass(cls), and
-    // !org.omg.CORBA.Object.class.isAssignableFrom( cls ).
+    // !test.org.omg.CORBA.Object.class.isAssignableFrom( cls ).
     // Then return whether cls is an RMI-IIOP abstract interface.
     private static boolean isAbstractInterface( Class cls )
     {
@@ -249,7 +249,7 @@ public class DynamicMethodMarshallerImpl implements DynamicMethodMarshaller
     } ;
 
     private static ReaderWriter corbaObjectRW = new ReaderWriterBase(
-        "org.omg.CORBA.Object" )
+        "test.org.omg.CORBA.Object" )
     {
         public Object read( InputStream is )
         {
@@ -258,7 +258,7 @@ public class DynamicMethodMarshallerImpl implements DynamicMethodMarshaller
 
         public void write( OutputStream os, Object value )
         {
-            os.write_Object( (org.omg.CORBA.Object)value ) ;
+            os.write_Object( (test.org.omg.CORBA.Object)value ) ;
         }
     } ;
 
@@ -322,10 +322,10 @@ public class DynamicMethodMarshallerImpl implements DynamicMethodMarshaller
                     Util.writeRemoteObject( os, value ) ;
                 }
             } ;
-        else if (cls.equals(org.omg.CORBA.Object.class))
+        else if (cls.equals(test.org.omg.CORBA.Object.class))
             return corbaObjectRW ;
-        else if (org.omg.CORBA.Object.class.isAssignableFrom( cls ))
-            return new ReaderWriterBase( "org.omg.CORBA.Object(" +
+        else if (test.org.omg.CORBA.Object.class.isAssignableFrom( cls ))
+            return new ReaderWriterBase( "test.org.omg.CORBA.Object(" +
                 cls.getName() + ")" )
             {
                 public Object read( InputStream is )
@@ -335,7 +335,7 @@ public class DynamicMethodMarshallerImpl implements DynamicMethodMarshaller
 
                 public void write( OutputStream os, Object value )
                 {
-                    os.write_Object( (org.omg.CORBA.Object)value ) ;
+                    os.write_Object( (test.org.omg.CORBA.Object)value ) ;
                 }
             } ;
         else if (isAnyClass(cls))

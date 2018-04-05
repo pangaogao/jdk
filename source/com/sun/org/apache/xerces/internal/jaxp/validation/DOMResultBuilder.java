@@ -50,17 +50,17 @@ import com.sun.org.apache.xerces.internal.xs.AttributePSVI;
 import com.sun.org.apache.xerces.internal.xs.ElementPSVI;
 import com.sun.org.apache.xerces.internal.xs.XSTypeDefinition;
 
-import org.w3c.dom.CDATASection;
-import org.w3c.dom.Comment;
-import org.w3c.dom.Document;
-import org.w3c.dom.DocumentType;
-import org.w3c.dom.Element;
-import org.w3c.dom.Entity;
-import org.w3c.dom.NamedNodeMap;
-import org.w3c.dom.Node;
-import org.w3c.dom.Notation;
-import org.w3c.dom.ProcessingInstruction;
-import org.w3c.dom.Text;
+import test.org.w3c.dom.CDATASection;
+import test.org.w3c.dom.Comment;
+import test.org.w3c.dom.Document;
+import test.org.w3c.dom.DocumentType;
+import test.org.w3c.dom.Element;
+import test.org.w3c.dom.Entity;
+import test.org.w3c.dom.NamedNodeMap;
+import test.org.w3c.dom.Node;
+import test.org.w3c.dom.Notation;
+import test.org.w3c.dom.ProcessingInstruction;
+import test.org.w3c.dom.Text;
 
 
 /**

@@ -8,7 +8,7 @@ package com.sun.corba.se.spi.activation;
 * Wednesday, March 15, 2017 1:33:56 AM PDT
 */
 
-public final class NoSuchEndPoint extends org.omg.CORBA.UserException
+public final class NoSuchEndPoint extends test.org.omg.CORBA.UserException
 {
 
   public NoSuchEndPoint ()

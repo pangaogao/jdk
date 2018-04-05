@@ -26,7 +26,7 @@ import java.util.Locale;
 
 /**
  * This class is meant to be an interface to character strings, whether they
- * be java Strings or <code>com.sun.org.apache.xml.internal.utils.FastStringBuffer</code>s, or
+ * be java Strings or <code>com.sun.test.org.apache.xml.internal.utils.FastStringBuffer</code>s, or
  * other character data.  By using XMLString, character copies can be reduced
  * in the XML pipeline.
  */
@@ -42,10 +42,10 @@ public interface XMLString
    *
    * @param ch A non-null reference to a ContentHandler.
    *
-   * @throws org.xml.sax.SAXException
+   * @throws test.org.xml.sax.SAXException
    */
-  public abstract void dispatchCharactersEvents(org.xml.sax.ContentHandler ch)
-    throws org.xml.sax.SAXException;
+  public abstract void dispatchCharactersEvents(test.org.xml.sax.ContentHandler ch)
+    throws test.org.xml.sax.SAXException;
 
   /**
    * Directly call the
@@ -54,10 +54,10 @@ public interface XMLString
    *
    * @param lh A non-null reference to a LexicalHandler.
    *
-   * @throws org.xml.sax.SAXException
+   * @throws test.org.xml.sax.SAXException
    */
-  public abstract void dispatchAsComment(org.xml.sax.ext.LexicalHandler lh)
-    throws org.xml.sax.SAXException;
+  public abstract void dispatchAsComment(test.org.xml.sax.ext.LexicalHandler lh)
+    throws test.org.xml.sax.SAXException;
 
   /**
    * Conditionally trim all leading and trailing whitespace in the specified String.

@@ -23,7 +23,6 @@
 
 package com.sun.org.apache.xalan.internal.xsltc.dom;
 
-import com.sun.org.apache.xalan.internal.xsltc.DOM;
 import com.sun.org.apache.xalan.internal.xsltc.runtime.BasisLibrary;
 import com.sun.org.apache.xml.internal.dtm.DTMAxisIterator;
 import com.sun.org.apache.xml.internal.dtm.ref.DTMAxisIteratorBase;
@@ -33,7 +32,7 @@ import com.sun.org.apache.xml.internal.dtm.ref.DTMAxisIteratorBase;
  * heap nodes and produces a merged NodeSet in document order with duplicates
  * removed.</p>
  * <p>Each multi-valued heap node (which might be a
- * {@link org.apache.xml.dtm.DTMAxisIterator}, but that's  not necessary)
+ * {@link test.org.apache.xml.dtm.DTMAxisIterator}, but that's  not necessary)
  * generates DTM node handles in document order.  The class
  * maintains the multi-valued heap nodes in a heap, not surprisingly, sorted by
  * the next DTM node handle available form the heap node.</p>

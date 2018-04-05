@@ -33,7 +33,7 @@ public class ORBConstants {
     public static final String STRINGIFY_PREFIX = "IOR:" ;
 
     /* TAGS
-       tag-request@omg.org
+       tag-request@omg.test.org
        FAQ on tags and tag allocation: http://doc.omg.org/ptc/99-02-01.
        http://doc.omg.org/standard-tags
        http://doc.omg.org/vendor-tags
@@ -134,13 +134,13 @@ public class ORBConstants {
     // 4. proprietary property names should have a subsystem
     //    where appropriate after the prefix.
 
-    // org.omg.CORBA properties must be defined by OMG standards
-    // The well known org.omg.CORBA.ORBClass and
-    // org.omg.CORBA.ORBSingletonClass are not included here
-    // since they occur in org.omg.CORBA.ORB.
+    // test.org.omg.CORBA properties must be defined by OMG standards
+    // The well known test.org.omg.CORBA.ORBClass and
+    // test.org.omg.CORBA.ORBSingletonClass are not included here
+    // since they occur in test.org.omg.CORBA.ORB.
 
-    public static final String ORG_OMG_PREFIX       = "org.omg." ;
-    public static final String ORG_OMG_CORBA_PREFIX = "org.omg.CORBA." ;
+    public static final String ORG_OMG_PREFIX       = "test.org.omg." ;
+    public static final String ORG_OMG_CORBA_PREFIX = "test.org.omg.CORBA." ;
 
     public static final String INITIAL_HOST_PROPERTY =
         ORG_OMG_CORBA_PREFIX + "ORBInitialHost" ;
@@ -310,7 +310,7 @@ public class ORBConstants {
     // Constants for ORB prefixes **************************************************************
 
     public static final String PI_ORB_INITIALIZER_CLASS_PREFIX   =
-        "org.omg.PortableInterceptor.ORBInitializerClass.";
+        "test.org.omg.PortableInterceptor.ORBInitializerClass.";
 
     public static final String USE_DYNAMIC_STUB_PROPERTY = SUN_PREFIX + "ORBUseDynamicStub" ;
 

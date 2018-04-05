@@ -30,8 +30,8 @@ import javax.xml.transform.Source;
 import javax.xml.transform.TransformerException;
 import javax.xml.transform.URIResolver;
 import javax.xml.transform.sax.SAXSource;
-import org.xml.sax.EntityResolver;
-import org.xml.sax.InputSource;
+import test.org.xml.sax.EntityResolver;
+import test.org.xml.sax.InputSource;
 
 /**
  * A simple bootstrapping resolver.
@@ -51,16 +51,16 @@ import org.xml.sax.InputSource;
  */
 public class BootstrapResolver implements EntityResolver, URIResolver {
   /** URI of the W3C XML Schema for OASIS XML Catalog files. */
-  public static final String xmlCatalogXSD = "http://www.oasis-open.org/committees/entity/release/1.0/catalog.xsd";
+  public static final String xmlCatalogXSD = "http://www.oasis-open.test.org/committees/entity/release/1.0/catalog.xsd";
 
   /** URI of the RELAX NG Grammar for OASIS XML Catalog files. */
-  public static final String xmlCatalogRNG = "http://www.oasis-open.org/committees/entity/release/1.0/catalog.rng";
+  public static final String xmlCatalogRNG = "http://www.oasis-open.test.org/committees/entity/release/1.0/catalog.rng";
 
   /** Public identifier for OASIS XML Catalog files. */
   public static final String xmlCatalogPubId = "-//OASIS//DTD XML Catalogs V1.0//EN";
 
   /** System identifier for OASIS XML Catalog files. */
-  public static final String xmlCatalogSysId = "http://www.oasis-open.org/committees/entity/release/1.0/catalog.dtd";
+  public static final String xmlCatalogSysId = "http://www.oasis-open.test.org/committees/entity/release/1.0/catalog.dtd";
 
   /** Private hash used for public identifiers. */
   private final Map<String, String> publicMap = new HashMap<>();

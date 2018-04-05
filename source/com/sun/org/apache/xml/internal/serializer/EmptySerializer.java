@@ -29,12 +29,12 @@ import java.util.Properties;
 import java.util.Vector;
 import javax.xml.transform.SourceLocator;
 import javax.xml.transform.Transformer;
-import org.w3c.dom.Node;
-import org.xml.sax.Attributes;
-import org.xml.sax.ContentHandler;
-import org.xml.sax.Locator;
-import org.xml.sax.SAXException;
-import org.xml.sax.SAXParseException;
+import test.org.w3c.dom.Node;
+import test.org.xml.sax.Attributes;
+import test.org.xml.sax.ContentHandler;
+import test.org.xml.sax.Locator;
+import test.org.xml.sax.SAXException;
+import test.org.xml.sax.SAXParseException;
 
 
 /**
@@ -90,7 +90,7 @@ public class EmptySerializer implements SerializationHandler
         return null;
     }
     /**
-     * @see SerializationHandler#setContentHandler(org.xml.sax.ContentHandler)
+     * @see SerializationHandler#setContentHandler(test.org.xml.sax.ContentHandler)
      */
     public void setContentHandler(ContentHandler ch)
     {
@@ -136,7 +136,7 @@ public class EmptySerializer implements SerializationHandler
         return false;
     }
     /**
-     * @see SerializationHandler#serialize(org.w3c.dom.Node)
+     * @see SerializationHandler#serialize(test.org.w3c.dom.Node)
      */
     public void serialize(Node node) throws IOException
     {
@@ -243,7 +243,7 @@ public class EmptySerializer implements SerializationHandler
         couldThrowSAXException();
     }
     /**
-     * @see ExtendedContentHandler#addAttributes(org.xml.sax.Attributes)
+     * @see ExtendedContentHandler#addAttributes(test.org.xml.sax.Attributes)
      */
     public void addAttributes(Attributes atts) throws SAXException
     {
@@ -353,21 +353,21 @@ public class EmptySerializer implements SerializationHandler
         return null;
     }
     /**
-     * @see org.xml.sax.ContentHandler#setDocumentLocator(org.xml.sax.Locator)
+     * @see test.org.xml.sax.ContentHandler#setDocumentLocator(test.org.xml.sax.Locator)
      */
     public void setDocumentLocator(Locator arg0)
     {
         aMethodIsCalled();
     }
     /**
-     * @see org.xml.sax.ContentHandler#endDocument()
+     * @see test.org.xml.sax.ContentHandler#endDocument()
      */
     public void endDocument() throws SAXException
     {
         couldThrowSAXException();
     }
     /**
-     * @see org.xml.sax.ContentHandler#startPrefixMapping(java.lang.String, java.lang.String)
+     * @see test.org.xml.sax.ContentHandler#startPrefixMapping(java.lang.String, java.lang.String)
      */
     public void startPrefixMapping(String arg0, String arg1)
         throws SAXException
@@ -375,14 +375,14 @@ public class EmptySerializer implements SerializationHandler
         couldThrowSAXException();
     }
     /**
-     * @see org.xml.sax.ContentHandler#endPrefixMapping(java.lang.String)
+     * @see test.org.xml.sax.ContentHandler#endPrefixMapping(java.lang.String)
      */
     public void endPrefixMapping(String arg0) throws SAXException
     {
         couldThrowSAXException();
     }
     /**
-     * @see org.xml.sax.ContentHandler#startElement(java.lang.String, java.lang.String, java.lang.String, org.xml.sax.Attributes)
+     * @see test.org.xml.sax.ContentHandler#startElement(java.lang.String, java.lang.String, java.lang.String, test.org.xml.sax.Attributes)
      */
     public void startElement(
         String arg0,
@@ -394,7 +394,7 @@ public class EmptySerializer implements SerializationHandler
         couldThrowSAXException();
     }
     /**
-     * @see org.xml.sax.ContentHandler#endElement(java.lang.String, java.lang.String, java.lang.String)
+     * @see test.org.xml.sax.ContentHandler#endElement(java.lang.String, java.lang.String, java.lang.String)
      */
     public void endElement(String arg0, String arg1, String arg2)
         throws SAXException
@@ -402,14 +402,14 @@ public class EmptySerializer implements SerializationHandler
         couldThrowSAXException();
     }
     /**
-     * @see org.xml.sax.ContentHandler#characters(char[], int, int)
+     * @see test.org.xml.sax.ContentHandler#characters(char[], int, int)
      */
     public void characters(char[] arg0, int arg1, int arg2) throws SAXException
     {
         couldThrowSAXException(arg0, arg1, arg2);
     }
     /**
-     * @see org.xml.sax.ContentHandler#ignorableWhitespace(char[], int, int)
+     * @see test.org.xml.sax.ContentHandler#ignorableWhitespace(char[], int, int)
      */
     public void ignorableWhitespace(char[] arg0, int arg1, int arg2)
         throws SAXException
@@ -417,7 +417,7 @@ public class EmptySerializer implements SerializationHandler
         couldThrowSAXException();
     }
     /**
-     * @see org.xml.sax.ContentHandler#processingInstruction(java.lang.String, java.lang.String)
+     * @see test.org.xml.sax.ContentHandler#processingInstruction(java.lang.String, java.lang.String)
      */
     public void processingInstruction(String arg0, String arg1)
         throws SAXException
@@ -425,7 +425,7 @@ public class EmptySerializer implements SerializationHandler
         couldThrowSAXException();
     }
     /**
-     * @see org.xml.sax.ContentHandler#skippedEntity(java.lang.String)
+     * @see test.org.xml.sax.ContentHandler#skippedEntity(java.lang.String)
      */
     public void skippedEntity(String arg0) throws SAXException
     {
@@ -439,7 +439,7 @@ public class EmptySerializer implements SerializationHandler
         couldThrowSAXException();
     }
     /**
-     * @see org.xml.sax.ext.LexicalHandler#startDTD(java.lang.String, java.lang.String, java.lang.String)
+     * @see test.org.xml.sax.ext.LexicalHandler#startDTD(java.lang.String, java.lang.String, java.lang.String)
      */
     public void startDTD(String arg0, String arg1, String arg2)
         throws SAXException
@@ -447,42 +447,42 @@ public class EmptySerializer implements SerializationHandler
         couldThrowSAXException();
     }
     /**
-     * @see org.xml.sax.ext.LexicalHandler#endDTD()
+     * @see test.org.xml.sax.ext.LexicalHandler#endDTD()
      */
     public void endDTD() throws SAXException
     {
         couldThrowSAXException();
     }
     /**
-     * @see org.xml.sax.ext.LexicalHandler#startEntity(java.lang.String)
+     * @see test.org.xml.sax.ext.LexicalHandler#startEntity(java.lang.String)
      */
     public void startEntity(String arg0) throws SAXException
     {
         couldThrowSAXException();
     }
     /**
-     * @see org.xml.sax.ext.LexicalHandler#endEntity(java.lang.String)
+     * @see test.org.xml.sax.ext.LexicalHandler#endEntity(java.lang.String)
      */
     public void endEntity(String arg0) throws SAXException
     {
         couldThrowSAXException();
     }
     /**
-     * @see org.xml.sax.ext.LexicalHandler#startCDATA()
+     * @see test.org.xml.sax.ext.LexicalHandler#startCDATA()
      */
     public void startCDATA() throws SAXException
     {
         couldThrowSAXException();
     }
     /**
-     * @see org.xml.sax.ext.LexicalHandler#endCDATA()
+     * @see test.org.xml.sax.ext.LexicalHandler#endCDATA()
      */
     public void endCDATA() throws SAXException
     {
         couldThrowSAXException();
     }
     /**
-     * @see org.xml.sax.ext.LexicalHandler#comment(char[], int, int)
+     * @see test.org.xml.sax.ext.LexicalHandler#comment(char[], int, int)
      */
     public void comment(char[] arg0, int arg1, int arg2) throws SAXException
     {
@@ -610,14 +610,14 @@ public class EmptySerializer implements SerializationHandler
         aMethodIsCalled();
     }
     /**
-     * @see org.xml.sax.ext.DeclHandler#elementDecl(java.lang.String, java.lang.String)
+     * @see test.org.xml.sax.ext.DeclHandler#elementDecl(java.lang.String, java.lang.String)
      */
     public void elementDecl(String arg0, String arg1) throws SAXException
     {
         couldThrowSAXException();
     }
     /**
-     * @see org.xml.sax.ext.DeclHandler#attributeDecl(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)
+     * @see test.org.xml.sax.ext.DeclHandler#attributeDecl(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)
      */
     public void attributeDecl(
         String arg0,
@@ -630,7 +630,7 @@ public class EmptySerializer implements SerializationHandler
         couldThrowSAXException();
     }
     /**
-     * @see org.xml.sax.ext.DeclHandler#internalEntityDecl(java.lang.String, java.lang.String)
+     * @see test.org.xml.sax.ext.DeclHandler#internalEntityDecl(java.lang.String, java.lang.String)
      */
     public void internalEntityDecl(String arg0, String arg1)
         throws SAXException
@@ -638,7 +638,7 @@ public class EmptySerializer implements SerializationHandler
         couldThrowSAXException();
     }
     /**
-     * @see org.xml.sax.ext.DeclHandler#externalEntityDecl(java.lang.String, java.lang.String, java.lang.String)
+     * @see test.org.xml.sax.ext.DeclHandler#externalEntityDecl(java.lang.String, java.lang.String, java.lang.String)
      */
     public void externalEntityDecl(String arg0, String arg1, String arg2)
         throws SAXException
@@ -646,21 +646,21 @@ public class EmptySerializer implements SerializationHandler
         couldThrowSAXException();
     }
     /**
-     * @see org.xml.sax.ErrorHandler#warning(org.xml.sax.SAXParseException)
+     * @see test.org.xml.sax.ErrorHandler#warning(test.org.xml.sax.SAXParseException)
      */
     public void warning(SAXParseException arg0) throws SAXException
     {
         couldThrowSAXException();
     }
     /**
-     * @see org.xml.sax.ErrorHandler#error(org.xml.sax.SAXParseException)
+     * @see test.org.xml.sax.ErrorHandler#error(test.org.xml.sax.SAXParseException)
      */
     public void error(SAXParseException arg0) throws SAXException
     {
         couldThrowSAXException();
     }
     /**
-     * @see org.xml.sax.ErrorHandler#fatalError(org.xml.sax.SAXParseException)
+     * @see test.org.xml.sax.ErrorHandler#fatalError(test.org.xml.sax.SAXParseException)
      */
     public void fatalError(SAXParseException arg0) throws SAXException
     {
@@ -700,7 +700,7 @@ public class EmptySerializer implements SerializationHandler
     }
 
     /**
-     * @see ExtendedContentHandler#characters(org.w3c.dom.Node)
+     * @see ExtendedContentHandler#characters(test.org.w3c.dom.Node)
      */
     public void characters(Node node) throws SAXException
     {
@@ -723,7 +723,7 @@ public class EmptySerializer implements SerializationHandler
         couldThrowSAXException();
     }
     /**
-     * @see org.xml.sax.DTDHandler#notationDecl(java.lang.String, java.lang.String, java.lang.String)
+     * @see test.org.xml.sax.DTDHandler#notationDecl(java.lang.String, java.lang.String, java.lang.String)
      */
     public void notationDecl(String arg0, String arg1, String arg2) throws SAXException
     {
@@ -731,7 +731,7 @@ public class EmptySerializer implements SerializationHandler
     }
 
     /**
-     * @see org.xml.sax.DTDHandler#unparsedEntityDecl(java.lang.String, java.lang.String, java.lang.String, java.lang.String)
+     * @see test.org.xml.sax.DTDHandler#unparsedEntityDecl(java.lang.String, java.lang.String, java.lang.String, java.lang.String)
      */
     public void unparsedEntityDecl(
         String arg0,

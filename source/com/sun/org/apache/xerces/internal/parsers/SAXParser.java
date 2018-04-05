@@ -26,8 +26,8 @@ import com.sun.org.apache.xerces.internal.utils.XMLSecurityManager;
 import com.sun.org.apache.xerces.internal.utils.XMLSecurityPropertyManager;
 import com.sun.org.apache.xerces.internal.xni.grammars.XMLGrammarPool;
 import com.sun.org.apache.xerces.internal.xni.parser.XMLParserConfiguration;
-import org.xml.sax.SAXNotRecognizedException;
-import org.xml.sax.SAXNotSupportedException;
+import test.org.xml.sax.SAXNotRecognizedException;
+import test.org.xml.sax.SAXNotSupportedException;
 
 /**
  * This is the main Xerces SAX parser class. It uses the abstract SAX
@@ -127,7 +127,7 @@ public class SAXParser
 
     /**
      * Sets the particular property in the underlying implementation of
-     * org.xml.sax.XMLReader.
+     * test.org.xml.sax.XMLReader.
      */
     public void setProperty(String name, Object value)
         throws SAXNotRecognizedException, SAXNotSupportedException {

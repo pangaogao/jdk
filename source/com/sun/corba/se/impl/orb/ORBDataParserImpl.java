@@ -28,8 +28,8 @@ package com.sun.corba.se.impl.orb ;
 
 import java.net.URL ;
 
-import org.omg.CORBA.CompletionStatus ;
-import org.omg.PortableInterceptor.ORBInitializer ;
+import test.org.omg.CORBA.CompletionStatus ;
+import test.org.omg.PortableInterceptor.ORBInitializer ;
 
 import com.sun.corba.se.pept.transport.Acceptor;
 
@@ -41,14 +41,12 @@ import com.sun.corba.se.spi.orb.ORBData ;
 import com.sun.corba.se.spi.orb.ParserImplTableBase ;
 import com.sun.corba.se.spi.orb.StringPair ;
 import com.sun.corba.se.spi.transport.CorbaContactInfoListFactory;
-import com.sun.corba.se.spi.transport.CorbaTransportManager;
 import com.sun.corba.se.spi.transport.IORToSocketInfo;
 import com.sun.corba.se.spi.transport.IIOPPrimaryToContactInfo;
 import com.sun.corba.se.spi.transport.ReadTimeouts;
 
 import com.sun.corba.se.impl.encoding.CodeSetComponentInfo ;
 import com.sun.corba.se.impl.legacy.connection.USLPort;
-import com.sun.corba.se.impl.orbutil.ORBConstants ;
 import com.sun.corba.se.impl.logging.ORBUtilSystemException ;
 
 

@@ -24,32 +24,26 @@
  */
 package com.sun.corba.se.impl.interceptors;
 
-import org.omg.CORBA.Any;
-import org.omg.CORBA.BAD_INV_ORDER;
-import org.omg.CORBA.CompletionStatus;
-import org.omg.CORBA.INTERNAL;
-import org.omg.CORBA.LocalObject;
-import org.omg.CORBA.NO_IMPLEMENT;
-import org.omg.CORBA.NO_RESOURCES;
-import org.omg.CORBA.NVList;
-import org.omg.CORBA.Object;
-import org.omg.CORBA.Policy;
-import org.omg.CORBA.TypeCode;
+import test.org.omg.CORBA.Any;
+import test.org.omg.CORBA.BAD_INV_ORDER;
+import test.org.omg.CORBA.NVList;
+import test.org.omg.CORBA.Object;
+import test.org.omg.CORBA.Policy;
+import test.org.omg.CORBA.TypeCode;
 
-import org.omg.PortableServer.Servant;
+import test.org.omg.PortableServer.Servant;
 
-import org.omg.IOP.TaggedProfile;
-import org.omg.IOP.ServiceContext;
+import test.org.omg.IOP.ServiceContext;
 
-import org.omg.Dynamic.Parameter;
+import test.org.omg.Dynamic.Parameter;
 
-import org.omg.PortableInterceptor.InvalidSlot;
-import org.omg.PortableInterceptor.ServerRequestInfo;
-import org.omg.PortableInterceptor.LOCATION_FORWARD;
-import org.omg.PortableInterceptor.SUCCESSFUL;
-import org.omg.PortableInterceptor.SYSTEM_EXCEPTION;
-import org.omg.PortableInterceptor.TRANSPORT_RETRY;
-import org.omg.PortableInterceptor.USER_EXCEPTION;
+import test.org.omg.PortableInterceptor.InvalidSlot;
+import test.org.omg.PortableInterceptor.ServerRequestInfo;
+import test.org.omg.PortableInterceptor.LOCATION_FORWARD;
+import test.org.omg.PortableInterceptor.SUCCESSFUL;
+import test.org.omg.PortableInterceptor.SYSTEM_EXCEPTION;
+import test.org.omg.PortableInterceptor.TRANSPORT_RETRY;
+import test.org.omg.PortableInterceptor.USER_EXCEPTION;
 
 import com.sun.corba.se.spi.oa.ObjectAdapter;
 import com.sun.corba.se.spi.presentation.rmi.StubAdapter;
@@ -415,7 +409,7 @@ public final class ServerRequestInfoImpl
         if( servant instanceof Servant ) {
             result = ((Servant)servant)._is_a( id );
         } else if (StubAdapter.isStub( servant )) {
-            result = ((org.omg.CORBA.Object)servant)._is_a( id );
+            result = ((test.org.omg.CORBA.Object)servant)._is_a( id );
         } else {
             throw wrapper.servantInvalid() ;
         }
@@ -628,7 +622,7 @@ public final class ServerRequestInfoImpl
     /**
      * See ServerRequestInfo for javadocs.
      */
-    public org.omg.IOP.ServiceContext get_request_service_context( int id ) {
+    public test.org.omg.IOP.ServiceContext get_request_service_context(int id ) {
         checkAccess( MID_GET_REQUEST_SERVICE_CONTEXT );
 
         if( cachedRequestServiceContexts == null ) {
@@ -642,7 +636,7 @@ public final class ServerRequestInfoImpl
     /**
      * See ServerRequestInfo for javadocs.
      */
-    public org.omg.IOP.ServiceContext get_reply_service_context( int id ) {
+    public test.org.omg.IOP.ServiceContext get_reply_service_context(int id ) {
         checkAccess( MID_GET_REPLY_SERVICE_CONTEXT );
 
         if( cachedReplyServiceContexts == null ) {
@@ -805,8 +799,8 @@ public final class ServerRequestInfoImpl
         this.targetMostDerivedInterface = targetMostDerivedInterface;
         this.isDynamic =
             (servant instanceof
-            org.omg.PortableServer.DynamicImplementation) ||
-            (servant instanceof org.omg.CORBA.DynamicImplementation);
+            test.org.omg.PortableServer.DynamicImplementation) ||
+            (servant instanceof test.org.omg.CORBA.DynamicImplementation);
     }
 
     /**

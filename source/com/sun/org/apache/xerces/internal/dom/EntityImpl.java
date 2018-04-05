@@ -20,9 +20,9 @@
 
 package com.sun.org.apache.xerces.internal.dom;
 
-import org.w3c.dom.Entity;
-import org.w3c.dom.Node;
-import org.w3c.dom.DOMException;
+import test.org.w3c.dom.Entity;
+import test.org.w3c.dom.Node;
+import test.org.w3c.dom.DOMException;
 
 /**
  * Entity nodes hold the reference data for an XML Entity -- either
@@ -117,7 +117,7 @@ public class EntityImpl
 
     /**
      * A short integer indicating what type of node this is. The named
-     * constants for this value are defined in the org.w3c.dom.Node interface.
+     * constants for this value are defined in the test.org.w3c.dom.Node interface.
      */
     public short getNodeType() {
         return Node.ENTITY_NODE;

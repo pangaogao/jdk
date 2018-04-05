@@ -32,11 +32,11 @@ public interface ActivatorOperations
   	* server's object template and return it.  Called whenever a 
   	* persistent POA is created.
   	*/
-  org.omg.PortableInterceptor.ObjectReferenceTemplate registerPOA (String serverId, String orbId, org.omg.PortableInterceptor.ObjectReferenceTemplate poaTemplate);
+  test.org.omg.PortableInterceptor.ObjectReferenceTemplate registerPOA (String serverId, String orbId, test.org.omg.PortableInterceptor.ObjectReferenceTemplate poaTemplate);
 
   /** Called whenever a POA is destroyed.
   	*/
-  void poaDestroyed (String serverId, String orbId, org.omg.PortableInterceptor.ObjectReferenceTemplate poaTemplate);
+  void poaDestroyed (String serverId, String orbId, test.org.omg.PortableInterceptor.ObjectReferenceTemplate poaTemplate);
 
   /** If the server is not running, start it up.  This is allowed
   	* whether or not the server has been installed.
@@ -69,5 +69,5 @@ public interface ActivatorOperations
   /** Find the server template that corresponds to the ORBD's
   	* adapter id.
   	*/
-  org.omg.PortableInterceptor.ObjectReferenceTemplate lookupPOATemplate (String serverId, String orbId, String[] orbAdapterName);
+  test.org.omg.PortableInterceptor.ObjectReferenceTemplate lookupPOATemplate (String serverId, String orbId, String[] orbAdapterName);
 } // interface ActivatorOperations

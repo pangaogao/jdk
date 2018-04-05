@@ -20,8 +20,8 @@
 
 package com.sun.org.apache.xerces.internal.dom;
 
-import org.w3c.dom.NamedNodeMap;
-import org.w3c.dom.Node;
+import test.org.w3c.dom.NamedNodeMap;
+import test.org.w3c.dom.Node;
 
 /**
  * NON-DOM CLASS: Describe one of the Elements (and its associated
@@ -70,7 +70,7 @@ public class ElementDefinitionImpl
 
     /**
      * A short integer indicating what type of node this is. The named
-     * constants for this value are defined in the org.w3c.dom.Node interface.
+     * constants for this value are defined in the test.org.w3c.dom.Node interface.
      */
     public short getNodeType() {
         return NodeImpl.ELEMENT_DEFINITION_NODE;
@@ -107,7 +107,7 @@ public class ElementDefinitionImpl
      * contain AttributeDefinitionImpl objects for all declared Attributes,
      * indicating which are Default, DefaultFixed, Implicit and/or Required.
      *
-     * @return org.w3c.dom.NamedNodeMap containing org.w3c.dom.Attribute
+     * @return test.org.w3c.dom.NamedNodeMap containing test.org.w3c.dom.Attribute
      */
     public NamedNodeMap getAttributes() {
 

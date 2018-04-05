@@ -25,8 +25,8 @@ package com.sun.org.apache.xml.internal.security.keys.content;
 import com.sun.org.apache.xml.internal.security.exceptions.XMLSecurityException;
 import com.sun.org.apache.xml.internal.security.utils.Constants;
 import com.sun.org.apache.xml.internal.security.utils.SignatureElementProxy;
-import org.w3c.dom.Document;
-import org.w3c.dom.Element;
+import test.org.w3c.dom.Document;
+import test.org.w3c.dom.Element;
 
 /**
  * @author $Author: coheigea $

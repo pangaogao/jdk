@@ -26,14 +26,13 @@
 package com.sun.corba.se.impl.naming.pcosnaming;
 
 import java.io.File;
-import java.util.Properties;
 
 import com.sun.corba.se.impl.orbutil.ORBConstants;
 import com.sun.corba.se.impl.orbutil.CorbaResourceUtil;
 import com.sun.corba.se.spi.orb.ORB;
 import com.sun.corba.se.spi.activation.InitialNameService;
 import com.sun.corba.se.spi.activation.InitialNameServiceHelper;
-import org.omg.CosNaming.NamingContext;
+import test.org.omg.CosNaming.NamingContext;
 /**
  * Class NameServer is a standalone application which
  * implements a persistent and a transient name service.
@@ -63,9 +62,9 @@ public class NameServer
         // create the ORB Object
         java.util.Properties props = System.getProperties();
         props.put( ORBConstants.SERVER_ID_PROPERTY, "1000" ) ;
-        props.put("org.omg.CORBA.ORBClass",
+        props.put("test.org.omg.CORBA.ORBClass",
                   "com.sun.corba.se.impl.orb.ORBImpl");
-        orb = (ORB) org.omg.CORBA.ORB.init(args,props);
+        orb = (ORB) test.org.omg.CORBA.ORB.init(args,props);
 
         // set up the database directory
         String dbDirName = props.getProperty( ORBConstants.DB_DIR_PROPERTY ) +

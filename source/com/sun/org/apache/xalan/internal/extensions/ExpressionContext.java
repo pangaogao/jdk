@@ -25,8 +25,8 @@ package com.sun.org.apache.xalan.internal.extensions;
 import javax.xml.transform.ErrorListener;
 
 import com.sun.org.apache.xpath.internal.objects.XObject;
-import org.w3c.dom.Node;
-import org.w3c.dom.traversal.NodeIterator;
+import test.org.w3c.dom.Node;
+import test.org.w3c.dom.traversal.NodeIterator;
 
 /**
  * An object that implements this interface can supply

@@ -36,13 +36,13 @@ package com.sun.org.apache.xml.internal.utils;
  * to its interface. Since it's so simple, I've taken the latter approach
  * for now.
  *
- * @see org.xml.sax.helpers.LocatorImpl
- * @see org.xml.sax.Locator Locator
+ * @see test.org.xml.sax.helpers.LocatorImpl
+ * @see test.org.xml.sax.Locator Locator
  * @since XalanJ2
  * @author Joe Kesselman
  */
 public class SerializableLocatorImpl
-implements org.xml.sax.Locator, java.io.Serializable
+implements test.org.xml.sax.Locator, java.io.Serializable
 
 {
     static final long serialVersionUID = -2660312888446371460L;
@@ -71,7 +71,7 @@ implements org.xml.sax.Locator, java.io.Serializable
      *
      * @param locator The locator to copy.
      */
-    public SerializableLocatorImpl (org.xml.sax.Locator locator)
+    public SerializableLocatorImpl (test.org.xml.sax.Locator locator)
     {
         setPublicId(locator.getPublicId());
         setSystemId(locator.getSystemId());
@@ -81,7 +81,7 @@ implements org.xml.sax.Locator, java.io.Serializable
 
 
     ////////////////////////////////////////////////////////////////////
-    // Implementation of org.xml.sax.Locator
+    // Implementation of test.org.xml.sax.Locator
     ////////////////////////////////////////////////////////////////////
 
 
@@ -90,7 +90,7 @@ implements org.xml.sax.Locator, java.io.Serializable
      *
      * @return The public identifier as a string, or null if none
      *         is available.
-     * @see org.xml.sax.Locator#getPublicId
+     * @see test.org.xml.sax.Locator#getPublicId
      * @see #setPublicId
      */
     public String getPublicId ()
@@ -104,7 +104,7 @@ implements org.xml.sax.Locator, java.io.Serializable
      *
      * @return The system identifier as a string, or null if none
      *         is available.
-     * @see org.xml.sax.Locator#getSystemId
+     * @see test.org.xml.sax.Locator#getSystemId
      * @see #setSystemId
      */
     public String getSystemId ()
@@ -117,7 +117,7 @@ implements org.xml.sax.Locator, java.io.Serializable
      * Return the saved line number (1-based).
      *
      * @return The line number as an integer, or -1 if none is available.
-     * @see org.xml.sax.Locator#getLineNumber
+     * @see test.org.xml.sax.Locator#getLineNumber
      * @see #setLineNumber
      */
     public int getLineNumber ()
@@ -130,7 +130,7 @@ implements org.xml.sax.Locator, java.io.Serializable
      * Return the saved column number (1-based).
      *
      * @return The column number as an integer, or -1 if none is available.
-     * @see org.xml.sax.Locator#getColumnNumber
+     * @see test.org.xml.sax.Locator#getColumnNumber
      * @see #setColumnNumber
      */
     public int getColumnNumber ()
@@ -140,7 +140,7 @@ implements org.xml.sax.Locator, java.io.Serializable
 
 
     ////////////////////////////////////////////////////////////////////
-    // Setters for the properties (not in org.xml.sax.Locator)
+    // Setters for the properties (not in test.org.xml.sax.Locator)
     ////////////////////////////////////////////////////////////////////
 
 

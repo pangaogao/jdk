@@ -8,10 +8,8 @@ package com.sun.corba.se.impl.logging ;
 import java.util.logging.Logger ;
 import java.util.logging.Level ;
 
-import org.omg.CORBA.OMGVMCID ;
 import com.sun.corba.se.impl.util.SUNVMCID ;
-import org.omg.CORBA.CompletionStatus ;
-import org.omg.CORBA.SystemException ;
+import test.org.omg.CORBA.CompletionStatus ;
 
 import com.sun.corba.se.spi.orb.ORB ;
 
@@ -19,16 +17,16 @@ import com.sun.corba.se.spi.logging.LogWrapperFactory;
 
 import com.sun.corba.se.spi.logging.LogWrapperBase;
 
-import org.omg.CORBA.BAD_INV_ORDER ;
-import org.omg.CORBA.BAD_OPERATION ;
-import org.omg.CORBA.BAD_PARAM ;
-import org.omg.CORBA.INTERNAL ;
-import org.omg.CORBA.NO_IMPLEMENT ;
-import org.omg.CORBA.OBJ_ADAPTER ;
-import org.omg.CORBA.INITIALIZE ;
-import org.omg.CORBA.TRANSIENT ;
-import org.omg.CORBA.UNKNOWN ;
-import org.omg.CORBA.OBJECT_NOT_EXIST ;
+import test.org.omg.CORBA.BAD_INV_ORDER ;
+import test.org.omg.CORBA.BAD_OPERATION ;
+import test.org.omg.CORBA.BAD_PARAM ;
+import test.org.omg.CORBA.INTERNAL ;
+import test.org.omg.CORBA.NO_IMPLEMENT ;
+import test.org.omg.CORBA.OBJ_ADAPTER ;
+import test.org.omg.CORBA.INITIALIZE ;
+import test.org.omg.CORBA.TRANSIENT ;
+import test.org.omg.CORBA.UNKNOWN ;
+import test.org.omg.CORBA.OBJECT_NOT_EXIST ;
 
 public class POASystemException extends LogWrapperBase {
     

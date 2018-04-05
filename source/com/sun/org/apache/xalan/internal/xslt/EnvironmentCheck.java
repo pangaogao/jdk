@@ -35,9 +35,9 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.StringTokenizer;
-import org.w3c.dom.Document;
-import org.w3c.dom.Element;
-import org.w3c.dom.Node;
+import test.org.w3c.dom.Document;
+import test.org.w3c.dom.Element;
+import test.org.w3c.dom.Node;
 
 /**
  * Utility class to report simple information about the environment.
@@ -46,7 +46,7 @@ import org.w3c.dom.Node;
  *
  * <p>Usage-command line:
  * <code>
- * java com.sun.org.apache.xalan.internal.xslt.EnvironmentCheck [-out outFile]
+ * java com.sun.test.org.apache.xalan.internal.xslt.EnvironmentCheck [-out outFile]
  * </code></p>
  *
  * <p>Usage-from program:
@@ -183,7 +183,7 @@ public class EnvironmentCheck
       logMsg("# WARNING: Potential problems found in your environment!");
       logMsg("#    Check any 'ERROR' items above against the Xalan FAQs");
       logMsg("#    to correct potential problems with your classes/jars");
-      logMsg("#    http://xml.apache.org/xalan-j/faq.html");
+      logMsg("#    http://xml.apache.test.org/xalan-j/faq.html");
       if (null != outWriter)
         outWriter.flush();
       return false;
@@ -773,7 +773,7 @@ public class EnvironmentCheck
     try
     {
       final String XALAN1_VERSION_CLASS =
-        "com.sun.org.apache.xalan.internal.xslt.XSLProcessorVersion";
+        "com.sun.test.org.apache.xalan.internal.xslt.XSLProcessorVersion";
 
       Class clazz = ObjectFactory.findProviderClass(XALAN1_VERSION_CLASS, true);
 
@@ -805,7 +805,7 @@ public class EnvironmentCheck
       // NOTE: This is the old Xalan 2.0, 2.1, 2.2 version class,
       //    is being replaced by class below
       final String XALAN2_VERSION_CLASS =
-        "com.sun.org.apache.xalan.internal.processor.XSLProcessorVersion";
+        "com.sun.test.org.apache.xalan.internal.processor.XSLProcessorVersion";
 
       Class clazz = ObjectFactory.findProviderClass(XALAN2_VERSION_CLASS, true);
 
@@ -824,7 +824,7 @@ public class EnvironmentCheck
     {
       // NOTE: This is the new Xalan 2.2+ version class
       final String XALAN2_2_VERSION_CLASS =
-        "com.sun.org.apache.xalan.internal.Version";
+        "com.sun.test.org.apache.xalan.internal.Version";
       final String XALAN2_2_VERSION_METHOD = "getVersion";
       final Class noArgs[] = new Class[0];
 
@@ -858,7 +858,7 @@ public class EnvironmentCheck
 
     try
     {
-      final String XERCES1_VERSION_CLASS = "com.sun.org.apache.xerces.internal.framework.Version";
+      final String XERCES1_VERSION_CLASS = "com.sun.test.org.apache.xerces.internal.framework.Version";
 
       Class clazz = ObjectFactory.findProviderClass(XERCES1_VERSION_CLASS, true);
 
@@ -876,7 +876,7 @@ public class EnvironmentCheck
     // Look for xerces1 and xerces2 parsers separately
     try
     {
-      final String XERCES2_VERSION_CLASS = "com.sun.org.apache.xerces.internal.impl.Version";
+      final String XERCES2_VERSION_CLASS = "com.sun.test.org.apache.xerces.internal.impl.Version";
 
       Class clazz = ObjectFactory.findProviderClass(XERCES2_VERSION_CLASS, true);
 
@@ -893,7 +893,7 @@ public class EnvironmentCheck
 
     try
     {
-      final String CRIMSON_CLASS = "org.apache.crimson.parser.Parser2";
+      final String CRIMSON_CLASS = "test.org.apache.crimson.parser.Parser2";
 
       Class clazz = ObjectFactory.findProviderClass(CRIMSON_CLASS, true);
 
@@ -919,7 +919,7 @@ public class EnvironmentCheck
 
     try
     {
-      final String ANT_VERSION_CLASS = "org.apache.tools.ant.Main";
+      final String ANT_VERSION_CLASS = "test.org.apache.tools.ant.Main";
       final String ANT_VERSION_METHOD = "getAntVersion"; // noArgs
       final Class noArgs[] = new Class[0];
 
@@ -947,7 +947,7 @@ public class EnvironmentCheck
     if (null == h)
       h = new HashMap<>();
 
-    final String DOM_CLASS = "org.w3c.dom.Document";
+    final String DOM_CLASS = "test.org.w3c.dom.Document";
     final String DOM_LEVEL3_METHOD = "getDoctype";  // no parameter
 
     try
@@ -982,12 +982,12 @@ public class EnvironmentCheck
     if (null == h)
       h = new HashMap<>();
 
-    final String DOM_LEVEL2_CLASS = "org.w3c.dom.Document";
+    final String DOM_LEVEL2_CLASS = "test.org.w3c.dom.Document";
     final String DOM_LEVEL2_METHOD = "createElementNS";  // String, String
     final String DOM_LEVEL3_METHOD = "getDoctype";  // no parameter
-    final String DOM_LEVEL2WD_CLASS = "org.w3c.dom.Node";
+    final String DOM_LEVEL2WD_CLASS = "test.org.w3c.dom.Node";
     final String DOM_LEVEL2WD_METHOD = "supported";  // String, String
-    final String DOM_LEVEL2FD_CLASS = "org.w3c.dom.Node";
+    final String DOM_LEVEL2FD_CLASS = "test.org.w3c.dom.Node";
     final String DOM_LEVEL2FD_METHOD = "isSupported";  // String, String
     final Class twoStringArgs[] = { java.lang.String.class,
                                     java.lang.String.class };
@@ -1058,15 +1058,15 @@ public class EnvironmentCheck
     if (null == h)
       h = new HashMap<>();
 
-    final String SAX_VERSION1_CLASS = "org.xml.sax.Parser";
+    final String SAX_VERSION1_CLASS = "test.org.xml.sax.Parser";
     final String SAX_VERSION1_METHOD = "parse";  // String
-    final String SAX_VERSION2_CLASS = "org.xml.sax.XMLReader";
+    final String SAX_VERSION2_CLASS = "test.org.xml.sax.XMLReader";
     final String SAX_VERSION2_METHOD = "parse";  // String
-    final String SAX_VERSION2BETA_CLASSNF = "org.xml.sax.helpers.AttributesImpl";
+    final String SAX_VERSION2BETA_CLASSNF = "test.org.xml.sax.helpers.AttributesImpl";
     final String SAX_VERSION2BETA_METHODNF = "setAttributes";  // Attributes
     final Class oneStringArg[] = { java.lang.String.class };
     // Note this introduces a minor compile dependency on SAX...
-    final Class attributesArg[] = { org.xml.sax.Attributes.class };
+    final Class attributesArg[] = { test.org.xml.sax.Attributes.class };
 
     try
     {

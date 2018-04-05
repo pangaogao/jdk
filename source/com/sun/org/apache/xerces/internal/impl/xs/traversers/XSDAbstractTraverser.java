@@ -45,7 +45,7 @@ import com.sun.org.apache.xerces.internal.xni.QName;
 import com.sun.org.apache.xerces.internal.xs.XSAttributeUse;
 import com.sun.org.apache.xerces.internal.xs.XSObjectList;
 import com.sun.org.apache.xerces.internal.xs.XSTypeDefinition;
-import org.w3c.dom.Element;
+import test.org.w3c.dom.Element;
 
 /**
  * Class <code>XSDAbstractTraverser</code> serves as the base class for all

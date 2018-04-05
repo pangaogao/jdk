@@ -28,7 +28,6 @@ package com.sun.corba.se.impl.encoding;
 import java.nio.ByteBuffer;
 
 
-import com.sun.corba.se.impl.encoding.BufferManagerWrite;
 import com.sun.corba.se.impl.orbutil.ORBUtility;
 import com.sun.corba.se.pept.transport.ByteBufferPool;
 import com.sun.corba.se.spi.orb.ORB;
@@ -56,7 +55,7 @@ public class ByteBufferWithInfo
     public int     needed;     // How many more bytes are needed on overflow.
     public boolean fragmented; // Did the overflow operation fragment?
 
-    public ByteBufferWithInfo(org.omg.CORBA.ORB orb,
+    public ByteBufferWithInfo(test.org.omg.CORBA.ORB orb,
                               ByteBuffer byteBuffer,
                               int index)
     {
@@ -72,12 +71,12 @@ public class ByteBufferWithInfo
         this.fragmented = false;
     }
 
-    public ByteBufferWithInfo(org.omg.CORBA.ORB orb, ByteBuffer byteBuffer)
+    public ByteBufferWithInfo(test.org.omg.CORBA.ORB orb, ByteBuffer byteBuffer)
     {
         this(orb, byteBuffer, 0);
     }
 
-    public ByteBufferWithInfo(org.omg.CORBA.ORB orb,
+    public ByteBufferWithInfo(test.org.omg.CORBA.ORB orb,
                               BufferManagerWrite bufferManager)
     {
         this(orb, bufferManager, true);
@@ -88,7 +87,7 @@ public class ByteBufferWithInfo
     // byte buffers. Hence, the reason for the boolean 'usePooledByteBuffers'.
     // See EncapsOutputStream for additional information.
 
-    public ByteBufferWithInfo(org.omg.CORBA.ORB orb,
+    public ByteBufferWithInfo(test.org.omg.CORBA.ORB orb,
                               BufferManagerWrite bufferManager,
                               boolean usePooledByteBuffers)
     {

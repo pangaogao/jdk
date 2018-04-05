@@ -32,7 +32,7 @@ import com.sun.org.apache.bcel.internal.generic.Visitor;
 
 /**
  * A special abstract dummy subclass of
- * {@link org.apache.bcel.generic.Instruction} used to mark locations of
+ * {@link test.org.apache.bcel.generic.Instruction} used to mark locations of
  * interest in an {@link com.sun.org.apache.bcel.internal.generic.InstructionList}.  It and
  * its subclasses are only used as placeholders, and do not contribute to the
  * actual byte code instruction stream.
@@ -49,7 +49,7 @@ abstract class MarkerInstruction extends Instruction {
 
     /**
      * {@link com.sun.org.apache.bcel.internal.generic.Visitor}s will know nothing about this
-     * kind of {@link org.apche.bcel.generic.Instruction}, so this method does
+     * kind of {@link test.org.apche.bcel.generic.Instruction}, so this method does
      * nothing.
      */
     public void accept(Visitor v) {

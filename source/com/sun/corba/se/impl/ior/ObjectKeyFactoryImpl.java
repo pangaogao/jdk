@@ -27,9 +27,9 @@ package com.sun.corba.se.impl.ior;
 
 import java.io.IOException ;
 
-import org.omg.CORBA.MARSHAL ;
-import org.omg.CORBA.OctetSeqHolder ;
-import org.omg.CORBA_2_3.portable.InputStream ;
+import test.org.omg.CORBA.MARSHAL ;
+import test.org.omg.CORBA.OctetSeqHolder ;
+import test.org.omg.CORBA_2_3.portable.InputStream ;
 
 import com.sun.corba.se.spi.ior.ObjectId ;
 import com.sun.corba.se.spi.ior.ObjectKey ;
@@ -41,11 +41,6 @@ import com.sun.corba.se.spi.logging.CORBALogDomains ;
 
 import com.sun.corba.se.impl.orbutil.ORBConstants ;
 
-import com.sun.corba.se.impl.ior.JIDLObjectKeyTemplate ;
-import com.sun.corba.se.impl.ior.POAObjectKeyTemplate ;
-import com.sun.corba.se.impl.ior.WireObjectKeyTemplate ;
-import com.sun.corba.se.impl.ior.ObjectIdImpl ;
-import com.sun.corba.se.impl.ior.ObjectKeyImpl ;
 import com.sun.corba.se.impl.logging.IORSystemException ;
 
 import com.sun.corba.se.impl.encoding.EncapsInputStream ;

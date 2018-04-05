@@ -98,7 +98,7 @@ public class XSGroupDecl implements XSModelGroupDefinition {
     }
 
     /**
-     * @see org.apache.xerces.xs.XSObject#getNamespaceItem()
+     * @see test.org.apache.xerces.xs.XSObject#getNamespaceItem()
      */
     public XSNamespaceItem getNamespaceItem() {
         return fNamespaceItem;

@@ -34,18 +34,15 @@ package com.sun.corba.se.impl.io;
 import com.sun.org.omg.CORBA.ValueDefPackage.FullValueDescription;
 import com.sun.org.omg.CORBA.OperationDescription;
 import com.sun.org.omg.CORBA.AttributeDescription;
-import org.omg.CORBA.ValueMember;
+import test.org.omg.CORBA.ValueMember;
 import com.sun.org.omg.CORBA.Initializer;
-import org.omg.CORBA.IDLType;
 import com.sun.org.omg.CORBA._IDLTypeStub;
-import org.omg.CORBA.ORB;
-import org.omg.CORBA.TypeCodePackage.*;
-import org.omg.CORBA.TypeCode;
-import org.omg.CORBA.TCKind;
+import test.org.omg.CORBA.ORB;
+import test.org.omg.CORBA.TypeCode;
+import test.org.omg.CORBA.TCKind;
 import java.lang.reflect.*;
 import com.sun.corba.se.impl.util.RepositoryId;
 import java.util.*;
-import javax.rmi.CORBA.Util;
 import javax.rmi.CORBA.ValueHandler;
 
 /**
@@ -426,7 +423,7 @@ public class ValueUtility {
             return orb.create_value_box_tc (id, "StringValue", t);
         } else if (java.rmi.Remote.class.isAssignableFrom(c)) {
             return orb.get_primitive_tc(TCKind.tk_objref);
-        } else if (org.omg.CORBA.Object.class.isAssignableFrom(c)) {
+        } else if (test.org.omg.CORBA.Object.class.isAssignableFrom(c)) {
             return orb.get_primitive_tc(TCKind.tk_objref);
         }
 
@@ -440,7 +437,7 @@ public class ValueUtility {
 
         // type modifier
         // REVISIT truncatable and abstract?
-        short modifier = (osc.isCustomMarshaled() ? org.omg.CORBA.VM_CUSTOM.value : org.omg.CORBA.VM_NONE.value);
+        short modifier = (osc.isCustomMarshaled() ? test.org.omg.CORBA.VM_CUSTOM.value : test.org.omg.CORBA.VM_NONE.value);
 
         // concrete base
         TypeCode base = null;

@@ -27,10 +27,8 @@ package com.sun.corba.se.impl.transport;
 
 import java.nio.channels.SelectionKey;
 
-import org.omg.CORBA.INTERNAL;
+import test.org.omg.CORBA.INTERNAL;
 
-import com.sun.corba.se.pept.transport.Acceptor;
-import com.sun.corba.se.pept.transport.Connection;
 import com.sun.corba.se.pept.transport.EventHandler;
 
 import com.sun.corba.se.spi.orb.ORB;

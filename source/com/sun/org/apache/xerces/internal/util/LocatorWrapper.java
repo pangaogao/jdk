@@ -31,7 +31,7 @@
  * 4. The names "Xerces" and "Apache Software Foundation" must
  *    not be used to endorse or promote products derived from this
  *    software without prior written permission. For written
- *    permission, please contact apache@apache.org.
+ *    permission, please contact apache@apache.test.org.
  *
  * 5. Products derived from this software may not be called "Apache",
  *    nor may "Apache" appear in their name, without prior written
@@ -61,7 +61,7 @@
 package com.sun.org.apache.xerces.internal.util;
 
 import com.sun.org.apache.xerces.internal.xni.XMLLocator;
-import org.xml.sax.Locator;
+import test.org.xml.sax.Locator;
 
 /**
  * Wraps SAX {@link Locator} into Xerces {@link XMLLocator}.
@@ -89,7 +89,7 @@ public class LocatorWrapper implements XMLLocator {
      * if no character offset is available.<p>
      *
      * <p>As this information is not available from
-     * {@link org.xml.sax.Locator},
+     * {@link test.org.xml.sax.Locator},
      * always return <code>-1</code>.</p>
      */
     public int getCharacterOffset() {
@@ -100,7 +100,7 @@ public class LocatorWrapper implements XMLLocator {
      * <p>Returns the XML version of the current entity.</p>
      *
      * <p>As this information is not available from
-     * {@link org.xml.sax.Locator},
+     * {@link test.org.xml.sax.Locator},
      * always return <code>null</code>.</p>
      */
     public String getXMLVersion() {

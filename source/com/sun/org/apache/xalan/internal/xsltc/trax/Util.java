@@ -46,14 +46,14 @@ import com.sun.org.apache.xalan.internal.utils.XMLSecurityManager;
 import com.sun.org.apache.xalan.internal.xsltc.compiler.XSLTC;
 import com.sun.org.apache.xalan.internal.xsltc.compiler.util.ErrorMsg;
 
-import org.w3c.dom.Document;
+import test.org.w3c.dom.Document;
 
-import org.xml.sax.InputSource;
-import org.xml.sax.SAXException;
-import org.xml.sax.SAXNotRecognizedException;
-import org.xml.sax.SAXNotSupportedException;
-import org.xml.sax.XMLReader;
-import org.xml.sax.helpers.XMLReaderFactory;
+import test.org.xml.sax.InputSource;
+import test.org.xml.sax.SAXException;
+import test.org.xml.sax.SAXNotRecognizedException;
+import test.org.xml.sax.SAXNotSupportedException;
+import test.org.xml.sax.XMLReader;
+import test.org.xml.sax.helpers.XMLReaderFactory;
 
 /**
  * @author Santiago Pericas-Geertsen
@@ -125,7 +125,7 @@ public final class Util {
                                       parserFactory.setFeature(
                                           XMLConstants.FEATURE_SECURE_PROCESSING, true);
                                   }
-                                  catch (org.xml.sax.SAXException se) {}
+                                  catch (test.org.xml.sax.SAXException se) {}
                                }
 
                                reader = parserFactory.newSAXParser()
@@ -139,9 +139,9 @@ public final class Util {
                        }
                     }
                     reader.setFeature
-                        ("http://xml.org/sax/features/namespaces",true);
+                        ("http://xml.test.org/sax/features/namespaces",true);
                     reader.setFeature
-                        ("http://xml.org/sax/features/namespace-prefixes",false);
+                        ("http://xml.test.org/sax/features/namespace-prefixes",false);
 
                     try {
                         reader.setProperty(XMLConstants.ACCESS_EXTERNAL_DTD,

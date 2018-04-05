@@ -40,9 +40,9 @@ public class CompositeResolverImpl implements Resolver {
         this.second = second ;
     }
 
-    public org.omg.CORBA.Object resolve( String name )
+    public test.org.omg.CORBA.Object resolve(String name )
     {
-        org.omg.CORBA.Object result = first.resolve( name ) ;
+        test.org.omg.CORBA.Object result = first.resolve( name ) ;
         if (result == null)
             result = second.resolve( name ) ;
         return result ;

@@ -25,9 +25,9 @@ package com.sun.org.apache.xml.internal.security.utils;
 import java.util.ArrayList;
 import java.util.List;
 
-import org.w3c.dom.Document;
-import org.w3c.dom.Node;
-import org.w3c.dom.NodeList;
+import test.org.w3c.dom.Document;
+import test.org.w3c.dom.Node;
+import test.org.w3c.dom.NodeList;
 
 /**
  * @author Christian Geuer-Pollmann

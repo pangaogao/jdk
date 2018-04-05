@@ -27,13 +27,13 @@ package com.sun.corba.se.spi.ior ;
 
 import java.io.Serializable ;
 
-import org.omg.CORBA_2_3.portable.InputStream ;
+import test.org.omg.CORBA_2_3.portable.InputStream ;
 
-import org.omg.CORBA.BAD_PARAM ;
-import org.omg.CORBA.portable.ValueFactory ;
+import test.org.omg.CORBA.BAD_PARAM ;
+import test.org.omg.CORBA.portable.ValueFactory ;
 
-import org.omg.PortableInterceptor.ObjectReferenceTemplate ;
-import org.omg.PortableInterceptor.ObjectReferenceFactory ;
+import test.org.omg.PortableInterceptor.ObjectReferenceTemplate ;
+import test.org.omg.PortableInterceptor.ObjectReferenceFactory ;
 
 import com.sun.corba.se.impl.ior.ObjectIdImpl ;
 import com.sun.corba.se.impl.ior.ObjectKeyImpl ;
@@ -162,12 +162,12 @@ public class IORFactories {
         return new ObjectKeyFactoryImpl( orb ) ;
     }
 
-    public static IOR getIOR( org.omg.CORBA.Object obj )
+    public static IOR getIOR( test.org.omg.CORBA.Object obj )
     {
         return ORBUtility.getIOR( obj ) ;
     }
 
-    public static org.omg.CORBA.Object makeObjectReference( IOR ior )
+    public static test.org.omg.CORBA.Object makeObjectReference(IOR ior )
     {
         return ORBUtility.makeObjectReference( ior ) ;
     }

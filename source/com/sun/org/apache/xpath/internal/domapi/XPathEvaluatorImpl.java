@@ -29,13 +29,13 @@ import com.sun.org.apache.xml.internal.utils.PrefixResolver;
 import com.sun.org.apache.xpath.internal.XPath;
 import com.sun.org.apache.xpath.internal.res.XPATHErrorResources;
 import com.sun.org.apache.xpath.internal.res.XPATHMessages;
-import org.w3c.dom.DOMException;
-import org.w3c.dom.Document;
-import org.w3c.dom.Node;
-import org.w3c.dom.xpath.XPathEvaluator;
-import org.w3c.dom.xpath.XPathException;
-import org.w3c.dom.xpath.XPathExpression;
-import org.w3c.dom.xpath.XPathNSResolver;
+import test.org.w3c.dom.DOMException;
+import test.org.w3c.dom.Document;
+import test.org.w3c.dom.Node;
+import test.org.w3c.dom.xpath.XPathEvaluator;
+import test.org.w3c.dom.xpath.XPathException;
+import test.org.w3c.dom.xpath.XPathExpression;
+import test.org.w3c.dom.xpath.XPathNSResolver;
 
 /**
  *
@@ -54,7 +54,7 @@ import org.w3c.dom.xpath.XPathNSResolver;
  * sources that may provide support for special extension functions or
  * variables which are not defined in this specification.</p>
  *
- * @see org.w3c.dom.xpath.XPathEvaluator
+ * @see test.org.w3c.dom.xpath.XPathEvaluator
  *
  * @xsl.usage internal
  */
@@ -157,7 +157,7 @@ public final class XPathEvaluatorImpl implements XPathEvaluator {
      *   which cannot be resolved by the specified
      *   <code>XPathNSResolver</code>.
      *
-         * @see org.w3c.dom.xpath.XPathEvaluator#createExpression(String, XPathNSResolver)
+         * @see test.org.w3c.dom.xpath.XPathEvaluator#createExpression(String, XPathNSResolver)
          */
         public XPathExpression createExpression(
                 String expression,
@@ -198,7 +198,7 @@ public final class XPathEvaluatorImpl implements XPathEvaluator {
      * @return <code>XPathNSResolver</code> which resolves namespaces with
      *   respect to the definitions in scope for a specified node.
      *
-         * @see org.w3c.dom.xpath.XPathEvaluator#createNSResolver(Node)
+         * @see test.org.w3c.dom.xpath.XPathEvaluator#createNSResolver(Node)
          */
         public XPathNSResolver createNSResolver(Node nodeResolver) {
 
@@ -255,7 +255,7 @@ public final class XPathEvaluatorImpl implements XPathEvaluator {
      *   <br>NOT_SUPPORTED_ERR: The Node is not a type permitted as an XPath
      *   context node.
          *
-         * @see org.w3c.dom.xpath.XPathEvaluator#evaluate(String, Node, XPathNSResolver, short, XPathResult)
+         * @see test.org.w3c.dom.xpath.XPathEvaluator#evaluate(String, Node, XPathNSResolver, short, XPathResult)
          */
         public Object evaluate(
                 String expression,

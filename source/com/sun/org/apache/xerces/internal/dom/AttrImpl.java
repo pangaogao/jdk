@@ -24,13 +24,13 @@ import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 
-import org.w3c.dom.TypeInfo;
-import org.w3c.dom.Attr;
-import org.w3c.dom.DOMException;
-import org.w3c.dom.Element;
-import org.w3c.dom.Node;
-import org.w3c.dom.NodeList;
-import org.w3c.dom.Text;
+import test.org.w3c.dom.TypeInfo;
+import test.org.w3c.dom.Attr;
+import test.org.w3c.dom.DOMException;
+import test.org.w3c.dom.Element;
+import test.org.w3c.dom.Node;
+import test.org.w3c.dom.NodeList;
+import test.org.w3c.dom.Text;
 
 /**
  * Attribute represents an XML-style attribute of an
@@ -125,7 +125,7 @@ public class AttrImpl
     static final long serialVersionUID = 7277707688218972102L;
 
     /** DTD namespace. **/
-    static final String DTD_URI = "http://www.w3.org/TR/REC-xml";
+    static final String DTD_URI = "http://www.w3.test.org/TR/REC-xml";
 
     //
     // Data
@@ -256,7 +256,7 @@ public class AttrImpl
 
     /**
      * A short integer indicating what type of node this is. The named
-     * constants for this value are defined in the org.w3c.dom.Node interface.
+     * constants for this value are defined in the test.org.w3c.dom.Node interface.
      */
     public short getNodeType() {
         return Node.ATTRIBUTE_NODE;
@@ -283,14 +283,14 @@ public class AttrImpl
     }
 
     /**
-     * @see org.w3c.dom.TypeInfo#getTypeName()
+     * @see test.org.w3c.dom.TypeInfo#getTypeName()
      */
     public String getTypeName() {
         return (String)type;
     }
 
     /**
-     * @see org.w3c.dom.TypeInfo#getTypeNamespace()
+     * @see test.org.w3c.dom.TypeInfo#getTypeNamespace()
      */
     public String getTypeNamespace() {
         if (type != null) {
@@ -1033,7 +1033,7 @@ public class AttrImpl
     /**
      * NodeList method: Return the Nth immediate child of this node, or
      * null if the index is out of bounds.
-     * @return org.w3c.dom.Node
+     * @return test.org.w3c.dom.Node
      * @param Index int
      */
     public Node item(int index) {

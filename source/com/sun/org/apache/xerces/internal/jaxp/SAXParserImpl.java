@@ -44,16 +44,16 @@ import java.util.Locale;
 import java.util.Map;
 import javax.xml.XMLConstants;
 import javax.xml.validation.Schema;
-import org.xml.sax.EntityResolver;
-import org.xml.sax.ErrorHandler;
-import org.xml.sax.HandlerBase;
-import org.xml.sax.InputSource;
-import org.xml.sax.Parser;
-import org.xml.sax.SAXException;
-import org.xml.sax.SAXNotRecognizedException;
-import org.xml.sax.SAXNotSupportedException;
-import org.xml.sax.XMLReader;
-import org.xml.sax.helpers.DefaultHandler;
+import test.org.xml.sax.EntityResolver;
+import test.org.xml.sax.ErrorHandler;
+import test.org.xml.sax.HandlerBase;
+import test.org.xml.sax.InputSource;
+import test.org.xml.sax.Parser;
+import test.org.xml.sax.SAXException;
+import test.org.xml.sax.SAXNotRecognizedException;
+import test.org.xml.sax.SAXNotSupportedException;
+import test.org.xml.sax.XMLReader;
+import test.org.xml.sax.helpers.DefaultHandler;
 
 /**
  * This is the implementation specific class for the
@@ -296,7 +296,7 @@ public class SAXParserImpl extends javax.xml.parsers.SAXParser
 
     /**
      * Sets the particular property in the underlying implementation of
-     * org.xml.sax.XMLReader.
+     * test.org.xml.sax.XMLReader.
      */
     public void setProperty(String name, Object value)
         throws SAXNotRecognizedException, SAXNotSupportedException {
@@ -305,7 +305,7 @@ public class SAXParserImpl extends javax.xml.parsers.SAXParser
 
     /**
      * returns the particular property requested for in the underlying
-     * implementation of org.xml.sax.XMLReader.
+     * implementation of test.org.xml.sax.XMLReader.
      */
     public Object getProperty(String name)
         throws SAXNotRecognizedException, SAXNotSupportedException {

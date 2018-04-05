@@ -38,9 +38,9 @@ import com.sun.org.apache.xpath.internal.XPath;
 import com.sun.org.apache.xpath.internal.XPathContext;
 import com.sun.org.apache.xpath.internal.compiler.FunctionTable;
 import com.sun.org.apache.xpath.internal.objects.XObject;
-import org.w3c.dom.Document;
-import org.w3c.dom.Node;
-import org.w3c.dom.NodeList;
+import test.org.w3c.dom.Document;
+import test.org.w3c.dom.Node;
+import test.org.w3c.dom.NodeList;
 
 /**
  * An implementation of XPathAPI using Xalan. This supports the "here()" function defined in the digital

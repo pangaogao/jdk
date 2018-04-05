@@ -29,8 +29,8 @@ import com.sun.org.apache.xml.internal.utils.XMLString;
 import com.sun.org.apache.xpath.internal.NodeSetDTM;
 import com.sun.org.apache.xpath.internal.axes.NodeSequence;
 
-import org.w3c.dom.NodeList;
-import org.w3c.dom.traversal.NodeIterator;
+import test.org.w3c.dom.NodeList;
+import test.org.w3c.dom.traversal.NodeIterator;
 
 /**
  * This class represents an XPath nodeset object, and is capable of
@@ -233,10 +233,10 @@ public class XNodeSet extends NodeSequence
    *
    * @param ch A non-null reference to a ContentHandler.
    *
-   * @throws org.xml.sax.SAXException
+   * @throws test.org.xml.sax.SAXException
    */
-  public void dispatchCharactersEvents(org.xml.sax.ContentHandler ch)
-          throws org.xml.sax.SAXException
+  public void dispatchCharactersEvents(test.org.xml.sax.ContentHandler ch)
+          throws test.org.xml.sax.SAXException
   {
     int node = item(0);
 
@@ -364,7 +364,7 @@ public class XNodeSet extends NodeSequence
 //   */
 //  public Object object()
 //  {
-//    return new com.sun.org.apache.xml.internal.dtm.ref.DTMNodeList(iter());
+//    return new com.sun.test.org.apache.xml.internal.dtm.ref.DTMNodeList(iter());
 //  }
 
   /**

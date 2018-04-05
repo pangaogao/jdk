@@ -25,8 +25,6 @@
 
 package com.sun.corba.se.impl.resolver ;
 
-import org.omg.CORBA.ORBPackage.InvalidName;
-
 import com.sun.corba.se.spi.resolver.Resolver ;
 
 import java.util.Enumeration;
@@ -55,7 +53,7 @@ public class FileResolverImpl implements Resolver
         savedProps = new Properties() ;
     }
 
-    public org.omg.CORBA.Object resolve( String name )
+    public test.org.omg.CORBA.Object resolve(String name )
     {
         check() ;
         String stringifiedObject = savedProps.getProperty( name ) ;

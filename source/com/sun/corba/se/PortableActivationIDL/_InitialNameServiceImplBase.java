@@ -12,8 +12,8 @@ package com.sun.corba.se.PortableActivationIDL;
 /** Interface used to support binding references in the bootstrap name
     * service.
     */
-public abstract class _InitialNameServiceImplBase extends org.omg.CORBA.portable.ObjectImpl
-                implements com.sun.corba.se.PortableActivationIDL.InitialNameService, org.omg.CORBA.portable.InvokeHandler
+public abstract class _InitialNameServiceImplBase extends test.org.omg.CORBA.portable.ObjectImpl
+                implements com.sun.corba.se.PortableActivationIDL.InitialNameService, test.org.omg.CORBA.portable.InvokeHandler
 {
 
   // Constructors
@@ -27,14 +27,14 @@ public abstract class _InitialNameServiceImplBase extends org.omg.CORBA.portable
     _methods.put ("bind", new java.lang.Integer (0));
   }
 
-  public org.omg.CORBA.portable.OutputStream _invoke (String $method,
-                                org.omg.CORBA.portable.InputStream in,
-                                org.omg.CORBA.portable.ResponseHandler $rh)
+  public test.org.omg.CORBA.portable.OutputStream _invoke (String $method,
+                                                           test.org.omg.CORBA.portable.InputStream in,
+                                                           test.org.omg.CORBA.portable.ResponseHandler $rh)
   {
-    org.omg.CORBA.portable.OutputStream out = null;
+    test.org.omg.CORBA.portable.OutputStream out = null;
     java.lang.Integer __method = (java.lang.Integer)_methods.get ($method);
     if (__method == null)
-      throw new org.omg.CORBA.BAD_OPERATION (0, org.omg.CORBA.CompletionStatus.COMPLETED_MAYBE);
+      throw new test.org.omg.CORBA.BAD_OPERATION (0, test.org.omg.CORBA.CompletionStatus.COMPLETED_MAYBE);
 
     switch (__method.intValue ())
     {
@@ -45,7 +45,7 @@ public abstract class _InitialNameServiceImplBase extends org.omg.CORBA.portable
        {
          try {
            String name = in.read_string ();
-           org.omg.CORBA.Object obj = org.omg.CORBA.ObjectHelper.read (in);
+           test.org.omg.CORBA.Object obj = test.org.omg.CORBA.ObjectHelper.read (in);
            boolean isPersistant = in.read_boolean ();
            this.bind (name, obj, isPersistant);
            out = $rh.createReply();
@@ -57,7 +57,7 @@ public abstract class _InitialNameServiceImplBase extends org.omg.CORBA.portable
        }
 
        default:
-         throw new org.omg.CORBA.BAD_OPERATION (0, org.omg.CORBA.CompletionStatus.COMPLETED_MAYBE);
+         throw new test.org.omg.CORBA.BAD_OPERATION (0, test.org.omg.CORBA.CompletionStatus.COMPLETED_MAYBE);
     }
 
     return out;

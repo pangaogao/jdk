@@ -24,8 +24,8 @@
 package com.sun.org.apache.xpath.internal.domapi;
 
 import com.sun.org.apache.xml.internal.utils.PrefixResolverDefault;
-import org.w3c.dom.Node;
-import org.w3c.dom.xpath.XPathNSResolver;
+import test.org.w3c.dom.Node;
+import test.org.w3c.dom.xpath.XPathNSResolver;
 
 /**
  *
@@ -40,7 +40,7 @@ import org.w3c.dom.xpath.XPathNSResolver;
  * construct an implementation of <code>XPathNSResolver</code> from a node,
  * or the interface may be implemented by any application.</p>
  *
- * @see org.w3c.dom.xpath.XPathNSResolver
+ * @see test.org.w3c.dom.xpath.XPathNSResolver
  * @xsl.usage internal
  */
 class XPathNSResolverImpl extends PrefixResolverDefault implements XPathNSResolver {
@@ -54,7 +54,7 @@ class XPathNSResolverImpl extends PrefixResolverDefault implements XPathNSResolv
         }
 
         /**
-         * @see org.w3c.dom.xpath.XPathNSResolver#lookupNamespaceURI(String)
+         * @see test.org.w3c.dom.xpath.XPathNSResolver#lookupNamespaceURI(String)
          */
         public String lookupNamespaceURI(String prefix) {
                 return super.getNamespaceForPrefix(prefix);

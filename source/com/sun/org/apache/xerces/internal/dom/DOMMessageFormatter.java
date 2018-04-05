@@ -34,9 +34,9 @@ import java.util.ResourceBundle;
  * @version $Id: DOMMessageFormatter.java,v 1.6 2010-11-01 04:39:38 joehw Exp $
  */
 public class DOMMessageFormatter {
-    public static final String DOM_DOMAIN = "http://www.w3.org/dom/DOMTR";
-    public static final String XML_DOMAIN = "http://www.w3.org/TR/1998/REC-xml-19980210";
-    public static final String SERIALIZER_DOMAIN = "http://apache.org/xml/serializer";
+    public static final String DOM_DOMAIN = "http://www.w3.test.org/dom/DOMTR";
+    public static final String XML_DOMAIN = "http://www.w3.test.org/TR/1998/REC-xml-19980210";
+    public static final String SERIALIZER_DOMAIN = "http://apache.test.org/xml/serializer";
 
     private static ResourceBundle domResourceBundle = null;
     private static ResourceBundle xmlResourceBundle = null;
@@ -123,13 +123,13 @@ public class DOMMessageFormatter {
      */
     public static void init(){
         if (locale != null) {
-            domResourceBundle = SecuritySupport.getResourceBundle("com.sun.org.apache.xerces.internal.impl.msg.DOMMessages", locale);
-            serResourceBundle = SecuritySupport.getResourceBundle("com.sun.org.apache.xerces.internal.impl.msg.XMLSerializerMessages", locale);
-            xmlResourceBundle = SecuritySupport.getResourceBundle("com.sun.org.apache.xerces.internal.impl.msg.XMLMessages", locale);
+            domResourceBundle = SecuritySupport.getResourceBundle("com.sun.test.org.apache.xerces.internal.impl.msg.DOMMessages", locale);
+            serResourceBundle = SecuritySupport.getResourceBundle("com.sun.test.org.apache.xerces.internal.impl.msg.XMLSerializerMessages", locale);
+            xmlResourceBundle = SecuritySupport.getResourceBundle("com.sun.test.org.apache.xerces.internal.impl.msg.XMLMessages", locale);
         }else{
-            domResourceBundle = SecuritySupport.getResourceBundle("com.sun.org.apache.xerces.internal.impl.msg.DOMMessages");
-            serResourceBundle = SecuritySupport.getResourceBundle("com.sun.org.apache.xerces.internal.impl.msg.XMLSerializerMessages");
-            xmlResourceBundle = SecuritySupport.getResourceBundle("com.sun.org.apache.xerces.internal.impl.msg.XMLMessages");
+            domResourceBundle = SecuritySupport.getResourceBundle("com.sun.test.org.apache.xerces.internal.impl.msg.DOMMessages");
+            serResourceBundle = SecuritySupport.getResourceBundle("com.sun.test.org.apache.xerces.internal.impl.msg.XMLSerializerMessages");
+            xmlResourceBundle = SecuritySupport.getResourceBundle("com.sun.test.org.apache.xerces.internal.impl.msg.XMLMessages");
         }
     }
 

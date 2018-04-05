@@ -44,7 +44,7 @@ public class FuncSystemProperty extends FunctionOneArg
   /**
    * The path/filename of the property file: XSLTInfo.properties
    * Maintenance note: see also
-   * com.sun.org.apache.xalan.internal.processor.TransformerFactoryImpl.XSLT_PROPERTIES
+   * com.sun.test.org.apache.xalan.internal.processor.TransformerFactoryImpl.XSLT_PROPERTIES
    */
   static final String XSLT_PROPERTIES =
             "com/sun/org/apache/xalan/internal/res/XSLTInfo.properties";
@@ -81,8 +81,8 @@ public class FuncSystemProperty extends FunctionOneArg
       propName = (indexOfNSSep < 0)
                  ? fullName : fullName.substring(indexOfNSSep + 1);
 
-      if (namespace.startsWith("http://www.w3.org/XSL/Transform")
-              || namespace.equals("http://www.w3.org/1999/XSL/Transform"))
+      if (namespace.startsWith("http://www.w3.test.org/XSL/Transform")
+              || namespace.equals("http://www.w3.test.org/1999/XSL/Transform"))
       {
         result = xsltInfo.getProperty(propName);
 

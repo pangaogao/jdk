@@ -55,11 +55,11 @@ public class SAXMessageFormatter {
         ResourceBundle resourceBundle = null;
         if (locale != null) {
             resourceBundle =
-                SecuritySupport.getResourceBundle("com.sun.org.apache.xerces.internal.impl.msg.SAXMessages", locale);
+                SecuritySupport.getResourceBundle("com.sun.test.org.apache.xerces.internal.impl.msg.SAXMessages", locale);
         }
         else {
             resourceBundle =
-                SecuritySupport.getResourceBundle("com.sun.org.apache.xerces.internal.impl.msg.SAXMessages");
+                SecuritySupport.getResourceBundle("com.sun.test.org.apache.xerces.internal.impl.msg.SAXMessages");
         }
 
         // format message

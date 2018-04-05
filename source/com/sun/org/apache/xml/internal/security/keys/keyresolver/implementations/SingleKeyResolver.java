@@ -13,14 +13,14 @@ import com.sun.org.apache.xml.internal.security.keys.keyresolver.KeyResolverSpi;
 import com.sun.org.apache.xml.internal.security.keys.storage.StorageResolver;
 import com.sun.org.apache.xml.internal.security.utils.Constants;
 import com.sun.org.apache.xml.internal.security.utils.XMLUtils;
-import org.w3c.dom.Element;
+import test.org.w3c.dom.Element;
 
 /**
  * Resolves a single Key based on the KeyName.
  */
 public class SingleKeyResolver extends KeyResolverSpi
 {
-    /** {@link org.apache.commons.logging} logging facility */
+    /** {@link test.org.apache.commons.logging} logging facility */
     private static java.util.logging.Logger log =
         java.util.logging.Logger.getLogger(SingleKeyResolver.class.getName());
 

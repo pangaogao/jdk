@@ -19,7 +19,7 @@
  */
 package com.sun.org.apache.xerces.internal.dom;
 
-import org.w3c.dom.DOMImplementation;
+import test.org.w3c.dom.DOMImplementation;
 
 /**
  * <p>This DOMImplementation class is description of a particular

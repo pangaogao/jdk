@@ -25,8 +25,8 @@
 
 package com.sun.jmx.remote.protocol.iiop;
 
-import org.omg.CORBA.ORB;
-import org.omg.CORBA.portable.Delegate;
+import test.org.omg.CORBA.ORB;
+import test.org.omg.CORBA.portable.Delegate;
 import javax.rmi.PortableRemoteObject;
 import javax.rmi.CORBA.Stub;
 
@@ -85,7 +85,7 @@ public class IIOPProxyImpl implements IIOPProxy {
     public Object getOrb(Object stub) {
         try {
             return ((Stub)stub)._orb();
-        } catch (org.omg.CORBA.BAD_OPERATION x) {
+        } catch (test.org.omg.CORBA.BAD_OPERATION x) {
             throw new UnsupportedOperationException(x);
         }
     }
@@ -114,7 +114,7 @@ public class IIOPProxyImpl implements IIOPProxy {
 
     @Override
     public String objectToString(Object orb, Object obj) {
-        return ((ORB)orb).object_to_string((org.omg.CORBA.Object)obj);
+        return ((ORB)orb).object_to_string((test.org.omg.CORBA.Object)obj);
     }
 
     @Override

@@ -22,7 +22,7 @@
  */
 package com.sun.org.apache.xml.internal.utils;
 
-import org.w3c.dom.Node;
+import test.org.w3c.dom.Node;
 
 /**
  * The tree walker will test for this interface, and call

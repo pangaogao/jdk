@@ -32,7 +32,7 @@ import javax.imageio.metadata.IIOInvalidTreeException;
 import java.io.IOException;
 import java.io.UnsupportedEncodingException;
 
-import org.w3c.dom.Node;
+import test.org.w3c.dom.Node;
 
 /**
  * A Comment marker segment.  Retains an array of bytes representing the

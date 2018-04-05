@@ -29,12 +29,12 @@ import javax.xml.parsers.DocumentBuilderFactory;
 import javax.xml.parsers.ParserConfigurationException;
 import javax.xml.transform.TransformerException;
 
-import org.w3c.dom.Attr;
-import org.w3c.dom.Document;
-import org.w3c.dom.Element;
-import org.w3c.dom.Node;
+import test.org.w3c.dom.Attr;
+import test.org.w3c.dom.Document;
+import test.org.w3c.dom.Element;
+import test.org.w3c.dom.Node;
 
-import org.xml.sax.InputSource;
+import test.org.xml.sax.InputSource;
 
 /**
  * @deprecated Since the introduction of the DTM, this class will be removed.
@@ -53,7 +53,7 @@ public class DOM2Helper extends DOMHelper
    * Check node to see if it was created by a DOM implementation
    * that this helper is intended to support. This is currently
    * disabled, and assumes all nodes are acceptable rather than checking
-   * that they implement com.sun.org.apache.xerces.internal.dom.NodeImpl.
+   * that they implement com.sun.test.org.apache.xerces.internal.dom.NodeImpl.
    *
    * @param node The node to be tested.
    *
@@ -65,7 +65,7 @@ public class DOM2Helper extends DOMHelper
   public void checkNode(Node node) throws TransformerException
   {
 
-    // if(!(node instanceof com.sun.org.apache.xerces.internal.dom.NodeImpl))
+    // if(!(node instanceof com.sun.test.org.apache.xerces.internal.dom.NodeImpl))
     //  throw new TransformerException(XSLMessages.createXPATHMessage(XPATHErrorResources.ER_XERCES_CANNOT_HANDLE_NODES, new Object[]{((Object)node).getClass()})); //"DOM2Helper can not handle nodes of type"
     //+((Object)node).getClass());
   }
@@ -139,8 +139,8 @@ public class DOM2Helper extends DOMHelper
     {
 
       // I guess I should use JAXP factory here... when it's legal.
-      // com.sun.org.apache.xerces.internal.parsers.DOMParser parser
-      //  = new com.sun.org.apache.xerces.internal.parsers.DOMParser();
+      // com.sun.test.org.apache.xerces.internal.parsers.DOMParser parser
+      //  = new com.sun.test.org.apache.xerces.internal.parsers.DOMParser();
       DocumentBuilderFactory builderFactory =
         DocumentBuilderFactory.newInstance();
 
@@ -174,7 +174,7 @@ public class DOM2Helper extends DOMHelper
       // }
       setDocument(parser.parse(source));
     }
-    catch (org.xml.sax.SAXException se)
+    catch (test.org.xml.sax.SAXException se)
     {
       throw new TransformerException(se);
     }
@@ -187,7 +187,7 @@ public class DOM2Helper extends DOMHelper
       throw new TransformerException(ioe);
     }
 
-    // setDocument(((com.sun.org.apache.xerces.internal.parsers.DOMParser)parser).getDocument());
+    // setDocument(((com.sun.test.org.apache.xerces.internal.parsers.DOMParser)parser).getDocument());
   }
 
   /**

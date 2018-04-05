@@ -38,11 +38,11 @@ import com.sun.org.apache.xalan.internal.xsltc.compiler.SyntaxTreeNode;
 import com.sun.org.apache.xalan.internal.xsltc.compiler.XSLTC;
 import com.sun.org.apache.xalan.internal.xsltc.compiler.util.ErrorMsg;
 
-import org.xml.sax.ContentHandler;
-import org.xml.sax.InputSource;
-import org.xml.sax.Locator;
-import org.xml.sax.SAXException;
-import org.xml.sax.Attributes;
+import test.org.xml.sax.ContentHandler;
+import test.org.xml.sax.InputSource;
+import test.org.xml.sax.Locator;
+import test.org.xml.sax.SAXException;
+import test.org.xml.sax.Attributes;
 
 import java.util.Vector;
 

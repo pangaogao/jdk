@@ -123,13 +123,13 @@ public class XIncludeHandler
     implements XMLComponent, XMLDocumentFilter, XMLDTDFilter {
 
     public final static String XINCLUDE_DEFAULT_CONFIGURATION =
-        "com.sun.org.apache.xerces.internal.parsers.XIncludeParserConfiguration";
+        "com.sun.test.org.apache.xerces.internal.parsers.XIncludeParserConfiguration";
     public final static String HTTP_ACCEPT = "Accept";
     public final static String HTTP_ACCEPT_LANGUAGE = "Accept-Language";
     public final static String XPOINTER = "xpointer";
 
     public final static String XINCLUDE_NS_URI =
-        "http://www.w3.org/2001/XInclude".intern();
+        "http://www.w3.test.org/2001/XInclude".intern();
     public final static String XINCLUDE_INCLUDE = "include".intern();
     public final static String XINCLUDE_FALLBACK = "fallback".intern();
 
@@ -1189,7 +1189,7 @@ public class XIncludeHandler
     // the rest we just pass on
 
     /* (non-Javadoc)
-     * @see com.sun.org.apache.xerces.internal.xni.XMLDTDHandler#attributeDecl(java.lang.String, java.lang.String, java.lang.String, java.lang.String[], java.lang.String, com.sun.org.apache.xerces.internal.xni.XMLString, com.sun.org.apache.xerces.internal.xni.XMLString, com.sun.org.apache.xerces.internal.xni.Augmentations)
+     * @see com.sun.test.org.apache.xerces.internal.xni.XMLDTDHandler#attributeDecl(java.lang.String, java.lang.String, java.lang.String, java.lang.String[], java.lang.String, com.sun.test.org.apache.xerces.internal.xni.XMLString, com.sun.test.org.apache.xerces.internal.xni.XMLString, com.sun.test.org.apache.xerces.internal.xni.Augmentations)
      */
     @Override
     public void attributeDecl(
@@ -1216,7 +1216,7 @@ public class XIncludeHandler
     }
 
     /* (non-Javadoc)
-     * @see com.sun.org.apache.xerces.internal.xni.XMLDTDHandler#elementDecl(java.lang.String, java.lang.String, com.sun.org.apache.xerces.internal.xni.Augmentations)
+     * @see com.sun.test.org.apache.xerces.internal.xni.XMLDTDHandler#elementDecl(java.lang.String, java.lang.String, com.sun.test.org.apache.xerces.internal.xni.Augmentations)
      */
     @Override
     public void elementDecl(
@@ -1230,7 +1230,7 @@ public class XIncludeHandler
     }
 
     /* (non-Javadoc)
-     * @see com.sun.org.apache.xerces.internal.xni.XMLDTDHandler#endAttlist(com.sun.org.apache.xerces.internal.xni.Augmentations)
+     * @see com.sun.test.org.apache.xerces.internal.xni.XMLDTDHandler#endAttlist(com.sun.test.org.apache.xerces.internal.xni.Augmentations)
      */
     @Override
     public void endAttlist(Augmentations augmentations) throws XNIException {
@@ -1240,7 +1240,7 @@ public class XIncludeHandler
     }
 
     /* (non-Javadoc)
-     * @see com.sun.org.apache.xerces.internal.xni.XMLDTDHandler#endConditional(com.sun.org.apache.xerces.internal.xni.Augmentations)
+     * @see com.sun.test.org.apache.xerces.internal.xni.XMLDTDHandler#endConditional(com.sun.test.org.apache.xerces.internal.xni.Augmentations)
      */
     @Override
     public void endConditional(Augmentations augmentations)
@@ -1251,7 +1251,7 @@ public class XIncludeHandler
     }
 
     /* (non-Javadoc)
-     * @see com.sun.org.apache.xerces.internal.xni.XMLDTDHandler#endDTD(com.sun.org.apache.xerces.internal.xni.Augmentations)
+     * @see com.sun.test.org.apache.xerces.internal.xni.XMLDTDHandler#endDTD(com.sun.test.org.apache.xerces.internal.xni.Augmentations)
      */
     @Override
     public void endDTD(Augmentations augmentations) throws XNIException {
@@ -1262,7 +1262,7 @@ public class XIncludeHandler
     }
 
     /* (non-Javadoc)
-     * @see com.sun.org.apache.xerces.internal.xni.XMLDTDHandler#endExternalSubset(com.sun.org.apache.xerces.internal.xni.Augmentations)
+     * @see com.sun.test.org.apache.xerces.internal.xni.XMLDTDHandler#endExternalSubset(com.sun.test.org.apache.xerces.internal.xni.Augmentations)
      */
     @Override
     public void endExternalSubset(Augmentations augmentations)
@@ -1273,7 +1273,7 @@ public class XIncludeHandler
     }
 
     /* (non-Javadoc)
-     * @see com.sun.org.apache.xerces.internal.xni.XMLDTDHandler#endParameterEntity(java.lang.String, com.sun.org.apache.xerces.internal.xni.Augmentations)
+     * @see com.sun.test.org.apache.xerces.internal.xni.XMLDTDHandler#endParameterEntity(java.lang.String, com.sun.test.org.apache.xerces.internal.xni.Augmentations)
      */
     @Override
     public void endParameterEntity(String name, Augmentations augmentations)
@@ -1284,7 +1284,7 @@ public class XIncludeHandler
     }
 
     /* (non-Javadoc)
-     * @see com.sun.org.apache.xerces.internal.xni.XMLDTDHandler#externalEntityDecl(java.lang.String, com.sun.org.apache.xerces.internal.xni.XMLResourceIdentifier, com.sun.org.apache.xerces.internal.xni.Augmentations)
+     * @see com.sun.test.org.apache.xerces.internal.xni.XMLDTDHandler#externalEntityDecl(java.lang.String, com.sun.test.org.apache.xerces.internal.xni.XMLResourceIdentifier, com.sun.test.org.apache.xerces.internal.xni.Augmentations)
      */
     @Override
     public void externalEntityDecl(
@@ -1298,7 +1298,7 @@ public class XIncludeHandler
     }
 
     /* (non-Javadoc)
-     * @see com.sun.org.apache.xerces.internal.xni.XMLDTDHandler#getDTDSource()
+     * @see com.sun.test.org.apache.xerces.internal.xni.XMLDTDHandler#getDTDSource()
      */
     @Override
     public XMLDTDSource getDTDSource() {
@@ -1306,7 +1306,7 @@ public class XIncludeHandler
     }
 
     /* (non-Javadoc)
-     * @see com.sun.org.apache.xerces.internal.xni.XMLDTDHandler#ignoredCharacters(com.sun.org.apache.xerces.internal.xni.XMLString, com.sun.org.apache.xerces.internal.xni.Augmentations)
+     * @see com.sun.test.org.apache.xerces.internal.xni.XMLDTDHandler#ignoredCharacters(com.sun.test.org.apache.xerces.internal.xni.XMLString, com.sun.test.org.apache.xerces.internal.xni.Augmentations)
      */
     @Override
     public void ignoredCharacters(XMLString text, Augmentations augmentations)
@@ -1317,7 +1317,7 @@ public class XIncludeHandler
     }
 
     /* (non-Javadoc)
-     * @see com.sun.org.apache.xerces.internal.xni.XMLDTDHandler#internalEntityDecl(java.lang.String, com.sun.org.apache.xerces.internal.xni.XMLString, com.sun.org.apache.xerces.internal.xni.XMLString, com.sun.org.apache.xerces.internal.xni.Augmentations)
+     * @see com.sun.test.org.apache.xerces.internal.xni.XMLDTDHandler#internalEntityDecl(java.lang.String, com.sun.test.org.apache.xerces.internal.xni.XMLString, com.sun.test.org.apache.xerces.internal.xni.XMLString, com.sun.test.org.apache.xerces.internal.xni.Augmentations)
      */
     @Override
     public void internalEntityDecl(
@@ -1336,7 +1336,7 @@ public class XIncludeHandler
     }
 
     /* (non-Javadoc)
-     * @see com.sun.org.apache.xerces.internal.xni.XMLDTDHandler#notationDecl(java.lang.String, com.sun.org.apache.xerces.internal.xni.XMLResourceIdentifier, com.sun.org.apache.xerces.internal.xni.Augmentations)
+     * @see com.sun.test.org.apache.xerces.internal.xni.XMLDTDHandler#notationDecl(java.lang.String, com.sun.test.org.apache.xerces.internal.xni.XMLResourceIdentifier, com.sun.test.org.apache.xerces.internal.xni.Augmentations)
      */
     @Override
     public void notationDecl(
@@ -1351,7 +1351,7 @@ public class XIncludeHandler
     }
 
     /* (non-Javadoc)
-     * @see com.sun.org.apache.xerces.internal.xni.XMLDTDHandler#setDTDSource(com.sun.org.apache.xerces.internal.xni.parser.XMLDTDSource)
+     * @see com.sun.test.org.apache.xerces.internal.xni.XMLDTDHandler#setDTDSource(com.sun.test.org.apache.xerces.internal.xni.parser.XMLDTDSource)
      */
     @Override
     public void setDTDSource(XMLDTDSource source) {
@@ -1359,7 +1359,7 @@ public class XIncludeHandler
     }
 
     /* (non-Javadoc)
-     * @see com.sun.org.apache.xerces.internal.xni.XMLDTDHandler#startAttlist(java.lang.String, com.sun.org.apache.xerces.internal.xni.Augmentations)
+     * @see com.sun.test.org.apache.xerces.internal.xni.XMLDTDHandler#startAttlist(java.lang.String, com.sun.test.org.apache.xerces.internal.xni.Augmentations)
      */
     @Override
     public void startAttlist(String elementName, Augmentations augmentations)
@@ -1370,7 +1370,7 @@ public class XIncludeHandler
     }
 
     /* (non-Javadoc)
-     * @see com.sun.org.apache.xerces.internal.xni.XMLDTDHandler#startConditional(short, com.sun.org.apache.xerces.internal.xni.Augmentations)
+     * @see com.sun.test.org.apache.xerces.internal.xni.XMLDTDHandler#startConditional(short, com.sun.test.org.apache.xerces.internal.xni.Augmentations)
      */
     @Override
     public void startConditional(short type, Augmentations augmentations)
@@ -1381,7 +1381,7 @@ public class XIncludeHandler
     }
 
     /* (non-Javadoc)
-     * @see com.sun.org.apache.xerces.internal.xni.XMLDTDHandler#startDTD(com.sun.org.apache.xerces.internal.xni.XMLLocator, com.sun.org.apache.xerces.internal.xni.Augmentations)
+     * @see com.sun.test.org.apache.xerces.internal.xni.XMLDTDHandler#startDTD(com.sun.test.org.apache.xerces.internal.xni.XMLLocator, com.sun.test.org.apache.xerces.internal.xni.Augmentations)
      */
     @Override
     public void startDTD(XMLLocator locator, Augmentations augmentations)
@@ -1393,7 +1393,7 @@ public class XIncludeHandler
     }
 
     /* (non-Javadoc)
-     * @see com.sun.org.apache.xerces.internal.xni.XMLDTDHandler#startExternalSubset(com.sun.org.apache.xerces.internal.xni.XMLResourceIdentifier, com.sun.org.apache.xerces.internal.xni.Augmentations)
+     * @see com.sun.test.org.apache.xerces.internal.xni.XMLDTDHandler#startExternalSubset(com.sun.test.org.apache.xerces.internal.xni.XMLResourceIdentifier, com.sun.test.org.apache.xerces.internal.xni.Augmentations)
      */
     @Override
     public void startExternalSubset(
@@ -1406,7 +1406,7 @@ public class XIncludeHandler
     }
 
     /* (non-Javadoc)
-     * @see com.sun.org.apache.xerces.internal.xni.XMLDTDHandler#startParameterEntity(java.lang.String, com.sun.org.apache.xerces.internal.xni.XMLResourceIdentifier, java.lang.String, com.sun.org.apache.xerces.internal.xni.Augmentations)
+     * @see com.sun.test.org.apache.xerces.internal.xni.XMLDTDHandler#startParameterEntity(java.lang.String, com.sun.test.org.apache.xerces.internal.xni.XMLResourceIdentifier, java.lang.String, com.sun.test.org.apache.xerces.internal.xni.Augmentations)
      */
     @Override
     public void startParameterEntity(
@@ -1425,7 +1425,7 @@ public class XIncludeHandler
     }
 
     /* (non-Javadoc)
-     * @see com.sun.org.apache.xerces.internal.xni.XMLDTDHandler#unparsedEntityDecl(java.lang.String, com.sun.org.apache.xerces.internal.xni.XMLResourceIdentifier, java.lang.String, com.sun.org.apache.xerces.internal.xni.Augmentations)
+     * @see com.sun.test.org.apache.xerces.internal.xni.XMLDTDHandler#unparsedEntityDecl(java.lang.String, com.sun.test.org.apache.xerces.internal.xni.XMLResourceIdentifier, java.lang.String, com.sun.test.org.apache.xerces.internal.xni.Augmentations)
      */
     @Override
     public void unparsedEntityDecl(
@@ -1445,7 +1445,7 @@ public class XIncludeHandler
     }
 
     /* (non-Javadoc)
-     * @see com.sun.org.apache.xerces.internal.xni.parser.XMLDTDSource#getDTDHandler()
+     * @see com.sun.test.org.apache.xerces.internal.xni.parser.XMLDTDSource#getDTDHandler()
      */
     @Override
     public XMLDTDHandler getDTDHandler() {
@@ -1453,7 +1453,7 @@ public class XIncludeHandler
     }
 
     /* (non-Javadoc)
-     * @see com.sun.org.apache.xerces.internal.xni.parser.XMLDTDSource#setDTDHandler(com.sun.org.apache.xerces.internal.xni.XMLDTDHandler)
+     * @see com.sun.test.org.apache.xerces.internal.xni.parser.XMLDTDSource#setDTDHandler(com.sun.test.org.apache.xerces.internal.xni.XMLDTDHandler)
      */
     @Override
     public void setDTDHandler(XMLDTDHandler handler) {
@@ -1635,7 +1635,7 @@ public class XIncludeHandler
 
                 String parserName = XINCLUDE_DEFAULT_CONFIGURATION;
                 if (xpointer != null)
-                        parserName = "com.sun.org.apache.xerces.internal.parsers.XPointerParserConfiguration";
+                        parserName = "com.sun.test.org.apache.xerces.internal.parsers.XPointerParserConfiguration";
 
                 fChildConfig =
                     (XMLParserConfiguration)ObjectFactory.newInstance(

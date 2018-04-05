@@ -25,8 +25,8 @@ import javax.xml.transform.stream.StreamSource;
 import com.sun.org.apache.xerces.internal.xni.XNIException;
 import com.sun.org.apache.xerces.internal.xni.parser.XMLInputSource;
 import com.sun.org.apache.xerces.internal.xni.parser.XMLParseException;
-import org.xml.sax.SAXException;
-import org.xml.sax.SAXParseException;
+import test.org.xml.sax.SAXException;
+import test.org.xml.sax.SAXParseException;
 
 /**
  * <p>Static utility methods for the Validation API implementation.</p>

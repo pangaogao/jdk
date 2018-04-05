@@ -22,7 +22,7 @@ package com.sun.org.apache.xerces.internal.dom;
 
 import java.util.Vector;
 
-import org.w3c.dom.DOMStringList;
+import test.org.w3c.dom.DOMStringList;
 
 /**
  * DOM Level 3
@@ -53,7 +53,7 @@ public class DOMStringListImpl implements DOMStringList {
     }
 
         /**
-         * @see org.w3c.dom.DOMStringList#item(int)
+         * @see test.org.w3c.dom.DOMStringList#item(int)
          */
         public String item(int index) {
         try {
@@ -64,14 +64,14 @@ public class DOMStringListImpl implements DOMStringList {
         }
 
         /**
-         * @see org.w3c.dom.DOMStringList#getLength()
+         * @see test.org.w3c.dom.DOMStringList#getLength()
          */
         public int getLength() {
                 return fStrings.size();
         }
 
         /**
-         * @see org.w3c.dom.DOMStringList#contains(String)
+         * @see test.org.w3c.dom.DOMStringList#contains(String)
          */
         public boolean contains(String param) {
                 return fStrings.contains(param) ;

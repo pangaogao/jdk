@@ -25,28 +25,18 @@
 
 package com.sun.corba.se.impl.ior ;
 
-import java.util.Iterator ;
+import test.org.omg.CORBA.portable.InputStream ;
+import test.org.omg.CORBA.portable.OutputStream ;
+import test.org.omg.CORBA.portable.StreamableValue ;
 
-import org.omg.CORBA.portable.InputStream ;
-import org.omg.CORBA.portable.OutputStream ;
-import org.omg.CORBA.portable.StreamableValue ;
+import test.org.omg.CORBA.TypeCode ;
 
-import org.omg.CORBA.TypeCode ;
+import test.org.omg.PortableInterceptor.ObjectReferenceFactory ;
+import test.org.omg.PortableInterceptor.ObjectReferenceFactoryHelper ;
 
-import org.omg.PortableInterceptor.ObjectReferenceFactory ;
-import org.omg.PortableInterceptor.ObjectReferenceFactoryHelper ;
-
-import com.sun.corba.se.spi.oa.ObjectAdapter ;
-
-import com.sun.corba.se.spi.ior.ObjectId ;
-import com.sun.corba.se.spi.ior.ObjectKeyTemplate ;
-import com.sun.corba.se.spi.ior.ObjectAdapterId ;
-import com.sun.corba.se.spi.ior.IOR;
 import com.sun.corba.se.spi.ior.IORFactory;
 import com.sun.corba.se.spi.ior.IORTemplateList;
 import com.sun.corba.se.spi.ior.IORFactories;
-
-import com.sun.corba.se.impl.orbutil.ORBUtility ;
 
 import com.sun.corba.se.spi.orb.ORB ;
 
@@ -93,7 +83,7 @@ public class ObjectReferenceFactoryImpl extends ObjectReferenceProducerBase
 
     // Note that this repository ID must reflect the implementation
     // of the abstract valuetype (that is, this class), not the
-    // repository ID of the org.omg.PortableInterceptor.ObjectReferenceFactory
+    // repository ID of the test.org.omg.PortableInterceptor.ObjectReferenceFactory
     // class.  This allows for multiple independent implementations
     // of the abstract valuetype, should that become necessary.
     public static final String repositoryId =
@@ -114,8 +104,8 @@ public class ObjectReferenceFactoryImpl extends ObjectReferenceProducerBase
     */
     public void _read( InputStream is )
     {
-        org.omg.CORBA_2_3.portable.InputStream istr =
-            (org.omg.CORBA_2_3.portable.InputStream)is ;
+        test.org.omg.CORBA_2_3.portable.InputStream istr =
+            (test.org.omg.CORBA_2_3.portable.InputStream)is ;
 
         iorTemplates = IORFactories.makeIORTemplateList( istr ) ;
     }
@@ -124,8 +114,8 @@ public class ObjectReferenceFactoryImpl extends ObjectReferenceProducerBase
      */
     public void _write( OutputStream os )
     {
-        org.omg.CORBA_2_3.portable.OutputStream ostr =
-            (org.omg.CORBA_2_3.portable.OutputStream)os ;
+        test.org.omg.CORBA_2_3.portable.OutputStream ostr =
+            (test.org.omg.CORBA_2_3.portable.OutputStream)os ;
 
         iorTemplates.write( ostr ) ;
     }

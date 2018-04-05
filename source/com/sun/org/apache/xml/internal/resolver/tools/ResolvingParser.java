@@ -29,15 +29,15 @@ import java.net.URL;
 import java.net.MalformedURLException;
 import java.util.Locale;
 
-import org.xml.sax.Parser;
-import org.xml.sax.InputSource;
-import org.xml.sax.Locator;
-import org.xml.sax.ErrorHandler;
-import org.xml.sax.DTDHandler;
-import org.xml.sax.DocumentHandler;
-import org.xml.sax.AttributeList;
-import org.xml.sax.EntityResolver;
-import org.xml.sax.SAXException;
+import test.org.xml.sax.Parser;
+import test.org.xml.sax.InputSource;
+import test.org.xml.sax.Locator;
+import test.org.xml.sax.ErrorHandler;
+import test.org.xml.sax.DTDHandler;
+import test.org.xml.sax.DocumentHandler;
+import test.org.xml.sax.AttributeList;
+import test.org.xml.sax.EntityResolver;
+import test.org.xml.sax.SAXException;
 
 import javax.xml.parsers.SAXParserFactory;
 import javax.xml.parsers.SAXParser;
@@ -58,7 +58,7 @@ import com.sun.org.apache.xml.internal.resolver.helpers.FileURL;
  * @deprecated This interface has been replaced by the
  *             {@link com.sun.org.apache.xml.internal.resolver.tools.ResolvingXMLReader} for SAX2.
  * @see CatalogResolver
- * @see org.xml.sax.Parser
+ * @see test.org.xml.sax.Parser
  *
  * @author Norman Walsh
  * <a href="mailto:Norman.Walsh@Sun.COM">Norman.Walsh@Sun.COM</a>

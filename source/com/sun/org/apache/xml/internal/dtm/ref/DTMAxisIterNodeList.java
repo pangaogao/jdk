@@ -26,7 +26,7 @@ import com.sun.org.apache.xml.internal.dtm.DTM;
 import com.sun.org.apache.xml.internal.dtm.DTMAxisIterator;
 import com.sun.org.apache.xml.internal.utils.IntVector;
 
-import org.w3c.dom.Node;
+import test.org.w3c.dom.Node;
 
 /**
  * <code>DTMAxisNodeList</code> gives us an implementation of the DOM's
@@ -92,7 +92,7 @@ public class DTMAxisIterNodeList extends DTMNodeListBase {
 
 
     //================================================================
-    // org.w3c.dom.NodeList API follows
+    // test.org.w3c.dom.NodeList API follows
 
     /**
      * Returns the <code>index</code>th item in the collection. If

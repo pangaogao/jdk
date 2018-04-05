@@ -24,7 +24,7 @@
  */
 package com.sun.corba.se.impl.activation;
 
-import org.omg.CORBA.ORB;
+import test.org.omg.CORBA.ORB;
 
 import java.io.PrintStream;
 

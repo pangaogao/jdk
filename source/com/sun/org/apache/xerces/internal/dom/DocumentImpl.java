@@ -33,25 +33,25 @@ import java.util.Hashtable;
 import java.util.List;
 import java.util.Map;
 import java.util.Vector;
-import org.w3c.dom.Attr;
-import org.w3c.dom.DOMException;
-import org.w3c.dom.DOMImplementation;
-import org.w3c.dom.DocumentType;
-import org.w3c.dom.Element;
-import org.w3c.dom.NamedNodeMap;
-import org.w3c.dom.Node;
-import org.w3c.dom.UserDataHandler;
-import org.w3c.dom.events.DocumentEvent;
-import org.w3c.dom.events.Event;
-import org.w3c.dom.events.EventException;
-import org.w3c.dom.events.EventListener;
-import org.w3c.dom.events.MutationEvent;
-import org.w3c.dom.ranges.DocumentRange;
-import org.w3c.dom.ranges.Range;
-import org.w3c.dom.traversal.DocumentTraversal;
-import org.w3c.dom.traversal.NodeFilter;
-import org.w3c.dom.traversal.NodeIterator;
-import org.w3c.dom.traversal.TreeWalker;
+import test.org.w3c.dom.Attr;
+import test.org.w3c.dom.DOMException;
+import test.org.w3c.dom.DOMImplementation;
+import test.org.w3c.dom.DocumentType;
+import test.org.w3c.dom.Element;
+import test.org.w3c.dom.NamedNodeMap;
+import test.org.w3c.dom.Node;
+import test.org.w3c.dom.UserDataHandler;
+import test.org.w3c.dom.events.DocumentEvent;
+import test.org.w3c.dom.events.Event;
+import test.org.w3c.dom.events.EventException;
+import test.org.w3c.dom.events.EventListener;
+import test.org.w3c.dom.events.MutationEvent;
+import test.org.w3c.dom.ranges.DocumentRange;
+import test.org.w3c.dom.ranges.Range;
+import test.org.w3c.dom.traversal.DocumentTraversal;
+import test.org.w3c.dom.traversal.NodeFilter;
+import test.org.w3c.dom.traversal.NodeIterator;
+import test.org.w3c.dom.traversal.TreeWalker;
 
 
 /**
@@ -171,7 +171,7 @@ public class DocumentImpl
      * protection. I've chosen to implement it by calling importNode
      * which is DOM Level 2.
      *
-     * @return org.w3c.dom.Node
+     * @return test.org.w3c.dom.Node
      * @param deep boolean, iff true replicate children
      */
     public Node cloneNode(boolean deep) {

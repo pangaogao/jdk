@@ -198,7 +198,7 @@ public final class IDLTypesUtil {
         }
 
         return (c.isInterface() &&
-                org.omg.CORBA.Object.class.isAssignableFrom(c));
+                test.org.omg.CORBA.Object.class.isAssignableFrom(c));
     }
 
     /**
@@ -213,7 +213,7 @@ public final class IDLTypesUtil {
         Class superClass = c.getSuperclass();
         return (!c.isInterface() &&
                 (superClass != null) &&
-                (org.omg.CORBA.portable.IDLEntity.class.isAssignableFrom(c)));
+                (test.org.omg.CORBA.portable.IDLEntity.class.isAssignableFrom(c)));
     }
 
     /**
@@ -430,7 +430,7 @@ public final class IDLTypesUtil {
         } else if( c == java.rmi.Remote.class ) {
             return new IDLType( c, new String[] { "java", "rmi" },
                 "Remote" ) ;
-        } else if( c == org.omg.CORBA.Object.class ) {
+        } else if( c == test.org.omg.CORBA.Object.class ) {
             return new IDLType( c, "Object" ) ;
         } else {
             return null;

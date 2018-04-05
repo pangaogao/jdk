@@ -37,9 +37,9 @@ import com.sun.org.apache.xml.internal.security.utils.Constants;
 import com.sun.org.apache.xml.internal.security.utils.XMLUtils;
 import com.sun.org.apache.xml.internal.security.utils.XPathAPI;
 import com.sun.org.apache.xml.internal.security.utils.XPathFactory;
-import org.w3c.dom.DOMException;
-import org.w3c.dom.Element;
-import org.w3c.dom.Node;
+import test.org.w3c.dom.DOMException;
+import test.org.w3c.dom.Element;
+import test.org.w3c.dom.Node;
 
 /**
  * Class TransformXPath
@@ -138,7 +138,7 @@ public class TransformXPath extends TransformSpi {
         }
 
         /**
-         * @see com.sun.org.apache.xml.internal.security.signature.NodeFilter#isNodeInclude(org.w3c.dom.Node)
+         * @see com.sun.org.apache.xml.internal.security.signature.NodeFilter#isNodeInclude(test.org.w3c.dom.Node)
          */
         public int isNodeInclude(Node currentNode) {
             try {

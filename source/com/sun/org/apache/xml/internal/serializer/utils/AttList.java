@@ -22,22 +22,22 @@
  */
 package com.sun.org.apache.xml.internal.serializer.utils;
 
-import org.w3c.dom.Attr;
-import org.w3c.dom.NamedNodeMap;
-import org.w3c.dom.Node;
+import test.org.w3c.dom.Attr;
+import test.org.w3c.dom.NamedNodeMap;
+import test.org.w3c.dom.Node;
 
-import org.xml.sax.Attributes;
+import test.org.xml.sax.Attributes;
 
 /**
  * Wraps a DOM attribute list in a SAX Attributes.
  *
- * This class is a copy of the one in com.sun.org.apache.xml.internal.utils.
+ * This class is a copy of the one in com.sun.test.org.apache.xml.internal.utils.
  * It exists to cut the serializers dependancy on that package.
  * A minor changes from that package are:
  * DOMHelper reference changed to DOM2Helper, class is not "public"
  *
  * This class is not a public API, it is only public because it is
- * used in com.sun.org.apache.xml.internal.serializer.
+ * used in com.sun.test.org.apache.xml.internal.serializer.
  *
  * @xsl.usage internal
  */

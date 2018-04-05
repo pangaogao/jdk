@@ -23,7 +23,7 @@
 package com.sun.org.apache.xml.internal.security.encryption;
 
 import java.util.Iterator;
-import org.w3c.dom.Element;
+import test.org.w3c.dom.Element;
 
 /**
  * A wrapper for a pointer from a key value of an <code>EncryptedKey</code> to

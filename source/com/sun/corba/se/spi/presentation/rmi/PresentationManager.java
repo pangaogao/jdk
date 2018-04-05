@@ -28,11 +28,9 @@ package com.sun.corba.se.spi.presentation.rmi ;
 import java.util.Map ;
 
 import java.lang.reflect.Method ;
-import java.lang.reflect.InvocationHandler ;
 
 import javax.rmi.CORBA.Tie ;
 
-import com.sun.corba.se.spi.orb.ORB ;
 import com.sun.corba.se.spi.orbutil.proxy.InvocationHandlerFactory ;
 
 
@@ -94,7 +92,7 @@ public interface PresentationManager
         /** Create a new dynamic stub.  It has the type that was
          * used to create this factory.
          */
-        org.omg.CORBA.Object makeStub() ;
+        test.org.omg.CORBA.Object makeStub() ;
 
         /** Return the repository ID information for all Stubs
          * created by this stub factory.

@@ -20,10 +20,10 @@
 
 package com.sun.org.apache.xerces.internal.impl.xs.opti;
 
-import org.w3c.dom.Attr;
-import org.w3c.dom.Document;
-import org.w3c.dom.NamedNodeMap;
-import org.w3c.dom.Node;
+import test.org.w3c.dom.Attr;
+import test.org.w3c.dom.Document;
+import test.org.w3c.dom.NamedNodeMap;
+import test.org.w3c.dom.Node;
 
 /**
  * @xerces.internal
@@ -82,7 +82,7 @@ public class ElementImpl extends DefaultElement {
 
 
     //
-    // org.w3c.dom.Node methods
+    // test.org.w3c.dom.Node methods
     //
 
     public Document getOwnerDocument() {
@@ -158,7 +158,7 @@ public class ElementImpl extends DefaultElement {
 
 
     //
-    // org.w3c.dom.Element methods
+    // test.org.w3c.dom.Element methods
     //
 
     public String getTagName() {

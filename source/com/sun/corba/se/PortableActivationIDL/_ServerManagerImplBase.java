@@ -13,8 +13,8 @@ package com.sun.corba.se.PortableActivationIDL;
     * implemented together in the same process, as is currently the case
     * for our implementation.
     */
-public abstract class _ServerManagerImplBase extends org.omg.CORBA.portable.ObjectImpl
-                implements com.sun.corba.se.PortableActivationIDL.ServerManager, org.omg.CORBA.portable.InvokeHandler
+public abstract class _ServerManagerImplBase extends test.org.omg.CORBA.portable.ObjectImpl
+                implements com.sun.corba.se.PortableActivationIDL.ServerManager, test.org.omg.CORBA.portable.InvokeHandler
 {
 
   // Constructors
@@ -43,14 +43,14 @@ public abstract class _ServerManagerImplBase extends org.omg.CORBA.portable.Obje
     _methods.put ("getServerPortForType", new java.lang.Integer (15));
   }
 
-  public org.omg.CORBA.portable.OutputStream _invoke (String $method,
-                                org.omg.CORBA.portable.InputStream in,
-                                org.omg.CORBA.portable.ResponseHandler $rh)
+  public test.org.omg.CORBA.portable.OutputStream _invoke (String $method,
+                                                           test.org.omg.CORBA.portable.InputStream in,
+                                                           test.org.omg.CORBA.portable.ResponseHandler $rh)
   {
-    org.omg.CORBA.portable.OutputStream out = null;
+    test.org.omg.CORBA.portable.OutputStream out = null;
     java.lang.Integer __method = (java.lang.Integer)_methods.get ($method);
     if (__method == null)
-      throw new org.omg.CORBA.BAD_OPERATION (0, org.omg.CORBA.CompletionStatus.COMPLETED_MAYBE);
+      throw new test.org.omg.CORBA.BAD_OPERATION (0, test.org.omg.CORBA.CompletionStatus.COMPLETED_MAYBE);
 
     switch (__method.intValue ())
     {
@@ -60,7 +60,7 @@ public abstract class _ServerManagerImplBase extends org.omg.CORBA.portable.Obje
        case 0:  // PortableActivationIDL/Activator/registerServer
        {
          try {
-           String serverId = org.omg.PortableInterceptor.ServerIdHelper.read (in);
+           String serverId = test.org.omg.PortableInterceptor.ServerIdHelper.read (in);
            com.sun.corba.se.PortableActivationIDL.ServerProxy serverObj = com.sun.corba.se.PortableActivationIDL.ServerProxyHelper.read (in);
            this.registerServer (serverId, serverObj);
            out = $rh.createReply();
@@ -78,7 +78,7 @@ public abstract class _ServerManagerImplBase extends org.omg.CORBA.portable.Obje
   	*/
        case 1:  // PortableActivationIDL/Activator/serverGoingDown
        {
-         String serverId = org.omg.PortableInterceptor.ServerIdHelper.read (in);
+         String serverId = test.org.omg.PortableInterceptor.ServerIdHelper.read (in);
          this.serverGoingDown (serverId);
          out = $rh.createReply();
          break;
@@ -93,8 +93,8 @@ public abstract class _ServerManagerImplBase extends org.omg.CORBA.portable.Obje
        case 2:  // PortableActivationIDL/Activator/registerORB
        {
          try {
-           String serverId = org.omg.PortableInterceptor.ServerIdHelper.read (in);
-           String orbId = org.omg.PortableInterceptor.ORBIdHelper.read (in);
+           String serverId = test.org.omg.PortableInterceptor.ServerIdHelper.read (in);
+           String orbId = test.org.omg.PortableInterceptor.ORBIdHelper.read (in);
            com.sun.corba.se.PortableActivationIDL.ORBProxy orb = com.sun.corba.se.PortableActivationIDL.ORBProxyHelper.read (in);
            com.sun.corba.se.PortableActivationIDL.EndPointInfo endPointInfo[] = com.sun.corba.se.PortableActivationIDL.EndpointInfoListHelper.read (in);
            this.registerORB (serverId, orbId, orb, endPointInfo);
@@ -119,13 +119,13 @@ public abstract class _ServerManagerImplBase extends org.omg.CORBA.portable.Obje
   	*/
        case 3:  // PortableActivationIDL/Activator/registerPOA
        {
-         String serverId = org.omg.PortableInterceptor.ServerIdHelper.read (in);
-         String orbId = org.omg.PortableInterceptor.ORBIdHelper.read (in);
-         org.omg.PortableInterceptor.ObjectReferenceTemplate poaTemplate = org.omg.PortableInterceptor.ObjectReferenceTemplateHelper.read (in);
-         org.omg.PortableInterceptor.ObjectReferenceTemplate $result = null;
+         String serverId = test.org.omg.PortableInterceptor.ServerIdHelper.read (in);
+         String orbId = test.org.omg.PortableInterceptor.ORBIdHelper.read (in);
+         test.org.omg.PortableInterceptor.ObjectReferenceTemplate poaTemplate = test.org.omg.PortableInterceptor.ObjectReferenceTemplateHelper.read (in);
+         test.org.omg.PortableInterceptor.ObjectReferenceTemplate $result = null;
          $result = this.registerPOA (serverId, orbId, poaTemplate);
          out = $rh.createReply();
-         org.omg.PortableInterceptor.ObjectReferenceTemplateHelper.write (out, $result);
+         test.org.omg.PortableInterceptor.ObjectReferenceTemplateHelper.write (out, $result);
          break;
        }
 
@@ -134,9 +134,9 @@ public abstract class _ServerManagerImplBase extends org.omg.CORBA.portable.Obje
   	*/
        case 4:  // PortableActivationIDL/Activator/poaDestroyed
        {
-         String serverId = org.omg.PortableInterceptor.ServerIdHelper.read (in);
-         String orbId = org.omg.PortableInterceptor.ORBIdHelper.read (in);
-         org.omg.PortableInterceptor.ObjectReferenceTemplate poaTemplate = org.omg.PortableInterceptor.ObjectReferenceTemplateHelper.read (in);
+         String serverId = test.org.omg.PortableInterceptor.ServerIdHelper.read (in);
+         String orbId = test.org.omg.PortableInterceptor.ORBIdHelper.read (in);
+         test.org.omg.PortableInterceptor.ObjectReferenceTemplate poaTemplate = test.org.omg.PortableInterceptor.ObjectReferenceTemplateHelper.read (in);
          this.poaDestroyed (serverId, orbId, poaTemplate);
          out = $rh.createReply();
          break;
@@ -149,7 +149,7 @@ public abstract class _ServerManagerImplBase extends org.omg.CORBA.portable.Obje
        case 5:  // PortableActivationIDL/Activator/activate
        {
          try {
-           String serverId = org.omg.PortableInterceptor.ServerIdHelper.read (in);
+           String serverId = test.org.omg.PortableInterceptor.ServerIdHelper.read (in);
            this.activate (serverId);
            out = $rh.createReply();
          } catch (com.sun.corba.se.PortableActivationIDL.ServerAlreadyActive $ex) {
@@ -171,7 +171,7 @@ public abstract class _ServerManagerImplBase extends org.omg.CORBA.portable.Obje
        case 6:  // PortableActivationIDL/Activator/shutdown
        {
          try {
-           String serverId = org.omg.PortableInterceptor.ServerIdHelper.read (in);
+           String serverId = test.org.omg.PortableInterceptor.ServerIdHelper.read (in);
            this.shutdown (serverId);
            out = $rh.createReply();
          } catch (com.sun.corba.se.PortableActivationIDL.ServerNotActive $ex) {
@@ -191,7 +191,7 @@ public abstract class _ServerManagerImplBase extends org.omg.CORBA.portable.Obje
        case 7:  // PortableActivationIDL/Activator/install
        {
          try {
-           String serverId = org.omg.PortableInterceptor.ServerIdHelper.read (in);
+           String serverId = test.org.omg.PortableInterceptor.ServerIdHelper.read (in);
            this.install (serverId);
            out = $rh.createReply();
          } catch (com.sun.corba.se.PortableActivationIDL.ServerNotRegistered $ex) {
@@ -215,7 +215,7 @@ public abstract class _ServerManagerImplBase extends org.omg.CORBA.portable.Obje
        case 8:  // PortableActivationIDL/Activator/uninstall
        {
          try {
-           String serverId = org.omg.PortableInterceptor.ServerIdHelper.read (in);
+           String serverId = test.org.omg.PortableInterceptor.ServerIdHelper.read (in);
            this.uninstall (serverId);
            out = $rh.createReply();
          } catch (com.sun.corba.se.PortableActivationIDL.ServerNotRegistered $ex) {
@@ -249,7 +249,7 @@ public abstract class _ServerManagerImplBase extends org.omg.CORBA.portable.Obje
        case 10:  // PortableActivationIDL/Activator/getORBNames
        {
          try {
-           String serverId = org.omg.PortableInterceptor.ServerIdHelper.read (in);
+           String serverId = test.org.omg.PortableInterceptor.ServerIdHelper.read (in);
            String $result[] = null;
            $result = this.getORBNames (serverId);
            out = $rh.createReply();
@@ -267,13 +267,13 @@ public abstract class _ServerManagerImplBase extends org.omg.CORBA.portable.Obje
   	*/
        case 11:  // PortableActivationIDL/Activator/lookupPOATemplate
        {
-         String serverId = org.omg.PortableInterceptor.ServerIdHelper.read (in);
-         String orbId = org.omg.PortableInterceptor.ORBIdHelper.read (in);
-         String orbAdapterName[] = org.omg.PortableInterceptor.AdapterNameHelper.read (in);
-         org.omg.PortableInterceptor.ObjectReferenceTemplate $result = null;
+         String serverId = test.org.omg.PortableInterceptor.ServerIdHelper.read (in);
+         String orbId = test.org.omg.PortableInterceptor.ORBIdHelper.read (in);
+         String orbAdapterName[] = test.org.omg.PortableInterceptor.AdapterNameHelper.read (in);
+         test.org.omg.PortableInterceptor.ObjectReferenceTemplate $result = null;
          $result = this.lookupPOATemplate (serverId, orbId, orbAdapterName);
          out = $rh.createReply();
-         org.omg.PortableInterceptor.ObjectReferenceTemplateHelper.write (out, $result);
+         test.org.omg.PortableInterceptor.ObjectReferenceTemplateHelper.write (out, $result);
          break;
        }
 
@@ -285,7 +285,7 @@ public abstract class _ServerManagerImplBase extends org.omg.CORBA.portable.Obje
        case 12:  // PortableActivationIDL/Locator/locateServer
        {
          try {
-           String serverId = org.omg.PortableInterceptor.ServerIdHelper.read (in);
+           String serverId = test.org.omg.PortableInterceptor.ServerIdHelper.read (in);
            String endPoint = in.read_string ();
            com.sun.corba.se.PortableActivationIDL.LocatorPackage.ServerLocationPerType $result = null;
            $result = this.locateServer (serverId, endPoint);
@@ -312,8 +312,8 @@ public abstract class _ServerManagerImplBase extends org.omg.CORBA.portable.Obje
        case 13:  // PortableActivationIDL/Locator/locateServerForORB
        {
          try {
-           String serverId = org.omg.PortableInterceptor.ServerIdHelper.read (in);
-           String orbId = org.omg.PortableInterceptor.ORBIdHelper.read (in);
+           String serverId = test.org.omg.PortableInterceptor.ServerIdHelper.read (in);
+           String orbId = test.org.omg.PortableInterceptor.ORBIdHelper.read (in);
            com.sun.corba.se.PortableActivationIDL.LocatorPackage.ServerLocationPerORB $result = null;
            $result = this.locateServerForORB (serverId, orbId);
            out = $rh.createReply();
@@ -370,7 +370,7 @@ public abstract class _ServerManagerImplBase extends org.omg.CORBA.portable.Obje
        }
 
        default:
-         throw new org.omg.CORBA.BAD_OPERATION (0, org.omg.CORBA.CompletionStatus.COMPLETED_MAYBE);
+         throw new test.org.omg.CORBA.BAD_OPERATION (0, test.org.omg.CORBA.CompletionStatus.COMPLETED_MAYBE);
     }
 
     return out;

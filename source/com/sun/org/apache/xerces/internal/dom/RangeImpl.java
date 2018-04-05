@@ -22,15 +22,15 @@ package com.sun.org.apache.xerces.internal.dom;
 
 import java.util.Vector;
 
-import org.w3c.dom.CharacterData;
-import org.w3c.dom.DOMException;
-import org.w3c.dom.DocumentFragment;
-import org.w3c.dom.Node;
-import org.w3c.dom.ranges.Range;
-import org.w3c.dom.ranges.RangeException;
+import test.org.w3c.dom.CharacterData;
+import test.org.w3c.dom.DOMException;
+import test.org.w3c.dom.DocumentFragment;
+import test.org.w3c.dom.Node;
+import test.org.w3c.dom.ranges.Range;
+import test.org.w3c.dom.ranges.RangeException;
 
 
-/** The RangeImpl class implements the org.w3c.dom.range.Range interface.
+/** The RangeImpl class implements the test.org.w3c.dom.range.Range interface.
  *  <p> Please see the API documentation for the interface classes
  *  and use the interfaces in your client programs.
  *

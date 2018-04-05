@@ -31,12 +31,12 @@ import com.sun.org.apache.xpath.internal.XPathContext;
 import com.sun.org.apache.xpath.internal.objects.XObject;
 import com.sun.org.apache.xpath.internal.res.XPATHErrorResources;
 import com.sun.org.apache.xpath.internal.res.XPATHMessages;
-import org.w3c.dom.DOMException;
-import org.w3c.dom.Document;
-import org.w3c.dom.Node;
-import org.w3c.dom.xpath.XPathException;
-import org.w3c.dom.xpath.XPathExpression;
-import org.w3c.dom.xpath.XPathNamespace;
+import test.org.w3c.dom.DOMException;
+import test.org.w3c.dom.Document;
+import test.org.w3c.dom.Node;
+import test.org.w3c.dom.xpath.XPathException;
+import test.org.w3c.dom.xpath.XPathExpression;
+import test.org.w3c.dom.xpath.XPathNamespace;
 
 /**
  *
@@ -48,7 +48,7 @@ import org.w3c.dom.xpath.XPathNamespace;
  * <p>The <code>XPathExpression</code> interface represents a parsed and resolved
  * XPath expression.</p>
  *
- * @see org.w3c.dom.xpath.XPathExpression
+ * @see test.org.w3c.dom.xpath.XPathExpression
  *
  * @xsl.usage internal
  */
@@ -118,7 +118,7 @@ class XPathExpressionImpl implements XPathExpression {
      *   <br>NOT_SUPPORTED_ERR: The Node is not a type permitted as an XPath
      *   context node.
      *
-     * @see org.w3c.dom.xpath.XPathExpression#evaluate(Node, short, XPathResult)
+     * @see test.org.w3c.dom.xpath.XPathExpression#evaluate(Node, short, XPathResult)
      * @xsl.usage internal
      */
     public Object evaluate(

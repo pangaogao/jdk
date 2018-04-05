@@ -472,7 +472,7 @@ public class VariableStack implements Cloneable
 
     // J2SE does not support Xalan interpretive
         /*
-    com.sun.org.apache.xml.internal.utils.PrefixResolver prefixResolver =
+    com.sun.test.org.apache.xml.internal.utils.PrefixResolver prefixResolver =
       xctxt.getNamespaceContext();
 
     // Get the current ElemTemplateElement, which must be pushed in as the
@@ -481,25 +481,25 @@ public class VariableStack implements Cloneable
     // qname.  If we reach the top level, use the StylesheetRoot's composed
     // list of top level variables and parameters.
 
-    if (prefixResolver instanceof com.sun.org.apache.xalan.internal.templates.ElemTemplateElement)
+    if (prefixResolver instanceof com.sun.test.org.apache.xalan.internal.templates.ElemTemplateElement)
     {
 
-      com.sun.org.apache.xalan.internal.templates.ElemVariable vvar;
+      com.sun.test.org.apache.xalan.internal.templates.ElemVariable vvar;
 
-      com.sun.org.apache.xalan.internal.templates.ElemTemplateElement prev =
-        (com.sun.org.apache.xalan.internal.templates.ElemTemplateElement) prefixResolver;
+      com.sun.test.org.apache.xalan.internal.templates.ElemTemplateElement prev =
+        (com.sun.test.org.apache.xalan.internal.templates.ElemTemplateElement) prefixResolver;
 
-      if (!(prev instanceof com.sun.org.apache.xalan.internal.templates.Stylesheet))
+      if (!(prev instanceof com.sun.test.org.apache.xalan.internal.templates.Stylesheet))
       {
-        while ( !(prev.getParentNode() instanceof com.sun.org.apache.xalan.internal.templates.Stylesheet) )
+        while ( !(prev.getParentNode() instanceof com.sun.test.org.apache.xalan.internal.templates.Stylesheet) )
         {
-          com.sun.org.apache.xalan.internal.templates.ElemTemplateElement savedprev = prev;
+          com.sun.test.org.apache.xalan.internal.templates.ElemTemplateElement savedprev = prev;
 
           while (null != (prev = prev.getPreviousSiblingElem()))
           {
-            if (prev instanceof com.sun.org.apache.xalan.internal.templates.ElemVariable)
+            if (prev instanceof com.sun.test.org.apache.xalan.internal.templates.ElemVariable)
             {
-              vvar = (com.sun.org.apache.xalan.internal.templates.ElemVariable) prev;
+              vvar = (com.sun.test.org.apache.xalan.internal.templates.ElemVariable) prev;
 
               if (vvar.getName().equals(qname))
                 return getLocalVariable(xctxt, vvar.getIndex());

@@ -363,7 +363,7 @@ public static final String ER_IGNORABLE_WHITESPACE_NOT_HANDLED =
   { ER_CURRENT_TAKES_NO_ARGS, "The current() function does not accept arguments!" },
 
   { ER_DOCUMENT_REPLACED,
-      "document() function implementation has been replaced by com.sun.org.apache.xalan.internal.xslt.FuncDocument!"},
+      "document() function implementation has been replaced by com.sun.test.org.apache.xalan.internal.xslt.FuncDocument!"},
 
   { ER_CONTEXT_HAS_NO_OWNERDOC,
       "context does not have an owner document!"},
@@ -913,7 +913,7 @@ public static final String ER_IGNORABLE_WHITESPACE_NOT_HANDLED =
 
   /** Field ERROR_RESOURCES          */
   public static final String ERROR_RESOURCES =
-    "com.sun.org.apache.xpath.internal.res.XPATHErrorResources";
+    "com.sun.test.org.apache.xpath.internal.res.XPATHErrorResources";
 
   /** Field ERROR_STRING          */
   public static final String ERROR_STRING = "#error";

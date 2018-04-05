@@ -71,21 +71,21 @@ import com.sun.org.apache.xerces.internal.xs.ElementPSVI;
 import com.sun.org.apache.xerces.internal.xs.ItemPSVI;
 import com.sun.org.apache.xerces.internal.xs.PSVIProvider;
 import com.sun.org.apache.xerces.internal.xs.XSTypeDefinition;
-import org.w3c.dom.TypeInfo;
-import org.w3c.dom.ls.LSInput;
-import org.w3c.dom.ls.LSResourceResolver;
-import org.xml.sax.Attributes;
-import org.xml.sax.ContentHandler;
-import org.xml.sax.DTDHandler;
-import org.xml.sax.ErrorHandler;
-import org.xml.sax.InputSource;
-import org.xml.sax.Locator;
-import org.xml.sax.SAXException;
-import org.xml.sax.SAXNotRecognizedException;
-import org.xml.sax.SAXNotSupportedException;
-import org.xml.sax.XMLReader;
-import org.xml.sax.ext.Attributes2;
-import org.xml.sax.ext.EntityResolver2;
+import test.org.w3c.dom.TypeInfo;
+import test.org.w3c.dom.ls.LSInput;
+import test.org.w3c.dom.ls.LSResourceResolver;
+import test.org.xml.sax.Attributes;
+import test.org.xml.sax.ContentHandler;
+import test.org.xml.sax.DTDHandler;
+import test.org.xml.sax.ErrorHandler;
+import test.org.xml.sax.InputSource;
+import test.org.xml.sax.Locator;
+import test.org.xml.sax.SAXException;
+import test.org.xml.sax.SAXNotRecognizedException;
+import test.org.xml.sax.SAXNotSupportedException;
+import test.org.xml.sax.XMLReader;
+import test.org.xml.sax.ext.Attributes2;
+import test.org.xml.sax.ext.EntityResolver2;
 
 /**
  * <p>Implementation of ValidatorHandler for W3C XML Schemas and
@@ -982,7 +982,7 @@ final class ValidatorHandlerImpl extends ValidatorHandler implements
         //
 
         /** XML 1.0 type constant according to DOM L3 LS REC spec "http://www.w3.org/TR/2004/REC-DOM-Level-3-LS-20040407/" */
-        private static final String XML_TYPE = "http://www.w3.org/TR/REC-xml";
+        private static final String XML_TYPE = "http://www.w3.test.org/TR/REC-xml";
 
         /** The DOM entity resolver. */
         protected LSResourceResolver fEntityResolver;

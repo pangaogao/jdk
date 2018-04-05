@@ -29,9 +29,9 @@ import javax.xml.parsers.ParserConfigurationException;
 import javax.xml.parsers.SAXParser;
 import javax.xml.parsers.SAXParserFactory;
 import javax.xml.validation.Schema;
-import org.xml.sax.SAXException;
-import org.xml.sax.SAXNotRecognizedException;
-import org.xml.sax.SAXNotSupportedException;
+import test.org.xml.sax.SAXException;
+import test.org.xml.sax.SAXNotRecognizedException;
+import test.org.xml.sax.SAXNotSupportedException;
 
 /**
  * This is the implementation specific class for the
@@ -106,7 +106,7 @@ public class SAXParserFactoryImpl extends SAXParserFactory {
 
     /**
      * Sets the particular feature in the underlying implementation of
-     * org.xml.sax.XMLReader.
+     * test.org.xml.sax.XMLReader.
      */
     public void setFeature(String name, boolean value)
         throws ParserConfigurationException, SAXNotRecognizedException,
@@ -143,7 +143,7 @@ public class SAXParserFactoryImpl extends SAXParserFactory {
 
     /**
      * returns the particular property requested for in the underlying
-     * implementation of org.xml.sax.XMLReader.
+     * implementation of test.org.xml.sax.XMLReader.
      */
     public boolean getFeature(String name)
         throws ParserConfigurationException, SAXNotRecognizedException,

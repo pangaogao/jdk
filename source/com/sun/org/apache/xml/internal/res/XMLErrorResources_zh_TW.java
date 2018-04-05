@@ -379,7 +379,7 @@ public class XMLErrorResources_zh_TW extends ListResourceBundle
     { "column","\u8CC7\u6599\u6B04\u7DE8\u865F"},
 
     {ER_SERIALIZER_NOT_CONTENTHANDLER,
-      "serializer \u985E\u5225 ''{0}'' \u4E0D\u5BE6\u884C org.xml.sax.ContentHandler\u3002"},
+      "serializer \u985E\u5225 ''{0}'' \u4E0D\u5BE6\u884C test.org.xml.sax.ContentHandler\u3002"},
 
     {ER_RESOURCE_COULD_NOT_FIND,
       "\u627E\u4E0D\u5230\u8CC7\u6E90 [ {0} ]\u3002\n{1}" },

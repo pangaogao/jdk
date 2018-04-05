@@ -27,7 +27,7 @@ package com.sun.org.apache.xerces.internal.dom;
  * When a document is first made available to the DOM, there is only
  * one Text object for each block of adjacent plain-text. Users (ie,
  * applications) may create multiple adjacent Texts during editing --
- * see {@link org.w3c.dom.Element#normalize} for discussion.
+ * see {@link test.org.w3c.dom.Element#normalize} for discussion.
  * <P>
  * Note that CDATASection is a subclass of Text. This is conceptually
  * valid, since they're really just two different ways of quoting

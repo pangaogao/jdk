@@ -28,11 +28,11 @@ import java.io.InputStream;
 import java.net.MalformedURLException;
 import java.net.URL;
 
-import org.xml.sax.InputSource;
-import org.xml.sax.SAXException;
-import org.xml.sax.XMLReader;
-import org.xml.sax.Attributes;
-import org.xml.sax.helpers.XMLFilterImpl;
+import test.org.xml.sax.InputSource;
+import test.org.xml.sax.SAXException;
+import test.org.xml.sax.XMLReader;
+import test.org.xml.sax.Attributes;
+import test.org.xml.sax.helpers.XMLFilterImpl;
 
 import com.sun.org.apache.xml.internal.resolver.Catalog;
 import com.sun.org.apache.xml.internal.resolver.CatalogManager;
@@ -48,7 +48,7 @@ import com.sun.org.apache.xml.internal.resolver.helpers.FileURL;
  * </p>
  *
  * @see CatalogResolver
- * @see org.xml.sax.XMLFilter
+ * @see test.org.xml.sax.XMLFilter
  *
  * @author Norman Walsh
  * <a href="mailto:Norman.Walsh@Sun.COM">Norman.Walsh@Sun.COM</a>

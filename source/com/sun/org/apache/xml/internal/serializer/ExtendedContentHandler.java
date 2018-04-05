@@ -24,7 +24,7 @@ package com.sun.org.apache.xml.internal.serializer;
 
 import javax.xml.transform.SourceLocator;
 
-import org.xml.sax.SAXException;
+import test.org.xml.sax.SAXException;
 
 /**
  * This interface describes extensions to the SAX ContentHandler interface.
@@ -46,7 +46,7 @@ import org.xml.sax.SAXException;
  * </pre>
  * @xsl.usage internal
  */
-abstract interface ExtendedContentHandler extends org.xml.sax.ContentHandler
+abstract interface ExtendedContentHandler extends test.org.xml.sax.ContentHandler
 {
     /**
      * Add at attribute to the current element
@@ -71,8 +71,8 @@ abstract interface ExtendedContentHandler extends org.xml.sax.ContentHandler
      * @param atts the attributes to add.
      * @throws SAXException
      */
-    public void addAttributes(org.xml.sax.Attributes atts)
-        throws org.xml.sax.SAXException;
+    public void addAttributes(test.org.xml.sax.Attributes atts)
+        throws test.org.xml.sax.SAXException;
     /**
      * Add an attribute to the current element. The namespace URI of the
      * attribute will be calculated from the prefix of qName. The local name
@@ -96,7 +96,7 @@ abstract interface ExtendedContentHandler extends org.xml.sax.ContentHandler
      * @param node a DOM Node containing text.
      * @throws SAXException
      */
-    public void characters(org.w3c.dom.Node node) throws org.xml.sax.SAXException;
+    public void characters(test.org.w3c.dom.Node node) throws test.org.xml.sax.SAXException;
     /**
      * This method is used to notify that an element has ended. Unlike the
      * standard SAX method
@@ -125,7 +125,7 @@ abstract interface ExtendedContentHandler extends org.xml.sax.ContentHandler
      * @throws SAXException
      */
     public void startElement(String uri, String localName, String qName)
-        throws org.xml.sax.SAXException;
+        throws test.org.xml.sax.SAXException;
 
     /**
      * This method is used to notify of the start of an element

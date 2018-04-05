@@ -33,10 +33,10 @@ import com.sun.org.apache.xerces.internal.xs.XSModel;
 import com.sun.org.apache.xerces.internal.xs.XSNamedMap;
 import com.sun.org.apache.xerces.internal.xs.XSObjectList;
 import com.sun.org.apache.xerces.internal.xs.XSTypeDefinition;
-import org.w3c.dom.DOMConfiguration;
-import org.w3c.dom.DOMException;
-import org.w3c.dom.DOMStringList;
-import org.w3c.dom.ls.LSInput;
+import test.org.w3c.dom.DOMConfiguration;
+import test.org.w3c.dom.DOMException;
+import test.org.w3c.dom.DOMStringList;
+import test.org.w3c.dom.ls.LSInput;
 
 /**
  * <p>An implementation of XSLoader which wraps XMLSchemaLoader.</p>
@@ -174,28 +174,28 @@ public final class XSLoaderImpl implements XSLoader, DOMConfiguration {
     }
 
     /* (non-Javadoc)
-     * @see com.sun.org.apache.xerces.internal.dom3.DOMConfiguration#setParameter(java.lang.String, java.lang.Object)
+     * @see com.sun.test.org.apache.xerces.internal.dom3.DOMConfiguration#setParameter(java.lang.String, java.lang.Object)
      */
     public void setParameter(String name, Object value) throws DOMException {
         fSchemaLoader.setParameter(name, value);
     }
 
     /* (non-Javadoc)
-     * @see com.sun.org.apache.xerces.internal.dom3.DOMConfiguration#getParameter(java.lang.String)
+     * @see com.sun.test.org.apache.xerces.internal.dom3.DOMConfiguration#getParameter(java.lang.String)
      */
     public Object getParameter(String name) throws DOMException {
         return fSchemaLoader.getParameter(name);
     }
 
     /* (non-Javadoc)
-     * @see com.sun.org.apache.xerces.internal.dom3.DOMConfiguration#canSetParameter(java.lang.String, java.lang.Object)
+     * @see com.sun.test.org.apache.xerces.internal.dom3.DOMConfiguration#canSetParameter(java.lang.String, java.lang.Object)
      */
     public boolean canSetParameter(String name, Object value) {
         return fSchemaLoader.canSetParameter(name, value);
     }
 
     /* (non-Javadoc)
-     * @see com.sun.org.apache.xerces.internal.dom3.DOMConfiguration#getParameterNames()
+     * @see com.sun.test.org.apache.xerces.internal.dom3.DOMConfiguration#getParameterNames()
      */
     public DOMStringList getParameterNames() {
         return fSchemaLoader.getParameterNames();

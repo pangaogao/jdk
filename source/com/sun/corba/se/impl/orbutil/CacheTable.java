@@ -24,8 +24,6 @@
  */
 
 package com.sun.corba.se.impl.orbutil;
-import org.omg.CORBA.INTERNAL;
-import org.omg.CORBA.CompletionStatus;
 
 import com.sun.corba.se.spi.logging.CORBALogDomains;
 import com.sun.corba.se.spi.orb.ORB;

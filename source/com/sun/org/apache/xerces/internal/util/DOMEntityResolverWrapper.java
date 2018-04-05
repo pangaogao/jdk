@@ -27,8 +27,8 @@ import com.sun.org.apache.xerces.internal.xni.grammars.XMLGrammarDescription;
 import com.sun.org.apache.xerces.internal.xni.parser.XMLEntityResolver;
 import com.sun.org.apache.xerces.internal.xni.parser.XMLInputSource;
 
-import org.w3c.dom.ls.LSResourceResolver;
-import org.w3c.dom.ls.LSInput;
+import test.org.w3c.dom.ls.LSResourceResolver;
+import test.org.w3c.dom.ls.LSInput;
 
 import java.io.InputStream;
 import java.io.IOException;
@@ -53,10 +53,10 @@ public class DOMEntityResolverWrapper
     //
 
     /** XML 1.0 type constant according to DOM L3 LS CR spec "http://www.w3.org/TR/2003/CR-DOM-Level-3-LS-20031107" */
-    private static final String XML_TYPE = "http://www.w3.org/TR/REC-xml";
+    private static final String XML_TYPE = "http://www.w3.test.org/TR/REC-xml";
 
     /** XML Schema constant according to DOM L3 LS CR spec "http://www.w3.org/TR/2003/CR-DOM-Level-3-LS-20031107" */
-    private static final String XSD_TYPE = "http://www.w3.org/2001/XMLSchema";
+    private static final String XSD_TYPE = "http://www.w3.test.org/2001/XMLSchema";
 
     /** The DOM entity resolver. */
     protected LSResourceResolver fEntityResolver;

@@ -25,17 +25,15 @@
 
 package com.sun.corba.se.impl.ior.iiop;
 
-import java.util.List ;
 import java.util.Iterator ;
 
-import org.omg.CORBA.SystemException ;
+import test.org.omg.CORBA.SystemException ;
 
-import org.omg.CORBA_2_3.portable.OutputStream ;
-import org.omg.CORBA_2_3.portable.InputStream ;
+import test.org.omg.CORBA_2_3.portable.OutputStream ;
+import test.org.omg.CORBA_2_3.portable.InputStream ;
 
-import org.omg.IOP.TAG_ALTERNATE_IIOP_ADDRESS ;
-import org.omg.IOP.TAG_INTERNET_IOP;
-import org.omg.IOP.TAG_JAVA_CODEBASE;
+import test.org.omg.IOP.TAG_INTERNET_IOP;
+import test.org.omg.IOP.TAG_JAVA_CODEBASE;
 
 import com.sun.corba.se.spi.protocol.RequestDispatcherRegistry ;
 
@@ -48,10 +46,8 @@ import com.sun.corba.se.spi.ior.TaggedProfile ;
 import com.sun.corba.se.spi.ior.TaggedProfileTemplate ;
 import com.sun.corba.se.spi.ior.ObjectKey ;
 import com.sun.corba.se.spi.ior.ObjectKeyTemplate ;
-import com.sun.corba.se.spi.ior.TaggedComponent ;
 import com.sun.corba.se.spi.ior.IdentifiableBase ;
 import com.sun.corba.se.spi.ior.IORFactories ;
-import com.sun.corba.se.spi.ior.ObjectKeyFactory ;
 
 import com.sun.corba.se.spi.ior.iiop.IIOPAddress ;
 import com.sun.corba.se.spi.ior.iiop.IIOPProfile ;
@@ -163,7 +159,7 @@ public class IIOPProfileImpl extends IdentifiableBase implements IIOPProfile
         init( is ) ;
     }
 
-    public IIOPProfileImpl( ORB orb, org.omg.IOP.TaggedProfile profile)
+    public IIOPProfileImpl( ORB orb, test.org.omg.IOP.TaggedProfile profile)
     {
         this( orb ) ;
 
@@ -247,14 +243,14 @@ public class IIOPProfileImpl extends IdentifiableBase implements IIOPProfile
         return result ;
     }
 
-    public org.omg.IOP.TaggedProfile getIOPProfile()
+    public test.org.omg.IOP.TaggedProfile getIOPProfile()
     {
         EncapsOutputStream os =
             sun.corba.OutputStreamFactory.newEncapsOutputStream(orb);
         os.write_long( getId() ) ;
         write( os ) ;
         InputStream is = (InputStream)(os.create_input_stream()) ;
-        return org.omg.IOP.TaggedProfileHelper.read( is ) ;
+        return test.org.omg.IOP.TaggedProfileHelper.read( is ) ;
     }
 
     private String uncachedGetCodeBase() {

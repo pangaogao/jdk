@@ -28,7 +28,7 @@ import com.sun.org.apache.xerces.internal.util.DOMUtil;
 import com.sun.org.apache.xerces.internal.util.XMLSymbols;
 import com.sun.org.apache.xerces.internal.xni.QName;
 import com.sun.org.apache.xerces.internal.xs.XSObjectList;
-import org.w3c.dom.Element;
+import test.org.w3c.dom.Element;
 
 /**
  * The attribute group definition schema component traverser.

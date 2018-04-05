@@ -20,15 +20,15 @@
 
 package com.sun.org.apache.xerces.internal.dom;
 
-import org.w3c.dom.Attr;
-import org.w3c.dom.DOMException;
-import org.w3c.dom.Element;
-import org.w3c.dom.NamedNodeMap;
-import org.w3c.dom.Node;
-import org.w3c.dom.NodeList;
-import org.w3c.dom.Text;
+import test.org.w3c.dom.Attr;
+import test.org.w3c.dom.DOMException;
+import test.org.w3c.dom.Element;
+import test.org.w3c.dom.NamedNodeMap;
+import test.org.w3c.dom.Node;
+import test.org.w3c.dom.NodeList;
+import test.org.w3c.dom.Text;
 
-import org.w3c.dom.TypeInfo;
+import test.org.w3c.dom.TypeInfo;
 import com.sun.org.apache.xerces.internal.util.URI;
 
 /**
@@ -108,7 +108,7 @@ public class ElementImpl
 
     /**
      * A short integer indicating what type of node this is. The named
-     * constants for this value are defined in the org.w3c.dom.Node interface.
+     * constants for this value are defined in the test.org.w3c.dom.Node interface.
      */
     public short getNodeType() {
         return Node.ELEMENT_NODE;
@@ -147,7 +147,7 @@ public class ElementImpl
      * will not be copied unless the "deep" flag is true, but Attributes
      * are <i>always</i> replicated.
      *
-     * @see org.w3c.dom.Node#cloneNode(boolean)
+     * @see test.org.w3c.dom.Node#cloneNode(boolean)
      */
     public Node cloneNode(boolean deep) {
 
@@ -1042,14 +1042,14 @@ public class ElementImpl
    }
 
     /**
-     * @see org.w3c.dom.TypeInfo#getTypeName()
+     * @see test.org.w3c.dom.TypeInfo#getTypeName()
      */
      public String getTypeName() {
         return null;
      }
 
     /**
-     * @see org.w3c.dom.TypeInfo#getTypeNamespace()
+     * @see test.org.w3c.dom.TypeInfo#getTypeNamespace()
      */
     public String getTypeNamespace() {
         return null;

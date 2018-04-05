@@ -21,8 +21,8 @@
 
 package com.sun.org.apache.xpath.internal.jaxp;
 
-import org.w3c.dom.Node;
-import org.w3c.dom.NamedNodeMap;
+import test.org.w3c.dom.Node;
+import test.org.w3c.dom.NamedNodeMap;
 import com.sun.org.apache.xml.internal.utils.PrefixResolver;
 
 import javax.xml.namespace.NamespaceContext;
@@ -68,11 +68,11 @@ public class JAXPPrefixResolver implements PrefixResolver
 
     /**
      * The URI for the XML namespace.
-     * (Duplicate of that found in com.sun.org.apache.xpath.internal.XPathContext).
+     * (Duplicate of that found in com.sun.test.org.apache.xpath.internal.XPathContext).
      */
 
     public static final String S_XMLNAMESPACEURI =
-        "http://www.w3.org/XML/1998/namespace";
+        "http://www.w3.test.org/XML/1998/namespace";
 
 
     /**
@@ -86,7 +86,7 @@ public class JAXPPrefixResolver implements PrefixResolver
      * is not bound.
      */
     public String getNamespaceForPrefix(String prefix,
-                                      org.w3c.dom.Node namespaceContext) {
+                                      test.org.w3c.dom.Node namespaceContext) {
         Node parent = namespaceContext;
         String namespace = null;
 

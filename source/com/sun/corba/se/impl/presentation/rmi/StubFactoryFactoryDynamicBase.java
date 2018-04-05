@@ -30,12 +30,11 @@ import javax.rmi.CORBA.Tie ;
 
 import javax.rmi.CORBA.Util;
 
-import org.omg.CORBA.CompletionStatus;
+import test.org.omg.CORBA.CompletionStatus;
 
-import org.omg.CORBA.portable.IDLEntity ;
+import test.org.omg.CORBA.portable.IDLEntity ;
 
 import com.sun.corba.se.spi.presentation.rmi.PresentationManager;
-import com.sun.corba.se.spi.presentation.rmi.PresentationDefaults;
 
 import com.sun.corba.se.spi.orb.ORB;
 

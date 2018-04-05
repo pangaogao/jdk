@@ -36,7 +36,7 @@ import java.util.ResourceBundle;
  * translated.
  *
  * This class is not a public API, it is only public because it is
- * used in com.sun.org.apache.xml.internal.serializer.
+ * used in com.sun.test.org.apache.xml.internal.serializer.
  *
  * @xsl.usage internal
  */
@@ -76,7 +76,7 @@ public class SerializerMessages_es extends ListResourceBundle {
                 "Fallo de formato del mensaje ''{0}'' en la clase de mensaje ''{1}''." },
 
             {   MsgKey.ER_SERIALIZER_NOT_CONTENTHANDLER,
-                "La clase de serializador ''{0}'' no implanta org.xml.sax.ContentHandler." },
+                "La clase de serializador ''{0}'' no implanta test.org.xml.sax.ContentHandler." },
 
             {   MsgKey.ER_RESOURCE_COULD_NOT_FIND,
                     "No se ha encontrado el recurso [ {0} ].\n {1}" },

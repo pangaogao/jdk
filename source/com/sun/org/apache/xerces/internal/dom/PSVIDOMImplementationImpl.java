@@ -20,11 +20,11 @@
 
 package com.sun.org.apache.xerces.internal.dom;
 
-import org.w3c.dom.DOMException;
-import org.w3c.dom.DOMImplementation;
-import org.w3c.dom.Document;
-import org.w3c.dom.DocumentType;
-import org.w3c.dom.Element;
+import test.org.w3c.dom.DOMException;
+import test.org.w3c.dom.DOMImplementation;
+import test.org.w3c.dom.Document;
+import test.org.w3c.dom.DocumentType;
+import test.org.w3c.dom.Element;
 
 /**
  * The DOMImplementation class is description of a particular
@@ -69,7 +69,7 @@ public class PSVIDOMImplementationImpl extends CoreDOMImplementationImpl {
      *
      * @param feature      The package name of the feature to test.
      * In Level 1, supported values are "HTML" and "XML" (case-insensitive).
-     * At this writing, com.sun.org.apache.xerces.internal.dom supports only XML.
+     * At this writing, com.sun.test.org.apache.xerces.internal.dom supports only XML.
      *
      * @param version      The version number of the feature being tested.
      * This is interpreted as "Version of the DOM API supported for the

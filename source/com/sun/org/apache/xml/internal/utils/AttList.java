@@ -22,11 +22,11 @@
  */
 package com.sun.org.apache.xml.internal.utils;
 
-import org.w3c.dom.Attr;
-import org.w3c.dom.NamedNodeMap;
-import org.w3c.dom.Node;
+import test.org.w3c.dom.Attr;
+import test.org.w3c.dom.NamedNodeMap;
+import test.org.w3c.dom.Node;
 
-import org.xml.sax.Attributes;
+import test.org.xml.sax.Attributes;
 
 /**
  * Wraps a DOM attribute list in a SAX Attributes.

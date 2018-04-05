@@ -37,15 +37,15 @@ import java.util.Map;
 import javax.xml.parsers.ParserConfigurationException;
 import javax.xml.parsers.SAXParser;
 import javax.xml.parsers.SAXParserFactory;
-import org.xml.sax.AttributeList;
-import org.xml.sax.Attributes;
-import org.xml.sax.ContentHandler;
-import org.xml.sax.DocumentHandler;
-import org.xml.sax.EntityResolver;
-import org.xml.sax.InputSource;
-import org.xml.sax.Locator;
-import org.xml.sax.Parser;
-import org.xml.sax.SAXException;
+import test.org.xml.sax.AttributeList;
+import test.org.xml.sax.Attributes;
+import test.org.xml.sax.ContentHandler;
+import test.org.xml.sax.DocumentHandler;
+import test.org.xml.sax.EntityResolver;
+import test.org.xml.sax.InputSource;
+import test.org.xml.sax.Locator;
+import test.org.xml.sax.Parser;
+import test.org.xml.sax.SAXException;
 import sun.reflect.misc.ReflectUtil;
 
 /**

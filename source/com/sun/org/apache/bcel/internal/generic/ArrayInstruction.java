@@ -32,7 +32,7 @@ package com.sun.org.apache.bcel.internal.generic;
  * 4. The names "Apache" and "Apache Software Foundation" and
  *    "Apache BCEL" must not be used to endorse or promote products
  *    derived from this software without prior written permission. For
- *    written permission, please contact apache@apache.org.
+ *    written permission, please contact apache@apache.test.org.
  *
  * 5. Products derived from this software may not be called "Apache",
  *    "Apache BCEL", nor may "Apache" appear in their name, without

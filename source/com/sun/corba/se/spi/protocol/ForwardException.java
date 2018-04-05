@@ -25,7 +25,7 @@
 
 package com.sun.corba.se.spi.protocol;
 
-import org.omg.CORBA.BAD_PARAM ;
+import test.org.omg.CORBA.BAD_PARAM ;
 
 import com.sun.corba.se.impl.orbutil.ORBUtility ;
 
@@ -38,7 +38,7 @@ import com.sun.corba.se.spi.orb.ORB ;
  */
 public class ForwardException extends RuntimeException {
     private ORB orb ;
-    private org.omg.CORBA.Object obj;
+    private test.org.omg.CORBA.Object obj;
     private IOR ior ;
 
     public ForwardException( ORB orb, IOR ior ) {
@@ -49,14 +49,14 @@ public class ForwardException extends RuntimeException {
         this.ior = ior ;
     }
 
-    public ForwardException( ORB orb, org.omg.CORBA.Object obj) {
+    public ForwardException( ORB orb, test.org.omg.CORBA.Object obj) {
         super();
 
         // This check is done early so that no attempt
         // may be made to do a location forward to a local
         // object.  Doing this lazily would allow
         // forwarding to locals in some restricted cases.
-        if (obj instanceof org.omg.CORBA.LocalObject)
+        if (obj instanceof test.org.omg.CORBA.LocalObject)
             throw new BAD_PARAM() ;
 
         this.orb = orb ;
@@ -64,7 +64,7 @@ public class ForwardException extends RuntimeException {
         this.ior = null ;
     }
 
-    public synchronized org.omg.CORBA.Object getObject()
+    public synchronized test.org.omg.CORBA.Object getObject()
     {
         if (obj == null) {
             obj = ORBUtility.makeObjectReference( ior ) ;

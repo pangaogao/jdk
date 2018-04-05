@@ -24,9 +24,9 @@
  */
 package com.sun.corba.se.impl.encoding;
 
-import org.omg.CORBA.TypeCode;
-import org.omg.CORBA.Principal;
-import org.omg.CORBA.Any;
+import test.org.omg.CORBA.TypeCode;
+import test.org.omg.CORBA.Principal;
+import test.org.omg.CORBA.Any;
 
 public interface MarshalInputStream {
     public boolean      read_boolean();
@@ -57,7 +57,7 @@ public interface MarshalInputStream {
     public void read_float_array(float[] value, int offset, int length);
     public void read_double_array(double[] value, int offset, int length);
 
-    public org.omg.CORBA.Object read_Object();
+    public test.org.omg.CORBA.Object read_Object();
     public TypeCode     read_TypeCode();
     public Any          read_any();
     public Principal    read_Principal();
@@ -65,7 +65,7 @@ public interface MarshalInputStream {
     /*
      * The methods necessary to support RMI
      */
-    public org.omg.CORBA.Object read_Object(Class stubClass);
+    public test.org.omg.CORBA.Object read_Object(Class stubClass);
     public java.io.Serializable read_value() throws Exception;
 
     /*

@@ -25,16 +25,13 @@
 
 package com.sun.corba.se.impl.naming.cosnaming;
 
-import org.omg.CosNaming.NamingContextExtPackage.*;
+import test.org.omg.CosNaming.NamingContextExtPackage.*;
 import java.io.StringWriter;
 
 // Import general CORBA classes
-import org.omg.CORBA.SystemException;
-import org.omg.CORBA.Object;
 
-// Import org.omg.CosNaming types
-import org.omg.CosNaming.NameComponent;
-import org.omg.CosNaming.NamingContext;
+// Import test.org.omg.CosNaming types
+import test.org.omg.CosNaming.NameComponent;
 
 
 /**
@@ -53,7 +50,7 @@ public class InterOperableNamingImpl
      * @param n Array of Name Components (Simple or Compound Names)
      * @return string which is the stringified reference.
      */
-    public String convertToString( org.omg.CosNaming.NameComponent[]
+    public String convertToString( test.org.omg.CosNaming.NameComponent[]
                                    theNameComponents )
     {
         String theConvertedString =
@@ -74,7 +71,7 @@ public class InterOperableNamingImpl
     *  If neccessary.
     */
     private String convertNameComponentToString(
-        org.omg.CosNaming.NameComponent theNameComponent )
+        test.org.omg.CosNaming.NameComponent theNameComponent )
     {
         if( ( ( theNameComponent.id == null )
             ||( theNameComponent.id.length() == 0 ) )
@@ -138,9 +135,9 @@ public class InterOperableNamingImpl
      * @param string which is the stringified name.
      * @return  Array of Name Components (Simple or Compound Names)
      */
-   public org.omg.CosNaming.NameComponent[] convertToNameComponent(
+   public test.org.omg.CosNaming.NameComponent[] convertToNameComponent(
        String theStringifiedName )
-       throws org.omg.CosNaming.NamingContextPackage.InvalidName
+       throws test.org.omg.CosNaming.NamingContextPackage.InvalidName
    {
         String[] theStringifiedNameComponents =
                  breakStringToNameComponents( theStringifiedName );
@@ -248,7 +245,7 @@ public class InterOperableNamingImpl
      */
    private NameComponent createNameComponentFromString(
         String theStringifiedNameComponent )
-        throws org.omg.CosNaming.NamingContextPackage.InvalidName
+        throws test.org.omg.CosNaming.NamingContextPackage.InvalidName
 
    {
         String id = null;
@@ -259,7 +256,7 @@ public class InterOperableNamingImpl
         {
             // If any of the above is true, then we create an invalid Name
             // Component to indicate that it is an invalid name.
-            throw new org.omg.CosNaming.NamingContextPackage.InvalidName( );
+            throw new test.org.omg.CosNaming.NamingContextPackage.InvalidName( );
         }
 
         int index = theStringifiedNameComponent.indexOf( '.', 0 );

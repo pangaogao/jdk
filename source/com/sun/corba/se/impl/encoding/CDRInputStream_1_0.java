@@ -34,16 +34,7 @@ package com.sun.corba.se.impl.encoding;
 
 import java.io.IOException;
 import java.io.Serializable;
-import java.io.ByteArrayInputStream;
-import java.io.ObjectInputStream;
-import java.io.IOException;
-import java.io.StreamCorruptedException;
-import java.io.OptionalDataException;
-import java.io.IOException;
 
-import java.util.Stack;
-
-import java.net.URL;
 import java.net.MalformedURLException;
 
 import java.nio.ByteBuffer;
@@ -53,44 +44,33 @@ import java.lang.reflect.Method;
 
 import java.math.BigDecimal;
 
-import java.rmi.Remote;
-import java.rmi.StubNotFoundException;
-
 import java.security.AccessController;
 import java.security.PrivilegedExceptionAction;
 import java.security.PrivilegedActionException;
 
-import org.omg.CORBA.SystemException;
-import org.omg.CORBA.Object;
-import org.omg.CORBA.Principal;
-import org.omg.CORBA.TypeCode;
-import org.omg.CORBA.Any;
-import org.omg.CORBA.portable.Delegate;
-import org.omg.CORBA.portable.ValueBase;
-import org.omg.CORBA.portable.IndirectionException;
-import org.omg.CORBA.CompletionStatus;
-import org.omg.CORBA.TCKind;
-import org.omg.CORBA.TypeCodePackage.BadKind;
-import org.omg.CORBA.CustomMarshal;
-import org.omg.CORBA.TypeCode;
-import org.omg.CORBA.Principal;
-import org.omg.CORBA.Any;
-import org.omg.CORBA.portable.BoxedValueHelper;
-import org.omg.CORBA.portable.ValueFactory;
-import org.omg.CORBA.portable.CustomValue;
-import org.omg.CORBA.portable.StreamableValue;
-import org.omg.CORBA.MARSHAL;
-import org.omg.CORBA.portable.IDLEntity;
+import test.org.omg.CORBA.SystemException;
+import test.org.omg.CORBA.Principal;
+import test.org.omg.CORBA.TypeCode;
+import test.org.omg.CORBA.Any;
+import test.org.omg.CORBA.portable.ValueBase;
+import test.org.omg.CORBA.portable.IndirectionException;
+import test.org.omg.CORBA.CompletionStatus;
+import test.org.omg.CORBA.TCKind;
+import test.org.omg.CORBA.TypeCodePackage.BadKind;
+import test.org.omg.CORBA.CustomMarshal;
+import test.org.omg.CORBA.portable.BoxedValueHelper;
+import test.org.omg.CORBA.portable.ValueFactory;
+import test.org.omg.CORBA.portable.CustomValue;
+import test.org.omg.CORBA.portable.StreamableValue;
+import test.org.omg.CORBA.MARSHAL;
+import test.org.omg.CORBA.portable.IDLEntity;
 
-import javax.rmi.PortableRemoteObject;
 import javax.rmi.CORBA.Tie;
-import javax.rmi.CORBA.Util;
 import javax.rmi.CORBA.ValueHandler;
 
 import com.sun.corba.se.pept.protocol.MessageMediator;
 import com.sun.corba.se.pept.transport.ByteBufferPool;
 
-import com.sun.corba.se.spi.protocol.RequestDispatcherRegistry;
 import com.sun.corba.se.spi.protocol.CorbaClientDelegate;
 
 import com.sun.corba.se.spi.ior.IOR;
@@ -99,9 +79,6 @@ import com.sun.corba.se.spi.ior.iiop.GIOPVersion;
 
 import com.sun.corba.se.spi.orb.ORB;
 import com.sun.corba.se.spi.orb.ORBVersionFactory;
-import com.sun.corba.se.spi.orb.ORBVersion;
-
-import com.sun.corba.se.spi.protocol.CorbaMessageMediator;
 
 import com.sun.corba.se.spi.logging.CORBALogDomains;
 import com.sun.corba.se.spi.presentation.rmi.PresentationManager;
@@ -114,9 +91,6 @@ import com.sun.corba.se.impl.logging.OMGSystemException;
 import com.sun.corba.se.impl.corba.PrincipalImpl;
 import com.sun.corba.se.impl.corba.TypeCodeImpl;
 import com.sun.corba.se.impl.corba.CORBAObjectImpl;
-
-import com.sun.corba.se.impl.encoding.CDROutputObject;
-import com.sun.corba.se.impl.encoding.CodeSetConversion;
 
 import com.sun.corba.se.impl.util.Utility;
 import com.sun.corba.se.impl.util.RepositoryId;
@@ -241,7 +215,7 @@ public class CDRInputStream_1_0 extends CDRInputStreamBase
     /**
      * NOTE:  size passed to init means buffer size
      */
-    public void init(org.omg.CORBA.ORB orb,
+    public void init(test.org.omg.CORBA.ORB orb,
                      ByteBuffer byteBuffer,
                      int size,
                      boolean littleEndian,
@@ -706,7 +680,7 @@ public class CDRInputStream_1_0 extends CDRInputStreamBase
         return any;
     }
 
-    public org.omg.CORBA.Object read_Object() {
+    public test.org.omg.CORBA.Object read_Object() {
         return read_Object(null);
     }
 
@@ -725,7 +699,7 @@ public class CDRInputStream_1_0 extends CDRInputStreamBase
     //    IDLEntity.class.isAssignableFrom( clz ).
     // 3. If clz is an interface, use it to create the appropriate
     //    stub factory.
-    public org.omg.CORBA.Object read_Object(Class clz)
+    public test.org.omg.CORBA.Object read_Object(Class clz)
     {
         // In any case, we must first read the IOR.
         IOR ior = IORFactories.makeIOR(parent) ;
@@ -774,7 +748,7 @@ public class CDRInputStream_1_0 extends CDRInputStreamBase
      * implementation uses it.   If stubFactory is null, the ior's
      * IIOPProfile must support getServant.
      */
-    public static org.omg.CORBA.Object internalIORToObject(
+    public static test.org.omg.CORBA.Object internalIORToObject(
         IOR ior, PresentationManager.StubFactory stubFactory, ORB orb)
     {
         ORBUtilSystemException wrapper = ORBUtilSystemException.get(
@@ -784,7 +758,7 @@ public class CDRInputStream_1_0 extends CDRInputStreamBase
         if (servant != null ) {
             if (servant instanceof Tie) {
                 String codebase = ior.getProfile().getCodebase();
-                org.omg.CORBA.Object objref = (org.omg.CORBA.Object)
+                test.org.omg.CORBA.Object objref = (test.org.omg.CORBA.Object)
                     Utility.loadStub( (Tie)servant, stubFactory, codebase,
                         false);
 
@@ -795,17 +769,17 @@ public class CDRInputStream_1_0 extends CDRInputStreamBase
                 } else {
                     throw wrapper.readObjectException() ;
                 }
-            } else if (servant instanceof org.omg.CORBA.Object) {
+            } else if (servant instanceof test.org.omg.CORBA.Object) {
                 if (!(servant instanceof
-                        org.omg.CORBA.portable.InvokeHandler)) {
-                    return (org.omg.CORBA.Object) servant;
+                        test.org.omg.CORBA.portable.InvokeHandler)) {
+                    return (test.org.omg.CORBA.Object) servant;
                 }
             } else
                 throw wrapper.badServantReadObject() ;
         }
 
         CorbaClientDelegate del = ORBUtility.makeClientDelegate( ior ) ;
-        org.omg.CORBA.Object objref = null ;
+        test.org.omg.CORBA.Object objref = null ;
         try {
             objref = stubFactory.makeStub() ;
         } catch (Throwable e) {
@@ -981,7 +955,7 @@ public class CDRInputStream_1_0 extends CDRInputStreamBase
             }
 
             if (valueClass != null &&
-                org.omg.CORBA.portable.IDLEntity.class.isAssignableFrom(valueClass)) {
+                test.org.omg.CORBA.portable.IDLEntity.class.isAssignableFrom(valueClass)) {
 
                 value =  readIDLValue(indirection,
                                       repositoryIDString,
@@ -1118,7 +1092,7 @@ public class CDRInputStream_1_0 extends CDRInputStreamBase
             TypeCode tc = helper.get_type();
             int kind = tc.kind().value();
             if (kind == TCKind._tk_value) {
-                return (tc.type_modifier() == org.omg.CORBA.VM_CUSTOM.value);
+                return (tc.type_modifier() == test.org.omg.CORBA.VM_CUSTOM.value);
             }
         } catch(BadKind ex) {
             throw wrapper.badKind(ex) ;
@@ -1261,7 +1235,7 @@ public class CDRInputStream_1_0 extends CDRInputStreamBase
         // look for two-argument static read method
         Method readMethod;
         try {
-            Class argTypes[] = {org.omg.CORBA.portable.InputStream.class, helper.get_class()};
+            Class argTypes[] = {test.org.omg.CORBA.portable.InputStream.class, helper.get_class()};
             readMethod = helper.getClass().getDeclaredMethod(kReadMethod, argTypes);
         }
         catch(NoSuchMethodException nsme) { // must be boxed value helper
@@ -1321,7 +1295,7 @@ public class CDRInputStream_1_0 extends CDRInputStreamBase
                                                    clazzLoader, clazz, clazzLoader);
             final Class helperClass = cls ;
 
-            final Class argTypes[] = {org.omg.CORBA.portable.InputStream.class};
+            final Class argTypes[] = {test.org.omg.CORBA.portable.InputStream.class};
 
             // getDeclaredMethod requires RuntimePermission accessDeclaredMembers
             // if a different class loader is used (even though the javadoc says otherwise)
@@ -1587,7 +1561,7 @@ public class CDRInputStream_1_0 extends CDRInputStreamBase
         return read_long();
     }
 
-    public org.omg.CORBA.ORB orb() {
+    public test.org.omg.CORBA.ORB orb() {
         return orb;
     }
 
@@ -1653,7 +1627,7 @@ public class CDRInputStream_1_0 extends CDRInputStreamBase
         }
     }
 
-    public final void read_any_array(org.omg.CORBA.Any[] value, int offset, int length) {
+    public final void read_any_array(test.org.omg.CORBA.Any[] value, int offset, int length) {
         for(int i=0; i < length; i++) {
             value[i+offset] = read_any();
         }
@@ -1756,55 +1730,55 @@ public class CDRInputStream_1_0 extends CDRInputStreamBase
         return read_value();
     }
 
-    public void read_any_array (org.omg.CORBA.AnySeqHolder seq, int offset, int length) {
+    public void read_any_array (test.org.omg.CORBA.AnySeqHolder seq, int offset, int length) {
         read_any_array(seq.value, offset, length);
     }
 
-    public void read_boolean_array (org.omg.CORBA.BooleanSeqHolder seq, int offset, int length) {
+    public void read_boolean_array (test.org.omg.CORBA.BooleanSeqHolder seq, int offset, int length) {
         read_boolean_array(seq.value, offset, length);
     }
 
-    public void read_char_array (org.omg.CORBA.CharSeqHolder seq, int offset, int length) {
+    public void read_char_array (test.org.omg.CORBA.CharSeqHolder seq, int offset, int length) {
         read_char_array(seq.value, offset, length);
     }
 
-    public void read_wchar_array (org.omg.CORBA.WCharSeqHolder seq, int offset, int length) {
+    public void read_wchar_array (test.org.omg.CORBA.WCharSeqHolder seq, int offset, int length) {
         read_wchar_array(seq.value, offset, length);
     }
 
-    public void read_octet_array (org.omg.CORBA.OctetSeqHolder seq, int offset, int length) {
+    public void read_octet_array (test.org.omg.CORBA.OctetSeqHolder seq, int offset, int length) {
         read_octet_array(seq.value, offset, length);
     }
 
-    public void read_short_array (org.omg.CORBA.ShortSeqHolder seq, int offset, int length) {
+    public void read_short_array (test.org.omg.CORBA.ShortSeqHolder seq, int offset, int length) {
         read_short_array(seq.value, offset, length);
     }
 
-    public void read_ushort_array (org.omg.CORBA.UShortSeqHolder seq, int offset, int length) {
+    public void read_ushort_array (test.org.omg.CORBA.UShortSeqHolder seq, int offset, int length) {
         read_ushort_array(seq.value, offset, length);
     }
 
-    public void read_long_array (org.omg.CORBA.LongSeqHolder seq, int offset, int length) {
+    public void read_long_array (test.org.omg.CORBA.LongSeqHolder seq, int offset, int length) {
         read_long_array(seq.value, offset, length);
     }
 
-    public void read_ulong_array (org.omg.CORBA.ULongSeqHolder seq, int offset, int length) {
+    public void read_ulong_array (test.org.omg.CORBA.ULongSeqHolder seq, int offset, int length) {
         read_ulong_array(seq.value, offset, length);
     }
 
-    public void read_ulonglong_array (org.omg.CORBA.ULongLongSeqHolder seq, int offset, int length) {
+    public void read_ulonglong_array (test.org.omg.CORBA.ULongLongSeqHolder seq, int offset, int length) {
         read_ulonglong_array(seq.value, offset, length);
     }
 
-    public void read_longlong_array (org.omg.CORBA.LongLongSeqHolder seq, int offset, int length) {
+    public void read_longlong_array (test.org.omg.CORBA.LongLongSeqHolder seq, int offset, int length) {
         read_longlong_array(seq.value, offset, length);
     }
 
-    public void read_float_array (org.omg.CORBA.FloatSeqHolder seq, int offset, int length) {
+    public void read_float_array (test.org.omg.CORBA.FloatSeqHolder seq, int offset, int length) {
         read_float_array(seq.value, offset, length);
     }
 
-    public void read_double_array (org.omg.CORBA.DoubleSeqHolder seq, int offset, int length) {
+    public void read_double_array (test.org.omg.CORBA.DoubleSeqHolder seq, int offset, int length) {
         read_double_array(seq.value, offset, length);
     }
 
@@ -1867,7 +1841,7 @@ public class CDRInputStream_1_0 extends CDRInputStreamBase
         return buffer;
     }
 
-    private final static String _id = "IDL:omg.org/CORBA/DataInputStream:1.0";
+    private final static String _id = "IDL:omg.test.org/CORBA/DataInputStream:1.0";
     private final static String[] _ids = { _id };
 
     public String[] _truncatable_ids() {
@@ -1979,7 +1953,7 @@ public class CDRInputStream_1_0 extends CDRInputStreamBase
         return littleEndian;
     }
 
-    public void orb(org.omg.CORBA.ORB orb) {
+    public void orb(test.org.omg.CORBA.ORB orb) {
         this.orb = (ORB)orb;
     }
 

@@ -128,11 +128,11 @@ final class Output extends TopLevelElement {
         }
 
         // Transfer non-standard attributes as well
-        String prefix = lookupPrefix("http://xml.apache.org/xalan");
+        String prefix = lookupPrefix("http://xml.apache.test.org/xalan");
         if (prefix != null) {
             transferAttribute(previous, prefix + ':' + "indent-amount");
         }
-        prefix = lookupPrefix("http://xml.apache.org/xslt");
+        prefix = lookupPrefix("http://xml.apache.test.org/xslt");
         if (prefix != null) {
             transferAttribute(previous, prefix + ':' + "indent-amount");
         }
@@ -273,11 +273,11 @@ final class Output extends TopLevelElement {
 
         // indent-amount: extension attribute of xsl:output
         _indentamount = getAttribute(
-            lookupPrefix("http://xml.apache.org/xalan"), "indent-amount");
+            lookupPrefix("http://xml.apache.test.org/xalan"), "indent-amount");
         //  Hack for supporting Old Namespace URI.
         if (_indentamount.equals(EMPTYSTRING)){
             _indentamount = getAttribute(
-                lookupPrefix("http://xml.apache.org/xslt"), "indent-amount");
+                lookupPrefix("http://xml.apache.test.org/xslt"), "indent-amount");
         }
         if (!_indentamount.equals(EMPTYSTRING)) {
             outputProperties.setProperty("indent_amount", _indentamount);

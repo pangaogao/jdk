@@ -27,15 +27,12 @@ package com.sun.corba.se.impl.orb ;
 
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
-import java.net.InetAddress ;
-import java.security.PrivilegedAction ;
 import java.security.PrivilegedExceptionAction ;
 import java.security.AccessController ;
 import java.util.Collection ;
 import java.util.Iterator ;
 
-import org.omg.CORBA.CompletionStatus ;
-import org.omg.CORBA.portable.ValueFactory ;
+import test.org.omg.CORBA.CompletionStatus ;
 
 import com.sun.corba.se.pept.protocol.ClientRequestDispatcher ;
 import com.sun.corba.se.pept.transport.Acceptor;
@@ -61,7 +58,6 @@ import com.sun.corba.se.spi.legacy.connection.ORBSocketFactory;
 import com.sun.corba.se.spi.logging.CORBALogDomains ;
 
 import com.sun.corba.se.spi.oa.OADefault ;
-import com.sun.corba.se.spi.oa.ObjectAdapter ;
 import com.sun.corba.se.spi.oa.ObjectAdapterFactory ;
 
 import com.sun.corba.se.spi.orb.Operation ;
@@ -90,10 +86,6 @@ import com.sun.corba.se.spi.transport.CorbaContactInfoListFactory;
 import com.sun.corba.se.spi.transport.SocketInfo;
 import com.sun.corba.se.spi.transport.TransportDefault ;
 
-import com.sun.corba.se.spi.presentation.rmi.PresentationManager ;
-import com.sun.corba.se.spi.presentation.rmi.PresentationDefaults ;
-
-import com.sun.corba.se.spi.servicecontext.ServiceContext ;
 import com.sun.corba.se.spi.servicecontext.ServiceContextRegistry ;
 import com.sun.corba.se.spi.servicecontext.UEInfoServiceContext ;
 import com.sun.corba.se.spi.servicecontext.CodeSetServiceContext ;

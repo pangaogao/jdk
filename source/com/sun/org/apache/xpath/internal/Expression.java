@@ -33,7 +33,7 @@ import com.sun.org.apache.xpath.internal.objects.XNodeSet;
 import com.sun.org.apache.xpath.internal.objects.XObject;
 import com.sun.org.apache.xpath.internal.res.XPATHErrorResources;
 
-import org.xml.sax.ContentHandler;
+import test.org.xml.sax.ContentHandler;
 
 /**
  * This abstract class serves as the base for all expression objects.  An
@@ -304,12 +304,12 @@ public abstract class Expression implements java.io.Serializable, ExpressionNode
    *
    * @throws javax.xml.transform.TransformerException if a runtime exception
    *         occurs.
-   * @throws org.xml.sax.SAXException
+   * @throws test.org.xml.sax.SAXException
    */
   public void executeCharsToContentHandler(
           XPathContext xctxt, ContentHandler handler)
             throws javax.xml.transform.TransformerException,
-                   org.xml.sax.SAXException
+                   test.org.xml.sax.SAXException
   {
 
     XObject obj = execute(xctxt);

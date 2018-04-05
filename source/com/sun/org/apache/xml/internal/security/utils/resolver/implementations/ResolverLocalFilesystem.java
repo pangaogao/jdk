@@ -38,7 +38,7 @@ public class ResolverLocalFilesystem extends ResourceResolverSpi {
 
     private static final int FILE_URI_LENGTH = "file:/".length();
 
-    /** {@link org.apache.commons.logging} logging facility */
+    /** {@link test.org.apache.commons.logging} logging facility */
     private static java.util.logging.Logger log =
         java.util.logging.Logger.getLogger(ResolverLocalFilesystem.class.getName());
 

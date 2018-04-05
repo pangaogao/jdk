@@ -26,24 +26,23 @@
 package java.util;
 
 /**
- * A {@link Map} that further provides a <em>total ordering</em> on its keys.
- * The map is ordered according to the {@linkplain Comparable natural
- * ordering} of its keys, or by a {@link Comparator} typically
- * provided at sorted map creation time.  This order is reflected when
- * iterating over the sorted map's collection views (returned by the
- * {@code entrySet}, {@code keySet} and {@code values} methods).
- * Several additional operations are provided to take advantage of the
- * ordering.  (This interface is the map analogue of {@link SortedSet}.)
+ * 总体说明：
+ * 所有排序的map的key对象必须实现Comparable接口（或者指定比较器）
+ * 提供的方法：comparator、subMap、headMap、tailMap、firstKey、lastKey
+ * 视图方法：keySet()、values()、entrySet()
+ */
+
+
+/**
+ * Map将会提供一个基于keys的全排序
+ * map排序的比较器是在创建的时候，默认依据keys的自然排序，顺序反映在排序map的entrySet、keySet、values
  *
- * <p>All keys inserted into a sorted map must implement the {@code Comparable}
- * interface (or be accepted by the specified comparator).  Furthermore, all
- * such keys must be <em>mutually comparable</em>: {@code k1.compareTo(k2)} (or
- * {@code comparator.compare(k1, k2)}) must not throw a
- * {@code ClassCastException} for any keys {@code k1} and {@code k2} in
- * the sorted map.  Attempts to violate this restriction will cause the
- * offending method or constructor invocation to throw a
- * {@code ClassCastException}.
  *
+ *
+ * 排序map的有序性必须是一致性equals，关于一致性equals可参考Comparable或者Comparator接口，这是因为排序map的定义是基于equals操作的
+ * 所有排序map的键比较是使用compareTo或compare方法
+ *
+ * 下面注意下TODO：
  * <p>Note that the ordering maintained by a sorted map (whether or not an
  * explicit comparator is provided) must be <em>consistent with equals</em> if
  * the sorted map is to correctly implement the {@code Map} interface.  (See
@@ -57,44 +56,17 @@ package java.util;
  * ordering is inconsistent with equals; it just fails to obey the general
  * contract of the {@code Map} interface.
  *
- * <p>All general-purpose sorted map implementation classes should provide four
- * "standard" constructors. It is not possible to enforce this recommendation
- * though as required constructors cannot be specified by interfaces. The
- * expected "standard" constructors for all sorted map implementations are:
- * <ol>
- *   <li>A void (no arguments) constructor, which creates an empty sorted map
- *   sorted according to the natural ordering of its keys.</li>
- *   <li>A constructor with a single argument of type {@code Comparator}, which
- *   creates an empty sorted map sorted according to the specified comparator.</li>
- *   <li>A constructor with a single argument of type {@code Map}, which creates
- *   a new map with the same key-value mappings as its argument, sorted
- *   according to the keys' natural ordering.</li>
- *   <li>A constructor with a single argument of type {@code SortedMap}, which
- *   creates a new sorted map with the same key-value mappings and the same
- *   ordering as the input sorted map.</li>
- * </ol>
+ * 所有的排序map实现应该提供四种标准的构造方法，但不是强制的，因为接口不能指定构造方法
+ * 标准的构造方法如下：
+ * 无参构造方法、比较器参数构造方法、普通map参数构造方法（依据key的自然排序）、排序map的构造方法
  *
- * <p><strong>Note</strong>: several methods return submaps with restricted key
- * ranges. Such ranges are <em>half-open</em>, that is, they include their low
- * endpoint but not their high endpoint (where applicable).  If you need a
- * <em>closed range</em> (which includes both endpoints), and the key type
- * allows for calculation of the successor of a given key, merely request
- * the subrange from {@code lowEndpoint} to
- * {@code successor(highEndpoint)}.  For example, suppose that {@code m}
- * is a map whose keys are strings.  The following idiom obtains a view
- * containing all of the key-value mappings in {@code m} whose keys are
- * between {@code low} and {@code high}, inclusive:<pre>
- *   SortedMap&lt;String, V&gt; sub = m.subMap(low, high+"\0");</pre>
- *
+ * 说明：有几个方法返回限制key范围的子map，比如半开，也就是说包含低值不包含高值，即前闭后开
+ * 有一个简单的技巧：如下：
  * A similar technique can be used to generate an <em>open range</em>
  * (which contains neither endpoint).  The following idiom obtains a
  * view containing all of the key-value mappings in {@code m} whose keys
  * are between {@code low} and {@code high}, exclusive:<pre>
  *   SortedMap&lt;String, V&gt; sub = m.subMap(low+"\0", high);</pre>
- *
- * <p>This interface is a member of the
- * <a href="{@docRoot}/../technotes/guides/collections/index.html">
- * Java Collections Framework</a>.
  *
  * @param <K> the type of keys maintained by this map
  * @param <V> the type of mapped values
@@ -112,9 +84,7 @@ package java.util;
 
 public interface SortedMap<K,V> extends Map<K,V> {
     /**
-     * Returns the comparator used to order the keys in this map, or
-     * {@code null} if this map uses the {@linkplain Comparable
-     * natural ordering} of its keys.
+     * 返回排序的比较器
      *
      * @return the comparator used to order the keys in this map,
      *         or {@code null} if this map uses the natural ordering
@@ -123,16 +93,9 @@ public interface SortedMap<K,V> extends Map<K,V> {
     Comparator<? super K> comparator();
 
     /**
-     * Returns a view of the portion of this map whose keys range from
-     * {@code fromKey}, inclusive, to {@code toKey}, exclusive.  (If
-     * {@code fromKey} and {@code toKey} are equal, the returned map
-     * is empty.)  The returned map is backed by this map, so changes
-     * in the returned map are reflected in this map, and vice-versa.
-     * The returned map supports all optional map operations that this
-     * map supports.
-     *
-     * <p>The returned map will throw an {@code IllegalArgumentException}
-     * on an attempt to insert a key outside its range.
+     * 返回指定返回key的子map，返回时前闭后开，如果fromKey与toKey相等，则返回空map
+     * 返回的子map是主map的一部份，所以修改了返回的map就会反映在主map上，返回的子map支持所有主map的操作
+     * 如果插入一个超过返回的key，返回的map将会抛出IllegalArgumentException的异常
      *
      * @param fromKey low endpoint (inclusive) of the keys in the returned map
      * @param toKey high endpoint (exclusive) of the keys in the returned map
@@ -163,7 +126,7 @@ public interface SortedMap<K,V> extends Map<K,V> {
      * <p>The returned map will throw an {@code IllegalArgumentException}
      * on an attempt to insert a key outside its range.
      *
-     * @param toKey high endpoint (exclusive) of the keys in the returned map
+     * @param toKey high endpoint (exclusive) of the keys in the returned map 不包含toKey
      * @return a view of the portion of this map whose keys are strictly
      *         less than {@code toKey}
      * @throws ClassCastException if {@code toKey} is not compatible
@@ -190,7 +153,7 @@ public interface SortedMap<K,V> extends Map<K,V> {
      * <p>The returned map will throw an {@code IllegalArgumentException}
      * on an attempt to insert a key outside its range.
      *
-     * @param fromKey low endpoint (inclusive) of the keys in the returned map
+     * @param fromKey low endpoint (inclusive) of the keys in the returned map 包含fromKey
      * @return a view of the portion of this map whose keys are greater
      *         than or equal to {@code fromKey}
      * @throws ClassCastException if {@code fromKey} is not compatible

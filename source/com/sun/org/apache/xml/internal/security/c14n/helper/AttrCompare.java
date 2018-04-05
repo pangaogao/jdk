@@ -23,7 +23,7 @@
 package com.sun.org.apache.xml.internal.security.c14n.helper;
 
 import com.sun.org.apache.xml.internal.security.utils.Constants;
-import org.w3c.dom.Attr;
+import test.org.w3c.dom.Attr;
 import java.io.Serializable;
 import java.util.Comparator;
 

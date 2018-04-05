@@ -46,7 +46,7 @@ public interface ObjectKey extends Writeable
     */
     ObjectKeyTemplate getTemplate()  ;
 
-    byte[] getBytes( org.omg.CORBA.ORB orb ) ;
+    byte[] getBytes( test.org.omg.CORBA.ORB orb ) ;
 
     CorbaServerRequestDispatcher getServerRequestDispatcher( ORB orb ) ;
 }

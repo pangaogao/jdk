@@ -24,9 +24,8 @@
  */
 package com.sun.corba.se.impl.encoding;
 
-import org.omg.CORBA.CompletionStatus;
+import test.org.omg.CORBA.CompletionStatus;
 import com.sun.corba.se.spi.ior.iiop.GIOPVersion;
-import com.sun.corba.se.impl.encoding.CodeSetConversion;
 
 public class CDROutputStream_1_1 extends CDROutputStream_1_0
 {

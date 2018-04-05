@@ -29,16 +29,16 @@ import java.io.IOException;
 import java.io.Serializable;
 import java.math.BigDecimal;
 
-import org.omg.CORBA.Any;
-import org.omg.CORBA.Context;
-import org.omg.CORBA.NO_IMPLEMENT;
-import org.omg.CORBA.ORB;
-import org.omg.CORBA.TypeCode;
-import org.omg.CORBA.portable.BoxedValueHelper;
+import test.org.omg.CORBA.Any;
+import test.org.omg.CORBA.Context;
+import test.org.omg.CORBA.NO_IMPLEMENT;
+import test.org.omg.CORBA.ORB;
+import test.org.omg.CORBA.TypeCode;
+import test.org.omg.CORBA.portable.BoxedValueHelper;
 
 @SuppressWarnings({"deprecation", "rawtypes"})
-public class ProxyInputStream extends org.omg.CORBA_2_3.portable.InputStream {
-    public ProxyInputStream(org.omg.CORBA.portable.InputStream in) {
+public class ProxyInputStream extends test.org.omg.CORBA_2_3.portable.InputStream {
+    public ProxyInputStream(test.org.omg.CORBA.portable.InputStream in) {
         this.in = in;
     }
 
@@ -146,7 +146,7 @@ public class ProxyInputStream extends org.omg.CORBA_2_3.portable.InputStream {
         in.read_double_array(value, offset, length);
     }
 
-    public org.omg.CORBA.Object read_Object() {
+    public test.org.omg.CORBA.Object read_Object() {
         return in.read_Object();
     }
 
@@ -163,7 +163,7 @@ public class ProxyInputStream extends org.omg.CORBA_2_3.portable.InputStream {
      */
     @Override
     @Deprecated
-    public org.omg.CORBA.Principal read_Principal() {
+    public test.org.omg.CORBA.Principal read_Principal() {
         return in.read_Principal();
     }
 
@@ -183,7 +183,7 @@ public class ProxyInputStream extends org.omg.CORBA_2_3.portable.InputStream {
     }
 
     @Override
-    public org.omg.CORBA.Object read_Object(java.lang.Class clz) {
+    public test.org.omg.CORBA.Object read_Object(java.lang.Class clz) {
         return in.read_Object(clz);
     }
 
@@ -227,15 +227,15 @@ public class ProxyInputStream extends org.omg.CORBA_2_3.portable.InputStream {
         return narrow().read_abstract_interface(clz);
     }
 
-    protected org.omg.CORBA_2_3.portable.InputStream narrow() {
-        if (in instanceof org.omg.CORBA_2_3.portable.InputStream)
-            return (org.omg.CORBA_2_3.portable.InputStream) in;
+    protected test.org.omg.CORBA_2_3.portable.InputStream narrow() {
+        if (in instanceof test.org.omg.CORBA_2_3.portable.InputStream)
+            return (test.org.omg.CORBA_2_3.portable.InputStream) in;
         throw new NO_IMPLEMENT();
     }
 
-    public org.omg.CORBA.portable.InputStream getProxiedInputStream() {
+    public test.org.omg.CORBA.portable.InputStream getProxiedInputStream() {
         return in;
     }
 
-    protected final org.omg.CORBA.portable.InputStream in;
+    protected final test.org.omg.CORBA.portable.InputStream in;
 }

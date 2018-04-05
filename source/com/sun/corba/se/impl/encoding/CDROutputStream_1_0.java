@@ -31,45 +31,34 @@
 
 package com.sun.corba.se.impl.encoding;
 
-import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import java.io.Serializable;
-import java.io.ByteArrayOutputStream;
-import java.io.ObjectOutputStream;
-import java.io.IOException;
 import java.lang.reflect.Method;
 import java.lang.reflect.InvocationTargetException;
-import java.math.BigDecimal;
 import java.nio.ByteBuffer;
-import java.rmi.Remote;
 import java.security.AccessController;
 import java.security.PrivilegedExceptionAction;
 import java.security.PrivilegedActionException;
-import java.util.Hashtable;
-import java.util.Stack;
 
 import javax.rmi.CORBA.Util;
 import javax.rmi.CORBA.ValueHandler;
 import javax.rmi.CORBA.ValueHandlerMultiFormat;
 
-import org.omg.CORBA.CustomMarshal;
-import org.omg.CORBA.DataOutputStream;
-import org.omg.CORBA.TypeCodePackage.BadKind;
-import org.omg.CORBA.SystemException;
-import org.omg.CORBA.CompletionStatus;
-import org.omg.CORBA.Object;
-import org.omg.CORBA.Principal;
-import org.omg.CORBA.TypeCode;
-import org.omg.CORBA.Any;
-import org.omg.CORBA.VM_CUSTOM;
-import org.omg.CORBA.VM_TRUNCATABLE;
-import org.omg.CORBA.VM_NONE;
-import org.omg.CORBA.portable.IDLEntity;
-import org.omg.CORBA.portable.CustomValue;
-import org.omg.CORBA.portable.StreamableValue;
-import org.omg.CORBA.portable.BoxedValueHelper;
-import org.omg.CORBA.portable.OutputStream;
-import org.omg.CORBA.portable.ValueBase;
+import test.org.omg.CORBA.CustomMarshal;
+import test.org.omg.CORBA.TypeCodePackage.BadKind;
+import test.org.omg.CORBA.SystemException;
+import test.org.omg.CORBA.CompletionStatus;
+import test.org.omg.CORBA.Principal;
+import test.org.omg.CORBA.TypeCode;
+import test.org.omg.CORBA.Any;
+import test.org.omg.CORBA.VM_CUSTOM;
+import test.org.omg.CORBA.VM_TRUNCATABLE;
+import test.org.omg.CORBA.VM_NONE;
+import test.org.omg.CORBA.portable.IDLEntity;
+import test.org.omg.CORBA.portable.CustomValue;
+import test.org.omg.CORBA.portable.StreamableValue;
+import test.org.omg.CORBA.portable.BoxedValueHelper;
+import test.org.omg.CORBA.portable.ValueBase;
 
 import com.sun.org.omg.CORBA.portable.ValueHelper;
 
@@ -81,13 +70,8 @@ import com.sun.corba.se.spi.ior.IOR;
 import com.sun.corba.se.spi.ior.IORFactories;
 import com.sun.corba.se.spi.orb.ORB;
 import com.sun.corba.se.spi.orb.ORBVersionFactory;
-import com.sun.corba.se.spi.orb.ORBVersion;
-import com.sun.corba.se.spi.protocol.CorbaMessageMediator;
 import com.sun.corba.se.spi.logging.CORBALogDomains;
 
-import com.sun.corba.se.impl.encoding.ByteBufferWithInfo;
-import com.sun.corba.se.impl.encoding.MarshalOutputStream;
-import com.sun.corba.se.impl.encoding.CodeSetConversion;
 import com.sun.corba.se.impl.corba.TypeCodeImpl;
 import com.sun.corba.se.impl.orbutil.CacheTable;
 import com.sun.corba.se.impl.orbutil.ORBUtility;
@@ -159,11 +143,11 @@ public class CDROutputStream_1_0 extends CDROutputStreamBase
 
     // REVISIT - This should be re-factored so that including whether
     // to use pool byte buffers or not doesn't need to be known.
-    public void init(org.omg.CORBA.ORB orb,
-                        boolean littleEndian,
-                        BufferManagerWrite bufferManager,
-                        byte streamFormatVersion,
-                        boolean usePooledByteBuffers)
+    public void init(test.org.omg.CORBA.ORB orb,
+                     boolean littleEndian,
+                     BufferManagerWrite bufferManager,
+                     byte streamFormatVersion,
+                     boolean usePooledByteBuffers)
     {
         // ORB must not be null.  See CDROutputStream constructor.
         this.orb = (ORB)orb;
@@ -179,10 +163,10 @@ public class CDROutputStream_1_0 extends CDROutputStreamBase
         createRepositoryIdHandlers();
     }
 
-    public void init(org.omg.CORBA.ORB orb,
-                        boolean littleEndian,
-                        BufferManagerWrite bufferManager,
-                        byte streamFormatVersion)
+    public void init(test.org.omg.CORBA.ORB orb,
+                     boolean littleEndian,
+                     BufferManagerWrite bufferManager,
+                     byte streamFormatVersion)
    {
        init(orb, littleEndian, bufferManager, streamFormatVersion, true);
    }
@@ -604,10 +588,10 @@ public class CDROutputStream_1_0 extends CDROutputStreamBase
             tci = new TypeCodeImpl(orb, tc);
         }
 
-        tci.write_value((org.omg.CORBA_2_3.portable.OutputStream)parent);
+        tci.write_value((test.org.omg.CORBA_2_3.portable.OutputStream)parent);
     }
 
-    public void write_Object(org.omg.CORBA.Object ref)
+    public void write_Object(test.org.omg.CORBA.Object ref)
     {
         if (ref == null) {
             IOR nullIOR = IORFactories.makeIOR( orb ) ;
@@ -616,7 +600,7 @@ public class CDROutputStream_1_0 extends CDROutputStreamBase
         }
 
         // IDL to Java formal 01-06-06 1.21.4.2
-        if (ref instanceof org.omg.CORBA.LocalObject)
+        if (ref instanceof test.org.omg.CORBA.LocalObject)
             throw wrapper.writeLocalObject(CompletionStatus.COMPLETED_MAYBE);
 
         IOR ior = ORBUtility.connectAndGetIOR( orb, ref ) ;
@@ -628,15 +612,15 @@ public class CDROutputStream_1_0 extends CDROutputStreamBase
 
     public void write_abstract_interface(java.lang.Object obj) {
         boolean corbaObject = false; // Assume value type.
-        org.omg.CORBA.Object theObject = null;
+        test.org.omg.CORBA.Object theObject = null;
 
         // Is it a CORBA.Object?
 
-        if (obj != null && obj instanceof org.omg.CORBA.Object) {
+        if (obj != null && obj instanceof test.org.omg.CORBA.Object) {
 
             // Yes.
 
-            theObject = (org.omg.CORBA.Object)obj;
+            theObject = (test.org.omg.CORBA.Object)obj;
             corbaObject = true;
         }
 
@@ -728,7 +712,7 @@ public class CDROutputStream_1_0 extends CDROutputStreamBase
         writeEndTag(mustChunk);
     }
 
-    private void writeValueBase(org.omg.CORBA.portable.ValueBase object,
+    private void writeValueBase(test.org.omg.CORBA.portable.ValueBase object,
                                 Class clazz) {
         // _REVISIT_ could check to see whether chunking really needed
         mustChunk = true;
@@ -842,9 +826,9 @@ public class CDROutputStream_1_0 extends CDROutputStreamBase
         if (clazz.isArray()) {
             // Handle arrays
             writeArray(object, clazz);
-        } else if (object instanceof org.omg.CORBA.portable.ValueBase) {
+        } else if (object instanceof test.org.omg.CORBA.portable.ValueBase) {
             // Handle IDL Value types
-            writeValueBase((org.omg.CORBA.portable.ValueBase)object, clazz);
+            writeValueBase((test.org.omg.CORBA.portable.ValueBase)object, clazz);
         } else if (shouldWriteAsIDLEntity(object)) {
             writeIDLEntity((IDLEntity)object);
         } else if (object instanceof java.lang.String) {
@@ -870,7 +854,7 @@ public class CDROutputStream_1_0 extends CDROutputStreamBase
         write_value(object, (String)null);
     }
 
-    public void write_value(Serializable object, org.omg.CORBA.portable.BoxedValueHelper factory)
+    public void write_value(Serializable object, test.org.omg.CORBA.portable.BoxedValueHelper factory)
     {
         // Handle null references
         if (object == null) {
@@ -1052,7 +1036,7 @@ public class CDROutputStream_1_0 extends CDROutputStreamBase
         // System.out.println("      post end_block: " + get_offset() + " " + bbwi.position());
     }
 
-    public org.omg.CORBA.ORB orb()
+    public test.org.omg.CORBA.ORB orb()
     {
         return orb;
     }
@@ -1199,7 +1183,7 @@ public class CDROutputStream_1_0 extends CDROutputStreamBase
             write_wstring(value[offset + i]);
     }
 
-    public final void write_any_array(org.omg.CORBA.Any value[], int offset, int length)
+    public final void write_any_array(test.org.omg.CORBA.Any value[], int offset, int length)
     {
         for(int i = 0; i < length; i++)
             write_any(value[offset + i]);
@@ -1231,7 +1215,7 @@ public class CDROutputStream_1_0 extends CDROutputStreamBase
         s.write(tmpBuf, 0, bbwi.position());
     }
 
-    public void writeOctetSequenceTo(org.omg.CORBA.portable.OutputStream s) {
+    public void writeOctetSequenceTo(test.org.omg.CORBA.portable.OutputStream s) {
 
         byte[] buf = null;
 
@@ -1520,7 +1504,7 @@ public class CDROutputStream_1_0 extends CDROutputStreamBase
     private boolean shouldWriteAsIDLEntity(Serializable object)
     {
         return ((object instanceof IDLEntity) && (!(object instanceof ValueBase)) &&
-                (!(object instanceof org.omg.CORBA.Object)));
+                (!(object instanceof test.org.omg.CORBA.Object)));
 
     }
 
@@ -1550,7 +1534,7 @@ public class CDROutputStream_1_0 extends CDROutputStreamBase
             ClassLoader clazzLoader = (clazz == null ? null : clazz.getClassLoader());
             final Class helperClass = Utility.loadClassForClass(clazz.getName()+"Helper", codebase,
                                                    clazzLoader, clazz, clazzLoader);
-            final Class argTypes[] = {org.omg.CORBA.portable.OutputStream.class, clazz};
+            final Class argTypes[] = {test.org.omg.CORBA.portable.OutputStream.class, clazz};
             // getDeclaredMethod requires RuntimePermission accessDeclaredMembers
             // if a different class loader is used (even though the javadoc says otherwise)
             Method writeMethod = null;
@@ -1594,7 +1578,7 @@ public class CDROutputStream_1_0 extends CDROutputStreamBase
     }
 
     // This will stay a custom add-on until the java-rtf issue is resolved.
-    // Then it should be declared in org.omg.CORBA.portable.OutputStream.
+    // Then it should be declared in test.org.omg.CORBA.portable.OutputStream.
     //
     // Pads the string representation of bigDecimal with zeros to fit the given
     // digits and scale before it gets written to the stream.
@@ -1695,7 +1679,7 @@ public class CDROutputStream_1_0 extends CDROutputStreamBase
         this.write_octet(doubleDigit);
     }
 
-    private final static String _id = "IDL:omg.org/CORBA/DataOutputStream:1.0";
+    private final static String _id = "IDL:omg.test.org/CORBA/DataOutputStream:1.0";
     private final static String[] _ids = { _id };
 
     public String[] _truncatable_ids() {

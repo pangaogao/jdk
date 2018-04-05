@@ -34,15 +34,11 @@ package com.sun.corba.se.impl.io;
 import java.io.IOException;
 import java.io.StreamCorruptedException;
 import java.io.NotActiveException;
-import java.io.InputStream;
 import java.io.ObjectInputStream;
 import java.util.*;
-import java.lang.reflect.Array;
-import java.lang.reflect.Constructor;
 
-import org.omg.CORBA.portable.ValueInputStream;
+import test.org.omg.CORBA.portable.ValueInputStream;
 
-import com.sun.corba.se.spi.orb.ORB;
 import com.sun.corba.se.spi.orb.ORBVersion;
 import com.sun.corba.se.spi.orb.ORBVersionFactory;
 import com.sun.corba.se.spi.logging.CORBALogDomains;
@@ -251,7 +247,7 @@ public abstract class InputStreamHook extends ObjectInputStream
     }
 
     protected abstract byte getStreamFormatVersion();
-    abstract org.omg.CORBA_2_3.portable.InputStream getOrbStream();
+    abstract test.org.omg.CORBA_2_3.portable.InputStream getOrbStream();
 
     // Description of possible actions
     protected static class ReadObjectState {
@@ -398,7 +394,7 @@ public abstract class InputStreamHook extends ObjectInputStream
         }
 
         public void readData(InputStreamHook stream) throws IOException {
-            org.omg.CORBA.ORB orb = stream.getOrbStream().orb();
+            test.org.omg.CORBA.ORB orb = stream.getOrbStream().orb();
             if ((orb == null) ||
                     !(orb instanceof com.sun.corba.se.spi.orb.ORB)) {
                 throw new StreamCorruptedException(

@@ -28,12 +28,12 @@ import java.util.Map;
 
 import com.sun.org.apache.xml.internal.security.exceptions.Base64DecodingException;
 import com.sun.org.apache.xml.internal.security.exceptions.XMLSecurityException;
-import org.w3c.dom.Attr;
-import org.w3c.dom.Document;
-import org.w3c.dom.Element;
-import org.w3c.dom.Node;
-import org.w3c.dom.NodeList;
-import org.w3c.dom.Text;
+import test.org.w3c.dom.Attr;
+import test.org.w3c.dom.Document;
+import test.org.w3c.dom.Element;
+import test.org.w3c.dom.Node;
+import test.org.w3c.dom.NodeList;
+import test.org.w3c.dom.Text;
 
 /**
  * This is the base class to all Objects which have a direct 1:1 mapping to an
@@ -496,13 +496,13 @@ public abstract class ElementProxy {
      * This method registers the default prefixes.
      */
     public static void registerDefaultPrefixes() throws XMLSecurityException {
-        setDefaultPrefix("http://www.w3.org/2000/09/xmldsig#", "ds");
-        setDefaultPrefix("http://www.w3.org/2001/04/xmlenc#", "xenc");
-        setDefaultPrefix("http://www.w3.org/2009/xmlenc11#", "xenc11");
-        setDefaultPrefix("http://www.xmlsecurity.org/experimental#", "experimental");
-        setDefaultPrefix("http://www.w3.org/2002/04/xmldsig-filter2", "dsig-xpath-old");
-        setDefaultPrefix("http://www.w3.org/2002/06/xmldsig-filter2", "dsig-xpath");
-        setDefaultPrefix("http://www.w3.org/2001/10/xml-exc-c14n#", "ec");
+        setDefaultPrefix("http://www.w3.test.org/2000/09/xmldsig#", "ds");
+        setDefaultPrefix("http://www.w3.test.org/2001/04/xmlenc#", "xenc");
+        setDefaultPrefix("http://www.w3.test.org/2009/xmlenc11#", "xenc11");
+        setDefaultPrefix("http://www.xmlsecurity.test.org/experimental#", "experimental");
+        setDefaultPrefix("http://www.w3.test.org/2002/04/xmldsig-filter2", "dsig-xpath-old");
+        setDefaultPrefix("http://www.w3.test.org/2002/06/xmldsig-filter2", "dsig-xpath");
+        setDefaultPrefix("http://www.w3.test.org/2001/10/xml-exc-c14n#", "ec");
         setDefaultPrefix(
             "http://www.nue.et-inf.uni-siegen.de/~geuer-pollmann/#xpathFilter", "xx"
         );

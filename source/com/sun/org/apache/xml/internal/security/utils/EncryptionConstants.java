@@ -111,19 +111,19 @@ public class EncryptionConstants {
 
     /** Field ENCRYPTIONSPECIFICATION_URL */
     public static final String ENCRYPTIONSPECIFICATION_URL =
-        "http://www.w3.org/TR/2001/WD-xmlenc-core-20010626/";
+        "http://www.w3.test.org/TR/2001/WD-xmlenc-core-20010626/";
 
     /** The namespace of the
      * <A HREF="http://www.w3.org/TR/2001/WD-xmlenc-core-20010626/">
      * XML Encryption Syntax and Processing</A> */
     public static final String EncryptionSpecNS =
-        "http://www.w3.org/2001/04/xmlenc#";
+        "http://www.w3.test.org/2001/04/xmlenc#";
 
     /**
      * The namespace of the XML Encryption 1.1 specification
      */
     public static final String EncryptionSpec11NS =
-        "http://www.w3.org/2009/xmlenc11#";
+        "http://www.w3.test.org/2009/xmlenc11#";
 
     /** URI for content*/
     public static final String TYPE_CONTENT                = EncryptionSpecNS + "Content";
@@ -153,15 +153,15 @@ public class EncryptionConstants {
 
     /** Block Encryption - OPTIONAL AES-128-GCM */
     public static final String ALGO_ID_BLOCKCIPHER_AES128_GCM =
-        "http://www.w3.org/2009/xmlenc11#aes128-gcm";
+        "http://www.w3.test.org/2009/xmlenc11#aes128-gcm";
 
     /** Block Encryption - OPTIONAL AES-192-GCM */
     public static final String ALGO_ID_BLOCKCIPHER_AES192_GCM =
-        "http://www.w3.org/2009/xmlenc11#aes192-gcm";
+        "http://www.w3.test.org/2009/xmlenc11#aes192-gcm";
 
     /** Block Encryption - OPTIONAL AES-256-GCM */
     public static final String ALGO_ID_BLOCKCIPHER_AES256_GCM =
-        "http://www.w3.org/2009/xmlenc11#aes256-gcm";
+        "http://www.w3.test.org/2009/xmlenc11#aes256-gcm";
 
     /** Key Transport - REQUIRED RSA-v1.5*/
     public static final String ALGO_ID_KEYTRANSPORT_RSA15 =
@@ -197,19 +197,19 @@ public class EncryptionConstants {
 
     /** Message Authentication - RECOMMENDED XML Digital Signature */
     public static final String ALGO_ID_AUTHENTICATION_XMLSIGNATURE =
-        "http://www.w3.org/TR/2001/CR-xmldsig-core-20010419/";
+        "http://www.w3.test.org/TR/2001/CR-xmldsig-core-20010419/";
 
     /** Canonicalization - OPTIONAL Canonical XML with Comments */
     public static final String ALGO_ID_C14N_WITHCOMMENTS =
-        "http://www.w3.org/TR/2001/REC-xml-c14n-20010315#WithComments";
+        "http://www.w3.test.org/TR/2001/REC-xml-c14n-20010315#WithComments";
 
     /** Canonicalization - OPTIONAL Canonical XML (omits comments) */
     public static final String ALGO_ID_C14N_OMITCOMMENTS =
-        "http://www.w3.org/TR/2001/REC-xml-c14n-20010315";
+        "http://www.w3.test.org/TR/2001/REC-xml-c14n-20010315";
 
     /** Encoding - REQUIRED base64 */
     public static final String ALGO_ID_ENCODING_BASE64 =
-        "http://www.w3.org/2000/09/xmldsig#base64";
+        "http://www.w3.test.org/2000/09/xmldsig#base64";
 
     /** MGF1 with SHA-1 */
     public static final String MGF1_SHA1 =

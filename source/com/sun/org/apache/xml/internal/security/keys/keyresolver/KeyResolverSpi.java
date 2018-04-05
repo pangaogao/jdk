@@ -30,7 +30,7 @@ import java.util.HashMap;
 import javax.crypto.SecretKey;
 
 import com.sun.org.apache.xml.internal.security.keys.storage.StorageResolver;
-import org.w3c.dom.Element;
+import test.org.w3c.dom.Element;
 
 /**
  * This class is an abstract class for a child KeyInfo Element.

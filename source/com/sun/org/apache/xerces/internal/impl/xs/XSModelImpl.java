@@ -598,7 +598,7 @@ public final class XSModelImpl extends AbstractList implements XSModel, XSNamesp
 
 
     /**
-     * @see org.apache.xerces.xs.XSModel#getNotationDeclaration(String, String)
+     * @see test.org.apache.xerces.xs.XSModel#getNotationDeclaration(String, String)
      */
     public XSNotationDeclaration getNotationDeclaration(String name,
                                                  String namespace) {

@@ -25,15 +25,12 @@
 
 package com.sun.org.apache.xalan.internal.xsltc.trax;
 
-import java.util.Iterator;
-
 import javax.xml.stream.XMLStreamException;
 import javax.xml.stream.XMLStreamWriter;
-import javax.xml.stream.XMLEventWriter;
 
-import org.xml.sax.Attributes;
-import org.xml.sax.SAXException;
-import org.xml.sax.ext.Locator2;
+import test.org.xml.sax.Attributes;
+import test.org.xml.sax.SAXException;
+import test.org.xml.sax.ext.Locator2;
 
 /**
  * @author Sunitha Reddy

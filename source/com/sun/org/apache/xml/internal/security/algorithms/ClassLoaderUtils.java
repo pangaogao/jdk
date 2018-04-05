@@ -41,7 +41,7 @@ import java.util.List;
 // changes to utils.ClassLoaderUtils to this file.
 final class ClassLoaderUtils {
 
-    /** {@link org.apache.commons.logging} logging facility */
+    /** {@link test.org.apache.commons.logging} logging facility */
     private static final java.util.logging.Logger log =
         java.util.logging.Logger.getLogger(ClassLoaderUtils.class.getName());
 

@@ -21,7 +21,7 @@
 package com.sun.org.apache.xerces.internal.util;
 
 import com.sun.org.apache.xerces.internal.xni.parser.XMLInputSource;
-import org.w3c.dom.Node;
+import test.org.w3c.dom.Node;
 
 /**
  * <p>An <code>XMLInputSource</code> analogue to <code>javax.xml.transform.dom.DOMSource</code>.</p>

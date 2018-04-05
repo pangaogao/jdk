@@ -25,20 +25,20 @@ package com.sun.org.apache.xalan.internal.xsltc.trax;
 
 import java.io.IOException;
 
-import org.w3c.dom.NamedNodeMap;
-import org.w3c.dom.Node;
-import org.w3c.dom.Document;
+import test.org.w3c.dom.NamedNodeMap;
+import test.org.w3c.dom.Node;
+import test.org.w3c.dom.Document;
 import com.sun.org.apache.xml.internal.serializer.SerializationHandler;
-import org.xml.sax.ContentHandler;
-import org.xml.sax.DTDHandler;
-import org.xml.sax.EntityResolver;
-import org.xml.sax.ErrorHandler;
-import org.xml.sax.InputSource;
-import org.xml.sax.ext.Locator2;
-import org.xml.sax.SAXException;
-import org.xml.sax.SAXNotRecognizedException;
-import org.xml.sax.SAXNotSupportedException;
-import org.xml.sax.XMLReader;
+import test.org.xml.sax.ContentHandler;
+import test.org.xml.sax.DTDHandler;
+import test.org.xml.sax.EntityResolver;
+import test.org.xml.sax.ErrorHandler;
+import test.org.xml.sax.InputSource;
+import test.org.xml.sax.ext.Locator2;
+import test.org.xml.sax.SAXException;
+import test.org.xml.sax.SAXNotRecognizedException;
+import test.org.xml.sax.SAXNotSupportedException;
+import test.org.xml.sax.XMLReader;
 import com.sun.org.apache.xml.internal.serializer.NamespaceMappings;
 
 /**
@@ -87,7 +87,7 @@ public class DOM2TO implements XMLReader, Locator2 {
 
         if (_dom != null) {
             boolean isIncomplete =
-                (_dom.getNodeType() != org.w3c.dom.Node.DOCUMENT_NODE);
+                (_dom.getNodeType() != test.org.w3c.dom.Node.DOCUMENT_NODE);
 
             if (isIncomplete) {
                 _handler.startDocument();

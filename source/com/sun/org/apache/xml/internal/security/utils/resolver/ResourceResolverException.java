@@ -23,7 +23,7 @@
 package com.sun.org.apache.xml.internal.security.utils.resolver;
 
 import com.sun.org.apache.xml.internal.security.exceptions.XMLSecurityException;
-import org.w3c.dom.Attr;
+import test.org.w3c.dom.Attr;
 
 /**
  * This Exception is thrown if something related to the

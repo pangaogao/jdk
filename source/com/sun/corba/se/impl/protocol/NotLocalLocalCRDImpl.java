@@ -25,8 +25,7 @@
 
 package com.sun.corba.se.impl.protocol;
 
-import org.omg.CORBA.INTERNAL;
-import org.omg.CORBA.portable.ServantObject;
+import test.org.omg.CORBA.portable.ServantObject;
 
 import com.sun.corba.se.spi.protocol.LocalClientRequestDispatcher ;
 
@@ -36,17 +35,17 @@ import com.sun.corba.se.spi.protocol.LocalClientRequestDispatcher ;
 
 public class NotLocalLocalCRDImpl implements LocalClientRequestDispatcher
 {
-    public boolean useLocalInvocation(org.omg.CORBA.Object self)
+    public boolean useLocalInvocation(test.org.omg.CORBA.Object self)
     {
         return false;
     }
 
-    public boolean is_local(org.omg.CORBA.Object self)
+    public boolean is_local(test.org.omg.CORBA.Object self)
     {
         return false;
     }
 
-    public ServantObject servant_preinvoke(org.omg.CORBA.Object self,
+    public ServantObject servant_preinvoke(test.org.omg.CORBA.Object self,
                                            String operation,
                                            Class expectedType)
     {
@@ -57,7 +56,7 @@ public class NotLocalLocalCRDImpl implements LocalClientRequestDispatcher
         //throw new INTERNAL();
     }
 
-    public void servant_postinvoke(org.omg.CORBA.Object self,
+    public void servant_postinvoke(test.org.omg.CORBA.Object self,
                                    ServantObject servant)
     {
         //throw new INTERNAL();

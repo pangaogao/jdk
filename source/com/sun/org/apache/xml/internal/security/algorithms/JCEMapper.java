@@ -28,7 +28,7 @@ import java.util.concurrent.ConcurrentHashMap;
 import com.sun.org.apache.xml.internal.security.encryption.XMLCipher;
 import com.sun.org.apache.xml.internal.security.signature.XMLSignature;
 import com.sun.org.apache.xml.internal.security.utils.JavaUtils;
-import org.w3c.dom.Element;
+import test.org.w3c.dom.Element;
 
 
 /**
@@ -36,7 +36,7 @@ import org.w3c.dom.Element;
  */
 public class JCEMapper {
 
-    /** {@link org.apache.commons.logging} logging facility */
+    /** {@link test.org.apache.commons.logging} logging facility */
     private static java.util.logging.Logger log =
         java.util.logging.Logger.getLogger(JCEMapper.class.getName());
 

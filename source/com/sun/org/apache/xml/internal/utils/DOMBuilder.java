@@ -27,17 +27,17 @@ import java.util.Stack;
 import com.sun.org.apache.xml.internal.res.XMLErrorResources;
 import com.sun.org.apache.xml.internal.res.XMLMessages;
 
-import org.w3c.dom.Document;
-import org.w3c.dom.DocumentFragment;
-import org.w3c.dom.Element;
-import org.w3c.dom.Node;
-import org.w3c.dom.Text;
-import org.w3c.dom.CDATASection;
+import test.org.w3c.dom.Document;
+import test.org.w3c.dom.DocumentFragment;
+import test.org.w3c.dom.Element;
+import test.org.w3c.dom.Node;
+import test.org.w3c.dom.Text;
+import test.org.w3c.dom.CDATASection;
 
-import org.xml.sax.Attributes;
-import org.xml.sax.ContentHandler;
-import org.xml.sax.Locator;
-import org.xml.sax.ext.LexicalHandler;
+import test.org.xml.sax.Attributes;
+import test.org.xml.sax.ContentHandler;
+import test.org.xml.sax.Locator;
+import test.org.xml.sax.ext.LexicalHandler;
 /**
  * This class takes SAX events (in addition to some extra events
  * that SAX doesn't handle yet) and adds the result to a document
@@ -170,7 +170,7 @@ public class DOMBuilder
    *
    * @param newNode New node to append
    */
-  protected void append(Node newNode) throws org.xml.sax.SAXException
+  protected void append(Node newNode) throws test.org.xml.sax.SAXException
   {
 
     Node currentNode = m_currentNode;
@@ -202,7 +202,7 @@ public class DOMBuilder
 
         if ((null != data) && (data.trim().length() > 0))
         {
-          throw new org.xml.sax.SAXException(
+          throw new test.org.xml.sax.SAXException(
             XMLMessages.createXMLMessage(
               XMLErrorResources.ER_CANT_OUTPUT_TEXT_BEFORE_DOC, null));  //"Warning: can't output text before document element!  Ignoring...");
         }
@@ -215,7 +215,7 @@ public class DOMBuilder
         {
           ok = false;
 
-          throw new org.xml.sax.SAXException(
+          throw new test.org.xml.sax.SAXException(
             XMLMessages.createXMLMessage(
               XMLErrorResources.ER_CANT_HAVE_MORE_THAN_ONE_ROOT, null));  //"Can't have more than one root on a DOM!");
         }
@@ -254,7 +254,7 @@ public class DOMBuilder
    *
    * @param locator An object that can return the location of
    *                any SAX document event.
-   * @see org.xml.sax.Locator
+   * @see test.org.xml.sax.Locator
    */
   public void setDocumentLocator(Locator locator)
   {
@@ -269,7 +269,7 @@ public class DOMBuilder
    * other methods in this interface or in DTDHandler (except for
    * setDocumentLocator).</p>
    */
-  public void startDocument() throws org.xml.sax.SAXException
+  public void startDocument() throws test.org.xml.sax.SAXException
   {
 
     // No action for the moment.
@@ -284,7 +284,7 @@ public class DOMBuilder
    * (because of an unrecoverable error) or reached the end of
    * input.</p>
    */
-  public void endDocument() throws org.xml.sax.SAXException
+  public void endDocument() throws test.org.xml.sax.SAXException
   {
 
     // No action for the moment.
@@ -311,11 +311,11 @@ public class DOMBuilder
    * @param name The element name.
    * @param atts The attributes attached to the element, if any.
    * @see #endElement
-   * @see org.xml.sax.Attributes
+   * @see test.org.xml.sax.Attributes
    */
   public void startElement(
           String ns, String localName, String name, Attributes atts)
-            throws org.xml.sax.SAXException
+            throws test.org.xml.sax.SAXException
   {
 
     Element elem;
@@ -356,7 +356,7 @@ public class DOMBuilder
           // In SAX, xmlns[:] attributes have an empty namespace, while in DOM they
           // should have the xmlns namespace
           if (attrQName.startsWith("xmlns:") || attrQName.equals("xmlns")) {
-            attrNS = "http://www.w3.org/2000/xmlns/";
+            attrNS = "http://www.w3.test.org/2000/xmlns/";
           }
 
           // ALWAYS use the DOM Level 2 call!
@@ -375,7 +375,7 @@ public class DOMBuilder
     catch(java.lang.Exception de)
     {
       // de.printStackTrace();
-      throw new org.xml.sax.SAXException(de);
+      throw new test.org.xml.sax.SAXException(de);
     }
 
   }
@@ -400,7 +400,7 @@ public class DOMBuilder
    * @param name The element name
    */
   public void endElement(String ns, String localName, String name)
-          throws org.xml.sax.SAXException
+          throws test.org.xml.sax.SAXException
   {
     m_elemStack.pop();
     m_currentNode = m_elemStack.isEmpty() ? null : (Node)m_elemStack.peek();
@@ -439,9 +439,9 @@ public class DOMBuilder
    * @param start The start position in the array.
    * @param length The number of characters to read from the array.
    * @see #ignorableWhitespace
-   * @see org.xml.sax.Locator
+   * @see test.org.xml.sax.Locator
    */
-  public void characters(char ch[], int start, int length) throws org.xml.sax.SAXException
+  public void characters(char ch[], int start, int length) throws test.org.xml.sax.SAXException
   {
     if(isOutsideDocElem()
        && com.sun.org.apache.xml.internal.utils.XMLCharacterRecognizer.isWhiteSpace(ch, start, length))
@@ -477,7 +477,7 @@ public class DOMBuilder
    * @param length Number of characters in the array
    */
   public void charactersRaw(char ch[], int start, int length)
-          throws org.xml.sax.SAXException
+          throws test.org.xml.sax.SAXException
   {
     if(isOutsideDocElem()
        && com.sun.org.apache.xml.internal.utils.XMLCharacterRecognizer.isWhiteSpace(ch, start, length))
@@ -502,10 +502,10 @@ public class DOMBuilder
    * @param name The name of the entity.  If it is a parameter
    *        entity, the name will begin with '%'.
    * @see #endEntity
-   * @see org.xml.sax.ext.DeclHandler#internalEntityDecl
-   * @see org.xml.sax.ext.DeclHandler#externalEntityDecl
+   * @see test.org.xml.sax.ext.DeclHandler#internalEntityDecl
+   * @see test.org.xml.sax.ext.DeclHandler#externalEntityDecl
    */
-  public void startEntity(String name) throws org.xml.sax.SAXException
+  public void startEntity(String name) throws test.org.xml.sax.SAXException
   {
 
     // Almost certainly the wrong behavior...
@@ -518,14 +518,14 @@ public class DOMBuilder
    * @param name The name of the entity that is ending.
    * @see #startEntity
    */
-  public void endEntity(String name) throws org.xml.sax.SAXException{}
+  public void endEntity(String name) throws test.org.xml.sax.SAXException{}
 
   /**
    * Receive notivication of a entityReference.
    *
    * @param name name of the entity reference
    */
-  public void entityReference(String name) throws org.xml.sax.SAXException
+  public void entityReference(String name) throws test.org.xml.sax.SAXException
   {
     append(m_doc.createEntityReference(name));
   }
@@ -553,7 +553,7 @@ public class DOMBuilder
    * @see #characters
    */
   public void ignorableWhitespace(char ch[], int start, int length)
-          throws org.xml.sax.SAXException
+          throws test.org.xml.sax.SAXException
   {
     if(isOutsideDocElem())
       return;  // avoid DOM006 Hierarchy request error
@@ -589,7 +589,7 @@ public class DOMBuilder
    *        none was supplied.
    */
   public void processingInstruction(String target, String data)
-          throws org.xml.sax.SAXException
+          throws test.org.xml.sax.SAXException
   {
     append(m_doc.createProcessingInstruction(target, data));
   }
@@ -605,7 +605,7 @@ public class DOMBuilder
    * @param start The starting position in the array.
    * @param length The number of characters to use from the array.
    */
-  public void comment(char ch[], int start, int length) throws org.xml.sax.SAXException
+  public void comment(char ch[], int start, int length) throws test.org.xml.sax.SAXException
   {
     append(m_doc.createComment(new String(ch, start, length)));
   }
@@ -618,7 +618,7 @@ public class DOMBuilder
    *
    * @see #endCDATA
    */
-  public void startCDATA() throws org.xml.sax.SAXException
+  public void startCDATA() throws test.org.xml.sax.SAXException
   {
     m_inCData = true;
     append(m_doc.createCDATASection(""));
@@ -629,7 +629,7 @@ public class DOMBuilder
    *
    * @see #startCDATA
    */
-  public void endCDATA() throws org.xml.sax.SAXException
+  public void endCDATA() throws test.org.xml.sax.SAXException
   {
     m_inCData = false;
   }
@@ -655,9 +655,9 @@ public class DOMBuilder
    * @param start The start position in the array.
    * @param length The number of characters to read from the array.
    * @see #ignorableWhitespace
-   * @see org.xml.sax.Locator
+   * @see test.org.xml.sax.Locator
    */
-  public void cdata(char ch[], int start, int length) throws org.xml.sax.SAXException
+  public void cdata(char ch[], int start, int length) throws test.org.xml.sax.SAXException
   {
     if(isOutsideDocElem()
        && com.sun.org.apache.xml.internal.utils.XMLCharacterRecognizer.isWhiteSpace(ch, start, length))
@@ -684,7 +684,7 @@ public class DOMBuilder
    * @see #startEntity
    */
   public void startDTD(String name, String publicId, String systemId)
-          throws org.xml.sax.SAXException
+          throws test.org.xml.sax.SAXException
   {
 
     // Do nothing for now.
@@ -695,7 +695,7 @@ public class DOMBuilder
    *
    * @see #startDTD
    */
-  public void endDTD() throws org.xml.sax.SAXException
+  public void endDTD() throws test.org.xml.sax.SAXException
   {
 
     // Do nothing for now.
@@ -730,7 +730,7 @@ public class DOMBuilder
    * @see #startElement
    */
   public void startPrefixMapping(String prefix, String uri)
-          throws org.xml.sax.SAXException
+          throws test.org.xml.sax.SAXException
   {
 
     /*
@@ -769,7 +769,7 @@ public class DOMBuilder
    * @see #startPrefixMapping
    * @see #endElement
    */
-  public void endPrefixMapping(String prefix) throws org.xml.sax.SAXException{}
+  public void endPrefixMapping(String prefix) throws test.org.xml.sax.SAXException{}
 
   /**
    * Receive notification of a skipped entity.
@@ -786,5 +786,5 @@ public class DOMBuilder
    * @param name The name of the skipped entity.  If it is a
    *        parameter entity, the name will begin with '%'.
    */
-  public void skippedEntity(String name) throws org.xml.sax.SAXException{}
+  public void skippedEntity(String name) throws test.org.xml.sax.SAXException{}
 }

@@ -46,8 +46,8 @@ import java.util.HashMap;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
-import org.xml.sax.Attributes;
-import org.xml.sax.helpers.AttributesImpl;
+import test.org.xml.sax.Attributes;
+import test.org.xml.sax.helpers.AttributesImpl;
 
 
 /**
@@ -55,7 +55,7 @@ import org.xml.sax.helpers.AttributesImpl;
  * @author Santiago Pericas-Geertsen
  * @author G. Todd Miller
  * @author Morten Jorensen
- * @author Erwin Bolwidt <ejb@klomp.org>
+ * @author Erwin Bolwidt <ejb@klomp.test.org>
  * @author John Howard <JohnH@schemasoft.com>
  */
 public abstract class SyntaxTreeNode implements Constants {
@@ -161,7 +161,7 @@ public abstract class SyntaxTreeNode implements Constants {
     /**
      * Set the attributes for this SyntaxTreeNode.
      * @param attributes Attributes for the element. Must be passed in as an
-     *                   implementation of org.xml.sax.Attributes.
+     *                   implementation of test.org.xml.sax.Attributes.
      */
     protected void setAttributes(AttributesImpl attributes) {
         _attributes = attributes;
@@ -673,7 +673,7 @@ public abstract class SyntaxTreeNode implements Constants {
         // function is not used.
         if (stylesheet.callsNodeset()
             && !DOM_CLASS.equals(DOM_IMPL_CLASS)) {
-            // new com.sun.org.apache.xalan.internal.xsltc.dom.DOMAdapter(DOMImpl,String[]);
+            // new com.sun.test.org.apache.xalan.internal.xsltc.dom.DOMAdapter(DOMImpl,String[]);
             index = cpg.addMethodref(DOM_ADAPTER_CLASS,
                                      "<init>",
                                      "("+DOM_INTF_SIG+

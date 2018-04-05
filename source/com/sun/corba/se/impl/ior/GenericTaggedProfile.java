@@ -25,7 +25,7 @@
 
 package com.sun.corba.se.impl.ior;
 
-import org.omg.CORBA_2_3.portable.InputStream ;
+import test.org.omg.CORBA_2_3.portable.InputStream ;
 
 import com.sun.corba.se.spi.ior.TaggedProfile ;
 import com.sun.corba.se.spi.ior.TaggedProfileTemplate ;
@@ -34,8 +34,6 @@ import com.sun.corba.se.spi.ior.ObjectKeyTemplate ;
 import com.sun.corba.se.spi.ior.ObjectKey ;
 
 import com.sun.corba.se.spi.orb.ORB ;
-
-import com.sun.corba.se.spi.ior.iiop.GIOPVersion ;
 
 import com.sun.corba.se.impl.encoding.EncapsOutputStream ;
 
@@ -93,12 +91,12 @@ public class GenericTaggedProfile extends GenericIdentifiable implements TaggedP
         return false ;
     }
 
-    public org.omg.IOP.TaggedProfile getIOPProfile()
+    public test.org.omg.IOP.TaggedProfile getIOPProfile()
     {
         EncapsOutputStream os =
             sun.corba.OutputStreamFactory.newEncapsOutputStream(orb);
         write( os ) ;
         InputStream is = (InputStream)(os.create_input_stream()) ;
-        return org.omg.IOP.TaggedProfileHelper.read( is ) ;
+        return test.org.omg.IOP.TaggedProfileHelper.read( is ) ;
     }
 }

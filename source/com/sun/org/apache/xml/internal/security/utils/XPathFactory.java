@@ -34,7 +34,7 @@ public abstract class XPathFactory {
     static {
         try {
             Class<?> funcTableClass =
-                ClassLoaderUtils.loadClass("com.sun.org.apache.xpath.internal.compiler.FunctionTable", XPathFactory.class);
+                ClassLoaderUtils.loadClass("com.sun.test.org.apache.xpath.internal.compiler.FunctionTable", XPathFactory.class);
             if (funcTableClass != null) {
                 xalanInstalled = true;
             }

@@ -38,17 +38,17 @@ import java.security.PrivilegedAction;
 import java.util.List ;
 import java.util.ArrayList ;
 
-import org.omg.CORBA.Principal ;
-import org.omg.CORBA.TypeCode ;
-import org.omg.CORBA.Any ;
-import org.omg.CORBA.CompletionStatus ;
-import org.omg.CORBA.TCKind ;
+import test.org.omg.CORBA.Principal ;
+import test.org.omg.CORBA.TypeCode ;
+import test.org.omg.CORBA.Any ;
+import test.org.omg.CORBA.CompletionStatus ;
+import test.org.omg.CORBA.TCKind ;
 
-import org.omg.CORBA.portable.Streamable;
-import org.omg.CORBA.portable.InputStream;
-import org.omg.CORBA.portable.OutputStream;
-import org.omg.CORBA.TypeCodePackage.BadKind;
-import org.omg.CORBA.TypeCodePackage.Bounds;
+import test.org.omg.CORBA.portable.Streamable;
+import test.org.omg.CORBA.portable.InputStream;
+import test.org.omg.CORBA.portable.OutputStream;
+import test.org.omg.CORBA.TypeCodePackage.BadKind;
+import test.org.omg.CORBA.TypeCodePackage.Bounds;
 
 import com.sun.corba.se.spi.orb.ORB;
 import com.sun.corba.se.spi.orb.ORBVersionFactory;
@@ -82,8 +82,8 @@ public class AnyImpl extends Any
             super((ORB)orb);
         }
 
-        public org.omg.CORBA.portable.InputStream create_input_stream() {
-            final org.omg.CORBA.portable.InputStream is = super
+        public test.org.omg.CORBA.portable.InputStream create_input_stream() {
+            final test.org.omg.CORBA.portable.InputStream is = super
                     .create_input_stream();
             AnyInputStream aIS = AccessController
                     .doPrivileged(new PrivilegedAction<AnyInputStream>() {
@@ -479,10 +479,10 @@ public class AnyImpl extends Any
                 // for faster comparison, just use Object.equals().
                 case TCKind._tk_value:
                 case TCKind._tk_value_box:
-                    org.omg.CORBA_2_3.portable.InputStream mine =
-                        (org.omg.CORBA_2_3.portable.InputStream)myStream;
-                    org.omg.CORBA_2_3.portable.InputStream other =
-                        (org.omg.CORBA_2_3.portable.InputStream)otherStream;
+                    test.org.omg.CORBA_2_3.portable.InputStream mine =
+                        (test.org.omg.CORBA_2_3.portable.InputStream)myStream;
+                    test.org.omg.CORBA_2_3.portable.InputStream other =
+                        (test.org.omg.CORBA_2_3.portable.InputStream)otherStream;
                     return mine.read_value().equals(other.read_value());
 
                 case TCKind._tk_alias:
@@ -510,7 +510,7 @@ public class AnyImpl extends Any
      *
      * @result          the OutputStream to marshal value of Any into
      */
-    public org.omg.CORBA.portable.OutputStream create_output_stream()
+    public test.org.omg.CORBA.portable.OutputStream create_output_stream()
     {
         //debug.log ("create_output_stream");
         final ORB finalorb = this.orb;
@@ -527,7 +527,7 @@ public class AnyImpl extends Any
      *
      * @result          the InputStream to marshal value of Any out of.
      */
-    public org.omg.CORBA.portable.InputStream create_input_stream()
+    public test.org.omg.CORBA.portable.InputStream create_input_stream()
     {
         //
         // We create a new InputStream so that multiple threads can call here
@@ -551,7 +551,7 @@ public class AnyImpl extends Any
     // If the InputStream is a CDRInputStream then we can copy the bytes
     // since it is in our format and does not have alignment issues.
     //
-    public void read_value(org.omg.CORBA.portable.InputStream in, TypeCode tc)
+    public void read_value(test.org.omg.CORBA.portable.InputStream in, TypeCode tc)
     {
         //debug.log ("read_value");
         //
@@ -578,9 +578,9 @@ public class AnyImpl extends Any
                 // could only have been created here
                 stream = (CDRInputStream)in;
             } else {
-                org.omg.CORBA_2_3.portable.OutputStream out =
-                    (org.omg.CORBA_2_3.portable.OutputStream)orb.create_output_stream();
-                typeCode.copy((org.omg.CORBA_2_3.portable.InputStream)in, out);
+                test.org.omg.CORBA_2_3.portable.OutputStream out =
+                    (test.org.omg.CORBA_2_3.portable.OutputStream)orb.create_output_stream();
+                typeCode.copy((test.org.omg.CORBA_2_3.portable.InputStream)in, out);
                 stream = (CDRInputStream)out.create_input_stream();
             }
         } else {
@@ -1032,7 +1032,7 @@ public class AnyImpl extends Any
     /**
      * See the description of the <a href="#anyOps">general Any operations.</a>
      */
-    public void insert_Object(org.omg.CORBA.Object o)
+    public void insert_Object(test.org.omg.CORBA.Object o)
     {
         //debug.log ("insert_Object");
         if ( o == null ) {
@@ -1055,11 +1055,11 @@ public class AnyImpl extends Any
      * A variant of the insertion operation that takes a typecode
      * argument as well.
      */
-    public void insert_Object(org.omg.CORBA.Object o, TypeCode tc)
+    public void insert_Object(test.org.omg.CORBA.Object o, TypeCode tc)
     {
         //debug.log ("insert_Object2");
         try {
-            if ( tc.id().equals("IDL:omg.org/CORBA/Object:1.0") || o._is_a(tc.id()) )
+            if ( tc.id().equals("IDL:omg.test.org/CORBA/Object:1.0") || o._is_a(tc.id()) )
                 {
                     typeCode = TypeCodeImpl.convertToNative(orb, tc);
                     object = o;
@@ -1076,17 +1076,17 @@ public class AnyImpl extends Any
     /**
      * See the description of the <a href="#anyOps">general Any operations.</a>
      */
-    public org.omg.CORBA.Object extract_Object()
+    public test.org.omg.CORBA.Object extract_Object()
     {
         //debug.log ("extract_Object");
         if (!isInitialized)
             throw wrapper.extractNotInitialized() ;
 
         // Check if the object contained here is of the type in typeCode
-        org.omg.CORBA.Object obj = null;
+        test.org.omg.CORBA.Object obj = null;
         try {
-            obj = (org.omg.CORBA.Object) object;
-            if (typeCode.id().equals("IDL:omg.org/CORBA/Object:1.0") || obj._is_a(typeCode.id())) {
+            obj = (test.org.omg.CORBA.Object) object;
+            if (typeCode.id().equals("IDL:omg.test.org/CORBA/Object:1.0") || obj._is_a(typeCode.id())) {
                 return obj;
             } else {
                 throw wrapper.extractObjectIncompatible() ;
@@ -1178,7 +1178,7 @@ public class AnyImpl extends Any
         isInitialized = true;
     }
 
-    public void insert_Value(Serializable v, org.omg.CORBA.TypeCode t)
+    public void insert_Value(Serializable v, test.org.omg.CORBA.TypeCode t)
     {
         //debug.log ("insert_Value2");
         object = v;
@@ -1193,7 +1193,7 @@ public class AnyImpl extends Any
         isInitialized = true;
     }
 
-    public void insert_fixed(java.math.BigDecimal value, org.omg.CORBA.TypeCode type)
+    public void insert_fixed(java.math.BigDecimal value, test.org.omg.CORBA.TypeCode type)
     {
         try {
             if (TypeCodeImpl.digits(value) > type.fixed_digits() ||
@@ -1201,7 +1201,7 @@ public class AnyImpl extends Any
             {
                 throw wrapper.fixedNotMatch() ;
             }
-        } catch (org.omg.CORBA.TypeCodePackage.BadKind bk) {
+        } catch (test.org.omg.CORBA.TypeCodePackage.BadKind bk) {
             // type isn't even of kind fixed
             throw wrapper.fixedBadTypecode( bk ) ;
         }

@@ -31,20 +31,20 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Stack;
 import java.util.Vector;
-import org.w3c.dom.NamedNodeMap;
-import org.w3c.dom.Node;
-import org.xml.sax.ContentHandler;
-import org.xml.sax.DTDHandler;
-import org.xml.sax.EntityResolver;
-import org.xml.sax.ErrorHandler;
-import org.xml.sax.InputSource;
-import org.xml.sax.Locator;
-import org.xml.sax.SAXException;
-import org.xml.sax.SAXNotRecognizedException;
-import org.xml.sax.SAXNotSupportedException;
-import org.xml.sax.XMLReader;
-import org.xml.sax.ext.LexicalHandler;
-import org.xml.sax.helpers.AttributesImpl;
+import test.org.w3c.dom.NamedNodeMap;
+import test.org.w3c.dom.Node;
+import test.org.xml.sax.ContentHandler;
+import test.org.xml.sax.DTDHandler;
+import test.org.xml.sax.EntityResolver;
+import test.org.xml.sax.ErrorHandler;
+import test.org.xml.sax.InputSource;
+import test.org.xml.sax.Locator;
+import test.org.xml.sax.SAXException;
+import test.org.xml.sax.SAXNotRecognizedException;
+import test.org.xml.sax.SAXNotSupportedException;
+import test.org.xml.sax.XMLReader;
+import test.org.xml.sax.ext.LexicalHandler;
+import test.org.xml.sax.helpers.AttributesImpl;
 
 /**
  * @author G. Todd Miller
@@ -154,7 +154,7 @@ public class DOM2SAX implements XMLReader, Locator {
     public void parse() throws IOException, SAXException {
         if (_dom != null) {
             boolean isIncomplete =
-                (_dom.getNodeType() != org.w3c.dom.Node.DOCUMENT_NODE);
+                (_dom.getNodeType() != test.org.w3c.dom.Node.DOCUMENT_NODE);
 
             if (isIncomplete) {
                 _sax.startDocument();

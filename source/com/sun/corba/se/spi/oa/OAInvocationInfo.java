@@ -26,13 +26,10 @@ package com.sun.corba.se.spi.oa;
 
 import javax.rmi.CORBA.Tie ;
 
-import org.omg.CORBA.portable.ServantObject;
+import test.org.omg.CORBA.portable.ServantObject;
 
-import org.omg.PortableServer.Servant;
+import test.org.omg.PortableServer.ServantLocatorPackage.CookieHolder;
 
-import org.omg.PortableServer.ServantLocatorPackage.CookieHolder;
-
-import com.sun.corba.se.spi.oa.ObjectAdapter ;
 import com.sun.corba.se.spi.copyobject.ObjectCopierFactory ;
 
 /** This class is a holder for the information required to implement POACurrent.

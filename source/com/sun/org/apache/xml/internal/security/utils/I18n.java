@@ -36,7 +36,7 @@ public class I18n {
     /** Field NOT_INITIALIZED_MSG */
     public static final String NOT_INITIALIZED_MSG =
         "You must initialize the xml-security library correctly before you use it. "
-        + "Call the static method \"com.sun.org.apache.xml.internal.security.Init.init();\" to do that "
+        + "Call the static method \"com.sun.test.org.apache.xml.internal.security.Init.init();\" to do that "
         + "before you use any functionality from that library.";
 
     /** Field resourceBundle */

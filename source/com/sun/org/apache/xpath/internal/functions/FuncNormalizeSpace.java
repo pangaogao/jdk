@@ -27,7 +27,7 @@ import com.sun.org.apache.xml.internal.utils.XMLString;
 import com.sun.org.apache.xpath.internal.XPathContext;
 import com.sun.org.apache.xpath.internal.objects.XObject;
 import com.sun.org.apache.xpath.internal.objects.XString;
-import org.xml.sax.ContentHandler;
+import test.org.xml.sax.ContentHandler;
 
 /**
  * Execute the normalize-space() function.
@@ -67,7 +67,7 @@ public class FuncNormalizeSpace extends FunctionDef1Arg
   public void executeCharsToContentHandler(XPathContext xctxt,
                                               ContentHandler handler)
     throws javax.xml.transform.TransformerException,
-           org.xml.sax.SAXException
+           test.org.xml.sax.SAXException
   {
     if(Arg0IsNodesetExpr())
     {

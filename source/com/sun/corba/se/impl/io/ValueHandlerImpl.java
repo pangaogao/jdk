@@ -39,9 +39,9 @@ import java.io.IOException;
 import com.sun.corba.se.impl.util.RepositoryId;
 import com.sun.corba.se.impl.util.Utility;
 
-import org.omg.CORBA.TCKind;
+import test.org.omg.CORBA.TCKind;
 
-import org.omg.CORBA.portable.IndirectionException;
+import test.org.omg.CORBA.portable.IndirectionException;
 import com.sun.org.omg.SendingContext.CodeBase;
 import com.sun.org.omg.SendingContext.CodeBaseHelper;
 
@@ -134,12 +134,12 @@ public final class ValueHandlerImpl implements javax.rmi.CORBA.ValueHandlerMulti
     }
 
     // See javax.rmi.CORBA.ValueHandlerMultiFormat
-    public void writeValue(org.omg.CORBA.portable.OutputStream out,
+    public void writeValue(test.org.omg.CORBA.portable.OutputStream out,
                            java.io.Serializable value,
                            byte streamFormatVersion) {
 
         if (streamFormatVersion == 2) {
-            if (!(out instanceof org.omg.CORBA.portable.ValueOutputStream)) {
+            if (!(out instanceof test.org.omg.CORBA.portable.ValueOutputStream)) {
                 throw omgWrapper.notAValueoutputstream() ;
             }
         } else if (streamFormatVersion != 1) {
@@ -171,17 +171,17 @@ public final class ValueHandlerImpl implements javax.rmi.CORBA.ValueHandlerMulti
      * @param out The stream to write the value to
      * @param value The value to be written to the stream
      **/
-    public void writeValue(org.omg.CORBA.portable.OutputStream _out,
+    public void writeValue(test.org.omg.CORBA.portable.OutputStream _out,
                            java.io.Serializable value) {
         writeValueWithVersion(_out, value, STREAM_FORMAT_VERSION_1);
     }
 
-    private void writeValueWithVersion(org.omg.CORBA.portable.OutputStream _out,
+    private void writeValueWithVersion(test.org.omg.CORBA.portable.OutputStream _out,
                                        java.io.Serializable value,
                                        byte streamFormatVersion) {
 
-        org.omg.CORBA_2_3.portable.OutputStream out =
-            (org.omg.CORBA_2_3.portable.OutputStream) _out;
+        test.org.omg.CORBA_2_3.portable.OutputStream out =
+            (test.org.omg.CORBA_2_3.portable.OutputStream) _out;
 
         if (!useHashtables) {
             if (outputStreamBridge == null) {
@@ -224,7 +224,7 @@ public final class ValueHandlerImpl implements javax.rmi.CORBA.ValueHandlerMulti
     }
 
     private void writeValueInternal(IIOPOutputStream bridge,
-                                    org.omg.CORBA_2_3.portable.OutputStream out,
+                                    test.org.omg.CORBA_2_3.portable.OutputStream out,
                                     java.io.Serializable value,
                                     byte streamFormatVersion)
     {
@@ -242,18 +242,18 @@ public final class ValueHandlerImpl implements javax.rmi.CORBA.ValueHandlerMulti
      * @param clazz The type of the value to be read in
      * @param sender The sending context runtime
      **/
-    public java.io.Serializable readValue(org.omg.CORBA.portable.InputStream _in,
+    public java.io.Serializable readValue(test.org.omg.CORBA.portable.InputStream _in,
                                           int offset,
                                           java.lang.Class clazz,
                                           String repositoryID,
-                                          org.omg.SendingContext.RunTime _sender)
+                                          test.org.omg.SendingContext.RunTime _sender)
     {
         // Must use narrow rather than a direct cast to a com.sun
         // class.  Fix for bug 4379539.
         CodeBase sender = CodeBaseHelper.narrow(_sender);
 
-        org.omg.CORBA_2_3.portable.InputStream in =
-            (org.omg.CORBA_2_3.portable.InputStream) _in;
+        test.org.omg.CORBA_2_3.portable.InputStream in =
+            (test.org.omg.CORBA_2_3.portable.InputStream) _in;
 
         if (!useHashtables) {
             if (inputStreamBridge == null) {
@@ -317,7 +317,7 @@ public final class ValueHandlerImpl implements javax.rmi.CORBA.ValueHandlerMulti
     }
 
     private java.io.Serializable readValueInternal(IIOPInputStream bridge,
-                                                  org.omg.CORBA_2_3.portable.InputStream in,
+                                                  test.org.omg.CORBA_2_3.portable.InputStream in,
                                                   int offset,
                                                   java.lang.Class clazz,
                                                   String repositoryID,
@@ -371,7 +371,7 @@ public final class ValueHandlerImpl implements javax.rmi.CORBA.ValueHandlerMulti
      * do the same on the first GIOP request.
      * @return the SendingContext.CodeBase of this ValueHandler.
      **/
-    public org.omg.SendingContext.RunTime getRunTimeCodeBase() {
+    public test.org.omg.SendingContext.RunTime getRunTimeCodeBase() {
         if (codeBase != null)
             return codeBase;
         else {
@@ -466,7 +466,7 @@ public final class ValueHandlerImpl implements javax.rmi.CORBA.ValueHandlerMulti
         return ObjectStreamClass.lookup(value.getClass()).writeReplace(value);
     }
 
-    private void writeCharArray(org.omg.CORBA_2_3.portable.OutputStream out,
+    private void writeCharArray(test.org.omg.CORBA_2_3.portable.OutputStream out,
                                 char[] array,
                                 int offset,
                                 int length)
@@ -474,7 +474,7 @@ public final class ValueHandlerImpl implements javax.rmi.CORBA.ValueHandlerMulti
         out.write_wchar_array(array, offset, length);
     }
 
-    private void write_Array(org.omg.CORBA_2_3.portable.OutputStream out, java.io.Serializable obj, Class type) {
+    private void write_Array(test.org.omg.CORBA_2_3.portable.OutputStream out, java.io.Serializable obj, Class type) {
 
         int i, length;
 
@@ -543,7 +543,7 @@ public final class ValueHandlerImpl implements javax.rmi.CORBA.ValueHandlerMulti
                 if (java.rmi.Remote.class.isAssignableFrom(type)) {
                     // RMI Object reference...
                     callType = kRemoteType;
-                } else if (org.omg.CORBA.Object.class.isAssignableFrom(type)){
+                } else if (test.org.omg.CORBA.Object.class.isAssignableFrom(type)){
                     // IDL Object reference...
                     callType = kRemoteType;
                 } else if (RepositoryId.isAbstractBase(type)) {
@@ -579,16 +579,16 @@ public final class ValueHandlerImpl implements javax.rmi.CORBA.ValueHandlerMulti
         }
     }
 
-    private void readCharArray(org.omg.CORBA_2_3.portable.InputStream in,
-                                 char[] array,
-                                 int offset,
-                                 int length)
+    private void readCharArray(test.org.omg.CORBA_2_3.portable.InputStream in,
+                               char[] array,
+                               int offset,
+                               int length)
     {
         in.read_wchar_array(array, offset, length);
     }
 
     private java.lang.Object read_Array(IIOPInputStream bridge,
-                                        org.omg.CORBA_2_3.portable.InputStream in,
+                                        test.org.omg.CORBA_2_3.portable.InputStream in,
                                         Class sequence,
                                         com.sun.org.omg.SendingContext.CodeBase sender,
                                         int offset)
@@ -706,7 +706,7 @@ public final class ValueHandlerImpl implements javax.rmi.CORBA.ValueHandlerMulti
                         // for better performance, load the stub class once
                         // instead of for each element of the array
                         loadStubClass = true;
-                    } else if (org.omg.CORBA.Object.class.isAssignableFrom(componentType)){
+                    } else if (test.org.omg.CORBA.Object.class.isAssignableFrom(componentType)){
                         // IDL Object reference...
                         callType = kRemoteType;
                         loadStubClass = true;

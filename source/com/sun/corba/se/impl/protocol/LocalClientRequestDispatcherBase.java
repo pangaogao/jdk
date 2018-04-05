@@ -25,7 +25,7 @@
 
 package com.sun.corba.se.impl.protocol;
 
-import org.omg.CORBA.portable.ServantObject;
+import test.org.omg.CORBA.portable.ServantObject;
 
 import com.sun.corba.se.spi.protocol.LocalClientRequestDispatcher;
 import com.sun.corba.se.spi.protocol.RequestDispatcherRegistry;
@@ -80,7 +80,7 @@ public abstract class LocalClientRequestDispatcherBase implements LocalClientReq
         return objectId ;
     }
 
-    public boolean is_local(org.omg.CORBA.Object self)
+    public boolean is_local(test.org.omg.CORBA.Object self)
     {
         return false;
     }
@@ -100,7 +100,7 @@ public abstract class LocalClientRequestDispatcherBase implements LocalClientReq
     *       servant_postinvoke is called
     *
     */
-    public boolean useLocalInvocation( org.omg.CORBA.Object self )
+    public boolean useLocalInvocation( test.org.omg.CORBA.Object self )
     {
         if (isNextCallValid.get() == Boolean.TRUE)
             return servantIsLocal ;

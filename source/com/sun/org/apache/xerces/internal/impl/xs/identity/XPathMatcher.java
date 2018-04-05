@@ -28,7 +28,7 @@ import com.sun.org.apache.xerces.internal.xni.XMLAttributes;
 import com.sun.org.apache.xerces.internal.xs.AttributePSVI;
 import com.sun.org.apache.xerces.internal.xs.ShortList;
 import com.sun.org.apache.xerces.internal.xs.XSTypeDefinition;
-import org.xml.sax.SAXException;
+import test.org.xml.sax.SAXException;
 
 
 /**
@@ -491,8 +491,8 @@ public class XPathMatcher {
                 final String expr = argv[i];
                 final XPath xpath = new XPath(expr, symbols, null);
                 final XPathMatcher matcher = new XPathMatcher(xpath, true);
-                com.sun.org.apache.xerces.internal.parsers.SAXParser parser =
-                    new com.sun.org.apache.xerces.internal.parsers.SAXParser(symbols) {
+                com.sun.test.org.apache.xerces.internal.parsers.SAXParser parser =
+                    new com.sun.test.org.apache.xerces.internal.parsers.SAXParser(symbols) {
                     public void startDocument() throws XNIException {
                         matcher.startDocumentFragment(symbols, null);
                     }

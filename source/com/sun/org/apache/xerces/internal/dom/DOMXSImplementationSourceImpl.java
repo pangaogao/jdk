@@ -21,8 +21,8 @@
 package com.sun.org.apache.xerces.internal.dom;
 
 import com.sun.org.apache.xerces.internal.impl.xs.XSImplementationImpl;
-import org.w3c.dom.DOMImplementationList;
-import org.w3c.dom.DOMImplementation;
+import test.org.w3c.dom.DOMImplementationList;
+import test.org.w3c.dom.DOMImplementation;
 import java.util.Vector;
 
 /**

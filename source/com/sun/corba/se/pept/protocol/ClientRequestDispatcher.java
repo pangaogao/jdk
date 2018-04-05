@@ -73,19 +73,19 @@ public interface ClientRequestDispatcher
      * if the message is synchronous.
      *
      * @throws
-     * {@link org.omg.CORBA.portable.ApplicationException ApplicationException}
+     * {@link test.org.omg.CORBA.portable.ApplicationException ApplicationException}
      * if the remote side raises an exception declared in the remote interface.
      *
      * @throws
-     * {@link org.omg.CORBA.portable.RemarshalException RemarshalException}
+     * {@link test.org.omg.CORBA.portable.RemarshalException RemarshalException}
      * if the PEPt runtime would like the presentation block to start over.
      */
     public InputObject marshalingComplete(java.lang.Object self,
                                           OutputObject outputObject)
     // REVISIT EXCEPTIONS
         throws
-            org.omg.CORBA.portable.ApplicationException,
-            org.omg.CORBA.portable.RemarshalException;
+            test.org.omg.CORBA.portable.ApplicationException,
+            test.org.omg.CORBA.portable.RemarshalException;
 
     /**
      * After the presentation block completes a request it signals

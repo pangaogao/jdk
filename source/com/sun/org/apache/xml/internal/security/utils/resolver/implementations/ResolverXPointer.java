@@ -27,9 +27,9 @@ import com.sun.org.apache.xml.internal.security.utils.XMLUtils;
 import com.sun.org.apache.xml.internal.security.utils.resolver.ResourceResolverContext;
 import com.sun.org.apache.xml.internal.security.utils.resolver.ResourceResolverException;
 import com.sun.org.apache.xml.internal.security.utils.resolver.ResourceResolverSpi;
-import org.w3c.dom.Document;
-import org.w3c.dom.Element;
-import org.w3c.dom.Node;
+import test.org.w3c.dom.Document;
+import test.org.w3c.dom.Element;
+import test.org.w3c.dom.Node;
 
 /**
  * Handles barename XPointer Reference URIs.
@@ -48,7 +48,7 @@ import org.w3c.dom.Node;
  */
 public class ResolverXPointer extends ResourceResolverSpi {
 
-    /** {@link org.apache.commons.logging} logging facility */
+    /** {@link test.org.apache.commons.logging} logging facility */
     private static java.util.logging.Logger log =
         java.util.logging.Logger.getLogger(ResolverXPointer.class.getName());
 

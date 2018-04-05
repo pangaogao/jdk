@@ -31,22 +31,19 @@
 
 package com.sun.corba.se.impl.ior;
 
-import java.io.ObjectInputStream ;
 import java.io.ObjectOutputStream ;
 import java.io.IOException ;
-import java.io.StringWriter ;
 
-import org.omg.CORBA.ORB ;
+import test.org.omg.CORBA.ORB ;
 
-import org.omg.CORBA.portable.Delegate ;
-import org.omg.CORBA.portable.InputStream ;
-import org.omg.CORBA.portable.OutputStream ;
+import test.org.omg.CORBA.portable.Delegate ;
+import test.org.omg.CORBA.portable.InputStream ;
+import test.org.omg.CORBA.portable.OutputStream ;
 
 // Be very careful: com.sun.corba imports must not depend on
 // PEORB internal classes in ways that prevent portability to
 // other vendor's ORBs.
 import com.sun.corba.se.spi.presentation.rmi.StubAdapter ;
-import com.sun.corba.se.impl.orbutil.HexOutputStream ;
 
 /**
  * This class implements a very simply IOR representation
@@ -79,7 +76,7 @@ public class StubIORImpl
         return new String( typeData ) ;
     }
 
-    public StubIORImpl( org.omg.CORBA.Object obj )
+    public StubIORImpl( test.org.omg.CORBA.Object obj )
     {
         // write the IOR to an OutputStream and get an InputStream
         OutputStream ostr = StubAdapter.getORB( obj ).create_output_stream();
@@ -102,7 +99,7 @@ public class StubIORImpl
 
     public Delegate getDelegate( ORB orb )
     {
-        // write the IOR components to an org.omg.CORBA.portable.OutputStream
+        // write the IOR components to an test.org.omg.CORBA.portable.OutputStream
         OutputStream ostr = orb.create_output_stream();
         ostr.write_long(typeData.length);
         ostr.write_octet_array(typeData, 0, typeData.length);
@@ -116,7 +113,7 @@ public class StubIORImpl
         InputStream istr = ostr.create_input_stream() ;
 
         // read the IOR back from the stream
-        org.omg.CORBA.Object obj = (org.omg.CORBA.Object)istr.read_Object();
+        test.org.omg.CORBA.Object obj = (test.org.omg.CORBA.Object)istr.read_Object();
         return StubAdapter.getDelegate( obj ) ;
     }
 

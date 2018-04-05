@@ -25,19 +25,16 @@
 
 package com.sun.corba.se.impl.dynamicany;
 
-import org.omg.CORBA.Any;
-import org.omg.CORBA.TypeCode;
-import org.omg.CORBA.TypeCodePackage.BadKind;
-import org.omg.CORBA.TCKind;
+import test.org.omg.CORBA.Any;
+import test.org.omg.CORBA.TypeCode;
+import test.org.omg.CORBA.TypeCodePackage.BadKind;
+import test.org.omg.CORBA.TCKind;
 
-import org.omg.DynamicAny.*;
-import org.omg.DynamicAny.DynAnyPackage.TypeMismatch;
-import org.omg.DynamicAny.DynAnyPackage.InvalidValue;
-import org.omg.DynamicAny.DynAnyFactoryPackage.InconsistentTypeCode;
+import test.org.omg.DynamicAny.DynAnyPackage.TypeMismatch;
+import test.org.omg.DynamicAny.DynAnyPackage.InvalidValue;
+import test.org.omg.DynamicAny.DynAnyFactoryPackage.InconsistentTypeCode;
 
 import com.sun.corba.se.spi.orb.ORB ;
-import com.sun.corba.se.spi.logging.CORBALogDomains ;
-import com.sun.corba.se.impl.logging.ORBUtilSystemException ;
 
 public class DynAnyBasicImpl extends DynAnyImpl
 {
@@ -65,8 +62,8 @@ public class DynAnyBasicImpl extends DynAnyImpl
     // DynAny interface methods
     //
 
-    public void assign (org.omg.DynamicAny.DynAny dyn_any)
-        throws org.omg.DynamicAny.DynAnyPackage.TypeMismatch
+    public void assign (test.org.omg.DynamicAny.DynAny dyn_any)
+        throws test.org.omg.DynamicAny.DynAnyPackage.TypeMismatch
     {
         if (status == STATUS_DESTROYED) {
             throw wrapper.dynAnyDestroyed() ;
@@ -75,9 +72,9 @@ public class DynAnyBasicImpl extends DynAnyImpl
         index = NO_INDEX;
     }
 
-    public void from_any (org.omg.CORBA.Any value)
-        throws org.omg.DynamicAny.DynAnyPackage.TypeMismatch,
-               org.omg.DynamicAny.DynAnyPackage.InvalidValue
+    public void from_any (test.org.omg.CORBA.Any value)
+        throws test.org.omg.DynamicAny.DynAnyPackage.TypeMismatch,
+               test.org.omg.DynamicAny.DynAnyPackage.InvalidValue
     {
         if (status == STATUS_DESTROYED) {
             throw wrapper.dynAnyDestroyed() ;
@@ -87,14 +84,14 @@ public class DynAnyBasicImpl extends DynAnyImpl
     }
 
     // Spec: Returns a copy of the internal Any
-    public org.omg.CORBA.Any to_any() {
+    public test.org.omg.CORBA.Any to_any() {
         if (status == STATUS_DESTROYED) {
             throw wrapper.dynAnyDestroyed() ;
         }
         return DynAnyUtil.copy(any, orb);
     }
 
-    public boolean equal (org.omg.DynamicAny.DynAny dyn_any) {
+    public boolean equal (test.org.omg.DynamicAny.DynAny dyn_any) {
         if (status == STATUS_DESTROYED) {
             throw wrapper.dynAnyDestroyed() ;
         }
@@ -119,7 +116,7 @@ public class DynAnyBasicImpl extends DynAnyImpl
         }
     }
 
-    public org.omg.DynamicAny.DynAny copy() {
+    public test.org.omg.DynamicAny.DynAny copy() {
         if (status == STATUS_DESTROYED) {
             throw wrapper.dynAnyDestroyed() ;
         }
@@ -131,8 +128,8 @@ public class DynAnyBasicImpl extends DynAnyImpl
         }
     }
 
-    public org.omg.DynamicAny.DynAny current_component()
-        throws org.omg.DynamicAny.DynAnyPackage.TypeMismatch
+    public test.org.omg.DynamicAny.DynAny current_component()
+        throws test.org.omg.DynamicAny.DynAnyPackage.TypeMismatch
     {
         return null;
     }
@@ -153,8 +150,8 @@ public class DynAnyBasicImpl extends DynAnyImpl
     }
 
     public void insert_boolean(boolean value)
-        throws org.omg.DynamicAny.DynAnyPackage.TypeMismatch,
-               org.omg.DynamicAny.DynAnyPackage.InvalidValue
+        throws test.org.omg.DynamicAny.DynAnyPackage.TypeMismatch,
+               test.org.omg.DynamicAny.DynAnyPackage.InvalidValue
     {
         if (status == STATUS_DESTROYED) {
             throw wrapper.dynAnyDestroyed() ;
@@ -165,8 +162,8 @@ public class DynAnyBasicImpl extends DynAnyImpl
     }
 
     public void insert_octet(byte value)
-        throws org.omg.DynamicAny.DynAnyPackage.TypeMismatch,
-               org.omg.DynamicAny.DynAnyPackage.InvalidValue
+        throws test.org.omg.DynamicAny.DynAnyPackage.TypeMismatch,
+               test.org.omg.DynamicAny.DynAnyPackage.InvalidValue
     {
         if (status == STATUS_DESTROYED) {
             throw wrapper.dynAnyDestroyed() ;
@@ -177,8 +174,8 @@ public class DynAnyBasicImpl extends DynAnyImpl
     }
 
     public void insert_char(char value)
-        throws org.omg.DynamicAny.DynAnyPackage.TypeMismatch,
-               org.omg.DynamicAny.DynAnyPackage.InvalidValue
+        throws test.org.omg.DynamicAny.DynAnyPackage.TypeMismatch,
+               test.org.omg.DynamicAny.DynAnyPackage.InvalidValue
     {
         if (status == STATUS_DESTROYED) {
             throw wrapper.dynAnyDestroyed() ;
@@ -189,8 +186,8 @@ public class DynAnyBasicImpl extends DynAnyImpl
     }
 
     public void insert_short(short value)
-        throws org.omg.DynamicAny.DynAnyPackage.TypeMismatch,
-               org.omg.DynamicAny.DynAnyPackage.InvalidValue
+        throws test.org.omg.DynamicAny.DynAnyPackage.TypeMismatch,
+               test.org.omg.DynamicAny.DynAnyPackage.InvalidValue
     {
         if (status == STATUS_DESTROYED) {
             throw wrapper.dynAnyDestroyed() ;
@@ -201,8 +198,8 @@ public class DynAnyBasicImpl extends DynAnyImpl
     }
 
     public void insert_ushort(short value)
-        throws org.omg.DynamicAny.DynAnyPackage.TypeMismatch,
-               org.omg.DynamicAny.DynAnyPackage.InvalidValue
+        throws test.org.omg.DynamicAny.DynAnyPackage.TypeMismatch,
+               test.org.omg.DynamicAny.DynAnyPackage.InvalidValue
     {
         if (status == STATUS_DESTROYED) {
             throw wrapper.dynAnyDestroyed() ;
@@ -213,8 +210,8 @@ public class DynAnyBasicImpl extends DynAnyImpl
     }
 
     public void insert_long(int value)
-        throws org.omg.DynamicAny.DynAnyPackage.TypeMismatch,
-               org.omg.DynamicAny.DynAnyPackage.InvalidValue
+        throws test.org.omg.DynamicAny.DynAnyPackage.TypeMismatch,
+               test.org.omg.DynamicAny.DynAnyPackage.InvalidValue
     {
         if (status == STATUS_DESTROYED) {
             throw wrapper.dynAnyDestroyed() ;
@@ -225,8 +222,8 @@ public class DynAnyBasicImpl extends DynAnyImpl
     }
 
     public void insert_ulong(int value)
-        throws org.omg.DynamicAny.DynAnyPackage.TypeMismatch,
-               org.omg.DynamicAny.DynAnyPackage.InvalidValue
+        throws test.org.omg.DynamicAny.DynAnyPackage.TypeMismatch,
+               test.org.omg.DynamicAny.DynAnyPackage.InvalidValue
     {
         if (status == STATUS_DESTROYED) {
             throw wrapper.dynAnyDestroyed() ;
@@ -237,8 +234,8 @@ public class DynAnyBasicImpl extends DynAnyImpl
     }
 
     public void insert_float(float value)
-        throws org.omg.DynamicAny.DynAnyPackage.TypeMismatch,
-               org.omg.DynamicAny.DynAnyPackage.InvalidValue
+        throws test.org.omg.DynamicAny.DynAnyPackage.TypeMismatch,
+               test.org.omg.DynamicAny.DynAnyPackage.InvalidValue
     {
         if (status == STATUS_DESTROYED) {
             throw wrapper.dynAnyDestroyed() ;
@@ -249,8 +246,8 @@ public class DynAnyBasicImpl extends DynAnyImpl
     }
 
     public void insert_double(double value)
-        throws org.omg.DynamicAny.DynAnyPackage.TypeMismatch,
-               org.omg.DynamicAny.DynAnyPackage.InvalidValue
+        throws test.org.omg.DynamicAny.DynAnyPackage.TypeMismatch,
+               test.org.omg.DynamicAny.DynAnyPackage.InvalidValue
     {
         if (status == STATUS_DESTROYED) {
             throw wrapper.dynAnyDestroyed() ;
@@ -261,8 +258,8 @@ public class DynAnyBasicImpl extends DynAnyImpl
     }
 
     public void insert_string(String value)
-        throws org.omg.DynamicAny.DynAnyPackage.TypeMismatch,
-               org.omg.DynamicAny.DynAnyPackage.InvalidValue
+        throws test.org.omg.DynamicAny.DynAnyPackage.TypeMismatch,
+               test.org.omg.DynamicAny.DynAnyPackage.InvalidValue
     {
         if (status == STATUS_DESTROYED) {
             throw wrapper.dynAnyDestroyed() ;
@@ -280,9 +277,9 @@ public class DynAnyBasicImpl extends DynAnyImpl
         any.insert_string(value);
     }
 
-    public void insert_reference(org.omg.CORBA.Object value)
-        throws org.omg.DynamicAny.DynAnyPackage.TypeMismatch,
-               org.omg.DynamicAny.DynAnyPackage.InvalidValue
+    public void insert_reference(test.org.omg.CORBA.Object value)
+        throws test.org.omg.DynamicAny.DynAnyPackage.TypeMismatch,
+               test.org.omg.DynamicAny.DynAnyPackage.InvalidValue
     {
         if (status == STATUS_DESTROYED) {
             throw wrapper.dynAnyDestroyed() ;
@@ -292,9 +289,9 @@ public class DynAnyBasicImpl extends DynAnyImpl
         any.insert_Object(value);
     }
 
-    public void insert_typecode(org.omg.CORBA.TypeCode value)
-        throws org.omg.DynamicAny.DynAnyPackage.TypeMismatch,
-               org.omg.DynamicAny.DynAnyPackage.InvalidValue
+    public void insert_typecode(test.org.omg.CORBA.TypeCode value)
+        throws test.org.omg.DynamicAny.DynAnyPackage.TypeMismatch,
+               test.org.omg.DynamicAny.DynAnyPackage.InvalidValue
     {
         if (status == STATUS_DESTROYED) {
             throw wrapper.dynAnyDestroyed() ;
@@ -305,8 +302,8 @@ public class DynAnyBasicImpl extends DynAnyImpl
     }
 
     public void insert_longlong(long value)
-        throws org.omg.DynamicAny.DynAnyPackage.TypeMismatch,
-               org.omg.DynamicAny.DynAnyPackage.InvalidValue
+        throws test.org.omg.DynamicAny.DynAnyPackage.TypeMismatch,
+               test.org.omg.DynamicAny.DynAnyPackage.InvalidValue
     {
         if (status == STATUS_DESTROYED) {
             throw wrapper.dynAnyDestroyed() ;
@@ -317,8 +314,8 @@ public class DynAnyBasicImpl extends DynAnyImpl
     }
 
     public void insert_ulonglong(long value)
-        throws org.omg.DynamicAny.DynAnyPackage.TypeMismatch,
-               org.omg.DynamicAny.DynAnyPackage.InvalidValue
+        throws test.org.omg.DynamicAny.DynAnyPackage.TypeMismatch,
+               test.org.omg.DynamicAny.DynAnyPackage.InvalidValue
     {
         if (status == STATUS_DESTROYED) {
             throw wrapper.dynAnyDestroyed() ;
@@ -329,8 +326,8 @@ public class DynAnyBasicImpl extends DynAnyImpl
     }
 
     public void insert_wchar(char value)
-        throws org.omg.DynamicAny.DynAnyPackage.TypeMismatch,
-               org.omg.DynamicAny.DynAnyPackage.InvalidValue
+        throws test.org.omg.DynamicAny.DynAnyPackage.TypeMismatch,
+               test.org.omg.DynamicAny.DynAnyPackage.InvalidValue
     {
         if (status == STATUS_DESTROYED) {
             throw wrapper.dynAnyDestroyed() ;
@@ -341,8 +338,8 @@ public class DynAnyBasicImpl extends DynAnyImpl
     }
 
     public void insert_wstring(String value)
-        throws org.omg.DynamicAny.DynAnyPackage.TypeMismatch,
-               org.omg.DynamicAny.DynAnyPackage.InvalidValue
+        throws test.org.omg.DynamicAny.DynAnyPackage.TypeMismatch,
+               test.org.omg.DynamicAny.DynAnyPackage.InvalidValue
     {
         if (status == STATUS_DESTROYED) {
             throw wrapper.dynAnyDestroyed() ;
@@ -360,9 +357,9 @@ public class DynAnyBasicImpl extends DynAnyImpl
         any.insert_wstring(value);
     }
 
-    public void insert_any(org.omg.CORBA.Any value)
-        throws org.omg.DynamicAny.DynAnyPackage.TypeMismatch,
-               org.omg.DynamicAny.DynAnyPackage.InvalidValue
+    public void insert_any(test.org.omg.CORBA.Any value)
+        throws test.org.omg.DynamicAny.DynAnyPackage.TypeMismatch,
+               test.org.omg.DynamicAny.DynAnyPackage.InvalidValue
     {
         if (status == STATUS_DESTROYED) {
             throw wrapper.dynAnyDestroyed() ;
@@ -372,9 +369,9 @@ public class DynAnyBasicImpl extends DynAnyImpl
         any.insert_any(value);
     }
 
-    public void insert_dyn_any (org.omg.DynamicAny.DynAny value)
-        throws org.omg.DynamicAny.DynAnyPackage.TypeMismatch,
-               org.omg.DynamicAny.DynAnyPackage.InvalidValue
+    public void insert_dyn_any (test.org.omg.DynamicAny.DynAny value)
+        throws test.org.omg.DynamicAny.DynAnyPackage.TypeMismatch,
+               test.org.omg.DynamicAny.DynAnyPackage.InvalidValue
     {
         if (status == STATUS_DESTROYED) {
             throw wrapper.dynAnyDestroyed() ;
@@ -386,8 +383,8 @@ public class DynAnyBasicImpl extends DynAnyImpl
     }
 
     public void insert_val(java.io.Serializable value)
-        throws org.omg.DynamicAny.DynAnyPackage.TypeMismatch,
-               org.omg.DynamicAny.DynAnyPackage.InvalidValue
+        throws test.org.omg.DynamicAny.DynAnyPackage.TypeMismatch,
+               test.org.omg.DynamicAny.DynAnyPackage.InvalidValue
     {
         if (status == STATUS_DESTROYED) {
             throw wrapper.dynAnyDestroyed() ;
@@ -399,8 +396,8 @@ public class DynAnyBasicImpl extends DynAnyImpl
     }
 
     public java.io.Serializable get_val()
-        throws org.omg.DynamicAny.DynAnyPackage.TypeMismatch,
-               org.omg.DynamicAny.DynAnyPackage.InvalidValue
+        throws test.org.omg.DynamicAny.DynAnyPackage.TypeMismatch,
+               test.org.omg.DynamicAny.DynAnyPackage.InvalidValue
     {
         if (status == STATUS_DESTROYED) {
             throw wrapper.dynAnyDestroyed() ;
@@ -412,8 +409,8 @@ public class DynAnyBasicImpl extends DynAnyImpl
     }
 
     public boolean get_boolean()
-        throws org.omg.DynamicAny.DynAnyPackage.TypeMismatch,
-               org.omg.DynamicAny.DynAnyPackage.InvalidValue
+        throws test.org.omg.DynamicAny.DynAnyPackage.TypeMismatch,
+               test.org.omg.DynamicAny.DynAnyPackage.InvalidValue
     {
         if (status == STATUS_DESTROYED) {
             throw wrapper.dynAnyDestroyed() ;
@@ -424,8 +421,8 @@ public class DynAnyBasicImpl extends DynAnyImpl
     }
 
     public byte get_octet()
-        throws org.omg.DynamicAny.DynAnyPackage.TypeMismatch,
-               org.omg.DynamicAny.DynAnyPackage.InvalidValue
+        throws test.org.omg.DynamicAny.DynAnyPackage.TypeMismatch,
+               test.org.omg.DynamicAny.DynAnyPackage.InvalidValue
     {
         if (status == STATUS_DESTROYED) {
             throw wrapper.dynAnyDestroyed() ;
@@ -436,8 +433,8 @@ public class DynAnyBasicImpl extends DynAnyImpl
     }
 
     public char get_char()
-        throws org.omg.DynamicAny.DynAnyPackage.TypeMismatch,
-               org.omg.DynamicAny.DynAnyPackage.InvalidValue
+        throws test.org.omg.DynamicAny.DynAnyPackage.TypeMismatch,
+               test.org.omg.DynamicAny.DynAnyPackage.InvalidValue
     {
         if (status == STATUS_DESTROYED) {
             throw wrapper.dynAnyDestroyed() ;
@@ -448,8 +445,8 @@ public class DynAnyBasicImpl extends DynAnyImpl
     }
 
     public short get_short()
-        throws org.omg.DynamicAny.DynAnyPackage.TypeMismatch,
-               org.omg.DynamicAny.DynAnyPackage.InvalidValue
+        throws test.org.omg.DynamicAny.DynAnyPackage.TypeMismatch,
+               test.org.omg.DynamicAny.DynAnyPackage.InvalidValue
     {
         if (status == STATUS_DESTROYED) {
             throw wrapper.dynAnyDestroyed() ;
@@ -460,8 +457,8 @@ public class DynAnyBasicImpl extends DynAnyImpl
     }
 
     public short get_ushort()
-        throws org.omg.DynamicAny.DynAnyPackage.TypeMismatch,
-               org.omg.DynamicAny.DynAnyPackage.InvalidValue
+        throws test.org.omg.DynamicAny.DynAnyPackage.TypeMismatch,
+               test.org.omg.DynamicAny.DynAnyPackage.InvalidValue
     {
         if (status == STATUS_DESTROYED) {
             throw wrapper.dynAnyDestroyed() ;
@@ -472,8 +469,8 @@ public class DynAnyBasicImpl extends DynAnyImpl
     }
 
     public int get_long()
-        throws org.omg.DynamicAny.DynAnyPackage.TypeMismatch,
-               org.omg.DynamicAny.DynAnyPackage.InvalidValue
+        throws test.org.omg.DynamicAny.DynAnyPackage.TypeMismatch,
+               test.org.omg.DynamicAny.DynAnyPackage.InvalidValue
     {
         if (status == STATUS_DESTROYED) {
             throw wrapper.dynAnyDestroyed() ;
@@ -484,8 +481,8 @@ public class DynAnyBasicImpl extends DynAnyImpl
     }
 
     public int get_ulong()
-        throws org.omg.DynamicAny.DynAnyPackage.TypeMismatch,
-               org.omg.DynamicAny.DynAnyPackage.InvalidValue
+        throws test.org.omg.DynamicAny.DynAnyPackage.TypeMismatch,
+               test.org.omg.DynamicAny.DynAnyPackage.InvalidValue
     {
         if (status == STATUS_DESTROYED) {
             throw wrapper.dynAnyDestroyed() ;
@@ -496,8 +493,8 @@ public class DynAnyBasicImpl extends DynAnyImpl
     }
 
     public float get_float()
-        throws org.omg.DynamicAny.DynAnyPackage.TypeMismatch,
-               org.omg.DynamicAny.DynAnyPackage.InvalidValue
+        throws test.org.omg.DynamicAny.DynAnyPackage.TypeMismatch,
+               test.org.omg.DynamicAny.DynAnyPackage.InvalidValue
     {
         if (status == STATUS_DESTROYED) {
             throw wrapper.dynAnyDestroyed() ;
@@ -508,8 +505,8 @@ public class DynAnyBasicImpl extends DynAnyImpl
     }
 
     public double get_double()
-        throws org.omg.DynamicAny.DynAnyPackage.TypeMismatch,
-               org.omg.DynamicAny.DynAnyPackage.InvalidValue
+        throws test.org.omg.DynamicAny.DynAnyPackage.TypeMismatch,
+               test.org.omg.DynamicAny.DynAnyPackage.InvalidValue
     {
         if (status == STATUS_DESTROYED) {
             throw wrapper.dynAnyDestroyed() ;
@@ -520,8 +517,8 @@ public class DynAnyBasicImpl extends DynAnyImpl
     }
 
     public String get_string()
-        throws org.omg.DynamicAny.DynAnyPackage.TypeMismatch,
-               org.omg.DynamicAny.DynAnyPackage.InvalidValue
+        throws test.org.omg.DynamicAny.DynAnyPackage.TypeMismatch,
+               test.org.omg.DynamicAny.DynAnyPackage.InvalidValue
     {
         if (status == STATUS_DESTROYED) {
             throw wrapper.dynAnyDestroyed() ;
@@ -531,9 +528,9 @@ public class DynAnyBasicImpl extends DynAnyImpl
         return any.extract_string();
     }
 
-    public org.omg.CORBA.Object get_reference()
-        throws org.omg.DynamicAny.DynAnyPackage.TypeMismatch,
-               org.omg.DynamicAny.DynAnyPackage.InvalidValue
+    public test.org.omg.CORBA.Object get_reference()
+        throws test.org.omg.DynamicAny.DynAnyPackage.TypeMismatch,
+               test.org.omg.DynamicAny.DynAnyPackage.InvalidValue
     {
         if (status == STATUS_DESTROYED) {
             throw wrapper.dynAnyDestroyed() ;
@@ -543,9 +540,9 @@ public class DynAnyBasicImpl extends DynAnyImpl
         return any.extract_Object();
     }
 
-    public org.omg.CORBA.TypeCode get_typecode()
-        throws org.omg.DynamicAny.DynAnyPackage.TypeMismatch,
-               org.omg.DynamicAny.DynAnyPackage.InvalidValue
+    public test.org.omg.CORBA.TypeCode get_typecode()
+        throws test.org.omg.DynamicAny.DynAnyPackage.TypeMismatch,
+               test.org.omg.DynamicAny.DynAnyPackage.InvalidValue
     {
         if (status == STATUS_DESTROYED) {
             throw wrapper.dynAnyDestroyed() ;
@@ -556,8 +553,8 @@ public class DynAnyBasicImpl extends DynAnyImpl
     }
 
     public long get_longlong()
-        throws org.omg.DynamicAny.DynAnyPackage.TypeMismatch,
-               org.omg.DynamicAny.DynAnyPackage.InvalidValue
+        throws test.org.omg.DynamicAny.DynAnyPackage.TypeMismatch,
+               test.org.omg.DynamicAny.DynAnyPackage.InvalidValue
     {
         if (status == STATUS_DESTROYED) {
             throw wrapper.dynAnyDestroyed() ;
@@ -568,8 +565,8 @@ public class DynAnyBasicImpl extends DynAnyImpl
     }
 
     public long get_ulonglong()
-        throws org.omg.DynamicAny.DynAnyPackage.TypeMismatch,
-               org.omg.DynamicAny.DynAnyPackage.InvalidValue
+        throws test.org.omg.DynamicAny.DynAnyPackage.TypeMismatch,
+               test.org.omg.DynamicAny.DynAnyPackage.InvalidValue
     {
         if (status == STATUS_DESTROYED) {
             throw wrapper.dynAnyDestroyed() ;
@@ -580,8 +577,8 @@ public class DynAnyBasicImpl extends DynAnyImpl
     }
 
     public char get_wchar()
-        throws org.omg.DynamicAny.DynAnyPackage.TypeMismatch,
-               org.omg.DynamicAny.DynAnyPackage.InvalidValue
+        throws test.org.omg.DynamicAny.DynAnyPackage.TypeMismatch,
+               test.org.omg.DynamicAny.DynAnyPackage.InvalidValue
     {
         if (status == STATUS_DESTROYED) {
             throw wrapper.dynAnyDestroyed() ;
@@ -592,8 +589,8 @@ public class DynAnyBasicImpl extends DynAnyImpl
     }
 
     public String get_wstring()
-        throws org.omg.DynamicAny.DynAnyPackage.TypeMismatch,
-               org.omg.DynamicAny.DynAnyPackage.InvalidValue
+        throws test.org.omg.DynamicAny.DynAnyPackage.TypeMismatch,
+               test.org.omg.DynamicAny.DynAnyPackage.InvalidValue
     {
         if (status == STATUS_DESTROYED) {
             throw wrapper.dynAnyDestroyed() ;
@@ -603,9 +600,9 @@ public class DynAnyBasicImpl extends DynAnyImpl
         return any.extract_wstring();
     }
 
-    public org.omg.CORBA.Any get_any()
-        throws org.omg.DynamicAny.DynAnyPackage.TypeMismatch,
-               org.omg.DynamicAny.DynAnyPackage.InvalidValue
+    public test.org.omg.CORBA.Any get_any()
+        throws test.org.omg.DynamicAny.DynAnyPackage.TypeMismatch,
+               test.org.omg.DynamicAny.DynAnyPackage.InvalidValue
     {
         if (status == STATUS_DESTROYED) {
             throw wrapper.dynAnyDestroyed() ;
@@ -615,9 +612,9 @@ public class DynAnyBasicImpl extends DynAnyImpl
         return any.extract_any();
     }
 
-    public org.omg.DynamicAny.DynAny get_dyn_any()
-        throws org.omg.DynamicAny.DynAnyPackage.TypeMismatch,
-               org.omg.DynamicAny.DynAnyPackage.InvalidValue
+    public test.org.omg.DynamicAny.DynAny get_dyn_any()
+        throws test.org.omg.DynamicAny.DynAnyPackage.TypeMismatch,
+               test.org.omg.DynamicAny.DynAnyPackage.InvalidValue
     {
         if (status == STATUS_DESTROYED) {
             throw wrapper.dynAnyDestroyed() ;

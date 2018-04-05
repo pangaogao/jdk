@@ -22,14 +22,14 @@
  */
 package com.sun.org.apache.xml.internal.serializer;
 
-import org.xml.sax.SAXException;
+import test.org.xml.sax.SAXException;
 
 /**
  * This interface has extensions to the standard SAX LexicalHandler interface.
  * This interface is intended to be used by a serializer.
  * @xsl.usage internal
  */
-abstract interface ExtendedLexicalHandler extends org.xml.sax.ext.LexicalHandler
+abstract interface ExtendedLexicalHandler extends test.org.xml.sax.ext.LexicalHandler
 {
     /**
      * This method is used to notify of a comment

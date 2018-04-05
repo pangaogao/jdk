@@ -37,11 +37,7 @@ import java.rmi.MarshalException;
 
 import java.rmi.server.RMIClassLoader;
 
-import java.util.Hashtable;
 import java.util.Enumeration;
-import java.util.Properties;
-import java.util.Map;
-import java.util.WeakHashMap;
 
 import java.io.Serializable;
 import java.io.NotSerializableException;
@@ -54,39 +50,37 @@ import javax.rmi.CORBA.Tie;
 import java.security.AccessController;
 import java.security.PrivilegedAction;
 
-import java.rmi.MarshalException;
 import java.rmi.NoSuchObjectException;
 import java.rmi.AccessException;
 import java.rmi.Remote;
 import java.rmi.ServerError;
 import java.rmi.ServerException;
-import java.rmi.ServerRuntimeException;
 
 import javax.transaction.TransactionRequiredException;
 import javax.transaction.TransactionRolledbackException;
 import javax.transaction.InvalidTransactionException;
 
-import org.omg.CORBA.SystemException;
-import org.omg.CORBA.Any;
-import org.omg.CORBA.TypeCode;
-import org.omg.CORBA.COMM_FAILURE;
-import org.omg.CORBA.BAD_PARAM;
-import org.omg.CORBA.INV_OBJREF;
-import org.omg.CORBA.NO_PERMISSION;
-import org.omg.CORBA.MARSHAL;
-import org.omg.CORBA.OBJECT_NOT_EXIST;
-import org.omg.CORBA.TRANSACTION_REQUIRED;
-import org.omg.CORBA.TRANSACTION_ROLLEDBACK;
-import org.omg.CORBA.INVALID_TRANSACTION;
-import org.omg.CORBA.BAD_OPERATION;
-import org.omg.CORBA.ACTIVITY_REQUIRED;
-import org.omg.CORBA.ACTIVITY_COMPLETED;
-import org.omg.CORBA.INVALID_ACTIVITY;
-import org.omg.CORBA.CompletionStatus;
-import org.omg.CORBA.TCKind;
-import org.omg.CORBA.portable.UnknownException;
-import org.omg.CORBA.portable.InputStream;
-import org.omg.CORBA.portable.OutputStream;
+import test.org.omg.CORBA.SystemException;
+import test.org.omg.CORBA.Any;
+import test.org.omg.CORBA.TypeCode;
+import test.org.omg.CORBA.COMM_FAILURE;
+import test.org.omg.CORBA.BAD_PARAM;
+import test.org.omg.CORBA.INV_OBJREF;
+import test.org.omg.CORBA.NO_PERMISSION;
+import test.org.omg.CORBA.MARSHAL;
+import test.org.omg.CORBA.OBJECT_NOT_EXIST;
+import test.org.omg.CORBA.TRANSACTION_REQUIRED;
+import test.org.omg.CORBA.TRANSACTION_ROLLEDBACK;
+import test.org.omg.CORBA.INVALID_TRANSACTION;
+import test.org.omg.CORBA.BAD_OPERATION;
+import test.org.omg.CORBA.ACTIVITY_REQUIRED;
+import test.org.omg.CORBA.ACTIVITY_COMPLETED;
+import test.org.omg.CORBA.INVALID_ACTIVITY;
+import test.org.omg.CORBA.CompletionStatus;
+import test.org.omg.CORBA.TCKind;
+import test.org.omg.CORBA.portable.UnknownException;
+import test.org.omg.CORBA.portable.InputStream;
+import test.org.omg.CORBA.portable.OutputStream;
 
 // This class must be able to function with non-Sun ORBs.
 // This means that any of the following com.sun.corba classes
@@ -100,7 +94,6 @@ import com.sun.corba.se.spi.transport.CorbaContactInfoList ;
 import com.sun.corba.se.spi.protocol.LocalClientRequestDispatcher ;
 import com.sun.corba.se.spi.copyobject.ReflectiveCopyException ;
 import com.sun.corba.se.spi.copyobject.CopierManager ;
-import com.sun.corba.se.spi.copyobject.ObjectCopierFactory ;
 import com.sun.corba.se.spi.copyobject.ObjectCopier ;
 import com.sun.corba.se.impl.io.ValueHandlerImpl;
 import com.sun.corba.se.impl.orbutil.ORBConstants;
@@ -152,7 +145,7 @@ public class Util implements javax.rmi.CORBA.UtilDelegate
 
     // Used by TOAFactory.shutdown to unexport all targets for this
     // particular ORB.  This happens during ORB shutdown.
-    public void unregisterTargetsForORB(org.omg.CORBA.ORB orb)
+    public void unregisterTargetsForORB(test.org.omg.CORBA.ORB orb)
     {
         for (Enumeration e = exportedServants.keys(); e.hasMoreElements(); )
         {
@@ -317,10 +310,10 @@ public class Util implements javax.rmi.CORBA.UtilDelegate
      * @param out the stream in which to write the any.
      * @param obj the object to write as an any.
      */
-    public void writeAny( org.omg.CORBA.portable.OutputStream out,
+    public void writeAny( test.org.omg.CORBA.portable.OutputStream out,
                          java.lang.Object obj)
     {
-        org.omg.CORBA.ORB orb = out.orb();
+        test.org.omg.CORBA.ORB orb = out.orb();
 
         // Create Any
         Any any = orb.create_any();
@@ -328,8 +321,8 @@ public class Util implements javax.rmi.CORBA.UtilDelegate
         // Make sure we have a connected object...
         java.lang.Object newObj = Utility.autoConnect(obj,orb,false);
 
-        if (newObj instanceof org.omg.CORBA.Object) {
-            any.insert_Object((org.omg.CORBA.Object)newObj);
+        if (newObj instanceof test.org.omg.CORBA.Object) {
+            any.insert_Object((test.org.omg.CORBA.Object)newObj);
         } else {
             if (newObj == null) {
                 // Handle the null case, including backwards
@@ -371,8 +364,8 @@ public class Util implements javax.rmi.CORBA.UtilDelegate
      * This does not handle null objs.
      */
     private TypeCode createTypeCode(Serializable obj,
-                                    org.omg.CORBA.Any any,
-                                    org.omg.CORBA.ORB orb) {
+                                    test.org.omg.CORBA.Any any,
+                                    test.org.omg.CORBA.ORB orb) {
 
         if (any instanceof com.sun.corba.se.impl.corba.AnyImpl &&
             orb instanceof ORB) {
@@ -395,7 +388,7 @@ public class Util implements javax.rmi.CORBA.UtilDelegate
      *
      * This method will not return null.
      */
-    private TypeCode createTypeCodeForNull(org.omg.CORBA.ORB orb)
+    private TypeCode createTypeCodeForNull(test.org.omg.CORBA.ORB orb)
     {
         if (orb instanceof ORB) {
 
@@ -416,7 +409,7 @@ public class Util implements javax.rmi.CORBA.UtilDelegate
         // Use tk_abstract_interface as detailed in the resolution
 
         // REVISIT: Define this in IDL and get the ID in generated code
-        String abstractBaseID = "IDL:omg.org/CORBA/AbstractBase:1.0";
+        String abstractBaseID = "IDL:omg.test.org/CORBA/AbstractBase:1.0";
 
         return orb.create_abstract_interface_tc(abstractBaseID, "");
     }
@@ -438,9 +431,9 @@ public class Util implements javax.rmi.CORBA.UtilDelegate
     /**
      * Writes a java.lang.Object as a CORBA Object. If <code>obj</code> is
      * an exported RMI-IIOP server object, the tie is found
-     * and wired to <code>obj</code>, then written to <code>out.write_Object(org.omg.CORBA.Object)</code>.
+     * and wired to <code>obj</code>, then written to <code>out.write_Object(test.org.omg.CORBA.Object)</code>.
      * If <code>obj</code> is a CORBA Object, it is written to
-     * <code>out.write_Object(org.omg.CORBA.Object)</code>.
+     * <code>out.write_Object(test.org.omg.CORBA.Object)</code>.
      * @param out the stream in which to write the object.
      * @param obj the object to write.
      */
@@ -450,7 +443,7 @@ public class Util implements javax.rmi.CORBA.UtilDelegate
         // write it out...
 
         Object newObj = Utility.autoConnect(obj,out.orb(),false);
-        out.write_Object((org.omg.CORBA.Object)newObj);
+        out.write_Object((test.org.omg.CORBA.Object)newObj);
     }
 
     /**
@@ -468,7 +461,7 @@ public class Util implements javax.rmi.CORBA.UtilDelegate
         // write it out...
 
         Object newObj = Utility.autoConnect(obj,out.orb(),false);
-        ((org.omg.CORBA_2_3.portable.OutputStream)out).write_abstract_interface(newObj);
+        ((test.org.omg.CORBA_2_3.portable.OutputStream)out).write_abstract_interface(newObj);
     }
 
     /**
@@ -519,7 +512,7 @@ public class Util implements javax.rmi.CORBA.UtilDelegate
                     cleanUpTie(cachedTie);
                 } catch (BAD_OPERATION e) {
                     // ignore
-                } catch (org.omg.CORBA.OBJ_ADAPTER e) {
+                } catch (test.org.omg.CORBA.OBJ_ADAPTER e) {
                     // This can happen when the target was never associated with a POA.
                     // We can safely ignore this case.
                 }
@@ -627,7 +620,7 @@ public class Util implements javax.rmi.CORBA.UtilDelegate
         boolean result = false ;
 
         try {
-            org.omg.CORBA.portable.Delegate delegate = stub._get_delegate() ;
+            test.org.omg.CORBA.portable.Delegate delegate = stub._get_delegate() ;
             if (delegate instanceof CorbaClientDelegate) {
                 // For the Sun ORB
                 CorbaClientDelegate cdel = (CorbaClientDelegate)delegate ;
@@ -684,7 +677,7 @@ public class Util implements javax.rmi.CORBA.UtilDelegate
      * @return the copied or connected objects.
      * @exception RemoteException if any object could not be copied or connected.
      */
-    public Object[] copyObjects (Object[] obj, org.omg.CORBA.ORB orb)
+    public Object[] copyObjects (Object[] obj, test.org.omg.CORBA.ORB orb)
         throws RemoteException
     {
         if (obj == null)
@@ -714,7 +707,7 @@ public class Util implements javax.rmi.CORBA.UtilDelegate
      * @return the copy or connected object.
      * @exception RemoteException if the object could not be copied or connected.
      */
-    public Object copyObject (Object obj, org.omg.CORBA.ORB orb)
+    public Object copyObject (Object obj, test.org.omg.CORBA.ORB orb)
         throws RemoteException
     {
         if (orb instanceof ORB) {
@@ -740,11 +733,11 @@ public class Util implements javax.rmi.CORBA.UtilDelegate
                 throw rexc ;
             }
         } else {
-            org.omg.CORBA_2_3.portable.OutputStream out =
-                (org.omg.CORBA_2_3.portable.OutputStream)orb.create_output_stream();
+            test.org.omg.CORBA_2_3.portable.OutputStream out =
+                (test.org.omg.CORBA_2_3.portable.OutputStream)orb.create_output_stream();
             out.write_value((Serializable)obj);
-            org.omg.CORBA_2_3.portable.InputStream in =
-                (org.omg.CORBA_2_3.portable.InputStream)out.create_input_stream();
+            test.org.omg.CORBA_2_3.portable.InputStream in =
+                (test.org.omg.CORBA_2_3.portable.InputStream)out.create_input_stream();
             return in.read_value();
         }
     }

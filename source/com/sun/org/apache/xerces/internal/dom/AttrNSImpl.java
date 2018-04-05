@@ -22,8 +22,7 @@ package com.sun.org.apache.xerces.internal.dom;
 
 import com.sun.org.apache.xerces.internal.impl.dv.xs.XSSimpleTypeDecl;
 import com.sun.org.apache.xerces.internal.xni.NamespaceContext;
-import com.sun.org.apache.xerces.internal.xs.XSSimpleTypeDefinition;
-import org.w3c.dom.DOMException;
+import test.org.w3c.dom.DOMException;
 
 /**
  * AttrNSImpl inherits from AttrImpl and adds namespace support.
@@ -49,8 +48,8 @@ public class AttrNSImpl
     /** Serialization version. */
     static final long serialVersionUID = -781906615369795414L;
 
-    static final String xmlnsURI = "http://www.w3.org/2000/xmlns/";
-    static final String xmlURI = "http://www.w3.org/XML/1998/namespace";
+    static final String xmlnsURI = "http://www.w3.test.org/2000/xmlns/";
+    static final String xmlURI = "http://www.w3.test.org/XML/1998/namespace";
 
     //
     // Data
@@ -297,7 +296,7 @@ public class AttrNSImpl
 
 
     /**
-     * @see org.w3c.dom.TypeInfo#getTypeName()
+     * @see test.org.w3c.dom.TypeInfo#getTypeName()
      */
     public String getTypeName() {
         if (type !=null){
@@ -337,7 +336,7 @@ public class AttrNSImpl
     }
 
     /**
-     * @see org.w3c.dom.TypeInfo#getTypeNamespace()
+     * @see test.org.w3c.dom.TypeInfo#getTypeNamespace()
      */
     public String getTypeNamespace() {
         if (type !=null) {

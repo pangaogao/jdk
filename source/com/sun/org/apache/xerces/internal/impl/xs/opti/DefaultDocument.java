@@ -20,22 +20,22 @@
 
 package com.sun.org.apache.xerces.internal.impl.xs.opti;
 
-import org.w3c.dom.DOMConfiguration;
-import org.w3c.dom.Attr;
-import org.w3c.dom.Node;
-import org.w3c.dom.Text;
-import org.w3c.dom.Element;
-import org.w3c.dom.Comment;
-import org.w3c.dom.Document;
-import org.w3c.dom.NodeList;
-import org.w3c.dom.DocumentType;
-import org.w3c.dom.CDATASection;
-import org.w3c.dom.EntityReference;
-import org.w3c.dom.DocumentFragment;
-import org.w3c.dom.DOMImplementation;
-import org.w3c.dom.ProcessingInstruction;
+import test.org.w3c.dom.DOMConfiguration;
+import test.org.w3c.dom.Attr;
+import test.org.w3c.dom.Node;
+import test.org.w3c.dom.Text;
+import test.org.w3c.dom.Element;
+import test.org.w3c.dom.Comment;
+import test.org.w3c.dom.Document;
+import test.org.w3c.dom.NodeList;
+import test.org.w3c.dom.DocumentType;
+import test.org.w3c.dom.CDATASection;
+import test.org.w3c.dom.EntityReference;
+import test.org.w3c.dom.DocumentFragment;
+import test.org.w3c.dom.DOMImplementation;
+import test.org.w3c.dom.ProcessingInstruction;
 
-import org.w3c.dom.DOMException;
+import test.org.w3c.dom.DOMException;
 
 
 /**
@@ -54,7 +54,7 @@ public class DefaultDocument extends NodeImpl
     }
 
     //
-    // org.w3c.dom.Document methods
+    // test.org.w3c.dom.Document methods
     //
 
     public DocumentType getDoctype() {

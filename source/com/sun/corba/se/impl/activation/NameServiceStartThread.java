@@ -28,7 +28,7 @@ package com.sun.corba.se.impl.activation;
 
 import java.io.File;
 
-import org.omg.CosNaming.NamingContext;
+import test.org.omg.CosNaming.NamingContext;
 import com.sun.corba.se.spi.orb.ORB;
 import com.sun.corba.se.impl.naming.pcosnaming.NameService;
 import com.sun.corba.se.impl.orbutil.ORBConstants;

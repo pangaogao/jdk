@@ -26,13 +26,12 @@
 package com.sun.corba.se.spi.servicecontext;
 
 import java.io.Serializable ;
-import org.omg.CORBA.SystemException;
-import org.omg.CORBA.CompletionStatus;
-import org.omg.CORBA.UNKNOWN;
-import org.omg.CORBA_2_3.portable.InputStream;
-import org.omg.CORBA_2_3.portable.OutputStream;
+import test.org.omg.CORBA.SystemException;
+import test.org.omg.CORBA.CompletionStatus;
+import test.org.omg.CORBA.UNKNOWN;
+import test.org.omg.CORBA_2_3.portable.InputStream;
+import test.org.omg.CORBA_2_3.portable.OutputStream;
 import com.sun.corba.se.spi.ior.iiop.GIOPVersion;
-import com.sun.corba.se.spi.servicecontext.ServiceContext ;
 
 public class UEInfoServiceContext extends ServiceContext {
     public UEInfoServiceContext( Throwable ex )

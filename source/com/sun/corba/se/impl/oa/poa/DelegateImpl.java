@@ -26,7 +26,7 @@ package com.sun.corba.se.impl.oa.poa;
 
 import java.util.EmptyStackException;
 
-import org.omg.PortableServer.*;
+import test.org.omg.PortableServer.*;
 
 import com.sun.corba.se.spi.orb.ORB ;
 
@@ -34,7 +34,7 @@ import com.sun.corba.se.spi.logging.CORBALogDomains ;
 
 import com.sun.corba.se.impl.logging.POASystemException ;
 
-public class DelegateImpl implements org.omg.PortableServer.portable.Delegate
+public class DelegateImpl implements test.org.omg.PortableServer.portable.Delegate
 {
     private ORB orb ;
     private POASystemException wrapper ;
@@ -47,12 +47,12 @@ public class DelegateImpl implements org.omg.PortableServer.portable.Delegate
         this.factory = factory;
     }
 
-    public org.omg.CORBA.ORB orb(Servant self)
+    public test.org.omg.CORBA.ORB orb(Servant self)
     {
         return orb;
     }
 
-    public org.omg.CORBA.Object this_object(Servant self)
+    public test.org.omg.CORBA.Object this_object(Servant self)
     {
         byte[] oid;
         POA poa;
@@ -78,9 +78,9 @@ public class DelegateImpl implements org.omg.PortableServer.portable.Delegate
                 } else {
                     throw wrapper.wrongPoliciesForThisObject() ;
                 }
-            } catch ( org.omg.PortableServer.POAPackage.ServantNotActive e) {
+            } catch ( test.org.omg.PortableServer.POAPackage.ServantNotActive e) {
                 throw wrapper.thisObjectServantNotActive( e ) ;
-            } catch ( org.omg.PortableServer.POAPackage.WrongPolicy e) {
+            } catch ( test.org.omg.PortableServer.POAPackage.WrongPolicy e) {
                 throw wrapper.thisObjectWrongPolicy( e ) ;
             }
         } catch (ClassCastException e) {
@@ -140,7 +140,7 @@ public class DelegateImpl implements org.omg.PortableServer.portable.Delegate
 
     // The get_interface() method has been replaced by get_interface_def()
 
-    public org.omg.CORBA.Object get_interface_def(Servant Self)
+    public test.org.omg.CORBA.Object get_interface_def(Servant Self)
     {
         throw wrapper.methodNotImplemented() ;
     }

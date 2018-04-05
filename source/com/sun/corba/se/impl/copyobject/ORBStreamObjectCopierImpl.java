@@ -25,16 +25,12 @@
 
 package com.sun.corba.se.impl.copyobject ;
 
-import java.util.logging.Level;
-import java.util.logging.Logger;
-
 import java.io.Serializable;
 import java.rmi.Remote;
-import java.rmi.MarshalException;
 
-import org.omg.CORBA_2_3.portable.InputStream;
-import org.omg.CORBA_2_3.portable.OutputStream;
-import org.omg.CORBA.ORB ;
+import test.org.omg.CORBA_2_3.portable.InputStream;
+import test.org.omg.CORBA_2_3.portable.OutputStream;
+import test.org.omg.CORBA.ORB ;
 
 import com.sun.corba.se.spi.copyobject.ObjectCopier ;
 import com.sun.corba.se.impl.util.Utility;

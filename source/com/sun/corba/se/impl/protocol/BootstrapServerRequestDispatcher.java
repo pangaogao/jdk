@@ -27,7 +27,7 @@ package com.sun.corba.se.impl.protocol ;
 
 import java.util.Iterator ;
 
-import org.omg.CORBA.SystemException ;
+import test.org.omg.CORBA.SystemException ;
 
 import com.sun.corba.se.pept.protocol.MessageMediator;
 
@@ -95,7 +95,7 @@ public class BootstrapServerRequestDispatcher
                 String serviceKey = is.read_string();
 
                 // Look it up
-                org.omg.CORBA.Object serviceObject =
+                test.org.omg.CORBA.Object serviceObject =
                     orb.getLocalResolver().resolve( serviceKey ) ;
 
                 // Write reply value
@@ -112,7 +112,7 @@ public class BootstrapServerRequestDispatcher
                 throw wrapper.illegalBootstrapOperation( method ) ;
             }
 
-        } catch (org.omg.CORBA.SystemException ex) {
+        } catch (test.org.omg.CORBA.SystemException ex) {
             // Marshal the exception thrown
             response = request.getProtocolHandler().createSystemExceptionResponse(
                 request, ex, null);

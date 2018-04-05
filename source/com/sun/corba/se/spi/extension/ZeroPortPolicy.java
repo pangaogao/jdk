@@ -25,8 +25,8 @@
 
 package com.sun.corba.se.spi.extension ;
 
-import org.omg.CORBA.Policy ;
-import org.omg.CORBA.LocalObject ;
+import test.org.omg.CORBA.Policy ;
+import test.org.omg.CORBA.LocalObject ;
 import com.sun.corba.se.impl.orbutil.ORBConstants ;
 
 /** Policy used to implement zero IIOP port policy in the POA.
@@ -62,7 +62,7 @@ public class ZeroPortPolicy extends LocalObject implements Policy
         return ORBConstants.ZERO_PORT_POLICY ;
     }
 
-    public org.omg.CORBA.Policy copy ()
+    public test.org.omg.CORBA.Policy copy ()
     {
         return this ;
     }

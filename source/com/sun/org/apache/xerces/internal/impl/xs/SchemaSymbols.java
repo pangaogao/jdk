@@ -38,14 +38,14 @@ public final class SchemaSymbols {
     // symbol table that comes with the parser
 
     // xsi attributes: in validator
-    public static final String URI_XSI                        = "http://www.w3.org/2001/XMLSchema-instance".intern();
+    public static final String URI_XSI                        = "http://www.w3.test.org/2001/XMLSchema-instance".intern();
     public static final String XSI_SCHEMALOCATION            = "schemaLocation".intern();
     public static final String XSI_NONAMESPACESCHEMALOCATION = "noNamespaceSchemaLocation".intern();
     public static final String XSI_TYPE                       = "type".intern();
     public static final String XSI_NIL                        = "nil".intern();
 
     // schema namespace
-    public static final String URI_SCHEMAFORSCHEMA            = "http://www.w3.org/2001/XMLSchema".intern();
+    public static final String URI_SCHEMAFORSCHEMA            = "http://www.w3.test.org/2001/XMLSchema".intern();
 
     // all possible schema element names
     public static final String ELT_ALL                  = "all".intern();

@@ -40,9 +40,9 @@ public class XResourceBundle extends ListResourceBundle {
      * Error resource constants
      */
     public static final String ERROR_RESOURCES =
-            "com.sun.org.apache.xalan.internal.res.XSLTErrorResources", XSLT_RESOURCE =
-            "com.sun.org.apache.xml.internal.utils.res.XResourceBundle", LANG_BUNDLE_NAME =
-            "com.sun.org.apache.xml.internal.utils.res.XResources", MULT_ORDER =
+            "com.sun.test.org.apache.xalan.internal.res.XSLTErrorResources", XSLT_RESOURCE =
+            "com.sun.test.org.apache.xml.internal.utils.res.XResourceBundle", LANG_BUNDLE_NAME =
+            "com.sun.test.org.apache.xml.internal.utils.res.XResources", MULT_ORDER =
             "multiplierOrder", MULT_PRECEDES = "precedes", MULT_FOLLOWS =
             "follows", LANG_ORIENTATION = "orientation", LANG_RIGHTTOLEFT =
             "rightToLeft", LANG_LEFTTORIGHT = "leftToRight", LANG_NUMBERING =

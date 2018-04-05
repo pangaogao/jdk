@@ -8,22 +8,22 @@ package com.sun.corba.se.spi.activation;
 * Wednesday, March 15, 2017 1:33:56 AM PDT
 */
 
-public class _LocatorStub extends org.omg.CORBA.portable.ObjectImpl implements com.sun.corba.se.spi.activation.Locator
+public class _LocatorStub extends test.org.omg.CORBA.portable.ObjectImpl implements com.sun.corba.se.spi.activation.Locator
 {
 
 
   // Starts the server if it is not already running.
   public com.sun.corba.se.spi.activation.LocatorPackage.ServerLocation locateServer (int serverId, String endPoint) throws com.sun.corba.se.spi.activation.NoSuchEndPoint, com.sun.corba.se.spi.activation.ServerNotRegistered, com.sun.corba.se.spi.activation.ServerHeldDown
   {
-            org.omg.CORBA.portable.InputStream $in = null;
+            test.org.omg.CORBA.portable.InputStream $in = null;
             try {
-                org.omg.CORBA.portable.OutputStream $out = _request ("locateServer", true);
+                test.org.omg.CORBA.portable.OutputStream $out = _request ("locateServer", true);
                 com.sun.corba.se.spi.activation.ServerIdHelper.write ($out, serverId);
                 $out.write_string (endPoint);
                 $in = _invoke ($out);
                 com.sun.corba.se.spi.activation.LocatorPackage.ServerLocation $result = com.sun.corba.se.spi.activation.LocatorPackage.ServerLocationHelper.read ($in);
                 return $result;
-            } catch (org.omg.CORBA.portable.ApplicationException $ex) {
+            } catch (test.org.omg.CORBA.portable.ApplicationException $ex) {
                 $in = $ex.getInputStream ();
                 String _id = $ex.getId ();
                 if (_id.equals ("IDL:activation/NoSuchEndPoint:1.0"))
@@ -33,8 +33,8 @@ public class _LocatorStub extends org.omg.CORBA.portable.ObjectImpl implements c
                 else if (_id.equals ("IDL:activation/ServerHeldDown:1.0"))
                     throw com.sun.corba.se.spi.activation.ServerHeldDownHelper.read ($in);
                 else
-                    throw new org.omg.CORBA.MARSHAL (_id);
-            } catch (org.omg.CORBA.portable.RemarshalException $rm) {
+                    throw new test.org.omg.CORBA.MARSHAL (_id);
+            } catch (test.org.omg.CORBA.portable.RemarshalException $rm) {
                 return locateServer (serverId, endPoint        );
             } finally {
                 _releaseReply ($in);
@@ -45,15 +45,15 @@ public class _LocatorStub extends org.omg.CORBA.portable.ObjectImpl implements c
   // Starts the server if it is not already running.
   public com.sun.corba.se.spi.activation.LocatorPackage.ServerLocationPerORB locateServerForORB (int serverId, String orbId) throws com.sun.corba.se.spi.activation.InvalidORBid, com.sun.corba.se.spi.activation.ServerNotRegistered, com.sun.corba.se.spi.activation.ServerHeldDown
   {
-            org.omg.CORBA.portable.InputStream $in = null;
+            test.org.omg.CORBA.portable.InputStream $in = null;
             try {
-                org.omg.CORBA.portable.OutputStream $out = _request ("locateServerForORB", true);
+                test.org.omg.CORBA.portable.OutputStream $out = _request ("locateServerForORB", true);
                 com.sun.corba.se.spi.activation.ServerIdHelper.write ($out, serverId);
                 com.sun.corba.se.spi.activation.ORBidHelper.write ($out, orbId);
                 $in = _invoke ($out);
                 com.sun.corba.se.spi.activation.LocatorPackage.ServerLocationPerORB $result = com.sun.corba.se.spi.activation.LocatorPackage.ServerLocationPerORBHelper.read ($in);
                 return $result;
-            } catch (org.omg.CORBA.portable.ApplicationException $ex) {
+            } catch (test.org.omg.CORBA.portable.ApplicationException $ex) {
                 $in = $ex.getInputStream ();
                 String _id = $ex.getId ();
                 if (_id.equals ("IDL:activation/InvalidORBid:1.0"))
@@ -63,8 +63,8 @@ public class _LocatorStub extends org.omg.CORBA.portable.ObjectImpl implements c
                 else if (_id.equals ("IDL:activation/ServerHeldDown:1.0"))
                     throw com.sun.corba.se.spi.activation.ServerHeldDownHelper.read ($in);
                 else
-                    throw new org.omg.CORBA.MARSHAL (_id);
-            } catch (org.omg.CORBA.portable.RemarshalException $rm) {
+                    throw new test.org.omg.CORBA.MARSHAL (_id);
+            } catch (test.org.omg.CORBA.portable.RemarshalException $rm) {
                 return locateServerForORB (serverId, orbId        );
             } finally {
                 _releaseReply ($in);
@@ -75,21 +75,21 @@ public class _LocatorStub extends org.omg.CORBA.portable.ObjectImpl implements c
   // get the port for the endpoint of the locator
   public int getEndpoint (String endPointType) throws com.sun.corba.se.spi.activation.NoSuchEndPoint
   {
-            org.omg.CORBA.portable.InputStream $in = null;
+            test.org.omg.CORBA.portable.InputStream $in = null;
             try {
-                org.omg.CORBA.portable.OutputStream $out = _request ("getEndpoint", true);
+                test.org.omg.CORBA.portable.OutputStream $out = _request ("getEndpoint", true);
                 $out.write_string (endPointType);
                 $in = _invoke ($out);
                 int $result = com.sun.corba.se.spi.activation.TCPPortHelper.read ($in);
                 return $result;
-            } catch (org.omg.CORBA.portable.ApplicationException $ex) {
+            } catch (test.org.omg.CORBA.portable.ApplicationException $ex) {
                 $in = $ex.getInputStream ();
                 String _id = $ex.getId ();
                 if (_id.equals ("IDL:activation/NoSuchEndPoint:1.0"))
                     throw com.sun.corba.se.spi.activation.NoSuchEndPointHelper.read ($in);
                 else
-                    throw new org.omg.CORBA.MARSHAL (_id);
-            } catch (org.omg.CORBA.portable.RemarshalException $rm) {
+                    throw new test.org.omg.CORBA.MARSHAL (_id);
+            } catch (test.org.omg.CORBA.portable.RemarshalException $rm) {
                 return getEndpoint (endPointType        );
             } finally {
                 _releaseReply ($in);
@@ -100,22 +100,22 @@ public class _LocatorStub extends org.omg.CORBA.portable.ObjectImpl implements c
   // to pick a particular port type.
   public int getServerPortForType (com.sun.corba.se.spi.activation.LocatorPackage.ServerLocationPerORB location, String endPointType) throws com.sun.corba.se.spi.activation.NoSuchEndPoint
   {
-            org.omg.CORBA.portable.InputStream $in = null;
+            test.org.omg.CORBA.portable.InputStream $in = null;
             try {
-                org.omg.CORBA.portable.OutputStream $out = _request ("getServerPortForType", true);
+                test.org.omg.CORBA.portable.OutputStream $out = _request ("getServerPortForType", true);
                 com.sun.corba.se.spi.activation.LocatorPackage.ServerLocationPerORBHelper.write ($out, location);
                 $out.write_string (endPointType);
                 $in = _invoke ($out);
                 int $result = com.sun.corba.se.spi.activation.TCPPortHelper.read ($in);
                 return $result;
-            } catch (org.omg.CORBA.portable.ApplicationException $ex) {
+            } catch (test.org.omg.CORBA.portable.ApplicationException $ex) {
                 $in = $ex.getInputStream ();
                 String _id = $ex.getId ();
                 if (_id.equals ("IDL:activation/NoSuchEndPoint:1.0"))
                     throw com.sun.corba.se.spi.activation.NoSuchEndPointHelper.read ($in);
                 else
-                    throw new org.omg.CORBA.MARSHAL (_id);
-            } catch (org.omg.CORBA.portable.RemarshalException $rm) {
+                    throw new test.org.omg.CORBA.MARSHAL (_id);
+            } catch (test.org.omg.CORBA.portable.RemarshalException $rm) {
                 return getServerPortForType (location, endPointType        );
             } finally {
                 _releaseReply ($in);
@@ -136,10 +136,10 @@ public class _LocatorStub extends org.omg.CORBA.portable.ObjectImpl implements c
      String str = s.readUTF ();
      String[] args = null;
      java.util.Properties props = null;
-     org.omg.CORBA.ORB orb = org.omg.CORBA.ORB.init (args, props);
+     test.org.omg.CORBA.ORB orb = test.org.omg.CORBA.ORB.init (args, props);
    try {
-     org.omg.CORBA.Object obj = orb.string_to_object (str);
-     org.omg.CORBA.portable.Delegate delegate = ((org.omg.CORBA.portable.ObjectImpl) obj)._get_delegate ();
+     test.org.omg.CORBA.Object obj = orb.string_to_object (str);
+     test.org.omg.CORBA.portable.Delegate delegate = ((test.org.omg.CORBA.portable.ObjectImpl) obj)._get_delegate ();
      _set_delegate (delegate);
    } finally {
      orb.destroy() ;
@@ -150,7 +150,7 @@ public class _LocatorStub extends org.omg.CORBA.portable.ObjectImpl implements c
   {
      String[] args = null;
      java.util.Properties props = null;
-     org.omg.CORBA.ORB orb = org.omg.CORBA.ORB.init (args, props);
+     test.org.omg.CORBA.ORB orb = test.org.omg.CORBA.ORB.init (args, props);
    try {
      String str = orb.object_to_string (this);
      s.writeUTF (str);

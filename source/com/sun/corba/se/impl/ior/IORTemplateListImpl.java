@@ -28,13 +28,12 @@ package com.sun.corba.se.impl.ior;
 import java.util.ArrayList ;
 import java.util.Iterator ;
 
-import org.omg.CORBA_2_3.portable.InputStream ;
-import org.omg.CORBA_2_3.portable.OutputStream ;
+import test.org.omg.CORBA_2_3.portable.InputStream ;
+import test.org.omg.CORBA_2_3.portable.OutputStream ;
 
 import com.sun.corba.se.spi.ior.IORTemplate ;
 import com.sun.corba.se.spi.ior.IORTemplateList ;
 import com.sun.corba.se.spi.ior.ObjectId ;
-import com.sun.corba.se.spi.ior.IORTemplate ;
 import com.sun.corba.se.spi.ior.IOR ;
 import com.sun.corba.se.spi.ior.IORFactory ;
 import com.sun.corba.se.spi.ior.IORFactories ;

@@ -25,17 +25,14 @@
 
 package com.sun.corba.se.impl.dynamicany;
 
-import org.omg.CORBA.Any;
-import org.omg.CORBA.TypeCode;
-import org.omg.CORBA.TCKind;
-import org.omg.CORBA.portable.OutputStream;
-//import org.omg.CORBA.ORBPackage.*;
-import org.omg.CORBA.TypeCodePackage.BadKind;
-import org.omg.CORBA.TypeCodePackage.Bounds;
-import org.omg.CORBA.portable.InputStream;
-import org.omg.DynamicAny.*;
-import org.omg.DynamicAny.DynAnyPackage.TypeMismatch;
-import org.omg.DynamicAny.DynAnyFactoryPackage.InconsistentTypeCode;
+import test.org.omg.CORBA.Any;
+import test.org.omg.CORBA.TypeCode;
+import test.org.omg.CORBA.TCKind;
+//import test.org.omg.CORBA.ORBPackage.*;
+import test.org.omg.CORBA.portable.InputStream;
+import test.org.omg.DynamicAny.*;
+import test.org.omg.DynamicAny.DynAnyPackage.TypeMismatch;
+import test.org.omg.DynamicAny.DynAnyFactoryPackage.InconsistentTypeCode;
 import java.math.BigDecimal;
 import com.sun.corba.se.impl.corba.AnyImpl;
 
@@ -67,10 +64,10 @@ public class DynAnyUtil
     }
 
     static DynAny createMostDerivedDynAny(Any any, ORB orb, boolean copyValue)
-        throws org.omg.DynamicAny.DynAnyFactoryPackage.InconsistentTypeCode
+        throws test.org.omg.DynamicAny.DynAnyFactoryPackage.InconsistentTypeCode
     {
         if (any == null || ! DynAnyUtil.isConsistentType(any.type()))
-            throw new org.omg.DynamicAny.DynAnyFactoryPackage.InconsistentTypeCode();
+            throw new test.org.omg.DynamicAny.DynAnyFactoryPackage.InconsistentTypeCode();
 
         switch (any.type().kind().value()) {
             case TCKind._tk_sequence:
@@ -95,10 +92,10 @@ public class DynAnyUtil
     }
 
     static DynAny createMostDerivedDynAny(TypeCode typeCode, ORB orb)
-        throws org.omg.DynamicAny.DynAnyFactoryPackage.InconsistentTypeCode
+        throws test.org.omg.DynamicAny.DynAnyFactoryPackage.InconsistentTypeCode
     {
         if (typeCode == null || ! DynAnyUtil.isConsistentType(typeCode))
-            throw new org.omg.DynamicAny.DynAnyFactoryPackage.InconsistentTypeCode();
+            throw new test.org.omg.DynamicAny.DynAnyFactoryPackage.InconsistentTypeCode();
 
         switch (typeCode.kind().value()) {
             case TCKind._tk_sequence:

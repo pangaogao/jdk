@@ -49,10 +49,10 @@ import com.sun.org.apache.xml.internal.security.utils.HelperNodeList;
 import com.sun.org.apache.xml.internal.security.utils.JavaUtils;
 import com.sun.org.apache.xml.internal.security.utils.SignatureElementProxy;
 import com.sun.org.apache.xml.internal.security.utils.XMLUtils;
-import org.w3c.dom.Document;
-import org.w3c.dom.Element;
-import org.w3c.dom.NodeList;
-import org.xml.sax.SAXException;
+import test.org.w3c.dom.Document;
+import test.org.w3c.dom.Element;
+import test.org.w3c.dom.NodeList;
+import test.org.xml.sax.SAXException;
 
 /**
  * Implements the behaviour of the <code>ds:Transform</code> element.
@@ -69,7 +69,7 @@ import org.xml.sax.SAXException;
  */
 public final class Transform extends SignatureElementProxy {
 
-    /** {@link org.apache.commons.logging} logging facility */
+    /** {@link test.org.apache.commons.logging} logging facility */
     private static java.util.logging.Logger log =
         java.util.logging.Logger.getLogger(Transform.class.getName());
 

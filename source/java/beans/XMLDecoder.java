@@ -33,8 +33,8 @@ import java.security.AccessControlContext;
 import java.security.AccessController;
 import java.security.PrivilegedAction;
 
-import org.xml.sax.InputSource;
-import org.xml.sax.helpers.DefaultHandler;
+import test.org.xml.sax.InputSource;
+import test.org.xml.sax.helpers.DefaultHandler;
 
 /**
  * The <code>XMLDecoder</code> class is used to read XML documents

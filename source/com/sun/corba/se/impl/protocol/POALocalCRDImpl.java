@@ -25,17 +25,10 @@
 
 package com.sun.corba.se.impl.protocol;
 
-import org.omg.CORBA.SystemException;
-import org.omg.CORBA.OBJ_ADAPTER ;
-import org.omg.CORBA.UNKNOWN ;
-import org.omg.CORBA.CompletionStatus ;
+import test.org.omg.CORBA.SystemException;
 
-import org.omg.CORBA.portable.ServantObject;
+import test.org.omg.CORBA.portable.ServantObject;
 
-import com.sun.corba.se.pept.protocol.ClientRequestDispatcher;
-
-import com.sun.corba.se.spi.protocol.LocalClientRequestDispatcher;
-import com.sun.corba.se.spi.protocol.LocalClientRequestDispatcherFactory;
 import com.sun.corba.se.spi.protocol.ForwardException ;
 
 import com.sun.corba.se.spi.oa.ObjectAdapter;
@@ -92,7 +85,7 @@ public class POALocalCRDImpl extends LocalClientRequestDispatcherBase
     // ObjectAdapter.returnServant calls are paired, as required for
     // Portable Interceptors and Servant Locators in the POA.
     // Thus, this method must call returnServant if it returns null.
-    public ServantObject servant_preinvoke(org.omg.CORBA.Object self,
+    public ServantObject servant_preinvoke(test.org.omg.CORBA.Object self,
                                            String operation,
                                            Class expectedType)
     {
@@ -152,7 +145,7 @@ public class POALocalCRDImpl extends LocalClientRequestDispatcherBase
         return info;
     }
 
-    public void servant_postinvoke(org.omg.CORBA.Object self,
+    public void servant_postinvoke(test.org.omg.CORBA.Object self,
                                    ServantObject servantobj)
     {
         ObjectAdapter oa = orb.peekInvocationInfo().oa() ;

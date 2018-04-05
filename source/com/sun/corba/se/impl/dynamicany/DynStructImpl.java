@@ -25,19 +25,11 @@
 
 package com.sun.corba.se.impl.dynamicany;
 
-import org.omg.CORBA.TypeCode;
-import org.omg.CORBA.TCKind;
-import org.omg.CORBA.Any;
-import org.omg.CORBA.TypeCodePackage.BadKind;
-import org.omg.CORBA.TypeCodePackage.Bounds;
-import org.omg.DynamicAny.*;
-import org.omg.DynamicAny.DynAnyPackage.TypeMismatch;
-import org.omg.DynamicAny.DynAnyPackage.InvalidValue;
-import org.omg.DynamicAny.DynAnyFactoryPackage.InconsistentTypeCode;
+import test.org.omg.CORBA.TypeCode;
+import test.org.omg.CORBA.Any;
+import test.org.omg.DynamicAny.*;
 
 import com.sun.corba.se.spi.orb.ORB ;
-import com.sun.corba.se.spi.logging.CORBALogDomains ;
-import com.sun.corba.se.impl.logging.ORBUtilSystemException ;
 
 public class DynStructImpl extends DynAnyComplexImpl implements DynStruct
 {
@@ -69,7 +61,7 @@ public class DynStructImpl extends DynAnyComplexImpl implements DynStruct
     // Methods differing from DynValues
     //
 
-    public org.omg.DynamicAny.NameValuePair[] get_members () {
+    public test.org.omg.DynamicAny.NameValuePair[] get_members () {
         if (status == STATUS_DESTROYED) {
             throw wrapper.dynAnyDestroyed() ;
         }
@@ -77,7 +69,7 @@ public class DynStructImpl extends DynAnyComplexImpl implements DynStruct
         return nameValuePairs;
     }
 
-    public org.omg.DynamicAny.NameDynAnyPair[] get_members_as_dyn_any () {
+    public test.org.omg.DynamicAny.NameDynAnyPair[] get_members_as_dyn_any () {
         if (status == STATUS_DESTROYED) {
             throw wrapper.dynAnyDestroyed() ;
         }

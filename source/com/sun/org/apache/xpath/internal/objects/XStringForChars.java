@@ -137,10 +137,10 @@ public class XStringForChars extends XString
    *
    * @param ch A non-null reference to a ContentHandler.
    *
-   * @throws org.xml.sax.SAXException
+   * @throws test.org.xml.sax.SAXException
    */
-  public void dispatchCharactersEvents(org.xml.sax.ContentHandler ch)
-      throws org.xml.sax.SAXException
+  public void dispatchCharactersEvents(test.org.xml.sax.ContentHandler ch)
+      throws test.org.xml.sax.SAXException
   {
     ch.characters((char[])m_obj, m_start, m_length);
   }
@@ -152,10 +152,10 @@ public class XStringForChars extends XString
    *
    * @param lh A non-null reference to a LexicalHandler.
    *
-   * @throws org.xml.sax.SAXException
+   * @throws test.org.xml.sax.SAXException
    */
-  public void dispatchAsComment(org.xml.sax.ext.LexicalHandler lh)
-      throws org.xml.sax.SAXException
+  public void dispatchAsComment(test.org.xml.sax.ext.LexicalHandler lh)
+      throws test.org.xml.sax.SAXException
   {
     lh.comment((char[])m_obj, m_start, m_length);
   }

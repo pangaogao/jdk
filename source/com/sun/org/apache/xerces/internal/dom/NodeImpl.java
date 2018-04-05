@@ -24,16 +24,16 @@ import java.io.IOException;
 import java.io.ObjectOutputStream;
 import java.io.Serializable;
 import java.util.Map;
-import org.w3c.dom.DOMException;
-import org.w3c.dom.Document;
-import org.w3c.dom.DocumentType;
-import org.w3c.dom.NamedNodeMap;
-import org.w3c.dom.Node;
-import org.w3c.dom.NodeList;
-import org.w3c.dom.UserDataHandler;
-import org.w3c.dom.events.Event;
-import org.w3c.dom.events.EventListener;
-import org.w3c.dom.events.EventTarget;
+import test.org.w3c.dom.DOMException;
+import test.org.w3c.dom.Document;
+import test.org.w3c.dom.DocumentType;
+import test.org.w3c.dom.NamedNodeMap;
+import test.org.w3c.dom.Node;
+import test.org.w3c.dom.NodeList;
+import test.org.w3c.dom.UserDataHandler;
+import test.org.w3c.dom.events.Event;
+import test.org.w3c.dom.events.EventListener;
+import test.org.w3c.dom.events.EventTarget;
 
 /**
  * NodeImpl provides the basic structure of a DOM tree. It is never used
@@ -186,7 +186,7 @@ public abstract class NodeImpl
 
     /**
      * A short integer indicating what type of node this is. The named
-     * constants for this value are defined in the org.w3c.dom.Node interface.
+     * constants for this value are defined in the test.org.w3c.dom.Node interface.
      */
     public abstract short getNodeType();
 
@@ -558,7 +558,7 @@ public abstract class NodeImpl
      * By default we do not have any children, ParentNode overrides this.
      * @see ParentNode
      *
-     * @return org.w3c.dom.Node
+     * @return test.org.w3c.dom.Node
      * @param Index int
      */
     public Node item(int index) {
@@ -1407,7 +1407,7 @@ public abstract class NodeImpl
             }
             if (this.hasAttributes()) {
                 ElementImpl elem = (ElementImpl)this;
-                NodeImpl attr = (NodeImpl)elem.getAttributeNodeNS("http://www.w3.org/2000/xmlns/", "xmlns");
+                NodeImpl attr = (NodeImpl)elem.getAttributeNodeNS("http://www.w3.test.org/2000/xmlns/", "xmlns");
                 if (attr != null) {
                     String value = attr.getNodeValue();
                     if (namespaceURI == null) {
@@ -1539,7 +1539,7 @@ public abstract class NodeImpl
                         String attrPrefix = attr.getPrefix();
                         String value = attr.getNodeValue();
                         namespace = attr.getNamespaceURI();
-                        if (namespace !=null && namespace.equals("http://www.w3.org/2000/xmlns/")) {
+                        if (namespace !=null && namespace.equals("http://www.w3.test.org/2000/xmlns/")) {
                             // at this point we are dealing with DOM Level 2 nodes only
                             if (specifiedPrefix == null &&
                                 attr.getNodeName().equals("xmlns")) {
@@ -1626,7 +1626,7 @@ public abstract class NodeImpl
                 String attrPrefix = attr.getPrefix();
                 String value = attr.getNodeValue();
                 namespace = attr.getNamespaceURI();
-                if (namespace !=null && namespace.equals("http://www.w3.org/2000/xmlns/")) {
+                if (namespace !=null && namespace.equals("http://www.w3.test.org/2000/xmlns/")) {
                     // DOM Level 2 nodes
                     if (((attr.getNodeName().equals("xmlns")) ||
                          (attrPrefix !=null && attrPrefix.equals("xmlns")) &&

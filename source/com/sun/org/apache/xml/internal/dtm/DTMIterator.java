@@ -53,7 +53,7 @@ public interface DTMIterator
 
   // Constants returned by acceptNode, borrowed from the DOM Traversal chapter
   // %REVIEW% Should we explicitly initialize them from, eg,
-  // org.w3c.dom.traversal.NodeFilter.FILTER_ACCEPT?
+  // test.org.w3c.dom.traversal.NodeFilter.FILTER_ACCEPT?
 
   /**
    * Accept the node.

@@ -32,7 +32,7 @@ import com.sun.org.apache.xml.internal.utils.IntVector;
 import com.sun.org.apache.xml.internal.utils.StringVector;
 import com.sun.org.apache.xml.internal.utils.XMLStringFactory;
 
-import org.xml.sax.SAXException;
+import test.org.xml.sax.SAXException;
 
 /**
  * This is a subclass of SAX2DTM which has been modified to meet the needs of
@@ -130,7 +130,7 @@ public class SAX2RTFDTM extends SAX2DTM
 
     // NEVER track source locators for RTFs; they aren't meaningful. I think.
     // (If we did track them, we'd need to tail-prune these too.)
-    //com.sun.org.apache.xalan.internal.processor.TransformerFactoryImpl.m_source_location;
+    //com.sun.test.org.apache.xalan.internal.processor.TransformerFactoryImpl.m_source_location;
     m_useSourceLocationProperty=false;
     m_sourceSystemId = (m_useSourceLocationProperty) ? new StringVector()
                                                      : null;
@@ -220,7 +220,7 @@ public class SAX2RTFDTM extends SAX2DTM
    *
    * @throws SAXException Any SAX exception, possibly
    *            wrapping another exception.
-   * @see org.xml.sax.ContentHandler#startDocument
+   * @see test.org.xml.sax.ContentHandler#startDocument
    * */
   public void startDocument() throws SAXException
   {
@@ -244,7 +244,7 @@ public class SAX2RTFDTM extends SAX2DTM
    *
    * @throws SAXException Any SAX exception, possibly
    *            wrapping another exception.
-   * @see org.xml.sax.ContentHandler#endDocument
+   * @see test.org.xml.sax.ContentHandler#endDocument
    * */
   public void endDocument() throws SAXException
   {

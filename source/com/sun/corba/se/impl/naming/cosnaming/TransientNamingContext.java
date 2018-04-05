@@ -26,21 +26,15 @@
 package com.sun.corba.se.impl.naming.cosnaming;
 
 // Import general CORBA classes
-import org.omg.CORBA.SystemException;
-import org.omg.CORBA.Object;
-import org.omg.CORBA.INTERNAL;
-import org.omg.CORBA.CompletionStatus;
-import org.omg.CORBA.ORB;
-import org.omg.PortableServer.POA;
+import test.org.omg.PortableServer.POA;
 
-// Import org.omg.CosNaming types
-import org.omg.CosNaming.Binding;
-import org.omg.CosNaming.BindingType;
-import org.omg.CosNaming.BindingTypeHolder;
-import org.omg.CosNaming.BindingListHolder;
-import org.omg.CosNaming.BindingIteratorHolder;
-import org.omg.CosNaming.NameComponent;
-import org.omg.CosNaming.NamingContext;
+// Import test.org.omg.CosNaming types
+import test.org.omg.CosNaming.Binding;
+import test.org.omg.CosNaming.BindingType;
+import test.org.omg.CosNaming.BindingTypeHolder;
+import test.org.omg.CosNaming.BindingListHolder;
+import test.org.omg.CosNaming.BindingIteratorHolder;
+import test.org.omg.CosNaming.NameComponent;
 
 import java.util.logging.Logger;
 import java.util.logging.Level;
@@ -63,7 +57,7 @@ import com.sun.corba.se.spi.logging.CORBALogDomains;
  * The keys in the hash table are InternalBindingKey objects, containing
  * a single NameComponent and implementing the proper functions, i.e.,
  * equals() and hashCode() in an efficient manner. The values in the hash
- * table are InternalBindingValues and store a org.omg.CosNaming::Binding and
+ * table are InternalBindingValues and store a test.org.omg.CosNaming::Binding and
  * the object reference associated with the binding. For iteration,
  * TransientBindingIterator objects are created, which are passed a cloned
  * copy of the hashtable. Since elements are inserted and deleted and
@@ -95,7 +89,7 @@ public class TransientNamingContext extends NamingContextImpl implements NamingC
      * initialize.
      */
     public TransientNamingContext(com.sun.corba.se.spi.orb.ORB orb,
-        org.omg.CORBA.Object initial,
+        test.org.omg.CORBA.Object initial,
         POA nsPOA )
         throws java.lang.Exception
     {
@@ -114,16 +108,16 @@ public class TransientNamingContext extends NamingContextImpl implements NamingC
      * Binds the object to the name component as the specified binding type.
      * It creates a InternalBindingKey object and a InternalBindingValue
      * object and inserts them in the hash table.
-     * @param n A single org.omg.CosNaming::NameComponent under which the
+     * @param n A single test.org.omg.CosNaming::NameComponent under which the
      * object will be bound.
      * @param obj An object reference to be bound under the supplied name.
      * @param bt The type of the binding (i.e., as object or as context).
-     * @exception org.omg.CORBA.SystemException One of a fixed set of CORBA
+     * @exception test.org.omg.CORBA.SystemException One of a fixed set of CORBA
      * system exceptions.
      */
-    public final void Bind(NameComponent n, org.omg.CORBA.Object obj,
+    public final void Bind(NameComponent n, test.org.omg.CORBA.Object obj,
                            BindingType bt)
-        throws org.omg.CORBA.SystemException
+        throws test.org.omg.CORBA.SystemException
     {
         // Create a key and a value
         InternalBindingKey key = new InternalBindingKey(n);
@@ -157,12 +151,12 @@ public class TransientNamingContext extends NamingContextImpl implements NamingC
      * @param bth the BindingType as an out parameter.
      * @return the object reference bound under the supplied name, null if not
      * found.
-     * @exception org.omg.CORBA.SystemException One of a fixed set of CORBA
+     * @exception test.org.omg.CORBA.SystemException One of a fixed set of CORBA
      * system exceptions.
      */
-    public final org.omg.CORBA.Object Resolve(NameComponent n,
-                                              BindingTypeHolder bth)
-        throws org.omg.CORBA.SystemException
+    public final test.org.omg.CORBA.Object Resolve(NameComponent n,
+                                                   BindingTypeHolder bth)
+        throws test.org.omg.CORBA.SystemException
     {
         // Is the initial naming context requested?
         if ( (n.id.length() == 0)
@@ -195,11 +189,11 @@ public class TransientNamingContext extends NamingContextImpl implements NamingC
      * the element is removed from the hash table.
      * @param n a NameComponent which is the name to unbind
      * @return the object reference bound to the name, or null if not found.
-     * @exception org.omg.CORBA.SystemException One of a fixed set of CORBA
+     * @exception test.org.omg.CORBA.SystemException One of a fixed set of CORBA
      * system exceptions.
      */
-    public final org.omg.CORBA.Object Unbind(NameComponent n)
-        throws org.omg.CORBA.SystemException
+    public final test.org.omg.CORBA.Object Unbind(NameComponent n)
+        throws test.org.omg.CORBA.SystemException
     {
         // Create a key and remove it from the hashtable
         InternalBindingKey key = new InternalBindingKey(n);
@@ -231,12 +225,12 @@ public class TransientNamingContext extends NamingContextImpl implements NamingC
      * @param how_many The number of requested bindings in the BindingList.
      * @param bl The BindingList as an out parameter.
      * @param bi The BindingIterator as an out parameter.
-     * @exception org.omg.CORBA.SystemException One of a fixed set of CORBA
+     * @exception test.org.omg.CORBA.SystemException One of a fixed set of CORBA
      * system exceptions.
      */
     public final void List(int how_many, BindingListHolder bl,
                            BindingIteratorHolder bi)
-        throws org.omg.CORBA.SystemException
+        throws test.org.omg.CORBA.SystemException
     {
         try {
             // Create a new binding iterator servant with a copy of this
@@ -250,14 +244,14 @@ public class TransientNamingContext extends NamingContextImpl implements NamingC
             bindingIterator.list(how_many,bl);
 
             byte[] objectId = nsPOA.activate_object( bindingIterator );
-            org.omg.CORBA.Object obj = nsPOA.id_to_reference( objectId );
+            test.org.omg.CORBA.Object obj = nsPOA.id_to_reference( objectId );
 
             // Get the object reference for the binding iterator servant
-            org.omg.CosNaming.BindingIterator bindingRef =
-                org.omg.CosNaming.BindingIteratorHelper.narrow( obj );
+            test.org.omg.CosNaming.BindingIterator bindingRef =
+                test.org.omg.CosNaming.BindingIteratorHelper.narrow( obj );
 
             bi.value = bindingRef;
-        } catch (org.omg.CORBA.SystemException e) {
+        } catch (test.org.omg.CORBA.SystemException e) {
             readLogger.warning( LogKeywords.NAMING_LIST_FAILURE + e );
             throw e;
         } catch (Exception e) {
@@ -272,11 +266,11 @@ public class TransientNamingContext extends NamingContextImpl implements NamingC
      * object, passing it the orb object.
      * @return an object reference for a new NamingContext object implemented
      * by this Name Server.
-     * @exception org.omg.CORBA.SystemException One of a fixed set of CORBA
+     * @exception test.org.omg.CORBA.SystemException One of a fixed set of CORBA
      * system exceptions.
      */
-    public final org.omg.CosNaming.NamingContext NewContext()
-        throws org.omg.CORBA.SystemException
+    public final test.org.omg.CosNaming.NamingContext NewContext()
+        throws test.org.omg.CORBA.SystemException
     {
         try {
             // Create a new servant
@@ -285,12 +279,12 @@ public class TransientNamingContext extends NamingContextImpl implements NamingC
                 (com.sun.corba.se.spi.orb.ORB) orb,localRoot, nsPOA);
 
             byte[] objectId = nsPOA.activate_object( transContext );
-            org.omg.CORBA.Object obj = nsPOA.id_to_reference( objectId );
+            test.org.omg.CORBA.Object obj = nsPOA.id_to_reference( objectId );
             lifecycleLogger.fine( "TransientNamingContext " +
                 "LIFECYCLE.CREATE SUCCESSFUL" );
-            return org.omg.CosNaming.NamingContextHelper.narrow( obj );
+            return test.org.omg.CosNaming.NamingContextHelper.narrow( obj );
 
-        } catch (org.omg.CORBA.SystemException e) {
+        } catch (test.org.omg.CORBA.SystemException e) {
             lifecycleLogger.log(
                 Level.WARNING, LogKeywords.LIFECYCLE_CREATE_FAILURE, e );
             throw e;
@@ -303,11 +297,11 @@ public class TransientNamingContext extends NamingContextImpl implements NamingC
 
     /**
      * Destroys this NamingContext by disconnecting from the ORB.
-     * @exception org.omg.CORBA.SystemException One of a fixed set of CORBA
+     * @exception test.org.omg.CORBA.SystemException One of a fixed set of CORBA
      * system exceptions.
      */
     public final void Destroy()
-        throws org.omg.CORBA.SystemException
+        throws test.org.omg.CORBA.SystemException
     {
         // Destroy the object reference by disconnecting from the ORB
         try {
@@ -319,7 +313,7 @@ public class TransientNamingContext extends NamingContextImpl implements NamingC
                 lifecycleLogger.fine(
                     LogKeywords.LIFECYCLE_DESTROY_SUCCESS );
             }
-        } catch (org.omg.CORBA.SystemException e) {
+        } catch (test.org.omg.CORBA.SystemException e) {
             lifecycleLogger.log( Level.WARNING,
                 LogKeywords.LIFECYCLE_DESTROY_FAILURE, e );
             throw e;
@@ -353,5 +347,5 @@ public class TransientNamingContext extends NamingContextImpl implements NamingC
     /**
      * The local root naming context.
      */
-    public org.omg.CORBA.Object localRoot;
+    public test.org.omg.CORBA.Object localRoot;
 }

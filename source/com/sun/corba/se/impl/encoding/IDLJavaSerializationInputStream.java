@@ -41,18 +41,16 @@ import com.sun.corba.se.spi.presentation.rmi.StubAdapter;
 import com.sun.corba.se.spi.presentation.rmi.PresentationManager;
 import com.sun.corba.se.spi.presentation.rmi.PresentationDefaults;
 
-import com.sun.corba.se.impl.util.Utility;
 import com.sun.corba.se.impl.orbutil.ORBUtility;
 import com.sun.corba.se.impl.corba.TypeCodeImpl;
 import com.sun.corba.se.impl.util.RepositoryId;
-import com.sun.corba.se.impl.orbutil.ORBConstants;
 import com.sun.corba.se.impl.logging.ORBUtilSystemException;
 import com.sun.corba.se.impl.protocol.giopmsgheaders.Message;
 
-import org.omg.CORBA.Any;
-import org.omg.CORBA.TypeCode;
-import org.omg.CORBA.Principal;
-import org.omg.CORBA.portable.IDLEntity;
+import test.org.omg.CORBA.Any;
+import test.org.omg.CORBA.TypeCode;
+import test.org.omg.CORBA.Principal;
+import test.org.omg.CORBA.portable.IDLEntity;
 
 /**
  * Implementation class that uses Java serialization for input streams.
@@ -154,7 +152,7 @@ public class IDLJavaSerializationInputStream extends CDRInputStreamBase {
         this.encodingVersion = encodingVersion;
     }
 
-    public void init(org.omg.CORBA.ORB orb,
+    public void init(test.org.omg.CORBA.ORB orb,
                      ByteBuffer byteBuffer,
                      int bufSize,
                      boolean littleEndian,
@@ -191,7 +189,7 @@ public class IDLJavaSerializationInputStream extends CDRInputStreamBase {
         }
     }
 
-    // org.omg.CORBA.portable.InputStream
+    // test.org.omg.CORBA.portable.InputStream
 
     // Primitive types.
 
@@ -523,7 +521,7 @@ public class IDLJavaSerializationInputStream extends CDRInputStreamBase {
 
     // Complex types.
 
-    public org.omg.CORBA.Object read_Object() {
+    public test.org.omg.CORBA.Object read_Object() {
         return read_Object(null);
     }
 
@@ -548,8 +546,8 @@ public class IDLJavaSerializationInputStream extends CDRInputStreamBase {
         // including encapsulations, is read off.
         try {
             tc.read_value(parent);
-        } catch (org.omg.CORBA.MARSHAL ex) {
-            if (tc.kind().value() != org.omg.CORBA.TCKind._tk_value) {
+        } catch (test.org.omg.CORBA.MARSHAL ex) {
+            if (tc.kind().value() != test.org.omg.CORBA.TCKind._tk_value) {
                 throw ex;
             }
             // We can be sure that the whole typecode encapsulation has been
@@ -622,7 +620,7 @@ public class IDLJavaSerializationInputStream extends CDRInputStreamBase {
         return buffer;
     }
 
-    public org.omg.CORBA.Object read_Object(java.lang.Class clz) {
+    public test.org.omg.CORBA.Object read_Object(java.lang.Class clz) {
 
         // In any case, we must first read the IOR.
         IOR ior = IORFactories.makeIOR(parent) ;
@@ -668,11 +666,11 @@ public class IDLJavaSerializationInputStream extends CDRInputStreamBase {
         return CDRInputStream_1_0.internalIORToObject(ior, stubFactory, orb);
     }
 
-    public org.omg.CORBA.ORB orb() {
+    public test.org.omg.CORBA.ORB orb() {
         return this.orb;
     }
 
-    // org.omg.CORBA_2_3.portable.InputStream
+    // test.org.omg.CORBA_2_3.portable.InputStream
 
     public java.io.Serializable read_value() {
         if (!markOn && !(markedItemQ.isEmpty())) { // dequeue
@@ -698,7 +696,7 @@ public class IDLJavaSerializationInputStream extends CDRInputStreamBase {
     }
 
     public java.io.Serializable read_value(
-            org.omg.CORBA.portable.BoxedValueHelper factory) {
+            test.org.omg.CORBA.portable.BoxedValueHelper factory) {
         return read_value();
     }
 
@@ -736,7 +734,7 @@ public class IDLJavaSerializationInputStream extends CDRInputStreamBase {
         }
     }
 
-    // org.omg.CORBA.DataInputStream
+    // test.org.omg.CORBA.DataInputStream
     public java.lang.Object read_Abstract() {
         return read_abstract_interface();
     }
@@ -745,79 +743,79 @@ public class IDLJavaSerializationInputStream extends CDRInputStreamBase {
         return read_value();
     }
 
-    public void read_any_array (org.omg.CORBA.AnySeqHolder seq,
+    public void read_any_array (test.org.omg.CORBA.AnySeqHolder seq,
                                 int offset, int length) {
         read_any_array(seq.value, offset, length);
     }
 
-    private final void read_any_array(org.omg.CORBA.Any[] value,
-                                     int offset, int length) {
+    private final void read_any_array(test.org.omg.CORBA.Any[] value,
+                                      int offset, int length) {
         for(int i=0; i < length; i++) {
             value[i+offset] = read_any();
         }
     }
 
-    public void read_boolean_array (org.omg.CORBA.BooleanSeqHolder seq,
+    public void read_boolean_array (test.org.omg.CORBA.BooleanSeqHolder seq,
                                     int offset, int length){
         read_boolean_array(seq.value, offset, length);
     }
 
-    public void read_char_array (org.omg.CORBA.CharSeqHolder seq,
+    public void read_char_array (test.org.omg.CORBA.CharSeqHolder seq,
                                  int offset, int length){
         read_char_array(seq.value, offset, length);
     }
 
-    public void read_wchar_array (org.omg.CORBA.WCharSeqHolder seq,
+    public void read_wchar_array (test.org.omg.CORBA.WCharSeqHolder seq,
                                   int offset, int length){
         read_wchar_array(seq.value, offset, length);
     }
 
-    public void read_octet_array (org.omg.CORBA.OctetSeqHolder seq,
+    public void read_octet_array (test.org.omg.CORBA.OctetSeqHolder seq,
                                   int offset, int length){
         read_octet_array(seq.value, offset, length);
     }
 
-    public void read_short_array (org.omg.CORBA.ShortSeqHolder seq,
+    public void read_short_array (test.org.omg.CORBA.ShortSeqHolder seq,
                                   int offset, int length){
         read_short_array(seq.value, offset, length);
     }
 
-    public void read_ushort_array (org.omg.CORBA.UShortSeqHolder seq,
+    public void read_ushort_array (test.org.omg.CORBA.UShortSeqHolder seq,
                                    int offset, int length){
         read_ushort_array(seq.value, offset, length);
     }
 
-    public void read_long_array (org.omg.CORBA.LongSeqHolder seq,
+    public void read_long_array (test.org.omg.CORBA.LongSeqHolder seq,
                                  int offset, int length){
         read_long_array(seq.value, offset, length);
     }
 
-    public void read_ulong_array (org.omg.CORBA.ULongSeqHolder seq,
+    public void read_ulong_array (test.org.omg.CORBA.ULongSeqHolder seq,
                                   int offset, int length){
         read_ulong_array(seq.value, offset, length);
     }
 
-    public void read_ulonglong_array (org.omg.CORBA.ULongLongSeqHolder seq,
+    public void read_ulonglong_array (test.org.omg.CORBA.ULongLongSeqHolder seq,
                                       int offset, int length){
         read_ulonglong_array(seq.value, offset, length);
     }
 
-    public void read_longlong_array (org.omg.CORBA.LongLongSeqHolder seq,
+    public void read_longlong_array (test.org.omg.CORBA.LongLongSeqHolder seq,
                                      int offset, int length){
         read_longlong_array(seq.value, offset, length);
     }
 
-    public void read_float_array (org.omg.CORBA.FloatSeqHolder seq,
+    public void read_float_array (test.org.omg.CORBA.FloatSeqHolder seq,
                                   int offset, int length){
         read_float_array(seq.value, offset, length);
     }
 
-    public void read_double_array (org.omg.CORBA.DoubleSeqHolder seq,
+    public void read_double_array (test.org.omg.CORBA.DoubleSeqHolder seq,
                                    int offset, int length){
         read_double_array(seq.value, offset, length);
     }
 
-    // org.omg.CORBA.portable.ValueBase
+    // test.org.omg.CORBA.portable.ValueBase
 
     public String[] _truncatable_ids() {
         throw wrapper.giopVersionError();
@@ -983,7 +981,7 @@ public class IDLJavaSerializationInputStream extends CDRInputStreamBase {
         }
     }
 
-    public void orb(org.omg.CORBA.ORB orb) {
+    public void orb(test.org.omg.CORBA.ORB orb) {
         this.orb = (ORB) orb;
     }
 

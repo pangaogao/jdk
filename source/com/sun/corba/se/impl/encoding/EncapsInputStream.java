@@ -26,13 +26,9 @@
 package com.sun.corba.se.impl.encoding;
 
 import java.nio.ByteBuffer;
-import org.omg.CORBA.CompletionStatus;
+import test.org.omg.CORBA.CompletionStatus;
 import com.sun.org.omg.SendingContext.CodeBase;
 import com.sun.corba.se.spi.ior.iiop.GIOPVersion;
-import com.sun.corba.se.impl.encoding.CDRInputStream;
-import com.sun.corba.se.impl.encoding.BufferManagerFactory;
-import com.sun.corba.se.impl.encoding.CodeSetConversion;
-import com.sun.corba.se.impl.encoding.OSFCodeSetRegistry;
 import com.sun.corba.se.impl.protocol.giopmsgheaders.Message;
 
 import com.sun.corba.se.spi.orb.ORB;
@@ -60,7 +56,7 @@ public class EncapsInputStream extends CDRInputStream
     // corba/EncapsOutputStream
     // corba/ORBSingleton
     // iiop/ORB
-    public EncapsInputStream(org.omg.CORBA.ORB orb, byte[] buf,
+    public EncapsInputStream(test.org.omg.CORBA.ORB orb, byte[] buf,
                              int size, boolean littleEndian,
                              GIOPVersion version) {
         super(orb, ByteBuffer.wrap(buf), size, littleEndian,
@@ -76,7 +72,7 @@ public class EncapsInputStream extends CDRInputStream
         performORBVersionSpecificInit();
     }
 
-    public EncapsInputStream(org.omg.CORBA.ORB orb, ByteBuffer byteBuffer,
+    public EncapsInputStream(test.org.omg.CORBA.ORB orb, ByteBuffer byteBuffer,
                              int size, boolean littleEndian,
                              GIOPVersion version) {
         super(orb, byteBuffer, size, littleEndian,
@@ -93,7 +89,7 @@ public class EncapsInputStream extends CDRInputStream
     // ior/IIOPProfile
     // corba/ORBSingleton
     // iiop/ORB
-    public EncapsInputStream(org.omg.CORBA.ORB orb, byte[] data, int size)
+    public EncapsInputStream(test.org.omg.CORBA.ORB orb, byte[] data, int size)
     {
         this(orb, data, size, GIOPVersion.V1_2);
     }
@@ -115,7 +111,7 @@ public class EncapsInputStream extends CDRInputStream
     // Assumes big endian (can use consumeEndian to read and set
     // the endianness if it is an encapsulation with a byte order
     // mark at the beginning)
-    public EncapsInputStream(org.omg.CORBA.ORB orb, byte[] data, int size, GIOPVersion version)
+    public EncapsInputStream(test.org.omg.CORBA.ORB orb, byte[] data, int size, GIOPVersion version)
     {
         this(orb, data, size, false, version);
     }
@@ -126,7 +122,7 @@ public class EncapsInputStream extends CDRInputStream
      * intention of an encapsulation, but necessary due to OMG
      * issue 4795.  Used by ServiceContexts.
      */
-    public EncapsInputStream(org.omg.CORBA.ORB orb,
+    public EncapsInputStream(test.org.omg.CORBA.ORB orb,
                              byte[] data,
                              int size,
                              GIOPVersion version,

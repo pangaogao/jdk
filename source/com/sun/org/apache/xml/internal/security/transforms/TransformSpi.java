@@ -29,7 +29,7 @@ import javax.xml.parsers.ParserConfigurationException;
 import com.sun.org.apache.xml.internal.security.c14n.CanonicalizationException;
 import com.sun.org.apache.xml.internal.security.c14n.InvalidCanonicalizerException;
 import com.sun.org.apache.xml.internal.security.signature.XMLSignatureInput;
-import org.xml.sax.SAXException;
+import test.org.xml.sax.SAXException;
 
 /**
  * Base class which all Transform algorithms extend. The common methods that

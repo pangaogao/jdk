@@ -20,11 +20,11 @@
 
 package com.sun.org.apache.xerces.internal.impl.xs.opti;
 
-import org.w3c.dom.Node;
-import org.w3c.dom.Attr;
-import org.w3c.dom.NamedNodeMap;
+import test.org.w3c.dom.Node;
+import test.org.w3c.dom.Attr;
+import test.org.w3c.dom.NamedNodeMap;
 
-import org.w3c.dom.DOMException;
+import test.org.w3c.dom.DOMException;
 
 
 /**

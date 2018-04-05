@@ -24,7 +24,7 @@
 package com.sun.org.apache.xml.internal.resolver.readers;
 
 import com.sun.org.apache.xml.internal.resolver.Catalog;
-import org.xml.sax.*;
+import test.org.xml.sax.*;
 
 /**
  * The SAXCatalogParser interface.

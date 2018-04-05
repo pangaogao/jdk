@@ -30,8 +30,8 @@ import java.util.Vector;
  * each string should be internalized (@see String.intern())
  * or added to the <code>SymbolTable</code>
  *
- * @see <a href="../../../../../xerces2/com/sun/org/apache/xerces/internal/util/SymbolTable.html">
- * com.sun.org.apache.xerces.internal.util.SymbolTable</a>
+ * @see <a href="../../../../../xerces2/com/sun/test.org/apache/xerces/internal/util/SymbolTable.html">
+ * com.sun.test.org.apache.xerces.internal.util.SymbolTable</a>
  *
  * @author Andy Clark, IBM
  *
@@ -46,14 +46,14 @@ public interface NamespaceContext {
      * The XML Namespace ("http://www.w3.org/XML/1998/namespace"). This is
      * the Namespace URI that is automatically mapped to the "xml" prefix.
      */
-    public final static String XML_URI = "http://www.w3.org/XML/1998/namespace".intern();
+    public final static String XML_URI = "http://www.w3.test.org/XML/1998/namespace".intern();
 
     /**
      * XML Information Set REC
      * all namespace attributes (including those named xmlns,
      * whose [prefix] property has no value) have a namespace URI of http://www.w3.org/2000/xmlns/
      */
-    public final static String XMLNS_URI = "http://www.w3.org/2000/xmlns/".intern();
+    public final static String XMLNS_URI = "http://www.w3.test.org/2000/xmlns/".intern();
 
     //
     // NamespaceContext methods

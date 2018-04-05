@@ -8,10 +8,8 @@ package com.sun.corba.se.impl.logging ;
 import java.util.logging.Logger ;
 import java.util.logging.Level ;
 
-import org.omg.CORBA.OMGVMCID ;
 import com.sun.corba.se.impl.util.SUNVMCID ;
-import org.omg.CORBA.CompletionStatus ;
-import org.omg.CORBA.SystemException ;
+import test.org.omg.CORBA.CompletionStatus ;
 
 import com.sun.corba.se.spi.orb.ORB ;
 
@@ -19,9 +17,9 @@ import com.sun.corba.se.spi.logging.LogWrapperFactory;
 
 import com.sun.corba.se.spi.logging.LogWrapperBase;
 
-import org.omg.CORBA.INITIALIZE ;
-import org.omg.CORBA.INTERNAL ;
-import org.omg.CORBA.OBJECT_NOT_EXIST ;
+import test.org.omg.CORBA.INITIALIZE ;
+import test.org.omg.CORBA.INTERNAL ;
+import test.org.omg.CORBA.OBJECT_NOT_EXIST ;
 
 public class ActivationSystemException extends LogWrapperBase {
     

@@ -29,7 +29,7 @@ package com.sun.org.apache.xml.internal.dtm;
  * it makes more sense to have one shared version.
  * @xsl.usage internal
  */
-public class DTMDOMException extends org.w3c.dom.DOMException
+public class DTMDOMException extends test.org.w3c.dom.DOMException
 {
     static final long serialVersionUID = 1895654266613192414L;
   /**

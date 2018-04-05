@@ -28,10 +28,10 @@ import com.sun.org.apache.xml.internal.security.signature.XMLSignatureInput;
 import com.sun.org.apache.xml.internal.security.utils.Constants;
 import com.sun.org.apache.xml.internal.security.utils.XMLUtils;
 import com.sun.org.apache.xml.internal.security.utils.resolver.ResourceResolver;
-import org.w3c.dom.Attr;
-import org.w3c.dom.Document;
-import org.w3c.dom.Element;
-import org.xml.sax.SAXException;
+import test.org.w3c.dom.Attr;
+import test.org.w3c.dom.Document;
+import test.org.w3c.dom.Element;
+import test.org.xml.sax.SAXException;
 
 /**
  * KeyResolverSpi implementation which resolves public keys, private keys, secret keys, and X.509 certificates from a
@@ -41,7 +41,7 @@ import org.xml.sax.SAXException;
  */
 public class KeyInfoReferenceResolver extends KeyResolverSpi {
 
-    /** {@link org.apache.commons.logging} logging facility */
+    /** {@link test.org.apache.commons.logging} logging facility */
     private static java.util.logging.Logger log =
         java.util.logging.Logger.getLogger(KeyInfoReferenceResolver.class.getName());
 

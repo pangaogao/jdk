@@ -12,6 +12,6 @@ package com.sun.corba.se.PortableActivationIDL;
 /** Interface used to support binding references in the bootstrap name
     * service.
     */
-public interface InitialNameService extends InitialNameServiceOperations, org.omg.CORBA.Object, org.omg.CORBA.portable.IDLEntity 
+public interface InitialNameService extends InitialNameServiceOperations, test.org.omg.CORBA.Object, test.org.omg.CORBA.portable.IDLEntity
 {
 } // interface InitialNameService

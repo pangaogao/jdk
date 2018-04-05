@@ -32,9 +32,9 @@ import javax.xml.transform.TransformerException;
 import com.sun.org.apache.xml.internal.res.XMLErrorResources;
 import com.sun.org.apache.xml.internal.res.XMLMessages;
 
-import org.xml.sax.ErrorHandler;
-import org.xml.sax.SAXException;
-import org.xml.sax.SAXParseException;
+import test.org.xml.sax.ErrorHandler;
+import test.org.xml.sax.SAXException;
+import test.org.xml.sax.SAXParseException;
 
 
 /**
@@ -293,7 +293,7 @@ public class DefaultErrorHandler implements ErrorHandler, ErrorListener
     printLocation(new PrintWriter(pw), exception);
   }
 
-  public static void printLocation(java.io.PrintStream pw, org.xml.sax.SAXParseException exception)
+  public static void printLocation(java.io.PrintStream pw, test.org.xml.sax.SAXParseException exception)
   {
     printLocation(new PrintWriter(pw), exception);
   }

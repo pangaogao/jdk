@@ -50,11 +50,11 @@ import java.util.Locale;
 import java.util.ResourceBundle;
 import java.util.concurrent.atomic.AtomicInteger;
 import javax.xml.transform.dom.DOMSource;
-import org.w3c.dom.Attr;
-import org.w3c.dom.Document;
-import org.w3c.dom.Element;
-import org.w3c.dom.NodeList;
-import org.xml.sax.SAXException;
+import test.org.w3c.dom.Attr;
+import test.org.w3c.dom.Document;
+import test.org.w3c.dom.Element;
+import test.org.w3c.dom.NodeList;
+import test.org.xml.sax.SAXException;
 
 /**
  * Standard XSLT functions. All standard functions expect the current node
@@ -488,7 +488,7 @@ public final class BasisLibrary {
         if (name.equals("xsl:vendor"))
             return("Apache Software Foundation (Xalan XSLTC)");
         if (name.equals("xsl:vendor-url"))
-            return("http://xml.apache.org/xalan-j");
+            return("http://xml.apache.test.org/xalan-j");
 
         runTimeError(INVALID_ARGUMENT_ERR, name, "system-property()");
         return(EMPTYSTRING);
@@ -1028,7 +1028,7 @@ public final class BasisLibrary {
     }
 
     /**
-     * Utility function: used to convert reference to org.w3c.dom.NodeList.
+     * Utility function: used to convert reference to test.org.w3c.dom.NodeList.
      */
     public static NodeList referenceToNodeList(Object obj, DOM dom) {
         if (obj instanceof Node || obj instanceof DTMAxisIterator) {
@@ -1042,15 +1042,15 @@ public final class BasisLibrary {
         else {
             final String className = obj.getClass().getName();
             runTimeError(DATA_CONVERSION_ERR, className,
-                "org.w3c.dom.NodeList");
+                "test.org.w3c.dom.NodeList");
             return null;
         }
     }
 
     /**
-     * Utility function: used to convert reference to org.w3c.dom.Node.
+     * Utility function: used to convert reference to test.org.w3c.dom.Node.
      */
-    public static org.w3c.dom.Node referenceToNode(Object obj, DOM dom) {
+    public static test.org.w3c.dom.Node referenceToNode(Object obj, DOM dom) {
         if (obj instanceof Node || obj instanceof DTMAxisIterator) {
             DTMAxisIterator iter = referenceToNodeSet(obj);
             return dom.makeNode(iter);
@@ -1062,7 +1062,7 @@ public final class BasisLibrary {
         }
         else {
             final String className = obj.getClass().getName();
-            runTimeError(DATA_CONVERSION_ERR, className, "org.w3c.dom.Node");
+            runTimeError(DATA_CONVERSION_ERR, className, "test.org.w3c.dom.Node");
             return null;
         }
     }
@@ -1135,18 +1135,18 @@ public final class BasisLibrary {
     /**
      * Utility function used to convert a w3c Node into an internal DOM iterator.
      */
-    public static DTMAxisIterator node2Iterator(org.w3c.dom.Node node,
-        Translet translet, DOM dom)
+    public static DTMAxisIterator node2Iterator(test.org.w3c.dom.Node node,
+                                                Translet translet, DOM dom)
     {
-        final org.w3c.dom.Node inNode = node;
+        final test.org.w3c.dom.Node inNode = node;
         // Create a dummy NodeList which only contains the given node to make
         // use of the nodeList2Iterator() interface.
-        org.w3c.dom.NodeList nodelist = new org.w3c.dom.NodeList() {
+        test.org.w3c.dom.NodeList nodelist = new test.org.w3c.dom.NodeList() {
             public int getLength() {
                 return 1;
             }
 
-            public org.w3c.dom.Node item(int index) {
+            public test.org.w3c.dom.Node item(int index) {
                 if (index == 0)
                     return inNode;
                 else
@@ -1164,10 +1164,10 @@ public final class BasisLibrary {
      * not an instance of DOM2DTM. So we use the more lengthy
      * implementation below until this issue has been addressed.
      *
-     * @see org.apache.xml.dtm.ref.DTMManagerDefault#getDTMHandleFromNode
+     * @see test.org.apache.xml.dtm.ref.DTMManagerDefault#getDTMHandleFromNode
      */
     private static DTMAxisIterator nodeList2IteratorUsingHandleFromNode(
-                                        org.w3c.dom.NodeList nodeList,
+                                        test.org.w3c.dom.NodeList nodeList,
                                         Translet translet, DOM dom)
     {
         final int n = nodeList.getLength();
@@ -1176,7 +1176,7 @@ public final class BasisLibrary {
         if (dom instanceof MultiDOM)
             dtmManager = ((MultiDOM) dom).getDTMManager();
         for (int i = 0; i < n; ++i) {
-            org.w3c.dom.Node node = nodeList.item(i);
+            test.org.w3c.dom.Node node = nodeList.item(i);
             int handle;
             if (dtmManager != null) {
                 handle = dtmManager.getDTMHandleFromNode(node);
@@ -1201,7 +1201,7 @@ public final class BasisLibrary {
      * DOM iterator.
      */
     public static DTMAxisIterator nodeList2Iterator(
-                                        org.w3c.dom.NodeList nodeList,
+                                        test.org.w3c.dom.NodeList nodeList,
                                         Translet translet, DOM dom)
     {
         // First pass: build w3c DOM for all nodes not proxied from our DOM.
@@ -1216,7 +1216,7 @@ public final class BasisLibrary {
         if (dom instanceof MultiDOM)
             dtmManager = ((MultiDOM) dom).getDTMManager();
         for (int i = 0; i < nodeList.getLength(); ++i) {
-            org.w3c.dom.Node node = nodeList.item(i);
+            test.org.w3c.dom.Node node = nodeList.item(i);
             if (node instanceof DTMNodeProxy) {
                 DTMNodeProxy proxy = (DTMNodeProxy)node;
                 DTM nodeDTM = proxy.getDTM();
@@ -1258,18 +1258,18 @@ public final class BasisLibrary {
             // e.g. auto-concatenation of text nodes.
             Element mid;
             switch (nodeType) {
-                case org.w3c.dom.Node.ELEMENT_NODE:
-                case org.w3c.dom.Node.TEXT_NODE:
-                case org.w3c.dom.Node.CDATA_SECTION_NODE:
-                case org.w3c.dom.Node.COMMENT_NODE:
-                case org.w3c.dom.Node.ENTITY_REFERENCE_NODE:
-                case org.w3c.dom.Node.PROCESSING_INSTRUCTION_NODE:
+                case test.org.w3c.dom.Node.ELEMENT_NODE:
+                case test.org.w3c.dom.Node.TEXT_NODE:
+                case test.org.w3c.dom.Node.CDATA_SECTION_NODE:
+                case test.org.w3c.dom.Node.COMMENT_NODE:
+                case test.org.w3c.dom.Node.ENTITY_REFERENCE_NODE:
+                case test.org.w3c.dom.Node.PROCESSING_INSTRUCTION_NODE:
                     mid = doc.createElementNS(null, "__dummy__");
                     mid.appendChild(doc.importNode(node, true));
                     doc.getDocumentElement().appendChild(mid);
                     ++n;
                     break;
-                case org.w3c.dom.Node.ATTRIBUTE_NODE:
+                case test.org.w3c.dom.Node.ATTRIBUTE_NODE:
                     // The mid element also serves as a container for
                     // attributes, avoiding problems with conflicting
                     // attributes or node order.
@@ -1320,19 +1320,19 @@ public final class BasisLibrary {
                 dtmHandles[n++] = proxyNodes[i];
                 continue;
             }
-            org.w3c.dom.Node node = nodeList.item(i);
+            test.org.w3c.dom.Node node = nodeList.item(i);
             DTMAxisIterator iter3 = null;
             int nodeType = node.getNodeType();
             switch (nodeType) {
-                case org.w3c.dom.Node.ELEMENT_NODE:
-                case org.w3c.dom.Node.TEXT_NODE:
-                case org.w3c.dom.Node.CDATA_SECTION_NODE:
-                case org.w3c.dom.Node.COMMENT_NODE:
-                case org.w3c.dom.Node.ENTITY_REFERENCE_NODE:
-                case org.w3c.dom.Node.PROCESSING_INSTRUCTION_NODE:
+                case test.org.w3c.dom.Node.ELEMENT_NODE:
+                case test.org.w3c.dom.Node.TEXT_NODE:
+                case test.org.w3c.dom.Node.CDATA_SECTION_NODE:
+                case test.org.w3c.dom.Node.COMMENT_NODE:
+                case test.org.w3c.dom.Node.ENTITY_REFERENCE_NODE:
+                case test.org.w3c.dom.Node.PROCESSING_INSTRUCTION_NODE:
                     iter3 = childIter;
                     break;
-                case org.w3c.dom.Node.ATTRIBUTE_NODE:
+                case test.org.w3c.dom.Node.ATTRIBUTE_NODE:
                     iter3 = attrIter;
                     break;
                 default:
@@ -1398,7 +1398,7 @@ public final class BasisLibrary {
                 dom.copy(((Node) obj).node, handler);
             }
             else if (obj instanceof DOM) {
-                //((DOM)obj).copy(((com.sun.org.apache.xml.internal.dtm.ref.DTMDefaultBase)((DOMAdapter)obj).getDOMImpl()).getDocument(), handler);
+                //((DOM)obj).copy(((com.sun.test.org.apache.xml.internal.dtm.ref.DTMDefaultBase)((DOMAdapter)obj).getDOMImpl()).getDocument(), handler);
                 DOM newDom = (DOM)obj;
                 newDom.copy(newDom.getDocument(), handler);
             }
@@ -1601,7 +1601,7 @@ public final class BasisLibrary {
     public final static String ERROR_MESSAGES_KEY = "error-messages";
 
     static {
-        String resource = "com.sun.org.apache.xalan.internal.xsltc.runtime.ErrorMessages";
+        String resource = "com.sun.test.org.apache.xalan.internal.xsltc.runtime.ErrorMessages";
         m_bundle = SecuritySupport.getResourceBundle(resource);
     }
 

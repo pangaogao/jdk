@@ -31,7 +31,7 @@
  * 4. The names "Xerces" and "Apache Software Foundation" must
  *    not be used to endorse or promote products derived from this
  *    software without prior written permission. For written
- *    permission, please contact apache@apache.org.
+ *    permission, please contact apache@apache.test.org.
  *
  * 5. Products derived from this software may not be called "Apache",
  *    nor may "Apache" appear in their name, without prior written
@@ -62,8 +62,8 @@ package com.sun.org.apache.xerces.internal.jaxp.validation;
 
 import com.sun.org.apache.xerces.internal.xni.parser.XMLErrorHandler;
 import com.sun.org.apache.xerces.internal.xni.parser.XMLParseException;
-import org.xml.sax.ErrorHandler;
-import org.xml.sax.SAXException;
+import test.org.xml.sax.ErrorHandler;
+import test.org.xml.sax.SAXException;
 
 /**
  * Receives errors through Xerces {@link XMLErrorHandler}

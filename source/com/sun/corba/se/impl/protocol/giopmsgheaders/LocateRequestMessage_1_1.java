@@ -78,7 +78,7 @@ public final class LocateRequestMessage_1_1 extends Message_1_1
 
     // IO methods
 
-    public void read(org.omg.CORBA.portable.InputStream istream) {
+    public void read(test.org.omg.CORBA.portable.InputStream istream) {
         super.read(istream);
         this.request_id = istream.read_ulong();
         int _len1 = istream.read_long();
@@ -86,7 +86,7 @@ public final class LocateRequestMessage_1_1 extends Message_1_1
         istream.read_octet_array(this.object_key, 0, _len1);
     }
 
-    public void write(org.omg.CORBA.portable.OutputStream ostream) {
+    public void write(test.org.omg.CORBA.portable.OutputStream ostream) {
         super.write(ostream);
         ostream.write_ulong(this.request_id);
         nullCheck(this.object_key);

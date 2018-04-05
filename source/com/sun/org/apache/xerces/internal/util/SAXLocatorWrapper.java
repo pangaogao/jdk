@@ -20,8 +20,8 @@
 
 package com.sun.org.apache.xerces.internal.util;
 
-import org.xml.sax.Locator;
-import org.xml.sax.ext.Locator2;
+import test.org.xml.sax.Locator;
+import test.org.xml.sax.ext.Locator2;
 
 import com.sun.org.apache.xerces.internal.xni.XMLLocator;
 

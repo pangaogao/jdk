@@ -33,13 +33,10 @@ package com.sun.corba.se.impl.io;
 
 import java.io.IOException;
 import java.io.NotActiveException;
-import java.io.OutputStream;
 import java.io.ObjectOutputStream;
 import java.io.ObjectOutput;
 import java.util.Map;
 import java.util.HashMap;
-
-import org.omg.CORBA.INTERNAL;
 
 public abstract class OutputStreamHook extends ObjectOutputStream
 {
@@ -185,7 +182,7 @@ public abstract class OutputStreamHook extends ObjectOutputStream
         }
     }
 
-    abstract org.omg.CORBA_2_3.portable.OutputStream getOrbStream();
+    abstract test.org.omg.CORBA_2_3.portable.OutputStream getOrbStream();
 
     protected abstract void beginOptionalCustomData();
 
@@ -301,7 +298,7 @@ public abstract class OutputStreamHook extends ObjectOutputStream
             // In stream format version 2, we must tell the ORB
             // stream to close the fake custom valuetype.
             if (stream.getStreamFormatVersion() == 2)
-                ((org.omg.CORBA.portable.ValueOutputStream)stream.getOrbStream()).end_value();
+                ((test.org.omg.CORBA.portable.ValueOutputStream)stream.getOrbStream()).end_value();
 
             stream.setState(NOT_IN_WRITE_OBJECT);
         }

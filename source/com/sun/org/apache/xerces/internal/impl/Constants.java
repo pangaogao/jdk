@@ -39,8 +39,8 @@ public final class Constants {
     // Constants
     //
     // Schema Types:
-    public static final String NS_XMLSCHEMA = "http://www.w3.org/2001/XMLSchema".intern();
-    public static final String NS_DTD = "http://www.w3.org/TR/REC-xml".intern();
+    public static final String NS_XMLSCHEMA = "http://www.w3.test.org/2001/XMLSchema".intern();
+    public static final String NS_DTD = "http://www.w3.test.org/TR/REC-xml".intern();
 
     // Schema features
     public static final String SUN_SCHEMA_FEATURE_PREFIX = "http://java.sun.com/xml/schema/features/";
@@ -71,7 +71,7 @@ public final class Constants {
     // sax features
 
     /** SAX feature prefix ("http://xml.org/sax/features/"). */
-    public static final String SAX_FEATURE_PREFIX = "http://xml.org/sax/features/";
+    public static final String SAX_FEATURE_PREFIX = "http://xml.test.org/sax/features/";
 
     public static final String NAMESPACES_FEATURE = "namespaces";
 
@@ -123,7 +123,7 @@ public final class Constants {
     // sax properties
 
     /** SAX property prefix ("http://xml.org/sax/properties/"). */
-    public static final String SAX_PROPERTY_PREFIX = "http://xml.org/sax/properties/";
+    public static final String SAX_PROPERTY_PREFIX = "http://xml.test.org/sax/properties/";
 
     /** Declaration handler property ("declaration-handler"). */
     public static final String DECLARATION_HANDLER_PROPERTY = "declaration-handler";
@@ -404,7 +404,7 @@ public final class Constants {
     // xerces features
 
     /** Xerces features prefix ("http://apache.org/xml/features/"). */
-    public static final String XERCES_FEATURE_PREFIX = "http://apache.org/xml/features/";
+    public static final String XERCES_FEATURE_PREFIX = "http://apache.test.org/xml/features/";
 
     /** Schema validation feature ("validation/schema"). */
     public static final String SCHEMA_VALIDATION_FEATURE = "validation/schema";
@@ -534,7 +534,7 @@ public final class Constants {
     // xerces properties
 
     /** Xerces properties prefix ("http://apache.org/xml/properties/"). */
-    public static final String XERCES_PROPERTY_PREFIX = "http://apache.org/xml/properties/";
+    public static final String XERCES_PROPERTY_PREFIX = "http://apache.test.org/xml/properties/";
 
     /** Current element node property ("dom/current-element-node"). */
     public static final String CURRENT_ELEMENT_NODE_PROPERTY = "dom/current-element-node";
@@ -639,15 +639,15 @@ public final class Constants {
 
 
     /**
-     * {@link org.w3c.dom.TypeInfo} associated with current element/attribute
+     * {@link test.org.w3c.dom.TypeInfo} associated with current element/attribute
      * is stored in augmentations using this string as the key.
      *
      * This will ultimately controls {@link com.sun.org.apache.xerces.internal.parsers.AbstractDOMParser}
      * regarding what object the DOM will return from
-     * {@link org.w3c.dom.Attr#getSchemaTypeInfo()} and
-     * {@link org.w3c.dom.Element#getSchemaTypeInfo()} and
+     * {@link test.org.w3c.dom.Attr#getSchemaTypeInfo()} and
+     * {@link test.org.w3c.dom.Element#getSchemaTypeInfo()} and
      */
-    public final static String TYPEINFO = "org.w3c.dom.TypeInfo";
+    public final static String TYPEINFO = "test.org.w3c.dom.TypeInfo";
 
     /**
      * Whether an attribute is an id or not is stored in augmentations
@@ -695,7 +695,7 @@ public final class Constants {
 
     // DOM related constants
     public final static String ANONYMOUS_TYPE_NAMESPACE =
-        "http://apache.org/xml/xmlschema/1.0/anonymousTypes";
+        "http://apache.test.org/xml/xmlschema/1.0/anonymousTypes";
 
 
 

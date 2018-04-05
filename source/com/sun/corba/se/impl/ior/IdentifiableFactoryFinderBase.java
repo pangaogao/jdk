@@ -25,7 +25,7 @@
 
 package com.sun.corba.se.impl.ior ;
 
-import org.omg.CORBA_2_3.portable.InputStream ;
+import test.org.omg.CORBA_2_3.portable.InputStream ;
 
 import java.util.Map ;
 import java.util.HashMap ;

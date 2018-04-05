@@ -20,8 +20,8 @@
 
 package com.sun.org.apache.xerces.internal.impl.xs.opti;
 
-import org.w3c.dom.Text;
-import org.w3c.dom.DOMException;
+import test.org.w3c.dom.Text;
+import test.org.w3c.dom.DOMException;
 
 /*
  * @author Neil Graham, IBM

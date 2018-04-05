@@ -31,8 +31,6 @@
 
 package com.sun.corba.se.impl.javax.rmi;
 
-import java.lang.reflect.Method ;
-
 import javax.rmi.CORBA.Tie;
 import javax.rmi.CORBA.Util;
 
@@ -40,26 +38,16 @@ import java.rmi.RemoteException;
 import java.rmi.NoSuchObjectException;
 import java.rmi.Remote;
 
-import java.util.Properties;
-
-import org.omg.CORBA.ORB;
-import org.omg.CORBA.portable.Delegate;
-import org.omg.CORBA.SystemException;
+import test.org.omg.CORBA.ORB;
+import test.org.omg.CORBA.SystemException;
 
 import java.rmi.server.UnicastRemoteObject;
-import java.rmi.server.RemoteStub;
 import java.rmi.server.ExportException;
 
-import java.net.URL;
-
-import com.sun.corba.se.impl.util.JDKBridge;
 import com.sun.corba.se.impl.util.Utility;
 import com.sun.corba.se.impl.util.RepositoryId;
 
 import com.sun.corba.se.spi.presentation.rmi.StubAdapter;
-
-import java.security.AccessController;
-import com.sun.corba.se.impl.orbutil.GetPropertyAction;
 
 /**
  * Server implementation objects may either inherit from
@@ -225,8 +213,8 @@ public class PortableRemoteObject
                 narrowTo != java.io.Serializable.class &&
                 narrowTo != java.io.Externalizable.class) {
 
-                org.omg.CORBA.Object narrowObj
-                    = (org.omg.CORBA.Object) narrowFrom;
+                test.org.omg.CORBA.Object narrowObj
+                    = (test.org.omg.CORBA.Object) narrowFrom;
 
                 // Create an id from the narrowTo type...
                 String id = RepositoryId.createForAnyType(narrowTo);

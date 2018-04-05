@@ -25,33 +25,26 @@
 
 package com.sun.corba.se.impl.oa.toa ;
 
-import org.omg.CORBA.Policy ;
-import org.omg.PortableInterceptor.ObjectReferenceTemplate ;
-import org.omg.PortableInterceptor.ObjectReferenceFactory ;
-import org.omg.PortableInterceptor.ACTIVE;
-import org.omg.PortableServer.ServantLocatorPackage.CookieHolder ;
+import test.org.omg.CORBA.Policy ;
+import test.org.omg.PortableInterceptor.ObjectReferenceFactory ;
+import test.org.omg.PortableInterceptor.ACTIVE;
 
 import com.sun.corba.se.pept.protocol.ClientDelegate ;
 
 import com.sun.corba.se.spi.copyobject.CopierManager ;
-import com.sun.corba.se.spi.copyobject.ObjectCopier ;
 import com.sun.corba.se.spi.copyobject.ObjectCopierFactory ;
 import com.sun.corba.se.spi.ior.ObjectKeyTemplate ;
-import com.sun.corba.se.spi.ior.iiop.IIOPAddress ;
-import com.sun.corba.se.spi.ior.iiop.IIOPFactories ;
 import com.sun.corba.se.spi.oa.OAInvocationInfo ;
 import com.sun.corba.se.spi.oa.OADestroyed ;
 import com.sun.corba.se.spi.oa.ObjectAdapterBase ;
 import com.sun.corba.se.spi.orb.ORB ;
 import com.sun.corba.se.spi.presentation.rmi.StubAdapter ;
-import com.sun.corba.se.spi.protocol.RequestDispatcherRegistry ;
 import com.sun.corba.se.spi.protocol.LocalClientRequestDispatcher ;
 import com.sun.corba.se.spi.transport.CorbaContactInfoList ;
 
 import com.sun.corba.se.impl.ior.JIDLObjectKeyTemplate ;
 import com.sun.corba.se.impl.oa.NullServantImpl;
 import com.sun.corba.se.impl.oa.poa.Policies;
-import com.sun.corba.se.impl.oa.toa.TransientObjectManager ;
 import com.sun.corba.se.impl.orbutil.ORBConstants ;
 import com.sun.corba.se.impl.protocol.JIDLLocalCRDImpl ;
 
@@ -109,9 +102,9 @@ public class TOAImpl extends ObjectAdapterBase implements TOA
         return cm.getDefaultObjectCopierFactory() ;
     }
 
-    public org.omg.CORBA.Object getLocalServant( byte[] objectId )
+    public test.org.omg.CORBA.Object getLocalServant(byte[] objectId )
     {
-        return (org.omg.CORBA.Object)(servants.lookupServant( objectId ) ) ;
+        return (test.org.omg.CORBA.Object)(servants.lookupServant( objectId ) ) ;
     }
 
     /** Get the servant for the request given by the parameters.
@@ -171,7 +164,7 @@ public class TOAImpl extends ObjectAdapterBase implements TOA
 
     // Methods unique to the TOA
 
-    public void connect( org.omg.CORBA.Object objref)
+    public void connect( test.org.omg.CORBA.Object objref)
     {
         // Store the objref and get a userkey allocated by the transient
         // object manager.
@@ -182,12 +175,12 @@ public class TOAImpl extends ObjectAdapterBase implements TOA
 
         // Create the new objref
         ObjectReferenceFactory orf = getCurrentFactory() ;
-        org.omg.CORBA.Object obj = orf.make_object( id, key ) ;
+        test.org.omg.CORBA.Object obj = orf.make_object( id, key ) ;
 
         // Copy the delegate from the new objref to the argument
         // XXX handle the case of an attempt to connect a local object.
 
-        org.omg.CORBA.portable.Delegate delegate = StubAdapter.getDelegate(
+        test.org.omg.CORBA.portable.Delegate delegate = StubAdapter.getDelegate(
             obj ) ;
         CorbaContactInfoList ccil = (CorbaContactInfoList)
             ((ClientDelegate)delegate).getContactInfoList() ;
@@ -205,10 +198,10 @@ public class TOAImpl extends ObjectAdapterBase implements TOA
         StubAdapter.setDelegate( objref, delegate ) ;
     }
 
-    public void disconnect( org.omg.CORBA.Object objref )
+    public void disconnect( test.org.omg.CORBA.Object objref )
     {
         // Get the delegate, then ior, then transientKey, then delete servant
-        org.omg.CORBA.portable.Delegate del = StubAdapter.getDelegate(
+        test.org.omg.CORBA.portable.Delegate del = StubAdapter.getDelegate(
             objref ) ;
         CorbaContactInfoList ccil = (CorbaContactInfoList)
             ((ClientDelegate)del).getContactInfoList() ;

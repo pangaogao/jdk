@@ -52,35 +52,35 @@ public interface Constants extends InstructionConstants {
     public static final String EMPTYSTRING = "";
 
     public static final String NAMESPACE_FEATURE =
-        "http://xml.org/sax/features/namespaces";
+        "http://xml.test.org/sax/features/namespaces";
 
     public static final String TRANSLET_INTF
-        = "com.sun.org.apache.xalan.internal.xsltc.Translet";
+        = "com.sun.test.org.apache.xalan.internal.xsltc.Translet";
     public static final String TRANSLET_INTF_SIG
-        = "Lcom/sun/org/apache/xalan/internal/xsltc/Translet;";
+        = "Lcom/sun/test.org/apache/xalan/internal/xsltc/Translet;";
 
     public static final String ATTRIBUTES_SIG
-        = "Lcom/sun/org/apache/xalan/internal/xsltc/runtime/Attributes;";
+        = "Lcom/sun/test.org/apache/xalan/internal/xsltc/runtime/Attributes;";
     public static final String NODE_ITERATOR_SIG
-        = "Lcom/sun/org/apache/xml/internal/dtm/DTMAxisIterator;";
+        = "Lcom/sun/test.org/apache/xml/internal/dtm/DTMAxisIterator;";
     public static final String DOM_INTF_SIG
-        = "Lcom/sun/org/apache/xalan/internal/xsltc/DOM;";
+        = "Lcom/sun/test.org/apache/xalan/internal/xsltc/DOM;";
     public static final String DOM_IMPL_CLASS
         = "com/sun/org/apache/xalan/internal/xsltc/DOM"; // xml/dtm/ref/DTMDefaultBaseIterators"; //xalan/xsltc/dom/DOMImpl";
         public static final String SAX_IMPL_CLASS
         = "com/sun/org/apache/xalan/internal/xsltc/DOM/SAXImpl";
     public static final String DOM_IMPL_SIG
-        = "Lcom/sun/org/apache/xalan/internal/xsltc/dom/SAXImpl;"; //xml/dtm/ref/DTMDefaultBaseIterators"; //xalan/xsltc/dom/DOMImpl;";
+        = "Lcom/sun/test.org/apache/xalan/internal/xsltc/dom/SAXImpl;"; //xml/dtm/ref/DTMDefaultBaseIterators"; //xalan/xsltc/dom/DOMImpl;";
         public static final String SAX_IMPL_SIG
-        = "Lcom/sun/org/apache/xalan/internal/xsltc/dom/SAXImpl;";
+        = "Lcom/sun/test.org/apache/xalan/internal/xsltc/dom/SAXImpl;";
     public static final String DOM_ADAPTER_CLASS
         = "com/sun/org/apache/xalan/internal/xsltc/dom/DOMAdapter";
     public static final String DOM_ADAPTER_SIG
-        = "Lcom/sun/org/apache/xalan/internal/xsltc/dom/DOMAdapter;";
+        = "Lcom/sun/test.org/apache/xalan/internal/xsltc/dom/DOMAdapter;";
     public static final String MULTI_DOM_CLASS
-        = "com.sun.org.apache.xalan.internal.xsltc.dom.MultiDOM";
+        = "com.sun.test.org.apache.xalan.internal.xsltc.dom.MultiDOM";
     public static final String MULTI_DOM_SIG
-        = "Lcom/sun/org/apache/xalan/internal/xsltc/dom/MultiDOM;";
+        = "Lcom/sun/test.org/apache/xalan/internal/xsltc/dom/MultiDOM;";
 
     public static final String STRING
         = "java.lang.String";
@@ -116,65 +116,65 @@ public interface Constants extends InstructionConstants {
     public static final String NODE
         = "int";
     public static final String NODE_ITERATOR
-        = "com.sun.org.apache.xml.internal.dtm.DTMAxisIterator";
+        = "com.sun.test.org.apache.xml.internal.dtm.DTMAxisIterator";
     public static final String NODE_ITERATOR_BASE
-        = "com.sun.org.apache.xml.internal.dtm.ref.DTMAxisIteratorBase";
+        = "com.sun.test.org.apache.xml.internal.dtm.ref.DTMAxisIteratorBase";
     public static final String SORT_ITERATOR
-        = "com.sun.org.apache.xalan.internal.xsltc.dom.SortingIterator";
+        = "com.sun.test.org.apache.xalan.internal.xsltc.dom.SortingIterator";
     public static final String SORT_ITERATOR_SIG
-        = "Lcom.sun.org.apache.xalan.internal.xsltc.dom.SortingIterator;";
+        = "Lcom.sun.test.org.apache.xalan.internal.xsltc.dom.SortingIterator;";
     public static final String NODE_SORT_RECORD
-        = "com.sun.org.apache.xalan.internal.xsltc.dom.NodeSortRecord";
+        = "com.sun.test.org.apache.xalan.internal.xsltc.dom.NodeSortRecord";
     public static final String NODE_SORT_FACTORY
         = "com/sun/org/apache/xalan/internal/xsltc/dom/NodeSortRecordFactory";
     public static final String NODE_SORT_RECORD_SIG
-        = "Lcom/sun/org/apache/xalan/internal/xsltc/dom/NodeSortRecord;";
+        = "Lcom/sun/test.org/apache/xalan/internal/xsltc/dom/NodeSortRecord;";
     public static final String NODE_SORT_FACTORY_SIG
-        = "Lcom/sun/org/apache/xalan/internal/xsltc/dom/NodeSortRecordFactory;";
+        = "Lcom/sun/test.org/apache/xalan/internal/xsltc/dom/NodeSortRecordFactory;";
     public static final String LOCALE_CLASS
         = "java.util.Locale";
     public static final String LOCALE_SIG
         = "Ljava/util/Locale;";
     public static final String STRING_VALUE_HANDLER
-        = "com.sun.org.apache.xalan.internal.xsltc.runtime.StringValueHandler";
+        = "com.sun.test.org.apache.xalan.internal.xsltc.runtime.StringValueHandler";
     public static final String STRING_VALUE_HANDLER_SIG
-        = "Lcom/sun/org/apache/xalan/internal/xsltc/runtime/StringValueHandler;";
+        = "Lcom/sun/test.org/apache/xalan/internal/xsltc/runtime/StringValueHandler;";
     public static final String OUTPUT_HANDLER
         = "com/sun/org/apache/xml/internal/serializer/SerializationHandler";
     public static final String OUTPUT_HANDLER_SIG
-        = "Lcom/sun/org/apache/xml/internal/serializer/SerializationHandler;";
+        = "Lcom/sun/test.org/apache/xml/internal/serializer/SerializationHandler;";
     public static final String FILTER_INTERFACE
-        = "com.sun.org.apache.xalan.internal.xsltc.dom.Filter";
+        = "com.sun.test.org.apache.xalan.internal.xsltc.dom.Filter";
     public static final String FILTER_INTERFACE_SIG
-        = "Lcom/sun/org/apache/xalan/internal/xsltc/dom/Filter;";
+        = "Lcom/sun/test.org/apache/xalan/internal/xsltc/dom/Filter;";
     public static final String UNION_ITERATOR_CLASS
-        = "com.sun.org.apache.xalan.internal.xsltc.dom.UnionIterator";
+        = "com.sun.test.org.apache.xalan.internal.xsltc.dom.UnionIterator";
     public static final String STEP_ITERATOR_CLASS
-        = "com.sun.org.apache.xalan.internal.xsltc.dom.StepIterator";
+        = "com.sun.test.org.apache.xalan.internal.xsltc.dom.StepIterator";
     public static final String CACHED_NODE_LIST_ITERATOR_CLASS
-        = "com.sun.org.apache.xalan.internal.xsltc.dom.CachedNodeListIterator";
+        = "com.sun.test.org.apache.xalan.internal.xsltc.dom.CachedNodeListIterator";
     public static final String NTH_ITERATOR_CLASS
-        = "com.sun.org.apache.xalan.internal.xsltc.dom.NthIterator";
+        = "com.sun.test.org.apache.xalan.internal.xsltc.dom.NthIterator";
     public static final String ABSOLUTE_ITERATOR
-        = "com.sun.org.apache.xalan.internal.xsltc.dom.AbsoluteIterator";
+        = "com.sun.test.org.apache.xalan.internal.xsltc.dom.AbsoluteIterator";
     public static final String DUP_FILTERED_ITERATOR
-        = "com.sun.org.apache.xalan.internal.xsltc.dom.DupFilterIterator";
+        = "com.sun.test.org.apache.xalan.internal.xsltc.dom.DupFilterIterator";
     public static final String CURRENT_NODE_LIST_ITERATOR
-        = "com.sun.org.apache.xalan.internal.xsltc.dom.CurrentNodeListIterator";
+        = "com.sun.test.org.apache.xalan.internal.xsltc.dom.CurrentNodeListIterator";
     public static final String CURRENT_NODE_LIST_FILTER
-        = "com.sun.org.apache.xalan.internal.xsltc.dom.CurrentNodeListFilter";
+        = "com.sun.test.org.apache.xalan.internal.xsltc.dom.CurrentNodeListFilter";
     public static final String CURRENT_NODE_LIST_ITERATOR_SIG
-        = "Lcom/sun/org/apache/xalan/internal/xsltc/dom/CurrentNodeListIterator;";
+        = "Lcom/sun/test.org/apache/xalan/internal/xsltc/dom/CurrentNodeListIterator;";
     public static final String CURRENT_NODE_LIST_FILTER_SIG
-        = "Lcom/sun/org/apache/xalan/internal/xsltc/dom/CurrentNodeListFilter;";
+        = "Lcom/sun/test.org/apache/xalan/internal/xsltc/dom/CurrentNodeListFilter;";
     public static final String FILTER_STEP_ITERATOR
-        = "com.sun.org.apache.xalan.internal.xsltc.dom.FilteredStepIterator";
+        = "com.sun.test.org.apache.xalan.internal.xsltc.dom.FilteredStepIterator";
     public static final String FILTER_ITERATOR
-        = "com.sun.org.apache.xalan.internal.xsltc.dom.FilterIterator";
+        = "com.sun.test.org.apache.xalan.internal.xsltc.dom.FilterIterator";
     public static final String SINGLETON_ITERATOR
-        = "com.sun.org.apache.xalan.internal.xsltc.dom.SingletonIterator";
+        = "com.sun.test.org.apache.xalan.internal.xsltc.dom.SingletonIterator";
     public static final String MATCHING_ITERATOR
-        = "com.sun.org.apache.xalan.internal.xsltc.dom.MatchingIterator";
+        = "com.sun.test.org.apache.xalan.internal.xsltc.dom.MatchingIterator";
     public static final String NODE_SIG
         = "I";
     public static final String GET_PARENT
@@ -203,7 +203,7 @@ public interface Constants extends InstructionConstants {
         = "(" + STRING_SIG + ")I";
 
     public static final String XSLT_PACKAGE
-        = "com.sun.org.apache.xalan.internal.xsltc";
+        = "com.sun.test.org.apache.xalan.internal.xsltc";
     public static final String COMPILER_PACKAGE
         = XSLT_PACKAGE + ".compiler";
     public static final String RUNTIME_PACKAGE
@@ -212,11 +212,11 @@ public interface Constants extends InstructionConstants {
         = RUNTIME_PACKAGE + ".AbstractTranslet";
 
     public static final String TRANSLET_SIG
-        = "Lcom/sun/org/apache/xalan/internal/xsltc/runtime/AbstractTranslet;";
+        = "Lcom/sun/test.org/apache/xalan/internal/xsltc/runtime/AbstractTranslet;";
     public static final String UNION_ITERATOR_SIG
-        = "Lcom/sun/org/apache/xalan/internal/xsltc/dom/UnionIterator;";
+        = "Lcom/sun/test.org/apache/xalan/internal/xsltc/dom/UnionIterator;";
     public static final String TRANSLET_OUTPUT_SIG
-        = "Lcom/sun/org/apache/xml/internal/serializer/SerializationHandler;";
+        = "Lcom/sun/test.org/apache/xml/internal/serializer/SerializationHandler;";
     public static final String MAKE_NODE_SIG
         = "(I)Lorg/w3c/dom/Node;";
     public static final String MAKE_NODE_SIG2
@@ -227,27 +227,27 @@ public interface Constants extends InstructionConstants {
         = "(" + NODE_ITERATOR_SIG + ")Lorg/w3c/dom/NodeList;";
 
     public static final String STREAM_XML_OUTPUT
-    = "com.sun.org.apache.xml.internal.serializer.ToXMLStream";
+    = "com.sun.test.org.apache.xml.internal.serializer.ToXMLStream";
 
     public static final String OUTPUT_BASE
-    = "com.sun.org.apache.xml.internal.serializer.SerializerBase";
+    = "com.sun.test.org.apache.xml.internal.serializer.SerializerBase";
 
     public static final String LOAD_DOCUMENT_CLASS
-        = "com.sun.org.apache.xalan.internal.xsltc.dom.LoadDocument";
+        = "com.sun.test.org.apache.xalan.internal.xsltc.dom.LoadDocument";
 
     public static final String KEY_INDEX_CLASS
         = "com/sun/org/apache/xalan/internal/xsltc/dom/KeyIndex";
     public static final String KEY_INDEX_SIG
-        = "Lcom/sun/org/apache/xalan/internal/xsltc/dom/KeyIndex;";
+        = "Lcom/sun/test.org/apache/xalan/internal/xsltc/dom/KeyIndex;";
 
     public static final String KEY_INDEX_ITERATOR_SIG
-        = "Lcom/sun/org/apache/xalan/internal/xsltc/dom/KeyIndex$KeyIndexIterator;";
+        = "Lcom/sun/test.org/apache/xalan/internal/xsltc/dom/KeyIndex$KeyIndexIterator;";
     public static final String DOM_INTF
-        = "com.sun.org.apache.xalan.internal.xsltc.DOM";
+        = "com.sun.test.org.apache.xalan.internal.xsltc.DOM";
     public static final String DOM_IMPL
-        = "com.sun.org.apache.xalan.internal.xsltc.dom.SAXImpl";
+        = "com.sun.test.org.apache.xalan.internal.xsltc.dom.SAXImpl";
         public static final String SAX_IMPL
-        = "com.sun.org.apache.xalan.internal.xsltc.dom.SAXImpl";
+        = "com.sun.test.org.apache.xalan.internal.xsltc.dom.SAXImpl";
     public static final String STRING_CLASS
         = "java.lang.String";
     public static final String OBJECT_CLASS
@@ -262,20 +262,20 @@ public interface Constants extends InstructionConstants {
         = "Ljava/io/Writer;";
 
     public static final String TRANSLET_OUTPUT_BASE
-        = "com.sun.org.apache.xalan.internal.xsltc.TransletOutputBase";
+        = "com.sun.test.org.apache.xalan.internal.xsltc.TransletOutputBase";
     // output interface
     public static final String TRANSLET_OUTPUT_INTERFACE
-        = "com.sun.org.apache.xml.internal.serializer.SerializationHandler";
+        = "com.sun.test.org.apache.xml.internal.serializer.SerializationHandler";
     public static final String BASIS_LIBRARY_CLASS
-        = "com.sun.org.apache.xalan.internal.xsltc.runtime.BasisLibrary";
+        = "com.sun.test.org.apache.xalan.internal.xsltc.runtime.BasisLibrary";
     public static final String ATTRIBUTE_LIST_IMPL_CLASS
-        = "com.sun.org.apache.xalan.internal.xsltc.runtime.AttributeListImpl";
+        = "com.sun.test.org.apache.xalan.internal.xsltc.runtime.AttributeListImpl";
     public static final String DOUBLE_CLASS
         = "java.lang.Double";
     public static final String INTEGER_CLASS
         = "java.lang.Integer";
     public static final String RUNTIME_NODE_CLASS
-        = "com.sun.org.apache.xalan.internal.xsltc.runtime.Node";
+        = "com.sun.test.org.apache.xalan.internal.xsltc.runtime.Node";
     public static final String MATH_CLASS
         = "java.lang.Math";
 
@@ -420,7 +420,7 @@ public interface Constants extends InstructionConstants {
     public static final String ADD_ATTRIBUTE
         = "addAttribute";
     public static final String ATTRIBUTE_LIST_IMPL_SIG
-        = "Lcom/sun/org/apache/xalan/internal/xsltc/runtime/AttributeListImpl;";
+        = "Lcom/sun/test.org/apache/xalan/internal/xsltc/runtime/AttributeListImpl;";
     public static final String CLEAR_ATTRIBUTES_SIG
         = "()" + ATTRIBUTE_LIST_IMPL_SIG;
     public static final String ADD_ATTRIBUTE_SIG
@@ -438,13 +438,13 @@ public interface Constants extends InstructionConstants {
         = "(" + NODE_SIG + ")" + NODE_ITERATOR_SIG;
 
     public static final String NODE_COUNTER
-        = "com.sun.org.apache.xalan.internal.xsltc.dom.NodeCounter";
+        = "com.sun.test.org.apache.xalan.internal.xsltc.dom.NodeCounter";
     public static final String NODE_COUNTER_SIG
-        = "Lcom/sun/org/apache/xalan/internal/xsltc/dom/NodeCounter;";
+        = "Lcom/sun/test.org/apache/xalan/internal/xsltc/dom/NodeCounter;";
     public static final String DEFAULT_NODE_COUNTER
-        = "com.sun.org.apache.xalan.internal.xsltc.dom.DefaultNodeCounter";
+        = "com.sun.test.org.apache.xalan.internal.xsltc.dom.DefaultNodeCounter";
     public static final String DEFAULT_NODE_COUNTER_SIG
-        = "Lcom/sun/org/apache/xalan/internal/xsltc/dom/DefaultNodeCounter;";
+        = "Lcom/sun/test.org/apache/xalan/internal/xsltc/dom/DefaultNodeCounter;";
     public static final String TRANSLET_FIELD
         = "translet";
     public static final String TRANSLET_FIELD_SIG
@@ -474,9 +474,9 @@ public interface Constants extends InstructionConstants {
     public static final String STRIP_SPACE_INTF
         = "com/sun/org/apache/xalan/internal/xsltc/StripFilter";
     public static final String STRIP_SPACE_SIG
-        = "Lcom/sun/org/apache/xalan/internal/xsltc/StripFilter;";
+        = "Lcom/sun/test.org/apache/xalan/internal/xsltc/StripFilter;";
     public static final String STRIP_SPACE_PARAMS
-        = "(Lcom/sun/org/apache/xalan/internal/xsltc/DOM;II)Z";
+        = "(Lcom/sun/test.org/apache/xalan/internal/xsltc/DOM;II)Z";
 
     public static final String GET_NODE_VALUE_ITERATOR
         = "getNodeValueIterator";
@@ -492,17 +492,17 @@ public interface Constants extends InstructionConstants {
     public static final String XMLNS_PREFIX = "xmlns";
     public static final String XMLNS_STRING = "xmlns:";
     public static final String XMLNS_URI
-        = "http://www.w3.org/2000/xmlns/";
+        = "http://www.w3.test.org/2000/xmlns/";
     public static final String XSLT_URI
-        = "http://www.w3.org/1999/XSL/Transform";
+        = "http://www.w3.test.org/1999/XSL/Transform";
     public static final String XHTML_URI
-        = "http://www.w3.org/1999/xhtml";
+        = "http://www.w3.test.org/1999/xhtml";
     public static final String TRANSLET_URI
-        = "http://xml.apache.org/xalan/xsltc";
+        = "http://xml.apache.test.org/xalan/xsltc";
     public static final String REDIRECT_URI
-        = "http://xml.apache.org/xalan/redirect";
+        = "http://xml.apache.test.org/xalan/redirect";
     public static final String FALLBACK_CLASS
-        = "com.sun.org.apache.xalan.internal.xsltc.compiler.Fallback";
+        = "com.sun.test.org.apache.xalan.internal.xsltc.compiler.Fallback";
 
     public static final int RTF_INITIAL_SIZE = 32;
 }

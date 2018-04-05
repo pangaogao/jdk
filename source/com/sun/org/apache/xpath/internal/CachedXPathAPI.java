@@ -28,10 +28,10 @@ import com.sun.org.apache.xml.internal.utils.PrefixResolver;
 import com.sun.org.apache.xml.internal.utils.PrefixResolverDefault;
 import com.sun.org.apache.xpath.internal.objects.XObject;
 
-import org.w3c.dom.Document;
-import org.w3c.dom.Node;
-import org.w3c.dom.NodeList;
-import org.w3c.dom.traversal.NodeIterator;
+import test.org.w3c.dom.Document;
+import test.org.w3c.dom.Node;
+import test.org.w3c.dom.NodeList;
+import test.org.w3c.dom.traversal.NodeIterator;
 
 /**
  * The methods in this class are convenience methods into the

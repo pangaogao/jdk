@@ -8,7 +8,7 @@ package com.sun.corba.se.spi.activation;
 * Wednesday, March 15, 2017 1:33:56 AM PDT
 */
 
-public final class ServerAlreadyInstalled extends org.omg.CORBA.UserException
+public final class ServerAlreadyInstalled extends test.org.omg.CORBA.UserException
 {
   public int serverId = (int)0;
 

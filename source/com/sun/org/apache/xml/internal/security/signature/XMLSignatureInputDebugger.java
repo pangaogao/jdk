@@ -30,13 +30,13 @@ import java.util.Set;
 
 import com.sun.org.apache.xml.internal.security.c14n.helper.AttrCompare;
 import com.sun.org.apache.xml.internal.security.utils.XMLUtils;
-import org.w3c.dom.Attr;
-import org.w3c.dom.Comment;
-import org.w3c.dom.Document;
-import org.w3c.dom.Element;
-import org.w3c.dom.NamedNodeMap;
-import org.w3c.dom.Node;
-import org.w3c.dom.ProcessingInstruction;
+import test.org.w3c.dom.Attr;
+import test.org.w3c.dom.Comment;
+import test.org.w3c.dom.Document;
+import test.org.w3c.dom.Element;
+import test.org.w3c.dom.NamedNodeMap;
+import test.org.w3c.dom.Node;
+import test.org.w3c.dom.ProcessingInstruction;
 
 /**
  * Class XMLSignatureInputDebugger
@@ -471,7 +471,7 @@ public class XMLSignatureInputDebugger {
     }
 
     /**
-     * Normalizes a {@link org.w3c.dom.Comment} value
+     * Normalizes a {@link test.org.w3c.dom.Comment} value
      *
      * @param currentPI
      * @throws IOException

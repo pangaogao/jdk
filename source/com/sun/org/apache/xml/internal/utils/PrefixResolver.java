@@ -53,7 +53,7 @@ public interface PrefixResolver
    * @return The associated Namespace URI as a string, or null if the prefix
    *         is undeclared in this context.
    */
-  String getNamespaceForPrefix(String prefix, org.w3c.dom.Node context);
+  String getNamespaceForPrefix(String prefix, test.org.w3c.dom.Node context);
 
   /**
    * Return the base identifier.

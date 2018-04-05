@@ -27,14 +27,12 @@ package com.sun.corba.se.impl.transport;
 
 import java.util.Collections;
 import java.util.HashMap;
-import java.util.Iterator;
 import java.util.Map;
 
-import org.omg.CORBA.CompletionStatus;
-import org.omg.CORBA.SystemException;
+import test.org.omg.CORBA.CompletionStatus;
+import test.org.omg.CORBA.SystemException;
 
 import com.sun.corba.se.pept.encoding.InputObject;
-import com.sun.corba.se.pept.encoding.OutputObject;
 import com.sun.corba.se.pept.protocol.MessageMediator;
 
 import com.sun.corba.se.spi.logging.CORBALogDomains;
@@ -48,7 +46,6 @@ import com.sun.corba.se.impl.encoding.CDRInputObject;
 import com.sun.corba.se.impl.logging.ORBUtilSystemException;
 import com.sun.corba.se.impl.orbutil.ORBUtility;
 import com.sun.corba.se.impl.protocol.giopmsgheaders.LocateReplyOrReplyMessage;
-import com.sun.corba.se.impl.protocol.giopmsgheaders.ReplyMessage;
 
 /**
  * @author Harold Carr

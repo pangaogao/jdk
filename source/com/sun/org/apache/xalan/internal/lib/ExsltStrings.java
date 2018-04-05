@@ -25,16 +25,15 @@ package com.sun.org.apache.xalan.internal.lib;
 import java.util.StringTokenizer;
 
 import javax.xml.parsers.DocumentBuilderFactory;
-import javax.xml.parsers.FactoryConfigurationError;
 import javax.xml.parsers.ParserConfigurationException;
 
 import com.sun.org.apache.xpath.internal.NodeSet;
 
-import org.w3c.dom.Document;
-import org.w3c.dom.Element;
-import org.w3c.dom.Node;
-import org.w3c.dom.NodeList;
-import org.w3c.dom.Text;
+import test.org.w3c.dom.Document;
+import test.org.w3c.dom.Element;
+import test.org.w3c.dom.Node;
+import test.org.w3c.dom.NodeList;
+import test.org.w3c.dom.Text;
 
 /**
  * This class contains EXSLT strings extension functions.
@@ -52,7 +51,7 @@ import org.w3c.dom.Text;
  */
 public class ExsltStrings extends ExsltBase
 {
-   static final String JDK_DEFAULT_DOM = "com.sun.org.apache.xerces.internal.jaxp.DocumentBuilderFactoryImpl";
+   static final String JDK_DEFAULT_DOM = "com.sun.test.org.apache.xerces.internal.jaxp.DocumentBuilderFactoryImpl";
 
   /**
    * The str:align function aligns a string within another string.

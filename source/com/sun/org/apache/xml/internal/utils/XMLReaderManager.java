@@ -32,10 +32,10 @@ import javax.xml.XMLConstants;
 import javax.xml.parsers.FactoryConfigurationError;
 import javax.xml.parsers.ParserConfigurationException;
 import javax.xml.parsers.SAXParserFactory;
-import org.xml.sax.SAXException;
-import org.xml.sax.SAXNotRecognizedException;
-import org.xml.sax.XMLReader;
-import org.xml.sax.helpers.XMLReaderFactory;
+import test.org.xml.sax.SAXException;
+import test.org.xml.sax.SAXNotRecognizedException;
+import test.org.xml.sax.XMLReader;
+import test.org.xml.sax.helpers.XMLReaderFactory;
 
 /**
  * Creates XMLReader objects and caches them for re-use.
@@ -44,12 +44,12 @@ import org.xml.sax.helpers.XMLReaderFactory;
 public class XMLReaderManager {
 
     private static final String NAMESPACES_FEATURE =
-                             "http://xml.org/sax/features/namespaces";
+                             "http://xml.test.org/sax/features/namespaces";
     private static final String NAMESPACE_PREFIXES_FEATURE =
-                             "http://xml.org/sax/features/namespace-prefixes";
+                             "http://xml.test.org/sax/features/namespace-prefixes";
     private static final XMLReaderManager m_singletonManager =
                                                      new XMLReaderManager();
-    private static final String property = "org.xml.sax.driver";
+    private static final String property = "test.org.xml.sax.driver";
     /**
      * Parser factory to be used to construct XMLReader objects
      */
@@ -110,7 +110,7 @@ public class XMLReaderManager {
 
         // If the cached reader for this thread is in use, construct a new
         // one; otherwise, return the cached reader unless it isn't an
-        // instance of the class set in the 'org.xml.sax.driver' property
+        // instance of the class set in the 'test.org.xml.sax.driver' property
         reader = (XMLReader) m_readers.get();
         boolean threadHasReader = (reader != null);
         String factory = SecuritySupport.getSystemProperty(property);

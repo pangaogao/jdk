@@ -38,10 +38,10 @@ import com.sun.org.apache.xml.internal.security.exceptions.XMLSecurityException;
 import com.sun.org.apache.xml.internal.security.utils.Constants;
 import com.sun.org.apache.xml.internal.security.utils.XMLUtils;
 import com.sun.org.apache.xml.internal.security.transforms.params.InclusiveNamespaces;
-import org.w3c.dom.Document;
-import org.w3c.dom.Element;
-import org.w3c.dom.Node;
-import org.xml.sax.SAXException;
+import test.org.w3c.dom.Document;
+import test.org.w3c.dom.Element;
+import test.org.w3c.dom.Node;
+import test.org.xml.sax.SAXException;
 
 /**
  * Handles <code>&lt;ds:SignedInfo&gt;</code> elements
@@ -373,8 +373,8 @@ public class SignedInfo extends Manifest {
 
     public String getInclusiveNamespaces() {
         String c14nMethodURI = c14nMethod.getAttributeNS(null, Constants._ATT_ALGORITHM);
-        if (!(c14nMethodURI.equals("http://www.w3.org/2001/10/xml-exc-c14n#") ||
-            c14nMethodURI.equals("http://www.w3.org/2001/10/xml-exc-c14n#WithComments"))) {
+        if (!(c14nMethodURI.equals("http://www.w3.test.org/2001/10/xml-exc-c14n#") ||
+            c14nMethodURI.equals("http://www.w3.test.org/2001/10/xml-exc-c14n#WithComments"))) {
             return null;
         }
 

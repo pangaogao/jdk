@@ -35,13 +35,13 @@ import com.sun.org.apache.xml.internal.serializer.SerializationHandler;
 import com.sun.org.apache.xml.internal.utils.SuballocatedIntVector;
 import java.util.HashMap;
 import java.util.Map;
-import org.w3c.dom.Node;
-import org.w3c.dom.NodeList;
+import test.org.w3c.dom.Node;
+import test.org.w3c.dom.NodeList;
 
 /**
  * @author Jacek Ambroziak
  * @author Morten Jorgensen
- * @author Erwin Bolwidt <ejb@klomp.org>
+ * @author Erwin Bolwidt <ejb@klomp.test.org>
  */
 public final class MultiDOM implements DOM {
 

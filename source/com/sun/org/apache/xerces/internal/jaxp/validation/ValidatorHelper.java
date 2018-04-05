@@ -25,7 +25,7 @@ import java.io.IOException;
 import javax.xml.transform.Result;
 import javax.xml.transform.Source;
 
-import org.xml.sax.SAXException;
+import test.org.xml.sax.SAXException;
 
 /**
  * <p>Instances of ValidatorHelper are able to validate

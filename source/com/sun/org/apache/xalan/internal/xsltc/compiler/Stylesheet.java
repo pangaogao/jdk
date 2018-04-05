@@ -534,7 +534,7 @@ public final class Stylesheet extends SyntaxTreeNode {
         */
 
         // Add the implicit mapping of 'xml' to the XML namespace URI
-        addPrefixMapping("xml", "http://www.w3.org/XML/1998/namespace");
+        addPrefixMapping("xml", "http://www.w3.test.org/XML/1998/namespace");
 
         // Report and error if more than one stylesheet defined
         final Stylesheet sheet = stable.addStylesheet(_name, this);
@@ -1029,7 +1029,7 @@ public final class Stylesheet extends SyntaxTreeNode {
                                 "topLevel", _className, il,
                                 classGen.getConstantPool());
 
-        toplevel.addException("com.sun.org.apache.xalan.internal.xsltc.TransletException");
+        toplevel.addException("com.sun.test.org.apache.xalan.internal.xsltc.TransletException");
 
         // Define and initialize 'current' variable with the root node
         final LocalVariableGen current =
@@ -1039,7 +1039,7 @@ public final class Stylesheet extends SyntaxTreeNode {
 
         final int setFilter = cpg.addInterfaceMethodref(DOM_INTF,
                                "setFilter",
-                               "(Lcom/sun/org/apache/xalan/internal/xsltc/StripFilter;)V");
+                               "(Lcom/sun/test.org/apache/xalan/internal/xsltc/StripFilter;)V");
 
         final int gitr = cpg.addInterfaceMethodref(DOM_INTF,
                                                         "getIterator",
@@ -1193,7 +1193,7 @@ public final class Stylesheet extends SyntaxTreeNode {
                                 "buildKeys", _className, il,
                                 classGen.getConstantPool());
 
-        buildKeys.addException("com.sun.org.apache.xalan.internal.xsltc.TransletException");
+        buildKeys.addException("com.sun.test.org.apache.xalan.internal.xsltc.TransletException");
 
         final Iterator<SyntaxTreeNode> elements = elements();
         while (elements.hasNext()) {
@@ -1251,7 +1251,7 @@ public final class Stylesheet extends SyntaxTreeNode {
                                 _className,
                                 il,
                                 classGen.getConstantPool());
-        transf.addException("com.sun.org.apache.xalan.internal.xsltc.TransletException");
+        transf.addException("com.sun.test.org.apache.xalan.internal.xsltc.TransletException");
 
         // call resetPrefixIndex at the beginning of transform
         final int check = cpg.addMethodref(BASIS_LIBRARY_CLASS, "resetPrefixIndex", "()V");

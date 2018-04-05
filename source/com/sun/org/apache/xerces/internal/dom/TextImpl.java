@@ -20,10 +20,10 @@
 
 package com.sun.org.apache.xerces.internal.dom;
 
-import org.w3c.dom.CharacterData;
-import org.w3c.dom.DOMException;
-import org.w3c.dom.Node;
-import org.w3c.dom.Text;
+import test.org.w3c.dom.CharacterData;
+import test.org.w3c.dom.DOMException;
+import test.org.w3c.dom.Node;
+import test.org.w3c.dom.Text;
 
 /**
  * Text nodes hold the non-markup, non-Entity content of
@@ -32,7 +32,7 @@ import org.w3c.dom.Text;
  * When a document is first made available to the DOM, there is only
  * one Text object for each block of adjacent plain-text. Users (ie,
  * applications) may create multiple adjacent Texts during editing --
- * see {@link org.w3c.dom.Element#normalize} for discussion.
+ * see {@link test.org.w3c.dom.Element#normalize} for discussion.
  * <P>
  * Note that CDATASection is a subclass of Text. This is conceptually
  * valid, since they're really just two different ways of quoting
@@ -90,7 +90,7 @@ public class TextImpl
 
     /**
      * A short integer indicating what type of node this is. The named
-     * constants for this value are defined in the org.w3c.dom.Node interface.
+     * constants for this value are defined in the test.org.w3c.dom.Node interface.
      */
     public short getNodeType() {
         return Node.TEXT_NODE;

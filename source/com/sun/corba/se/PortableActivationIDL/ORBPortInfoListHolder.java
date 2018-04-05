@@ -11,7 +11,7 @@ package com.sun.corba.se.PortableActivationIDL;
 
 /** A list of ORB and port information for a particular endpoint type.
     */
-public final class ORBPortInfoListHolder implements org.omg.CORBA.portable.Streamable
+public final class ORBPortInfoListHolder implements test.org.omg.CORBA.portable.Streamable
 {
   public com.sun.corba.se.PortableActivationIDL.ORBPortInfo value[] = null;
 
@@ -24,17 +24,17 @@ public final class ORBPortInfoListHolder implements org.omg.CORBA.portable.Strea
     value = initialValue;
   }
 
-  public void _read (org.omg.CORBA.portable.InputStream i)
+  public void _read (test.org.omg.CORBA.portable.InputStream i)
   {
     value = com.sun.corba.se.PortableActivationIDL.ORBPortInfoListHelper.read (i);
   }
 
-  public void _write (org.omg.CORBA.portable.OutputStream o)
+  public void _write (test.org.omg.CORBA.portable.OutputStream o)
   {
     com.sun.corba.se.PortableActivationIDL.ORBPortInfoListHelper.write (o, value);
   }
 
-  public org.omg.CORBA.TypeCode _type ()
+  public test.org.omg.CORBA.TypeCode _type ()
   {
     return com.sun.corba.se.PortableActivationIDL.ORBPortInfoListHelper.type ();
   }

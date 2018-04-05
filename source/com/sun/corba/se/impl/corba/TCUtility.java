@@ -31,23 +31,12 @@
 
 package com.sun.corba.se.impl.corba;
 
-import org.omg.CORBA.SystemException;
-import org.omg.CORBA.CompletionStatus;
-import org.omg.CORBA.UserException;
-import org.omg.CORBA.TCKind;
-import org.omg.CORBA.UNKNOWN;
-import org.omg.CORBA.INTERNAL;
-import org.omg.CORBA.NO_IMPLEMENT;
-import org.omg.CORBA.Any;
-import org.omg.CORBA.TypeCode;
-import org.omg.CORBA.Principal;
-import org.omg.CORBA_2_3.portable.InputStream;
-import org.omg.CORBA_2_3.portable.OutputStream;
-import org.omg.CORBA.portable.Streamable;
-import org.omg.CORBA.TypeCodePackage.BadKind;
-import java.util.Hashtable;
-import java.util.Enumeration;
-import java.util.NoSuchElementException;
+import test.org.omg.CORBA.TCKind;
+import test.org.omg.CORBA.Any;
+import test.org.omg.CORBA.TypeCode;
+import test.org.omg.CORBA.Principal;
+import test.org.omg.CORBA.portable.Streamable;
+import test.org.omg.CORBA.TypeCodePackage.BadKind;
 
 import com.sun.corba.se.impl.encoding.CDRInputStream;
 import com.sun.corba.se.impl.encoding.CDROutputStream;
@@ -61,7 +50,7 @@ import com.sun.corba.se.impl.logging.ORBUtilSystemException ;
  */
 public final class TCUtility {
 
-    static void marshalIn(org.omg.CORBA.portable.OutputStream s, TypeCode typeCode, long l, Object o) {
+    static void marshalIn(test.org.omg.CORBA.portable.OutputStream s, TypeCode typeCode, long l, Object o) {
         switch (typeCode.kind().value()) {
         case TCKind._tk_null:
         case TCKind._tk_void:
@@ -122,7 +111,7 @@ public final class TCUtility {
             break;
 
         case TCKind._tk_objref:
-            s.write_Object((org.omg.CORBA.Object)o);
+            s.write_Object((test.org.omg.CORBA.Object)o);
             break;
 
         case TCKind._tk_longlong:
@@ -147,7 +136,7 @@ public final class TCUtility {
 
         case TCKind._tk_value:
         case TCKind._tk_value_box:
-            ((org.omg.CORBA_2_3.portable.OutputStream)s).write_value((Serializable)o);
+            ((test.org.omg.CORBA_2_3.portable.OutputStream)s).write_value((Serializable)o);
             break;
 
         case TCKind._tk_fixed:
@@ -175,7 +164,7 @@ public final class TCUtility {
             break;
 
         case TCKind._tk_abstract_interface:
-            ((org.omg.CORBA_2_3.portable.OutputStream)s).write_abstract_interface(o);
+            ((test.org.omg.CORBA_2_3.portable.OutputStream)s).write_abstract_interface(o);
             break;
 
         case TCKind._tk_longdouble:
@@ -188,7 +177,7 @@ public final class TCUtility {
         }
     }
 
-    static void unmarshalIn(org.omg.CORBA.portable.InputStream s, TypeCode typeCode, long[] la, Object[] oa)
+    static void unmarshalIn(test.org.omg.CORBA.portable.InputStream s, TypeCode typeCode, long[] la, Object[] oa)
     {
         int type = typeCode.kind().value();
         long l=0;
@@ -282,7 +271,7 @@ public final class TCUtility {
 
         case TCKind._tk_value:
         case TCKind._tk_value_box:
-            o = ((org.omg.CORBA_2_3.portable.InputStream)s).read_value ();
+            o = ((test.org.omg.CORBA_2_3.portable.InputStream)s).read_value ();
             break;
 
         case TCKind._tk_fixed:
@@ -310,7 +299,7 @@ public final class TCUtility {
             break;
 
         case TCKind._tk_abstract_interface:
-            o = ((org.omg.CORBA_2_3.portable.InputStream)s).read_abstract_interface();
+            o = ((test.org.omg.CORBA_2_3.portable.InputStream)s).read_abstract_interface();
             break;
 
         case TCKind._tk_longdouble:

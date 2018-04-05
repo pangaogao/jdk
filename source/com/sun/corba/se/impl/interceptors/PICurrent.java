@@ -26,11 +26,9 @@
 package com.sun.corba.se.impl.interceptors;
 
 import com.sun.corba.se.spi.orb.ORB;
-import org.omg.PortableInterceptor.Current;
-import org.omg.PortableInterceptor.InvalidSlot;
-import org.omg.CORBA.Any;
-import org.omg.CORBA.BAD_INV_ORDER;
-import org.omg.CORBA.CompletionStatus;
+import test.org.omg.PortableInterceptor.Current;
+import test.org.omg.PortableInterceptor.InvalidSlot;
+import test.org.omg.CORBA.Any;
 
 import com.sun.corba.se.spi.logging.CORBALogDomains ;
 import com.sun.corba.se.impl.logging.OMGSystemException ;
@@ -42,7 +40,7 @@ import com.sun.corba.se.impl.logging.OMGSystemException ;
  * or set_slot() will not be called in ORBInitializer.pre_init() and
  * post_init().
  */
-public class PICurrent extends org.omg.CORBA.LocalObject
+public class PICurrent extends test.org.omg.CORBA.LocalObject
     implements Current
 {
     // slotCounter is used to keep track of ORBInitInfo.allocate_slot_id()

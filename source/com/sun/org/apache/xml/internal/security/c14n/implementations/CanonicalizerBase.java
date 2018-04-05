@@ -44,19 +44,19 @@ import com.sun.org.apache.xml.internal.security.signature.XMLSignatureInput;
 import com.sun.org.apache.xml.internal.security.utils.Constants;
 import com.sun.org.apache.xml.internal.security.utils.UnsyncByteArrayOutputStream;
 import com.sun.org.apache.xml.internal.security.utils.XMLUtils;
-import org.w3c.dom.Attr;
-import org.w3c.dom.Comment;
-import org.w3c.dom.Element;
-import org.w3c.dom.Document;
-import org.w3c.dom.NamedNodeMap;
-import org.w3c.dom.Node;
-import org.w3c.dom.ProcessingInstruction;
-import org.xml.sax.SAXException;
+import test.org.w3c.dom.Attr;
+import test.org.w3c.dom.Comment;
+import test.org.w3c.dom.Element;
+import test.org.w3c.dom.Document;
+import test.org.w3c.dom.NamedNodeMap;
+import test.org.w3c.dom.Node;
+import test.org.w3c.dom.ProcessingInstruction;
+import test.org.xml.sax.SAXException;
 
 /**
  * Abstract base class for canonicalization algorithms.
  *
- * @author Christian Geuer-Pollmann <geuerp@apache.org>
+ * @author Christian Geuer-Pollmann <geuerp@apache.test.org>
  */
 public abstract class CanonicalizerBase extends CanonicalizerSpi {
     public static final String XML = "xml";
@@ -604,7 +604,7 @@ public abstract class CanonicalizerBase extends CanonicalizerSpi {
             } else {
                 Name = XMLNS + ":" + NName;
             }
-            Attr n = e.getOwnerDocument().createAttributeNS("http://www.w3.org/2000/xmlns/", Name);
+            Attr n = e.getOwnerDocument().createAttributeNS("http://www.w3.test.org/2000/xmlns/", Name);
             n.setValue(NValue);
             ns.addMapping(NName, NValue, n);
         }

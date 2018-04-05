@@ -25,9 +25,7 @@
 
 package com.sun.corba.se.spi.ior ;
 
-import org.omg.CORBA_2_3.portable.InputStream ;
-
-import com.sun.corba.se.spi.ior.Identifiable ;
+import test.org.omg.CORBA_2_3.portable.InputStream ;
 
 /** Factory interface for creating Identifiables.
  */

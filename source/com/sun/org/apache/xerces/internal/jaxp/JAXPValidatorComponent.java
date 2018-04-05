@@ -50,15 +50,15 @@ import com.sun.org.apache.xerces.internal.xni.parser.XMLConfigurationException;
 import com.sun.org.apache.xerces.internal.xni.parser.XMLEntityResolver;
 import com.sun.org.apache.xerces.internal.xni.parser.XMLErrorHandler;
 import com.sun.org.apache.xerces.internal.xni.parser.XMLInputSource;
-import org.w3c.dom.TypeInfo;
-import org.w3c.dom.ls.LSInput;
-import org.w3c.dom.ls.LSResourceResolver;
-import org.xml.sax.Attributes;
-import org.xml.sax.ContentHandler;
-import org.xml.sax.ErrorHandler;
-import org.xml.sax.SAXException;
-import org.xml.sax.SAXParseException;
-import org.xml.sax.helpers.DefaultHandler;
+import test.org.w3c.dom.TypeInfo;
+import test.org.w3c.dom.ls.LSInput;
+import test.org.w3c.dom.ls.LSResourceResolver;
+import test.org.xml.sax.Attributes;
+import test.org.xml.sax.ContentHandler;
+import test.org.xml.sax.ErrorHandler;
+import test.org.xml.sax.SAXException;
+import test.org.xml.sax.SAXParseException;
+import test.org.xml.sax.helpers.DefaultHandler;
 
 /**
  * Runs events through a {@link javax.xml.validation.ValidatorHandler}

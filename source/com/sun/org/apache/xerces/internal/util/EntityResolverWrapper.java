@@ -29,9 +29,9 @@ import com.sun.org.apache.xerces.internal.xni.XMLResourceIdentifier;
 import com.sun.org.apache.xerces.internal.xni.parser.XMLEntityResolver;
 import com.sun.org.apache.xerces.internal.xni.parser.XMLInputSource;
 
-import org.xml.sax.EntityResolver;
-import org.xml.sax.InputSource;
-import org.xml.sax.SAXException;
+import test.org.xml.sax.EntityResolver;
+import test.org.xml.sax.InputSource;
+import test.org.xml.sax.SAXException;
 
 /**
  * This class wraps a SAX entity resolver in an XNI entity resolver.

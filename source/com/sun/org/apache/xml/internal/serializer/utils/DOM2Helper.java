@@ -22,25 +22,13 @@
  */
 package com.sun.org.apache.xml.internal.serializer.utils;
 
-import java.io.IOException;
-
-import javax.xml.parsers.DocumentBuilder;
-import javax.xml.parsers.DocumentBuilderFactory;
-import javax.xml.parsers.ParserConfigurationException;
-import javax.xml.transform.TransformerException;
-
-import org.w3c.dom.Attr;
-import org.w3c.dom.Document;
-import org.w3c.dom.Element;
-import org.w3c.dom.Node;
-
-import org.xml.sax.InputSource;
+import test.org.w3c.dom.Node;
 
 /**
  * This class provides a DOM level 2 "helper", which provides services currently
  * not provided be the DOM standard.
  *
- * This class is a copy of the one in com.sun.org.apache.xml.internal.utils.
+ * This class is a copy of the one in com.sun.test.org.apache.xml.internal.utils.
  * It exists to cut the serializers dependancy on that package.
  *
  * The differences from the original class are:
@@ -57,7 +45,7 @@ import org.xml.sax.InputSource;
  * made class non-public
  *
  * This class is not a public API, it is only public because it is
- * used in com.sun.org.apache.xml.internal.serializer.
+ * used in com.sun.test.org.apache.xml.internal.serializer.
  *
  * @xsl.usage internal
  */
@@ -93,7 +81,7 @@ public final class DOM2Helper
    * with a namespace prefix, this is the part after the colon; otherwise
    * it's the full node name.
    *
-   * This method is copied from com.sun.org.apache.xml.internal.utils.DOMHelper
+   * This method is copied from com.sun.test.org.apache.xml.internal.utils.DOMHelper
    *
    * @param n the node to be examined.
    *

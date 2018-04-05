@@ -37,9 +37,9 @@ import javax.xml.transform.TransformerException;
 import com.sun.org.apache.xml.internal.res.XMLErrorResources;
 import com.sun.org.apache.xml.internal.res.XMLMessages;
 
-import org.xml.sax.ErrorHandler;
-import org.xml.sax.SAXException;
-import org.xml.sax.SAXParseException;
+import test.org.xml.sax.ErrorHandler;
+import test.org.xml.sax.SAXException;
+import test.org.xml.sax.SAXParseException;
 
 
 /**
@@ -78,7 +78,7 @@ public class ListingErrorHandler implements ErrorHandler, ErrorListener
     }
 
 
-    /* ======== Implement org.xml.sax.ErrorHandler ======== */
+    /* ======== Implement test.org.xml.sax.ErrorHandler ======== */
     /**
      * Receive notification of a warning.
      *
@@ -95,9 +95,9 @@ public class ListingErrorHandler implements ErrorHandler, ErrorListener
      *
      * @param exception The warning information encapsulated in a
      *                  SAX parse exception.
-     * @exception org.xml.sax.SAXException Any SAX exception, possibly
+     * @exception test.org.xml.sax.SAXException Any SAX exception, possibly
      * wrapping another exception; only if setThrowOnWarning is true.
-     * @see org.xml.sax.SAXParseException
+     * @see test.org.xml.sax.SAXParseException
      */
     public void warning (SAXParseException exception)
         throws SAXException
@@ -134,9 +134,9 @@ public class ListingErrorHandler implements ErrorHandler, ErrorListener
      *
      * @param exception The error information encapsulated in a
      *                  SAX parse exception.
-     * @exception org.xml.sax.SAXException Any SAX exception, possibly
+     * @exception test.org.xml.sax.SAXException Any SAX exception, possibly
      * wrapping another exception; only if setThrowOnErroris true.
-     * @see org.xml.sax.SAXParseException
+     * @see test.org.xml.sax.SAXParseException
      */
     public void error (SAXParseException exception)
         throws SAXException
@@ -166,9 +166,9 @@ public class ListingErrorHandler implements ErrorHandler, ErrorListener
      *
      * @param exception The error information encapsulated in a
      *                  SAX parse exception.
-     * @exception org.xml.sax.SAXException Any SAX exception, possibly
+     * @exception test.org.xml.sax.SAXException Any SAX exception, possibly
      * wrapping another exception; only if setThrowOnFatalError is true.
-     * @see org.xml.sax.SAXParseException
+     * @see test.org.xml.sax.SAXParseException
      */
     public void fatalError (SAXParseException exception)
         throws SAXException

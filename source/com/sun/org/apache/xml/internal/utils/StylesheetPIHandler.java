@@ -30,11 +30,9 @@ import javax.xml.transform.TransformerException;
 import javax.xml.transform.URIResolver;
 import javax.xml.transform.sax.SAXSource;
 
-import com.sun.org.apache.xml.internal.utils.SystemIDResolver;
-
-import org.xml.sax.Attributes;
-import org.xml.sax.InputSource;
-import org.xml.sax.helpers.DefaultHandler;
+import test.org.xml.sax.Attributes;
+import test.org.xml.sax.InputSource;
+import test.org.xml.sax.helpers.DefaultHandler;
 
 /**
  * Search for the xml-stylesheet processing instructions in an XML document.
@@ -134,13 +132,13 @@ public class StylesheetPIHandler extends DefaultHandler
    * @param target The processing instruction target.
    * @param data The processing instruction data, or null if
    *             none is supplied.
-   * @throws org.xml.sax.SAXException Any SAX exception, possibly
+   * @throws test.org.xml.sax.SAXException Any SAX exception, possibly
    *            wrapping another exception.
-   * @see org.xml.sax.ContentHandler#processingInstruction
+   * @see test.org.xml.sax.ContentHandler#processingInstruction
    * @see <a href="http://www.w3.org/TR/xml-stylesheet/">Associating Style Sheets with XML documents, Version 1.0</a>
    */
   public void processingInstruction(String target, String data)
-          throws org.xml.sax.SAXException
+          throws test.org.xml.sax.SAXException
   {
 
     if (target.equals("xml-stylesheet"))
@@ -224,7 +222,7 @@ public class StylesheetPIHandler extends DefaultHandler
           }
           catch(TransformerException te)
           {
-            throw new org.xml.sax.SAXException(te);
+            throw new test.org.xml.sax.SAXException(te);
           }
         }
         else if (name.equals("title"))
@@ -321,7 +319,7 @@ public class StylesheetPIHandler extends DefaultHandler
    */
   public void startElement(
           String namespaceURI, String localName, String qName, Attributes atts)
-            throws org.xml.sax.SAXException
+            throws test.org.xml.sax.SAXException
   {
     throw new StopParseException();
   }

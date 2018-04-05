@@ -33,10 +33,9 @@ package com.sun.corba.se.impl.corba;
 
 import java.util.Vector;
 
-import org.omg.CORBA.Bounds;
-import org.omg.CORBA.ExceptionList;
-import org.omg.CORBA.TypeCode;
-import org.omg.CORBA.ORB;
+import test.org.omg.CORBA.Bounds;
+import test.org.omg.CORBA.ExceptionList;
+import test.org.omg.CORBA.TypeCode;
 
 
 public class ExceptionListImpl extends ExceptionList {

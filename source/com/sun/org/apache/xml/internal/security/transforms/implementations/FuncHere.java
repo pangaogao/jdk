@@ -33,8 +33,8 @@ import com.sun.org.apache.xpath.internal.functions.Function;
 import com.sun.org.apache.xpath.internal.objects.XNodeSet;
 import com.sun.org.apache.xpath.internal.objects.XObject;
 import com.sun.org.apache.xpath.internal.res.XPATHErrorResources;
-import org.w3c.dom.Document;
-import org.w3c.dom.Node;
+import test.org.w3c.dom.Document;
+import test.org.w3c.dom.Node;
 
 /**
  * The 'here()' function returns a node-set containing the attribute or

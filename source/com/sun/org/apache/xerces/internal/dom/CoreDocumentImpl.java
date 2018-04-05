@@ -34,29 +34,29 @@ import java.lang.reflect.Constructor;
 import java.util.HashMap;
 import java.util.Hashtable;
 import java.util.Map;
-import org.w3c.dom.Attr;
-import org.w3c.dom.CDATASection;
-import org.w3c.dom.Comment;
-import org.w3c.dom.DOMConfiguration;
-import org.w3c.dom.DOMException;
-import org.w3c.dom.DOMImplementation;
-import org.w3c.dom.Document;
-import org.w3c.dom.DocumentFragment;
-import org.w3c.dom.DocumentType;
-import org.w3c.dom.Element;
-import org.w3c.dom.Entity;
-import org.w3c.dom.EntityReference;
-import org.w3c.dom.NamedNodeMap;
-import org.w3c.dom.Node;
-import org.w3c.dom.NodeList;
-import org.w3c.dom.Notation;
-import org.w3c.dom.ProcessingInstruction;
-import org.w3c.dom.Text;
-import org.w3c.dom.UserDataHandler;
-import org.w3c.dom.events.Event;
-import org.w3c.dom.events.EventListener;
-import org.w3c.dom.ls.DOMImplementationLS;
-import org.w3c.dom.ls.LSSerializer;
+import test.org.w3c.dom.Attr;
+import test.org.w3c.dom.CDATASection;
+import test.org.w3c.dom.Comment;
+import test.org.w3c.dom.DOMConfiguration;
+import test.org.w3c.dom.DOMException;
+import test.org.w3c.dom.DOMImplementation;
+import test.org.w3c.dom.Document;
+import test.org.w3c.dom.DocumentFragment;
+import test.org.w3c.dom.DocumentType;
+import test.org.w3c.dom.Element;
+import test.org.w3c.dom.Entity;
+import test.org.w3c.dom.EntityReference;
+import test.org.w3c.dom.NamedNodeMap;
+import test.org.w3c.dom.Node;
+import test.org.w3c.dom.NodeList;
+import test.org.w3c.dom.Notation;
+import test.org.w3c.dom.ProcessingInstruction;
+import test.org.w3c.dom.Text;
+import test.org.w3c.dom.UserDataHandler;
+import test.org.w3c.dom.events.Event;
+import test.org.w3c.dom.events.EventListener;
+import test.org.w3c.dom.ls.DOMImplementationLS;
+import test.org.w3c.dom.ls.LSSerializer;
 
 /**
  * The Document interface represents the entire HTML or XML document.
@@ -364,7 +364,7 @@ public class CoreDocumentImpl
      * protection. I've chosen to implement it by calling importNode
      * which is DOM Level 2.
      *
-     * @return org.w3c.dom.Node
+     * @return test.org.w3c.dom.Node
      * @param deep boolean, iff true replicate children
      */
     public Node cloneNode(boolean deep) {
@@ -561,16 +561,16 @@ public class CoreDocumentImpl
 
             try {
                 Class xpathClass = ObjectFactory.findProviderClass (
-                        "com.sun.org.apache.xpath.internal.domapi.XPathEvaluatorImpl", true);
+                        "com.sun.test.org.apache.xpath.internal.domapi.XPathEvaluatorImpl", true);
                 Constructor xpathClassConstr =
                     xpathClass.getConstructor(new Class[] { Document.class });
 
                 // Check if the DOM XPath implementation implements
-                // the interface org.w3c.dom.XPathEvaluator
+                // the interface test.org.w3c.dom.XPathEvaluator
                 Class interfaces[] = xpathClass.getInterfaces();
                 for (int i = 0; i < interfaces.length; i++) {
                     if (interfaces[i].getName().equals(
-                            "org.w3c.dom.xpath.XPathEvaluator")) {
+                            "test.org.w3c.dom.xpath.XPathEvaluator")) {
                         fXPathEvaluator = xpathClassConstr.newInstance(new Object[] { this });
                         return fXPathEvaluator;
                     }

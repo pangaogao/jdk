@@ -8,7 +8,7 @@ package com.sun.corba.se.spi.activation.LocatorPackage;
 * Wednesday, March 15, 2017 1:33:56 AM PDT
 */
 
-public final class ServerLocation implements org.omg.CORBA.portable.IDLEntity
+public final class ServerLocation implements test.org.omg.CORBA.portable.IDLEntity
 {
   public String hostname = null;
   public com.sun.corba.se.spi.activation.ORBPortInfo ports[] = null;

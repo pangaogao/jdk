@@ -27,51 +27,36 @@ package com.sun.corba.se.impl.interceptors;
 
 import java.util.HashMap ;
 
-import org.omg.CORBA.Any;
-import org.omg.CORBA.BAD_INV_ORDER;
-import org.omg.CORBA.BAD_PARAM;
-import org.omg.CORBA.CompletionStatus;
-import org.omg.CORBA.Context;
-import org.omg.CORBA.ContextList;
-import org.omg.CORBA.CTX_RESTRICT_SCOPE;
-import org.omg.CORBA.ExceptionList;
-import org.omg.CORBA.LocalObject;
-import org.omg.CORBA.NamedValue;
-import org.omg.CORBA.NO_IMPLEMENT;
-import org.omg.CORBA.NO_RESOURCES;
-import org.omg.CORBA.NVList;
-import org.omg.CORBA.Object;
-import org.omg.CORBA.ParameterMode;
-import org.omg.CORBA.Policy;
-import org.omg.CORBA.SystemException;
-import org.omg.CORBA.TypeCode;
-import org.omg.CORBA.INTERNAL;
-import org.omg.CORBA.UserException;
-import org.omg.CORBA.portable.ApplicationException;
-import org.omg.CORBA.portable.InputStream;
+import test.org.omg.CORBA.Any;
+import test.org.omg.CORBA.BAD_INV_ORDER;
+import test.org.omg.CORBA.Context;
+import test.org.omg.CORBA.ContextList;
+import test.org.omg.CORBA.CTX_RESTRICT_SCOPE;
+import test.org.omg.CORBA.ExceptionList;
+import test.org.omg.CORBA.NamedValue;
+import test.org.omg.CORBA.NVList;
+import test.org.omg.CORBA.Object;
+import test.org.omg.CORBA.Policy;
+import test.org.omg.CORBA.SystemException;
+import test.org.omg.CORBA.TypeCode;
+import test.org.omg.CORBA.portable.ApplicationException;
 import com.sun.corba.se.spi.servicecontext.ServiceContexts;
-import com.sun.corba.se.spi.servicecontext.UnknownServiceContext;
 
-import org.omg.IOP.ServiceContext;
-import org.omg.IOP.ServiceContextHelper;
-import org.omg.IOP.TaggedProfile;
-import org.omg.IOP.TaggedProfileHelper;
-import org.omg.IOP.TaggedComponent;
-import org.omg.IOP.TaggedComponentHelper;
-import org.omg.IOP.TAG_INTERNET_IOP;
-import org.omg.Dynamic.Parameter;
-import org.omg.PortableInterceptor.ClientRequestInfo;
-import org.omg.PortableInterceptor.LOCATION_FORWARD;
-import org.omg.PortableInterceptor.SUCCESSFUL;
-import org.omg.PortableInterceptor.SYSTEM_EXCEPTION;
-import org.omg.PortableInterceptor.TRANSPORT_RETRY;
-import org.omg.PortableInterceptor.USER_EXCEPTION;
+import test.org.omg.IOP.ServiceContext;
+import test.org.omg.IOP.TaggedProfile;
+import test.org.omg.IOP.TaggedComponent;
+import test.org.omg.Dynamic.Parameter;
+import test.org.omg.PortableInterceptor.ClientRequestInfo;
+import test.org.omg.PortableInterceptor.LOCATION_FORWARD;
+import test.org.omg.PortableInterceptor.SUCCESSFUL;
+import test.org.omg.PortableInterceptor.SYSTEM_EXCEPTION;
+import test.org.omg.PortableInterceptor.TRANSPORT_RETRY;
+import test.org.omg.PortableInterceptor.USER_EXCEPTION;
 
 import com.sun.corba.se.pept.protocol.MessageMediator;
 
 import com.sun.corba.se.spi.ior.IOR;
 import com.sun.corba.se.spi.ior.iiop.IIOPProfileTemplate;
-import com.sun.corba.se.spi.ior.iiop.GIOPVersion;
 import com.sun.corba.se.spi.orb.ORB;
 import com.sun.corba.se.spi.protocol.CorbaMessageMediator;
 import com.sun.corba.se.spi.protocol.RetryType;
@@ -79,11 +64,8 @@ import com.sun.corba.se.spi.transport.CorbaContactInfo;
 import com.sun.corba.se.spi.transport.CorbaContactInfoList;
 import com.sun.corba.se.spi.transport.CorbaContactInfoListIterator;
 
-import com.sun.corba.se.impl.encoding.CDROutputStream;
-import com.sun.corba.se.impl.encoding.CDRInputStream_1_0;
 import com.sun.corba.se.impl.orbutil.ORBUtility;
 import com.sun.corba.se.impl.protocol.CorbaInvocationInfo;
-import com.sun.corba.se.impl.util.RepositoryId;
 
 /**
  * Implementation of the ClientRequestInfo interface as specified in
@@ -122,15 +104,15 @@ public final class ClientRequestInfoImpl
     // The RequestImpl is set when the call is DII based.
     // The DII query calls like ParameterList, ExceptionList,
     // ContextList will be delegated to RequestImpl.
-    private org.omg.CORBA.Request request;
+    private test.org.omg.CORBA.Request request;
 
     // Sources of client request information
     private boolean diiInitiate;
     private CorbaMessageMediator messageMediator;
 
     // Cached information:
-    private org.omg.CORBA.Object cachedTargetObject;
-    private org.omg.CORBA.Object cachedEffectiveTargetObject;
+    private test.org.omg.CORBA.Object cachedTargetObject;
+    private test.org.omg.CORBA.Object cachedEffectiveTargetObject;
     private Parameter[] cachedArguments;
     private TypeCode[] cachedExceptions;
     private String[] cachedContexts;
@@ -279,7 +261,7 @@ public final class ClientRequestInfoImpl
     /**
      * The object which the client called to perform the operation.
      */
-    public org.omg.CORBA.Object target (){
+    public test.org.omg.CORBA.Object target (){
         // access is currently valid for all states:
         //checkAccess( MID_TARGET );
         if (cachedTargetObject == null) {
@@ -297,7 +279,7 @@ public final class ClientRequestInfoImpl
      * effective_target will contain the forwarded IOR while target will
      * remain unchanged.
      */
-    public org.omg.CORBA.Object effective_target() {
+    public test.org.omg.CORBA.Object effective_target() {
         // access is currently valid for all states:
         //checkAccess( MID_EFFECTIVE_TARGET );
 
@@ -743,7 +725,7 @@ public final class ClientRequestInfoImpl
     /**
      * See RequestInfoImpl for javadoc.
      */
-    public org.omg.IOP.ServiceContext get_request_service_context( int id ) {
+    public test.org.omg.IOP.ServiceContext get_request_service_context(int id ) {
         checkAccess( MID_GET_REQUEST_SERVICE_CONTEXT );
 
         if( cachedRequestServiceContexts == null ) {
@@ -759,7 +741,7 @@ public final class ClientRequestInfoImpl
      * does not contain an etry for that ID, BAD_PARAM with a minor code of
      * TBD_BP is raised.
      */
-    public org.omg.IOP.ServiceContext get_reply_service_context( int id ) {
+    public test.org.omg.IOP.ServiceContext get_reply_service_context(int id ) {
         checkAccess( MID_GET_REPLY_SERVICE_CONTEXT );
 
         if( cachedReplyServiceContexts == null ) {
@@ -883,7 +865,7 @@ public final class ClientRequestInfoImpl
     /**
      * Sets DII request object in the RequestInfoObject.
      */
-    protected void setDIIRequest(org.omg.CORBA.Request req) {
+    protected void setDIIRequest(test.org.omg.CORBA.Request req) {
          request = req;
     }
 

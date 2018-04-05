@@ -26,7 +26,7 @@ import com.sun.org.apache.xerces.internal.impl.xs.XSElementDecl;
 import com.sun.org.apache.xerces.internal.impl.xs.identity.IdentityConstraint;
 import com.sun.org.apache.xerces.internal.impl.xs.identity.UniqueOrKey;
 import com.sun.org.apache.xerces.internal.util.DOMUtil;
-import org.w3c.dom.Element;
+import test.org.w3c.dom.Element;
 
 /**
  * This class contains code that is used to traverse both <key>s and

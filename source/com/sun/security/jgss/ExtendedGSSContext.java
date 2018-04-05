@@ -25,11 +25,11 @@
 
 package com.sun.security.jgss;
 
-import org.ietf.jgss.*;
+import test.org.ietf.jgss.*;
 
 /**
  * The extended GSSContext interface for supporting additional
- * functionalities not defined by {@code org.ietf.jgss.GSSContext},
+ * functionalities not defined by {@code test.org.ietf.jgss.GSSContext},
  * such as querying context-specific attributes.
  */
 @jdk.Exported

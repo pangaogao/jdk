@@ -23,8 +23,8 @@
 package com.sun.org.apache.xml.internal.security.utils;
 
 import com.sun.org.apache.xml.internal.security.exceptions.XMLSecurityException;
-import org.w3c.dom.Element;
-import org.w3c.dom.Node;
+import test.org.w3c.dom.Element;
+import test.org.w3c.dom.Node;
 
 /**@deprecated*/
 @Deprecated

@@ -29,11 +29,6 @@ import java.util.AbstractMap ;
 import java.util.Set ;
 import java.util.AbstractSet ;
 import java.util.Iterator ;
-import java.util.Properties ;
-
-import java.lang.reflect.Field ;
-
-import org.omg.CORBA.INTERNAL ;
 
 // XXX This could probably be further extended by using more reflection and
 // a dynamic proxy that satisfies the interfaces that are inherited by the

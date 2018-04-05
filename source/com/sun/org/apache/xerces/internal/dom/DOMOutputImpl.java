@@ -20,7 +20,7 @@
 
 package com.sun.org.apache.xerces.internal.dom;
 
-import org.w3c.dom.ls.LSOutput;
+import test.org.w3c.dom.ls.LSOutput;
 
 import java.io.Writer;
 import java.io.OutputStream;

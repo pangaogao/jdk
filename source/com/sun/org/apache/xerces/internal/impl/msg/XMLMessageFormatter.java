@@ -40,8 +40,8 @@ public class XMLMessageFormatter implements MessageFormatter {
     /**
      * The domain of messages concerning the XML 1.0 specification.
      */
-    public static final String XML_DOMAIN = "http://www.w3.org/TR/1998/REC-xml-19980210";
-    public static final String XMLNS_DOMAIN = "http://www.w3.org/TR/1999/REC-xml-names-19990114";
+    public static final String XML_DOMAIN = "http://www.w3.test.org/TR/1998/REC-xml-19980210";
+    public static final String XMLNS_DOMAIN = "http://www.w3.test.org/TR/1999/REC-xml-names-19990114";
 
     // private objects to cache the locale and resource bundle
     private Locale fLocale = null;
@@ -71,12 +71,12 @@ public class XMLMessageFormatter implements MessageFormatter {
 
         if (fResourceBundle == null || locale != fLocale) {
             if (locale != null) {
-                fResourceBundle = SecuritySupport.getResourceBundle("com.sun.org.apache.xerces.internal.impl.msg.XMLMessages", locale);
+                fResourceBundle = SecuritySupport.getResourceBundle("com.sun.test.org.apache.xerces.internal.impl.msg.XMLMessages", locale);
                 // memorize the most-recent locale
                 fLocale = locale;
             }
             if (fResourceBundle == null)
-                fResourceBundle = SecuritySupport.getResourceBundle("com.sun.org.apache.xerces.internal.impl.msg.XMLMessages");
+                fResourceBundle = SecuritySupport.getResourceBundle("com.sun.test.org.apache.xerces.internal.impl.msg.XMLMessages");
         }
 
         // format message

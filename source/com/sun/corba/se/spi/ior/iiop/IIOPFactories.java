@@ -25,7 +25,7 @@
 
 package com.sun.corba.se.spi.ior.iiop ;
 
-import org.omg.CORBA_2_3.portable.InputStream ;
+import test.org.omg.CORBA_2_3.portable.InputStream ;
 
 import com.sun.corba.se.spi.ior.Identifiable ;
 import com.sun.corba.se.spi.ior.IdentifiableFactory ;
@@ -33,13 +33,7 @@ import com.sun.corba.se.spi.ior.EncapsulationFactoryBase ;
 import com.sun.corba.se.spi.ior.ObjectId ;
 import com.sun.corba.se.spi.ior.ObjectKeyTemplate ;
 
-import com.sun.corba.se.spi.ior.iiop.IIOPAddress ;
-import com.sun.corba.se.spi.ior.iiop.IIOPProfileTemplate ;
-import com.sun.corba.se.spi.ior.iiop.GIOPVersion ;
-
 import com.sun.corba.se.spi.orb.ORB ;
-
-import com.sun.corba.se.impl.encoding.MarshalInputStream ;
 
 import com.sun.corba.se.impl.ior.iiop.IIOPAddressImpl ;
 import com.sun.corba.se.impl.ior.iiop.CodeSetsComponentImpl ;
@@ -52,14 +46,13 @@ import com.sun.corba.se.impl.ior.iiop.IIOPProfileImpl ;
 import com.sun.corba.se.impl.ior.iiop.IIOPProfileTemplateImpl ;
 import com.sun.corba.se.impl.ior.iiop.RequestPartitioningComponentImpl ;
 import com.sun.corba.se.impl.orbutil.ORBConstants;
-import com.sun.corba.se.impl.orbutil.ORBConstants;
 
-import org.omg.IOP.TAG_ALTERNATE_IIOP_ADDRESS ;
-import org.omg.IOP.TAG_CODE_SETS ;
-import org.omg.IOP.TAG_JAVA_CODEBASE ;
-import org.omg.IOP.TAG_RMI_CUSTOM_MAX_STREAM_FORMAT ;
-import org.omg.IOP.TAG_ORB_TYPE ;
-import org.omg.IOP.TAG_INTERNET_IOP ;
+import test.org.omg.IOP.TAG_ALTERNATE_IIOP_ADDRESS ;
+import test.org.omg.IOP.TAG_CODE_SETS ;
+import test.org.omg.IOP.TAG_JAVA_CODEBASE ;
+import test.org.omg.IOP.TAG_RMI_CUSTOM_MAX_STREAM_FORMAT ;
+import test.org.omg.IOP.TAG_ORB_TYPE ;
+import test.org.omg.IOP.TAG_INTERNET_IOP ;
 
 /** This class provides all of the factories for the IIOP profiles and
  * components.  This includes direct construction of profiles and templates,
@@ -207,7 +200,7 @@ public abstract class IIOPFactories {
     }
 
     public static IIOPProfile makeIIOPProfile( ORB orb,
-        org.omg.IOP.TaggedProfile profile )
+        test.org.omg.IOP.TaggedProfile profile )
     {
         return new IIOPProfileImpl( orb, profile ) ;
     }

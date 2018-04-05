@@ -26,12 +26,10 @@
 package com.sun.corba.se.spi.ior.iiop ;
 
 import com.sun.corba.se.spi.ior.IOR ;
-import com.sun.corba.se.spi.ior.iiop.IIOPProfile;
 import com.sun.corba.se.spi.orb.ORB;
 import com.sun.corba.se.spi.orb.ORBVersion;
 import com.sun.corba.se.spi.orb.ORBVersionFactory;
 
-import com.sun.corba.se.impl.orbutil.ORBUtility;
 import com.sun.corba.se.impl.protocol.giopmsgheaders.Message;
 
 public class GIOPVersion {
@@ -207,12 +205,12 @@ public class GIOPVersion {
 
     // IO methods
 
-    public void read(org.omg.CORBA.portable.InputStream istream) {
+    public void read(test.org.omg.CORBA.portable.InputStream istream) {
         this.major = istream.read_octet();
         this.minor = istream.read_octet();
     }
 
-    public void write(org.omg.CORBA.portable.OutputStream ostream) {
+    public void write(test.org.omg.CORBA.portable.OutputStream ostream) {
         ostream.write_octet(this.major);
         ostream.write_octet(this.minor);
     }

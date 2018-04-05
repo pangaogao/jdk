@@ -25,16 +25,16 @@ package com.sun.org.apache.xml.internal.serializer;
 
 import java.util.HashMap;
 import java.util.Map;
-import org.xml.sax.Attributes;
-import org.xml.sax.helpers.AttributesImpl;
+import test.org.xml.sax.Attributes;
+import test.org.xml.sax.helpers.AttributesImpl;
 
 /**
- * This class extends org.xml.sax.helpers.AttributesImpl which implements org.
+ * This class extends test.org.xml.sax.helpers.AttributesImpl which implements test.org.
  * xml.sax.Attributes. But for optimization this class adds a Map for
  * faster lookup of an index by qName, which is commonly done in the stream
  * serializer.
  *
- * @see org.xml.sax.Attributes
+ * @see test.org.xml.sax.Attributes
  *
  * @xsl.usage internal
  */
@@ -68,7 +68,7 @@ public final class AttributesImplSerializer extends AttributesImpl
      * This method gets the index of an attribute given its qName.
      * @param qname the qualified name of the attribute, e.g. "prefix1:locName1"
      * @return the integer index of the attribute.
-     * @see org.xml.sax.Attributes#getIndex(String)
+     * @see test.org.xml.sax.Attributes#getIndex(String)
      */
     public final int getIndex(String qname)
     {
@@ -99,7 +99,7 @@ public final class AttributesImplSerializer extends AttributesImpl
      * @param type the type of the attribute
      * @param val the value of the attribute
      *
-     * @see org.xml.sax.helpers.AttributesImpl#addAttribute(String, String, String, String, String)
+     * @see test.org.xml.sax.helpers.AttributesImpl#addAttribute(String, String, String, String, String)
      * @see #getIndex(String)
      */
     public final void addAttribute(
@@ -166,7 +166,7 @@ public final class AttributesImplSerializer extends AttributesImpl
     /**
      * This method clears the accumulated attributes.
      *
-     * @see org.xml.sax.helpers.AttributesImpl#clear()
+     * @see test.org.xml.sax.helpers.AttributesImpl#clear()
      */
     public final void clear()
     {
@@ -187,7 +187,7 @@ public final class AttributesImplSerializer extends AttributesImpl
      * it also keeps the hashtable up to date for quick lookup via
      * getIndex(qName).
      * @param atts the attributes to copy into these attributes.
-     * @see org.xml.sax.helpers.AttributesImpl#setAttributes(Attributes)
+     * @see test.org.xml.sax.helpers.AttributesImpl#setAttributes(Attributes)
      * @see #getIndex(String)
      */
     public final void setAttributes(Attributes atts)
@@ -209,7 +209,7 @@ public final class AttributesImplSerializer extends AttributesImpl
      * @param uri the URI of the attribute name.
      * @param localName the local namer (after the ':' ) of the attribute name.
      * @return the integer index of the attribute.
-     * @see org.xml.sax.Attributes#getIndex(String)
+     * @see test.org.xml.sax.Attributes#getIndex(String)
      */
     public final int getIndex(String uri, String localName)
     {

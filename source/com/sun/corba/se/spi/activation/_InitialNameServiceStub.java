@@ -8,29 +8,29 @@ package com.sun.corba.se.spi.activation;
 * Wednesday, March 15, 2017 1:33:57 AM PDT
 */
 
-public class _InitialNameServiceStub extends org.omg.CORBA.portable.ObjectImpl implements com.sun.corba.se.spi.activation.InitialNameService
+public class _InitialNameServiceStub extends test.org.omg.CORBA.portable.ObjectImpl implements com.sun.corba.se.spi.activation.InitialNameService
 {
 
 
   // bind initial name
-  public void bind (String name, org.omg.CORBA.Object obj, boolean isPersistant) throws com.sun.corba.se.spi.activation.InitialNameServicePackage.NameAlreadyBound
+  public void bind (String name, test.org.omg.CORBA.Object obj, boolean isPersistant) throws com.sun.corba.se.spi.activation.InitialNameServicePackage.NameAlreadyBound
   {
-            org.omg.CORBA.portable.InputStream $in = null;
+            test.org.omg.CORBA.portable.InputStream $in = null;
             try {
-                org.omg.CORBA.portable.OutputStream $out = _request ("bind", true);
+                test.org.omg.CORBA.portable.OutputStream $out = _request ("bind", true);
                 $out.write_string (name);
-                org.omg.CORBA.ObjectHelper.write ($out, obj);
+                test.org.omg.CORBA.ObjectHelper.write ($out, obj);
                 $out.write_boolean (isPersistant);
                 $in = _invoke ($out);
                 return;
-            } catch (org.omg.CORBA.portable.ApplicationException $ex) {
+            } catch (test.org.omg.CORBA.portable.ApplicationException $ex) {
                 $in = $ex.getInputStream ();
                 String _id = $ex.getId ();
                 if (_id.equals ("IDL:activation/InitialNameService/NameAlreadyBound:1.0"))
                     throw com.sun.corba.se.spi.activation.InitialNameServicePackage.NameAlreadyBoundHelper.read ($in);
                 else
-                    throw new org.omg.CORBA.MARSHAL (_id);
-            } catch (org.omg.CORBA.portable.RemarshalException $rm) {
+                    throw new test.org.omg.CORBA.MARSHAL (_id);
+            } catch (test.org.omg.CORBA.portable.RemarshalException $rm) {
                 bind (name, obj, isPersistant        );
             } finally {
                 _releaseReply ($in);
@@ -51,10 +51,10 @@ public class _InitialNameServiceStub extends org.omg.CORBA.portable.ObjectImpl i
      String str = s.readUTF ();
      String[] args = null;
      java.util.Properties props = null;
-     org.omg.CORBA.ORB orb = org.omg.CORBA.ORB.init (args, props);
+     test.org.omg.CORBA.ORB orb = test.org.omg.CORBA.ORB.init (args, props);
    try {
-     org.omg.CORBA.Object obj = orb.string_to_object (str);
-     org.omg.CORBA.portable.Delegate delegate = ((org.omg.CORBA.portable.ObjectImpl) obj)._get_delegate ();
+     test.org.omg.CORBA.Object obj = orb.string_to_object (str);
+     test.org.omg.CORBA.portable.Delegate delegate = ((test.org.omg.CORBA.portable.ObjectImpl) obj)._get_delegate ();
      _set_delegate (delegate);
    } finally {
      orb.destroy() ;
@@ -65,7 +65,7 @@ public class _InitialNameServiceStub extends org.omg.CORBA.portable.ObjectImpl i
   {
      String[] args = null;
      java.util.Properties props = null;
-     org.omg.CORBA.ORB orb = org.omg.CORBA.ORB.init (args, props);
+     test.org.omg.CORBA.ORB orb = test.org.omg.CORBA.ORB.init (args, props);
    try {
      String str = orb.object_to_string (this);
      s.writeUTF (str);

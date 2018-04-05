@@ -32,8 +32,8 @@ import com.sun.org.apache.xml.internal.security.transforms.TransformationExcepti
 import com.sun.org.apache.xml.internal.security.transforms.Transforms;
 import com.sun.org.apache.xml.internal.security.utils.Constants;
 import com.sun.org.apache.xml.internal.security.utils.XMLUtils;
-import org.w3c.dom.Element;
-import org.w3c.dom.Node;
+import test.org.w3c.dom.Element;
+import test.org.w3c.dom.Node;
 
 /**
  * Implements the <CODE>http://www.w3.org/2000/09/xmldsig#enveloped-signature</CODE>
@@ -129,7 +129,7 @@ public class TransformEnvelopedSignature extends TransformSpi {
         }
 
         /**
-         * @see com.sun.org.apache.xml.internal.security.signature.NodeFilter#isNodeInclude(org.w3c.dom.Node)
+         * @see com.sun.org.apache.xml.internal.security.signature.NodeFilter#isNodeInclude(test.org.w3c.dom.Node)
          */
         public int isNodeInclude(Node n) {
             if (n == exclude || XMLUtils.isDescendantOrSelf(exclude, n)) {

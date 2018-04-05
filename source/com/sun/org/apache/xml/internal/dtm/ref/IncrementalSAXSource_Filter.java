@@ -29,18 +29,18 @@ import com.sun.org.apache.xml.internal.res.XMLErrorResources;
 import com.sun.org.apache.xml.internal.res.XMLMessages;
 import com.sun.org.apache.xml.internal.utils.ThreadControllerWrapper;
 
-import org.xml.sax.Attributes;
-import org.xml.sax.ContentHandler;
-import org.xml.sax.DTDHandler;
-import org.xml.sax.ErrorHandler;
-import org.xml.sax.InputSource;
-import org.xml.sax.Locator;
-import org.xml.sax.SAXException;
-import org.xml.sax.SAXNotRecognizedException;
-import org.xml.sax.SAXNotSupportedException;
-import org.xml.sax.SAXParseException;
-import org.xml.sax.XMLReader;
-import org.xml.sax.ext.LexicalHandler;
+import test.org.xml.sax.Attributes;
+import test.org.xml.sax.ContentHandler;
+import test.org.xml.sax.DTDHandler;
+import test.org.xml.sax.ErrorHandler;
+import test.org.xml.sax.InputSource;
+import test.org.xml.sax.Locator;
+import test.org.xml.sax.SAXException;
+import test.org.xml.sax.SAXNotRecognizedException;
+import test.org.xml.sax.SAXNotSupportedException;
+import test.org.xml.sax.SAXParseException;
+import test.org.xml.sax.XMLReader;
+import test.org.xml.sax.ext.LexicalHandler;
 
 /** <p>IncrementalSAXSource_Filter implements IncrementalSAXSource, using a
  * standard SAX2 event source as its input and parcelling out those
@@ -156,7 +156,7 @@ implements IncrementalSAXSource, ContentHandler, DTDHandler, LexicalHandler, Err
     try
     {
       eventsource.
-        setProperty("http://xml.org/sax/properties/lexical-handler",
+        setProperty("http://xml.test.org/sax/properties/lexical-handler",
                     this);
     }
     catch(SAXNotRecognizedException e)
@@ -225,7 +225,7 @@ implements IncrementalSAXSource, ContentHandler, DTDHandler, LexicalHandler, Err
   // possibility of a large base-64 block in a SOAP stream.)
   //
   public void characters(char[] ch, int start, int length)
-       throws org.xml.sax.SAXException
+       throws test.org.xml.sax.SAXException
   {
     if(--eventcounter<=0)
       {
@@ -236,7 +236,7 @@ implements IncrementalSAXSource, ContentHandler, DTDHandler, LexicalHandler, Err
       clientContentHandler.characters(ch,start,length);
   }
   public void endDocument()
-       throws org.xml.sax.SAXException
+       throws test.org.xml.sax.SAXException
   {
     // EXCEPTION: In this case we need to run the event BEFORE we yield.
     if(clientContentHandler!=null)
@@ -247,7 +247,7 @@ implements IncrementalSAXSource, ContentHandler, DTDHandler, LexicalHandler, Err
   }
   public void endElement(java.lang.String namespaceURI, java.lang.String localName,
       java.lang.String qName)
-       throws org.xml.sax.SAXException
+       throws test.org.xml.sax.SAXException
   {
     if(--eventcounter<=0)
       {
@@ -258,7 +258,7 @@ implements IncrementalSAXSource, ContentHandler, DTDHandler, LexicalHandler, Err
       clientContentHandler.endElement(namespaceURI,localName,qName);
   }
   public void endPrefixMapping(java.lang.String prefix)
-       throws org.xml.sax.SAXException
+       throws test.org.xml.sax.SAXException
   {
     if(--eventcounter<=0)
       {
@@ -269,7 +269,7 @@ implements IncrementalSAXSource, ContentHandler, DTDHandler, LexicalHandler, Err
       clientContentHandler.endPrefixMapping(prefix);
   }
   public void ignorableWhitespace(char[] ch, int start, int length)
-       throws org.xml.sax.SAXException
+       throws test.org.xml.sax.SAXException
   {
     if(--eventcounter<=0)
       {
@@ -280,7 +280,7 @@ implements IncrementalSAXSource, ContentHandler, DTDHandler, LexicalHandler, Err
       clientContentHandler.ignorableWhitespace(ch,start,length);
   }
   public void processingInstruction(java.lang.String target, java.lang.String data)
-       throws org.xml.sax.SAXException
+       throws test.org.xml.sax.SAXException
   {
     if(--eventcounter<=0)
       {
@@ -302,7 +302,7 @@ implements IncrementalSAXSource, ContentHandler, DTDHandler, LexicalHandler, Err
       clientContentHandler.setDocumentLocator(locator);
   }
   public void skippedEntity(java.lang.String name)
-       throws org.xml.sax.SAXException
+       throws test.org.xml.sax.SAXException
   {
     if(--eventcounter<=0)
       {
@@ -313,7 +313,7 @@ implements IncrementalSAXSource, ContentHandler, DTDHandler, LexicalHandler, Err
       clientContentHandler.skippedEntity(name);
   }
   public void startDocument()
-       throws org.xml.sax.SAXException
+       throws test.org.xml.sax.SAXException
   {
     co_entry_pause();
 
@@ -328,7 +328,7 @@ implements IncrementalSAXSource, ContentHandler, DTDHandler, LexicalHandler, Err
   }
   public void startElement(java.lang.String namespaceURI, java.lang.String localName,
       java.lang.String qName, Attributes atts)
-       throws org.xml.sax.SAXException
+       throws test.org.xml.sax.SAXException
   {
     if(--eventcounter<=0)
       {
@@ -339,7 +339,7 @@ implements IncrementalSAXSource, ContentHandler, DTDHandler, LexicalHandler, Err
       clientContentHandler.startElement(namespaceURI, localName, qName, atts);
   }
   public void startPrefixMapping(java.lang.String prefix, java.lang.String uri)
-       throws org.xml.sax.SAXException
+       throws test.org.xml.sax.SAXException
   {
     if(--eventcounter<=0)
       {
@@ -361,44 +361,44 @@ implements IncrementalSAXSource, ContentHandler, DTDHandler, LexicalHandler, Err
   // But I want 'em here for now, to remind us to recheck this assertion!
   //
   public void comment(char[] ch, int start, int length)
-       throws org.xml.sax.SAXException
+       throws test.org.xml.sax.SAXException
   {
     if(null!=clientLexicalHandler)
       clientLexicalHandler.comment(ch,start,length);
   }
   public void endCDATA()
-       throws org.xml.sax.SAXException
+       throws test.org.xml.sax.SAXException
   {
     if(null!=clientLexicalHandler)
       clientLexicalHandler.endCDATA();
   }
   public void endDTD()
-       throws org.xml.sax.SAXException
+       throws test.org.xml.sax.SAXException
   {
     if(null!=clientLexicalHandler)
       clientLexicalHandler.endDTD();
   }
   public void endEntity(java.lang.String name)
-       throws org.xml.sax.SAXException
+       throws test.org.xml.sax.SAXException
   {
     if(null!=clientLexicalHandler)
       clientLexicalHandler.endEntity(name);
   }
   public void startCDATA()
-       throws org.xml.sax.SAXException
+       throws test.org.xml.sax.SAXException
   {
     if(null!=clientLexicalHandler)
       clientLexicalHandler.startCDATA();
   }
   public void startDTD(java.lang.String name, java.lang.String publicId,
       java.lang.String systemId)
-       throws org.xml.sax.SAXException
+       throws test.org.xml.sax.SAXException
   {
     if(null!=clientLexicalHandler)
       clientLexicalHandler. startDTD(name, publicId, systemId);
   }
   public void startEntity(java.lang.String name)
-       throws org.xml.sax.SAXException
+       throws test.org.xml.sax.SAXException
   {
     if(null!=clientLexicalHandler)
       clientLexicalHandler.startEntity(name);
@@ -616,7 +616,7 @@ implements IncrementalSAXSource, ContentHandler, DTDHandler, LexicalHandler, Err
     fXMLReaderInputSource=source;
 
     // Xalan thread pooling...
-    // com.sun.org.apache.xalan.internal.transformer.TransformerImpl.runTransformThread(this);
+    // com.sun.test.org.apache.xalan.internal.transformer.TransformerImpl.runTransformThread(this);
     ThreadControllerWrapper.runThread(this, -1);
   }
 
@@ -747,8 +747,8 @@ implements IncrementalSAXSource, ContentHandler, DTDHandler, LexicalHandler, Err
   {
     System.out.println("Starting...");
 
-    org.xml.sax.XMLReader theSAXParser=
-      new com.sun.org.apache.xerces.internal.parsers.SAXParser();
+    test.org.xml.sax.XMLReader theSAXParser=
+      new com.sun.test.org.apache.xerces.internal.parsers.SAXParser();
 
 
     for(int arg=0;arg<args.length;++arg)
@@ -758,8 +758,8 @@ implements IncrementalSAXSource, ContentHandler, DTDHandler, LexicalHandler, Err
       IncrementalSAXSource_Filter filter=
         new IncrementalSAXSource_Filter();
       // Use a serializer as our sample output
-      com.sun.org.apache.xml.internal.serialize.XMLSerializer trace;
-      trace=new com.sun.org.apache.xml.internal.serialize.XMLSerializer(System.out,null);
+      com.sun.test.org.apache.xml.internal.serialize.XMLSerializer trace;
+      trace=new com.sun.test.org.apache.xml.internal.serialize.XMLSerializer(System.out,null);
       filter.setContentHandler(trace);
       filter.setLexicalHandler(trace);
 

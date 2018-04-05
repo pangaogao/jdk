@@ -26,8 +26,8 @@ import com.sun.org.apache.xml.internal.dtm.DTM;
 import com.sun.org.apache.xml.internal.utils.NodeConsumer;
 import com.sun.org.apache.xml.internal.utils.XMLString;
 
-import org.xml.sax.ContentHandler;
-import org.xml.sax.ext.LexicalHandler;
+import test.org.xml.sax.ContentHandler;
+import test.org.xml.sax.ext.LexicalHandler;
 
 /**
  * This class does a pre-order walk of the DTM tree, calling a ContentHandler
@@ -105,7 +105,7 @@ public class DTMTreeWalker
    * in other words, the root of the subtree to traverse over.
    *
    * @throws TransformerException */
-  public void traverse(int pos) throws org.xml.sax.SAXException
+  public void traverse(int pos) throws test.org.xml.sax.SAXException
   {
     // %REVIEW% Why isn't this just traverse(pos,pos)?
 
@@ -157,7 +157,7 @@ public class DTMTreeWalker
    *
    * @throws TransformerException
    */
-  public void traverse(int pos, int top) throws org.xml.sax.SAXException
+  public void traverse(int pos, int top) throws test.org.xml.sax.SAXException
   {
     // %OPT% Can we simplify the loop conditionals by adding:
     //          if(top==DTM.NULL) top=0
@@ -201,7 +201,7 @@ public class DTMTreeWalker
    * Optimized dispatch of characters.
    */
   private final void dispatachChars(int node)
-     throws org.xml.sax.SAXException
+     throws test.org.xml.sax.SAXException
   {
     m_dtm.dispatchCharactersEvents(node, m_contentHandler, false);
   }
@@ -212,9 +212,9 @@ public class DTMTreeWalker
    *
    * @param node Node to process
    *
-   * @throws org.xml.sax.SAXException
+   * @throws test.org.xml.sax.SAXException
    */
-  protected void startNode(int node) throws org.xml.sax.SAXException
+  protected void startNode(int node) throws test.org.xml.sax.SAXException
   {
 
     if (m_contentHandler instanceof NodeConsumer)
@@ -263,8 +263,8 @@ public class DTMTreeWalker
         ns = "";
 
       // %OPT% !!
-      org.xml.sax.helpers.AttributesImpl attrs =
-                            new org.xml.sax.helpers.AttributesImpl();
+      test.org.xml.sax.helpers.AttributesImpl attrs =
+                            new test.org.xml.sax.helpers.AttributesImpl();
 
       for (int i = dtm.getFirstAttribute(node);
            i != DTM.NULL;
@@ -360,9 +360,9 @@ public class DTMTreeWalker
    *
    * @param node Node we just finished processing
    *
-   * @throws org.xml.sax.SAXException
+   * @throws test.org.xml.sax.SAXException
    */
-  protected void endNode(int node) throws org.xml.sax.SAXException
+  protected void endNode(int node) throws test.org.xml.sax.SAXException
   {
 
     switch (m_dtm.getNodeType(node))

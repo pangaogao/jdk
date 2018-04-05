@@ -134,7 +134,7 @@ package com.sun.corba.se.impl.orbutil.concurrent;
  * <p>[<a href="http://gee.cs.oswego.edu/dl/classes/EDU/oswego/cs/dl/util/concurrent/intro.html"> Introduction to this package. </a>]
 **/
 
-import org.omg.CORBA.INTERNAL ;
+import test.org.omg.CORBA.INTERNAL ;
 
 public class DebugMutex implements Sync  {
 

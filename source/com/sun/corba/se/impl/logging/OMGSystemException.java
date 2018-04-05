@@ -8,10 +8,8 @@ package com.sun.corba.se.impl.logging ;
 import java.util.logging.Logger ;
 import java.util.logging.Level ;
 
-import org.omg.CORBA.OMGVMCID ;
-import com.sun.corba.se.impl.util.SUNVMCID ;
-import org.omg.CORBA.CompletionStatus ;
-import org.omg.CORBA.SystemException ;
+import test.org.omg.CORBA.OMGVMCID ;
+import test.org.omg.CORBA.CompletionStatus ;
 
 import com.sun.corba.se.spi.orb.ORB ;
 
@@ -19,26 +17,26 @@ import com.sun.corba.se.spi.logging.LogWrapperFactory;
 
 import com.sun.corba.se.spi.logging.LogWrapperBase;
 
-import org.omg.CORBA.BAD_CONTEXT ;
-import org.omg.CORBA.BAD_INV_ORDER ;
-import org.omg.CORBA.BAD_OPERATION ;
-import org.omg.CORBA.BAD_PARAM ;
-import org.omg.CORBA.BAD_TYPECODE ;
-import org.omg.CORBA.DATA_CONVERSION ;
-import org.omg.CORBA.IMP_LIMIT ;
-import org.omg.CORBA.INITIALIZE ;
-import org.omg.CORBA.INV_OBJREF ;
-import org.omg.CORBA.INV_POLICY ;
-import org.omg.CORBA.INTERNAL ;
-import org.omg.CORBA.INTF_REPOS ;
-import org.omg.CORBA.MARSHAL ;
-import org.omg.CORBA.NO_IMPLEMENT ;
-import org.omg.CORBA.NO_RESOURCES ;
-import org.omg.CORBA.TRANSACTION_ROLLEDBACK ;
-import org.omg.CORBA.TRANSIENT ;
-import org.omg.CORBA.OBJECT_NOT_EXIST ;
-import org.omg.CORBA.OBJ_ADAPTER ;
-import org.omg.CORBA.UNKNOWN ;
+import test.org.omg.CORBA.BAD_CONTEXT ;
+import test.org.omg.CORBA.BAD_INV_ORDER ;
+import test.org.omg.CORBA.BAD_OPERATION ;
+import test.org.omg.CORBA.BAD_PARAM ;
+import test.org.omg.CORBA.BAD_TYPECODE ;
+import test.org.omg.CORBA.DATA_CONVERSION ;
+import test.org.omg.CORBA.IMP_LIMIT ;
+import test.org.omg.CORBA.INITIALIZE ;
+import test.org.omg.CORBA.INV_OBJREF ;
+import test.org.omg.CORBA.INV_POLICY ;
+import test.org.omg.CORBA.INTERNAL ;
+import test.org.omg.CORBA.INTF_REPOS ;
+import test.org.omg.CORBA.MARSHAL ;
+import test.org.omg.CORBA.NO_IMPLEMENT ;
+import test.org.omg.CORBA.NO_RESOURCES ;
+import test.org.omg.CORBA.TRANSACTION_ROLLEDBACK ;
+import test.org.omg.CORBA.TRANSIENT ;
+import test.org.omg.CORBA.OBJECT_NOT_EXIST ;
+import test.org.omg.CORBA.OBJ_ADAPTER ;
+import test.org.omg.CORBA.UNKNOWN ;
 
 public class OMGSystemException extends LogWrapperBase {
     

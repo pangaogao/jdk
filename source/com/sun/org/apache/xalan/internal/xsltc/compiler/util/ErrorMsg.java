@@ -35,7 +35,7 @@ import com.sun.org.apache.xalan.internal.xsltc.compiler.SyntaxTreeNode;
  * @author Jacek Ambroziak
  * @author Santiago Pericas-Geertsen
  * @author G. Todd Miller
- * @author Erwin Bolwidt <ejb@klomp.org>
+ * @author Erwin Bolwidt <ejb@klomp.test.org>
  * @author Morten Jorgensen
  */
 public final class ErrorMsg {
@@ -183,7 +183,7 @@ public final class ErrorMsg {
 
     static {
         _bundle = SecuritySupport.getResourceBundle(
-                          "com.sun.org.apache.xalan.internal.xsltc.compiler.util.ErrorMessages",
+                          "com.sun.test.org.apache.xalan.internal.xsltc.compiler.util.ErrorMessages",
                           Locale.getDefault());
     }
 

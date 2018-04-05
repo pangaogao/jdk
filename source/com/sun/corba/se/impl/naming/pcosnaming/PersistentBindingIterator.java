@@ -26,20 +26,15 @@
 package com.sun.corba.se.impl.naming.pcosnaming;
 
 // Import general CORBA classes
-import org.omg.CORBA.SystemException;
-import org.omg.CORBA.ORB;
-import org.omg.CORBA.INTERNAL;
+import test.org.omg.CORBA.INTERNAL;
 
-// Get org.omg.CosNaming Types
-import org.omg.CosNaming.Binding;
-import org.omg.CosNaming.BindingType;
-import org.omg.CosNaming.BindingTypeHolder;
-import org.omg.CosNaming.NameComponent;
-import org.omg.PortableServer.POA;
+// Get test.org.omg.CosNaming Types
+import test.org.omg.CosNaming.Binding;
+import test.org.omg.CosNaming.BindingType;
+import test.org.omg.CosNaming.NameComponent;
+import test.org.omg.PortableServer.POA;
 
 // Get base implementation
-import com.sun.corba.se.impl.naming.pcosnaming.NamingContextImpl;
-import com.sun.corba.se.impl.naming.pcosnaming.InternalBindingValue;
 
 import com.sun.corba.se.impl.naming.cosnaming.BindingIteratorImpl;
 
@@ -61,15 +56,15 @@ public class PersistentBindingIterator extends BindingIteratorImpl
     private POA biPOA;
     /**
      * Constructs a new PersistentBindingIterator object.
-     * @param orb a org.omg.CORBA.ORB object.
+     * @param orb a test.org.omg.CORBA.ORB object.
      * @param aTable A hashtable containing InternalBindingValues which is
      * the content of the PersistentNamingContext.
      * @param java.lang.Exception a Java exception.
      * @exception Exception a Java exception thrown of the base class cannot
      * initialize.
    */
-    public PersistentBindingIterator(org.omg.CORBA.ORB orb, Hashtable aTable,
-        POA thePOA ) throws java.lang.Exception
+    public PersistentBindingIterator(test.org.omg.CORBA.ORB orb, Hashtable aTable,
+                                     POA thePOA ) throws java.lang.Exception
     {
         super(orb);
         this.orb = orb;
@@ -86,7 +81,7 @@ public class PersistentBindingIterator extends BindingIteratorImpl
    * @param b The Binding as an out parameter.
    * @return true if there were more bindings.
    */
-    final public boolean NextOne(org.omg.CosNaming.BindingHolder b)
+    final public boolean NextOne(test.org.omg.CosNaming.BindingHolder b)
     {
         // If there are more elements get the next element
         boolean hasMore = theEnumeration.hasMoreElements();
@@ -111,7 +106,7 @@ public class PersistentBindingIterator extends BindingIteratorImpl
 
     /**
    * Destroys this BindingIterator by disconnecting from the ORB
-   * @exception org.omg.CORBA.SystemException One of a fixed set of CORBA system exceptions.
+   * @exception test.org.omg.CORBA.SystemException One of a fixed set of CORBA system exceptions.
    */
     final public void Destroy()
     {
@@ -138,5 +133,5 @@ public class PersistentBindingIterator extends BindingIteratorImpl
     private int currentSize;
     private Hashtable theHashtable;
     private Enumeration theEnumeration;
-    private org.omg.CORBA.ORB orb;
+    private test.org.omg.CORBA.ORB orb;
 }

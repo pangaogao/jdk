@@ -25,7 +25,7 @@
 
 package com.sun.corba.se.spi.protocol;
 
-import org.omg.CORBA.portable.ServantObject;
+import test.org.omg.CORBA.portable.ServantObject;
 
 /**
  * @author Harold Carr
@@ -33,9 +33,9 @@ import org.omg.CORBA.portable.ServantObject;
 
 public interface LocalClientRequestDispatcher
 {
-    public boolean useLocalInvocation(org.omg.CORBA.Object self);
+    public boolean useLocalInvocation(test.org.omg.CORBA.Object self);
 
-    public boolean is_local(org.omg.CORBA.Object self);
+    public boolean is_local(test.org.omg.CORBA.Object self);
 
     /**
      * Returns a Java reference to the servant which should be used for this
@@ -62,11 +62,11 @@ public interface LocalClientRequestDispatcher
      * this optimization (e.g. due to security, transactions, etc).
      * The method must return null if the servant is not of the expected type.
      */
-    public ServantObject servant_preinvoke(org.omg.CORBA.Object self,
+    public ServantObject servant_preinvoke(test.org.omg.CORBA.Object self,
                                            String operation,
                                            Class expectedType);
 
-    public void servant_postinvoke(org.omg.CORBA.Object self,
+    public void servant_postinvoke(test.org.omg.CORBA.Object self,
                                    ServantObject servant);
 }
 

@@ -29,10 +29,10 @@ import com.sun.org.apache.xerces.internal.impl.xs.SchemaSymbols;
 import com.sun.org.apache.xerces.internal.impl.xs.XMLSchemaException;
 import com.sun.org.apache.xerces.internal.impl.xs.util.XInt;
 import com.sun.org.apache.xerces.internal.util.SymbolTable;
-import org.w3c.dom.Element;
-import org.w3c.dom.Node;
-import org.w3c.dom.Attr;
-import org.w3c.dom.NamedNodeMap;
+import test.org.w3c.dom.Element;
+import test.org.w3c.dom.Node;
+import test.org.w3c.dom.Attr;
+import test.org.w3c.dom.NamedNodeMap;
 
 /**
  * Objects of this class hold all information pecular to a
@@ -162,7 +162,7 @@ class XSDocumentInfo {
                 String uri = attr.getNamespaceURI();
 
                 // Check if attribute is an ns decl -- requires ns support
-                if (uri != null && uri.equals("http://www.w3.org/2000/xmlns/")) {
+                if (uri != null && uri.equals("http://www.w3.test.org/2000/xmlns/")) {
                     String prefix = attr.getLocalName().intern();
                     if (prefix == "xmlns") prefix = "";
                     // Declare prefix if not set -- moving upwards

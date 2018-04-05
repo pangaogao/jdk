@@ -61,21 +61,21 @@ import com.sun.org.apache.xalan.internal.utils.SecuritySupport;
 
 //J2SE does not support Xalan interpretive
 /*
-import com.sun.org.apache.xalan.internal.trace.PrintTraceListener;
-import com.sun.org.apache.xalan.internal.trace.TraceManager;
-import com.sun.org.apache.xalan.internal.transformer.XalanProperties;
+import com.sun.test.org.apache.xalan.internal.trace.PrintTraceListener;
+import com.sun.test.org.apache.xalan.internal.trace.TraceManager;
+import com.sun.test.org.apache.xalan.internal.transformer.XalanProperties;
 */
 
 import com.sun.org.apache.xml.internal.utils.DefaultErrorHandler;
 
-import org.w3c.dom.Document;
-import org.w3c.dom.Node;
+import test.org.w3c.dom.Document;
+import test.org.w3c.dom.Node;
 
-import org.xml.sax.ContentHandler;
-import org.xml.sax.EntityResolver;
-import org.xml.sax.InputSource;
-import org.xml.sax.XMLReader;
-import org.xml.sax.helpers.XMLReaderFactory;
+import test.org.xml.sax.ContentHandler;
+import test.org.xml.sax.EntityResolver;
+import test.org.xml.sax.InputSource;
+import test.org.xml.sax.XMLReader;
+import test.org.xml.sax.helpers.XMLReaderFactory;
 
 /**
  * The main() method handles the Xalan command-line interface.
@@ -206,7 +206,7 @@ public class Process
       if (useXSLTC)
       {
          String key = "javax.xml.transform.TransformerFactory";
-         String value = "com.sun.org.apache.xalan.internal.xsltc.trax.TransformerFactoryImpl";
+         String value = "com.sun.test.org.apache.xalan.internal.xsltc.trax.TransformerFactoryImpl";
          Properties props = System.getProperties();
          props.put(key, value);
          System.setProperties(props);
@@ -845,9 +845,9 @@ public class Process
 
           // J2SE does not support Xalan interpretive
           /*
-          if (transformer instanceof com.sun.org.apache.xalan.internal.transformer.TransformerImpl)
+          if (transformer instanceof com.sun.test.org.apache.xalan.internal.transformer.TransformerImpl)
           {
-            com.sun.org.apache.xalan.internal.transformer.TransformerImpl impl = (com.sun.org.apache.xalan.internal.transformer.TransformerImpl)transformer;
+            com.sun.test.org.apache.xalan.internal.transformer.TransformerImpl impl = (com.sun.test.org.apache.xalan.internal.transformer.TransformerImpl)transformer;
             TraceManager tm = impl.getTraceManager();
 
             if (null != tracer)
@@ -906,7 +906,7 @@ public class Process
 
               Node xmlDoc = docBuilder.parse(new InputSource(inFileName));
               Document doc = docBuilder.newDocument();
-              org.w3c.dom.DocumentFragment outNode =
+              test.org.w3c.dom.DocumentFragment outNode =
                 doc.createDocumentFragment();
 
               transformer.transform(new DOMSource(xmlDoc, inFileName),
@@ -952,7 +952,7 @@ public class Process
                   {
                     factory.setFeature(XMLConstants.FEATURE_SECURE_PROCESSING, true);
                   }
-                  catch (org.xml.sax.SAXException se) {}
+                  catch (test.org.xml.sax.SAXException se) {}
                 }
 
                 javax.xml.parsers.SAXParser jaxpParser =
@@ -962,11 +962,11 @@ public class Process
               }
               catch (javax.xml.parsers.ParserConfigurationException ex)
               {
-                throw new org.xml.sax.SAXException(ex);
+                throw new test.org.xml.sax.SAXException(ex);
               }
               catch (javax.xml.parsers.FactoryConfigurationError ex1)
               {
-                throw new org.xml.sax.SAXException(ex1.toString());
+                throw new test.org.xml.sax.SAXException(ex1.toString());
               }
               catch (NoSuchMethodError ex2){}
               catch (AbstractMethodError ame){}
@@ -979,7 +979,7 @@ public class Process
               // J2SE does not support Xalan interpretive
               /*
               if (!useXSLTC)
-                stf.setAttribute(com.sun.org.apache.xalan.internal.processor.TransformerFactoryImpl.FEATURE_INCREMENTAL,
+                stf.setAttribute(com.sun.test.org.apache.xalan.internal.processor.TransformerFactoryImpl.FEATURE_INCREMENTAL,
                    Boolean.TRUE);
               */
 
@@ -988,21 +988,21 @@ public class Process
               reader.setContentHandler(th);
               reader.setDTDHandler(th);
 
-              if(th instanceof org.xml.sax.ErrorHandler)
-                reader.setErrorHandler((org.xml.sax.ErrorHandler)th);
+              if(th instanceof test.org.xml.sax.ErrorHandler)
+                reader.setErrorHandler((test.org.xml.sax.ErrorHandler)th);
 
               try
               {
                 reader.setProperty(
-                  "http://xml.org/sax/properties/lexical-handler", th);
+                  "http://xml.test.org/sax/properties/lexical-handler", th);
               }
-              catch (org.xml.sax.SAXNotRecognizedException e){}
-              catch (org.xml.sax.SAXNotSupportedException e){}
+              catch (test.org.xml.sax.SAXNotRecognizedException e){}
+              catch (test.org.xml.sax.SAXNotSupportedException e){}
               try
               {
-                reader.setFeature("http://xml.org/sax/features/namespace-prefixes",
+                reader.setFeature("http://xml.test.org/sax/features/namespace-prefixes",
                                   true);
-              } catch (org.xml.sax.SAXException se) {}
+              } catch (test.org.xml.sax.SAXException se) {}
 
               th.setResult(strResult);
 
@@ -1029,7 +1029,7 @@ public class Process
                     {
                       factory.setFeature(XMLConstants.FEATURE_SECURE_PROCESSING, true);
                     }
-                    catch (org.xml.sax.SAXException se) {}
+                    catch (test.org.xml.sax.SAXException se) {}
                   }
 
                   javax.xml.parsers.SAXParser jaxpParser =
@@ -1039,11 +1039,11 @@ public class Process
                 }
                 catch (javax.xml.parsers.ParserConfigurationException ex)
                 {
-                  throw new org.xml.sax.SAXException(ex);
+                  throw new test.org.xml.sax.SAXException(ex);
                 }
                 catch (javax.xml.parsers.FactoryConfigurationError ex1)
                 {
-                  throw new org.xml.sax.SAXException(ex1.toString());
+                  throw new test.org.xml.sax.SAXException(ex1.toString());
                 }
                 catch (NoSuchMethodError ex2){}
                 catch (AbstractMethodError ame){}

@@ -24,9 +24,7 @@ import java.util.ArrayList;
 import java.util.Vector;
 
 import com.sun.org.apache.xerces.internal.impl.dv.InvalidDatatypeFacetException;
-import com.sun.org.apache.xerces.internal.impl.dv.SchemaDVFactory;
 import com.sun.org.apache.xerces.internal.impl.dv.XSSimpleType;
-import com.sun.org.apache.xerces.internal.impl.dv.xs.SchemaDVFactoryImpl;
 import com.sun.org.apache.xerces.internal.impl.dv.xs.XSSimpleTypeDecl;
 import com.sun.org.apache.xerces.internal.impl.xs.SchemaGrammar;
 import com.sun.org.apache.xerces.internal.impl.xs.SchemaSymbols;
@@ -38,7 +36,7 @@ import com.sun.org.apache.xerces.internal.xni.QName;
 import com.sun.org.apache.xerces.internal.xs.XSConstants;
 import com.sun.org.apache.xerces.internal.xs.XSObjectList;
 import com.sun.org.apache.xerces.internal.xs.XSTypeDefinition;
-import org.w3c.dom.Element;
+import test.org.w3c.dom.Element;
 
 /**
  * The simple type definition schema component traverser.

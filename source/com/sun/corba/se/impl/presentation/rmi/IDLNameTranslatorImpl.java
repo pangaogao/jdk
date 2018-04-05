@@ -30,8 +30,6 @@ import java.security.PrivilegedAction;
 
 import java.lang.reflect.Method;
 
-import java.math.BigInteger;
-
 import java.util.Map;
 import java.util.Set;
 import java.util.HashSet;
@@ -41,9 +39,6 @@ import java.util.StringTokenizer;
 
 import com.sun.corba.se.spi.presentation.rmi.IDLNameTranslator ;
 
-import com.sun.corba.se.impl.presentation.rmi.IDLType ;
-import com.sun.corba.se.impl.presentation.rmi.IDLTypeException ;
-import com.sun.corba.se.impl.presentation.rmi.IDLTypesUtil ;
 import com.sun.corba.se.impl.orbutil.ObjectUtility ;
 
 /**
@@ -82,7 +77,7 @@ public class IDLNameTranslatorImpl implements IDLNameTranslator {
 
     // used to form IDL array type names
     private static final String[] BASE_IDL_ARRAY_MODULE_TYPE=
-        new String[] { "org", "omg", "boxedRMI" } ;
+        new String[] {"test/org", "omg", "boxedRMI" } ;
 
     private static final String BASE_IDL_ARRAY_ELEMENT_TYPE = "seq";
 
@@ -785,7 +780,7 @@ public class IDLNameTranslatorImpl implements IDLNameTranslator {
                     // If this is a generated IDL Entity Type we need to
                     // prepend org_omg_boxedIDL per sections 1.3.5 and 1.3.9
                     if (idlTypesUtil.isEntity(c)) {
-                        packageName = "org.omg.boxedIDL." + packageName ;
+                        packageName = "test.org.omg.boxedIDL." + packageName ;
                     }
 
                     // Section 1.3.2.1 and 1.3.2.6 of Java2IDL spec defines

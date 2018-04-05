@@ -86,14 +86,14 @@ public class DatatypeException extends Exception {
      */
     public String getMessage() {
         ResourceBundle resourceBundle = null;
-        resourceBundle = SecuritySupport.getResourceBundle("com.sun.org.apache.xerces.internal.impl.msg.XMLSchemaMessages");
+        resourceBundle = SecuritySupport.getResourceBundle("com.sun.test.org.apache.xerces.internal.impl.msg.XMLSchemaMessages");
         if (resourceBundle == null)
-            throw new MissingResourceException("Property file not found!", "com.sun.org.apache.xerces.internal.impl.msg.XMLSchemaMessages", key);
+            throw new MissingResourceException("Property file not found!", "com.sun.test.org.apache.xerces.internal.impl.msg.XMLSchemaMessages", key);
 
         String msg = resourceBundle.getString(key);
         if (msg == null) {
             msg = resourceBundle.getString("BadMessageKey");
-            throw new MissingResourceException(msg, "com.sun.org.apache.xerces.internal.impl.msg.XMLSchemaMessages", key);
+            throw new MissingResourceException(msg, "com.sun.test.org.apache.xerces.internal.impl.msg.XMLSchemaMessages", key);
         }
 
         if (args != null) {

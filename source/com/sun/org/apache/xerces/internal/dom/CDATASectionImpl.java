@@ -20,8 +20,8 @@
 
 package com.sun.org.apache.xerces.internal.dom;
 
-import org.w3c.dom.CDATASection;
-import org.w3c.dom.Node;
+import test.org.w3c.dom.CDATASection;
+import test.org.w3c.dom.Node;
 
 /**
  * XML provides the CDATA markup to allow a region of text in which
@@ -75,7 +75,7 @@ public class CDATASectionImpl
 
     /**
      * A short integer indicating what type of node this is. The named
-     * constants for this value are defined in the org.w3c.dom.Node interface.
+     * constants for this value are defined in the test.org.w3c.dom.Node interface.
      */
     public short getNodeType() {
         return Node.CDATA_SECTION_NODE;

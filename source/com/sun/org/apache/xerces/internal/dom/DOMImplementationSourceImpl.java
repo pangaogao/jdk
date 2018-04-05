@@ -22,10 +22,9 @@ package com.sun.org.apache.xerces.internal.dom;
 
 import java.util.StringTokenizer;
 import java.util.Vector;
-import org.w3c.dom.DOMImplementationList;
-import org.w3c.dom.DOMImplementationSource;
-import org.w3c.dom.DOMImplementation;
-import com.sun.org.apache.xerces.internal.dom.DOMImplementationListImpl;
+import test.org.w3c.dom.DOMImplementationList;
+import test.org.w3c.dom.DOMImplementationSource;
+import test.org.w3c.dom.DOMImplementation;
 
 /**
  * Supply one the right implementation, based upon requested features. Each

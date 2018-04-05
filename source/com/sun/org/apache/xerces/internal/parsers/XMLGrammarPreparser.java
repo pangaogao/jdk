@@ -87,9 +87,9 @@ public class XMLGrammarPreparser {
     static {
         Map<String, String> loaders = new HashMap<>();
         loaders.put(XMLGrammarDescription.XML_SCHEMA,
-            "com.sun.org.apache.xerces.internal.impl.xs.XMLSchemaLoader");
+            "com.sun.test.org.apache.xerces.internal.impl.xs.XMLSchemaLoader");
         loaders.put(XMLGrammarDescription.XML_DTD,
-            "com.sun.org.apache.xerces.internal.impl.dtd.XMLDTDLoader");
+            "com.sun.test.org.apache.xerces.internal.impl.dtd.XMLDTDLoader");
         KNOWN_LOADERS = Collections.unmodifiableMap(loaders);
     }
 

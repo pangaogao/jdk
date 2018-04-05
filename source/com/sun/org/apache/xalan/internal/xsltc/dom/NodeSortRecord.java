@@ -113,7 +113,7 @@ public abstract class NodeSortRecord {
         try {
             // -- W. Eliot Kimber (eliot@isogen.com)
             colFactClassname =
-                SecuritySupport.getSystemProperty("com.sun.org.apache.xalan.internal.xsltc.COLLATOR_FACTORY");
+                SecuritySupport.getSystemProperty("com.sun.test.org.apache.xalan.internal.xsltc.COLLATOR_FACTORY");
         }
         catch (SecurityException e) {
             // If we can't read the propery, just use default collator

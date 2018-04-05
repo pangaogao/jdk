@@ -49,25 +49,25 @@ import com.sun.org.apache.xerces.internal.xs.PSVIProvider;
 import java.io.IOException;
 import java.util.Locale;
 import javax.xml.XMLConstants;
-import org.xml.sax.AttributeList;
-import org.xml.sax.ContentHandler;
-import org.xml.sax.DTDHandler;
-import org.xml.sax.DocumentHandler;
-import org.xml.sax.EntityResolver;
-import org.xml.sax.ErrorHandler;
-import org.xml.sax.InputSource;
-import org.xml.sax.Parser;
-import org.xml.sax.SAXException;
-import org.xml.sax.SAXNotRecognizedException;
-import org.xml.sax.SAXNotSupportedException;
-import org.xml.sax.SAXParseException;
-import org.xml.sax.XMLReader;
-import org.xml.sax.ext.Attributes2;
-import org.xml.sax.ext.DeclHandler;
-import org.xml.sax.ext.EntityResolver2;
-import org.xml.sax.ext.LexicalHandler;
-import org.xml.sax.ext.Locator2;
-import org.xml.sax.helpers.LocatorImpl;
+import test.org.xml.sax.AttributeList;
+import test.org.xml.sax.ContentHandler;
+import test.org.xml.sax.DTDHandler;
+import test.org.xml.sax.DocumentHandler;
+import test.org.xml.sax.EntityResolver;
+import test.org.xml.sax.ErrorHandler;
+import test.org.xml.sax.InputSource;
+import test.org.xml.sax.Parser;
+import test.org.xml.sax.SAXException;
+import test.org.xml.sax.SAXNotRecognizedException;
+import test.org.xml.sax.SAXNotSupportedException;
+import test.org.xml.sax.SAXParseException;
+import test.org.xml.sax.XMLReader;
+import test.org.xml.sax.ext.Attributes2;
+import test.org.xml.sax.ext.DeclHandler;
+import test.org.xml.sax.ext.EntityResolver2;
+import test.org.xml.sax.ext.LexicalHandler;
+import test.org.xml.sax.ext.Locator2;
+import test.org.xml.sax.helpers.LocatorImpl;
 
 /**
  * This is the base class of all SAX parsers. It implements both the
@@ -183,7 +183,7 @@ public abstract class AbstractSAXParser
     protected NamespaceContext fNamespaceContext;
 
     /** DTD handler. */
-    protected org.xml.sax.DTDHandler fDTDHandler;
+    protected test.org.xml.sax.DTDHandler fDTDHandler;
 
     /** Decl handler. */
     protected DeclHandler fDeclHandler;
@@ -1129,7 +1129,7 @@ public abstract class AbstractSAXParser
      *
      * @param systemId The system identifier (URI).
      *
-     * @exception org.xml.sax.SAXException Throws exception on SAX error.
+     * @exception test.org.xml.sax.SAXException Throws exception on SAX error.
      * @exception java.io.IOException Throws exception on i/o error.
      */
     public void parse(String systemId) throws SAXException, IOException {
@@ -1195,7 +1195,7 @@ public abstract class AbstractSAXParser
      *
      * @param inputSource
      *
-     * @exception org.xml.sax.SAXException
+     * @exception test.org.xml.sax.SAXException
      * @exception java.io.IOException
      */
     public void parse(InputSource inputSource)
@@ -1400,7 +1400,7 @@ public abstract class AbstractSAXParser
      * @exception SAXException An exception thrown if the parser does not
      *                         support the specified locale.
      *
-     * @see org.xml.sax.Parser
+     * @see test.org.xml.sax.Parser
      */
     public void setLocale(Locale locale) throws SAXException {
         //REVISIT:this methods is not part of SAX2 interfaces, we should throw exception
@@ -1604,7 +1604,7 @@ public abstract class AbstractSAXParser
 
                 // http://xml.org/sax/features/use-entity-resolver2
                 //   controls whether the methods of an object implementing
-                //   org.xml.sax.ext.EntityResolver2 will be used by the parser.
+                //   test.org.xml.sax.ext.EntityResolver2 will be used by the parser.
                 //
                 if (suffixLength == Constants.USE_ENTITY_RESOLVER2_FEATURE.length() &&
                     featureId.endsWith(Constants.USE_ENTITY_RESOLVER2_FEATURE)) {
@@ -1624,10 +1624,10 @@ public abstract class AbstractSAXParser
                 //   reports whether the document specified a standalone document declaration.
                 // http://xml.org/sax/features/use-attributes2
                 //   reports whether Attributes objects passed to startElement also implement
-                //   the org.xml.sax.ext.Attributes2 interface.
+                //   the test.org.xml.sax.ext.Attributes2 interface.
                 // http://xml.org/sax/features/use-locator2
                 //   reports whether Locator objects passed to setDocumentLocator also implement
-                //   the org.xml.sax.ext.Locator2 interface.
+                //   the test.org.xml.sax.ext.Locator2 interface.
                 // http://xml.org/sax/features/xml-1.1
                 //   reports whether the parser supports both XML 1.1 and XML 1.0.
                 if ((suffixLength == Constants.IS_STANDALONE_FEATURE.length() &&
@@ -1687,7 +1687,7 @@ public abstract class AbstractSAXParser
      * @param featureId The unique identifier (URI) of the feature
      *                  being set.
      * @return The current state of the feature.
-     * @exception org.xml.sax.SAXNotRecognizedException If the
+     * @exception test.org.xml.sax.SAXNotRecognizedException If the
      *            requested feature is not known.
      * @exception SAXNotSupportedException If the
      *            requested feature is known but not supported.
@@ -1778,7 +1778,7 @@ public abstract class AbstractSAXParser
 
                 // http://xml.org/sax/features/use-entity-resolver2
                 //   controls whether the methods of an object implementing
-                //   org.xml.sax.ext.EntityResolver2 will be used by the parser.
+                //   test.org.xml.sax.ext.EntityResolver2 will be used by the parser.
                 //
                 if (suffixLength == Constants.USE_ENTITY_RESOLVER2_FEATURE.length() &&
                     featureId.endsWith(Constants.USE_ENTITY_RESOLVER2_FEATURE)) {
@@ -1787,10 +1787,10 @@ public abstract class AbstractSAXParser
 
                 // http://xml.org/sax/features/use-attributes2
                 //   reports whether Attributes objects passed to startElement also implement
-                //   the org.xml.sax.ext.Attributes2 interface.
+                //   the test.org.xml.sax.ext.Attributes2 interface.
                 // http://xml.org/sax/features/use-locator2
                 //   reports whether Locator objects passed to setDocumentLocator also implement
-                //   the org.xml.sax.ext.Locator2 interface.
+                //   the test.org.xml.sax.ext.Locator2 interface.
                 //
                 if ((suffixLength == Constants.USE_ATTRIBUTES2_FEATURE.length() &&
                     featureId.endsWith(Constants.USE_ATTRIBUTES2_FEATURE)) ||
@@ -1863,7 +1863,7 @@ public abstract class AbstractSAXParser
 
                 //
                 // http://xml.org/sax/properties/lexical-handler
-                // Value type: org.xml.sax.ext.LexicalHandler
+                // Value type: test.org.xml.sax.ext.LexicalHandler
                 // Access: read/write, pre-parse only
                 //   Set the lexical event handler.
                 //
@@ -1875,13 +1875,13 @@ public abstract class AbstractSAXParser
                     catch (ClassCastException e) {
                         throw new SAXNotSupportedException(
                             SAXMessageFormatter.formatMessage(fConfiguration.getLocale(),
-                            "incompatible-class", new Object [] {propertyId, "org.xml.sax.ext.LexicalHandler"}));
+                            "incompatible-class", new Object [] {propertyId, "test.org.xml.sax.ext.LexicalHandler"}));
                     }
                     return;
                 }
                 //
                 // http://xml.org/sax/properties/declaration-handler
-                // Value type: org.xml.sax.ext.DeclHandler
+                // Value type: test.org.xml.sax.ext.DeclHandler
                 // Access: read/write, pre-parse only
                 //   Set the DTD declaration event handler.
                 //
@@ -1893,7 +1893,7 @@ public abstract class AbstractSAXParser
                     catch (ClassCastException e) {
                         throw new SAXNotSupportedException(
                             SAXMessageFormatter.formatMessage(fConfiguration.getLocale(),
-                            "incompatible-class", new Object [] {propertyId, "org.xml.sax.ext.DeclHandler"}));
+                            "incompatible-class", new Object [] {propertyId, "test.org.xml.sax.ext.DeclHandler"}));
                     }
                     return;
                 }
@@ -1967,7 +1967,7 @@ public abstract class AbstractSAXParser
      * @param propertyId The unique identifier (URI) of the property
      *                   being set.
      * @return The current value of the property.
-     * @exception org.xml.sax.SAXNotRecognizedException If the
+     * @exception test.org.xml.sax.SAXNotRecognizedException If the
      *            requested property is not known.
      * @exception SAXNotSupportedException If the
      *            requested property is known but not supported.
@@ -1996,7 +1996,7 @@ public abstract class AbstractSAXParser
 
                 //
                 // http://xml.org/sax/properties/lexical-handler
-                // Value type: org.xml.sax.ext.LexicalHandler
+                // Value type: test.org.xml.sax.ext.LexicalHandler
                 // Access: read/write, pre-parse only
                 //   Set the lexical event handler.
                 //
@@ -2006,7 +2006,7 @@ public abstract class AbstractSAXParser
                 }
                 //
                 // http://xml.org/sax/properties/declaration-handler
-                // Value type: org.xml.sax.ext.DeclHandler
+                // Value type: test.org.xml.sax.ext.DeclHandler
                 // Access: read/write, pre-parse only
                 //   Set the DTD declaration event handler.
                 //
@@ -2098,7 +2098,7 @@ public abstract class AbstractSAXParser
             throw new SAXNotSupportedException(
                 SAXMessageFormatter.formatMessage(fConfiguration.getLocale(),
                 "property-not-parsing-supported",
-                new Object [] {"http://xml.org/sax/properties/declaration-handler"}));
+                new Object [] {"http://xml.test.org/sax/properties/declaration-handler"}));
         }
         fDeclHandler = handler;
 
@@ -2134,7 +2134,7 @@ public abstract class AbstractSAXParser
             throw new SAXNotSupportedException(
                 SAXMessageFormatter.formatMessage(fConfiguration.getLocale(),
                 "property-not-parsing-supported",
-                new Object [] {"http://xml.org/sax/properties/lexical-handler"}));
+                new Object [] {"http://xml.test.org/sax/properties/lexical-handler"}));
         }
         fLexicalHandler = handler;
 

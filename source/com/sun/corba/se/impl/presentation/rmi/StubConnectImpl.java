@@ -29,13 +29,13 @@ import java.rmi.RemoteException;
 
 import javax.rmi.CORBA.Tie;
 
-import org.omg.CORBA.ORB;
-import org.omg.CORBA.SystemException;
-import org.omg.CORBA.BAD_OPERATION;
-import org.omg.CORBA.BAD_INV_ORDER;
+import test.org.omg.CORBA.ORB;
+import test.org.omg.CORBA.SystemException;
+import test.org.omg.CORBA.BAD_OPERATION;
+import test.org.omg.CORBA.BAD_INV_ORDER;
 
-import org.omg.CORBA.portable.ObjectImpl;
-import org.omg.CORBA.portable.Delegate;
+import test.org.omg.CORBA.portable.ObjectImpl;
+import test.org.omg.CORBA.portable.Delegate;
 
 import com.sun.corba.se.spi.presentation.rmi.StubAdapter;
 
@@ -60,8 +60,8 @@ public abstract class StubConnectImpl
     * @param stub The stub implementation that extends ObjectImpl
     * @param orb The ORB to which we connect the stub.
     */
-    public static StubIORImpl connect( StubIORImpl ior, org.omg.CORBA.Object proxy,
-        org.omg.CORBA.portable.ObjectImpl stub, ORB orb ) throws RemoteException
+    public static StubIORImpl connect(StubIORImpl ior, test.org.omg.CORBA.Object proxy,
+                                      test.org.omg.CORBA.portable.ObjectImpl stub, ORB orb ) throws RemoteException
     {
         Delegate del = null ;
 
@@ -71,7 +71,7 @@ public abstract class StubConnectImpl
 
                 if (del.orb(stub) != orb)
                     throw wrapper.connectWrongOrb() ;
-            } catch (org.omg.CORBA.BAD_OPERATION err) {
+            } catch (test.org.omg.CORBA.BAD_OPERATION err) {
                 if (ior == null) {
                     // No IOR, can we get a Tie for this stub?
                     Tie tie = (javax.rmi.CORBA.Tie) Utility.getAndForgetTie(proxy);

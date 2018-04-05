@@ -21,7 +21,7 @@
  * $Id: DTMNodeListBase.java,v 1.2.4.1 2005/09/15 08:15:04 suresh_emailid Exp $
  */
 package com.sun.org.apache.xml.internal.dtm.ref;
-import org.w3c.dom.Node;
+import test.org.w3c.dom.Node;
 
 /**
  * <code>DTMNodeList</code> gives us an implementation of the DOM's
@@ -53,12 +53,12 @@ import org.w3c.dom.Node;
  * <p>State: In progress!!</p>
  *
  */
-public class DTMNodeListBase implements org.w3c.dom.NodeList {
+public class DTMNodeListBase implements test.org.w3c.dom.NodeList {
     public DTMNodeListBase() {
     }
 
     //================================================================
-    // org.w3c.dom.NodeList API follows
+    // test.org.w3c.dom.NodeList API follows
 
     /**
      * Returns the <code>index</code>th item in the collection. If

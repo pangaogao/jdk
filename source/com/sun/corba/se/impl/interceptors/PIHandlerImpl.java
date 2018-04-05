@@ -25,42 +25,31 @@
 package com.sun.corba.se.impl.interceptors;
 
 import java.util.*;
-import java.io.IOException;
 
-import org.omg.CORBA.Any;
-import org.omg.CORBA.BAD_PARAM;
-import org.omg.CORBA.BAD_POLICY;
-import org.omg.CORBA.BAD_INV_ORDER;
-import org.omg.CORBA.COMM_FAILURE;
-import org.omg.CORBA.CompletionStatus;
-import org.omg.CORBA.INTERNAL;
-import org.omg.CORBA.NVList;
-import org.omg.CORBA.OBJECT_NOT_EXIST;
-import org.omg.CORBA.ORBPackage.InvalidName;
-import org.omg.CORBA.SystemException;
-import org.omg.CORBA.UserException;
-import org.omg.CORBA.UNKNOWN;
+import test.org.omg.CORBA.Any;
+import test.org.omg.CORBA.BAD_PARAM;
+import test.org.omg.CORBA.BAD_POLICY;
+import test.org.omg.CORBA.CompletionStatus;
+import test.org.omg.CORBA.NVList;
+import test.org.omg.CORBA.SystemException;
+import test.org.omg.CORBA.UserException;
 
-import org.omg.CORBA.portable.ApplicationException;
-import org.omg.CORBA.portable.RemarshalException;
+import test.org.omg.CORBA.portable.ApplicationException;
+import test.org.omg.CORBA.portable.RemarshalException;
 
-import org.omg.IOP.CodecFactory;
+import test.org.omg.IOP.CodecFactory;
 
-import org.omg.PortableInterceptor.ForwardRequest;
-import org.omg.PortableInterceptor.Current;
-import org.omg.PortableInterceptor.Interceptor;
-import org.omg.PortableInterceptor.LOCATION_FORWARD;
-import org.omg.PortableInterceptor.ORBInitializer;
-import org.omg.PortableInterceptor.ORBInitInfo;
-import org.omg.PortableInterceptor.ORBInitInfoPackage.DuplicateName;
-import org.omg.PortableInterceptor.SUCCESSFUL;
-import org.omg.PortableInterceptor.SYSTEM_EXCEPTION;
-import org.omg.PortableInterceptor.TRANSPORT_RETRY;
-import org.omg.PortableInterceptor.USER_EXCEPTION;
-import org.omg.PortableInterceptor.PolicyFactory;
-import org.omg.PortableInterceptor.ObjectReferenceTemplate;
-
-import com.sun.corba.se.pept.encoding.OutputObject;
+import test.org.omg.PortableInterceptor.Current;
+import test.org.omg.PortableInterceptor.Interceptor;
+import test.org.omg.PortableInterceptor.LOCATION_FORWARD;
+import test.org.omg.PortableInterceptor.ORBInitializer;
+import test.org.omg.PortableInterceptor.ORBInitInfoPackage.DuplicateName;
+import test.org.omg.PortableInterceptor.SUCCESSFUL;
+import test.org.omg.PortableInterceptor.SYSTEM_EXCEPTION;
+import test.org.omg.PortableInterceptor.TRANSPORT_RETRY;
+import test.org.omg.PortableInterceptor.USER_EXCEPTION;
+import test.org.omg.PortableInterceptor.PolicyFactory;
+import test.org.omg.PortableInterceptor.ObjectReferenceTemplate;
 
 import com.sun.corba.se.spi.ior.IOR;
 import com.sun.corba.se.spi.ior.ObjectKeyTemplate;
@@ -78,8 +67,6 @@ import com.sun.corba.se.impl.logging.ORBUtilSystemException;
 import com.sun.corba.se.impl.logging.OMGSystemException;
 import com.sun.corba.se.impl.corba.RequestImpl;
 import com.sun.corba.se.impl.orbutil.ORBConstants;
-import com.sun.corba.se.impl.orbutil.ORBUtility;
-import com.sun.corba.se.impl.orbutil.StackImpl;
 import com.sun.corba.se.impl.protocol.giopmsgheaders.ReplyMessage;
 
 /**
@@ -937,7 +924,7 @@ public class PIHandlerImpl implements PIHandler
         throw orbutilWrapper.nullParam() ;
     }
 
-    /** This is the implementation of standard API defined in org.omg.CORBA.ORB
+    /** This is the implementation of standard API defined in test.org.omg.CORBA.ORB
      *  class. This method finds the Policy Factory for the given Policy Type
      *  and instantiates the Policy object from the Factory. It will throw
      *  PolicyError exception, If the PolicyFactory for the given type is
@@ -945,25 +932,25 @@ public class PIHandlerImpl implements PIHandler
      *  _REVISIT_, Once Policy Framework work is completed, Reorganize
      *  this method to com.sun.corba.se.spi.orb.ORB.
      */
-    public org.omg.CORBA.Policy create_policy(int type, org.omg.CORBA.Any val)
-        throws org.omg.CORBA.PolicyError
+    public test.org.omg.CORBA.Policy create_policy(int type, test.org.omg.CORBA.Any val)
+        throws test.org.omg.CORBA.PolicyError
     {
         if( val == null ) {
             nullParam( );
         }
         if( policyFactoryTable == null ) {
-            throw new org.omg.CORBA.PolicyError(
+            throw new test.org.omg.CORBA.PolicyError(
                 "There is no PolicyFactory Registered for type " + type,
                 BAD_POLICY.value );
         }
         PolicyFactory factory = (PolicyFactory)policyFactoryTable.get(
             new Integer(type) );
         if( factory == null ) {
-            throw new org.omg.CORBA.PolicyError(
+            throw new test.org.omg.CORBA.PolicyError(
                 " Could Not Find PolicyFactory for the Type " + type,
                 BAD_POLICY.value);
         }
-        org.omg.CORBA.Policy policy = factory.create_policy( type, val );
+        test.org.omg.CORBA.Policy policy = factory.create_policy( type, val );
         return policy;
     }
 

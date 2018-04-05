@@ -27,7 +27,7 @@ import com.sun.org.apache.xerces.internal.impl.xs.identity.IdentityConstraint;
 import com.sun.org.apache.xerces.internal.impl.xs.identity.Selector;
 import com.sun.org.apache.xerces.internal.util.DOMUtil;
 import com.sun.org.apache.xerces.internal.util.XMLChar;
-import org.w3c.dom.Element;
+import test.org.w3c.dom.Element;
 
 /**
  * This class contains code that all three IdentityConstraint

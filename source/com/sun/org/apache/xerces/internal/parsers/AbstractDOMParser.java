@@ -57,22 +57,22 @@ import com.sun.org.apache.xerces.internal.xs.AttributePSVI;
 import com.sun.org.apache.xerces.internal.xs.ElementPSVI;
 import com.sun.org.apache.xerces.internal.xs.XSTypeDefinition;
 import com.sun.org.apache.xerces.internal.utils.ObjectFactory;
-import org.w3c.dom.Attr;
-import org.w3c.dom.CDATASection;
-import org.w3c.dom.Comment;
-import org.w3c.dom.DOMError;
-import org.w3c.dom.Document;
-import org.w3c.dom.DocumentType;
-import org.w3c.dom.Element;
-import org.w3c.dom.EntityReference;
-import org.w3c.dom.NamedNodeMap;
-import org.w3c.dom.Node;
-import org.w3c.dom.NodeList;
-import org.w3c.dom.ProcessingInstruction;
-import org.w3c.dom.Text;
-import org.w3c.dom.ls.LSParserFilter;
-import org.w3c.dom.traversal.NodeFilter;
-import org.xml.sax.SAXException;
+import test.org.w3c.dom.Attr;
+import test.org.w3c.dom.CDATASection;
+import test.org.w3c.dom.Comment;
+import test.org.w3c.dom.DOMError;
+import test.org.w3c.dom.Document;
+import test.org.w3c.dom.DocumentType;
+import test.org.w3c.dom.Element;
+import test.org.w3c.dom.EntityReference;
+import test.org.w3c.dom.NamedNodeMap;
+import test.org.w3c.dom.Node;
+import test.org.w3c.dom.NodeList;
+import test.org.w3c.dom.ProcessingInstruction;
+import test.org.w3c.dom.Text;
+import test.org.w3c.dom.ls.LSParserFilter;
+import test.org.w3c.dom.traversal.NodeFilter;
+import test.org.xml.sax.SAXException;
 
 /**
  * This is the base class of all DOM parsers. It implements the XNI
@@ -152,13 +152,13 @@ public class AbstractDOMParser extends AbstractXMLDocumentParser {
 
     /** Default document class name. */
     protected static final String DEFAULT_DOCUMENT_CLASS_NAME =
-    "com.sun.org.apache.xerces.internal.dom.DocumentImpl";
+    "com.sun.test.org.apache.xerces.internal.dom.DocumentImpl";
 
     protected static final String CORE_DOCUMENT_CLASS_NAME =
-    "com.sun.org.apache.xerces.internal.dom.CoreDocumentImpl";
+    "com.sun.test.org.apache.xerces.internal.dom.CoreDocumentImpl";
 
     protected static final String PSVI_DOCUMENT_CLASS_NAME =
-    "com.sun.org.apache.xerces.internal.dom.PSVIDocumentImpl";
+    "com.sun.test.org.apache.xerces.internal.dom.PSVIDocumentImpl";
 
     /**
      * If the user stops the process, this exception will be thrown.
@@ -1699,7 +1699,7 @@ public class AbstractDOMParser extends AbstractXMLDocumentParser {
                 // if an element already has xml:base attribute
                 // do nothing
                 if (fNamespaceAware) {
-                    if (((Element)node).getAttributeNodeNS ("http://www.w3.org/XML/1998/namespace","base")!=null) {
+                    if (((Element)node).getAttributeNodeNS ("http://www.w3.test.org/XML/1998/namespace","base")!=null) {
                         return;
                     }
                 } else if (((Element)node).getAttributeNode ("xml:base") != null) {
@@ -1709,7 +1709,7 @@ public class AbstractDOMParser extends AbstractXMLDocumentParser {
                 baseURI = ((EntityReferenceImpl)fCurrentNode).getBaseURI ();
                 if (baseURI !=null && !baseURI.equals (fDocumentImpl.getDocumentURI ())) {
                     if (fNamespaceAware) {
-                        ((Element)node).setAttributeNS ("http://www.w3.org/XML/1998/namespace", "xml:base", baseURI);
+                        ((Element)node).setAttributeNS ("http://www.w3.test.org/XML/1998/namespace", "xml:base", baseURI);
                     } else {
                         ((Element)node).setAttribute ("xml:base", baseURI);
                     }
@@ -1748,7 +1748,7 @@ public class AbstractDOMParser extends AbstractXMLDocumentParser {
             if (baseURI !=null && !baseURI.equals (fDeferredDocumentImpl.getDocumentURI ())) {
                 fDeferredDocumentImpl.setDeferredAttribute (node,
                 "xml:base",
-                "http://www.w3.org/XML/1998/namespace",
+                "http://www.w3.test.org/XML/1998/namespace",
                 baseURI,
                 true);
             }
@@ -2647,7 +2647,7 @@ public class AbstractDOMParser extends AbstractXMLDocumentParser {
 
 
     /**
-     * @see org.w3c.dom.ls.LSParser#abort()
+     * @see test.org.w3c.dom.ls.LSParser#abort()
      */
     public void abort () {
         throw Abort.INSTANCE;

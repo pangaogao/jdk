@@ -38,9 +38,9 @@ import java.io.PrintWriter;
 public class ORBProperties {
 
     public static final String ORB_CLASS =
-        "org.omg.CORBA.ORBClass=com.sun.corba.se.impl.orb.ORBImpl";
+        "test.org.omg.CORBA.ORBClass=com.sun.corba.se.impl.orb.ORBImpl";
     public static final String ORB_SINGLETON_CLASS =
-        "org.omg.CORBA.ORBSingletonClass=com.sun.corba.se.impl.orb.ORBSingleton";
+        "test.org.omg.CORBA.ORBSingletonClass=com.sun.corba.se.impl.orb.ORBSingleton";
 
     public static void main (String[] args) {
 

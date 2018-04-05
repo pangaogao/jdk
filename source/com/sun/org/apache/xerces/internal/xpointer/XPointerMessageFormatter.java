@@ -36,7 +36,7 @@ import com.sun.org.apache.xerces.internal.utils.SecuritySupport;
  */
 class XPointerMessageFormatter implements MessageFormatter {
 
-    public static final String XPOINTER_DOMAIN = "http://www.w3.org/TR/XPTR";
+    public static final String XPOINTER_DOMAIN = "http://www.w3.test.org/TR/XPTR";
 
     // private objects to cache the locale and resource bundle
     private Locale fLocale = null;
@@ -67,13 +67,13 @@ class XPointerMessageFormatter implements MessageFormatter {
         if (fResourceBundle == null || locale != fLocale) {
             if (locale != null) {
                 fResourceBundle = SecuritySupport.getResourceBundle(
-                        "com.sun.org.apache.xerces.internal.impl.msg.XPointerMessages", locale);
+                        "com.sun.test.org.apache.xerces.internal.impl.msg.XPointerMessages", locale);
                 // memorize the most-recent locale
                 fLocale = locale;
             }
             if (fResourceBundle == null)
                 fResourceBundle = SecuritySupport.getResourceBundle(
-                        "com.sun.org.apache.xerces.internal.impl.msg.XPointerMessages");
+                        "com.sun.test.org.apache.xerces.internal.impl.msg.XPointerMessages");
         }
 
         String msg = fResourceBundle.getString(key);
@@ -89,7 +89,7 @@ class XPointerMessageFormatter implements MessageFormatter {
         if (msg == null) {
             msg = fResourceBundle.getString("BadMessageKey");
             throw new MissingResourceException(msg,
-                    "com.sun.org.apache.xerces.internal.impl.msg.XPointerMessages", key);
+                    "com.sun.test.org.apache.xerces.internal.impl.msg.XPointerMessages", key);
         }
 
         return msg;

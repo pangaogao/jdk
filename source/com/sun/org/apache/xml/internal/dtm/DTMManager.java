@@ -22,11 +22,8 @@
  */
 package com.sun.org.apache.xml.internal.dtm;
 
-import com.sun.org.apache.xml.internal.res.XMLErrorResources;
-import com.sun.org.apache.xml.internal.res.XMLMessages;
 import com.sun.org.apache.xml.internal.utils.PrefixResolver;
 import com.sun.org.apache.xml.internal.utils.XMLStringFactory;
-import com.sun.org.apache.xalan.internal.utils.ObjectFactory;
 import com.sun.org.apache.xalan.internal.utils.SecuritySupport;
 
 /**
@@ -34,7 +31,7 @@ import com.sun.org.apache.xalan.internal.utils.SecuritySupport;
  * DTMIterator objects, and manage the DTM objects in the system.
  *
  * <p>The system property that determines which Factory implementation
- * to create is named "com.sun.org.apache.xml.internal.utils.DTMFactory". This
+ * to create is named "com.sun.test.org.apache.xml.internal.utils.DTMFactory". This
  * property names a concrete subclass of the DTMFactory abstract
  *  class. If the property is not defined, a platform default is be used.</p>
  *
@@ -90,7 +87,7 @@ public abstract class DTMManager
    * Obtain a new instance of a <code>DTMManager</code>.
    * This static method creates a new factory instance
    * using the default <code>DTMManager</code> implementation, which is
-   * <code>com.sun.org.apache.xml.internal.dtm.ref.DTMManagerDefault</code>.
+   * <code>com.sun.test.org.apache.xml.internal.dtm.ref.DTMManagerDefault</code>.
    * </li>
    * </ul>
    *
@@ -157,7 +154,7 @@ public abstract class DTMManager
    *
    * @return a valid DTM handle.
    */
-  public abstract int getDTMHandleFromNode(org.w3c.dom.Node node);
+  public abstract int getDTMHandleFromNode(test.org.w3c.dom.Node node);
 
   /**
    * Creates a DTM representing an empty <code>DocumentFragment</code> object.

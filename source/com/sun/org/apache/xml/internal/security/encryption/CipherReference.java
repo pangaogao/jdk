@@ -22,7 +22,7 @@
  */
 package com.sun.org.apache.xml.internal.security.encryption;
 
-import org.w3c.dom.Attr;
+import test.org.w3c.dom.Attr;
 
 /**
  * <code>CipherReference</code> identifies a source which, when processed,

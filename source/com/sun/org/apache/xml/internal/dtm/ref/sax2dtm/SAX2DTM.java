@@ -48,17 +48,17 @@ import java.util.Map;
 import java.util.Vector;
 import javax.xml.transform.Source;
 import javax.xml.transform.SourceLocator;
-import org.xml.sax.Attributes;
-import org.xml.sax.ContentHandler;
-import org.xml.sax.DTDHandler;
-import org.xml.sax.EntityResolver;
-import org.xml.sax.ErrorHandler;
-import org.xml.sax.InputSource;
-import org.xml.sax.Locator;
-import org.xml.sax.SAXException;
-import org.xml.sax.SAXParseException;
-import org.xml.sax.ext.DeclHandler;
-import org.xml.sax.ext.LexicalHandler;
+import test.org.xml.sax.Attributes;
+import test.org.xml.sax.ContentHandler;
+import test.org.xml.sax.DTDHandler;
+import test.org.xml.sax.EntityResolver;
+import test.org.xml.sax.ErrorHandler;
+import test.org.xml.sax.InputSource;
+import test.org.xml.sax.Locator;
+import test.org.xml.sax.SAXException;
+import test.org.xml.sax.SAXParseException;
+import test.org.xml.sax.ext.DeclHandler;
+import test.org.xml.sax.ext.LexicalHandler;
 
 /**
  * This class implements a DTM that tends to be optimized more for speed than
@@ -302,7 +302,7 @@ public class SAX2DTM extends DTMDefaultBaseIterators
 
     //m_dataOrQName = new SuballocatedIntVector(blocksize);
 
-    // m_useSourceLocationProperty=com.sun.org.apache.xalan.internal.processor.TransformerFactoryImpl.m_source_location;
+    // m_useSourceLocationProperty=com.sun.test.org.apache.xalan.internal.processor.TransformerFactoryImpl.m_source_location;
     m_useSourceLocationProperty = mgr.getSource_location();
     m_sourceSystemId = (m_useSourceLocationProperty) ? new StringVector() : null;
         m_sourceLine = (m_useSourceLocationProperty) ?  new IntVector() : null;
@@ -426,7 +426,7 @@ public class SAX2DTM extends DTMDefaultBaseIterators
   {
 
     if (m_incrementalSAXSource.getClass()
-        .getName().equals("com.sun.org.apache.xml.internal.dtm.ref.IncrementalSAXSource_Filter"))
+        .getName().equals("com.sun.test.org.apache.xml.internal.dtm.ref.IncrementalSAXSource_Filter"))
       return (ContentHandler) m_incrementalSAXSource;
     else
       return this;
@@ -449,7 +449,7 @@ public class SAX2DTM extends DTMDefaultBaseIterators
   {
 
     if (m_incrementalSAXSource.getClass()
-        .getName().equals("com.sun.org.apache.xml.internal.dtm.ref.IncrementalSAXSource_Filter"))
+        .getName().equals("com.sun.test.org.apache.xml.internal.dtm.ref.IncrementalSAXSource_Filter"))
       return (LexicalHandler) m_incrementalSAXSource;
     else
       return this;
@@ -720,7 +720,7 @@ public class SAX2DTM extends DTMDefaultBaseIterators
   public String getDocumentTypeDeclarationSystemIdentifier()
   {
 
-    /** @todo: implement this com.sun.org.apache.xml.internal.dtm.DTMDefaultBase abstract method */
+    /** @todo: implement this com.sun.test.org.apache.xml.internal.dtm.DTMDefaultBase abstract method */
     error(XMLMessages.createXMLMessage(XMLErrorResources.ER_METHOD_NOT_SUPPORTED, null));//"Not yet supported!");
 
     return null;
@@ -755,10 +755,10 @@ public class SAX2DTM extends DTMDefaultBaseIterators
    * @param nodeHandle The node ID.
    * @param ch A non-null reference to a ContentHandler.
    *
-   * @throws org.xml.sax.SAXException
+   * @throws test.org.xml.sax.SAXException
    */
-  public void dispatchToEvents(int nodeHandle, org.xml.sax.ContentHandler ch)
-          throws org.xml.sax.SAXException
+  public void dispatchToEvents(int nodeHandle, test.org.xml.sax.ContentHandler ch)
+          throws test.org.xml.sax.SAXException
   {
 
     DTMTreeWalker treeWalker = m_walker;
@@ -1240,7 +1240,7 @@ public class SAX2DTM extends DTMDefaultBaseIterators
   public String getDocumentTypeDeclarationPublicIdentifier()
   {
 
-    /** @todo: implement this com.sun.org.apache.xml.internal.dtm.DTMDefaultBase abstract method */
+    /** @todo: implement this com.sun.test.org.apache.xml.internal.dtm.DTMDefaultBase abstract method */
     error(XMLMessages.createXMLMessage(XMLErrorResources.ER_METHOD_NOT_SUPPORTED, null));//"Not yet supported!");
 
     return null;
@@ -1594,7 +1594,7 @@ public class SAX2DTM extends DTMDefaultBaseIterators
    *         default behaviour.
    * @throws SAXException Any SAX exception, possibly
    *            wrapping another exception.
-   * @see org.xml.sax.EntityResolver#resolveEntity
+   * @see test.org.xml.sax.EntityResolver#resolveEntity
    *
    * @throws SAXException
    */
@@ -1621,7 +1621,7 @@ public class SAX2DTM extends DTMDefaultBaseIterators
    * @param systemId The notation system identifier.
    * @throws SAXException Any SAX exception, possibly
    *            wrapping another exception.
-   * @see org.xml.sax.DTDHandler#notationDecl
+   * @see test.org.xml.sax.DTDHandler#notationDecl
    *
    * @throws SAXException
    */
@@ -1646,7 +1646,7 @@ public class SAX2DTM extends DTMDefaultBaseIterators
    * @param notationName The name of the associated notation.
    * @throws SAXException Any SAX exception, possibly
    *            wrapping another exception.
-   * @see org.xml.sax.DTDHandler#unparsedEntityDecl
+   * @see test.org.xml.sax.DTDHandler#unparsedEntityDecl
    *
    * @throws SAXException
    */
@@ -1667,7 +1667,7 @@ public class SAX2DTM extends DTMDefaultBaseIterators
     }
     catch (Exception e)
     {
-      throw new org.xml.sax.SAXException(e);
+      throw new test.org.xml.sax.SAXException(e);
     }
 
     //  private static final int ENTITY_FIELD_PUBLICID = 0;
@@ -1695,8 +1695,8 @@ public class SAX2DTM extends DTMDefaultBaseIterators
    * with other document events.</p>
    *
    * @param locator A locator for all SAX document events.
-   * @see org.xml.sax.ContentHandler#setDocumentLocator
-   * @see org.xml.sax.Locator
+   * @see test.org.xml.sax.ContentHandler#setDocumentLocator
+   * @see test.org.xml.sax.Locator
    */
   public void setDocumentLocator(Locator locator)
   {
@@ -1709,7 +1709,7 @@ public class SAX2DTM extends DTMDefaultBaseIterators
    *
    * @throws SAXException Any SAX exception, possibly
    *            wrapping another exception.
-   * @see org.xml.sax.ContentHandler#startDocument
+   * @see test.org.xml.sax.ContentHandler#startDocument
    */
   public void startDocument() throws SAXException
   {
@@ -1732,7 +1732,7 @@ public class SAX2DTM extends DTMDefaultBaseIterators
    *
    * @throws SAXException Any SAX exception, possibly
    *            wrapping another exception.
-   * @see org.xml.sax.ContentHandler#endDocument
+   * @see test.org.xml.sax.ContentHandler#endDocument
    */
   public void endDocument() throws SAXException
   {
@@ -1770,7 +1770,7 @@ public class SAX2DTM extends DTMDefaultBaseIterators
    * @param uri The Namespace URI mapped to the prefix.
    * @throws SAXException Any SAX exception, possibly
    *            wrapping another exception.
-   * @see org.xml.sax.ContentHandler#startPrefixMapping
+   * @see test.org.xml.sax.ContentHandler#startPrefixMapping
    */
   public void startPrefixMapping(String prefix, String uri)
           throws SAXException
@@ -1796,7 +1796,7 @@ public class SAX2DTM extends DTMDefaultBaseIterators
    * @param prefix The Namespace prefix being declared.
    * @throws SAXException Any SAX exception, possibly
    *            wrapping another exception.
-   * @see org.xml.sax.ContentHandler#endPrefixMapping
+   * @see test.org.xml.sax.ContentHandler#endPrefixMapping
    */
   public void endPrefixMapping(String prefix) throws SAXException
   {
@@ -1873,7 +1873,7 @@ public class SAX2DTM extends DTMDefaultBaseIterators
    * @param attributes The specified or defaulted attributes.
    * @throws SAXException Any SAX exception, possibly
    *            wrapping another exception.
-   * @see org.xml.sax.ContentHandler#startElement
+   * @see test.org.xml.sax.ContentHandler#startElement
    */
   public void startElement(
           String uri, String localName, String qName, Attributes attributes)
@@ -1924,7 +1924,7 @@ public class SAX2DTM extends DTMDefaultBaseIterators
     {
       // SPECIAL CASE: Implied declaration at root element
       prefix="xml";
-      String declURL = "http://www.w3.org/XML/1998/namespace";
+      String declURL = "http://www.w3.test.org/XML/1998/namespace";
       exName = m_expandedNameTable.getExpandedTypeID(null, prefix, DTM.NAMESPACE_NODE);
       int val = m_valuesOrPrefixes.stringToIndex(declURL);
       prev = addNode(DTM.NAMESPACE_NODE, exName, elemNode,
@@ -2042,7 +2042,7 @@ public class SAX2DTM extends DTMDefaultBaseIterators
    *        empty string if qualified names are not available.
    * @throws SAXException Any SAX exception, possibly
    *            wrapping another exception.
-   * @see org.xml.sax.ContentHandler#endElement
+   * @see test.org.xml.sax.ContentHandler#endElement
    */
   public void endElement(String uri, String localName, String qName)
           throws SAXException
@@ -2090,7 +2090,7 @@ public class SAX2DTM extends DTMDefaultBaseIterators
    *               character array.
    * @throws SAXException Any SAX exception, possibly
    *            wrapping another exception.
-   * @see org.xml.sax.ContentHandler#characters
+   * @see test.org.xml.sax.ContentHandler#characters
    */
   public void characters(char ch[], int start, int length) throws SAXException
   {
@@ -2125,7 +2125,7 @@ public class SAX2DTM extends DTMDefaultBaseIterators
    *               character array.
    * @throws SAXException Any SAX exception, possibly
    *            wrapping another exception.
-   * @see org.xml.sax.ContentHandler#ignorableWhitespace
+   * @see test.org.xml.sax.ContentHandler#ignorableWhitespace
    */
   public void ignorableWhitespace(char ch[], int start, int length)
           throws SAXException
@@ -2149,7 +2149,7 @@ public class SAX2DTM extends DTMDefaultBaseIterators
    *             none is supplied.
    * @throws SAXException Any SAX exception, possibly
    *            wrapping another exception.
-   * @see org.xml.sax.ContentHandler#processingInstruction
+   * @see test.org.xml.sax.ContentHandler#processingInstruction
    */
   public void processingInstruction(String target, String data)
           throws SAXException
@@ -2179,7 +2179,7 @@ public class SAX2DTM extends DTMDefaultBaseIterators
    * @param name The name of the skipped entity.
    * @throws SAXException Any SAX exception, possibly
    *            wrapping another exception.
-   * @see org.xml.sax.ContentHandler#processingInstruction
+   * @see test.org.xml.sax.ContentHandler#processingInstruction
    */
   public void skippedEntity(String name) throws SAXException
   {
@@ -2203,8 +2203,8 @@ public class SAX2DTM extends DTMDefaultBaseIterators
    * @param e The warning information encoded as an exception.
    * @throws SAXException Any SAX exception, possibly
    *            wrapping another exception.
-   * @see org.xml.sax.ErrorHandler#warning
-   * @see org.xml.sax.SAXParseException
+   * @see test.org.xml.sax.ErrorHandler#warning
+   * @see test.org.xml.sax.SAXParseException
    */
   public void warning(SAXParseException e) throws SAXException
   {
@@ -2224,8 +2224,8 @@ public class SAX2DTM extends DTMDefaultBaseIterators
    * @param e The warning information encoded as an exception.
    * @throws SAXException Any SAX exception, possibly
    *            wrapping another exception.
-   * @see org.xml.sax.ErrorHandler#warning
-   * @see org.xml.sax.SAXParseException
+   * @see test.org.xml.sax.ErrorHandler#warning
+   * @see test.org.xml.sax.SAXParseException
    */
   public void error(SAXParseException e) throws SAXException
   {
@@ -2246,8 +2246,8 @@ public class SAX2DTM extends DTMDefaultBaseIterators
    * @param e The error information encoded as an exception.
    * @throws SAXException Any SAX exception, possibly
    *            wrapping another exception.
-   * @see org.xml.sax.ErrorHandler#fatalError
-   * @see org.xml.sax.SAXParseException
+   * @see test.org.xml.sax.ErrorHandler#fatalError
+   * @see test.org.xml.sax.SAXParseException
    */
   public void fatalError(SAXParseException e) throws SAXException
   {
@@ -2315,7 +2315,7 @@ public class SAX2DTM extends DTMDefaultBaseIterators
    * @param value The replacement text of the entity.
    * @throws SAXException The application may raise an exception.
    * @see #externalEntityDecl
-   * @see org.xml.sax.DTDHandler#unparsedEntityDecl
+   * @see test.org.xml.sax.DTDHandler#unparsedEntityDecl
    */
   public void internalEntityDecl(String name, String value)
           throws SAXException
@@ -2337,7 +2337,7 @@ public class SAX2DTM extends DTMDefaultBaseIterators
    * @param systemId The declared system identifier of the entity.
    * @throws SAXException The application may raise an exception.
    * @see #internalEntityDecl
-   * @see org.xml.sax.DTDHandler#unparsedEntityDecl
+   * @see test.org.xml.sax.DTDHandler#unparsedEntityDecl
    */
   public void externalEntityDecl(
           String name, String publicId, String systemId) throws SAXException
@@ -2402,15 +2402,15 @@ public class SAX2DTM extends DTMDefaultBaseIterators
    * properly nested within start/end entity events.</p>
    *
    * <p>Note that skipped entities will be reported through the
-   * {@link org.xml.sax.ContentHandler#skippedEntity skippedEntity}
+   * {@link test.org.xml.sax.ContentHandler#skippedEntity skippedEntity}
    * event, which is part of the ContentHandler interface.</p>
    *
    * @param name The name of the entity.  If it is a parameter
    *        entity, the name will begin with '%'.
    * @throws SAXException The application may raise an exception.
    * @see #endEntity
-   * @see org.xml.sax.ext.DeclHandler#internalEntityDecl
-   * @see org.xml.sax.ext.DeclHandler#externalEntityDecl
+   * @see test.org.xml.sax.ext.DeclHandler#internalEntityDecl
+   * @see test.org.xml.sax.ext.DeclHandler#externalEntityDecl
    */
   public void startEntity(String name) throws SAXException
   {
@@ -2435,7 +2435,7 @@ public class SAX2DTM extends DTMDefaultBaseIterators
    * Report the start of a CDATA section.
    *
    * <p>The contents of the CDATA section will be reported through
-   * the regular {@link org.xml.sax.ContentHandler#characters
+   * the regular {@link test.org.xml.sax.ContentHandler#characters
    * characters} event.</p>
    *
    * @throws SAXException The application may raise an exception.

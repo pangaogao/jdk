@@ -32,39 +32,30 @@
 package com.sun.corba.se.impl.corba;
 
 
-import org.omg.CORBA.Any;
-import org.omg.CORBA.ARG_IN;
-import org.omg.CORBA.ARG_OUT;
-import org.omg.CORBA.ARG_INOUT;
-import org.omg.CORBA.Context;
-import org.omg.CORBA.ContextList;
-import org.omg.CORBA.Environment;
-import org.omg.CORBA.ExceptionList;
-import org.omg.CORBA.NVList;
-import org.omg.CORBA.NamedValue;
-import org.omg.CORBA.Request;
-import org.omg.CORBA.SystemException;
-import org.omg.CORBA.TCKind;
-import org.omg.CORBA.TypeCode;
-import org.omg.CORBA.TypeCodePackage.BadKind;
-import org.omg.CORBA.UnknownUserException;
-import org.omg.CORBA.Bounds;
-import org.omg.CORBA.UNKNOWN;
-import org.omg.CORBA.INTERNAL;
-import org.omg.CORBA.NO_IMPLEMENT;
-import org.omg.CORBA.CompletionStatus;
-import org.omg.CORBA.WrongTransaction;
+import test.org.omg.CORBA.Any;
+import test.org.omg.CORBA.ARG_IN;
+import test.org.omg.CORBA.ARG_OUT;
+import test.org.omg.CORBA.ARG_INOUT;
+import test.org.omg.CORBA.Context;
+import test.org.omg.CORBA.ContextList;
+import test.org.omg.CORBA.Environment;
+import test.org.omg.CORBA.ExceptionList;
+import test.org.omg.CORBA.NVList;
+import test.org.omg.CORBA.NamedValue;
+import test.org.omg.CORBA.Request;
+import test.org.omg.CORBA.SystemException;
+import test.org.omg.CORBA.TCKind;
+import test.org.omg.CORBA.TypeCode;
 
-import org.omg.CORBA.portable.ApplicationException ;
-import org.omg.CORBA.portable.RemarshalException ;
-import org.omg.CORBA.portable.InputStream ;
-import org.omg.CORBA.portable.OutputStream ;
+import test.org.omg.CORBA.portable.ApplicationException ;
+import test.org.omg.CORBA.portable.RemarshalException ;
+import test.org.omg.CORBA.portable.InputStream ;
+import test.org.omg.CORBA.portable.OutputStream ;
 
 import com.sun.corba.se.spi.orb.ORB;
 import com.sun.corba.se.spi.presentation.rmi.StubAdapter;
 import com.sun.corba.se.spi.logging.CORBALogDomains;
 import com.sun.corba.se.impl.logging.ORBUtilSystemException;
-import com.sun.corba.se.impl.corba.AsynchInvoke;
 
 public class RequestImpl
     extends Request
@@ -72,7 +63,7 @@ public class RequestImpl
     ///////////////////////////////////////////////////////////////////////////
     // data members
 
-    protected org.omg.CORBA.Object _target;
+    protected test.org.omg.CORBA.Object _target;
     protected String             _opName;
     protected NVList             _arguments;
     protected ExceptionList      _exceptions;
@@ -100,7 +91,7 @@ public class RequestImpl
     // REVISIT - used to be protected.  Now public so it can be
     // accessed from xgiop.
     public RequestImpl (ORB orb,
-                        org.omg.CORBA.Object targetObject,
+                        test.org.omg.CORBA.Object targetObject,
                         Context ctx,
                         String operationName,
                         NVList argumentList,
@@ -145,7 +136,7 @@ public class RequestImpl
 
     }
 
-    public org.omg.CORBA.Object target()
+    public test.org.omg.CORBA.Object target()
     {
         return _target;
     }
@@ -194,32 +185,32 @@ public class RequestImpl
 
     public synchronized Any add_in_arg()
     {
-        return _arguments.add(org.omg.CORBA.ARG_IN.value).value();
+        return _arguments.add(test.org.omg.CORBA.ARG_IN.value).value();
     }
 
     public synchronized Any add_named_in_arg(String name)
     {
-        return _arguments.add_item(name, org.omg.CORBA.ARG_IN.value).value();
+        return _arguments.add_item(name, test.org.omg.CORBA.ARG_IN.value).value();
     }
 
     public synchronized Any add_inout_arg()
     {
-        return _arguments.add(org.omg.CORBA.ARG_INOUT.value).value();
+        return _arguments.add(test.org.omg.CORBA.ARG_INOUT.value).value();
     }
 
     public synchronized Any add_named_inout_arg(String name)
     {
-        return _arguments.add_item(name, org.omg.CORBA.ARG_INOUT.value).value();
+        return _arguments.add_item(name, test.org.omg.CORBA.ARG_INOUT.value).value();
     }
 
     public synchronized Any add_out_arg()
     {
-        return _arguments.add(org.omg.CORBA.ARG_OUT.value).value();
+        return _arguments.add(test.org.omg.CORBA.ARG_OUT.value).value();
     }
 
     public synchronized Any add_named_out_arg(String name)
     {
-        return _arguments.add_item(name, org.omg.CORBA.ARG_OUT.value).value();
+        return _arguments.add_item(name, test.org.omg.CORBA.ARG_OUT.value).value();
     }
 
     public synchronized void set_return_type(TypeCode tc)
@@ -269,7 +260,7 @@ public class RequestImpl
     }
 
     public synchronized void get_response()
-        throws org.omg.CORBA.WrongTransaction
+        throws test.org.omg.CORBA.WrongTransaction
     {
         while (gotResponse == false) {
             // release the lock. wait to be notified by the thread that is
@@ -290,7 +281,7 @@ public class RequestImpl
      */
     protected void doInvocation()
     {
-        org.omg.CORBA.portable.Delegate delegate = StubAdapter.getDelegate(
+        test.org.omg.CORBA.portable.Delegate delegate = StubAdapter.getDelegate(
             _target ) ;
 
         // Initiate Client Portable Interceptors.  Inform the PIHandler that
@@ -318,7 +309,7 @@ public class RequestImpl
                         break;
                     }
                 }
-            } catch ( org.omg.CORBA.Bounds ex ) {
+            } catch ( test.org.omg.CORBA.Bounds ex ) {
                 throw _wrapper.boundsErrorInDiiRequest( ex ) ;
             }
 
@@ -367,7 +358,7 @@ public class RequestImpl
                 }
             }
         }
-        catch ( org.omg.CORBA.Bounds ex ) {
+        catch ( test.org.omg.CORBA.Bounds ex ) {
             // Cannot happen since we only iterate till _arguments.count()
         }
     }

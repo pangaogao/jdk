@@ -24,8 +24,8 @@ package com.sun.org.apache.xml.internal.security.utils;
 
 import javax.xml.transform.TransformerException;
 
-import org.w3c.dom.Node;
-import org.w3c.dom.NodeList;
+import test.org.w3c.dom.Node;
+import test.org.w3c.dom.NodeList;
 
 /**
  * An interface to abstract XPath evaluation

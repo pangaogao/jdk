@@ -26,25 +26,23 @@ package com.sun.org.apache.xalan.internal.xsltc.trax;
 
 import java.util.Stack;
 import java.util.Vector;
-import javax.xml.parsers.DocumentBuilder;
 
 import javax.xml.parsers.DocumentBuilderFactory;
 import javax.xml.parsers.ParserConfigurationException;
 
 import com.sun.org.apache.xalan.internal.xsltc.runtime.Constants;
 
-import org.w3c.dom.Comment;
-import org.w3c.dom.Document;
-import org.w3c.dom.Element;
-import org.w3c.dom.Node;
-import org.w3c.dom.Text;
-import org.w3c.dom.ProcessingInstruction;
-import org.xml.sax.Attributes;
-import org.xml.sax.ContentHandler;
-import org.xml.sax.Locator;
-import org.xml.sax.SAXException;
-import org.xml.sax.ext.LexicalHandler;
-import org.xml.sax.ext.Locator2;
+import test.org.w3c.dom.Comment;
+import test.org.w3c.dom.Document;
+import test.org.w3c.dom.Element;
+import test.org.w3c.dom.Node;
+import test.org.w3c.dom.ProcessingInstruction;
+import test.org.xml.sax.Attributes;
+import test.org.xml.sax.ContentHandler;
+import test.org.xml.sax.Locator;
+import test.org.xml.sax.SAXException;
+import test.org.xml.sax.ext.LexicalHandler;
+import test.org.xml.sax.ext.Locator2;
 
 /**
  * @author G. Todd Miller
@@ -317,7 +315,7 @@ public class SAX2DOM implements ContentHandler, LexicalHandler, Constants {
                 }
             } else {
                 _factory = DocumentBuilderFactory.newInstance(
-                  "com.sun.org.apache.xerces.internal.jaxp.DocumentBuilderFactoryImpl",
+                  "com.sun.test.org.apache.xerces.internal.jaxp.DocumentBuilderFactoryImpl",
                   SAX2DOM.class.getClassLoader()
                   );
             }

@@ -30,7 +30,7 @@ import com.sun.org.apache.xpath.internal.ExpressionNode;
 import com.sun.org.apache.xpath.internal.XPathContext;
 import com.sun.org.apache.xpath.internal.axes.RTFIterator;
 
-import org.w3c.dom.NodeList;
+import test.org.w3c.dom.NodeList;
 
 /**
  * This class represents an XPath result tree fragment object, and is capable of

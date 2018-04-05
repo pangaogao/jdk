@@ -26,9 +26,6 @@
 package com.sun.corba.se.impl.orbutil;
 
 import java.lang.Character;
-import java.lang.reflect.Field;
-import java.lang.reflect.Method;
-import java.rmi.NoSuchObjectException;
 import java.security.AccessController;
 import java.security.PermissionCollection;
 import java.security.Policy;
@@ -36,10 +33,7 @@ import java.security.PrivilegedAction;
 import java.security.ProtectionDomain;
 import java.security.PrivilegedActionException;
 import java.security.PrivilegedExceptionAction;
-import java.util.HashMap;
-import java.util.HashSet;
 import java.util.Hashtable;
-import java.util.Iterator;
 import java.util.Enumeration;
 import java.util.StringTokenizer;
 import java.util.NoSuchElementException;
@@ -48,26 +42,24 @@ import javax.rmi.CORBA.ValueHandler;
 import javax.rmi.CORBA.ValueHandlerMultiFormat;
 import javax.rmi.CORBA.Util;
 
-import org.omg.CORBA.StructMember ;
-import org.omg.CORBA.TypeCode ;
-import org.omg.CORBA.Any ;
-import org.omg.CORBA.TCKind ;
-import org.omg.CORBA.SystemException ;
-import org.omg.CORBA.CompletionStatus ;
-import org.omg.CORBA.DATA_CONVERSION ;
-import org.omg.CORBA.BAD_PARAM ;
-import org.omg.CORBA.BAD_OPERATION ;
-import org.omg.CORBA.INTERNAL ;
-import org.omg.CORBA.TypeCodePackage.BadKind ;
-import org.omg.CORBA.portable.OutputStream ;
-import org.omg.CORBA.portable.InputStream ;
+import test.org.omg.CORBA.StructMember ;
+import test.org.omg.CORBA.TypeCode ;
+import test.org.omg.CORBA.Any ;
+import test.org.omg.CORBA.TCKind ;
+import test.org.omg.CORBA.SystemException ;
+import test.org.omg.CORBA.CompletionStatus ;
+import test.org.omg.CORBA.BAD_PARAM ;
+import test.org.omg.CORBA.BAD_OPERATION ;
+import test.org.omg.CORBA.INTERNAL ;
+import test.org.omg.CORBA.TypeCodePackage.BadKind ;
+import test.org.omg.CORBA.portable.OutputStream ;
+import test.org.omg.CORBA.portable.InputStream ;
 
 import com.sun.corba.se.pept.transport.ContactInfoList ;
 
 import com.sun.corba.se.spi.ior.IOR ;
 import com.sun.corba.se.spi.presentation.rmi.StubAdapter ;
 import com.sun.corba.se.spi.orb.ORB ;
-import com.sun.corba.se.spi.orb.ORBVersion ;
 import com.sun.corba.se.spi.orb.ORBVersionFactory ;
 import com.sun.corba.se.spi.protocol.CorbaClientDelegate ;
 import com.sun.corba.se.spi.protocol.CorbaMessageMediator;
@@ -123,7 +115,7 @@ public final class ORBUtility {
                     type.member_type(2).equal(systemExceptionMembers[2].type));
         } catch (BadKind ex) {
             return false;
-        } catch (org.omg.CORBA.TypeCodePackage.Bounds ex) {
+        } catch (test.org.omg.CORBA.TypeCodePackage.Bounds ex) {
             return false;
         }
     }
@@ -289,7 +281,7 @@ public final class ORBUtility {
 
         className = (String) exceptionClassNames.get(repositoryId);
         if (className == null)
-            className = "org.omg.CORBA.UNKNOWN";
+            className = "test.org.omg.CORBA.UNKNOWN";
 
         return className;
     }
@@ -356,7 +348,7 @@ public final class ORBUtility {
 
         id = (String) exceptionRepositoryIds.get(name);
         if (id == null)
-            id = "IDL:omg.org/CORBA/UNKNOWN:1.0";
+            id = "IDL:omg.test.org/CORBA/UNKNOWN:1.0";
 
         return id;
     }
@@ -369,95 +361,95 @@ public final class ORBUtility {
         //
         // construct repositoryId -> className hashtable
         //
-        exceptionClassNames.put("IDL:omg.org/CORBA/BAD_CONTEXT:1.0",
-                                "org.omg.CORBA.BAD_CONTEXT");
-        exceptionClassNames.put("IDL:omg.org/CORBA/BAD_INV_ORDER:1.0",
-                                "org.omg.CORBA.BAD_INV_ORDER");
-        exceptionClassNames.put("IDL:omg.org/CORBA/BAD_OPERATION:1.0",
-                                "org.omg.CORBA.BAD_OPERATION");
-        exceptionClassNames.put("IDL:omg.org/CORBA/BAD_PARAM:1.0",
-                                "org.omg.CORBA.BAD_PARAM");
-        exceptionClassNames.put("IDL:omg.org/CORBA/BAD_TYPECODE:1.0",
-                                "org.omg.CORBA.BAD_TYPECODE");
-        exceptionClassNames.put("IDL:omg.org/CORBA/COMM_FAILURE:1.0",
-                                "org.omg.CORBA.COMM_FAILURE");
-        exceptionClassNames.put("IDL:omg.org/CORBA/DATA_CONVERSION:1.0",
-                                "org.omg.CORBA.DATA_CONVERSION");
-        exceptionClassNames.put("IDL:omg.org/CORBA/IMP_LIMIT:1.0",
-                                "org.omg.CORBA.IMP_LIMIT");
-        exceptionClassNames.put("IDL:omg.org/CORBA/INTF_REPOS:1.0",
-                                "org.omg.CORBA.INTF_REPOS");
-        exceptionClassNames.put("IDL:omg.org/CORBA/INTERNAL:1.0",
-                                "org.omg.CORBA.INTERNAL");
-        exceptionClassNames.put("IDL:omg.org/CORBA/INV_FLAG:1.0",
-                                "org.omg.CORBA.INV_FLAG");
-        exceptionClassNames.put("IDL:omg.org/CORBA/INV_IDENT:1.0",
-                                "org.omg.CORBA.INV_IDENT");
-        exceptionClassNames.put("IDL:omg.org/CORBA/INV_OBJREF:1.0",
-                                "org.omg.CORBA.INV_OBJREF");
-        exceptionClassNames.put("IDL:omg.org/CORBA/MARSHAL:1.0",
-                                "org.omg.CORBA.MARSHAL");
-        exceptionClassNames.put("IDL:omg.org/CORBA/NO_MEMORY:1.0",
-                                "org.omg.CORBA.NO_MEMORY");
-        exceptionClassNames.put("IDL:omg.org/CORBA/FREE_MEM:1.0",
-                                "org.omg.CORBA.FREE_MEM");
-        exceptionClassNames.put("IDL:omg.org/CORBA/NO_IMPLEMENT:1.0",
-                                "org.omg.CORBA.NO_IMPLEMENT");
-        exceptionClassNames.put("IDL:omg.org/CORBA/NO_PERMISSION:1.0",
-                                "org.omg.CORBA.NO_PERMISSION");
-        exceptionClassNames.put("IDL:omg.org/CORBA/NO_RESOURCES:1.0",
-                                "org.omg.CORBA.NO_RESOURCES");
-        exceptionClassNames.put("IDL:omg.org/CORBA/NO_RESPONSE:1.0",
-                                "org.omg.CORBA.NO_RESPONSE");
-        exceptionClassNames.put("IDL:omg.org/CORBA/OBJ_ADAPTER:1.0",
-                                "org.omg.CORBA.OBJ_ADAPTER");
-        exceptionClassNames.put("IDL:omg.org/CORBA/INITIALIZE:1.0",
-                                "org.omg.CORBA.INITIALIZE");
-        exceptionClassNames.put("IDL:omg.org/CORBA/PERSIST_STORE:1.0",
-                                "org.omg.CORBA.PERSIST_STORE");
-        exceptionClassNames.put("IDL:omg.org/CORBA/TRANSIENT:1.0",
-                                "org.omg.CORBA.TRANSIENT");
-        exceptionClassNames.put("IDL:omg.org/CORBA/UNKNOWN:1.0",
-                                "org.omg.CORBA.UNKNOWN");
-        exceptionClassNames.put("IDL:omg.org/CORBA/OBJECT_NOT_EXIST:1.0",
-                                "org.omg.CORBA.OBJECT_NOT_EXIST");
+        exceptionClassNames.put("IDL:omg.test.org/CORBA/BAD_CONTEXT:1.0",
+                                "test.org.omg.CORBA.BAD_CONTEXT");
+        exceptionClassNames.put("IDL:omg.test.org/CORBA/BAD_INV_ORDER:1.0",
+                                "test.org.omg.CORBA.BAD_INV_ORDER");
+        exceptionClassNames.put("IDL:omg.test.org/CORBA/BAD_OPERATION:1.0",
+                                "test.org.omg.CORBA.BAD_OPERATION");
+        exceptionClassNames.put("IDL:omg.test.org/CORBA/BAD_PARAM:1.0",
+                                "test.org.omg.CORBA.BAD_PARAM");
+        exceptionClassNames.put("IDL:omg.test.org/CORBA/BAD_TYPECODE:1.0",
+                                "test.org.omg.CORBA.BAD_TYPECODE");
+        exceptionClassNames.put("IDL:omg.test.org/CORBA/COMM_FAILURE:1.0",
+                                "test.org.omg.CORBA.COMM_FAILURE");
+        exceptionClassNames.put("IDL:omg.test.org/CORBA/DATA_CONVERSION:1.0",
+                                "test.org.omg.CORBA.DATA_CONVERSION");
+        exceptionClassNames.put("IDL:omg.test.org/CORBA/IMP_LIMIT:1.0",
+                                "test.org.omg.CORBA.IMP_LIMIT");
+        exceptionClassNames.put("IDL:omg.test.org/CORBA/INTF_REPOS:1.0",
+                                "test.org.omg.CORBA.INTF_REPOS");
+        exceptionClassNames.put("IDL:omg.test.org/CORBA/INTERNAL:1.0",
+                                "test.org.omg.CORBA.INTERNAL");
+        exceptionClassNames.put("IDL:omg.test.org/CORBA/INV_FLAG:1.0",
+                                "test.org.omg.CORBA.INV_FLAG");
+        exceptionClassNames.put("IDL:omg.test.org/CORBA/INV_IDENT:1.0",
+                                "test.org.omg.CORBA.INV_IDENT");
+        exceptionClassNames.put("IDL:omg.test.org/CORBA/INV_OBJREF:1.0",
+                                "test.org.omg.CORBA.INV_OBJREF");
+        exceptionClassNames.put("IDL:omg.test.org/CORBA/MARSHAL:1.0",
+                                "test.org.omg.CORBA.MARSHAL");
+        exceptionClassNames.put("IDL:omg.test.org/CORBA/NO_MEMORY:1.0",
+                                "test.org.omg.CORBA.NO_MEMORY");
+        exceptionClassNames.put("IDL:omg.test.org/CORBA/FREE_MEM:1.0",
+                                "test.org.omg.CORBA.FREE_MEM");
+        exceptionClassNames.put("IDL:omg.test.org/CORBA/NO_IMPLEMENT:1.0",
+                                "test.org.omg.CORBA.NO_IMPLEMENT");
+        exceptionClassNames.put("IDL:omg.test.org/CORBA/NO_PERMISSION:1.0",
+                                "test.org.omg.CORBA.NO_PERMISSION");
+        exceptionClassNames.put("IDL:omg.test.org/CORBA/NO_RESOURCES:1.0",
+                                "test.org.omg.CORBA.NO_RESOURCES");
+        exceptionClassNames.put("IDL:omg.test.org/CORBA/NO_RESPONSE:1.0",
+                                "test.org.omg.CORBA.NO_RESPONSE");
+        exceptionClassNames.put("IDL:omg.test.org/CORBA/OBJ_ADAPTER:1.0",
+                                "test.org.omg.CORBA.OBJ_ADAPTER");
+        exceptionClassNames.put("IDL:omg.test.org/CORBA/INITIALIZE:1.0",
+                                "test.org.omg.CORBA.INITIALIZE");
+        exceptionClassNames.put("IDL:omg.test.org/CORBA/PERSIST_STORE:1.0",
+                                "test.org.omg.CORBA.PERSIST_STORE");
+        exceptionClassNames.put("IDL:omg.test.org/CORBA/TRANSIENT:1.0",
+                                "test.org.omg.CORBA.TRANSIENT");
+        exceptionClassNames.put("IDL:omg.test.org/CORBA/UNKNOWN:1.0",
+                                "test.org.omg.CORBA.UNKNOWN");
+        exceptionClassNames.put("IDL:omg.test.org/CORBA/OBJECT_NOT_EXIST:1.0",
+                                "test.org.omg.CORBA.OBJECT_NOT_EXIST");
 
         // SystemExceptions from OMG Transactions Service Spec
-        exceptionClassNames.put("IDL:omg.org/CORBA/INVALID_TRANSACTION:1.0",
-                                "org.omg.CORBA.INVALID_TRANSACTION");
-        exceptionClassNames.put("IDL:omg.org/CORBA/TRANSACTION_REQUIRED:1.0",
-                                "org.omg.CORBA.TRANSACTION_REQUIRED");
-        exceptionClassNames.put("IDL:omg.org/CORBA/TRANSACTION_ROLLEDBACK:1.0",
-                                "org.omg.CORBA.TRANSACTION_ROLLEDBACK");
+        exceptionClassNames.put("IDL:omg.test.org/CORBA/INVALID_TRANSACTION:1.0",
+                                "test.org.omg.CORBA.INVALID_TRANSACTION");
+        exceptionClassNames.put("IDL:omg.test.org/CORBA/TRANSACTION_REQUIRED:1.0",
+                                "test.org.omg.CORBA.TRANSACTION_REQUIRED");
+        exceptionClassNames.put("IDL:omg.test.org/CORBA/TRANSACTION_ROLLEDBACK:1.0",
+                                "test.org.omg.CORBA.TRANSACTION_ROLLEDBACK");
 
         // from portability RTF 98-07-01.txt
-        exceptionClassNames.put("IDL:omg.org/CORBA/INV_POLICY:1.0",
-                                "org.omg.CORBA.INV_POLICY");
+        exceptionClassNames.put("IDL:omg.test.org/CORBA/INV_POLICY:1.0",
+                                "test.org.omg.CORBA.INV_POLICY");
 
         // from orbrev/00-09-01 (CORBA 2.4 Draft Specification)
         exceptionClassNames.
-            put("IDL:omg.org/CORBA/TRANSACTION_UNAVAILABLE:1.0",
-                                "org.omg.CORBA.TRANSACTION_UNAVAILABLE");
-        exceptionClassNames.put("IDL:omg.org/CORBA/TRANSACTION_MODE:1.0",
-                                "org.omg.CORBA.TRANSACTION_MODE");
+            put("IDL:omg.test.org/CORBA/TRANSACTION_UNAVAILABLE:1.0",
+                                "test.org.omg.CORBA.TRANSACTION_UNAVAILABLE");
+        exceptionClassNames.put("IDL:omg.test.org/CORBA/TRANSACTION_MODE:1.0",
+                                "test.org.omg.CORBA.TRANSACTION_MODE");
 
         // Exception types introduced between CORBA 2.4 and 3.0
-        exceptionClassNames.put("IDL:omg.org/CORBA/CODESET_INCOMPATIBLE:1.0",
-                                "org.omg.CORBA.CODESET_INCOMPATIBLE");
-        exceptionClassNames.put("IDL:omg.org/CORBA/REBIND:1.0",
-                                "org.omg.CORBA.REBIND");
-        exceptionClassNames.put("IDL:omg.org/CORBA/TIMEOUT:1.0",
-                                "org.omg.CORBA.TIMEOUT");
-        exceptionClassNames.put("IDL:omg.org/CORBA/BAD_QOS:1.0",
-                                "org.omg.CORBA.BAD_QOS");
+        exceptionClassNames.put("IDL:omg.test.org/CORBA/CODESET_INCOMPATIBLE:1.0",
+                                "test.org.omg.CORBA.CODESET_INCOMPATIBLE");
+        exceptionClassNames.put("IDL:omg.test.org/CORBA/REBIND:1.0",
+                                "test.org.omg.CORBA.REBIND");
+        exceptionClassNames.put("IDL:omg.test.org/CORBA/TIMEOUT:1.0",
+                                "test.org.omg.CORBA.TIMEOUT");
+        exceptionClassNames.put("IDL:omg.test.org/CORBA/BAD_QOS:1.0",
+                                "test.org.omg.CORBA.BAD_QOS");
 
         // Exception types introduced in CORBA 3.0
-        exceptionClassNames.put("IDL:omg.org/CORBA/INVALID_ACTIVITY:1.0",
-                                "org.omg.CORBA.INVALID_ACTIVITY");
-        exceptionClassNames.put("IDL:omg.org/CORBA/ACTIVITY_COMPLETED:1.0",
-                                "org.omg.CORBA.ACTIVITY_COMPLETED");
-        exceptionClassNames.put("IDL:omg.org/CORBA/ACTIVITY_REQUIRED:1.0",
-                                "org.omg.CORBA.ACTIVITY_REQUIRED");
+        exceptionClassNames.put("IDL:omg.test.org/CORBA/INVALID_ACTIVITY:1.0",
+                                "test.org.omg.CORBA.INVALID_ACTIVITY");
+        exceptionClassNames.put("IDL:omg.test.org/CORBA/ACTIVITY_COMPLETED:1.0",
+                                "test.org.omg.CORBA.ACTIVITY_COMPLETED");
+        exceptionClassNames.put("IDL:omg.test.org/CORBA/ACTIVITY_REQUIRED:1.0",
+                                "test.org.omg.CORBA.ACTIVITY_REQUIRED");
 
         //
         // construct className -> repositoryId hashtable
@@ -693,10 +685,10 @@ public final class ORBUtility {
 
     /** This method is used to create untyped object references.
     */
-    public static org.omg.CORBA.Object makeObjectReference( IOR ior )
+    public static test.org.omg.CORBA.Object makeObjectReference(IOR ior )
     {
         CorbaClientDelegate del = makeClientDelegate( ior ) ;
-        org.omg.CORBA.Object objectImpl = new CORBAObjectImpl() ;
+        test.org.omg.CORBA.Object objectImpl = new CORBAObjectImpl() ;
         StubAdapter.setDelegate( objectImpl, del ) ;
         return objectImpl ;
     }
@@ -712,14 +704,14 @@ public final class ORBUtility {
     * @exception BAD_PARAM if obj is a local object, or else was
     * created by a foreign ORB.
     */
-    public static IOR getIOR( org.omg.CORBA.Object obj )
+    public static IOR getIOR( test.org.omg.CORBA.Object obj )
     {
         if (obj == null)
             throw wrapper.nullObjectReference() ;
 
         IOR ior = null ;
         if (StubAdapter.isStub(obj)) {
-            org.omg.CORBA.portable.Delegate del = StubAdapter.getDelegate(
+            test.org.omg.CORBA.portable.Delegate del = StubAdapter.getDelegate(
                 obj ) ;
 
             if (del instanceof CorbaClientDelegate) {
@@ -765,7 +757,7 @@ public final class ORBUtility {
     * @exception BAD_PARAM if obj is a local object, or else was
     * created by a foreign ORB.
     */
-    public static IOR connectAndGetIOR( ORB orb, org.omg.CORBA.Object obj )
+    public static IOR connectAndGetIOR( ORB orb, test.org.omg.CORBA.Object obj )
     {
         IOR result ;
         try {

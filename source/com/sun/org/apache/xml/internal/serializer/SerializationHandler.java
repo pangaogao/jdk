@@ -26,11 +26,11 @@ import java.io.IOException;
 
 import javax.xml.transform.Transformer;
 
-import org.w3c.dom.Node;
-import org.xml.sax.ContentHandler;
-import org.xml.sax.ErrorHandler;
-import org.xml.sax.SAXException;
-import org.xml.sax.ext.DeclHandler;
+import test.org.w3c.dom.Node;
+import test.org.xml.sax.ContentHandler;
+import test.org.xml.sax.ErrorHandler;
+import test.org.xml.sax.SAXException;
+import test.org.xml.sax.ext.DeclHandler;
 
 /**
  * This interface is the one that a serializer implements. It is a group of
@@ -48,7 +48,7 @@ public interface SerializationHandler
         ExtendedLexicalHandler,
         XSLOutputAttributes,
         DeclHandler,
-        org.xml.sax.DTDHandler,
+        test.org.xml.sax.DTDHandler,
         ErrorHandler,
         DOMSerializer,
         Serializer

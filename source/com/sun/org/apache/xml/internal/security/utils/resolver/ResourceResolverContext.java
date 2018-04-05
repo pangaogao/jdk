@@ -22,7 +22,7 @@
  */
 package com.sun.org.apache.xml.internal.security.utils.resolver;
 
-import org.w3c.dom.Attr;
+import test.org.w3c.dom.Attr;
 
 public class ResourceResolverContext {
 

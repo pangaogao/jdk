@@ -8,7 +8,7 @@ package com.sun.corba.se.PortableActivationIDL.InitialNameServicePackage;
 * Wednesday, March 15, 2017 1:33:57 AM PDT
 */
 
-public final class NameAlreadyBound extends org.omg.CORBA.UserException
+public final class NameAlreadyBound extends test.org.omg.CORBA.UserException
 {
 
   public NameAlreadyBound ()

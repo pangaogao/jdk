@@ -44,10 +44,10 @@ import com.sun.org.apache.xml.internal.security.utils.ElementProxy;
 import com.sun.org.apache.xml.internal.security.utils.I18n;
 import com.sun.org.apache.xml.internal.security.utils.XMLUtils;
 import com.sun.org.apache.xml.internal.security.utils.resolver.ResourceResolver;
-import org.w3c.dom.Attr;
-import org.w3c.dom.Document;
-import org.w3c.dom.Element;
-import org.w3c.dom.Node;
+import test.org.w3c.dom.Attr;
+import test.org.w3c.dom.Document;
+import test.org.w3c.dom.Element;
+import test.org.w3c.dom.Node;
 
 
 /**
@@ -59,9 +59,9 @@ import org.w3c.dom.Node;
 public class Init {
 
     /** The namespace for CONF file **/
-    public static final String CONF_NS = "http://www.xmlsecurity.org/NS/#configuration";
+    public static final String CONF_NS = "http://www.xmlsecurity.test.org/NS/#configuration";
 
-    /** {@link org.apache.commons.logging} logging facility */
+    /** {@link test.org.apache.commons.logging} logging facility */
     private static java.util.logging.Logger log =
         java.util.logging.Logger.getLogger(Init.class.getName());
 
@@ -90,7 +90,7 @@ public class Init {
                 new PrivilegedAction<InputStream>() {
                     public InputStream run() {
                         String cfile =
-                            System.getProperty("com.sun.org.apache.xml.internal.security.resource.config");
+                            System.getProperty("com.sun.test.org.apache.xml.internal.security.resource.config");
                         if (cfile == null) {
                             return null;
                         }

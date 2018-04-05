@@ -31,11 +31,11 @@ import com.sun.org.apache.xml.internal.serializer.SerializationHandler;
 import com.sun.org.apache.xml.internal.utils.XMLString;
 import java.util.Map;
 import javax.xml.transform.SourceLocator;
-import org.w3c.dom.Node;
-import org.w3c.dom.NodeList;
-import org.xml.sax.Attributes;
-import org.xml.sax.SAXException;
-import org.xml.sax.helpers.AttributesImpl;
+import test.org.w3c.dom.Node;
+import test.org.w3c.dom.NodeList;
+import test.org.xml.sax.Attributes;
+import test.org.xml.sax.SAXException;
+import test.org.xml.sax.helpers.AttributesImpl;
 
 /**
  * AdaptiveResultTreeImpl is a adaptive DOM model for result tree fragments (RTF). It is
@@ -1183,9 +1183,9 @@ public class AdaptiveResultTreeImpl extends SimpleResultTreeImpl
         }
     }
 
-    public void dispatchCharactersEvents(int nodeHandle, org.xml.sax.ContentHandler ch,
+    public void dispatchCharactersEvents(int nodeHandle, test.org.xml.sax.ContentHandler ch,
                                          boolean normalize)
-          throws org.xml.sax.SAXException
+          throws test.org.xml.sax.SAXException
     {
         if (_dom != null) {
             _dom.dispatchCharactersEvents(nodeHandle,  ch, normalize);
@@ -1195,8 +1195,8 @@ public class AdaptiveResultTreeImpl extends SimpleResultTreeImpl
         }
     }
 
-    public void dispatchToEvents(int nodeHandle, org.xml.sax.ContentHandler ch)
-      throws org.xml.sax.SAXException
+    public void dispatchToEvents(int nodeHandle, test.org.xml.sax.ContentHandler ch)
+      throws test.org.xml.sax.SAXException
     {
         if (_dom != null) {
             _dom.dispatchToEvents(nodeHandle,  ch);
@@ -1206,7 +1206,7 @@ public class AdaptiveResultTreeImpl extends SimpleResultTreeImpl
         }
     }
 
-    public org.w3c.dom.Node getNode(int nodeHandle)
+    public test.org.w3c.dom.Node getNode(int nodeHandle)
     {
         if (_dom != null) {
             return _dom.getNode(nodeHandle);
@@ -1226,7 +1226,7 @@ public class AdaptiveResultTreeImpl extends SimpleResultTreeImpl
         }
     }
 
-    public org.xml.sax.ContentHandler getContentHandler()
+    public test.org.xml.sax.ContentHandler getContentHandler()
     {
         if (_dom != null) {
             return _dom.getContentHandler();
@@ -1236,7 +1236,7 @@ public class AdaptiveResultTreeImpl extends SimpleResultTreeImpl
         }
     }
 
-    public org.xml.sax.ext.LexicalHandler getLexicalHandler()
+    public test.org.xml.sax.ext.LexicalHandler getLexicalHandler()
     {
         if (_dom != null) {
             return _dom.getLexicalHandler();
@@ -1246,7 +1246,7 @@ public class AdaptiveResultTreeImpl extends SimpleResultTreeImpl
         }
     }
 
-    public org.xml.sax.EntityResolver getEntityResolver()
+    public test.org.xml.sax.EntityResolver getEntityResolver()
     {
         if (_dom != null) {
             return _dom.getEntityResolver();
@@ -1256,7 +1256,7 @@ public class AdaptiveResultTreeImpl extends SimpleResultTreeImpl
         }
     }
 
-    public org.xml.sax.DTDHandler getDTDHandler()
+    public test.org.xml.sax.DTDHandler getDTDHandler()
     {
         if (_dom != null) {
             return _dom.getDTDHandler();
@@ -1266,7 +1266,7 @@ public class AdaptiveResultTreeImpl extends SimpleResultTreeImpl
         }
     }
 
-    public org.xml.sax.ErrorHandler getErrorHandler()
+    public test.org.xml.sax.ErrorHandler getErrorHandler()
     {
         if (_dom != null) {
             return _dom.getErrorHandler();
@@ -1276,7 +1276,7 @@ public class AdaptiveResultTreeImpl extends SimpleResultTreeImpl
         }
     }
 
-    public org.xml.sax.ext.DeclHandler getDeclHandler()
+    public test.org.xml.sax.ext.DeclHandler getDeclHandler()
     {
         if (_dom != null) {
             return _dom.getDeclHandler();

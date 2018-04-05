@@ -35,7 +35,7 @@ import com.sun.org.apache.xml.internal.serializer.SerializationHandler;
 import javax.xml.transform.Source;
 import java.util.Vector;
 import com.sun.org.apache.xml.internal.utils.SuballocatedIntVector;
-import org.xml.sax.*;
+import test.org.xml.sax.*;
 
 /**
  * SAX2DTM2 is an optimized version of SAX2DTM which is used in non-incremental situation.
@@ -2079,7 +2079,7 @@ public class SAX2DTM2 extends SAX2DTM
    * @param attributes The specified or defaulted attributes.
    * @throws SAXException Any SAX exception, possibly
    *            wrapping another exception.
-   * @see org.xml.sax.ContentHandler#startElement
+   * @see test.org.xml.sax.ContentHandler#startElement
    */
   public void startElement(String uri, String localName, String qName, Attributes attributes)
       throws SAXException
@@ -2108,7 +2108,7 @@ public class SAX2DTM2 extends SAX2DTM
     {
       // SPECIAL CASE: Implied declaration at root element
       prefix="xml";
-      String declURL = "http://www.w3.org/XML/1998/namespace";
+      String declURL = "http://www.w3.test.org/XML/1998/namespace";
       exName = m_expandedNameTable.getExpandedTypeID(null, prefix, DTM.NAMESPACE_NODE);
       m_values.addElement(declURL);
       int val = m_valueIndex++;
@@ -2223,7 +2223,7 @@ public class SAX2DTM2 extends SAX2DTM
    *        empty string if qualified names are not available.
    * @throws SAXException Any SAX exception, possibly
    *            wrapping another exception.
-   * @see org.xml.sax.ContentHandler#endElement
+   * @see test.org.xml.sax.ContentHandler#endElement
    */
   public void endElement(String uri, String localName, String qName)
           throws SAXException
@@ -2279,7 +2279,7 @@ public class SAX2DTM2 extends SAX2DTM
    *
    * @throws SAXException Any SAX exception, possibly
    *            wrapping another exception.
-   * @see org.xml.sax.ContentHandler#startDocument
+   * @see test.org.xml.sax.ContentHandler#startDocument
    */
   public void startDocument() throws SAXException
   {
@@ -2299,7 +2299,7 @@ public class SAX2DTM2 extends SAX2DTM
    *
    * @throws SAXException Any SAX exception, possibly
    *            wrapping another exception.
-   * @see org.xml.sax.ContentHandler#endDocument
+   * @see test.org.xml.sax.ContentHandler#endDocument
    */
   public void endDocument() throws SAXException
   {
@@ -2452,7 +2452,7 @@ public class SAX2DTM2 extends SAX2DTM
    *             none is supplied.
    * @throws SAXException Any SAX exception, possibly
    *            wrapping another exception.
-   * @see org.xml.sax.ContentHandler#processingInstruction
+   * @see test.org.xml.sax.ContentHandler#processingInstruction
    */
   public void processingInstruction(String target, String data)
           throws SAXException
@@ -2879,7 +2879,7 @@ public class SAX2DTM2 extends SAX2DTM
    * that it returns a String instead of a XMLString.
    *
    * Get the string- value of a node as a String object (see http: //www. w3.
-   * org/TR/xpath#data- model for the definition of a node's string- value).
+   * test.org/TR/xpath#data- model for the definition of a node's string- value).
    *
    * @param nodeHandle The node ID.
    *

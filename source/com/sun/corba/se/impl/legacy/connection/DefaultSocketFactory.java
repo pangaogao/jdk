@@ -28,13 +28,10 @@ import java.io.IOException;
 import java.net.InetSocketAddress;
 import java.net.ServerSocket;
 import java.net.Socket;
-import java.net.UnknownHostException;
 import java.nio.channels.ServerSocketChannel;
 import java.nio.channels.SocketChannel;
 
-import org.omg.CORBA.ORB;
-import org.omg.CORBA.COMM_FAILURE;
-import org.omg.CORBA.CompletionStatus;
+import test.org.omg.CORBA.ORB;
 
 import com.sun.corba.se.spi.ior.IOR;
 import com.sun.corba.se.spi.ior.iiop.IIOPProfileTemplate ;
@@ -44,7 +41,6 @@ import com.sun.corba.se.spi.legacy.connection.ORBSocketFactory;
 import com.sun.corba.se.spi.logging.CORBALogDomains;
 import com.sun.corba.se.spi.transport.SocketInfo;
 
-import com.sun.corba.se.impl.legacy.connection.EndPointInfoImpl;
 import com.sun.corba.se.impl.logging.ORBUtilSystemException;
 import com.sun.corba.se.impl.orbutil.ORBConstants;
 

@@ -23,9 +23,9 @@
 
 package com.sun.org.apache.xml.internal.dtm.ref;
 
-import org.xml.sax.ContentHandler;
-import org.xml.sax.InputSource;
-import org.xml.sax.XMLReader;
+import test.org.xml.sax.ContentHandler;
+import test.org.xml.sax.InputSource;
+import test.org.xml.sax.XMLReader;
 
 /** <p>CoroutineParser is an API for parser threads that operate as
  * coroutines. See CoroutineSAXParser and CoroutineSAXParser_Xerces
@@ -73,7 +73,7 @@ public interface CoroutineParser {
    * %REVIEW% Not called setLexicalHandler because Xalan uses that name
    * internally, which causes subclassing nuisances.
    */
-  public void setLexHandler(org.xml.sax.ext.LexicalHandler handler);
+  public void setLexHandler(test.org.xml.sax.ext.LexicalHandler handler);
 
   /* The run() method is required in CoroutineParsers that run as
    * threads (of course)... but it isn't part of our API, and

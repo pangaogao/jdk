@@ -11,8 +11,8 @@ package com.sun.corba.se.PortableActivationIDL;
 
 /** ORB callback interface, passed to Activator in registerORB method.
     */
-public abstract class _ORBProxyImplBase extends org.omg.CORBA.portable.ObjectImpl
-                implements com.sun.corba.se.PortableActivationIDL.ORBProxy, org.omg.CORBA.portable.InvokeHandler
+public abstract class _ORBProxyImplBase extends test.org.omg.CORBA.portable.ObjectImpl
+                implements com.sun.corba.se.PortableActivationIDL.ORBProxy, test.org.omg.CORBA.portable.InvokeHandler
 {
 
   // Constructors
@@ -26,14 +26,14 @@ public abstract class _ORBProxyImplBase extends org.omg.CORBA.portable.ObjectImp
     _methods.put ("activate_adapter", new java.lang.Integer (0));
   }
 
-  public org.omg.CORBA.portable.OutputStream _invoke (String $method,
-                                org.omg.CORBA.portable.InputStream in,
-                                org.omg.CORBA.portable.ResponseHandler $rh)
+  public test.org.omg.CORBA.portable.OutputStream _invoke (String $method,
+                                                           test.org.omg.CORBA.portable.InputStream in,
+                                                           test.org.omg.CORBA.portable.ResponseHandler $rh)
   {
-    org.omg.CORBA.portable.OutputStream out = null;
+    test.org.omg.CORBA.portable.OutputStream out = null;
     java.lang.Integer __method = (java.lang.Integer)_methods.get ($method);
     if (__method == null)
-      throw new org.omg.CORBA.BAD_OPERATION (0, org.omg.CORBA.CompletionStatus.COMPLETED_MAYBE);
+      throw new test.org.omg.CORBA.BAD_OPERATION (0, test.org.omg.CORBA.CompletionStatus.COMPLETED_MAYBE);
 
     switch (__method.intValue ())
     {
@@ -46,7 +46,7 @@ public abstract class _ORBProxyImplBase extends org.omg.CORBA.portable.ObjectImp
   	*/
        case 0:  // PortableActivationIDL/ORBProxy/activate_adapter
        {
-         String name[] = org.omg.PortableInterceptor.AdapterNameHelper.read (in);
+         String name[] = test.org.omg.PortableInterceptor.AdapterNameHelper.read (in);
          boolean $result = false;
          $result = this.activate_adapter (name);
          out = $rh.createReply();
@@ -55,7 +55,7 @@ public abstract class _ORBProxyImplBase extends org.omg.CORBA.portable.ObjectImp
        }
 
        default:
-         throw new org.omg.CORBA.BAD_OPERATION (0, org.omg.CORBA.CompletionStatus.COMPLETED_MAYBE);
+         throw new test.org.omg.CORBA.BAD_OPERATION (0, test.org.omg.CORBA.CompletionStatus.COMPLETED_MAYBE);
     }
 
     return out;

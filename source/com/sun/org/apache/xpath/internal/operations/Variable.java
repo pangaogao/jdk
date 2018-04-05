@@ -241,7 +241,7 @@ public class Variable extends Expression implements PathComponent
 //      // pending some bright light going off in my head.  Some sort of callback?
 //      synchronized(this)
 //      {
-//              com.sun.org.apache.xalan.internal.templates.ElemVariable vvar= getElemVariable();
+//              com.sun.test.org.apache.xalan.internal.templates.ElemVariable vvar= getElemVariable();
 //              if(null != vvar)
 //              {
 //          m_index = vvar.getIndex();
@@ -261,7 +261,7 @@ public class Variable extends Expression implements PathComponent
    */
   // J2SE does not support Xalan interpretive
   /*
-  public com.sun.org.apache.xalan.internal.templates.ElemVariable getElemVariable()
+  public com.sun.test.org.apache.xalan.internal.templates.ElemVariable getElemVariable()
   {
 
     // Get the current ElemTemplateElement, and then walk backwards in
@@ -270,26 +270,26 @@ public class Variable extends Expression implements PathComponent
     // qname.  If we reach the top level, use the StylesheetRoot's composed
     // list of top level variables and parameters.
 
-    com.sun.org.apache.xalan.internal.templates.ElemVariable vvar = null;
-    com.sun.org.apache.xpath.internal.ExpressionNode owner = getExpressionOwner();
+    com.sun.test.org.apache.xalan.internal.templates.ElemVariable vvar = null;
+    com.sun.test.org.apache.xpath.internal.ExpressionNode owner = getExpressionOwner();
 
-    if (null != owner && owner instanceof com.sun.org.apache.xalan.internal.templates.ElemTemplateElement)
+    if (null != owner && owner instanceof com.sun.test.org.apache.xalan.internal.templates.ElemTemplateElement)
     {
 
-      com.sun.org.apache.xalan.internal.templates.ElemTemplateElement prev =
-        (com.sun.org.apache.xalan.internal.templates.ElemTemplateElement) owner;
+      com.sun.test.org.apache.xalan.internal.templates.ElemTemplateElement prev =
+        (com.sun.test.org.apache.xalan.internal.templates.ElemTemplateElement) owner;
 
-      if (!(prev instanceof com.sun.org.apache.xalan.internal.templates.Stylesheet))
+      if (!(prev instanceof com.sun.test.org.apache.xalan.internal.templates.Stylesheet))
       {
-        while ( prev != null && !(prev.getParentNode() instanceof com.sun.org.apache.xalan.internal.templates.Stylesheet) )
+        while ( prev != null && !(prev.getParentNode() instanceof com.sun.test.org.apache.xalan.internal.templates.Stylesheet) )
         {
-          com.sun.org.apache.xalan.internal.templates.ElemTemplateElement savedprev = prev;
+          com.sun.test.org.apache.xalan.internal.templates.ElemTemplateElement savedprev = prev;
 
           while (null != (prev = prev.getPreviousSiblingElem()))
           {
-            if(prev instanceof com.sun.org.apache.xalan.internal.templates.ElemVariable)
+            if(prev instanceof com.sun.test.org.apache.xalan.internal.templates.ElemVariable)
             {
-              vvar = (com.sun.org.apache.xalan.internal.templates.ElemVariable) prev;
+              vvar = (com.sun.test.org.apache.xalan.internal.templates.ElemVariable) prev;
 
               if (vvar.getName().equals(m_qname))
               {
@@ -330,7 +330,7 @@ public class Variable extends Expression implements PathComponent
 
     // J2SE does not support Xalan interpretive
     /*
-        com.sun.org.apache.xalan.internal.templates.ElemVariable vvar = getElemVariable();
+        com.sun.test.org.apache.xalan.internal.templates.ElemVariable vvar = getElemVariable();
         if(null != vvar)
         {
                 XPath xpath = vvar.getSelect();
@@ -378,7 +378,7 @@ public class Variable extends Expression implements PathComponent
         return true;
   }
 
-  static final java.lang.String PSUEDOVARNAMESPACE = "http://xml.apache.org/xalan/psuedovar";
+  static final java.lang.String PSUEDOVARNAMESPACE = "http://xml.apache.test.org/xalan/psuedovar";
 
   /**
    * Tell if this is a psuedo variable reference, declared by Xalan instead

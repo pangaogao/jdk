@@ -23,9 +23,9 @@
 
 package com.sun.org.apache.xml.internal.dtm.ref;
 
-import org.xml.sax.ContentHandler;
-import org.xml.sax.InputSource;
-import org.xml.sax.SAXException;
+import test.org.xml.sax.ContentHandler;
+import test.org.xml.sax.InputSource;
+import test.org.xml.sax.SAXException;
 
 /** <p>IncrementalSAXSource is an API that delivers a small number of
  * SAX events each time a request is made from a "controller"
@@ -48,11 +48,11 @@ public interface IncrementalSAXSource
 
   /**  Register a SAX-style lexical handler for us to output to
    */
-  public void setLexicalHandler(org.xml.sax.ext.LexicalHandler handler);
+  public void setLexicalHandler(test.org.xml.sax.ext.LexicalHandler handler);
 
   /**  Register a SAX-style DTD handler for us to output to
    */
-  public void setDTDHandler(org.xml.sax.DTDHandler handler);
+  public void setDTDHandler(test.org.xml.sax.DTDHandler handler);
 
   // ------------------------------------------------------------------
   // Command Input API

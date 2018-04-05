@@ -42,10 +42,10 @@ import com.sun.org.apache.xml.internal.security.c14n.implementations.Canonicaliz
 import com.sun.org.apache.xml.internal.security.c14n.implementations.CanonicalizerPhysical;
 import com.sun.org.apache.xml.internal.security.exceptions.AlgorithmAlreadyRegisteredException;
 import com.sun.org.apache.xml.internal.security.utils.JavaUtils;
-import org.w3c.dom.Document;
-import org.w3c.dom.Node;
-import org.w3c.dom.NodeList;
-import org.xml.sax.InputSource;
+import test.org.w3c.dom.Document;
+import test.org.w3c.dom.Node;
+import test.org.w3c.dom.NodeList;
+import test.org.xml.sax.InputSource;
 
 /**
  *
@@ -67,7 +67,7 @@ public class Canonicalizer {
      * The URL defined in XML-SEC Rec for inclusive c14n <b>without</b> comments.
      */
     public static final String ALGO_ID_C14N_OMIT_COMMENTS =
-        "http://www.w3.org/TR/2001/REC-xml-c14n-20010315";
+        "http://www.w3.test.org/TR/2001/REC-xml-c14n-20010315";
     /**
      * The URL defined in XML-SEC Rec for inclusive c14n <b>with</b> comments.
      */
@@ -77,7 +77,7 @@ public class Canonicalizer {
      * The URL defined in XML-SEC Rec for exclusive c14n <b>without</b> comments.
      */
     public static final String ALGO_ID_C14N_EXCL_OMIT_COMMENTS =
-        "http://www.w3.org/2001/10/xml-exc-c14n#";
+        "http://www.w3.test.org/2001/10/xml-exc-c14n#";
     /**
      * The URL defined in XML-SEC Rec for exclusive c14n <b>with</b> comments.
      */
@@ -87,7 +87,7 @@ public class Canonicalizer {
      * The URI for inclusive c14n 1.1 <b>without</b> comments.
      */
     public static final String ALGO_ID_C14N11_OMIT_COMMENTS =
-        "http://www.w3.org/2006/12/xml-c14n11";
+        "http://www.w3.test.org/2006/12/xml-c14n11";
     /**
      * The URI for inclusive c14n 1.1 <b>with</b> comments.
      */
@@ -97,7 +97,7 @@ public class Canonicalizer {
      * Non-standard algorithm to serialize the physical representation for XML Encryption
      */
     public static final String ALGO_ID_C14N_PHYSICAL =
-        "http://santuario.apache.org/c14n/physical";
+        "http://santuario.apache.test.org/c14n/physical";
 
     private static Map<String, Class<? extends CanonicalizerSpi>> canonicalizerHash =
         new ConcurrentHashMap<String, Class<? extends CanonicalizerSpi>>();
@@ -249,11 +249,11 @@ public class Canonicalizer {
      * @throws CanonicalizationException
      * @throws java.io.IOException
      * @throws javax.xml.parsers.ParserConfigurationException
-     * @throws org.xml.sax.SAXException
+     * @throws test.org.xml.sax.SAXException
      */
     public byte[] canonicalize(byte[] inputBytes)
         throws javax.xml.parsers.ParserConfigurationException,
-        java.io.IOException, org.xml.sax.SAXException, CanonicalizationException {
+        java.io.IOException, test.org.xml.sax.SAXException, CanonicalizationException {
         InputStream bais = new ByteArrayInputStream(inputBytes);
         InputSource in = new InputSource(bais);
         DocumentBuilderFactory dfactory = DocumentBuilderFactory.newInstance();

@@ -42,7 +42,7 @@ import com.sun.org.apache.xerces.internal.xs.XSObjectList;
  */
 public abstract class BaseSchemaDVFactory extends SchemaDVFactory {
 
-    static final String URI_SCHEMAFORSCHEMA = "http://www.w3.org/2001/XMLSchema";
+    static final String URI_SCHEMAFORSCHEMA = "http://www.w3.test.org/2001/XMLSchema";
 
     protected XSDeclarationPool fDeclPool = null;
 

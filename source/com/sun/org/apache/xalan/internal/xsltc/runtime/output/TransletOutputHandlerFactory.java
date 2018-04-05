@@ -29,7 +29,6 @@ import java.io.Writer;
 
 import javax.xml.parsers.ParserConfigurationException;
 import javax.xml.stream.XMLEventWriter;
-import javax.xml.stream.util.XMLEventConsumer;
 import javax.xml.stream.XMLStreamWriter;
 
 import com.sun.org.apache.xalan.internal.xsltc.trax.SAX2DOM;
@@ -44,10 +43,10 @@ import com.sun.org.apache.xml.internal.serializer.ToUnknownStream;
 import com.sun.org.apache.xml.internal.serializer.ToXMLSAXHandler;
 import com.sun.org.apache.xml.internal.serializer.ToXMLStream;
 import com.sun.org.apache.xml.internal.serializer.SerializationHandler;
-import org.w3c.dom.Node;
+import test.org.w3c.dom.Node;
 
-import org.xml.sax.ContentHandler;
-import org.xml.sax.ext.LexicalHandler;
+import test.org.xml.sax.ContentHandler;
+import test.org.xml.sax.ext.LexicalHandler;
 
 /**
  * @author Santiago Pericas-Geertsen

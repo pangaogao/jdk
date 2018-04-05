@@ -23,7 +23,7 @@
 package com.sun.org.apache.xml.internal.security.encryption;
 
 import java.util.Iterator;
-import org.w3c.dom.Element;
+import test.org.w3c.dom.Element;
 
 /**
  * Additional information items concerning the generation of the

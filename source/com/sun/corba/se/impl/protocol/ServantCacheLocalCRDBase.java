@@ -25,16 +25,9 @@
 
 package com.sun.corba.se.impl.protocol;
 
-import org.omg.CORBA.BAD_OPERATION ;
-import org.omg.CORBA.INTERNAL ;
-import org.omg.CORBA.SystemException ;
-import org.omg.CORBA.CompletionStatus ;
-
-import com.sun.corba.se.spi.protocol.LocalClientRequestDispatcher;
 import com.sun.corba.se.spi.protocol.ForwardException;
 
 // XXX This should be in the SPI
-import com.sun.corba.se.impl.protocol.LocalClientRequestDispatcherBase;
 
 import com.sun.corba.se.spi.oa.OAInvocationInfo;
 import com.sun.corba.se.spi.oa.ObjectAdapter;

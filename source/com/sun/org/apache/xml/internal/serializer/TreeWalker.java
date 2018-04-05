@@ -20,29 +20,26 @@
 
 package com.sun.org.apache.xml.internal.serializer;
 
-import com.sun.org.apache.xalan.internal.utils.SecuritySupport;
-import java.io.File;
-
 import com.sun.org.apache.xml.internal.serializer.utils.AttList;
 import com.sun.org.apache.xml.internal.serializer.utils.DOM2Helper;
-import org.w3c.dom.Comment;
-import org.w3c.dom.Element;
-import org.w3c.dom.EntityReference;
-import org.w3c.dom.NamedNodeMap;
-import org.w3c.dom.Node;
-import org.w3c.dom.ProcessingInstruction;
-import org.w3c.dom.Text;
+import test.org.w3c.dom.Comment;
+import test.org.w3c.dom.Element;
+import test.org.w3c.dom.EntityReference;
+import test.org.w3c.dom.NamedNodeMap;
+import test.org.w3c.dom.Node;
+import test.org.w3c.dom.ProcessingInstruction;
+import test.org.w3c.dom.Text;
 
-import org.xml.sax.ContentHandler;
-import org.xml.sax.Locator;
-import org.xml.sax.ext.LexicalHandler;
-import org.xml.sax.helpers.LocatorImpl;
+import test.org.xml.sax.ContentHandler;
+import test.org.xml.sax.Locator;
+import test.org.xml.sax.ext.LexicalHandler;
+import test.org.xml.sax.helpers.LocatorImpl;
 
 /**
  * This class does a pre-order walk of the DOM tree, calling a ContentHandler
  * interface as it goes.
  *
- * This class is a copy of the one in com.sun.org.apache.xml.internal.utils.
+ * This class is a copy of the one in com.sun.test.org.apache.xml.internal.utils.
  * It exists to cut the serializers dependancy on that package.
  *
  * @xsl.usage internal
@@ -117,7 +114,7 @@ public final class TreeWalker
    *
    * @throws TransformerException
    */
-  public void traverse(Node pos) throws org.xml.sax.SAXException
+  public void traverse(Node pos) throws test.org.xml.sax.SAXException
   {
 
     this.m_contentHandler.startDocument();
@@ -173,7 +170,7 @@ public final class TreeWalker
    *
    * @throws TransformerException
    */
-  public void traverse(Node pos, Node top) throws org.xml.sax.SAXException
+  public void traverse(Node pos, Node top) throws test.org.xml.sax.SAXException
   {
 
     this.m_contentHandler.startDocument();
@@ -218,7 +215,7 @@ public final class TreeWalker
    * Optimized dispatch of characters.
    */
   private final void dispatachChars(Node node)
-     throws org.xml.sax.SAXException
+     throws test.org.xml.sax.SAXException
   {
     if(m_Serializer != null)
     {
@@ -237,9 +234,9 @@ public final class TreeWalker
    *
    * @param node Node to process
    *
-   * @throws org.xml.sax.SAXException
+   * @throws test.org.xml.sax.SAXException
    */
-  protected void startNode(Node node) throws org.xml.sax.SAXException
+  protected void startNode(Node node) throws test.org.xml.sax.SAXException
   {
 
 //   TODO: <REVIEW>
@@ -427,9 +424,9 @@ public final class TreeWalker
    *
    * @param node Node we just finished processing
    *
-   * @throws org.xml.sax.SAXException
+   * @throws test.org.xml.sax.SAXException
    */
-  protected void endNode(Node node) throws org.xml.sax.SAXException
+  protected void endNode(Node node) throws test.org.xml.sax.SAXException
   {
 
     switch (node.getNodeType())

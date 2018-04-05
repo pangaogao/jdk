@@ -24,13 +24,13 @@ import com.sun.org.apache.xerces.internal.dom.AttrImpl;
 import com.sun.org.apache.xerces.internal.dom.DocumentImpl;
 import com.sun.org.apache.xerces.internal.impl.xs.opti.ElementImpl;
 import java.util.Map;
-import org.w3c.dom.Attr;
-import org.w3c.dom.DOMException;
-import org.w3c.dom.Document;
-import org.w3c.dom.Element;
-import org.w3c.dom.NamedNodeMap;
-import org.w3c.dom.Node;
-import org.w3c.dom.ls.LSException;
+import test.org.w3c.dom.Attr;
+import test.org.w3c.dom.DOMException;
+import test.org.w3c.dom.Document;
+import test.org.w3c.dom.Element;
+import test.org.w3c.dom.NamedNodeMap;
+import test.org.w3c.dom.Node;
+import test.org.w3c.dom.ls.LSException;
 
 /**
  * Some useful utility methods.

@@ -29,15 +29,15 @@ import java.io.OutputStream;
 import java.math.BigInteger;
 
 import com.sun.org.apache.xml.internal.security.exceptions.Base64DecodingException;
-import org.w3c.dom.Document;
-import org.w3c.dom.Element;
-import org.w3c.dom.Node;
-import org.w3c.dom.Text;
+import test.org.w3c.dom.Document;
+import test.org.w3c.dom.Element;
+import test.org.w3c.dom.Node;
+import test.org.w3c.dom.Text;
 
 /**
  * Implementation of MIME's Base64 encoding and decoding conversions.
  * Optimized code. (raw version taken from oreilly.jonathan.util,
- * and currently org.apache.xerces.ds.util.Base64)
+ * and currently test.org.apache.xerces.ds.util.Base64)
  *
  * @author Raul Benito(Of the xerces copy, and little adaptations).
  * @author Anli Shundi

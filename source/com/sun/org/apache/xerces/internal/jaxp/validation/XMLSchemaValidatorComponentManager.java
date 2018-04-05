@@ -48,8 +48,8 @@ import com.sun.org.apache.xerces.internal.xni.XNIException;
 import com.sun.org.apache.xerces.internal.xni.parser.XMLComponent;
 import com.sun.org.apache.xerces.internal.xni.parser.XMLComponentManager;
 import com.sun.org.apache.xerces.internal.xni.parser.XMLConfigurationException;
-import org.w3c.dom.ls.LSResourceResolver;
-import org.xml.sax.ErrorHandler;
+import test.org.w3c.dom.ls.LSResourceResolver;
+import test.org.xml.sax.ErrorHandler;
 
 /**
  * <p>An implementation of XMLComponentManager for a schema validator.</p>

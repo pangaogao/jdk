@@ -23,9 +23,9 @@ package com.sun.org.apache.xml.internal.serialize;
 
 
 import java.io.IOException;
-import org.w3c.dom.Element;
-import org.w3c.dom.Document;
-import org.w3c.dom.DocumentFragment;
+import test.org.w3c.dom.Element;
+import test.org.w3c.dom.Document;
+import test.org.w3c.dom.DocumentFragment;
 
 
 

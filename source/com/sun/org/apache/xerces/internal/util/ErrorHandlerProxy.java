@@ -21,9 +21,9 @@
 package com.sun.org.apache.xerces.internal.util;
 
 import com.sun.org.apache.xerces.internal.xni.parser.XMLErrorHandler;
-import org.xml.sax.ErrorHandler;
-import org.xml.sax.SAXException;
-import org.xml.sax.SAXParseException;
+import test.org.xml.sax.ErrorHandler;
+import test.org.xml.sax.SAXException;
+import test.org.xml.sax.SAXParseException;
 
 /**
  * Wraps {@link XMLErrorHandler} and make it look like a SAX {@link ErrorHandler}.

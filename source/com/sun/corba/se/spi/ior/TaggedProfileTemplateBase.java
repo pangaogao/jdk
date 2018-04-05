@@ -27,7 +27,7 @@ package com.sun.corba.se.spi.ior;
 
 import java.util.Iterator ;
 
-import org.omg.CORBA_2_3.portable.OutputStream ;
+import test.org.omg.CORBA_2_3.portable.OutputStream ;
 
 import com.sun.corba.se.spi.orb.ORB ;
 
@@ -42,7 +42,7 @@ public abstract class TaggedProfileTemplateBase
         EncapsulationUtility.writeEncapsulation( this, os ) ;
     }
 
-    public org.omg.IOP.TaggedComponent[] getIOPComponents( ORB orb, int id )
+    public test.org.omg.IOP.TaggedComponent[] getIOPComponents(ORB orb, int id )
     {
         int count = 0 ;
         Iterator iter = iteratorById( id ) ;
@@ -51,8 +51,8 @@ public abstract class TaggedProfileTemplateBase
             count++ ;
         }
 
-        org.omg.IOP.TaggedComponent[] result = new
-            org.omg.IOP.TaggedComponent[count] ;
+        test.org.omg.IOP.TaggedComponent[] result = new
+            test.org.omg.IOP.TaggedComponent[count] ;
 
         int index = 0 ;
         iter = iteratorById( id ) ;

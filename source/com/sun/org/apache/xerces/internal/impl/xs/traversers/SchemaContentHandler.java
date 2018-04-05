@@ -31,13 +31,13 @@ import com.sun.org.apache.xerces.internal.xni.QName;
 import com.sun.org.apache.xerces.internal.xni.XMLString;
 import com.sun.org.apache.xerces.internal.xni.XNIException;
 import com.sun.org.apache.xerces.internal.xni.parser.XMLParseException;
-import org.w3c.dom.Document;
-import org.xml.sax.Attributes;
-import org.xml.sax.ContentHandler;
-import org.xml.sax.Locator;
-import org.xml.sax.SAXException;
-import org.xml.sax.SAXParseException;
-import org.xml.sax.helpers.LocatorImpl;
+import test.org.w3c.dom.Document;
+import test.org.xml.sax.Attributes;
+import test.org.xml.sax.ContentHandler;
+import test.org.xml.sax.Locator;
+import test.org.xml.sax.SAXException;
+import test.org.xml.sax.SAXParseException;
+import test.org.xml.sax.helpers.LocatorImpl;
 
 /**
  * <p>SchemaContentHandler converts SAX events into XNI
@@ -84,21 +84,21 @@ final class SchemaContentHandler implements ContentHandler {
     public SchemaContentHandler() {}
 
     /*
-     * @see org.xml.sax.ContentHandler#setDocumentLocator(org.xml.sax.Locator)
+     * @see test.org.xml.sax.ContentHandler#setDocumentLocator(test.org.xml.sax.Locator)
      */
     public Document getDocument() {
         return fSchemaDOMParser.getDocument();
     }
 
     /*
-     * @see org.xml.sax.ContentHandler#setDocumentLocator(org.xml.sax.Locator)
+     * @see test.org.xml.sax.ContentHandler#setDocumentLocator(test.org.xml.sax.Locator)
      */
     public void setDocumentLocator(Locator locator) {
         fSAXLocatorWrapper.setLocator(locator);
     }
 
     /*
-     * @see org.xml.sax.ContentHandler#startDocument()
+     * @see test.org.xml.sax.ContentHandler#startDocument()
      */
     public void startDocument() throws SAXException {
         fNeedPushNSContext = true;
@@ -114,7 +114,7 @@ final class SchemaContentHandler implements ContentHandler {
     }
 
     /*
-     * @see org.xml.sax.ContentHandler#endDocument()
+     * @see test.org.xml.sax.ContentHandler#endDocument()
      */
     public void endDocument() throws SAXException {
         fSAXLocatorWrapper.setLocator(null);
@@ -130,7 +130,7 @@ final class SchemaContentHandler implements ContentHandler {
     }
 
     /*
-     * @see org.xml.sax.ContentHandler#startPrefixMapping(java.lang.String, java.lang.String)
+     * @see test.org.xml.sax.ContentHandler#startPrefixMapping(java.lang.String, java.lang.String)
      */
     public void startPrefixMapping(String prefix, String uri) throws SAXException {
         if (fNeedPushNSContext) {
@@ -153,14 +153,14 @@ final class SchemaContentHandler implements ContentHandler {
     }
 
     /*
-     * @see org.xml.sax.ContentHandler#endPrefixMapping(java.lang.String)
+     * @see test.org.xml.sax.ContentHandler#endPrefixMapping(java.lang.String)
      */
     public void endPrefixMapping(String prefix) throws SAXException {
         // do nothing
     }
 
     /*
-     * @see org.xml.sax.ContentHandler#startElement(java.lang.String, java.lang.String, java.lang.String, org.xml.sax.Attributes)
+     * @see test.org.xml.sax.ContentHandler#startElement(java.lang.String, java.lang.String, java.lang.String, test.org.xml.sax.Attributes)
      */
     public void startElement(String uri, String localName, String qName, Attributes atts) throws SAXException {
         if (fNeedPushNSContext) {
@@ -192,7 +192,7 @@ final class SchemaContentHandler implements ContentHandler {
     }
 
     /*
-     * @see org.xml.sax.ContentHandler#endElement(java.lang.String, java.lang.String, java.lang.String)
+     * @see test.org.xml.sax.ContentHandler#endElement(java.lang.String, java.lang.String, java.lang.String)
      */
     public void endElement(String uri, String localName, String qName) throws SAXException {
         fillQName(fElementQName, uri, localName, qName);
@@ -211,7 +211,7 @@ final class SchemaContentHandler implements ContentHandler {
     }
 
     /*
-     * @see org.xml.sax.ContentHandler#characters(char[], int, int)
+     * @see test.org.xml.sax.ContentHandler#characters(char[], int, int)
      */
     public void characters(char[] ch, int start, int length) throws SAXException {
         try {
@@ -227,7 +227,7 @@ final class SchemaContentHandler implements ContentHandler {
     }
 
     /*
-     * @see org.xml.sax.ContentHandler#ignorableWhitespace(char[], int, int)
+     * @see test.org.xml.sax.ContentHandler#ignorableWhitespace(char[], int, int)
      */
     public void ignorableWhitespace(char[] ch, int start, int length) throws SAXException {
         try {
@@ -243,7 +243,7 @@ final class SchemaContentHandler implements ContentHandler {
     }
 
     /*
-     * @see org.xml.sax.ContentHandler#processingInstruction(java.lang.String, java.lang.String)
+     * @see test.org.xml.sax.ContentHandler#processingInstruction(java.lang.String, java.lang.String)
      */
     public void processingInstruction(String target, String data) throws SAXException {
         try {
@@ -259,7 +259,7 @@ final class SchemaContentHandler implements ContentHandler {
     }
 
     /*
-     * @see org.xml.sax.ContentHandler#skippedEntity(java.lang.String)
+     * @see test.org.xml.sax.ContentHandler#skippedEntity(java.lang.String)
      */
     public void skippedEntity(String arg) throws SAXException {
         // do-nothing

@@ -27,7 +27,7 @@ import com.sun.org.apache.xerces.internal.impl.xs.XSNotationDecl;
 import com.sun.org.apache.xerces.internal.impl.xs.util.XSObjectListImpl;
 import com.sun.org.apache.xerces.internal.util.DOMUtil;
 import com.sun.org.apache.xerces.internal.xs.XSObjectList;
-import org.w3c.dom.Element;
+import test.org.w3c.dom.Element;
 
 /**
  * The notation declaration schema component traverser.

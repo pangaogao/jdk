@@ -45,12 +45,12 @@ import com.sun.org.apache.xml.internal.security.transforms.params.XPath2FilterCo
 import com.sun.org.apache.xml.internal.security.utils.XMLUtils;
 import com.sun.org.apache.xml.internal.security.utils.XPathAPI;
 import com.sun.org.apache.xml.internal.security.utils.XPathFactory;
-import org.w3c.dom.DOMException;
-import org.w3c.dom.Document;
-import org.w3c.dom.Element;
-import org.w3c.dom.Node;
-import org.w3c.dom.NodeList;
-import org.xml.sax.SAXException;
+import test.org.w3c.dom.DOMException;
+import test.org.w3c.dom.Document;
+import test.org.w3c.dom.Element;
+import test.org.w3c.dom.Node;
+import test.org.w3c.dom.NodeList;
+import test.org.xml.sax.SAXException;
 
 /**
  * Implements the <I>XML Signature XPath Filter v2.0</I>
@@ -181,7 +181,7 @@ class XPath2NodeFilter implements NodeFilter {
     }
 
     /**
-     * @see com.sun.org.apache.xml.internal.security.signature.NodeFilter#isNodeInclude(org.w3c.dom.Node)
+     * @see com.sun.org.apache.xml.internal.security.signature.NodeFilter#isNodeInclude(test.org.w3c.dom.Node)
      */
     public int isNodeInclude(Node currentNode) {
         int result = 1;

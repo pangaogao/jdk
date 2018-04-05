@@ -25,8 +25,6 @@
 
 package com.sun.corba.se.impl.protocol.giopmsgheaders;
 
-import com.sun.corba.se.spi.ior.iiop.GIOPVersion;
-
 /**
  * This implements the GIOP 1.0 CancelRequest header.
  *
@@ -58,12 +56,12 @@ public final class CancelRequestMessage_1_0 extends Message_1_0
 
     // IO methods
 
-    public void read(org.omg.CORBA.portable.InputStream istream) {
+    public void read(test.org.omg.CORBA.portable.InputStream istream) {
         super.read(istream);
         this.request_id = istream.read_ulong();
     }
 
-    public void write(org.omg.CORBA.portable.OutputStream ostream) {
+    public void write(test.org.omg.CORBA.portable.OutputStream ostream) {
         super.write(ostream);
         ostream.write_ulong(this.request_id);
     }

@@ -46,7 +46,7 @@ import com.sun.org.apache.xerces.internal.xni.NamespaceContext;
 import com.sun.org.apache.xerces.internal.xni.QName;
 import com.sun.org.apache.xerces.internal.xni.XMLString;
 import com.sun.org.apache.xerces.internal.xni.XNIException;
-import org.w3c.dom.Document;
+import test.org.w3c.dom.Document;
 
 /**
  * <p>StAXSchemaParser reads StAX events, converts them into XNI events

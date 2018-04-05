@@ -25,14 +25,7 @@
 
 package com.sun.corba.se.spi.orb ;
 
-import java.lang.reflect.Field ;
-
-import java.util.Map ;
-import java.util.Set ;
-import java.util.Iterator ;
-import java.util.Properties ;
-
-import org.omg.PortableInterceptor.ORBInitializer ;
+import test.org.omg.PortableInterceptor.ORBInitializer ;
 
 import com.sun.corba.se.pept.transport.Acceptor;
 

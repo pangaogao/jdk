@@ -28,10 +28,9 @@ package com.sun.corba.se.impl.transport;
 import java.util.Iterator;
 import java.util.List;
 
-import org.omg.CORBA.COMM_FAILURE;
-import org.omg.CORBA.CompletionStatus;
-import org.omg.CORBA.INTERNAL;
-import org.omg.CORBA.SystemException;
+import test.org.omg.CORBA.COMM_FAILURE;
+import test.org.omg.CORBA.CompletionStatus;
+import test.org.omg.CORBA.SystemException;
 
 import com.sun.corba.se.pept.transport.ContactInfo ;
 import com.sun.corba.se.pept.transport.ContactInfoList ;

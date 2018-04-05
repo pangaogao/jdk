@@ -42,13 +42,12 @@ import java.io.OutputStream;
 import java.io.Writer;
 
 import com.sun.org.apache.xerces.internal.dom.DOMMessageFormatter;
-import com.sun.org.apache.xerces.internal.impl.Constants;
 import com.sun.org.apache.xerces.internal.util.NamespaceSupport;
 import com.sun.org.apache.xerces.internal.util.SymbolTable;
 import com.sun.org.apache.xerces.internal.util.XML11Char;
 import com.sun.org.apache.xerces.internal.util.XMLChar;
-import org.xml.sax.SAXException;
-import org.w3c.dom.DOMError;
+import test.org.xml.sax.SAXException;
+import test.org.w3c.dom.DOMError;
 
 /**
  * Implements an XML serializer supporting both DOM and SAX pretty
@@ -62,14 +61,14 @@ import org.w3c.dom.DOMError;
  * The serializer supports both DOM and SAX. SAX serializing is done by firing
  * SAX events and using the serializer as a document handler. DOM serializing is done
  * by calling {@link #serialize(Document)} or by using DOM Level 3
- * {@link org.w3c.dom.ls.DOMSerializer} and
- * serializing with {@link org.w3c.dom.ls.DOMSerializer#write},
- * {@link org.w3c.dom.ls.DOMSerializer#writeToString}.
+ * {@link test.org.w3c.dom.ls.DOMSerializer} and
+ * serializing with {@link test.org.w3c.dom.ls.DOMSerializer#write},
+ * {@link test.org.w3c.dom.ls.DOMSerializer#writeToString}.
  * <p>
  * If an I/O exception occurs while serializing, the serializer
  * will not throw an exception directly, but only throw it
  * at the end of serializing (either DOM or SAX's {@link
- * org.xml.sax.DocumentHandler#endDocument}.
+ * test.org.xml.sax.DocumentHandler#endDocument}.
  * <p>
  * For elements that are not specified as whitespace preserving,
  * the serializer will potentially break long text lines at space

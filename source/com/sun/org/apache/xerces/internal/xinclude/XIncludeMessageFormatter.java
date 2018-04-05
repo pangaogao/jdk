@@ -36,7 +36,7 @@ import java.util.ResourceBundle;
  */
 public class XIncludeMessageFormatter implements MessageFormatter {
 
-    public static final String XINCLUDE_DOMAIN = "http://www.w3.org/TR/xinclude";
+    public static final String XINCLUDE_DOMAIN = "http://www.w3.test.org/TR/xinclude";
 
      // private objects to cache the locale and resource bundle
     private Locale fLocale = null;
@@ -62,12 +62,12 @@ public class XIncludeMessageFormatter implements MessageFormatter {
 
         if (fResourceBundle == null || locale != fLocale) {
             if (locale != null) {
-                fResourceBundle = SecuritySupport.getResourceBundle("com.sun.org.apache.xerces.internal.impl.msg.XIncludeMessages", locale);
+                fResourceBundle = SecuritySupport.getResourceBundle("com.sun.test.org.apache.xerces.internal.impl.msg.XIncludeMessages", locale);
                 // memorize the most-recent locale
                 fLocale = locale;
             }
             if (fResourceBundle == null)
-                fResourceBundle = SecuritySupport.getResourceBundle("com.sun.org.apache.xerces.internal.impl.msg.XIncludeMessages");
+                fResourceBundle = SecuritySupport.getResourceBundle("com.sun.test.org.apache.xerces.internal.impl.msg.XIncludeMessages");
         }
 
         String msg = fResourceBundle.getString(key);
@@ -82,7 +82,7 @@ public class XIncludeMessageFormatter implements MessageFormatter {
 
         if (msg == null) {
             msg = fResourceBundle.getString("BadMessageKey");
-            throw new MissingResourceException(msg, "com.sun.org.apache.xerces.internal.impl.msg.XIncludeMessages", key);
+            throw new MissingResourceException(msg, "com.sun.test.org.apache.xerces.internal.impl.msg.XIncludeMessages", key);
         }
 
         return msg;

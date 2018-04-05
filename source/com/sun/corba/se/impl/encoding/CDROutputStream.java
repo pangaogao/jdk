@@ -25,13 +25,11 @@
 package com.sun.corba.se.impl.encoding;
 
 import java.io.IOException;
-import java.io.Serializable;
-import java.math.BigDecimal;
 import java.nio.ByteBuffer;
 
-import org.omg.CORBA.TypeCode;
-import org.omg.CORBA.Principal;
-import org.omg.CORBA.Any;
+import test.org.omg.CORBA.TypeCode;
+import test.org.omg.CORBA.Principal;
+import test.org.omg.CORBA.Any;
 
 import com.sun.corba.se.pept.protocol.MessageMediator;
 
@@ -40,9 +38,6 @@ import com.sun.corba.se.spi.logging.CORBALogDomains;
 import com.sun.corba.se.spi.ior.iiop.GIOPVersion;
 import com.sun.corba.se.spi.protocol.CorbaMessageMediator;
 
-import com.sun.corba.se.impl.encoding.CodeSetConversion;
-import com.sun.corba.se.impl.encoding.OSFCodeSetRegistry;
-import com.sun.corba.se.impl.orbutil.ORBConstants;
 import com.sun.corba.se.impl.logging.ORBUtilSystemException;
 import com.sun.corba.se.impl.protocol.giopmsgheaders.Message;
 
@@ -50,9 +45,9 @@ import com.sun.corba.se.impl.protocol.giopmsgheaders.Message;
  * This is delegates to the real implementation.
  */
 public abstract class CDROutputStream
-    extends org.omg.CORBA_2_3.portable.OutputStream
+    extends test.org.omg.CORBA_2_3.portable.OutputStream
     implements com.sun.corba.se.impl.encoding.MarshalOutputStream,
-               org.omg.CORBA.DataOutputStream, org.omg.CORBA.portable.ValueOutputStream
+               test.org.omg.CORBA.DataOutputStream, test.org.omg.CORBA.portable.ValueOutputStream
 {
     private CDROutputStreamBase impl;
     protected ORB orb ;
@@ -126,10 +121,10 @@ public abstract class CDROutputStream
              bufferManager, streamFormatVersion, true);
     }
 
-    // org.omg.CORBA.portable.OutputStream
+    // test.org.omg.CORBA.portable.OutputStream
 
     // Provided by IIOPOutputStream and EncapsOutputStream
-    public abstract org.omg.CORBA.portable.InputStream create_input_stream();
+    public abstract test.org.omg.CORBA.portable.InputStream create_input_stream();
 
     public final void write_boolean(boolean value) {
         impl.write_boolean(value);
@@ -210,7 +205,7 @@ public abstract class CDROutputStream
     public final void write_double_array(double[] value, int offset, int length) {
         impl.write_double_array(value, offset, length);
     }
-    public final void write_Object(org.omg.CORBA.Object value) {
+    public final void write_Object(test.org.omg.CORBA.Object value) {
         impl.write_Object(value);
     }
     public final void write_TypeCode(TypeCode value) {
@@ -232,16 +227,16 @@ public abstract class CDROutputStream
         impl.write_fixed(value);
     }
 
-    public final void write_Context(org.omg.CORBA.Context ctx,
-                              org.omg.CORBA.ContextList contexts) {
+    public final void write_Context(test.org.omg.CORBA.Context ctx,
+                                    test.org.omg.CORBA.ContextList contexts) {
         impl.write_Context(ctx, contexts);
     }
 
-    public final org.omg.CORBA.ORB orb() {
+    public final test.org.omg.CORBA.ORB orb() {
         return impl.orb();
     }
 
-    // org.omg.CORBA_2_3.portable.OutputStream
+    // test.org.omg.CORBA_2_3.portable.OutputStream
     public final void write_value(java.io.Serializable value) {
         impl.write_value(value);
     }
@@ -255,7 +250,7 @@ public abstract class CDROutputStream
     }
 
     public final void write_value(java.io.Serializable value,
-                            org.omg.CORBA.portable.BoxedValueHelper factory) {
+                            test.org.omg.CORBA.portable.BoxedValueHelper factory) {
         impl.write_value(value, factory);
     }
 
@@ -303,7 +298,7 @@ public abstract class CDROutputStream
         return impl.toByteArray();
     }
 
-    // org.omg.CORBA.DataOutputStream
+    // test.org.omg.CORBA.DataOutputStream
     public final void write_Abstract (java.lang.Object value) {
         impl.write_Abstract(value);
     }
@@ -312,7 +307,7 @@ public abstract class CDROutputStream
         impl.write_Value(value);
     }
 
-    public final void write_any_array(org.omg.CORBA.Any[] seq, int offset, int length) {
+    public final void write_any_array(test.org.omg.CORBA.Any[] seq, int offset, int length) {
         impl.write_any_array(seq, offset, length);
     }
 
@@ -326,7 +321,7 @@ public abstract class CDROutputStream
         return corbaMessageMediator;
     }
 
-    // org.omg.CORBA.portable.ValueBase
+    // test.org.omg.CORBA.portable.ValueBase
     public final String[] _truncatable_ids() {
         return impl._truncatable_ids();
     }
@@ -387,7 +382,7 @@ public abstract class CDROutputStream
         impl.write_fixed(bigDecimal, digits, scale);
     }
 
-    public final void writeOctetSequenceTo(org.omg.CORBA.portable.OutputStream s) {
+    public final void writeOctetSequenceTo(test.org.omg.CORBA.portable.OutputStream s) {
         impl.writeOctetSequenceTo(s);
     }
 

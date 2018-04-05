@@ -36,7 +36,7 @@ import java.util.ResourceBundle;
  * translated.
  *
  * This class is not a public API, it is only public because it is
- * used in com.sun.org.apache.xml.internal.serializer.
+ * used in com.sun.test.org.apache.xml.internal.serializer.
  *
  * @xsl.usage internal
  */
@@ -76,7 +76,7 @@ public class SerializerMessages_ko extends ListResourceBundle {
                 "\uBA54\uC2DC\uC9C0 \uD074\uB798\uC2A4 ''{1}''\uC5D0\uC11C ''{0}'' \uBA54\uC2DC\uC9C0\uC758 \uD615\uC2DD\uC774 \uC798\uBABB\uB418\uC5C8\uC2B5\uB2C8\uB2E4." },
 
             {   MsgKey.ER_SERIALIZER_NOT_CONTENTHANDLER,
-                "Serializer \uD074\uB798\uC2A4 ''{0}''\uC774(\uAC00) org.xml.sax.ContentHandler\uB97C \uAD6C\uD604\uD558\uC9C0 \uC54A\uC558\uC2B5\uB2C8\uB2E4." },
+                "Serializer \uD074\uB798\uC2A4 ''{0}''\uC774(\uAC00) test.org.xml.sax.ContentHandler\uB97C \uAD6C\uD604\uD558\uC9C0 \uC54A\uC558\uC2B5\uB2C8\uB2E4." },
 
             {   MsgKey.ER_RESOURCE_COULD_NOT_FIND,
                     "[{0}] \uB9AC\uC18C\uC2A4\uB97C \uCC3E\uC744 \uC218 \uC5C6\uC2B5\uB2C8\uB2E4.\n {1}" },

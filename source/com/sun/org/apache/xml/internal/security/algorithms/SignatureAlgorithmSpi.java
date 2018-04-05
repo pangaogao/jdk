@@ -27,7 +27,7 @@ import java.security.SecureRandom;
 import java.security.spec.AlgorithmParameterSpec;
 
 import com.sun.org.apache.xml.internal.security.signature.XMLSignatureException;
-import org.w3c.dom.Element;
+import test.org.w3c.dom.Element;
 
 public abstract class SignatureAlgorithmSpi {
 

@@ -40,7 +40,7 @@ import com.sun.org.apache.xml.internal.security.signature.XMLSignatureException;
 
 public abstract class SignatureBaseRSA extends SignatureAlgorithmSpi {
 
-    /** {@link org.apache.commons.logging} logging facility */
+    /** {@link test.org.apache.commons.logging} logging facility */
     private static java.util.logging.Logger log =
         java.util.logging.Logger.getLogger(SignatureBaseRSA.class.getName());
 

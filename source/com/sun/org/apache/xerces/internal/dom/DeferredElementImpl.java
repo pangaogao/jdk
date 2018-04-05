@@ -26,7 +26,7 @@
 
 package com.sun.org.apache.xerces.internal.dom;
 
-import org.w3c.dom.NamedNodeMap;
+import test.org.w3c.dom.NamedNodeMap;
 
 /**
  * Elements represent most of the "markup" and structure of the

@@ -34,9 +34,9 @@ import com.sun.corba.se.spi.extension.ServantCachingPolicy ;
 import com.sun.corba.se.spi.extension.ZeroPortPolicy ;
 import com.sun.corba.se.spi.extension.CopyObjectPolicy ;
 
-import org.omg.CORBA.*;
-import org.omg.PortableServer.*;
-import org.omg.PortableServer.POAPackage.*;
+import test.org.omg.CORBA.*;
+import test.org.omg.PortableServer.*;
+import test.org.omg.PortableServer.POAPackage.*;
 
 public final class Policies {
 /* Order of *POLICY_ID :

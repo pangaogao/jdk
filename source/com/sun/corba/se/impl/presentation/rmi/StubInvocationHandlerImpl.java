@@ -29,25 +29,17 @@ import java.security.AccessController;
 import java.security.PrivilegedAction;
 
 import java.lang.reflect.Method ;
-import java.lang.reflect.InvocationHandler ;
 import java.lang.reflect.Proxy ;
 import java.lang.reflect.InvocationTargetException ;
 
-import java.io.ObjectInputStream ;
-import java.io.ObjectOutputStream ;
-import java.io.IOException ;
-
-import java.rmi.Remote ;
-
 import javax.rmi.CORBA.Util ;
 
-import org.omg.CORBA.portable.ObjectImpl ;
-import org.omg.CORBA.portable.Delegate ;
-import org.omg.CORBA.portable.ServantObject ;
-import org.omg.CORBA.portable.ApplicationException ;
-import org.omg.CORBA.portable.RemarshalException ;
+import test.org.omg.CORBA.portable.Delegate ;
+import test.org.omg.CORBA.portable.ServantObject ;
+import test.org.omg.CORBA.portable.ApplicationException ;
+import test.org.omg.CORBA.portable.RemarshalException ;
 
-import org.omg.CORBA.SystemException ;
+import test.org.omg.CORBA.SystemException ;
 
 import com.sun.corba.se.spi.orb.ORB ;
 
@@ -58,21 +50,17 @@ import com.sun.corba.se.spi.transport.CorbaContactInfoList ;
 import com.sun.corba.se.spi.protocol.CorbaClientDelegate ;
 import com.sun.corba.se.spi.protocol.LocalClientRequestDispatcher ;
 
-import com.sun.corba.se.spi.presentation.rmi.IDLNameTranslator ;
 import com.sun.corba.se.spi.presentation.rmi.DynamicMethodMarshaller ;
 import com.sun.corba.se.spi.presentation.rmi.PresentationManager ;
 import com.sun.corba.se.spi.presentation.rmi.StubAdapter ;
 
-import com.sun.corba.se.spi.orbutil.proxy.InvocationHandlerFactory ;
 import com.sun.corba.se.spi.orbutil.proxy.LinkedInvocationHandler ;
-
-import com.sun.corba.se.impl.corba.CORBAObjectImpl ;
 
 public final class StubInvocationHandlerImpl implements LinkedInvocationHandler
 {
     private transient PresentationManager.ClassData classData ;
     private transient PresentationManager pm ;
-    private transient org.omg.CORBA.Object stub ;
+    private transient test.org.omg.CORBA.Object stub ;
     private transient Proxy self ;
 
     public void setProxy( Proxy self )
@@ -86,7 +74,7 @@ public final class StubInvocationHandlerImpl implements LinkedInvocationHandler
     }
 
     public StubInvocationHandlerImpl( PresentationManager pm,
-        PresentationManager.ClassData classData, org.omg.CORBA.Object stub )
+        PresentationManager.ClassData classData, test.org.omg.CORBA.Object stub )
     {
         SecurityManager s = System.getSecurityManager();
         if (s != null) {
@@ -137,18 +125,18 @@ public final class StubInvocationHandlerImpl implements LinkedInvocationHandler
 
         if (!isLocal()) {
             try {
-                org.omg.CORBA_2_3.portable.InputStream in = null ;
+                test.org.omg.CORBA_2_3.portable.InputStream in = null ;
                 try {
                     // create request
-                    org.omg.CORBA_2_3.portable.OutputStream out =
-                        (org.omg.CORBA_2_3.portable.OutputStream)
+                    test.org.omg.CORBA_2_3.portable.OutputStream out =
+                        (test.org.omg.CORBA_2_3.portable.OutputStream)
                         delegate.request( stub, giopMethodName, true);
 
                     // marshal arguments
                     dmm.writeArguments( out, args ) ;
 
                     // finish invocation
-                    in = (org.omg.CORBA_2_3.portable.InputStream)
+                    in = (test.org.omg.CORBA_2_3.portable.InputStream)
                         delegate.invoke( stub, out);
 
                     // unmarshal result

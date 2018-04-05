@@ -31,15 +31,14 @@
 
 package com.sun.corba.se.impl.util;
 
-import java.util.StringTokenizer;
 import java.util.Hashtable;
 import java.io.IOException;
 import java.lang.reflect.Method;
 
 // Imports for using codebase URL to load class
 import java.net.MalformedURLException;
-import org.omg.CORBA.portable.ValueBase;
-import org.omg.CORBA.portable.IDLEntity;
+import test.org.omg.CORBA.portable.ValueBase;
+import test.org.omg.CORBA.portable.IDLEntity;
 
 //d11638 files in the same package, therefore remove their reference
 //import com.sun.corba.se.impl.util.JDKBridge;
@@ -116,8 +115,8 @@ public class RepositoryId {
     private static final String kSequenceKeyword = "seq";
     private static final String kValuePrefix = "RMI:";
     private static final String kIDLPrefix = "IDL:";
-    private static final String kIDLNamePrefix = "omg.org/";
-    private static final String kIDLClassnamePrefix = "org.omg.";
+    private static final String kIDLNamePrefix = "omg.test.org/";
+    private static final String kIDLClassnamePrefix = "test.org.omg.";
     private static final String kSequencePrefix = "[";
     private static final String kCORBAPrefix = "CORBA/";
     private static final String kArrayPrefix = kValuePrefix + kSequencePrefix + kCORBAPrefix;
@@ -153,11 +152,11 @@ public class RepositoryId {
     public static final String kWStringValueVersion = "1.0";
     public static final String kWStringValueHash = ":"+kWStringValueVersion;
     public static final String kWStringStubValue = "WStringValue";
-    public static final String kWStringTypeStr = "omg.org/CORBA/"+kWStringStubValue;
+    public static final String kWStringTypeStr = "omg.test.org/CORBA/"+kWStringStubValue;
     public static final String kWStringValueRepID = kIDLPrefix + kWStringTypeStr + kWStringValueHash;
 
     // Any
-    public static final String kAnyRepID = kIDLPrefix + "omg.org/CORBA/Any";
+    public static final String kAnyRepID = kIDLPrefix + "omg.test.org/CORBA/Any";
 
     // Class
     // Anita4: convert to uppercase
@@ -239,7 +238,7 @@ public class RepositoryId {
         kSpecialCasesClasses.put(kClassDescTypeStr, java.lang.Class.class);
         kSpecialCasesClasses.put(kRemoteTypeStr, java.rmi.Remote.class);
 
-        kSpecialCasesClasses.put("org.omg.CORBA.WStringValue", java.lang.String.class);
+        kSpecialCasesClasses.put("test.org.omg.CORBA.WStringValue", java.lang.String.class);
         kSpecialCasesClasses.put("javax.rmi.CORBA.ClassDesc", java.lang.Class.class);
         //kSpecialCasesClasses.put(kRemoteTypeStr, java.rmi.Remote.class);
     }
@@ -292,7 +291,7 @@ public class RepositoryId {
 
     // Interface Rep ID Strings
     public static final String kjava_rmi_Remote = createForAnyType(java.rmi.Remote.class);
-    public static final String korg_omg_CORBA_Object = createForAnyType(org.omg.CORBA.Object.class);
+    public static final String korg_omg_CORBA_Object = createForAnyType(test.org.omg.CORBA.Object.class);
 
     // Dummy arguments for getIdFromHelper method
     public static final Class kNoParamTypes[] ={};
@@ -717,7 +716,7 @@ public class RepositoryId {
      * Creates a repository ID for a normal Java Type.
      * @param ser The Java object to create a repository ID for
      * @exception com.sun.corba.se.impl.io.TypeMismatchException if ser implements the
-     * org.omg.CORBA.portable.IDLEntity interface which indicates it is an IDL Value type.
+     * test.org.omg.CORBA.portable.IDLEntity interface which indicates it is an IDL Value type.
      **/
     public static String createForJavaType(java.io.Serializable ser)
         throws com.sun.corba.se.impl.io.TypeMismatchException
@@ -745,7 +744,7 @@ public class RepositoryId {
      * Creates a repository ID for a normal Java Type.
      * @param clz The Java class to create a repository ID for
      * @exception com.sun.corba.se.impl.io.TypeMismatchException if ser implements the
-     * org.omg.CORBA.portable.IDLEntity interface which indicates it is an IDL Value type.
+     * test.org.omg.CORBA.portable.IDLEntity interface which indicates it is an IDL Value type.
      **/
     public static String createForJavaType(Class clz)
         throws com.sun.corba.se.impl.io.TypeMismatchException
@@ -774,7 +773,7 @@ public class RepositoryId {
      * @param major The major version number
      * @param minor The minor version number
      * @exception com.sun.corba.se.impl.io.TypeMismatchException if ser does not implement the
-     * org.omg.CORBA.portable.IDLEntity interface which indicates it is an IDL Value type.
+     * test.org.omg.CORBA.portable.IDLEntity interface which indicates it is an IDL Value type.
      **/
     public static String createForIDLType(Class ser, int major, int minor)
         throws com.sun.corba.se.impl.io.TypeMismatchException
@@ -800,19 +799,19 @@ public class RepositoryId {
         }
         catch(java.lang.ClassNotFoundException cnfe)
             {
-                throw new org.omg.CORBA.MARSHAL(cnfe.toString());
+                throw new test.org.omg.CORBA.MARSHAL(cnfe.toString());
             }
         catch(java.lang.NoSuchMethodException nsme)
             {
-                throw new org.omg.CORBA.MARSHAL(nsme.toString());
+                throw new test.org.omg.CORBA.MARSHAL(nsme.toString());
             }
         catch(java.lang.reflect.InvocationTargetException ite)
             {
-                throw new org.omg.CORBA.MARSHAL(ite.toString());
+                throw new test.org.omg.CORBA.MARSHAL(ite.toString());
             }
         catch(java.lang.IllegalAccessException iae)
             {
-                throw new org.omg.CORBA.MARSHAL(iae.toString());
+                throw new test.org.omg.CORBA.MARSHAL(iae.toString());
     }
     }
 
@@ -847,7 +846,7 @@ public class RepositoryId {
         return (clazz.isInterface() &&
                 IDLEntity.class.isAssignableFrom(clazz) &&
                 (!ValueBase.class.isAssignableFrom(clazz)) &&
-                (!org.omg.CORBA.Object.class.isAssignableFrom(clazz)));
+                (!test.org.omg.CORBA.Object.class.isAssignableFrom(clazz)));
 
     }
 

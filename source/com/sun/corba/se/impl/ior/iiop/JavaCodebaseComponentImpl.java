@@ -25,9 +25,9 @@
 
 package com.sun.corba.se.impl.ior.iiop;
 
-import org.omg.IOP.TAG_JAVA_CODEBASE ;
+import test.org.omg.IOP.TAG_JAVA_CODEBASE ;
 
-import org.omg.CORBA_2_3.portable.OutputStream ;
+import test.org.omg.CORBA_2_3.portable.OutputStream ;
 
 import com.sun.corba.se.spi.ior.TaggedComponentBase ;
 

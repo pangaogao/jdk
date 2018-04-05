@@ -30,7 +30,7 @@ package com.sun.org.apache.xml.internal.security.signature.reference;
 
 import java.util.Iterator;
 
-import org.w3c.dom.Node;
+import test.org.w3c.dom.Node;
 
 /**
  * An abstract representation of a <code>ReferenceData</code> type containing a node-set.

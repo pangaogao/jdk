@@ -20,12 +20,12 @@
 
 package com.sun.org.apache.xerces.internal.impl.xs.opti;
 
-import org.w3c.dom.TypeInfo;
-import org.w3c.dom.Attr;
-import org.w3c.dom.Element;
-import org.w3c.dom.NodeList;
+import test.org.w3c.dom.TypeInfo;
+import test.org.w3c.dom.Attr;
+import test.org.w3c.dom.Element;
+import test.org.w3c.dom.NodeList;
 
-import org.w3c.dom.DOMException;
+import test.org.w3c.dom.DOMException;
 
 
 /**
@@ -48,7 +48,7 @@ public class DefaultElement extends NodeImpl
 
 
     //
-    // org.w3c.dom.Element methods
+    // test.org.w3c.dom.Element methods
     //
 
     // getter methods

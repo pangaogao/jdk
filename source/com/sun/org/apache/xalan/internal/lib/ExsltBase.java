@@ -24,8 +24,8 @@ package com.sun.org.apache.xalan.internal.lib;
 
 import com.sun.org.apache.xml.internal.dtm.ref.DTMNodeProxy;
 
-import org.w3c.dom.Node;
-import org.w3c.dom.NodeList;
+import test.org.w3c.dom.Node;
+import test.org.w3c.dom.NodeList;
 
 /**
  * The base class for some EXSLT extension classes.

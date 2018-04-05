@@ -32,14 +32,14 @@ import java.util.Iterator ;
 import java.util.Map ;
 import java.util.WeakHashMap ;
 
-import org.omg.CORBA.OBJECT_NOT_EXIST ;
-import org.omg.CORBA.TRANSIENT ;
+import test.org.omg.CORBA.OBJECT_NOT_EXIST ;
+import test.org.omg.CORBA.TRANSIENT ;
 
-import org.omg.CORBA.ORBPackage.InvalidName ;
+import test.org.omg.CORBA.ORBPackage.InvalidName ;
 
-import org.omg.PortableServer.Servant ;
-import org.omg.PortableServer.POA ;
-import org.omg.PortableServer.POAManager ;
+import test.org.omg.PortableServer.Servant ;
+import test.org.omg.PortableServer.POA ;
+import test.org.omg.PortableServer.POAManager ;
 
 import com.sun.corba.se.spi.oa.ObjectAdapter ;
 import com.sun.corba.se.spi.oa.ObjectAdapterFactory ;
@@ -51,16 +51,12 @@ import com.sun.corba.se.spi.orb.ORB ;
 import com.sun.corba.se.spi.orbutil.closure.Closure ;
 import com.sun.corba.se.spi.orbutil.closure.ClosureFactory ;
 
-import com.sun.corba.se.spi.protocol.PIHandler ;
-
 import com.sun.corba.se.spi.logging.CORBALogDomains ;
 
 import com.sun.corba.se.impl.logging.POASystemException ;
 import com.sun.corba.se.impl.logging.OMGSystemException ;
 
 import com.sun.corba.se.impl.orbutil.ORBConstants ;
-
-import com.sun.corba.se.impl.oa.poa.POAManagerImpl ;
 
 public class POAFactory implements ObjectAdapterFactory
 {
@@ -145,7 +141,7 @@ public class POAFactory implements ObjectAdapterFactory
                     poa = poa.find_POA( name, true ) ;
                 }
             }
-        } catch ( org.omg.PortableServer.POAPackage.AdapterNonExistent ex ){
+        } catch ( test.org.omg.PortableServer.POAPackage.AdapterNonExistent ex ){
             throw omgWrapper.noObjectAdaptor( ex ) ;
         } catch ( OBJECT_NOT_EXIST ex ) {
             throw ex;
@@ -174,7 +170,7 @@ public class POAFactory implements ObjectAdapterFactory
         while ( managers.hasNext() ) {
             try {
                 ((POAManager)managers.next()).deactivate(true, waitForCompletion);
-            } catch ( org.omg.PortableServer.POAManagerPackage.AdapterInactive e ) {}
+            } catch ( test.org.omg.PortableServer.POAManagerPackage.AdapterInactive e ) {}
         }
     }
 
@@ -231,7 +227,7 @@ public class POAFactory implements ObjectAdapterFactory
         return rootPOA;
     }
 
-    public org.omg.PortableServer.portable.Delegate getDelegateImpl()
+    public test.org.omg.PortableServer.portable.Delegate getDelegateImpl()
     {
         return delegateImpl ;
     }

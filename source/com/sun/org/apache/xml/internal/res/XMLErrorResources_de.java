@@ -379,7 +379,7 @@ public class XMLErrorResources_de extends ListResourceBundle
     { "column","Spaltennummer"},
 
     {ER_SERIALIZER_NOT_CONTENTHANDLER,
-      "Serializer-Klasse \"{0}\" implementiert org.xml.sax.ContentHandler nicht."},
+      "Serializer-Klasse \"{0}\" implementiert test.org.xml.sax.ContentHandler nicht."},
 
     {ER_RESOURCE_COULD_NOT_FIND,
       "Ressource [ {0} ] konnte nicht gefunden werden.\n {1}" },

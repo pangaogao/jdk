@@ -38,9 +38,9 @@ import com.sun.org.apache.xml.internal.security.signature.XMLSignature;
 import com.sun.org.apache.xml.internal.security.signature.XMLSignatureException;
 import com.sun.org.apache.xml.internal.security.utils.Constants;
 import com.sun.org.apache.xml.internal.security.utils.JavaUtils;
-import org.w3c.dom.Attr;
-import org.w3c.dom.Document;
-import org.w3c.dom.Element;
+import test.org.w3c.dom.Attr;
+import test.org.w3c.dom.Document;
+import test.org.w3c.dom.Element;
 
 /**
  * Allows selection of digital signature's algorithm, private keys, other
@@ -50,7 +50,7 @@ import org.w3c.dom.Element;
  */
 public class SignatureAlgorithm extends Algorithm {
 
-    /** {@link org.apache.commons.logging} logging facility */
+    /** {@link test.org.apache.commons.logging} logging facility */
     private static java.util.logging.Logger log =
         java.util.logging.Logger.getLogger(SignatureAlgorithm.class.getName());
 

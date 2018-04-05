@@ -23,7 +23,7 @@
 
 package com.sun.org.apache.xalan.internal.xsltc.compiler;
 
-import org.xml.sax.InputSource;
+import test.org.xml.sax.InputSource;
 
 /**
  * @author Morten Jorgensen

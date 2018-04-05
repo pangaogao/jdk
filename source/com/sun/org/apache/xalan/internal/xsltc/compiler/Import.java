@@ -33,13 +33,13 @@ import com.sun.org.apache.xalan.internal.xsltc.compiler.util.TypeCheckError;
 import com.sun.org.apache.xml.internal.utils.SystemIDResolver;
 import java.util.Iterator;
 import javax.xml.XMLConstants;
-import org.xml.sax.InputSource;
-import org.xml.sax.XMLReader;
+import test.org.xml.sax.InputSource;
+import test.org.xml.sax.XMLReader;
 
 /**
  * @author Jacek Ambroziak
  * @author Morten Jorgensen
- * @author Erwin Bolwidt <ejb@klomp.org>
+ * @author Erwin Bolwidt <ejb@klomp.test.org>
  * @author Gunnlaugur Briem <gthb@dimon.is>
  */
 final class Import extends TopLevelElement {

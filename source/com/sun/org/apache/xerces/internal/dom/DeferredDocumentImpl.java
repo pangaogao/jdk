@@ -22,9 +22,9 @@ package com.sun.org.apache.xerces.internal.dom;
 
 import java.util.ArrayList;
 import java.util.HashMap;
-import org.w3c.dom.DOMImplementation;
-import org.w3c.dom.Element;
-import org.w3c.dom.Node;
+import test.org.w3c.dom.DOMImplementation;
+import test.org.w3c.dom.Element;
+import test.org.w3c.dom.Node;
 
 /**
  * The Document interface represents the entire HTML or XML document.

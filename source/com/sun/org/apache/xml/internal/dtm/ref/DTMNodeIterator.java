@@ -26,9 +26,9 @@ import com.sun.org.apache.xml.internal.dtm.DTM;
 import com.sun.org.apache.xml.internal.dtm.DTMDOMException;
 import com.sun.org.apache.xml.internal.dtm.DTMIterator;
 
-import org.w3c.dom.DOMException;
-import org.w3c.dom.Node;
-import org.w3c.dom.traversal.NodeFilter;
+import test.org.w3c.dom.DOMException;
+import test.org.w3c.dom.Node;
+import test.org.w3c.dom.traversal.NodeFilter;
 
 /**
  * <code>DTMNodeIterator</code> gives us an implementation of the
@@ -58,7 +58,7 @@ import org.w3c.dom.traversal.NodeFilter;
  *
  * <p>State: In progress!!</p>
  * */
-public class DTMNodeIterator implements org.w3c.dom.traversal.NodeIterator
+public class DTMNodeIterator implements test.org.w3c.dom.traversal.NodeIterator
 {
   private DTMIterator dtm_iter;
   private boolean valid=true;
@@ -91,7 +91,7 @@ public class DTMNodeIterator implements org.w3c.dom.traversal.NodeIterator
 
 
   //================================================================
-  // org.w3c.dom.traversal.NodeFilter API follows
+  // test.org.w3c.dom.traversal.NodeFilter API follows
 
   /** Detaches the NodeIterator from the set which it iterated over,
    * releasing any computational resources and placing the iterator in

@@ -27,18 +27,11 @@ package com.sun.corba.se.impl.protocol;
 
 import javax.rmi.CORBA.Tie;
 
-import org.omg.CORBA.portable.ServantObject;
+import test.org.omg.CORBA.portable.ServantObject;
 
 import com.sun.corba.se.spi.orb.ORB ;
 
-import com.sun.corba.se.spi.protocol.LocalClientRequestDispatcherFactory ;
-import com.sun.corba.se.spi.protocol.LocalClientRequestDispatcher ;
-
 import com.sun.corba.se.spi.ior.IOR ;
-
-import com.sun.corba.se.impl.protocol.LocalClientRequestDispatcherBase ;
-
-import com.sun.corba.se.pept.broker.Broker;
 
 public class JIDLLocalCRDImpl extends LocalClientRequestDispatcherBase
 {
@@ -49,7 +42,7 @@ public class JIDLLocalCRDImpl extends LocalClientRequestDispatcherBase
 
     protected ServantObject servant;
 
-    public ServantObject servant_preinvoke(org.omg.CORBA.Object self,
+    public ServantObject servant_preinvoke(test.org.omg.CORBA.Object self,
                                            String operation,
                                            Class expectedType)
     {
@@ -59,7 +52,7 @@ public class JIDLLocalCRDImpl extends LocalClientRequestDispatcherBase
         return servant;
     }
 
-    public void servant_postinvoke( org.omg.CORBA.Object self,
+    public void servant_postinvoke( test.org.omg.CORBA.Object self,
         ServantObject servant )
     {
         // NO-OP

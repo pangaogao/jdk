@@ -26,31 +26,25 @@
 package com.sun.corba.se.impl.presentation.rmi ;
 
 import java.rmi.Remote;
-import java.rmi.RemoteException;
 
 import javax.rmi.CORBA.Tie;
 
 import java.lang.reflect.Method ;
 import java.lang.reflect.InvocationTargetException ;
 
-import org.omg.CORBA.SystemException;
-import org.omg.CORBA_2_3.portable.InputStream;
-import org.omg.CORBA_2_3.portable.OutputStream;
-import org.omg.CORBA.portable.ResponseHandler;
-import org.omg.CORBA.portable.UnknownException;
-import org.omg.PortableServer.Servant;
-import org.omg.PortableServer.POA;
-import org.omg.PortableServer.POAManager;
+import test.org.omg.CORBA.SystemException;
+import test.org.omg.CORBA_2_3.portable.InputStream;
+import test.org.omg.CORBA_2_3.portable.OutputStream;
+import test.org.omg.CORBA.portable.ResponseHandler;
+import test.org.omg.CORBA.portable.UnknownException;
+import test.org.omg.PortableServer.Servant;
 
 import com.sun.corba.se.spi.presentation.rmi.PresentationManager ;
-import com.sun.corba.se.spi.presentation.rmi.IDLNameTranslator ;
 import com.sun.corba.se.spi.presentation.rmi.DynamicMethodMarshaller ;
 
 import com.sun.corba.se.spi.orb.ORB ;
 
 import com.sun.corba.se.impl.logging.ORBUtilSystemException ;
-
-import com.sun.corba.se.impl.oa.poa.POAManagerImpl ;
 
 public final class ReflectiveTie extends Servant implements Tie
 {
@@ -69,8 +63,8 @@ public final class ReflectiveTie extends Servant implements Tie
         this.wrapper = wrapper ;
     }
 
-    public String[] _all_interfaces(org.omg.PortableServer.POA poa,
-        byte[] objectId)
+    public String[] _all_interfaces(test.org.omg.PortableServer.POA poa,
+                                    byte[] objectId)
     {
         return classData.getTypeIds() ;
     }
@@ -92,7 +86,7 @@ public final class ReflectiveTie extends Servant implements Tie
         return target;
     }
 
-    public org.omg.CORBA.Object thisObject()
+    public test.org.omg.CORBA.Object thisObject()
     {
         return _this_object();
     }
@@ -101,31 +95,31 @@ public final class ReflectiveTie extends Servant implements Tie
     {
         try{
             _poa().deactivate_object(_poa().servant_to_id(this));
-        } catch (org.omg.PortableServer.POAPackage.WrongPolicy exception){
+        } catch (test.org.omg.PortableServer.POAPackage.WrongPolicy exception){
             // ignore
-        } catch (org.omg.PortableServer.POAPackage.ObjectNotActive exception){
+        } catch (test.org.omg.PortableServer.POAPackage.ObjectNotActive exception){
             // ignore
-        } catch (org.omg.PortableServer.POAPackage.ServantNotActive exception){
+        } catch (test.org.omg.PortableServer.POAPackage.ServantNotActive exception){
             // ignore
         }
     }
 
-    public org.omg.CORBA.ORB orb() {
+    public test.org.omg.CORBA.ORB orb() {
         return _orb();
     }
 
-    public void orb(org.omg.CORBA.ORB orb) {
+    public void orb(test.org.omg.CORBA.ORB orb) {
         try {
             ORB myORB = (ORB)orb ;
 
-            ((org.omg.CORBA_2_3.ORB)orb).set_delegate(this);
+            ((test.org.omg.CORBA_2_3.ORB)orb).set_delegate(this);
         } catch (ClassCastException e) {
             throw wrapper.badOrbForServant( e ) ;
         }
     }
 
-    public org.omg.CORBA.portable.OutputStream  _invoke(String method,
-        org.omg.CORBA.portable.InputStream _in, ResponseHandler reply)
+    public test.org.omg.CORBA.portable.OutputStream  _invoke(String method,
+                                                             test.org.omg.CORBA.portable.InputStream _in, ResponseHandler reply)
     {
         Method javaMethod = null ;
         DynamicMethodMarshaller dmm = null;

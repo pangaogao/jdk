@@ -25,28 +25,21 @@
 
 package com.sun.corba.se.impl.interceptors;
 
-import org.omg.CORBA.BAD_PARAM;
-import org.omg.CORBA.BAD_INV_ORDER;
-import org.omg.CORBA.CompletionStatus;
-import org.omg.CORBA.NO_IMPLEMENT;
-import org.omg.CORBA.OBJECT_NOT_EXIST;
-import org.omg.CORBA.LocalObject;
-import org.omg.CORBA.Policy;
-import org.omg.CORBA.PolicyError;
-import org.omg.IOP.CodecFactory;
-import org.omg.PortableInterceptor.ORBInitInfo;
-import org.omg.PortableInterceptor.ClientRequestInterceptor;
-import org.omg.PortableInterceptor.IORInterceptor;
-import org.omg.PortableInterceptor.PolicyFactory;
-import org.omg.PortableInterceptor.ServerRequestInterceptor;
-import org.omg.PortableInterceptor.ORBInitInfoPackage.DuplicateName;
-import org.omg.PortableInterceptor.ORBInitInfoPackage.InvalidName;
+import test.org.omg.CORBA.BAD_PARAM;
+import test.org.omg.CORBA.Policy;
+import test.org.omg.CORBA.PolicyError;
+import test.org.omg.IOP.CodecFactory;
+import test.org.omg.PortableInterceptor.ORBInitInfo;
+import test.org.omg.PortableInterceptor.ClientRequestInterceptor;
+import test.org.omg.PortableInterceptor.IORInterceptor;
+import test.org.omg.PortableInterceptor.PolicyFactory;
+import test.org.omg.PortableInterceptor.ServerRequestInterceptor;
+import test.org.omg.PortableInterceptor.ORBInitInfoPackage.DuplicateName;
+import test.org.omg.PortableInterceptor.ORBInitInfoPackage.InvalidName;
 
 import com.sun.corba.se.spi.orb.ORB;
 import com.sun.corba.se.spi.legacy.interceptor.ORBInitInfoExt ;
 import com.sun.corba.se.spi.logging.CORBALogDomains;
-
-import com.sun.corba.se.impl.orbutil.ORBUtility;
 
 import com.sun.corba.se.impl.logging.InterceptorsSystemException;
 import com.sun.corba.se.impl.logging.ORBUtilSystemException;
@@ -57,7 +50,7 @@ import com.sun.corba.se.impl.logging.OMGSystemException;
  * passed to ORBInitializers, as described in orbos/99-12-02.
  */
 public final class ORBInitInfoImpl
-    extends org.omg.CORBA.LocalObject
+    extends test.org.omg.CORBA.LocalObject
     implements ORBInitInfo, ORBInitInfoExt
 {
     // The ORB we are initializing
@@ -186,7 +179,7 @@ public final class ORBInitInfoImpl
      * This method may not be called during post_init.
      */
     public void register_initial_reference( String id,
-                                            org.omg.CORBA.Object obj )
+                                            test.org.omg.CORBA.Object obj )
         throws InvalidName
     {
         checkStage();
@@ -214,7 +207,7 @@ public final class ORBInitInfoImpl
         // equivalent Portable Interceptors InvalidName.
         try {
             orb.register_initial_reference( id, obj );
-        } catch( org.omg.CORBA.ORBPackage.InvalidName e ) {
+        } catch( test.org.omg.CORBA.ORBPackage.InvalidName e ) {
             InvalidName exc = new InvalidName( e.getMessage() );
             exc.initCause( e ) ;
             throw exc ;
@@ -232,7 +225,7 @@ public final class ORBInitInfoImpl
      * <p>
      * This method may not be called during pre_init.
      */
-    public org.omg.CORBA.Object resolve_initial_references (String id)
+    public test.org.omg.CORBA.Object resolve_initial_references (String id)
         throws InvalidName
     {
         checkStage();
@@ -247,12 +240,12 @@ public final class ORBInitInfoImpl
             throw wrapper.rirInvalidPreInit() ;
         }
 
-        org.omg.CORBA.Object objRef = null;
+        test.org.omg.CORBA.Object objRef = null;
 
         try {
             objRef = orb.resolve_initial_references( id );
         }
-        catch( org.omg.CORBA.ORBPackage.InvalidName e ) {
+        catch( test.org.omg.CORBA.ORBPackage.InvalidName e ) {
             // Convert PIDL to IDL exception:
             throw new InvalidName();
         }

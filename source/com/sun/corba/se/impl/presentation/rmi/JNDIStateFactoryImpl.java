@@ -40,7 +40,6 @@ import javax.rmi.PortableRemoteObject ;
 import com.sun.corba.se.spi.orb.ORB;
 
 import java.rmi.Remote;
-import java.rmi.server.ExportException;
 
 // XXX This creates a dependendcy on the implementation
 // of the CosNaming service provider.
@@ -49,7 +48,7 @@ import com.sun.jndi.cosnaming.CNCtx ;
 import com.sun.corba.se.spi.presentation.rmi.StubAdapter ;
 
 /**
-  * StateFactory that turns java.rmi.Remote objects to org.omg.CORBA.Object.
+  * StateFactory that turns java.rmi.Remote objects to test.org.omg.CORBA.Object.
   * This version works either with standard RMI-IIOP or Dynamic RMI-IIOP.
   * Based on the original com.sun.jndi.cosnaming.RemoteToCorba and
   * com.sun.jndi.toolkit.corba.CorbaUtils.
@@ -102,7 +101,7 @@ public class JNDIStateFactoryImpl implements StateFactory
     public Object getStateToBind(Object orig, Name name, Context ctx,
         Hashtable<?,?> env) throws NamingException
     {
-        if (orig instanceof org.omg.CORBA.Object)
+        if (orig instanceof test.org.omg.CORBA.Object)
             return orig ;
 
         if (!(orig instanceof Remote))

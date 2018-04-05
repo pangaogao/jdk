@@ -32,7 +32,7 @@ import com.sun.org.apache.xerces.internal.xni.parser.XMLParseException;
 import java.util.HashMap;
 import java.util.Locale;
 import java.util.Map;
-import org.xml.sax.ErrorHandler;
+import test.org.xml.sax.ErrorHandler;
 
 /**
  * This class is a common element of all parser configurations and is

@@ -26,23 +26,16 @@
 package com.sun.corba.se.impl.naming.cosnaming;
 
 // Get CORBA type
-import org.omg.CORBA.INITIALIZE;
-import org.omg.CORBA.ORB;
-import org.omg.CORBA.CompletionStatus;
 
-import org.omg.CORBA.Policy;
-import org.omg.CORBA.INTERNAL;
-import org.omg.PortableServer.POA;
-import org.omg.PortableServer.LifespanPolicyValue;
-import org.omg.PortableServer.RequestProcessingPolicyValue;
-import org.omg.PortableServer.IdAssignmentPolicyValue;
-import org.omg.PortableServer.ServantRetentionPolicyValue;
+import test.org.omg.CORBA.Policy;
+import test.org.omg.PortableServer.POA;
+import test.org.omg.PortableServer.LifespanPolicyValue;
+import test.org.omg.PortableServer.IdAssignmentPolicyValue;
+import test.org.omg.PortableServer.ServantRetentionPolicyValue;
 
-// Get org.omg.CosNaming types
-import org.omg.CosNaming.NamingContext;
+// Get test.org.omg.CosNaming types
 
 // Import transient naming context
-import com.sun.corba.se.impl.naming.cosnaming.TransientNamingContext;
 import com.sun.corba.se.impl.orbutil.ORBConstants;
 
 import com.sun.corba.se.spi.logging.CORBALogDomains;
@@ -52,7 +45,7 @@ import com.sun.corba.se.impl.logging.NamingSystemException;
 /**
  * Class TransientNameService implements a transient name service
  * using TransientNamingContexts and TransientBindingIterators, which
- * implement the org.omg.CosNaming::NamingContext and org.omg.CosNaming::BindingIterator
+ * implement the test.org.omg.CosNaming::NamingContext and test.org.omg.CosNaming::BindingIterator
  * interfaces specfied by the OMG Common Object Services Specification.
  * <p>
  * The TransientNameService creates the initial NamingContext object.
@@ -68,11 +61,11 @@ public class TransientNameService
      * NamingContext, whose object
      * reference can be obtained by the initialNamingContext method.
      * @param orb The ORB object
-     * @exception org.omg.CORBA.INITIALIZE Thrown if
+     * @exception test.org.omg.CORBA.INITIALIZE Thrown if
      * the TransientNameService cannot initialize.
      */
     public TransientNameService(com.sun.corba.se.spi.orb.ORB orb )
-        throws org.omg.CORBA.INITIALIZE
+        throws test.org.omg.CORBA.INITIALIZE
     {
         // Default constructor uses "NameService" as the key for the Root Naming
         // Context. If default constructor is used then INS's object key for
@@ -86,11 +79,11 @@ public class TransientNameService
      * reference can be obtained by the initialNamingContext method.
      * @param orb The ORB object
      * @param nameserviceName Stringified key used for INS Service registry
-     * @exception org.omg.CORBA.INITIALIZE Thrown if
+     * @exception test.org.omg.CORBA.INITIALIZE Thrown if
      * the TransientNameService cannot initialize.
      */
     public TransientNameService(com.sun.corba.se.spi.orb.ORB orb,
-        String serviceName ) throws org.omg.CORBA.INITIALIZE
+        String serviceName ) throws test.org.omg.CORBA.INITIALIZE
     {
         // This constructor gives the flexibility of providing the Object Key
         // for the Root Naming Context that is registered with INS.
@@ -104,7 +97,7 @@ public class TransientNameService
      */
     private void initialize( com.sun.corba.se.spi.orb.ORB orb,
         String nameServiceName )
-        throws org.omg.CORBA.INITIALIZE
+        throws test.org.omg.CORBA.INITIALIZE
     {
         NamingSystemException wrapper = NamingSystemException.get( orb,
             CORBALogDomains.NAMING ) ;
@@ -135,7 +128,7 @@ public class TransientNameService
             theInitialNamingContext = initialContext.localRoot;
             orb.register_initial_reference( nameServiceName,
                 theInitialNamingContext );
-        } catch (org.omg.CORBA.SystemException e) {
+        } catch (test.org.omg.CORBA.SystemException e) {
             throw wrapper.transNsCannotCreateInitialNcSys( e ) ;
         } catch (Exception e) {
             throw wrapper.transNsCannotCreateInitialNc( e ) ;
@@ -147,12 +140,12 @@ public class TransientNameService
      * Return the initial NamingContext.
      * @return the object reference for the initial NamingContext.
      */
-    public org.omg.CORBA.Object initialNamingContext()
+    public test.org.omg.CORBA.Object initialNamingContext()
     {
         return theInitialNamingContext;
     }
 
 
     // The initial naming context for this name service
-    private org.omg.CORBA.Object theInitialNamingContext;
+    private test.org.omg.CORBA.Object theInitialNamingContext;
 }

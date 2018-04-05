@@ -25,20 +25,14 @@
 
 package com.sun.corba.se.impl.presentation.rmi ;
 
-import java.io.Serializable ;
-import java.io.Externalizable ;
-
-import javax.rmi.PortableRemoteObject ;
-import javax.rmi.CORBA.Util ;
-
 import java.rmi.RemoteException ;
 import java.rmi.UnexpectedException ;
 
-import org.omg.CORBA.UserException ;
+import test.org.omg.CORBA.UserException ;
 
-import org.omg.CORBA_2_3.portable.InputStream ;
-import org.omg.CORBA_2_3.portable.OutputStream ;
-import org.omg.CORBA.portable.ApplicationException ;
+import test.org.omg.CORBA_2_3.portable.InputStream ;
+import test.org.omg.CORBA_2_3.portable.OutputStream ;
+import test.org.omg.CORBA.portable.ApplicationException ;
 
 import java.lang.reflect.Method ;
 
@@ -116,7 +110,7 @@ public class ExceptionHandlerImpl implements ExceptionHandler
 
             try {
                 Class[] argTypes = new Class[] {
-                    org.omg.CORBA.portable.OutputStream.class, cls } ;
+                    test.org.omg.CORBA.portable.OutputStream.class, cls } ;
                 writeMethod = helperClass.getDeclaredMethod( "write",
                     argTypes ) ;
             } catch (Exception ex) {
@@ -125,7 +119,7 @@ public class ExceptionHandlerImpl implements ExceptionHandler
 
             try {
                 Class[] argTypes = new Class[] {
-                    org.omg.CORBA.portable.InputStream.class } ;
+                    test.org.omg.CORBA.portable.InputStream.class } ;
                 readMethod = helperClass.getDeclaredMethod( "read", argTypes ) ;
             } catch (Exception ex) {
                 throw wrapper.badHelperReadMethod( ex, helperName ) ;

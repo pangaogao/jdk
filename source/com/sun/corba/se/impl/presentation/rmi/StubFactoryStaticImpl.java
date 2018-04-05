@@ -25,10 +25,6 @@
 
 package com.sun.corba.se.impl.presentation.rmi;
 
-import java.lang.reflect.InvocationHandler ;
-
-import com.sun.corba.se.spi.presentation.rmi.PresentationManager;
-
 public class StubFactoryStaticImpl extends StubFactoryBase
 {
     private Class stubClass ;
@@ -39,11 +35,11 @@ public class StubFactoryStaticImpl extends StubFactoryBase
         this.stubClass = cls;
     }
 
-    public org.omg.CORBA.Object makeStub()
+    public test.org.omg.CORBA.Object makeStub()
     {
-        org.omg.CORBA.Object stub = null;
+        test.org.omg.CORBA.Object stub = null;
         try {
-            stub = (org.omg.CORBA.Object) stubClass.newInstance();
+            stub = (test.org.omg.CORBA.Object) stubClass.newInstance();
         } catch (InstantiationException e) {
             throw new RuntimeException(e);
         } catch (IllegalAccessException e) {

@@ -33,11 +33,7 @@ import com.sun.corba.se.spi.ior.IORFactories ;
 import com.sun.corba.se.spi.ior.IORTemplateList ;
 import com.sun.corba.se.spi.ior.ObjectId ;
 
-import com.sun.corba.se.spi.logging.CORBALogDomains ;
-
 import com.sun.corba.se.impl.orbutil.ORBUtility ;
-
-import com.sun.corba.se.impl.logging.IORSystemException ;
 
 public abstract class ObjectReferenceProducerBase {
     transient protected ORB orb ;
@@ -51,8 +47,8 @@ public abstract class ObjectReferenceProducerBase {
         this.orb = orb ;
     }
 
-    public org.omg.CORBA.Object make_object (String repositoryId,
-        byte[] objectId)
+    public test.org.omg.CORBA.Object make_object (String repositoryId,
+                                                  byte[] objectId)
     {
         ObjectId oid = IORFactories.makeObjectId( objectId ) ;
         IOR ior = getIORFactory().makeIOR( orb, repositoryId, oid ) ;

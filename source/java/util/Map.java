@@ -31,6 +31,21 @@ import java.util.function.Function;
 import java.io.Serializable;
 
 /**
+ * 整体说明：
+ * Map数据结构接口
+ * 提供的方法：size、isEmpty、containsKey、containsValue、put、get、remove、putAll、clear
+ * 提供的视图：keySet、values、entrySet（返回Entity的Set集合）
+ * 一般方法：equals、hashCode
+ * default方法：getOrDefault(key, defaultV)、forEach(BiConsumer)、replace(k, v)、replace(k, v, newV)、replaceAll(BiFunction)、putIfAbsent、remove(k、v)、computeIfAbsent(k,Function)、computeIfPresent(k,Function)
+ * compute(k, BiFunction)、merge(k, v, BiFunction)
+ *
+ * 提供了Entity接口
+ * 提供的方法：getKey、getValue、setValue
+ * 一般方法：equals、hashCode
+ * 静态方法：comparingByKey、comparingByValue 支持基于key和value的比较或者基于传入比较器comparingByKey(Comparator) comparingByValue(Comparator)
+ */
+
+/**
  *
  * 映射键值的对象，不能包含重复的键
  * 每一个键最多映射一个值
@@ -58,10 +73,7 @@ import java.io.Serializable;
  * 如果插入一些不合法的key或value，会抛出不合法的异常，比如空指针异常，类型转换异常
  * 如果试图查询不合法的key或Value，可能也会抛异常或者返回false，一些实现类是禁止前者或后者
  *
- *
  * 在集合框架的很多方法是基于equals方法定义的。比如containsKey(Object)，会调用equals方法，首先也会先调用hashCode方法
- *
- *
  *
  * 一些操作会产生循环，抛出自引用的异常，map直接或间接地包含了自身。比如clone()、equals()、hashCode、toString等，实现应该选择性地处理自引用的场景，然而很多时候实现没有这样做。
  *
@@ -223,7 +235,7 @@ public interface Map<K,V> {
         }
 
         /**
-         * 返回一个比较器，基于map中key的自然顺序
+         * 返回一个比较器，基于map中value的自然顺序
          * @since 1.8
          */
         public static <K, V extends Comparable<? super V>> Comparator<Map.Entry<K,V>> comparingByValue() {

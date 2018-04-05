@@ -29,12 +29,9 @@ import java.util.Set ;
 import java.util.HashSet ;
 import java.util.Map ;
 import java.util.HashMap ;
-import java.util.Iterator ;
-import java.util.Vector ;
 
-import org.omg.PortableServer.Servant ;
-import org.omg.PortableServer.POAPackage.WrongPolicy ;
-import org.omg.CORBA.INTERNAL ;
+import test.org.omg.PortableServer.Servant ;
+import test.org.omg.PortableServer.POAPackage.WrongPolicy ;
 
 /**  The ActiveObjectMap maintains associations between servants and
  * their keys.  There are two variants, to support whether or not

@@ -11,6 +11,6 @@ package com.sun.corba.se.spi.activation;
 
 /** Server callback API, passed to Activator in active method.
     */
-public interface Server extends ServerOperations, org.omg.CORBA.Object, org.omg.CORBA.portable.IDLEntity 
+public interface Server extends ServerOperations, test.org.omg.CORBA.Object, test.org.omg.CORBA.portable.IDLEntity
 {
 } // interface Server

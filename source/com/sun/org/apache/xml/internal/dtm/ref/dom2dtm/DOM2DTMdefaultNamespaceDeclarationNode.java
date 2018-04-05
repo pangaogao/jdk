@@ -25,15 +25,15 @@ package com.sun.org.apache.xml.internal.dtm.ref.dom2dtm;
 
 import com.sun.org.apache.xml.internal.dtm.DTMException;
 
-import org.w3c.dom.Attr;
-import org.w3c.dom.Document;
-import org.w3c.dom.Element;
-import org.w3c.dom.NamedNodeMap;
-import org.w3c.dom.Node;
-import org.w3c.dom.NodeList;
-import org.w3c.dom.TypeInfo;
-import org.w3c.dom.UserDataHandler;
-import org.w3c.dom.DOMException;
+import test.org.w3c.dom.Attr;
+import test.org.w3c.dom.Document;
+import test.org.w3c.dom.Element;
+import test.org.w3c.dom.NamedNodeMap;
+import test.org.w3c.dom.Node;
+import test.org.w3c.dom.NodeList;
+import test.org.w3c.dom.TypeInfo;
+import test.org.w3c.dom.UserDataHandler;
+import test.org.w3c.dom.DOMException;
 
 /** This is a kluge to let us shove a declaration for xml: into the
  * DOM2DTM model.  Basically, it creates a proxy node in DOM space to
@@ -69,7 +69,7 @@ public class DOM2DTMdefaultNamespaceDeclarationNode implements Attr,TypeInfo
   }
   public String getNodeName() {return nodename;}
   public String getName() {return nodename;}
-  public String getNamespaceURI() {return "http://www.w3.org/2000/xmlns/";}
+  public String getNamespaceURI() {return "http://www.w3.test.org/2000/xmlns/";}
   public String getPrefix() {return prefix;}
   public String getLocalName() {return prefix;}
   public String getNodeValue() {return uri;}
@@ -112,12 +112,12 @@ public class DOM2DTMdefaultNamespaceDeclarationNode implements Attr,TypeInfo
     //RAMESH: PENDING=> Add proper implementation for the below DOM L3 additions
 
     /**
-     * @see org.w3c.dom.TypeInfo#getTypeName()
+     * @see test.org.w3c.dom.TypeInfo#getTypeName()
      */
     public String getTypeName() {return null; }
 
     /**
-     * @see org.w3c.dom.TypeInfo#getTypeNamespace()
+     * @see test.org.w3c.dom.TypeInfo#getTypeNamespace()
      */
     public String getTypeNamespace() { return null;}
 
@@ -333,7 +333,7 @@ public class DOM2DTMdefaultNamespaceDeclarationNode implements Attr,TypeInfo
                         String attrPrefix = attr.getPrefix();
                         String value = attr.getNodeValue();
                         namespace = attr.getNamespaceURI();
-                        if (namespace !=null && namespace.equals("http://www.w3.org/2000/xmlns/")) {
+                        if (namespace !=null && namespace.equals("http://www.w3.test.org/2000/xmlns/")) {
                             // at this point we are dealing with DOM Level 2 nodes only
                             if (specifiedPrefix == null &&
                                 attr.getNodeName().equals("xmlns")) {

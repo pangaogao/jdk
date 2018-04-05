@@ -25,12 +25,9 @@
 
 package com.sun.corba.se.impl.ior;
 
-import org.omg.CORBA.ORB ;
+import test.org.omg.CORBA.ORB ;
 
-import org.omg.CORBA_2_3.portable.InputStream ;
-import org.omg.CORBA_2_3.portable.OutputStream ;
-
-import com.sun.corba.se.spi.ior.iiop.GIOPVersion ;
+import test.org.omg.CORBA_2_3.portable.InputStream ;
 
 import com.sun.corba.se.spi.ior.TaggedComponent ;
 
@@ -51,13 +48,13 @@ public class GenericTaggedComponent extends GenericIdentifiable
     }
 
     /**
-     * @return org.omg.IOP.TaggedComponent
+     * @return test.org.omg.IOP.TaggedComponent
      * @exception
      * @author
      */
-    public org.omg.IOP.TaggedComponent getIOPComponent( ORB orb )
+    public test.org.omg.IOP.TaggedComponent getIOPComponent(ORB orb )
     {
-        return new org.omg.IOP.TaggedComponent( getId(),
+        return new test.org.omg.IOP.TaggedComponent( getId(),
             getData() ) ;
     }
 }

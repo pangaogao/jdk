@@ -63,7 +63,7 @@ public final class TemplatesImpl implements Templates, Serializable {
      * is the main one.
      */
     private static String ABSTRACT_TRANSLET
-        = "com.sun.org.apache.xalan.internal.xsltc.runtime.AbstractTranslet";
+        = "com.sun.test.org.apache.xalan.internal.xsltc.runtime.AbstractTranslet";
 
     /**
      * Name of the main class or default name if unknown.
@@ -277,7 +277,7 @@ public final class TemplatesImpl implements Templates, Serializable {
         if (_auxClasses != null) {
             //throw with the same message as when Hashtable was used for compatibility.
             throw new NotSerializableException(
-                    "com.sun.org.apache.xalan.internal.xsltc.runtime.Hashtable");
+                    "com.sun.test.org.apache.xalan.internal.xsltc.runtime.Hashtable");
         }
 
         // Write serialized fields

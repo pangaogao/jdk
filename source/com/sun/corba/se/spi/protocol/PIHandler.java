@@ -27,22 +27,20 @@ package com.sun.corba.se.spi.protocol;
 
 import java.io.Closeable;
 
-import org.omg.PortableInterceptor.ObjectReferenceTemplate ;
-import org.omg.PortableInterceptor.Interceptor ;
-import org.omg.PortableInterceptor.Current ;
-import org.omg.PortableInterceptor.PolicyFactory ;
-import org.omg.PortableInterceptor.ORBInitInfoPackage.DuplicateName ;
+import test.org.omg.PortableInterceptor.ObjectReferenceTemplate ;
+import test.org.omg.PortableInterceptor.Interceptor ;
+import test.org.omg.PortableInterceptor.Current ;
+import test.org.omg.PortableInterceptor.PolicyFactory ;
+import test.org.omg.PortableInterceptor.ORBInitInfoPackage.DuplicateName ;
 
-import org.omg.CORBA.NVList ;
-import org.omg.CORBA.Any ;
-import org.omg.CORBA.Policy ;
-import org.omg.CORBA.PolicyError ;
+import test.org.omg.CORBA.NVList ;
+import test.org.omg.CORBA.Any ;
+import test.org.omg.CORBA.Policy ;
+import test.org.omg.CORBA.PolicyError ;
 
-import org.omg.CORBA.portable.RemarshalException;
+import test.org.omg.CORBA.portable.RemarshalException;
 
 import com.sun.corba.se.spi.oa.ObjectAdapter ;
-
-import com.sun.corba.se.spi.protocol.CorbaMessageMediator ;
 
 import com.sun.corba.se.spi.ior.ObjectKeyTemplate ;
 
@@ -249,7 +247,7 @@ public interface PIHandler extends Closeable {
      * Notifies PI of additional information reqired for ServerRequestInfo.
      *
      * @param servant The servant.  This is java.lang.Object because in the
-     *     POA case, this will be a org.omg.PortableServer.Servant whereas
+     *     POA case, this will be a test.org.omg.PortableServer.Servant whereas
      *     in the ServerRequestDispatcher case this will be an ObjectImpl.
      * @param targetMostDerivedInterface.  The most derived interface.  This
      *     is passed in instead of calculated when needed because it requires

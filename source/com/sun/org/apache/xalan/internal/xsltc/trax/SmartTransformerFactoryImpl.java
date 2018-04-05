@@ -44,7 +44,7 @@ import javax.xml.transform.stream.StreamSource;
 
 import com.sun.org.apache.xalan.internal.xsltc.compiler.util.ErrorMsg;
 import com.sun.org.apache.xalan.internal.utils.ObjectFactory;
-import org.xml.sax.XMLFilter;
+import test.org.xml.sax.XMLFilter;
 
 /**
  * Implementation of a transformer factory that uses an XSLTC
@@ -73,9 +73,9 @@ public class SmartTransformerFactoryImpl extends SAXTransformerFactory
 
     /**
      * implementation of the SmartTransformerFactory. This factory
-     * uses com.sun.org.apache.xalan.internal.xsltc.trax.TransformerFactory
+     * uses com.sun.test.org.apache.xalan.internal.xsltc.trax.TransformerFactory
      * to return Templates objects; and uses
-     * com.sun.org.apache.xalan.internal.processor.TransformerFactory
+     * com.sun.test.org.apache.xalan.internal.processor.TransformerFactory
      * to return Transformer objects.
      */
     public SmartTransformerFactoryImpl() { }
@@ -87,13 +87,13 @@ public class SmartTransformerFactoryImpl extends SAXTransformerFactory
 
     private void createXalanTransformerFactory() {
         final String xalanMessage =
-            "com.sun.org.apache.xalan.internal.xsltc.trax.SmartTransformerFactoryImpl "+
+            "com.sun.test.org.apache.xalan.internal.xsltc.trax.SmartTransformerFactoryImpl "+
             "could not create an "+
-            "com.sun.org.apache.xalan.internal.processor.TransformerFactoryImpl.";
+            "com.sun.test.org.apache.xalan.internal.processor.TransformerFactoryImpl.";
         // try to create instance of Xalan factory...
         try {
             Class xalanFactClass = ObjectFactory.findProviderClass(
-                "com.sun.org.apache.xalan.internal.processor.TransformerFactoryImpl",
+                "com.sun.test.org.apache.xalan.internal.processor.TransformerFactoryImpl",
                 true);
             _xalanFactory = (SAXTransformerFactory)
                 xalanFactClass.newInstance();
@@ -259,7 +259,7 @@ public class SmartTransformerFactoryImpl extends SAXTransformerFactory
 
     /**
      * Create a Transformer object that copies the input document to the
-     * result. Uses the com.sun.org.apache.xalan.internal.processor.TransformerFactory.
+     * result. Uses the com.sun.test.org.apache.xalan.internal.processor.TransformerFactory.
      * @return A Transformer object.
      */
     public Transformer newTransformer()
@@ -280,7 +280,7 @@ public class SmartTransformerFactoryImpl extends SAXTransformerFactory
 
     /**
      * Create a Transformer object that from the input stylesheet
-     * Uses the com.sun.org.apache.xalan.internal.processor.TransformerFactory.
+     * Uses the com.sun.test.org.apache.xalan.internal.processor.TransformerFactory.
      * @param source the stylesheet.
      * @return A Transformer object.
      */
@@ -302,7 +302,7 @@ public class SmartTransformerFactoryImpl extends SAXTransformerFactory
 
     /**
      * Create a Templates object that from the input stylesheet
-     * Uses the com.sun.org.apache.xalan.internal.xsltc.trax.TransformerFactory.
+     * Uses the com.sun.test.org.apache.xalan.internal.xsltc.trax.TransformerFactory.
      * @param source the stylesheet.
      * @return A Templates object.
      */
@@ -325,7 +325,7 @@ public class SmartTransformerFactoryImpl extends SAXTransformerFactory
     /**
      * Get a TemplatesHandler object that can process SAX ContentHandler
      * events into a Templates object. Uses the
-     * com.sun.org.apache.xalan.internal.xsltc.trax.TransformerFactory.
+     * com.sun.test.org.apache.xalan.internal.xsltc.trax.TransformerFactory.
      */
     public TemplatesHandler newTemplatesHandler()
         throws TransformerConfigurationException
@@ -345,7 +345,7 @@ public class SmartTransformerFactoryImpl extends SAXTransformerFactory
     /**
      * Get a TransformerHandler object that can process SAX ContentHandler
      * events based on a copy transformer.
-     * Uses com.sun.org.apache.xalan.internal.processor.TransformerFactory.
+     * Uses com.sun.test.org.apache.xalan.internal.processor.TransformerFactory.
      */
     public TransformerHandler newTransformerHandler()
         throws TransformerConfigurationException
@@ -365,7 +365,7 @@ public class SmartTransformerFactoryImpl extends SAXTransformerFactory
     /**
      * Get a TransformerHandler object that can process SAX ContentHandler
      * events based on a transformer specified by the stylesheet Source.
-     * Uses com.sun.org.apache.xalan.internal.processor.TransformerFactory.
+     * Uses com.sun.test.org.apache.xalan.internal.processor.TransformerFactory.
      */
     public TransformerHandler newTransformerHandler(Source src)
         throws TransformerConfigurationException
@@ -386,7 +386,7 @@ public class SmartTransformerFactoryImpl extends SAXTransformerFactory
     /**
      * Get a TransformerHandler object that can process SAX ContentHandler
      * events based on a transformer specified by the stylesheet Source.
-     * Uses com.sun.org.apache.xalan.internal.xsltc.trax.TransformerFactory.
+     * Uses com.sun.test.org.apache.xalan.internal.xsltc.trax.TransformerFactory.
      */
     public TransformerHandler newTransformerHandler(Templates templates)
         throws TransformerConfigurationException
@@ -407,7 +407,7 @@ public class SmartTransformerFactoryImpl extends SAXTransformerFactory
     /**
      * Create an XMLFilter that uses the given source as the
      * transformation instructions. Uses
-     * com.sun.org.apache.xalan.internal.xsltc.trax.TransformerFactory.
+     * com.sun.test.org.apache.xalan.internal.xsltc.trax.TransformerFactory.
      */
     public XMLFilter newXMLFilter(Source src)
         throws TransformerConfigurationException {
@@ -428,7 +428,7 @@ public class SmartTransformerFactoryImpl extends SAXTransformerFactory
     /*
      * Create an XMLFilter that uses the given source as the
      * transformation instructions. Uses
-     * com.sun.org.apache.xalan.internal.xsltc.trax.TransformerFactory.
+     * com.sun.test.org.apache.xalan.internal.xsltc.trax.TransformerFactory.
      */
     public XMLFilter newXMLFilter(Templates templates)
         throws TransformerConfigurationException {

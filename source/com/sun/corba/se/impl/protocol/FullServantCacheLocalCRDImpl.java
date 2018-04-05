@@ -26,10 +26,7 @@
 
 package com.sun.corba.se.impl.protocol;
 
-import org.omg.CORBA.portable.ServantObject ;
-
-import com.sun.corba.se.spi.protocol.LocalClientRequestDispatcherFactory ;
-import com.sun.corba.se.spi.protocol.LocalClientRequestDispatcher ;
+import test.org.omg.CORBA.portable.ServantObject ;
 
 import com.sun.corba.se.spi.orb.ORB ;
 
@@ -38,10 +35,6 @@ import com.sun.corba.se.spi.oa.OADestroyed ;
 
 import com.sun.corba.se.spi.ior.IOR;
 
-import com.sun.corba.se.spi.logging.CORBALogDomains;
-
-import com.sun.corba.se.impl.logging.POASystemException ;
-
 public class FullServantCacheLocalCRDImpl extends ServantCacheLocalCRDBase
 {
     public FullServantCacheLocalCRDImpl( ORB orb, int scid, IOR ior )
@@ -49,7 +42,7 @@ public class FullServantCacheLocalCRDImpl extends ServantCacheLocalCRDBase
         super( (com.sun.corba.se.spi.orb.ORB)orb, scid, ior ) ;
     }
 
-    public ServantObject servant_preinvoke( org.omg.CORBA.Object self,
+    public ServantObject servant_preinvoke( test.org.omg.CORBA.Object self,
         String operation, Class expectedType )
     {
         OAInvocationInfo cachedInfo = getCachedInfo() ;
@@ -71,7 +64,7 @@ public class FullServantCacheLocalCRDImpl extends ServantCacheLocalCRDBase
         return info ;
     }
 
-    public void servant_postinvoke(org.omg.CORBA.Object self,
+    public void servant_postinvoke(test.org.omg.CORBA.Object self,
                                    ServantObject servantobj)
     {
         OAInvocationInfo cachedInfo = getCachedInfo() ;

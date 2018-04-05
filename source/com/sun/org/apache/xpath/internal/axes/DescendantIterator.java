@@ -33,7 +33,7 @@ import com.sun.org.apache.xpath.internal.compiler.Compiler;
 import com.sun.org.apache.xpath.internal.compiler.OpCodes;
 import com.sun.org.apache.xpath.internal.compiler.OpMap;
 import com.sun.org.apache.xpath.internal.patterns.NodeTest;
-import org.w3c.dom.DOMException;
+import test.org.w3c.dom.DOMException;
 
 /**
  * This class implements an optimized iterator for

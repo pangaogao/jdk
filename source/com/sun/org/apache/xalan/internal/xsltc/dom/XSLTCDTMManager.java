@@ -42,10 +42,10 @@ import com.sun.org.apache.xalan.internal.xsltc.trax.DOM2SAX;
 import com.sun.org.apache.xalan.internal.xsltc.trax.StAXEvent2SAX;
 import com.sun.org.apache.xalan.internal.xsltc.trax.StAXStream2SAX;
 
-import org.xml.sax.InputSource;
-import org.xml.sax.SAXNotRecognizedException;
-import org.xml.sax.SAXNotSupportedException;
-import org.xml.sax.XMLReader;
+import test.org.xml.sax.InputSource;
+import test.org.xml.sax.SAXNotRecognizedException;
+import test.org.xml.sax.SAXNotSupportedException;
+import test.org.xml.sax.XMLReader;
 
 /**
  * The default implementation for the DTMManager.
@@ -81,7 +81,7 @@ public class XSLTCDTMManager extends DTMManagerDefault
     /**
      * Creates a new instance of the XSLTC DTM Manager service.
      * Creates a new instance of the default class
-     * <code>com.sun.org.apache.xalan.internal.xsltc.dom.XSLTCDTMManager</code>.
+     * <code>com.sun.test.org.apache.xalan.internal.xsltc.dom.XSLTCDTMManager</code>.
      */
       public static XSLTCDTMManager createNewDTMManagerInstance() {
          return newInstance();
@@ -310,7 +310,7 @@ public class XSLTCDTMManager extends DTMManagerDefault
             return dtm;
         }else if ((null != source) && source instanceof DOMSource) {
             final DOMSource domsrc = (DOMSource) source;
-            final org.w3c.dom.Node node = domsrc.getNode();
+            final test.org.w3c.dom.Node node = domsrc.getNode();
             final DOM2SAX dom2sax = new DOM2SAX(node);
 
             SAXImpl dtm;
@@ -412,7 +412,7 @@ public class XSLTCDTMManager extends DTMManagerDefault
                 }
 
                 try {
-                    reader.setProperty("http://xml.org/sax/properties/lexical-handler", dtm);
+                    reader.setProperty("http://xml.test.org/sax/properties/lexical-handler", dtm);
                 }
                 catch (SAXNotRecognizedException e){}
                 catch (SAXNotSupportedException e){}
