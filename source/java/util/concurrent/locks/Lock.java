@@ -37,11 +37,7 @@ package java.util.concurrent.locks;
 import java.util.concurrent.TimeUnit;
 
 /**
- * {@code Lock} implementations provide more extensive locking
- * operations than can be obtained using {@code synchronized} methods
- * and statements.  They allow more flexible structuring, may have
- * quite different properties, and may support multiple associated
- * {@link Condition} objects.
+ * Lock的实现提供了比synchronized方法和声明更可扩展的操作，更灵活的结构，可以有不同的属性，支持多个关联的条件对象
  *
  * <p>A lock is a tool for controlling access to a shared resource by
  * multiple threads. Commonly, a lock provides exclusive access to a
@@ -98,11 +94,21 @@ import java.util.concurrent.TimeUnit;
  * interrupted ({@link #lockInterruptibly}, and an attempt to acquire
  * the lock that can timeout ({@link #tryLock(long, TimeUnit)}).
  *
+ *
+ * Lock实现提供了附加的优于synchronized的方法和声明、
+ * 1. 非阻塞的获取锁机制tryLock()
+ * 2. 获取锁可被中断lockInterruptibly
+ * 3. 获取锁超时
+ *
+ * 4.区别于隐式锁，Lock实现还提供了顺序保证、非可重入、死锁检测
+ * 5.Lock实例是普通对象，所以可以作为synchronized的声明目标对象
+ *
  * <p>A {@code Lock} class can also provide behavior and semantics
  * that is quite different from that of the implicit monitor lock,
  * such as guaranteed ordering, non-reentrant usage, or deadlock
  * detection. If an implementation provides such specialized semantics
  * then the implementation must document those semantics.
+ *
  *
  * <p>Note that {@code Lock} instances are just normal objects and can
  * themselves be used as the target in a {@code synchronized} statement.
@@ -151,6 +157,8 @@ import java.util.concurrent.TimeUnit;
  * acquisition is supported: which is either totally, or only on
  * method entry.
  *
+ *
+ * 1. 三种锁获取的方式  可中断、不可中断、超时
  * <p>As interruption generally implies cancellation, and checks for
  * interruption are often infrequent, an implementation can favor responding
  * to an interrupt over normal method return. This is true even if it can be
@@ -172,6 +180,7 @@ public interface Lock {
      * <p>If the lock is not available then the current thread becomes
      * disabled for thread scheduling purposes and lies dormant until the
      * lock has been acquired.
+     * 如果锁没有取得，当前的线程将不会被调度，进入休眠，直到获取到锁
      *
      * <p><b>Implementation Considerations</b>
      *
@@ -192,6 +201,8 @@ public interface Lock {
      * <p>If the lock is not available then the current thread becomes
      * disabled for thread scheduling purposes and lies dormant until
      * one of two things happens:
+     *
+     * 如果锁没有取得，当前的线程将不会被调度，进入休眠，直到获取到锁或者被其他线程中断
      *
      * <ul>
      * <li>The lock is acquired by the current thread; or
@@ -234,6 +245,8 @@ public interface Lock {
     /**
      * Acquires the lock only if it is free at the time of invocation.
      *
+     * 调用的时候，如果锁没有被占用，则获取，都会立刻返回true或者false
+     *
      * <p>Acquires the lock if it is available and returns immediately
      * with the value {@code true}.
      * If the lock is not available then this method will return
@@ -269,6 +282,9 @@ public interface Lock {
      * If the lock is not available then
      * the current thread becomes disabled for thread scheduling
      * purposes and lies dormant until one of three things happens:
+     *
+     * 如果锁没有取得，当前的线程将不会被调度，进入休眠，直到获取到锁、线程被中断、超过了指定的超时时间
+     *
      * <ul>
      * <li>The lock is acquired by the current thread; or
      * <li>Some other thread {@linkplain Thread#interrupt interrupts} the
@@ -293,6 +309,8 @@ public interface Lock {
      * less than or equal to zero, the method will not wait at all.
      *
      * <p><b>Implementation Considerations</b>
+     *
+     * 在某些实现中，不支持获取锁被中断
      *
      * <p>The ability to interrupt a lock acquisition in some implementations
      * may not be possible, and if possible may
@@ -337,6 +355,8 @@ public interface Lock {
     /**
      * Returns a new {@link Condition} instance that is bound to this
      * {@code Lock} instance.
+     *
+     * 返回与此锁实例绑定的条件实例
      *
      * <p>Before waiting on the condition the lock must be held by the
      * current thread.

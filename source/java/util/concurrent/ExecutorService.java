@@ -38,20 +38,15 @@ import java.util.List;
 import java.util.Collection;
 
 /**
- * An {@link Executor} that provides methods to manage termination and
- * methods that can produce a {@link Future} for tracking progress of
- * one or more asynchronous tasks.
  *
- * <p>An {@code ExecutorService} can be shut down, which will cause
- * it to reject new tasks.  Two different methods are provided for
- * shutting down an {@code ExecutorService}. The {@link #shutdown}
- * method will allow previously submitted tasks to execute before
- * terminating, while the {@link #shutdownNow} method prevents waiting
- * tasks from starting and attempts to stop currently executing tasks.
- * Upon termination, an executor has no tasks actively executing, no
- * tasks awaiting execution, and no new tasks can be submitted.  An
- * unused {@code ExecutorService} should be shut down to allow
- * reclamation of its resources.
+ * 一个执行器提供管理停止和追踪一个或多个异步任务进度的结果（Future）
+ *
+ * 执行器被关闭，将会拒绝新任务，提供了两个不同的关闭方法
+ * shutdown方法允许已提交的任务在关闭前继续执行，而shutdownNow方法会组织等待的任务开始并试图终止正在执行的任务
+ * 一旦关闭，执行器没有活动的任务，也没有等待执行的任务，新任务也不能被提交
+ * 一个不用的执行器应该被关闭来进行资源的释放
+ *
+ * submit方法通过创建和返回Future，扩展了Execute方法，可以取消或等待任务完成
  *
  * <p>Method {@code submit} extends base method {@link
  * Executor#execute(Runnable)} by creating and returning a {@link Future}
@@ -164,10 +159,7 @@ public interface ExecutorService extends Executor {
      * terminate.  Use {@link #awaitTermination awaitTermination} to
      * do that.
      *
-     * <p>There are no guarantees beyond best-effort attempts to stop
-     * processing actively executing tasks.  For example, typical
-     * implementations will cancel via {@link Thread#interrupt}, so any
-     * task that fails to respond to interrupts may never terminate.
+     * 不会保证一定会终止正在执行的活动任务。比如，一般的实现是通过线程的中断方法来取消的，所以任务如果没有响应中断，则永远不会终止
      *
      * @return list of tasks that never commenced execution
      * @throws SecurityException if a security manager exists and
@@ -188,18 +180,19 @@ public interface ExecutorService extends Executor {
     boolean isShutdown();
 
     /**
-     * Returns {@code true} if all tasks have completed following shut down.
-     * Note that {@code isTerminated} is never {@code true} unless
-     * either {@code shutdown} or {@code shutdownNow} was called first.
      *
+     * 如果所有的任务在关闭之后都完成了，则返回true
+     * 如果没有先调用shutdown或者shutdownNow，永远都不会返回true
      * @return {@code true} if all tasks have completed following shut down
      */
     boolean isTerminated();
 
     /**
-     * Blocks until all tasks have completed execution after a shutdown
-     * request, or the timeout occurs, or the current thread is
-     * interrupted, whichever happens first.
+     *
+     * 阻塞直到下面三种情况之一发生：
+     *  1.所有的任务在关闭请求之后完成
+     *  2.到达超时时间
+     *  3.当前线程被中断
      *
      * @param timeout the maximum time to wait
      * @param unit the time unit of the timeout argument

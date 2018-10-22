@@ -49,18 +49,9 @@ package java.util.concurrent.locks;
  */
 public abstract class AbstractOwnableSynchronizer
     implements java.io.Serializable {
-
-    /** Use serial ID even though all fields transient. */
     private static final long serialVersionUID = 3737899427754241961L;
-
-    /**
-     * Empty constructor for use by subclasses.
-     */
     protected AbstractOwnableSynchronizer() { }
-
-    /**
-     * The current owner of exclusive mode synchronization.
-     */
+    // 当前拥有者，排他模式
     private transient Thread exclusiveOwnerThread;
 
     /**

@@ -58,6 +58,9 @@ import java.util.Spliterators;
  * {@code SynchronousQueue} acts as an empty collection.  This queue
  * does not permit {@code null} elements.
  *
+ * 阻塞队列，插入操作必须等待另一个线程的获取操作，这个队列没有任何内部的容量，你不能peek队列，因为一个元素只有在移除的时候才可见
+ * 不能再插入元素，除非另一个线程移除之前的元素，这里无元素可以迭代访问
+ *
  * <p>Synchronous queues are similar to rendezvous channels used in
  * CSP and Ada. They are well suited for handoff designs, in which an
  * object running in one thread must sync up with an object running
@@ -167,13 +170,15 @@ public class SynchronousQueue<E> extends AbstractQueue<E>
      */
     abstract static class Transferer<E> {
         /**
+         * 执行一个插入或移除
          * Performs a put or take.
          *
          * @param e if non-null, the item to be handed to a consumer;
          *          if null, requests that transfer return an item
          *          offered by producer.
-         * @param timed if this operation should timeout
-         * @param nanos the timeout, in nanoseconds
+         * @param e 如果非空，item将被交给消费者，如果为空，返回一个生产的item
+         * @param timed 是否操作超时
+         * @param nanos the timeout, in nanoseconds 超时毫秒数
          * @return if non-null, the item provided or received; if null,
          *         the operation failed due to timeout or interrupt --
          *         the caller can distinguish which of these occurred
@@ -182,7 +187,7 @@ public class SynchronousQueue<E> extends AbstractQueue<E>
         abstract E transfer(E e, boolean timed, long nanos);
     }
 
-    /** The number of CPUs, for spin control */
+    /** CPU的数量，用于自旋控制 */
     static final int NCPUS = Runtime.getRuntime().availableProcessors();
 
     /**
@@ -191,6 +196,7 @@ public class SynchronousQueue<E> extends AbstractQueue<E>
      * variety of processors and OSes. Empirically, the best value
      * seems not to vary with number of CPUs (beyond 2) so is just
      * a constant.
+     * 在超时等待阻塞前，自旋的次数
      */
     static final int maxTimedSpins = (NCPUS < 2) ? 0 : 32;
 

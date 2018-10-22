@@ -48,87 +48,53 @@ import sun.misc.Unsafe;
  * {@code Number} to allow uniform access by tools and utilities that
  * deal with numerically-based classes.
  *
+ * 可以原子更新int值，AtomicInteger可以原子性增加，是Integer不可替代的，然而这个类没有扩展Number，允许通过工具来实现基于数值运算
  * @since 1.5
  * @author Doug Lea
 */
 public class AtomicInteger extends Number implements java.io.Serializable {
     private static final long serialVersionUID = 6214790243416807050L;
-
-    // setup to use Unsafe.compareAndSwapInt for updates
+    /** 使用Unsafe.compareAndSwapInt来更新 */
     private static final Unsafe unsafe = Unsafe.getUnsafe();
+    /** 值的偏移量 */
     private static final long valueOffset;
-
     static {
         try {
-            valueOffset = unsafe.objectFieldOffset
-                (AtomicInteger.class.getDeclaredField("value"));
+            valueOffset = unsafe.objectFieldOffset(AtomicInteger.class.getDeclaredField("value"));
         } catch (Exception ex) { throw new Error(ex); }
     }
-
     private volatile int value;
 
-    /**
-     * Creates a new AtomicInteger with the given initial value.
-     *
-     * @param initialValue the initial value
-     */
+    /** 基于给定的初始值创建一个AtomicInteger对象 */
     public AtomicInteger(int initialValue) {
         value = initialValue;
     }
 
-    /**
-     * Creates a new AtomicInteger with initial value {@code 0}.
-     */
+    /** 创建一个初始值为0的AtomicInteger对象 */
     public AtomicInteger() {
     }
 
-    /**
-     * Gets the current value.
-     *
-     * @return the current value
-     */
+    /** 获取当前值 */
     public final int get() {
         return value;
     }
 
-    /**
-     * Sets to the given value.
-     *
-     * @param newValue the new value
-     */
+    /** 设置为给定的值 */
     public final void set(int newValue) {
         value = newValue;
     }
 
-    /**
-     * Eventually sets to the given value.
-     *
-     * @param newValue the new value
-     * @since 1.6
-     */
+    /** 最终设置为给定的值 */
     public final void lazySet(int newValue) {
         unsafe.putOrderedInt(this, valueOffset, newValue);
     }
 
-    /**
-     * Atomically sets to the given value and returns the old value.
-     *
-     * @param newValue the new value
-     * @return the previous value
-     */
+    /** 原子地设置为给定的值，并返回旧值 */
     public final int getAndSet(int newValue) {
         return unsafe.getAndSetInt(this, valueOffset, newValue);
     }
 
-    /**
-     * Atomically sets the value to the given updated value
-     * if the current value {@code ==} the expected value.
-     *
-     * @param expect the expected value
-     * @param update the new value
-     * @return {@code true} if successful. False return indicates that
-     * the actual value was not equal to the expected value.
-     */
+    /** 原子地设置为给定的更新值 */
     public final boolean compareAndSet(int expect, int update) {
         return unsafe.compareAndSwapInt(this, valueOffset, expect, update);
     }
@@ -149,30 +115,17 @@ public class AtomicInteger extends Number implements java.io.Serializable {
         return unsafe.compareAndSwapInt(this, valueOffset, expect, update);
     }
 
-    /**
-     * Atomically increments by one the current value.
-     *
-     * @return the previous value
-     */
+    /** 原子地把当前值增加1，返回旧值*/
     public final int getAndIncrement() {
         return unsafe.getAndAddInt(this, valueOffset, 1);
     }
 
-    /**
-     * Atomically decrements by one the current value.
-     *
-     * @return the previous value
-     */
+    /** 原子地把当前值减少1，返回旧值*/
     public final int getAndDecrement() {
         return unsafe.getAndAddInt(this, valueOffset, -1);
     }
 
-    /**
-     * Atomically adds the given value to the current value.
-     *
-     * @param delta the value to add
-     * @return the previous value
-     */
+    /** 原子地把当前值增加给定的值，返回旧值*/
     public final int getAndAdd(int delta) {
         return unsafe.getAndAddInt(this, valueOffset, delta);
     }

@@ -81,10 +81,15 @@ public class Executors {
      * execute subsequent tasks.  The threads in the pool will exist
      * until it is explicitly {@link ExecutorService#shutdown shutdown}.
      *
+     * 创建一个固定数量的线程数，拥有一个无界的共享队列，任何时候最多有n个忙碌线程
+     * 如果N个线程都在忙碌，新的任务来了之后会被投入到队列中，等到某个线程忙碌完了才去执行新任务
+     * 如果任何一个线程由于在执行期间
+     *
      * @param nThreads the number of threads in the pool
      * @return the newly created thread pool
      * @throws IllegalArgumentException if {@code nThreads <= 0}
      */
+    /** 固定数量线程池，coreSize与maxSize相等，采用的是无界队列LinkedBlockingQueue */
     public static ExecutorService newFixedThreadPool(int nThreads) {
         return new ThreadPoolExecutor(nThreads, nThreads,
                                       0L, TimeUnit.MILLISECONDS,

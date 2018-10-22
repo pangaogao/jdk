@@ -76,6 +76,9 @@ import java.util.function.Consumer;
  * @since 1.5
  * @author Doug Lea
  * @param <E> the type of elements held in this collection
+ *
+ *
+ * 这是一个无界阻塞队列
  */
 public class LinkedBlockingQueue<E> extends AbstractQueue<E>
         implements BlockingQueue<E>, java.io.Serializable {
@@ -211,7 +214,8 @@ public class LinkedBlockingQueue<E> extends AbstractQueue<E>
         // assert head.item == null;
         Node<E> h = head;
         Node<E> first = h.next;
-        h.next = h; // help GC
+        /** 指向自己，help GC */
+        h.next = h;
         head = first;
         E x = first.item;
         first.item = null;

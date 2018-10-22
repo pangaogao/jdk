@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Diagram>
+  <ID>JAVA</ID>
+  <OriginalElement>java.util.concurrent.ThreadPoolExecutor</OriginalElement>
+  <nodes>
+    <node x="0.0" y="158.0">java.util.concurrent.AbstractExecutorService</node>
+    <node x="13.5" y="237.0">java.util.concurrent.ThreadPoolExecutor</node>
+    <node x="153.25" y="0.0">java.util.concurrent.Executor</node>
+    <node x="204.0" y="158.0">java.util.concurrent.ScheduledExecutorService</node>
+    <node x="86.25" y="316.0">java.util.concurrent.ScheduledThreadPoolExecutor</node>
+    <node x="131.25" y="79.0">java.util.concurrent.ExecutorService</node>
+  </nodes>
+  <notes />
+  <edges>
+    <edge source="java.util.concurrent.AbstractExecutorService" target="java.util.concurrent.ExecutorService">
+      <point x="0.0" y="-14.5" />
+      <point x="92.0" y="133.0" />
+      <point x="164.0" y="133.0" />
+      <point x="-32.75" y="14.5" />
+    </edge>
+    <edge source="java.util.concurrent.ScheduledThreadPoolExecutor" target="java.util.concurrent.ThreadPoolExecutor">
+      <point x="-55.25" y="-14.5" />
+      <point x="141.5" y="291.0" />
+      <point x="92.0" y="291.0" />
+      <point x="0.0" y="14.5" />
+    </edge>
+    <edge source="java.util.concurrent.ExecutorService" target="java.util.concurrent.Executor">
+      <point x="0.0" y="-14.5" />
+      <point x="0.0" y="14.5" />
+    </edge>
+    <edge source="java.util.concurrent.ScheduledThreadPoolExecutor" target="java.util.concurrent.ScheduledExecutorService">
+      <point x="55.25" y="-14.5" />
+      <point x="252.0" y="291.0" />
+      <point x="301.5" y="291.0" />
+      <point x="0.0" y="14.5" />
+    </edge>
+    <edge source="java.util.concurrent.ThreadPoolExecutor" target="java.util.concurrent.AbstractExecutorService">
+      <point x="0.0" y="-14.5" />
+      <point x="0.0" y="14.5" />
+    </edge>
+    <edge source="java.util.concurrent.ScheduledExecutorService" target="java.util.concurrent.ExecutorService">
+      <point x="0.0" y="-14.5" />
+      <point x="301.5" y="133.0" />
+      <point x="229.5" y="133.0" />
+      <point x="32.75" y="14.5" />
+    </edge>
+  </edges>
+  <settings layout="Hierarchic Group" zoom="1.0" x="153.0" y="260.5" />
+  <SelectedNodes />
+  <Categories />
+  <SCOPE>All</SCOPE>
+  <VISIBILITY>private</VISIBILITY>
+</Diagram>
+
